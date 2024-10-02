@@ -1,0 +1,31 @@
+##---------------------------------
+##Items---------------------------------
+item.ps:amethyst_dust.name=Amethyst Dust
+item.ps:glowstone_shard.name=Glowstone Shard
+item.ps:small_glowstone_bud.name=Small Glowstone Bud
+item.ps:medium_glowstone_bud.name=Medium Glowstone Bud
+item.ps:large_glowstone_bud.name=Large Glowstone Bud
+item.ps:glowstone_cluster.name=Glowstone Cluster
+
+##---------------------------------
+##Blocks---------------------------------
+tile.ps:budding_glowstone.name=Budding Glowstone
+
+##---------------------------------
+##Decorative Blocks---------------------------------
+
+##---------------------------------
+##Slabs---------------------------------
+
+##---------------------------------
+##Doors---------------------------------
+
+
+##---------------------------------
+##Crops---------------------------------
+
+##---------------------------------
+##Misc---------------------------------
+
+
+##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means

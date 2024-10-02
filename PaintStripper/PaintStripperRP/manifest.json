@@ -1,0 +1,23 @@
+{
+    "format_version": 2,
+    "header": {
+      "description": "Resource pack for Paint Stripper addon v1.0.0", 
+      "name": "PaintStripperRP",
+      "uuid":"b980ea2e-49a0-4098-89b6-6db625d2b05d",
+      "version": [1, 0, 0],
+      "min_engine_version": [1, 21, 10]
+     },
+     "metadata": {
+      "authors": ["Beardedflea/Zellfrey"],
+      "license": "Please don't copy my homework",
+          "url": "https://github.com/zellfrey"
+    },
+    "modules": [
+      {
+        "description": "Resource pack for Paint Stripper addon v1.0.0", 
+        "type": "resources",
+        "uuid": "80ef3ab1-361d-4dde-a17d-4c965c70f05f",
+        "version": [1, 0, 0]
+      }
+    ]
+   }

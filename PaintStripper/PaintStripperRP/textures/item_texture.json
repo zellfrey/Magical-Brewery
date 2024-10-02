@@ -1,0 +1,24 @@
+{
+   "resource_pack_name" : "PS item textures",
+   "texture_name" : "atlas.items",
+   "texture_data" : {
+      "amethyst_dust":{
+			"textures": "textures/items/amethyst_dust.png"
+		},
+      "glowstone_shard":{
+			"textures": "textures/items/glowstone_shard.png"
+		},
+      "small_glowstone_bud":{
+      "textures": "textures/blocks/small_glowstone_bud.png"
+      },
+      "medium_glowstone_bud":{
+         "textures": "textures/blocks/medium_glowstone_bud.png"
+      },
+      "large_glowstone_bud":{
+         "textures": "textures/blocks/large_glowstone_bud.png"
+      },
+      "glowstone_cluster":{
+         "textures": "textures/blocks/glowstone_cluster.png"
+      }
+   }
+}

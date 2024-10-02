@@ -1,0 +1,26 @@
+{ 
+  "resource_pack_name": "PS terrain textures", 
+  "texture_name": "atlas.terrain", 
+  "padding": 8, 
+  "num_mip_levels": 4, 
+  "texture_data": {
+    "seed_amethyst":{
+      "textures": "textures/items/item_placeholder.png"
+    },
+    "budding_glowstone":{
+      "textures": "textures/blocks/budding_glowstone.png"
+    },
+    "small_glowstone_bud":{
+      "textures": "textures/blocks/small_glowstone_bud.png"
+    },
+    "medium_glowstone_bud":{
+      "textures": "textures/blocks/medium_glowstone_bud.png"
+    },
+    "large_glowstone_bud":{
+      "textures": "textures/blocks/large_glowstone_bud.png"
+    },
+    "glowstone_cluster":{
+      "textures": "textures/blocks/glowstone_cluster.png"
+    }
+  }
+} 
