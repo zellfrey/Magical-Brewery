@@ -1,0 +1,20 @@
+Crystals, fix hitbox. Look at stage 4. DONE
+Add seed glowstone DONE
+Hide crystal cluster block from creative & commands. DONE
+Create recipes for both seed crystals DONE
+
+Change seed crystal growth to onRandomTick
+
+Make texture for budding seeds
+
+Rework budding seeds model
+
+Add sounds for clusters and buds. 
+
+Add step on function to produce sound. Look into changing pitch/volume for randomness.
+
+
+
+Rework budding glowstone texture
+
+torchflower - living flame, healing

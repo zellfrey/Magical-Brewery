@@ -4,7 +4,8 @@
       "description": {
         "identifier": "ps:cluster_glowstone",
         "menu_category": {
-            "category": "nature"
+            "category": "none",
+            "is_hidden_in_commands": true
         },
         "traits": {
           "minecraft:placement_position": {
@@ -69,12 +70,12 @@
                     }
                 },
                 "minecraft:collision_box": {
-                    "origin": [-1, 0, -1],
-                    "size": [6, 3, 6]
+                    "origin": [-4, 0, -4],
+                    "size": [8, 3, 8]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-1.0, 0.0, -1.0],
-                    "size": [6.0, 3.0, 6.0]
+                    "origin": [-4.0, 0.0, -4.0],
+                    "size": [8.0, 3.0, 8.0]
                 }
             }
         },
@@ -90,12 +91,12 @@
                     }
                 },
                 "minecraft:collision_box": {
-                    "origin": [-2, 0, -2],
-                    "size": [4, 4, 4]
+                    "origin": [-5, 0, -5],
+                    "size": [10, 4, 10]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-2.0, 0.0, -2.0],
-                    "size": [4.0, 4.0, 4.0]
+                    "origin": [-5.0, 0.0, -5.0],
+                    "size": [10.0, 4.0, 10.0]
                 }
             }
         },
@@ -111,12 +112,12 @@
                     }
                 },
                 "minecraft:collision_box": {
-                    "origin": [-4, 0, -4],
-                    "size": [8, 8, 8]
+                    "origin": [-5, 0, -5],
+                    "size": [10, 5, 10]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-4.0, 0.0, -4.0],
-                    "size": [8.0, 8.0, 8.0]
+                    "origin": [-5.0, 0.0, -5.0],
+                    "size": [10.0, 5.0, 10.0]
                 }
             }
         },
@@ -132,12 +133,12 @@
                     }
                 },
                 "minecraft:collision_box": {
-                    "origin": [-6, 0, -6],
-                    "size": [12, 12, 12]
+                    "origin": [-5, 0, -5],
+                    "size": [10, 7, 10]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-6.0, 0.0, -6.0],
-                    "size": [12.0, 12.0, 12.0]
+                    "origin": [-5.0, 0.0, -5.0],
+                    "size": [10.0, 7.0, 10.0]
                 }
             }
         }
