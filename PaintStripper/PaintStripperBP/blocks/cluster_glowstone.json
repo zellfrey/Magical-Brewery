@@ -17,7 +17,7 @@
         }
     },
     "components": {
-        "minecraft:custom_components": ["ps:bop_cluster_glowstone"],
+        "minecraft:custom_components": ["ps:bop_cluster_glowstone", "ps:opd_loot_cluster"],
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross"
     },

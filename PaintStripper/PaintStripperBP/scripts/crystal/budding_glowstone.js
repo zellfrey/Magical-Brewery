@@ -1,5 +1,6 @@
 import {world, system, ItemStack } from "@minecraft/server";
 
+//Crystal cluster growth
 world.beforeEvents.worldInitialize.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_growth', {
         onRandomTick(e) {
@@ -29,6 +30,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
     });
 });
 
+//Hook into vanilla events to create custom loot table
 world.afterEvents.playerBreakBlock.subscribe((e) => {
     const { brokenBlockPermutation, dimension,block } = e;
 
@@ -37,10 +39,12 @@ world.afterEvents.playerBreakBlock.subscribe((e) => {
     }
 });
 
+
 world.beforeEvents.worldInitialize.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:bop_cluster_glowstone', {
         beforeOnPlayerPlace(e) {
             const { player, permutationToPlace } = e;
+            //Would prefer if custom blocks can have a "isSolid" component. Also the swing animation still plays if something isnt placeable
             // const affectedBlock = getBlockFromFace(block, face)
             // if(!affectedBlock.isSolid){
             //     e.cancel = true;
@@ -69,5 +73,19 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             }
             e.permutationToPlace = permutationToPlace.withState('ps:crystal_stage', stageSize);
             }
+    });
+});
+
+world.beforeEvents.worldInitialize.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_loot_cluster', {
+        onPlayerDestroy(e) {
+            const {player, block} = e;
+
+            if(!player || player.getGameMode() === "creative" || !player.getComponent('equippable')) return;
+
+            const equipment = player.getComponent('equippable');
+            const selectedItem = equipment.getEquipment('Mainhand');
+            console.warn("crystal broken")
+        }
     });
 });

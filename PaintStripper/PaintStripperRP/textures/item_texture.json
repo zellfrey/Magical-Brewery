@@ -19,6 +19,12 @@
       },
       "glowstone_cluster":{
          "textures": "textures/blocks/glowstone_cluster.png"
-      }
+      },
+      "amethyst_seed":{
+			"textures": "textures/items/amethyst_seed.png"
+		},
+      "glowstone_seed":{
+			"textures": "textures/items/glowstone_seed.png"
+		}
    }
 }

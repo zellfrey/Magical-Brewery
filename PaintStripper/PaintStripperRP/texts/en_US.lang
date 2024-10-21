@@ -6,7 +6,8 @@ item.ps:small_glowstone_bud.name=Small Glowstone Bud
 item.ps:medium_glowstone_bud.name=Medium Glowstone Bud
 item.ps:large_glowstone_bud.name=Large Glowstone Bud
 item.ps:glowstone_cluster.name=Glowstone Cluster
-
+item.ps:amethyst_seed.name=Amethyst Seed
+item.ps:glowstone_seed.name=Glowstone Seed
 ##---------------------------------
 ##Blocks---------------------------------
 tile.ps:budding_glowstone.name=Budding Glowstone

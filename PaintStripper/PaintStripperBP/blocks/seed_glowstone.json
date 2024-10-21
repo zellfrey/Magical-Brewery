@@ -4,7 +4,7 @@
       "description": {
         "identifier": "ps:seed_glowstone",
         "menu_category": {
-            "category": "nature",
+            "category": "none",
             "is_hidden_in_commands": false
         },
         "traits": {

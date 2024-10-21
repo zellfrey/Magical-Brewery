@@ -4,8 +4,8 @@
       "description": {
         "identifier": "ps:seed_amethyst",
         "menu_category": {
-            "category": "nature",
-            "is_hidden_in_commands": false
+            "category": "none",
+            "is_hidden_in_commands": true
         },
         "traits": {
           "minecraft:placement_position": {
