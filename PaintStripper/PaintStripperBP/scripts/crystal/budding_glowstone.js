@@ -76,16 +76,16 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
     });
 });
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_loot_cluster', {
-        onPlayerDestroy(e) {
-            const {player, block} = e;
+// world.beforeEvents.worldInitialize.subscribe(eventData => {
+//     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_loot_cluster', {
+//         onPlayerDestroy(e) {
+//             const {player, block} = e;
 
-            if(!player || player.getGameMode() === "creative" || !player.getComponent('equippable')) return;
+//             if(!player || player.getGameMode() === "creative" || !player.getComponent('equippable')) return;
 
-            const equipment = player.getComponent('equippable');
-            const selectedItem = equipment.getEquipment('Mainhand');
-            console.warn("crystal broken")
-        }
-    });
-});
+//             const equipment = player.getComponent('equippable');
+//             const selectedItem = equipment.getEquipment('Mainhand');
+//             console.warn("crystal broken")
+//         }
+//     });
+// });
