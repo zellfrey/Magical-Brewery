@@ -61,6 +61,7 @@
         {
             "condition": "query.block_state('ps:crystal_stage') == 1",
             "components": {
+                "minecraft:loot": "loot_tables/blocks/crystals/small_glowstone_bud.json",
                 "minecraft:material_instances": {
                     "*": {
                     "texture": "small_glowstone_bud",

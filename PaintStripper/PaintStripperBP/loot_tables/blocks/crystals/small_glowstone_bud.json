@@ -1,0 +1,33 @@
+{
+	"pools": [
+		{
+			"conditions": [  
+            {  
+              "condition": "match_tool",  
+              "enchantments": [  
+                {  
+                  "enchantment": "silk_touch",  
+                  "levels": {  
+                    "range_max": 1
+                  }  
+                }  
+              ],  
+              "item": "minecraft:diamond_pickaxe",  
+              "count": 1,  
+              "durability": {  
+                "range_min": 1  
+              }  
+            }  
+          ]
+		},
+		{
+      "rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "ps:small_glowstone_bud"
+				}
+			]
+		}
+	]
+}
