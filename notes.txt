@@ -13,7 +13,7 @@ Rework budding seeds model
 
 
 
-
+add lighting to glowstone clusters DONE
 
 
 Rework budding glowstone texture

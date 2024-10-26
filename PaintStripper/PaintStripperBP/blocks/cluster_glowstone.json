@@ -61,6 +61,7 @@
         {
             "condition": "query.block_state('ps:crystal_stage') == 1",
             "components": {
+                "minecraft:light_emission": 4,
                 "minecraft:loot": "loot_tables/blocks/crystals/small_glowstone_bud.json",
                 "minecraft:material_instances": {
                     "*": {
@@ -83,6 +84,7 @@
         {
             "condition": "query.block_state('ps:crystal_stage') == 2",
             "components": {
+                "minecraft:light_emission": 7,
                 "minecraft:material_instances": {
                     "*": {
                     "texture": "medium_glowstone_bud",
@@ -104,6 +106,7 @@
         {
             "condition": "query.block_state('ps:crystal_stage') == 3",
             "components": {
+                "minecraft:light_emission": 11,
                 "minecraft:material_instances": {
                     "*": {
                     "texture": "large_glowstone_bud",
@@ -125,6 +128,7 @@
         {
             "condition": "query.block_state('ps:crystal_stage') == 4",
             "components": {
+                "minecraft:light_emission": 15,
                 "minecraft:material_instances": {
                     "*": {
                     "texture": "glowstone_cluster",

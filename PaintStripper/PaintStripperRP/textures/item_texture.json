@@ -2,6 +2,9 @@
    "resource_pack_name" : "PS item textures",
    "texture_name" : "atlas.items",
    "texture_data" : {
+      "placeholder":{
+			"textures": "textures/items/item_placeholder.png"
+		},
       "amethyst_dust":{
 			"textures": "textures/items/amethyst_dust.png"
 		},

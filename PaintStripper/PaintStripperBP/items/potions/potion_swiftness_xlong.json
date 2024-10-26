@@ -1,0 +1,15 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:item": {
+      "description": {
+        "identifier": "ps:potion_swiftness_xlong",
+        "menu_category": {
+                "category": "items"
+            }
+      }, 
+      "components": {
+        "minecraft:hand_equipped": false,
+        "minecraft:icon": "temp_texture"
+      }
+    }
+}

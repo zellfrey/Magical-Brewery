@@ -8,6 +8,7 @@
         }
       },
       "components": {
+        "minecraft:light_emission": 10,
         "minecraft:custom_components": ["ps:ort_bud_growth"],
         "minecraft:friction": 0.4,
         "minecraft:tick": {
