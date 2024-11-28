@@ -1,5 +1,6 @@
 ##---------------------------------
 ##Items---------------------------------
+##Crystals---------------------------------
 item.ps:amethyst_dust.name=Amethyst Dust
 item.ps:glowstone_shard.name=Glowstone Shard
 item.ps:small_glowstone_bud.name=Small Glowstone Bud
@@ -8,6 +9,10 @@ item.ps:large_glowstone_bud.name=Large Glowstone Bud
 item.ps:glowstone_cluster.name=Glowstone Cluster
 item.ps:amethyst_seed.name=Amethyst Seed
 item.ps:glowstone_seed.name=Glowstone Seed
+##Potions---------------------------------
+item.ps.generic_potion.name=Potion of
+##Effects---------------------------------
+item.ps.effect_absorption.name=Absorption
 ##---------------------------------
 ##Blocks---------------------------------
 tile.ps:budding_glowstone.name=Budding Glowstone

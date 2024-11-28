@@ -9,6 +9,9 @@
       }, 
       "components": {
         "minecraft:custom_components": ["ps:oc_potion"],
+        "minecraft:display_name": {
+				  "value": "%potion.moveSpeed.name\n§7%potion.moveSpeed (12:00)\n\n§5When Applied:\n§9+20%% Speed"
+			  },
         "minecraft:tags": {
             "tags": [
                 "speed"
