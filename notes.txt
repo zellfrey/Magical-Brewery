@@ -6,6 +6,8 @@ Make texture for budding seeds DONE
 Add sounds for clusters and buds. DONE
 Change seed crystal growth to onRandomTick
 Add step on function to produce sound. Look into changing pitch/volume for randomness. No need
+add lighting to glowstone clusters DONE
+
 
 
 Rework budding seeds model
@@ -19,3 +21,30 @@ add lighting to glowstone clusters DONE
 Rework budding glowstone texture
 
 torchflower - living flame, healing
+
+potions
+figure out how to add lore
+,
+    "stained_plank_healing":{
+      "textures": [
+                "textures/blocks/base",
+                {
+                    "path": "textures/blocks/overlay",
+                    "tint_color": "#FFFFFF"
+                }
+            ],
+            "additive": true
+    },
+    "stained_plank_regen":{
+      "textures": 
+                {
+                    "path": "textures/blocks/overlay",
+                    "tint_color": "#FFFFFF"
+                }
+
+    }
+
+lang file, full stop is needed in some cases, string must start with "item, tile". Cannot have "potion" regardless of adding unique id of addon, also needs ".name" at the end
+find paintstripper textures file
+Somehow its gone
+Amethyst wind chimes, dipstick
