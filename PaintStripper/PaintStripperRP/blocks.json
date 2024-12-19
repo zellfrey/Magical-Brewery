@@ -3,7 +3,16 @@
   "ps:budding_glowstone":{
     "sound" : "amethyst_block"
   },
-  "ps:cluster_glowstone":{
+  "ps:glowstone_cluster":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:small_glowstone_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:medium_glowstone_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:large_glowstone_bud":{
     "sound" : "amethyst_cluster"
   },
   "ps:seed_amethyst":{
