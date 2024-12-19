@@ -14,7 +14,7 @@
           "value": "item.ps:medium_glowstone_bud.name"
         },
         "minecraft:block_placer": {
-				"block": "ps:cluster_glowstone"
+				"block": "ps:medium_glowstone_bud"
         }
       }
     }

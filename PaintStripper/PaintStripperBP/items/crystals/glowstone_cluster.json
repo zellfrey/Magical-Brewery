@@ -14,7 +14,7 @@
           "value": "item.ps:glowstone_cluster.name"
         },
         "minecraft:block_placer": {
-				"block": "ps:cluster_glowstone"
+				"block": "ps:glowstone_cluster"
         }
       }
     }
