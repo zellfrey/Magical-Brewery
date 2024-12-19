@@ -21,6 +21,15 @@
     },
     "glowstone_cluster":{
       "textures": "textures/blocks/glowstone_cluster.png"
+    },
+    "stained_plank_regeneration":{
+     "textures": "textures/blocks/planks_stained_regeneration.png"
+    },
+    "stained_plank_healing":{
+      "textures": "textures/blocks/planks_stained_regeneration.png"
+    },
+    "stained_plank_swiftness":{
+      "textures": "textures/blocks/planks_stained_regeneration.png"
     }
   }
 } 
