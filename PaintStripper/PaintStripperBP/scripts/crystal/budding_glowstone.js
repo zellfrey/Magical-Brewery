@@ -39,43 +39,6 @@ world.afterEvents.playerBreakBlock.subscribe((e) => {
     }
 });
 
-
-world.beforeEvents.worldInitialize.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:bop_cluster_glowstone', {
-        beforeOnPlayerPlace(e) {
-            const { player, permutationToPlace } = e;
-            //Would prefer if custom blocks can have a "isSolid" component. Also the swing animation still plays if something isnt placeable
-            // const affectedBlock = getBlockFromFace(block, face)
-            // if(!affectedBlock.isSolid){
-            //     e.cancel = true;
-            //     return;
-            // }
-            const equipment = player.getComponent('equippable');
-            const selectedItem = equipment.getEquipment('Mainhand');
-            let stageSize; 
-            
-            if(selectedItem.typeId === "ps:glowstone_cluster"){
-                stageSize = 4;
-            }else{
-                const clusterSize = selectedItem.typeId.split("_")[0].substring(3);
-
-                switch(clusterSize){
-                    case "large":
-                        stageSize = 3;
-                    break;
-                    case "medium":
-                        stageSize = 2;
-                    break;
-                    case "small":
-                        stageSize = 1;
-                    break;
-                }
-            }
-            e.permutationToPlace = permutationToPlace.withState('ps:crystal_stage', stageSize);
-            }
-    });
-});
-
 // world.beforeEvents.worldInitialize.subscribe(eventData => {
 //     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_loot_cluster', {
 //         onPlayerDestroy(e) {
@@ -85,7 +48,57 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
 
 //             const equipment = player.getComponent('equippable');
 //             const selectedItem = equipment.getEquipment('Mainhand');
+//             const enchants = selectedItem.getComponent("minecraft:enchantable");
+//             if(enchants){
+//                 const enchantments = enchants.getEnchantments();
+//                 for (const enchant of enchantments) {
+//                     if (enchant.type.id === "silk_touch") {
+//                         console.warn("i has silk touch")
+//                     }
+//                 }
+//             }
+//             console.warn(selectedItem.typeId)
 //             console.warn("crystal broken")
 //         }
 //     });
 // });
+
+function applyDurabilityDamage(player, item, inventory, slotIndex) {
+    const durabilityComponent = item.getComponent("minecraft:durability");
+    if (durabilityComponent) {
+      const { unbreakingLevel } = getRelevantEnchantments(item);
+      
+      if (Math.random() < 1 / (unbreakingLevel + 1)) {
+        const newDamage = durabilityComponent.damage + 1;
+        if (newDamage >= durabilityComponent.maxDurability) {
+          inventory.container.setItem(slotIndex, undefined);
+          player.playSound("random.break");
+        } else {
+          durabilityComponent.damage = newDamage;
+          inventory.container.setItem(slotIndex, item);
+        }
+      }
+    }
+  }
+  
+  function getRelevantEnchantments(item) {
+    let unbreakingLevel = 0;
+    let hasSilkTouch = false;
+  
+    try {
+        const enchantableComponent = item.getComponent("minecraft:enchantable");
+        if (enchantableComponent) {
+            const enchantments = enchantableComponent.getEnchantments();
+            for (const enchant of enchantments) {
+                if (enchant.type.id === "unbreaking") {
+                    unbreakingLevel = enchant.level;
+                } else if (enchant.type.id === "silk_touch") {
+                    hasSilkTouch = true;
+                }
+            }
+        }
+    } catch (error) {
+        console.warn("Error checking enchantments:", error);
+    }
+    return { unbreakingLevel, hasSilkTouch };
+  }
