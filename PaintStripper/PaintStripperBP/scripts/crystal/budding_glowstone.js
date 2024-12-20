@@ -11,21 +11,33 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
                                     {block:block.south(), face:"south"},{block:block.west(), face:"west"},{block:block.east(), face:"east"},]
             //ive used "block" enough times. Lets spice things up                        
             const availableLumps = blockdAndFaces.filter(parallelepiped => 
-                                                            parallelepiped.block.isAir || parallelepiped.block.typeId === "ps:cluster_glowstone");
-
+                                                            parallelepiped.block.isAir || parallelepiped.block.typeId.slice(-14) === "_glowstone_bud");
+            
             if(availableLumps.length === 0) return;
+            console.warn(availableLumps.length)
 
             const budToGrow = availableLumps[Math.floor(Math.random() * availableLumps.length)]
-            
+            let newSize;
             if(budToGrow.block.isAir){
-                budToGrow.block.setType("ps:cluster_glowstone")
-                budToGrow.block.setPermutation(budToGrow.block.permutation.withState("minecraft:block_face", budToGrow.face)); 
+                newSize ="ps:small_glowstone_bud";
+                console.warn("I am small")
             }
             else{
-                const seedStage = budToGrow.block.permutation.getState('ps:crystal_stage');
-                if(seedStage === 4) return;
-                budToGrow.block.setPermutation(budToGrow.block.permutation.withState('ps:crystal_stage', seedStage+1)); 
+                const budSize =budToGrow.block.typeId.slice(3, -14);
+                console.warn(budSize)
+                switch(budSize){
+                    case "small":
+                        newSize = "ps:medium_glowstone_bud";
+                    break;
+                    case "medium":
+                        newSize = "ps:large_glowstone_bud";
+                    break;
+                    case "large":
+                        newSize = "ps:glowstone_cluster";
+                }
             }
+            budToGrow.block.setType(newSize)
+            budToGrow.block.setPermutation(budToGrow.block.permutation.withState("minecraft:block_face", budToGrow.face));
         }
     });
 });
