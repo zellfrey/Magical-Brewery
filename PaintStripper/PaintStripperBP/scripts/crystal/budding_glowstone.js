@@ -14,13 +14,11 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
                                                             parallelepiped.block.isAir || parallelepiped.block.typeId.slice(-14) === "_glowstone_bud");
             
             if(availableLumps.length === 0) return;
-            console.warn(availableLumps.length)
 
             const budToGrow = availableLumps[Math.floor(Math.random() * availableLumps.length)]
             let newSize;
             if(budToGrow.block.isAir){
                 newSize ="ps:small_glowstone_bud";
-                console.warn("I am small")
             }
             else{
                 const budSize =budToGrow.block.typeId.slice(3, -14);

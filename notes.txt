@@ -43,7 +43,7 @@ figure out how to add lore
                 }
 
     }
-
+scrapped texture overlaying and data driven textures. THey just dont have that POW to them
 lang file, full stop is needed in some cases, string must start with "item, tile". Cannot have "potion" regardless of adding unique id of addon, also needs ".name" at the end
 find paintstripper textures file
 Somehow its gone
