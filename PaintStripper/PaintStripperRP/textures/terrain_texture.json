@@ -26,7 +26,7 @@
      "textures": "textures/blocks/planks_stained_regeneration.png"
     },
     "stained_plank_healing":{
-      "textures": "textures/blocks/planks_stained_regeneration.png"
+      "textures": "textures/blocks/planks_stained_healing.png"
     },
     "stained_plank_swiftness":{
       "textures": "textures/blocks/planks_stained_regeneration.png"

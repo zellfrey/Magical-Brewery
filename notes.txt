@@ -48,3 +48,10 @@ lang file, full stop is needed in some cases, string must start with "item, tile
 find paintstripper textures file
 Somehow its gone
 Amethyst wind chimes, dipstick
+
+v1.21.60  -loot tables
+{
+    "condition": "match_tool",
+    "minecraft:match_tool_filter_all": [ "minecraft:is_pickaxe" ],
+    "minecraft:match_tool_filter_none": [ "minecraft:wooden_tier" ]
+}
