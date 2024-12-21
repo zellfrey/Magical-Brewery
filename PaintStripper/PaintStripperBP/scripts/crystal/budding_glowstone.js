@@ -22,7 +22,6 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             }
             else{
                 const budSize =budToGrow.block.typeId.slice(3, -14);
-                console.warn(budSize)
                 switch(budSize){
                     case "small":
                         newSize = "ps:medium_glowstone_bud";
