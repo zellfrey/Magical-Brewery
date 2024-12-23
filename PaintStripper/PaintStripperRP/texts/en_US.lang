@@ -19,14 +19,22 @@ tile.ps:budding_glowstone.name=Budding Glowstone
 
 ##---------------------------------
 ##Decorative Blocks---------------------------------
-
-##---------------------------------
-##Slabs---------------------------------
-
-##---------------------------------
-##Doors---------------------------------
-
-
+tile.ps:stained_planks_decay.name=Stained Planks of Decay
+tile.ps:stained_planks_harming.name=Stained Planks of Harming
+tile.ps:stained_planks_healing.name=Stained Planks of Healing
+tile.ps:stained_planks_invisibility.name=Stained Planks of Invisibility
+tile.ps:stained_planks_leaping.name=Stained Planks of Leaping
+tile.ps:stained_planks_poison.name=Stained Planks of Poison
+tile.ps:stained_planks_regeneration.name=Stained Planks of Regeneration
+tile.ps:stained_planks_resistance_fire.name=Stained Planks of Fire Resistance
+tile.ps:stained_planks_slow_falling.name=Stained Planks of Slow Falling
+tile.ps:stained_planks_slowness.name=Stained Planks of Slowness
+tile.ps:stained_planks_strength.name=Stained Planks of Strength
+tile.ps:stained_planks_swiftness.name=Stained Planks of Swiftness
+tile.ps:stained_planks_turtle_master.name=Stained Planks of the Turtle Master
+tile.ps:stained_planks_vision_night.name=Stained Planks of Night Vision
+tile.ps:stained_planks_water_breathing.name=Stained Planks of Water Breathing
+tile.ps:stained_planks_weakness.name=Stained Planks of Weakness
 ##---------------------------------
 ##Crops---------------------------------
 

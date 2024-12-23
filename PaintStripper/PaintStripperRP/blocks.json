@@ -20,6 +20,54 @@
   },
   "ps:seed_glowstone":{
     "sound" : "amethyst_block"
+  },
+  "ps:stained_planks_decay":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_harming":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_healing":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_invisibility":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_leaping":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_poison":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_regeneration":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_resistance_fire":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_slow_falling":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_slowness":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_strength":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_swiftness":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_turtle_master":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_vision_night":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_water_breathing":{
+    "sound" : "wood"
+  },
+  "ps:stained_planks_weakness":{
+    "sound" : "wood"
   }
 }
 

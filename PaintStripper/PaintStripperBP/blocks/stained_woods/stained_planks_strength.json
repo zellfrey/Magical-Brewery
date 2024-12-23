@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:stained_plank_swiftness",
+            "identifier": "ps:stained_planks_strength",
             "menu_category": {
                 "category": "construction",
                 "group": "itemGroup.name.planks"
@@ -22,7 +22,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stained_plank_swiftness"
+                    "texture": "stained_planks_strength"
                 }
             },
             "minecraft:geometry": "minecraft:geometry.full_block"

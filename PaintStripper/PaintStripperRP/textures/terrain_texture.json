@@ -22,14 +22,53 @@
     "glowstone_cluster":{
       "textures": "textures/blocks/glowstone_cluster.png"
     },
-    "stained_plank_regeneration":{
-     "textures": "textures/blocks/planks_stained_regeneration.png"
+    "stained_planks_decay":{
+     "textures": "textures/blocks/stained_wood/planks_stained_decay.png"
     },
-    "stained_plank_healing":{
-      "textures": "textures/blocks/planks_stained_healing.png"
+    "stained_planks_harming":{
+      "textures": "textures/blocks/stained_wood/planks_stained_harming.png"
     },
-    "stained_plank_swiftness":{
-      "textures": "textures/blocks/planks_stained_regeneration.png"
+    "stained_planks_healing":{
+      "textures": "textures/blocks/stained_wood/planks_stained_healing.png"
+    },
+    "stained_planks_invisibility":{
+      "textures": "textures/blocks/stained_wood/planks_stained_invisibility.png"
+    },
+    "stained_planks_leaping":{
+      "textures": "textures/blocks/stained_wood/planks_stained_leaping.png"
+    },
+    "stained_planks_poison":{
+      "textures": "textures/blocks/stained_wood/planks_stained_poison.png"
+    },
+    "stained_planks_regeneration":{
+     "textures": "textures/blocks/stained_wood/planks_stained_regeneration.png"
+    },
+    "stained_planks_resistance_fire":{
+      "textures": "textures/blocks/stained_wood/planks_stained_resistance_fire.png"
+    },
+    "stained_planks_slow_falling":{
+      "textures": "textures/blocks/stained_wood/planks_stained_slow_falling.png"
+    },
+    "stained_planks_slowness":{
+      "textures": "textures/blocks/stained_wood/planks_stained_slowness.png"
+    },
+    "stained_planks_strength":{
+      "textures": "textures/blocks/stained_wood/planks_stained_strength.png"
+    },
+    "stained_planks_swiftness":{
+      "textures": "textures/blocks/stained_wood/planks_stained_swiftness.png"
+    },
+    "stained_planks_turtle_master":{
+      "textures": "textures/blocks/stained_wood/planks_stained_turtle_master.png"
+    },
+    "stained_planks_vision_night":{
+      "textures": "textures/blocks/stained_wood/planks_stained_vision_night.png"
+    },
+    "stained_planks_water_breathing":{
+     "textures": "textures/blocks/stained_wood/planks_stained_water_breathing.png"
+    },
+    "stained_planks_weakness":{
+      "textures": "textures/blocks/stained_wood/planks_stained_weakness.png"
     }
   }
 } 
