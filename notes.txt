@@ -61,3 +61,7 @@ HAHAHAH do not implement. All textures broke. Ill do this another time
 
 Some stained wood textures have their names in odd positions e.g "resistance_fire". I want to try and implement other resistance potions
 look into warped planks, may answer data driven textures
+
+add map colour to stained woods
+
+tiered glass bottles

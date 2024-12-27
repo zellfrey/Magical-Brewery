@@ -2,6 +2,7 @@ import {world, system, ItemStack } from "@minecraft/server";
 import {getAdjacentBlock, getBlockFromFace} from "blockPlacementUtils.js";
 import "./crystal/budding_glowstone.js"
 import "./potions.js"
+import "./slabStained.js"
 world.beforeEvents.worldInitialize.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:seed_test', {
         onPlayerInteract(e) {
