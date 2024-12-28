@@ -1,0 +1,98 @@
+{
+	"format_version": "1.21.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "ps:stained_slab_poison",
+			"menu_category": {
+				"category": "construction",
+                "group": "itemGroup.name.slab"
+			},
+			"traits": {
+				"minecraft:placement_position": {
+				  "enabled_states": ["minecraft:vertical_half"]
+				}
+			},
+			"states": {
+				"ps:double": [false, true]
+			  }
+		},
+		"components": {
+			"minecraft:custom_components": ["ps:before_on_place_rotatable_slab"],
+			"tag:slab": {},
+			"minecraft:light_dampening": 4,
+            "minecraft:destructible_by_mining": { 
+                "seconds_to_destroy": 2
+            },
+            "minecraft:flammable": { 
+                "catch_chance_modifier": 5,
+                "destroy_chance_modifier": 20
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 3
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "stained_planks_poison"
+                }
+            },
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"can_contain_liquid": true
+					}
+				]
+			},
+			"minecraft:geometry": { 
+				  "identifier": "geometry.slab",
+				  "bone_visibility": { 
+					"slab_top": "q.block_state('minecraft:vertical_half') == 'top'", 
+					"slab_bottom": "q.block_state('minecraft:vertical_half') == 'bottom'" 
+					}
+			}
+		},
+		"permutations": [
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && !q.block_state('ps:double')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [-8, 0, -8],
+                        "size": [16, 8, 16]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [-8, 0, -8],
+                        "size": [16, 8, 16 ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && !q.block_state('ps:double')",
+                "components": {
+                    "minecraft:collision_box": {
+                        "origin": [-8, 8, -8],
+                        "size": [16, 8, 16]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [-8, 8, -8],
+                        "size": [16, 8, 16]
+                    }
+                }
+            },
+			{
+				"condition": "q.block_state('ps:double')",
+				"components": {
+					"minecraft:custom_components": ["ps:on_player_destroy_slab"],
+					"minecraft:geometry": "minecraft:geometry.full_block",
+					"minecraft:liquid_detection": {
+						"detection_rules": [
+							{
+								"liquid_type": "water",
+								"can_contain_liquid": false
+							}
+						]
+					}
+				}
+			}
+		]
+	}
+}

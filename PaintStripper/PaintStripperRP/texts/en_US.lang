@@ -35,6 +35,22 @@ tile.ps:stained_planks_turtle_master.name=Stained Planks of the Turtle Master
 tile.ps:stained_planks_vision_night.name=Stained Planks of Night Vision
 tile.ps:stained_planks_water_breathing.name=Stained Planks of Water Breathing
 tile.ps:stained_planks_weakness.name=Stained Planks of Weakness
+tile.ps:stained_slab_decay.name=Stained Slab of Decay
+tile.ps:stained_slab_harming.name=Stained Slab of Harming
+tile.ps:stained_slab_healing.name=Stained Slab of Healing
+tile.ps:stained_slab_invisibility.name=Stained Slab of Invisibility
+tile.ps:stained_slab_leaping.name=Stained Slab of Leaping
+tile.ps:stained_slab_poison.name=Stained Slab of Poison
+tile.ps:stained_slab_regeneration.name=Stained Slab of Regeneration
+tile.ps:stained_slab_resistance_fire.name=Stained Slab of Fire Resistance
+tile.ps:stained_slab_slow_falling.name=Stained Slab of Slow Falling
+tile.ps:stained_slab_slowness.name=Stained Slab of Slowness
+tile.ps:stained_slab_strength.name=Stained Slab of Strength
+tile.ps:stained_slab_swiftness.name=Stained Slab of Swiftness
+tile.ps:stained_slab_turtle_master.name=Stained Slab of the Turtle Master
+tile.ps:stained_slab_vision_night.name=Stained Slab of Night Vision
+tile.ps:stained_slab_water_breathing.name=Stained Slab of Water Breathing
+tile.ps:stained_slab_weakness.name=Stained Slab of Weakness
 ##---------------------------------
 ##Crops---------------------------------
 

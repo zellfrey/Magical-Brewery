@@ -68,6 +68,54 @@
   },
   "ps:stained_planks_weakness":{
     "sound" : "wood"
+  },
+  "ps:stained_slab_decay":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_harming":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_healing":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_invisibility":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_leaping":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_poison":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_regeneration":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_resistance_fire":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_slow_falling":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_slowness":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_strength":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_swiftness":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_turtle_master":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_vision_night":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_water_breathing":{
+    "sound" : "wood"
+  },
+  "ps:stained_slab_weakness":{
+    "sound" : "wood"
   }
 }
 
