@@ -12,22 +12,40 @@
 			"textures": "textures/items/glowstone_shard.png"
 		},
       "small_glowstone_bud":{
-      "textures": "textures/blocks/small_glowstone_bud.png"
+      "textures": "textures/blocks/crystals/small_glowstone_bud.png"
       },
       "medium_glowstone_bud":{
-         "textures": "textures/blocks/medium_glowstone_bud.png"
+         "textures": "textures/blocks/crystals/medium_glowstone_bud.png"
       },
       "large_glowstone_bud":{
-         "textures": "textures/blocks/large_glowstone_bud.png"
+         "textures": "textures/blocks/crystals/large_glowstone_bud.png"
       },
       "glowstone_cluster":{
-         "textures": "textures/blocks/glowstone_cluster.png"
+         "textures": "textures/blocks/crystals/glowstone_cluster.png"
       },
-      "amethyst_seed":{
-			"textures": "textures/items/amethyst_seed.png"
-		},
       "glowstone_seed":{
 			"textures": "textures/items/glowstone_seed.png"
+		},
+      "redstone_shard":{
+			"textures": "textures/items/redstone_shard.png"
+		},
+      "small_redstone_bud":{
+      "textures": "textures/blocks/crystals/small_redstone_bud.png"
+      },
+      "medium_redstone_bud":{
+         "textures": "textures/blocks/crystals/medium_redstone_bud.png"
+      },
+      "large_redstone_bud":{
+         "textures": "textures/blocks/crystals/large_redstone_bud.png"
+      },
+      "redstone_cluster":{
+         "textures": "textures/blocks/crystals/redstone_cluster.png"
+      },
+      "redstone_seed":{
+			"textures": "textures/items/redstone_seed.png"
+		},
+      "amethyst_seed":{
+			"textures": "textures/items/amethyst_seed.png"
 		}
    }
 }
