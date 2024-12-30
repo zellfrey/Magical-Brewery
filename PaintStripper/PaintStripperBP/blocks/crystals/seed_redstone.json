@@ -21,7 +21,7 @@
         "minecraft:placement_filter": {
             "conditions": [
                 {
-                    "block_filter": ["minecraft:redstone_ore"]
+                    "block_filter": ["minecraft:redstone_ore","minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore"]
                 }
             ]
         },
