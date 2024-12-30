@@ -15,7 +15,16 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             if (!selectedItem || selectedItem.typeId != "minecraft:bone_meal") return;
             
             if(seedStage == 4){
-                block.setType("minecraft:budding_amethyst")
+                switch(block.typeId){
+                    case "ps:seed_amethyst":
+                        block.setType("minecraft:budding_amethyst");
+                    break;
+                    case "ps:seed_glowstone":
+                        block.setType("ps:budding_glowstone");
+                    break;
+                    case "ps:seed_redstone":
+                        block.setType("ps:budding_redstone");
+                }
             }else{
                 block.setPermutation(block.permutation.withState('ps:crystal_stage', seedStage+1)); 
             }

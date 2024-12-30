@@ -67,4 +67,14 @@ add map colour to stained woods
 tiered glass bottles
 
 TODO reduce light emissions with redstone clusters
-TODO, implement a different growing method
+TODO, implement a different growing method,
+was thinking pushing the player to stay in the environment where they originally obtained the block, e.g budding glowstone would have to be grown in the nether.
+However, thinking further down the line theres either 2 possible routes to take. Either, enforce this and make the player have to invest in another area
+which can push the player in the comfort zone and hopefully feel more invested in this. The only issue i see with this method(still using budding glowstone as context)
+is that in multiplayer a lot of big servers do reset their dimension which could detriment a players time invested in setting up said areas.
+The other option is to have farms that "immitate" the environment where the original block came from. I.e have players place netherrack or soulsand around said budding
+glowstone to "encourage" growth. Critiquing this idea is that over the years of seeing modded content, min/maxing really butchers the thematics of a mod breaking it down
+into a game of maths(which okay fair, a lot of games rely on maths to bring the illusion of life)
+So yeah? questions
+maybe worth having a book due to the expansive nature of the addon. 
+Crystal tree, named aptly as Crystallography 

@@ -24,6 +24,7 @@ item.ps.effect_absorption.name=Absorption
 ##---------------------------------
 ##Blocks---------------------------------
 tile.ps:budding_glowstone.name=Budding Glowstone
+tile.ps:budding_redstone.name=Budding Redstone
 
 ##---------------------------------
 ##Decorative Blocks---------------------------------
