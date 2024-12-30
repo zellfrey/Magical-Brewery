@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:item": {
+      "description": {
+        "identifier": "ps:redstone_shard",
+        "menu_category": {
+                "category": "items"
+            }
+      }, 
+      "components": {
+        "minecraft:hand_equipped": false,
+        "minecraft:icon": "redstone_shard",
+        "minecraft:display_name":{
+          "value": "item.ps:redstone_shard.name"
+        }
+      }
+    }
+  }

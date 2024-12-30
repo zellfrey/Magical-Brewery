@@ -15,12 +15,31 @@
   "ps:large_glowstone_bud":{
     "sound" : "amethyst_cluster"
   },
-  "ps:seed_amethyst":{
-    "sound" : "amethyst_block"
-  },
   "ps:seed_glowstone":{
     "sound" : "amethyst_block"
   },
+  "ps:budding_redstone":{
+    "sound" : "amethyst_block"
+  },
+  "ps:redstone_cluster":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:small_redstone_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:medium_redstone_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:large_redstone_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:seed_redstone":{
+    "sound" : "amethyst_block"
+  },
+  "ps:seed_amethyst":{
+    "sound" : "amethyst_block"
+  },
+  
   "ps:stained_planks_decay":{
     "sound" : "wood"
   },

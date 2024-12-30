@@ -22,6 +22,9 @@
     "glowstone_cluster":{
       "textures": "textures/blocks/crystals/glowstone_cluster.png"
     },
+    "budding_redstone":{
+      "textures": "textures/blocks/crystals/budding_glowstone.png"
+    },
     "small_redstone_bud":{
       "textures": "textures/blocks/crystals/small_redstone_bud.png"
     },

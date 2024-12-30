@@ -65,3 +65,6 @@ look into warped planks, may answer data driven textures
 add map colour to stained woods
 
 tiered glass bottles
+
+TODO reduce light emissions with redstone clusters
+TODO, implement a different growing method

@@ -2,13 +2,21 @@
 ##Items---------------------------------
 ##Crystals---------------------------------
 item.ps:amethyst_dust.name=Amethyst Dust
+item.ps:amethyst_seed.name=Amethyst Seed
 item.ps:glowstone_shard.name=Glowstone Shard
 item.ps:small_glowstone_bud.name=Small Glowstone Bud
 item.ps:medium_glowstone_bud.name=Medium Glowstone Bud
 item.ps:large_glowstone_bud.name=Large Glowstone Bud
 item.ps:glowstone_cluster.name=Glowstone Cluster
-item.ps:amethyst_seed.name=Amethyst Seed
 item.ps:glowstone_seed.name=Glowstone Seed
+item.ps:redstone_shard.name=Redstone Shard
+item.ps:small_redstone_bud.name=Small Redstone Bud
+item.ps:medium_redstone_bud.name=Medium Redstone Bud
+item.ps:large_redstone_bud.name=Large Redstone Bud
+item.ps:redstone_cluster.name=Redstone Cluster
+item.ps:redstone_seed.name=Redstone Seed
+
+
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
