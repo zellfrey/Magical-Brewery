@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "ps:glassmith_hammer",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:custom_components": ["ps:on_use_on_hammer"],
+            "minecraft:damage": 2,
+            "minecraft:durability": {
+                "max_durability": 36
+            },
+            "minecraft:hand_equipped": {
+                "value": true
+            },
+            "minecraft:icon": "redstone_shard",
+            "minecraft:display_name":{
+            "value": "item.ps:glassmith_hammer.name"
+            }
+        }
+    }
+}

@@ -15,7 +15,7 @@ item.ps:medium_redstone_bud.name=Medium Redstone Bud
 item.ps:large_redstone_bud.name=Large Redstone Bud
 item.ps:redstone_cluster.name=Redstone Cluster
 item.ps:redstone_seed.name=Redstone Seed
-
+item.ps:glassmith_hammer.name=Glassmith's Hammer
 
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of

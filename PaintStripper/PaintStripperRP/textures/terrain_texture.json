@@ -4,8 +4,14 @@
   "padding": 8, 
   "num_mip_levels": 4, 
   "texture_data": {
-    "seed_amethyst":{
-      "textures": "textures/items/item_placeholder.png"
+    "amethyst_seed":{
+      "textures": "textures/items/amethyst_seed.png"
+    },
+    "glowstone_seed":{
+      "textures": "textures/items/glowstone_seed.png"
+    },
+    "redstone_seed":{
+      "textures": "textures/items/redstone_seed.png"
     },
     "budding_glowstone":{
       "textures": "textures/blocks/crystals/budding_glowstone.png"
@@ -36,6 +42,15 @@
     },
     "redstone_cluster":{
       "textures": "textures/blocks/crystals/redstone_cluster.png"
+    },
+    "growing_bud_amethyst":{
+      "textures": "textures/blocks/budding_amethyst"
+    },
+    "growing_bud_glowstone":{
+      "textures": "textures/blocks/crystals/budding_glowstone.png"
+    },
+    "growing_bud_redstone":{
+      "textures": "textures/blocks/crystals/budding_glowstone.png"
     },
     "stained_planks_decay":{
      "textures": "textures/blocks/stained_woods/planks_stained_decay.png"

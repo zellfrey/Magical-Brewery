@@ -1,0 +1,167 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+      "description": {
+        "identifier": "ps:growing_crystal",
+        "menu_category": {
+            "category": "none",
+            "is_hidden_in_commands": true
+        },
+        "traits": {
+          "minecraft:placement_position": {
+            "enabled_states": ["minecraft:block_face"]
+          }
+        },
+        "states": {
+          "ps:crystal_stage": [1,2,3,4],
+          "ps:crystal_type": ["amethyst","glowstone","redstone"]
+        }
+      },
+      "components": {
+        "minecraft:custom_components": ["ps:seed_test"],
+        "minecraft:friction": 0.4,
+        "minecraft:placement_filter": {
+            "conditions": [
+                {
+                    "block_filter": ["minecraft:budding_amethyst", "minecraft:glowstone", "minecraft:redstone_ore",
+                    "minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore"]
+                }
+            ]
+        },
+        "minecraft:geometry":{
+            "identifier":"geometry.growing_crystal",
+            "bone_visibility": { 
+                "stage1": "q.block_state('ps:crystal_stage') == 1", 
+                "stage2": "q.block_state('ps:crystal_stage') == 2",
+                "stage3": "q.block_state('ps:crystal_stage') == 3", 
+                "stage4": "q.block_state('ps:crystal_stage') == 4" 
+            }
+        }
+      },
+      "permutations": [
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'north'",
+            "components": {
+            "minecraft:transformation": { "rotation": [-90, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'south'",
+            "components": {
+                "minecraft:transformation": { "rotation": [90, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'west'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 0, 90] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'east'",
+            "components": {
+                "minecraft:transformation": { "rotation": [0, 0, -90] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'up'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'down'",
+            "components": {
+                "minecraft:transformation": { "rotation": [-180, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_stage') == 1",
+            "components": {
+                "minecraft:collision_box": {
+                    "origin": [-1, 0, -1],
+                    "size": [2, 2, 2]
+                },
+                "minecraft:selection_box": {
+                    "origin": [-1.0, 0.0, -1.0],
+                    "size": [2.0, 2.0, 2.0]
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_stage') == 2",
+            "components": {
+                "minecraft:collision_box": {
+                    "origin": [-2, 0, -2],
+                    "size": [4, 4, 4]
+                },
+                "minecraft:selection_box": {
+                    "origin": [-2.0, 0.0, -2.0],
+                    "size": [4.0, 4.0, 4.0]
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_stage') == 3",
+            "components": {
+                "minecraft:collision_box": {
+                    "origin": [-4, 0, -4],
+                    "size": [8, 8, 8]
+                },
+                "minecraft:selection_box": {
+                    "origin": [-4.0, 0.0, -4.0],
+                    "size": [8.0, 8.0, 8.0]
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_stage') == 4",
+            "components": {
+                "minecraft:collision_box": {
+                    "origin": [-6, 0, -6],
+                    "size": [12, 12, 12]
+                },
+                "minecraft:selection_box": {
+                    "origin": [-6.0, 0.0, -6.0],
+                    "size": [12.0, 12.0, 12.0]
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_type') == 'amethyst'",
+            "components": {
+            "minecraft:material_instances": {
+                    "*": {
+                    "texture": "growing_bud_amethyst"
+                    }
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_type') == 'glowstone'",
+            "components": {
+                "minecraft:light_emission": 4,
+                "minecraft:material_instances": {
+                    "*": {
+                        "texture": "growing_bud_glowstone",
+                        "render_method": "alpha_test",
+                        "face_dimming": false,
+                        "ambient_occlusion": false
+                    }
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_type') == 'redstone'",
+            "components": {
+                "minecraft:material_instances": {
+                    "*": {
+                    "texture": "growing_bud_redstone"
+                    }
+                }
+            }
+        }
+      ]
+    }
+  }
+    

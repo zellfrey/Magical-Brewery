@@ -13,11 +13,12 @@
           }
         },
         "states": {
-          "ps:crystal_stage": [1,2,3,4]
+          "ps:seed_depth": [1,2,3,4]
         }
       },
       "components": {
-        "minecraft:custom_components": ["ps:seed_test"],
+        "tag:crystal_seed": {},
+        "minecraft:loot": "loot_tables/blocks/crystals/seed_amethyst.json",
         "minecraft:placement_filter": {
             "conditions": [
                 {
@@ -28,16 +29,24 @@
         "minecraft:friction": 0.4,
         "minecraft:material_instances": {
             "*": {
-            "texture": "seed_amethyst"
+                "texture": "amethyst_seed",
+                "render_method": "alpha_test",
+                "face_dimming": false,
+                "ambient_occlusion": false
             }
+        },
+        "minecraft:collision_box": false,
+        "minecraft:selection_box": {
+            "origin": [-2.0, 0.0, -2.0],
+            "size": [4.0, 8.0, 4.0]
         },
         "minecraft:geometry":{
             "identifier":"geometry.seed_crystal",
             "bone_visibility": { 
-                "stage1": "q.block_state('ps:crystal_stage') == 1", 
-                "stage2": "q.block_state('ps:crystal_stage') == 2",
-                "stage3": "q.block_state('ps:crystal_stage') == 3", 
-                "stage4": "q.block_state('ps:crystal_stage') == 4" 
+                "depth1": "q.block_state('ps:seed_depth') == 1", 
+                "depth2": "q.block_state('ps:seed_depth') == 2",
+                "depth3": "q.block_state('ps:seed_depth') == 3",
+                "depth4": "q.block_state('ps:seed_depth') == 4"
             }
         }
       },
@@ -79,58 +88,18 @@
             }
         },
         {
-            "condition": "query.block_state('ps:crystal_stage') == 1",
+            "condition": "query.block_state('ps:seed_depth') == 4",
             "components": {
-                "minecraft:collision_box": {
-                    "origin": [-1, 0, -1],
-                    "size": [2, 2, 2]
-                },
-                "minecraft:selection_box": {
-                    "origin": [-1.0, 0.0, -1.0],
-                    "size": [2.0, 2.0, 2.0]
-                }
-            }
-        },
-        {
-            "condition": "query.block_state('ps:crystal_stage') == 2",
-            "components": {
-                "minecraft:collision_box": {
-                    "origin": [-2, 0, -2],
-                    "size": [4, 4, 4]
+                "minecraft:custom_components": ["ps:ort_seed_to_crystal"],
+                "minecraft:tick": {
+                    "interval_range": [20,20]
                 },
                 "minecraft:selection_box": {
                     "origin": [-2.0, 0.0, -2.0],
-                    "size": [4.0, 4.0, 4.0]
-                }
-            }
-        },
-        {
-            "condition": "query.block_state('ps:crystal_stage') == 3",
-            "components": {
-                "minecraft:collision_box": {
-                    "origin": [-4, 0, -4],
-                    "size": [8, 8, 8]
-                },
-                "minecraft:selection_box": {
-                    "origin": [-4.0, 0.0, -4.0],
-                    "size": [8.0, 8.0, 8.0]
-                }
-            }
-        },
-        {
-            "condition": "query.block_state('ps:crystal_stage') == 4",
-            "components": {
-                "minecraft:collision_box": {
-                    "origin": [-6, 0, -6],
-                    "size": [12, 12, 12]
-                },
-                "minecraft:selection_box": {
-                    "origin": [-6.0, 0.0, -6.0],
-                    "size": [12.0, 12.0, 12.0]
+                    "size": [4.0, 2.0, 4.0]
                 }
             }
         }
       ]
     }
   }
-    
