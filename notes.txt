@@ -78,3 +78,17 @@ into a game of maths(which okay fair, a lot of games rely on maths to bring the 
 So yeah? questions
 maybe worth having a book due to the expansive nature of the addon. 
 Crystal tree, named aptly as Crystallography 
+
+TODO: Glassmith hammer texture
+TODO: Glassmith chisel
+TODO: Chiselled stone texture for crystal growth
+TODO: growing crystal model
+TODO: growing crystal texture re-vamp
+TODO: growing crystal loot tables
+TODO: budding glowstone & redstone revamp of textures
+TODO: script file shuffle
+TODO: change crystal growth to onRandomTick
+TODO: implement dev tool to test various mechanics
+
+TODO: rework redstone cluster textures?
+
