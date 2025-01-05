@@ -46,6 +46,15 @@
 		},
       "amethyst_seed":{
 			"textures": "textures/items/amethyst_seed.png"
+		},
+      "glassmith_hammer":{
+			"textures": "textures/items/glassmith_hammer.png"
+		},
+      "glassmith_chisel":{
+			"textures": "textures/items/glassmith_chisel.png"
+		},
+      "ageless_pocket_watch":{
+			"textures": "textures/items/ageless_pocket_watch.png"
 		}
    }
 }
