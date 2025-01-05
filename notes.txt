@@ -9,17 +9,6 @@ Add step on function to produce sound. Look into changing pitch/volume for rando
 add lighting to glowstone clusters DONE
 
 
-
-Rework budding seeds model
-
-
-
-
-add lighting to glowstone clusters DONE
-
-
-Rework budding glowstone texture
-
 torchflower - living flame, healing
 
 potions
@@ -79,16 +68,19 @@ So yeah? questions
 maybe worth having a book due to the expansive nature of the addon. 
 Crystal tree, named aptly as Crystallography 
 
-TODO: Glassmith hammer texture
+TODO: Glassmith hammer texture --- Possibly temp, we shall see
 TODO: Glassmith chisel
 TODO: Chiselled stone texture for crystal growth
 TODO: growing crystal model
 TODO: growing crystal texture re-vamp
-TODO: growing crystal loot tables
+TODO: growing crystal loot tables - DONE
 TODO: budding glowstone & redstone revamp of textures
-TODO: script file shuffle
-TODO: change crystal growth to onRandomTick
+TODO: script file shuffle  --- 50% done, i think?
+TODO: change crystal growth to onRandomTick - DONE
 TODO: implement dev tool to test various mechanics
-
+TODO: implement spawning of particles on hitting a seed -- DONE
+TODO: change sound of "hitting" a seed
+TODO: refactor budding code
+TODO: implement budding redstone
 TODO: rework redstone cluster textures?
 

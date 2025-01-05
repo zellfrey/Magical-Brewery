@@ -18,7 +18,10 @@
         }
       },
       "components": {
-        "minecraft:custom_components": ["ps:seed_test"],
+        "minecraft:custom_components": ["ps:ort_crystal_growth"],
+        "minecraft:tick": {
+          "interval_range": [20,20]
+		},
         "minecraft:friction": 0.4,
         "minecraft:placement_filter": {
             "conditions": [
@@ -130,16 +133,18 @@
         {
             "condition": "query.block_state('ps:crystal_type') == 'amethyst'",
             "components": {
-            "minecraft:material_instances": {
-                    "*": {
-                    "texture": "growing_bud_amethyst"
+                "minecraft:loot": "loot_tables/blocks/crystals/seed_amethyst.json",
+                "minecraft:material_instances": {
+                        "*": {
+                        "texture": "growing_bud_amethyst"
+                        }
                     }
-                }
             }
         },
         {
             "condition": "query.block_state('ps:crystal_type') == 'glowstone'",
             "components": {
+                "minecraft:loot": "loot_tables/blocks/crystals/seed_glowstone.json",
                 "minecraft:light_emission": 4,
                 "minecraft:material_instances": {
                     "*": {
@@ -154,6 +159,7 @@
         {
             "condition": "query.block_state('ps:crystal_type') == 'redstone'",
             "components": {
+                "minecraft:loot": "loot_tables/blocks/crystals/seed_redstone.json",
                 "minecraft:material_instances": {
                     "*": {
                     "texture": "growing_bud_redstone"
