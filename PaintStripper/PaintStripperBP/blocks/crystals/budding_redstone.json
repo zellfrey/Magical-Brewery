@@ -9,7 +9,7 @@
       },
       "components": {
         "minecraft:light_emission": 2,
-        "minecraft:custom_components": ["ps:ort_bud_growth"],
+        "minecraft:custom_components": ["ps:ort_bud_redstone_growth"],
         "minecraft:friction": 0.4,
         "minecraft:tick": {
           "interval_range": [20,20]
