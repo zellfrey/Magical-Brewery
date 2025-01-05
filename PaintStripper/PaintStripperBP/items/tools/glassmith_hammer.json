@@ -16,7 +16,7 @@
             "minecraft:hand_equipped": {
                 "value": true
             },
-            "minecraft:icon": "redstone_shard",
+            "minecraft:icon": "glassmith_hammer",
             "minecraft:display_name":{
             "value": "item.ps:glassmith_hammer.name"
             }
