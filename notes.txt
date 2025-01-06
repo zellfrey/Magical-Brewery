@@ -68,6 +68,22 @@ So yeah? questions
 maybe worth having a book due to the expansive nature of the addon. 
 Crystal tree, named aptly as Crystallography 
 
+Cool shit i thought about last night. Thanks brain i only got 4 hours asleep.
+
+energised crystals; 
+2nd or 3rd step to increasing the potency or duration of potions. Created by adding a shard(glowstone, redstone, echo, or ender pearl?) into an amethyst/gold jar between
+2 quartz "pylons". On top of the device is a lightning rod. When the rod is struck with lightning its energy is transferred to the shard creating an energised crystal enhancing
+the effects of said shard.
+
+rtp potions;
+Utilisation of ender pearls. Instead of the play being able to directly controlling the direction of teleportation, this broken down liquified ender pearl will
+randomly teleport a player a certain range. Increases the potency of the potion increases the range of blocks that the player could teleport at.
+
+echo potion
+Utilisation of echo shards. At the time of consumption, the players location is saved. When the duration of the effect ends, the player is teleported and returns to the location
+when they drunk the potion. duration increases the time the effect lasts. Potency doesnt do anything. However, an energized echo potion can be "linked" with an echo shard pylon
+almost acting as a return node for players.
+
 TODO: Glassmith hammer texture --- Possibly temp, we shall see
 TODO: Glassmith chisel
 TODO: Chiselled stone texture for crystal growth
