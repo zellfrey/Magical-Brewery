@@ -22,7 +22,7 @@
         "minecraft:placement_filter": {
             "conditions": [
                 {
-                    "block_filter": ["minecraft:glowstone"]
+                    "block_filter": ["minecraft:glowstone", "ps:budding_glowstone"]
                 }
             ]
         },
