@@ -1,0 +1,95 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+      "description": {
+        "identifier": "ps:chiselled_crystal",
+        "menu_category": {
+            "category": "none",
+            "is_hidden_in_commands": true
+        },
+        "traits": {
+          "minecraft:placement_position": {
+            "enabled_states": ["minecraft:block_face"]
+          }
+        },
+        "states": {
+          "ps:chisel_size": [1,2,3,4,5],
+          "ps:crystal_type": ["amethyst","glowstone","redstone"]
+        }
+      },
+      "components": {
+        "tag:chiselled_rock": {},
+        "minecraft:placement_filter": {
+            "conditions": [
+                {
+                    "block_filter": ["minecraft:budding_amethyst", "minecraft:glowstone", "ps:budding_glowstone", "minecraft:redstone_ore",
+                    "minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", "ps:budding_redstone"]
+                }
+            ]
+        },
+        "minecraft:friction": 0.4,
+        "minecraft:material_instances": {
+            "*": {
+                "texture": "chiselled_rock",
+                "render_method": "double_sided",
+                "face_dimming": false,
+                "ambient_occlusion": false
+            }
+        },
+        "minecraft:collision_box": false,
+        "minecraft:selection_box": {
+            "origin": [-8.0, 0.0, -8.0],
+            "size": [16.0, 1.0, 16.0]
+        },
+        "minecraft:geometry":{
+            "identifier":"geometry.chiselled_crack",
+            "bone_visibility": { 
+                "crack1": "q.block_state('ps:chisel_size') == 1", 
+                "crack2": "q.block_state('ps:chisel_size') == 2",
+                "crack3": "q.block_state('ps:chisel_size') == 3",
+                "crack4": "q.block_state('ps:chisel_size') == 4",
+                "crack5": "q.block_state('ps:chisel_size') == 5"
+            }
+        }
+      },
+      "permutations": [
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'north'",
+            "components": {
+            "minecraft:transformation": { "rotation": [-90, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'south'",
+            "components": {
+                "minecraft:transformation": { "rotation": [90, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'west'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 0, 90] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'east'",
+            "components": {
+                "minecraft:transformation": { "rotation": [0, 0, -90] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'up'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'down'",
+            "components": {
+                "minecraft:transformation": { "rotation": [-180, 0, 0] }
+            }
+        }
+      ]
+    }
+  }
+    

@@ -4,6 +4,9 @@
   "padding": 8, 
   "num_mip_levels": 4, 
   "texture_data": {
+    "chiselled_rock":{
+      "textures": "textures/blocks/chiselled_rock_temp.png"
+    },
     "amethyst_seed":{
       "textures": "textures/items/amethyst_seed.png"
     },
@@ -29,7 +32,7 @@
       "textures": "textures/blocks/crystals/glowstone_cluster.png"
     },
     "budding_redstone":{
-      "textures": "textures/blocks/crystals/budding_glowstone.png"
+      "textures": "textures/blocks/crystals/budding_redstone.png"
     },
     "small_redstone_bud":{
       "textures": "textures/blocks/crystals/small_redstone_bud.png"

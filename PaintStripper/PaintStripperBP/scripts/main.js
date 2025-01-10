@@ -1,5 +1,5 @@
 import {world, system, ItemStack } from "@minecraft/server";
-import {getAdjacentBlock, getBlockFromFace} from "blockPlacementUtils.js";
+import {getAdjacentBlock, getBlockFromFace} from "./utils/blockPlacementUtils.js";
 import "./crystal/buddingGlowstone.js"
 import "./crystal/growingCrystal.js"
 import "./tools/glassmithHammer.js"

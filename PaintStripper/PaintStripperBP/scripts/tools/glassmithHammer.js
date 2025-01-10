@@ -9,11 +9,15 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             const seedDepth = block.permutation.getState("ps:seed_depth")
             if(seedDepth != 4){
                 block.setPermutation(block.permutation.withState("ps:seed_depth", seedDepth+1));
-                block.dimension.spawnParticle("minecraft:critical_hit_emitter", block.center()) 
+                block.dimension.spawnParticle("minecraft:critical_hit_emitter", block.center()); 
+                world.playSound('hit.amethyst_block', block.location);
+            }
+            else{
+                world.playSound('dig.stone', block.location);
             }
 
             // Dimension.playSound("hit.amethyst_block", block.location, {volume: 0.8, pitch: 1.2});
-            world.playSound('hit.amethyst_block', block.location);
+            
         }
     });
 });

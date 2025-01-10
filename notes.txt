@@ -32,6 +32,7 @@ figure out how to add lore
                 }
 
     }
+    fbda74
 scrapped texture overlaying and data driven textures. THey just dont have that POW to them
 lang file, full stop is needed in some cases, string must start with "item, tile". Cannot have "potion" regardless of adding unique id of addon, also needs ".name" at the end
 find paintstripper textures file
@@ -84,19 +85,26 @@ Utilisation of echo shards. At the time of consumption, the players location is 
 when they drunk the potion. duration increases the time the effect lasts. Potency doesnt do anything. However, an energized echo potion can be "linked" with an echo shard pylon
 almost acting as a return node for players.
 
+in order to get echo shards maybe implement something that causes quartz crystals to be "infected" by echo shards
+possibly get echo shards by using sculk blocks
+
+TODO: implement spawning of particles on hitting a seed -- DONE
+TODO: growing crystal loot tables - DONE
+TODO: change crystal growth to onRandomTick - DONE - Slow down?/balance
+
 TODO: Glassmith hammer texture --- Possibly temp, we shall see
 TODO: Glassmith chisel
 TODO: Chiselled stone texture for crystal growth
 TODO: growing crystal model
 TODO: growing crystal texture re-vamp
-TODO: growing crystal loot tables - DONE
 TODO: budding glowstone & redstone revamp of textures
 TODO: script file shuffle  --- 50% done, i think?
-TODO: change crystal growth to onRandomTick - DONE
 TODO: implement dev tool to test various mechanics
-TODO: implement spawning of particles on hitting a seed -- DONE
 TODO: change sound of "hitting" a seed
 TODO: refactor budding code
 TODO: implement budding redstone
 TODO: rework redstone cluster textures?
+TODO: find more appropriate sound for hammer and chisel use
 
+cant seem to work out a way for the texture so stand above the current block, will have to work on it. Or scrap the idea if it doesnt come out
+entirely how i want it

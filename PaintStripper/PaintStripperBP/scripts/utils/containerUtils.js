@@ -80,3 +80,43 @@ export function removeItemAmount(container, item, amount){
         }
     }
 }
+
+function applyDurabilityDamage(player, item, inventory, slotIndex) {
+    const durabilityComponent = item.getComponent("minecraft:durability");
+    if (durabilityComponent) {
+      const { unbreakingLevel } = getRelevantEnchantments(item);
+      
+      if (Math.random() < 1 / (unbreakingLevel + 1)) {
+        const newDamage = durabilityComponent.damage + 1;
+        if (newDamage >= durabilityComponent.maxDurability) {
+          inventory.container.setItem(slotIndex, undefined);
+          player.playSound("random.break");
+        } else {
+          durabilityComponent.damage = newDamage;
+          inventory.container.setItem(slotIndex, item);
+        }
+      }
+    }
+  }
+  
+function getRelevantEnchantments(item) {
+    let unbreakingLevel = 0;
+    let hasSilkTouch = false;
+
+    try {
+        const enchantableComponent = item.getComponent("minecraft:enchantable");
+        if (enchantableComponent) {
+            const enchantments = enchantableComponent.getEnchantments();
+            for (const enchant of enchantments) {
+                if (enchant.type.id === "unbreaking") {
+                    unbreakingLevel = enchant.level;
+                } else if (enchant.type.id === "silk_touch") {
+                    hasSilkTouch = true;
+                }
+            }
+        }
+    } catch (error) {
+        console.warn("Error checking enchantments:", error);
+    }
+    return { unbreakingLevel, hasSilkTouch };
+}
