@@ -7,34 +7,30 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             const { block } = e;
             if(Math.floor(Math.random() * 100) > 20) return;
             
-            const blockdAndFaces = [{block:block.above(), face:"up"},{block:block.below(), face:"down"},{block:block.north(), face:"north"}, 
-                                    {block:block.south(), face:"south"},{block:block.west(), face:"west"},{block:block.east(), face:"east"},]
-            //ive used "block" enough times. Lets spice things up                        
-            const availableLumps = blockdAndFaces.filter(parallelepiped => 
-                                                            parallelepiped.block.isAir || parallelepiped.block.typeId.slice(-14) === "_glowstone_bud");
+            const validBlocks = getSurroundingBlocks(block, "glowstone_bud")
             
-            if(availableLumps.length === 0) return;
+            if(validBlocks.length === 0) return;
 
-            const budToGrow = availableLumps[Math.floor(Math.random() * availableLumps.length)]
-            let newSize;
-            if(budToGrow.block.isAir){
-                newSize ="ps:small_glowstone_bud";
-            }
-            else{
-                const budSize =budToGrow.block.typeId.slice(3, -14);
-                switch(budSize){
-                    case "small":
-                        newSize = "ps:medium_glowstone_bud";
-                    break;
-                    case "medium":
-                        newSize = "ps:large_glowstone_bud";
-                    break;
-                    case "large":
-                        newSize = "ps:glowstone_cluster";
-                }
-            }
-            budToGrow.block.setType(newSize)
-            budToGrow.block.setPermutation(budToGrow.block.permutation.withState("minecraft:block_face", budToGrow.face));
+            const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
+            
+            growCrystalBud(budToGrow, "glowstone", 3, -14)
+        }
+    });
+});
+//redstone cluster growth via budding redstone
+world.beforeEvents.worldInitialize.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_redstone_growth', {
+        onRandomTick(e) {
+            const { block } = e;
+            if(Math.floor(Math.random() * 100) > 20) return;
+            
+            const validBlocks = getSurroundingBlocks(block, "redstone_bud")
+
+            if(validBlocks.length === 0) return;
+
+            const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
+
+            growCrystalBud(budToGrow, "redstone", 3, -13)
         }
     });
 });
@@ -49,46 +45,39 @@ world.afterEvents.playerBreakBlock.subscribe((e) => {
 });
 
 
-//redstone cluster growth via budding redstone
-world.beforeEvents.worldInitialize.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_redstone_growth', {
-        onRandomTick(e) {
-            const { block } = e;
-            if(Math.floor(Math.random() * 100) > 20) return;
-            
-            const blockdAndFaces = [{block:block.above(), face:"up"},{block:block.below(), face:"down"},{block:block.north(), face:"north"}, 
-                                    {block:block.south(), face:"south"},{block:block.west(), face:"west"},{block:block.east(), face:"east"},]
-            //ive used "block" enough times. Lets spice things up                        
-            const availableLumps = blockdAndFaces.filter(parallelepiped => 
-                                                            parallelepiped.block.isAir || parallelepiped.block.typeId.slice(-13) === "_redstone_bud");
-            
-            if(availableLumps.length === 0) return;
 
-            const budToGrow = availableLumps[Math.floor(Math.random() * availableLumps.length)]
-            let newSize;
-            if(budToGrow.block.isAir){
-                newSize ="ps:small_redstone_bud";
-            }
-            else{
-                const budSize =budToGrow.block.typeId.slice(3, -13);
-                switch(budSize){
-                    case "small":
-                        newSize = "ps:medium_redstone_bud";
-                    break;
-                    case "medium":
-                        newSize = "ps:large_redstone_bud";
-                    break;
-                    case "large":
-                        newSize = "ps:redstone_cluster";
-                }
-            }
-            budToGrow.block.setType(newSize)
-            budToGrow.block.setPermutation(budToGrow.block.permutation.withState("minecraft:block_face", budToGrow.face));
+
+
+function getSurroundingBlocks(block, budTag){
+    const blockdAndFaces = [{block:block.above(), face:"up"},{block:block.below(), face:"down"},{block:block.north(), face:"north"}, 
+        {block:block.south(), face:"south"},{block:block.west(), face:"west"},{block:block.east(), face:"east"},]
+
+    return blockdAndFaces.filter(lumps => lumps.block.isAir || lumps.block.hasTag(budTag));
+}
+
+function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum){
+    console.warn(selectedBlock.block.typeId)
+    let newSize;
+    if(selectedBlock.block.isAir){
+        newSize = `ps:small_${type}_bud`;
+    }
+    else{
+        const budSize =selectedBlock.block.typeId.slice(firstCharNum, secondCharNum);
+        console.warn(budSize)
+        switch(budSize){
+            case "small":
+                newSize = `ps:medium_${type}_bud`;
+            break;
+            case "medium":
+                newSize = `ps:large_${type}_bud`;
+            break;
+            case "large":
+                newSize = `ps:${type}_cluster`;
         }
-    });
-});
-function findLumps(charCount, crystalBud){
-    
+    }
+    console.warn(newSize)
+    selectedBlock.block.setType(newSize)
+    selectedBlock.block.setPermutation(selectedBlock.block.permutation.withState("minecraft:block_face", selectedBlock.face));
 }
 
 

@@ -14,6 +14,7 @@
         }
     },
     "components": {
+        "tag:glowstone_bud": {},
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:light_emission": 4,
