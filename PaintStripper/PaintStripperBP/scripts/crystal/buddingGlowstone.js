@@ -56,14 +56,12 @@ function getSurroundingBlocks(block, budTag){
 }
 
 function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum){
-    console.warn(selectedBlock.block.typeId)
     let newSize;
     if(selectedBlock.block.isAir){
         newSize = `ps:small_${type}_bud`;
     }
     else{
         const budSize =selectedBlock.block.typeId.slice(firstCharNum, secondCharNum);
-        console.warn(budSize)
         switch(budSize){
             case "small":
                 newSize = `ps:medium_${type}_bud`;
@@ -75,7 +73,6 @@ function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum){
                 newSize = `ps:${type}_cluster`;
         }
     }
-    console.warn(newSize)
     selectedBlock.block.setType(newSize)
     selectedBlock.block.setPermutation(selectedBlock.block.permutation.withState("minecraft:block_face", selectedBlock.face));
 }
