@@ -91,20 +91,23 @@ possibly get echo shards by using sculk blocks
 TODO: implement spawning of particles on hitting a seed -- DONE
 TODO: growing crystal loot tables - DONE
 TODO: change crystal growth to onRandomTick - DONE - Slow down?/balance
+TODO: refactor budding code DONE
+TODO: implement budding redstone DONE 
+TODO: rework redstone cluster textures? DONE
+TODO: Glassmith hammer texture DONE
 
-TODO: Glassmith hammer texture --- Possibly temp, we shall see
 TODO: Glassmith chisel
 TODO: Chiselled stone texture for crystal growth
 TODO: growing crystal model
 TODO: growing crystal texture re-vamp
 TODO: budding glowstone & redstone revamp of textures
-TODO: script file shuffle  --- 50% done, i think?
-TODO: implement dev tool to test various mechanics
 TODO: change sound of "hitting" a seed
-TODO: refactor budding code
-TODO: implement budding redstone
-TODO: rework redstone cluster textures?
+TODO: Implement Ageless Pocket watch, implement dev tool to test various mechanics
+TODO: Figure out chiselled rock
+TODO: Add pure quartz
+TODO: Add echo shard stuff
 TODO: find more appropriate sound for hammer and chisel use
 
 cant seem to work out a way for the texture so stand above the current block, will have to work on it. Or scrap the idea if it doesnt come out
 entirely how i want it
+

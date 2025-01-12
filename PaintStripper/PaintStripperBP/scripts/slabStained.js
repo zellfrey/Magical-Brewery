@@ -1,6 +1,6 @@
 import {world, Direction} from "@minecraft/server"
-import {setMainHand} from './containerUtils.js';
-import {getAdjacentBlock, getBlockFromFace} from "blockPlacementUtils.js";
+import {setMainHand} from './utils/containerUtils.js';
+import {getAdjacentBlock, getBlockFromFace} from "./utils/blockPlacementUtils.js";
 
 world.beforeEvents.worldInitialize.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:before_on_place_rotatable_slab', {

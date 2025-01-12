@@ -1,5 +1,5 @@
 import {world, system, ItemStack } from "@minecraft/server";
-import {getAdjacentBlock, getBlockFromFace} from "./utils/blockPlacementUtils.js";
+import {getAdjacentBlock} from "utils/blockPlacementUtils.js";
 
 const willChiselBlocks = ["minecraft:budding_amethyst", "minecraft:glowstone", "ps:budding_glowstone", "minecraft:redstone_ore",
                         "minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", "ps:budding_redstone"];
