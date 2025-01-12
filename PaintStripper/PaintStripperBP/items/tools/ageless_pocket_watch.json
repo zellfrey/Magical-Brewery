@@ -1,0 +1,22 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "ps:ageless_pocket_watch",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:custom_components": ["ps:on_use_on_ageless_pocket_watch"],
+            "minecraft:damage": 2,
+            "minecraft:durability": {
+                "max_durability": 36
+            },
+            "minecraft:icon": "ageless_pocket_watch",
+            "minecraft:display_name":{
+            "value": "item.ps:ageless_pocket_watch.name"
+            }
+        }
+    }
+}

@@ -40,14 +40,14 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
 
 
 
-function getSurroundingBlocks(block, budTag){
+export function getSurroundingBlocks(block, budTag){
     const blockdAndFaces = [{block:block.above(), face:"up"},{block:block.below(), face:"down"},{block:block.north(), face:"north"}, 
         {block:block.south(), face:"south"},{block:block.west(), face:"west"},{block:block.east(), face:"east"},]
 
     return blockdAndFaces.filter(lumps => lumps.block.isAir || lumps.block.hasTag(budTag));
 }
 
-function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum){
+export function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum){
     let newSize;
     if(selectedBlock.block.isAir){
         newSize = `ps:small_${type}_bud`;
