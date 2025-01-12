@@ -5,7 +5,7 @@
   "num_mip_levels": 4, 
   "texture_data": {
     "chiselled_rock":{
-      "textures": "textures/blocks/chiselled_rock_temp.png"
+      "textures": "textures/blocks/chiselled_rock_temp_greyscaled.png"
     },
     "amethyst_seed":{
       "textures": "textures/items/amethyst_seed.png"
