@@ -95,14 +95,15 @@ TODO: refactor budding code DONE
 TODO: implement budding redstone DONE 
 TODO: rework redstone cluster textures? DONE
 TODO: Glassmith hammer texture DONE
+TODO: Glassmith chisel - DONE
+TODO: budding glowstone & redstone revamp of textures DONE
+TODO: Implement Ageless Pocket watch, implement dev tool to test various mechanics DONE
 
-TODO: Glassmith chisel
 TODO: Chiselled stone texture for crystal growth
 TODO: growing crystal model
 TODO: growing crystal texture re-vamp
-TODO: budding glowstone & redstone revamp of textures
 TODO: change sound of "hitting" a seed
-TODO: Implement Ageless Pocket watch, implement dev tool to test various mechanics
+
 TODO: Figure out chiselled rock
 TODO: Add pure quartz
 TODO: Add echo shard stuff
