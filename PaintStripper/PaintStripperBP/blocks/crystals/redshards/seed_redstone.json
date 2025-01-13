@@ -18,7 +18,7 @@
       },
       "components": {
         "tag:crystal_seed": {},
-        "minecraft:loot": "loot_tables/blocks/crystals/seed_redstone.json",
+        "minecraft:loot": "loot_tables/blocks/crystals/redshards/seed_redstone.json",
         "minecraft:placement_filter": {
             "conditions": [
                 {

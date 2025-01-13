@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
       "description": {
-        "identifier": "ps:small_redstone_bud",
+        "identifier": "ps:large_redstone_bud",
         "menu_category": {
             "category": "none",
             "is_hidden_in_commands": true
@@ -17,23 +17,23 @@
         "tag:redstone_bud": {},
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:light_emission": 1,
-        "minecraft:loot": "loot_tables/blocks/crystals/small_redstone_bud.json",
+        "minecraft:light_emission": 4,
+        "minecraft:loot": "loot_tables/blocks/crystals/redshards/large_redstone_bud.json",
         "minecraft:material_instances": {
             "*": {
-            "texture": "small_redstone_bud",
+            "texture": "large_redstone_bud",
             "render_method": "alpha_test",
             "face_dimming": false,
             "ambient_occlusion": false
             }
         },
         "minecraft:collision_box": {
-            "origin": [-4, 0, -4],
-            "size": [8, 3, 8]
+            "origin": [-5, 0, -5],
+            "size": [10, 5, 10]
         },
         "minecraft:selection_box": {
-            "origin": [-4.0, 0.0, -4.0],
-            "size": [8.0, 3.0, 8.0]
+            "origin": [-5.0, 0.0, -5.0],
+            "size": [10.0, 5.0, 10.0]
         }
     },
     "permutations": [
