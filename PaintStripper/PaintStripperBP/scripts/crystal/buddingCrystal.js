@@ -35,6 +35,39 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
     });
 });
 
+world.beforeEvents.worldInitialize.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_pure_quartz_growth', {
+        onRandomTick(e) {
+            const { block } = e;
+            if(Math.floor(Math.random() * 100) > 20) return;
+            
+            const validBlocks = getSurroundingBlocks(block, "pure_quartz_bud")
+            
+            if(validBlocks.length === 0) return;
+
+            const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
+            
+            growCrystalBud(budToGrow, "pure_quartz", 3, -16)
+        }
+    });
+});
+
+world.beforeEvents.worldInitialize.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_echo_shard_growth', {
+        onRandomTick(e) {
+            const { block } = e;
+            if(Math.floor(Math.random() * 100) > 20) return;
+            
+            const validBlocks = getSurroundingBlocks(block, "echo_shard_bud")
+            
+            if(validBlocks.length === 0) return;
+
+            const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
+            
+            growCrystalBud(budToGrow, "echo_shard", 3, -15)
+        }
+    });
+});
 
 
 

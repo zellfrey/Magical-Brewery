@@ -19,14 +19,18 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             }else if(buddingCrystals.includes(block.typeId)){
                 const buddingCrystal = buddingCrystals.find(bud => bud === block.typeId)
 
-                let validBlocks;
-
                 switch(buddingCrystal){
                     case "ps:budding_glowstone":
-                        forceGrowCrystal(block, "glowstone_bud", "glowstone", 3, -14)
+                        forceGrowCrystal(block, "glowstone_bud", "glowstone", -14)
                     break;
                     case "ps:budding_redstone":
-                        forceGrowCrystal(block, "redstone_bud", "redstone", 3, -13)
+                        forceGrowCrystal(block, "redstone_bud", "redstone", -13)
+                    break;
+                    case "ps:budding_pure_quartz":
+                        forceGrowCrystal(block, "pure_quartz_bud", "glowstone", -16)
+                    break;
+                    case "ps:budding_echo_shard":
+                        forceGrowCrystal(block, "echo_shard_bud", "echo_shard", -15)
                     break;
                 }
             }
@@ -34,12 +38,12 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
     });
 });
 
-function forceGrowCrystal(block, budBlock, type, firstCharNum, secondCharNum){
+function forceGrowCrystal(block, budBlock, type, CharNum){
     const validBlocks = getSurroundingBlocks(block, budBlock)
 
     if(validBlocks.length === 0) return;
 
     const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
 
-    growCrystalBud(budToGrow, type, firstCharNum, secondCharNum)
+    growCrystalBud(budToGrow, type, 3, CharNum)
 }
