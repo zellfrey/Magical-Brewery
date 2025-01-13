@@ -103,12 +103,16 @@ TODO: Chiselled stone texture for crystal growth
 TODO: growing crystal model
 TODO: growing crystal texture re-vamp
 TODO: change sound of "hitting" a seed
-
 TODO: Figure out chiselled rock
-TODO: Add pure quartz
-TODO: Add echo shard stuff
+TODO: Add pure quartz - textures DONE
+TODO: Add echo shard stuff - textures DONE
 TODO: find more appropriate sound for hammer and chisel use
 
 cant seem to work out a way for the texture so stand above the current block, will have to work on it. Or scrap the idea if it doesnt come out
 entirely how i want it
 
+amethyst, structural
+quartz, power transfer
+glowstone, potency
+redstone, duration
+echo - exception, used for brewing echo potions
