@@ -3,28 +3,46 @@
 ##Crystals---------------------------------
 item.ps:amethyst_dust.name=Amethyst Dust
 item.ps:amethyst_seed.name=Amethyst Seed
+##Glow shards---------------------------------
 item.ps:glowstone_shard.name=Glowstone Shard
 item.ps:small_glowstone_bud.name=Small Glowstone Bud
 item.ps:medium_glowstone_bud.name=Medium Glowstone Bud
 item.ps:large_glowstone_bud.name=Large Glowstone Bud
 item.ps:glowstone_cluster.name=Glowstone Cluster
 item.ps:glowstone_seed.name=Glowstone Seed
+tile.ps:budding_glowstone.name=Budding Glowstone
+tile.ps:glowstone_shard_block.name=Glowstone Shard Block
+##Pure quartz shards---------------------------------
+item.ps:pure_quartz_shard.name=Pure Quartz Shard
+item.ps:small_pure_quartz_bud.name=Small Pure Quartz Bud
+item.ps:medium_pure_quartz_bud.name=Medium Pure Quartz Bud
+item.ps:large_pure_quartz_bud.name=Large Pure Quartz Bud
+item.ps:pure_quartz_cluster.name=Pure Quartz Cluster
+item.ps:pure_quartz_seed.name=Pure Quartz Seed
+tile.ps:budding_pure_quartz.name=Budding Pure Quartz
+tile.ps:pure_quartz_shard_block.name=Pure Quartz Shard Block
+##Red shards---------------------------------
 item.ps:redstone_shard.name=Redstone Shard
 item.ps:small_redstone_bud.name=Small Redstone Bud
 item.ps:medium_redstone_bud.name=Medium Redstone Bud
 item.ps:large_redstone_bud.name=Large Redstone Bud
 item.ps:redstone_cluster.name=Redstone Cluster
 item.ps:redstone_seed.name=Redstone Seed
-item.ps:glassmith_hammer.name=Glassmith's Hammer
+tile.ps:budding_redstone.name=Budding Redstone
+tile.ps:redstone_shard_block.name=Redstone Shard Block
 
+##Tools------------------------------------
+item.ps:glassmith_hammer.name=Glassmith's Hammer
+item.ps:glassmith_chisel.name=Glassmith's Chisel
+item.ps:ageless_pocket_watch.name=Ageless Pocket Watch
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
 item.ps.effect_absorption.name=Absorption
 ##---------------------------------
-##Blocks---------------------------------
-tile.ps:budding_glowstone.name=Budding Glowstone
-tile.ps:budding_redstone.name=Budding Redstone
+
+
+
 
 ##---------------------------------
 ##Decorative Blocks---------------------------------

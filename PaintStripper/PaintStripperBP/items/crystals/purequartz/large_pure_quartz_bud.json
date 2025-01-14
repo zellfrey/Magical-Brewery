@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:item": {
+      "description": {
+        "identifier": "ps:large_pure_quartz_bud",
+        "menu_category": {
+                "category": "items"
+            }
+      }, 
+      "components": {
+        "minecraft:hand_equipped": false,
+        "minecraft:icon": "large_pure_quartz_bud",
+        "minecraft:display_name":{
+          "value": "item.ps:large_pure_quartz_bud.name"
+        },
+        "minecraft:block_placer": {
+				"block": "ps:large_pure_quartz_bud"
+        }
+      }
+    }
+}

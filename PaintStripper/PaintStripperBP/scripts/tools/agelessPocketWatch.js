@@ -2,7 +2,7 @@ import {world, system, ItemStack } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
 
-const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone"];
+const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo_shard"];
 
 world.beforeEvents.worldInitialize.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_on_ageless_pocket_watch', {
@@ -27,7 +27,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
                         forceGrowCrystal(block, "redstone_bud", "redstone", -13)
                     break;
                     case "ps:budding_pure_quartz":
-                        forceGrowCrystal(block, "pure_quartz_bud", "glowstone", -16)
+                        forceGrowCrystal(block, "pure_quartz_bud", "pure_quartz", -16)
                     break;
                     case "ps:budding_echo_shard":
                         forceGrowCrystal(block, "echo_shard_bud", "echo_shard", -15)

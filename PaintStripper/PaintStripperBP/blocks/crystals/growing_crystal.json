@@ -14,7 +14,7 @@
         },
         "states": {
           "ps:crystal_stage": [1,2,3,4],
-          "ps:crystal_type": ["amethyst","glowstone","redstone"]
+          "ps:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz"]
         }
       },
       "components": {
@@ -27,7 +27,7 @@
             "conditions": [
                 {
                     "block_filter": ["minecraft:budding_amethyst", "minecraft:glowstone", "ps:budding_glowstone", "minecraft:redstone_ore",
-                    "minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", "ps:budding_redstone"]
+                    "minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", "ps:budding_redstone", "ps:budding_pure_quartz"]
                 }
             ]
         },
@@ -144,7 +144,7 @@
         {
             "condition": "query.block_state('ps:crystal_type') == 'glowstone'",
             "components": {
-                "minecraft:loot": "loot_tables/blocks/crystals/seed_glowstone.json",
+                "minecraft:loot": "loot_tables/blocks/crystals/glowshards/seed_glowstone.json",
                 "minecraft:light_emission": 4,
                 "minecraft:material_instances": {
                     "*": {
@@ -159,10 +159,21 @@
         {
             "condition": "query.block_state('ps:crystal_type') == 'redstone'",
             "components": {
-                "minecraft:loot": "loot_tables/blocks/crystals/seed_redstone.json",
+                "minecraft:loot": "loot_tables/blocks/crystals/redshards/seed_redstone.json",
                 "minecraft:material_instances": {
                     "*": {
                     "texture": "growing_bud_redstone"
+                    }
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_type') == 'pure_quartz'",
+            "components": {
+                "minecraft:loot": "loot_tables/blocks/crystals/purequartz/seed_pure_quartz.json",
+                "minecraft:material_instances": {
+                    "*": {
+                    "texture": "growing_bud_pure_quartz"
                     }
                 }
             }

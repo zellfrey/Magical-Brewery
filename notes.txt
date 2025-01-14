@@ -107,6 +107,7 @@ TODO: Figure out chiselled rock
 TODO: Add pure quartz - textures DONE
 TODO: Add echo shard stuff - textures DONE
 TODO: find more appropriate sound for hammer and chisel use
+TODO: figure out more appropriate loot for pure quartz
 
 cant seem to work out a way for the texture so stand above the current block, will have to work on it. Or scrap the idea if it doesnt come out
 entirely how i want it

@@ -10,6 +10,9 @@
     "amethyst_seed":{
       "textures": "textures/items/amethyst_seed.png"
     },
+    "growing_bud_amethyst":{
+      "textures": "textures/blocks/budding_amethyst"
+    },
     "echo_shard_seed":{
       "textures": "textures/items/echo_shard_seed.png"
     },
@@ -31,11 +34,11 @@
     "growing_bud_echo_shard":{
       "textures": "textures/blocks/crystals/budding_glowstone.png"
     },
-    "growing_bud_amethyst":{
-      "textures": "textures/blocks/budding_amethyst"
-    },
     "glowstone_seed":{
       "textures": "textures/items/glowstone_seed.png"
+    },
+    "glowstone_shard_block":{
+      "textures": "textures/blocks/crystals/glowstone_shard_block.png"
     },
     "budding_glowstone":{
       "textures": "textures/blocks/crystals/budding_glowstone.png"
@@ -58,6 +61,9 @@
     "pure_quartz_seed":{
       "textures": "textures/items/pure_quartz_seed.png"
     },
+    "pure_quartz_shard_block":{
+      "textures": "textures/blocks/crystals/pure_quartz_shard_block.png"
+    },
     "budding_pure_quartz":{
       "textures": "textures/blocks/crystals/budding_pure_quartz.png"
     },
@@ -78,6 +84,9 @@
     },
     "redstone_seed":{
       "textures": "textures/items/redstone_seed.png"
+    },
+    "redstone_shard_block":{
+      "textures": "textures/blocks/crystals/redstone_shard_block.png"
     },
     "budding_redstone":{
       "textures": "textures/blocks/crystals/budding_redstone.png"

@@ -1,0 +1,77 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+      "description": {
+        "identifier": "ps:medium_pure_quartz_bud",
+        "menu_category": {
+            "category": "none",
+            "is_hidden_in_commands": true
+        },
+        "traits": {
+          "minecraft:placement_position": {
+            "enabled_states": ["minecraft:block_face"]
+          }
+        }
+    },
+    "components": {
+        "tag:pure_quartz_bud": {},
+        "minecraft:friction": 0.4,
+        "minecraft:geometry": "minecraft:geometry.cross",
+        "minecraft:loot": "loot_tables/blocks/crystals/purequartz/medium_pure_quartz_bud.json",
+        "minecraft:material_instances": {
+            "*": {
+            "texture": "medium_pure_quartz_bud",
+            "render_method": "alpha_test",
+            "face_dimming": false,
+            "ambient_occlusion": false
+            }
+        },
+        "minecraft:collision_box": {
+            "origin": [-5, 0, -5],
+            "size": [10, 4, 10]
+        },
+        "minecraft:selection_box": {
+            "origin": [-5.0, 0.0, -5.0],
+            "size": [10.0, 4.0, 10.0]
+        }
+    },
+    "permutations": [
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'north'",
+            "components": {
+            "minecraft:transformation": { "rotation": [-90, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'south'",
+            "components": {
+                "minecraft:transformation": { "rotation": [90, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'west'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 0, 90] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'east'",
+            "components": {
+                "minecraft:transformation": { "rotation": [0, 0, -90] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'up'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 0, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('minecraft:block_face') == 'down'",
+            "components": {
+                "minecraft:transformation": { "rotation": [-180, 0, 0] }
+            }
+        }
+      ]
+    }
+}
