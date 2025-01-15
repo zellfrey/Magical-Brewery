@@ -117,3 +117,26 @@ quartz, power transfer
 glowstone, potency
 redstone, duration
 echo - exception, used for brewing echo potions
+
+Cask has x number of charges. The no of effects in the container can determine the amount of charges it takes out of the cask
+Visually the cask looses its stained look and “cracks” of the original wood appear
+
+Stained planks are made by “dipping them” in cauldrons with potions
+
+
+Cauldron - fill level, liquid
+Additional fields for cauldron:
+
+: The block entity's root tag.
+ CustomColor: (May not exist) This tag exists only if the cauldron stores dyed water; stores a 32-bit ARGB encoded color.
+ Items: List of items in this container.
+: An item, including the slot tag.
+ Slot: The inventory slot the item is in.
+Tags common to item stack[]
+ PotionId: If the cauldron contains a potion, this tag stores the ID of that potion. If there is no potion stored, then this tag is set to -1.
+ PotionType: If the cauldron contains a potion, this tag stores the type of that potion. 0 is normal, 1 is splash, 2 is lingering. If there is no potion stored, then this tag is set to -1.
+
+block.getComponent("minecraft:fluidContainer").fillLevel
+block.getComponent("minecraft:fluidContainer").getFluidType()
+possibly use rgba value
+if i cant do that, just do the age old method of crafting table, 1 potion = 1 stained plank
