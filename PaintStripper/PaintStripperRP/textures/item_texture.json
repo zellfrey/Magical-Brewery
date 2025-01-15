@@ -11,19 +11,19 @@
       "amethyst_seed":{
 			"textures": "textures/items/amethyst_seed.png"
 		},
-      "small_echo_shard_bud":{
-      "textures": "textures/blocks/crystals/small_echo_shard_bud.png"
+      "small_echo_bud":{
+      "textures": "textures/blocks/crystals/small_echo_bud.png"
       },
-      "medium_echo_shard_bud":{
-         "textures": "textures/blocks/crystals/medium_echo_shard_bud.png"
+      "medium_echo_bud":{
+         "textures": "textures/blocks/crystals/medium_echo_bud.png"
       },
-      "large_echo_shard_bud":{
-         "textures": "textures/blocks/crystals/large_echo_shard_bud.png"
+      "large_echo_bud":{
+         "textures": "textures/blocks/crystals/large_echo_bud.png"
       },
-      "echo_shard_cluster":{
-         "textures": "textures/blocks/crystals/echo_shard_cluster.png"
+      "echo_cluster":{
+         "textures": "textures/blocks/crystals/echo_cluster.png"
       },
-      "echo_shard_seed":{
+      "echo_seed":{
 			"textures": "textures/items/echo_shard_seed.png"
 		},
       "glowstone_shard":{

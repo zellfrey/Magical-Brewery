@@ -53,18 +53,18 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
 });
 
 world.beforeEvents.worldInitialize.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_echo_shard_growth', {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_echo_growth', {
         onRandomTick(e) {
             const { block } = e;
             if(Math.floor(Math.random() * 100) > 20) return;
             
-            const validBlocks = getSurroundingBlocks(block, "echo_shard_bud")
+            const validBlocks = getSurroundingBlocks(block, "echo_bud")
             
             if(validBlocks.length === 0) return;
 
             const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
             
-            growCrystalBud(budToGrow, "echo_shard", 3, -15)
+            growCrystalBud(budToGrow, "echo", 3, -9)
         }
     });
 });

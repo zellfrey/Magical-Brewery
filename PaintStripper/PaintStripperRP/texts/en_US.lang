@@ -3,6 +3,14 @@
 ##Crystals---------------------------------
 item.ps:amethyst_dust.name=Amethyst Dust
 item.ps:amethyst_seed.name=Amethyst Seed
+##Echo shards---------------------------------
+item.ps:small_echo_bud.name=Small Echo Bud
+item.ps:medium_echo_bud.name=Medium Echo Bud
+item.ps:large_echo_bud.name=Large Echo Bud
+item.ps:echo_cluster.name=Echo Cluster
+item.ps:echo_seed.name=Echo Seed
+tile.ps:budding_echo.name=Budding Echo
+tile.ps:echo_shard_block.name=Echo Shard Block
 ##Glow shards---------------------------------
 item.ps:glowstone_shard.name=Glowstone Shard
 item.ps:small_glowstone_bud.name=Small Glowstone Bud

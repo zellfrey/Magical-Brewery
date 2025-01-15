@@ -13,25 +13,28 @@
     "growing_bud_amethyst":{
       "textures": "textures/blocks/budding_amethyst"
     },
-    "echo_shard_seed":{
-      "textures": "textures/items/echo_shard_seed.png"
+    "echo_seed":{
+      "textures": "textures/items/echo_seed.png"
     },
-    "budding_echo_shard":{
-      "textures": "textures/blocks/crystals/budding_echo_shard.png"
+    "echo_shard_block":{
+      "textures": "textures/blocks/crystals/echo_shard_block.png"
     },
-    "small_echo_shard_bud":{
-      "textures": "textures/blocks/crystals/small_echo_shard_bud.png"
+    "budding_echo":{
+      "textures": "textures/blocks/crystals/budding_echo.png"
     },
-    "medium_echo_shard_bud":{
-      "textures": "textures/blocks/crystals/medium_echo_shard_bud.png"
+    "small_echo_bud":{
+      "textures": "textures/blocks/crystals/small_echo_bud.png"
     },
-    "large_echo_shard_bud":{
-      "textures": "textures/blocks/crystals/large_echo_shard_bud.png"
+    "medium_echo_bud":{
+      "textures": "textures/blocks/crystals/medium_echo_bud.png"
     },
-    "echo_shard_cluster":{
-      "textures": "textures/blocks/crystals/echo_shard_cluster.png"
+    "large_echo_bud":{
+      "textures": "textures/blocks/crystals/large_echo_bud.png"
     },
-    "growing_bud_echo_shard":{
+    "echo_cluster":{
+      "textures": "textures/blocks/crystals/echo_cluster.png"
+    },
+    "growing_bud_echo":{
       "textures": "textures/blocks/crystals/budding_glowstone.png"
     },
     "glowstone_seed":{
