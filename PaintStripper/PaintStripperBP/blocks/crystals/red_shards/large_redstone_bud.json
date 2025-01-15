@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
       "description": {
-        "identifier": "ps:glowstone_cluster",
+        "identifier": "ps:large_redstone_bud",
         "menu_category": {
             "category": "none",
             "is_hidden_in_commands": true
@@ -14,13 +14,14 @@
         }
     },
     "components": {
+        "tag:redstone_bud": {},
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:light_emission": 15,
-        "minecraft:loot": "loot_tables/blocks/crystals/glowshards/glowstone_cluster.json",
+        "minecraft:light_emission": 4,
+        "minecraft:loot": "loot_tables/blocks/crystals/red_shards/large_redstone_bud.json",
         "minecraft:material_instances": {
             "*": {
-            "texture": "glowstone_cluster",
+            "texture": "large_redstone_bud",
             "render_method": "alpha_test",
             "face_dimming": false,
             "ambient_occlusion": false
@@ -28,11 +29,11 @@
         },
         "minecraft:collision_box": {
             "origin": [-5, 0, -5],
-            "size": [10, 7, 10]
+            "size": [10, 5, 10]
         },
         "minecraft:selection_box": {
             "origin": [-5.0, 0.0, -5.0],
-            "size": [10.0, 7.0, 10.0]
+            "size": [10.0, 5.0, 10.0]
         }
     },
     "permutations": [

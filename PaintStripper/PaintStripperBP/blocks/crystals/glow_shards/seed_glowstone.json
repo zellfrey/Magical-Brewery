@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
       "description": {
-        "identifier": "ps:redstone_cluster",
+        "identifier": "ps:seed_glowstone",
         "menu_category": {
             "category": "none",
             "is_hidden_in_commands": true
@@ -11,31 +11,46 @@
           "minecraft:placement_position": {
             "enabled_states": ["minecraft:block_face"]
           }
+        },
+        "states": {
+          "ps:seed_depth": [1,2,3,4]
         }
-    },
-    "components": {
+      },
+      "components": {
+        "tag:crystal_seed": {},
+        "minecraft:loot": "loot_tables/blocks/crystals/glow_shards/seed_glowstone.json",
+        "minecraft:placement_filter": {
+            "conditions": [
+                {
+                    "block_filter": ["minecraft:glowstone", "ps:budding_glowstone"]
+                }
+            ]
+        },
         "minecraft:friction": 0.4,
-        "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:light_emission": 7,
-        "minecraft:loot": "loot_tables/blocks/crystals/redshards/redstone_cluster.json",
         "minecraft:material_instances": {
             "*": {
-            "texture": "redstone_cluster",
-            "render_method": "alpha_test",
-            "face_dimming": false,
-            "ambient_occlusion": false
+                "texture": "glowstone_seed",
+                "render_method": "alpha_test",
+                "face_dimming": false,
+                "ambient_occlusion": false
             }
         },
-        "minecraft:collision_box": {
-            "origin": [-5, 0, -5],
-            "size": [10, 7, 10]
-        },
+        "minecraft:collision_box": false,
         "minecraft:selection_box": {
-            "origin": [-5.0, 0.0, -5.0],
-            "size": [10.0, 7.0, 10.0]
+            "origin": [-2.0, 0.0, -2.0],
+            "size": [4.0, 8.0, 4.0]
+        },
+        "minecraft:geometry":{
+            "identifier":"geometry.seed_crystal",
+            "bone_visibility": { 
+                "depth1": "q.block_state('ps:seed_depth') == 1", 
+                "depth2": "q.block_state('ps:seed_depth') == 2",
+                "depth3": "q.block_state('ps:seed_depth') == 3",
+                "depth4": "q.block_state('ps:seed_depth') == 4"
+            }
         }
-    },
-    "permutations": [
+      },
+      "permutations": [
         {
             "condition": "query.block_state('minecraft:block_face') == 'north'",
             "components": {
@@ -71,7 +86,21 @@
             "components": {
                 "minecraft:transformation": { "rotation": [-180, 0, 0] }
             }
+        },
+        {
+            "condition": "query.block_state('ps:seed_depth') == 4",
+            "components": {
+                "minecraft:custom_components": ["ps:ort_seed_to_crystal"],
+                "minecraft:tick": {
+                    "interval_range": [20,20]
+                },
+                "minecraft:selection_box": {
+                    "origin": [-2.0, 0.0, -2.0],
+                    "size": [4.0, 2.0, 4.0]
+                }
+            }
         }
       ]
     }
-}
+  }
+    

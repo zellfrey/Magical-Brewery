@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
       "description": {
-        "identifier": "ps:medium_redstone_bud",
+        "identifier": "ps:medium_pure_quartz_bud",
         "menu_category": {
             "category": "none",
             "is_hidden_in_commands": true
@@ -14,14 +14,13 @@
         }
     },
     "components": {
-        "tag:redstone_bud": {},
+        "tag:pure_quartz_bud": {},
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:light_emission": 2,
-        "minecraft:loot": "loot_tables/blocks/crystals/redshards/medium_redstone_bud.json",
+        "minecraft:loot": "loot_tables/blocks/crystals/pure_quartz/medium_pure_quartz_bud.json",
         "minecraft:material_instances": {
             "*": {
-            "texture": "medium_redstone_bud",
+            "texture": "medium_pure_quartz_bud",
             "render_method": "alpha_test",
             "face_dimming": false,
             "ambient_occlusion": false

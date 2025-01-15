@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
       "description": {
-        "identifier": "ps:medium_pure_quartz_bud",
+        "identifier": "ps:redstone_cluster",
         "menu_category": {
             "category": "none",
             "is_hidden_in_commands": true
@@ -14,13 +14,13 @@
         }
     },
     "components": {
-        "tag:pure_quartz_bud": {},
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:loot": "loot_tables/blocks/crystals/purequartz/medium_pure_quartz_bud.json",
+        "minecraft:light_emission": 7,
+        "minecraft:loot": "loot_tables/blocks/crystals/red_shards/redstone_cluster.json",
         "minecraft:material_instances": {
             "*": {
-            "texture": "medium_pure_quartz_bud",
+            "texture": "redstone_cluster",
             "render_method": "alpha_test",
             "face_dimming": false,
             "ambient_occlusion": false
@@ -28,11 +28,11 @@
         },
         "minecraft:collision_box": {
             "origin": [-5, 0, -5],
-            "size": [10, 4, 10]
+            "size": [10, 7, 10]
         },
         "minecraft:selection_box": {
             "origin": [-5.0, 0.0, -5.0],
-            "size": [10.0, 4.0, 10.0]
+            "size": [10.0, 7.0, 10.0]
         }
     },
     "permutations": [

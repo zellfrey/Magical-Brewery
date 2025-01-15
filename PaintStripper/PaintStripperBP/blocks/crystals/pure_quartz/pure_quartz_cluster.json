@@ -16,7 +16,7 @@
     "components": {
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:loot": "loot_tables/blocks/crystals/purequartz/pure_quartz_cluster.json",
+        "minecraft:loot": "loot_tables/blocks/crystals/pure_quartz/pure_quartz_cluster.json",
         "minecraft:material_instances": {
             "*": {
             "texture": "pure_quartz_cluster",
