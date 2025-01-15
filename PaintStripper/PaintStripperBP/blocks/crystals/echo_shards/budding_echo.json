@@ -1,0 +1,28 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+      "description": {
+        "identifier": "ps:budding_echo",
+        "menu_category": {
+            "category": "nature"
+        }
+      },
+      "components": {
+        "minecraft:custom_components": ["ps:ort_bud_echo_growth"],
+        "minecraft:friction": 0.4,
+        "minecraft:loot": "loot_tables/blocks/crystals/echo_shards/budding_echo.json",
+        "minecraft:tick": {
+          "interval_range": [20,20]
+		    },
+        "minecraft:material_instances": {
+          "*": {
+            "texture": "budding_echo",
+            "render_method": "alpha_test",
+            "face_dimming": false,
+            "ambient_occlusion": false
+          }
+        },
+      "minecraft:geometry": "minecraft:geometry.full_block"
+      }
+    }
+}

@@ -43,8 +43,8 @@ export function crystalGrowth(block, seedStage){
             case "redstone":
                 block.setType("ps:budding_redstone");
             break;
-            case "echo_shard":
-                block.setType("ps:budding_echo_shard");
+            case "echo":
+                block.setType("ps:budding_echo");
             break;
             case "pure_quartz":
                 block.setType("ps:budding_pure_quartz");
