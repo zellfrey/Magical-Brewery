@@ -10,6 +10,7 @@
       "components": {
         "minecraft:custom_components": ["ps:ort_bud_pure_quartz_growth"],
         "minecraft:friction": 0.4,
+        "minecraft:loot": "loot_tables/blocks/crystals/pure_quartz/budding_pure_quartz.json",
         "minecraft:tick": {
           "interval_range": [20,20]
 		    },

@@ -11,6 +11,7 @@
         "minecraft:light_emission": 2,
         "minecraft:custom_components": ["ps:ort_bud_redstone_growth"],
         "minecraft:friction": 0.4,
+        "minecraft:loot": "loot_tables/blocks/crystals/red_shards/budding_redstone.json",
         "minecraft:tick": {
           "interval_range": [20,20]
 		    },
