@@ -8,7 +8,6 @@
         }
       },
       "components": {
-        "minecraft:light_emission": 10,
         "minecraft:friction": 0.4,
         "minecraft:material_instances": {
           "*": {

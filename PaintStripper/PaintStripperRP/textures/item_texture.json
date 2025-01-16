@@ -24,7 +24,7 @@
          "textures": "textures/blocks/crystals/echo_cluster.png"
       },
       "echo_seed":{
-			"textures": "textures/items/echo_shard_seed.png"
+			"textures": "textures/items/echo_seed.png"
 		},
       "glowstone_shard":{
 			"textures": "textures/items/glowstone_shard.png"
