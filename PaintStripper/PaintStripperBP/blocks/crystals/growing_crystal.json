@@ -14,7 +14,7 @@
         },
         "states": {
           "ps:crystal_stage": [1,2,3,4],
-          "ps:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz"]
+          "ps:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz", "echo"]
         }
       },
       "components": {
@@ -156,7 +156,7 @@
                 "minecraft:light_emission": 4,
                 "minecraft:material_instances": {
                     "*": {
-                        "texture": "growing_bud_glowstone",
+                        "texture": "glowstone_shard_block",
                         "render_method": "alpha_test",
                         "face_dimming": false,
                         "ambient_occlusion": false
@@ -170,7 +170,7 @@
                 "minecraft:loot": "loot_tables/blocks/crystals/redshards/seed_redstone.json",
                 "minecraft:material_instances": {
                     "*": {
-                    "texture": "growing_bud_redstone"
+                    "texture": "redstone_shard_block"
                     }
                 }
             }
@@ -181,7 +181,18 @@
                 "minecraft:loot": "loot_tables/blocks/crystals/purequartz/seed_pure_quartz.json",
                 "minecraft:material_instances": {
                     "*": {
-                    "texture": "growing_bud_pure_quartz"
+                    "texture": "pure_quartz_shard_block"
+                    }
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_type') == 'echo'",
+            "components": {
+                "minecraft:loot": "loot_tables/blocks/crystals/purequartz/seed_echo.json",
+                "minecraft:material_instances": {
+                    "*": {
+                    "texture": "echo_shard_block"
                     }
                 }
             }

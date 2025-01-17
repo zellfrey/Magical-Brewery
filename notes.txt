@@ -99,15 +99,17 @@ TODO: Glassmith chisel - DONE
 TODO: budding glowstone & redstone revamp of textures DONE
 TODO: Implement Ageless Pocket watch, implement dev tool to test various mechanics DONE
 TODO: Add pure quartz - DONE
+TODO: Add echo shard stuff - textures DONE
+TODO: figure out more appropriate loot for pure quartz seeds, done, the rest is air. YOU GET NOTHING, NOOOOTTTHHIINNNG
 
 TODO: Chiselled stone texture for crystal growth
 TODO: growing crystal model
 TODO: growing crystal texture re-vamp
-TODO: change sound of "hitting" a seed
+TODO: change sound of "hitting" a seed - 
 TODO: Figure out chiselled rock
-TODO: Add echo shard stuff - textures DONE
+
 TODO: find more appropriate sound for hammer and chisel use
-TODO: figure out more appropriate loot for pure quartz seeds, done, the rest is air. YOU GET NOTHING, NOOOOTTTHHIINNNG
+
 
 cant seem to work out a way for the texture so stand above the current block, will have to work on it. Or scrap the idea if it doesnt come out
 entirely how i want it
