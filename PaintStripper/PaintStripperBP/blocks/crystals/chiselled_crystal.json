@@ -36,6 +36,14 @@
                 "ambient_occlusion": false
             }
         },
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:collision_box": false,
         "minecraft:selection_box": {
             "origin": [-8.0, 0.0, -8.0],

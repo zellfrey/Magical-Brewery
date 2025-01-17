@@ -19,6 +19,14 @@
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:light_emission": 11,
         "minecraft:loot": "loot_tables/blocks/crystals/glow_shards/large_glowstone_bud.json",
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:material_instances": {
             "*": {
             "texture": "large_glowstone_bud",

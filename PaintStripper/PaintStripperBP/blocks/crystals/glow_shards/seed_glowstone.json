@@ -19,6 +19,14 @@
       "components": {
         "tag:crystal_seed": {},
         "minecraft:loot": "loot_tables/blocks/crystals/glow_shards/seed_glowstone.json",
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:placement_filter": {
             "conditions": [
                 {

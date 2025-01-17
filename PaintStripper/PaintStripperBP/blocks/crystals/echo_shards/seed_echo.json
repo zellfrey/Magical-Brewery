@@ -27,6 +27,14 @@
             ]
         },
         "minecraft:friction": 0.4,
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:material_instances": {
             "*": {
                 "texture": "echo_seed",

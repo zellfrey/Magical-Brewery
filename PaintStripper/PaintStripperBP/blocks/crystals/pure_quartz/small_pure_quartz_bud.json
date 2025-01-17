@@ -18,6 +18,14 @@
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:loot": "loot_tables/blocks/crystals/pure_quartz/small_pure_quartz_bud.json",
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:material_instances": {
             "*": {
             "texture": "small_pure_quartz_bud",

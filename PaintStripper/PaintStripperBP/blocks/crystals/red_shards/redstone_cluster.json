@@ -18,6 +18,14 @@
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:light_emission": 7,
         "minecraft:loot": "loot_tables/blocks/crystals/red_shards/redstone_cluster.json",
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:material_instances": {
             "*": {
             "texture": "redstone_cluster",

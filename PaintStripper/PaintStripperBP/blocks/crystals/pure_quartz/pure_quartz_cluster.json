@@ -17,6 +17,14 @@
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:loot": "loot_tables/blocks/crystals/pure_quartz/pure_quartz_cluster.json",
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:material_instances": {
             "*": {
             "texture": "pure_quartz_cluster",

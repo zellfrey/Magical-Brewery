@@ -18,6 +18,14 @@
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:light_emission": 15,
         "minecraft:loot": "loot_tables/blocks/crystals/glow_shards/glowstone_cluster.json",
+        "minecraft:liquid_detection": {
+            "detection_rules": [
+                {
+                    "liquid_type": "water",
+                    "can_contain_liquid": true
+                }
+            ]
+        },
         "minecraft:material_instances": {
             "*": {
             "texture": "glowstone_cluster",
