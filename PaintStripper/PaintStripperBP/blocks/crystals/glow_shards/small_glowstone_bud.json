@@ -19,6 +19,13 @@
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:light_emission": 4,
         "minecraft:loot": "loot_tables/blocks/crystals/glow_shards/small_glowstone_bud.json",
+        "minecraft:map_color": "#F7E9A3",
+        "minecraft:destructible_by_mining": { 
+            "seconds_to_destroy": 1.5
+        },
+        "minecraft:destructible_by_explosion": {
+            "explosion_resistance": 1.5
+        },
         "minecraft:liquid_detection": {
             "detection_rules": [
                 {

@@ -11,6 +11,13 @@
         "minecraft:custom_components": ["ps:ort_bud_echo_growth"],
         "minecraft:friction": 0.4,
         "minecraft:loot": "loot_tables/blocks/crystals/echo_shards/budding_echo.json",
+        "minecraft:map_color": "#4C7F99",
+        "minecraft:destructible_by_mining": { 
+          "seconds_to_destroy": 1.5
+        },
+        "minecraft:destructible_by_explosion": {
+          "explosion_resistance": 1.5
+        },
         "minecraft:tick": {
           "interval_range": [20,20]
 		    },

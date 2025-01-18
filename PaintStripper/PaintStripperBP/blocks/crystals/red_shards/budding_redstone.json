@@ -12,6 +12,13 @@
         "minecraft:custom_components": ["ps:ort_bud_redstone_growth"],
         "minecraft:friction": 0.4,
         "minecraft:loot": "loot_tables/blocks/crystals/red_shards/budding_redstone.json",
+        "minecraft:map_color": "#FF0000",
+        "minecraft:destructible_by_mining": { 
+          "seconds_to_destroy": 1.5
+        },
+        "minecraft:destructible_by_explosion": {
+          "explosion_resistance": 1.5
+        },
         "minecraft:tick": {
           "interval_range": [20,20]
 		    },

@@ -30,3 +30,11 @@ system.runInterval(
         };
     },
 );
+
+world.afterEvents.entitySpawn.subscribe((e) => {
+    const { entity } = e;
+    if(entity.typeId !== "minecraft:item") return;
+    
+    const item = entity.getComponent("item");
+    console.warn(item.typeId)
+});

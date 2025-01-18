@@ -123,7 +123,28 @@ echo - exception, used for brewing echo potions
 Cask has x number of charges. The no of effects in the container can determine the amount of charges it takes out of the cask
 Visually the cask looses its stained look and “cracks” of the original wood appear
 
-Stained planks are made by “dipping them” in cauldrons with potions
+Stained planks are made by “dipping them” in cauldrons with potions, if not able to create this mechanic, fallback to 1 potion = 1 stained wood
+in crafting table. The type i.e long, strong, splash does not effect the outcome and only the potion id determines the stained wood.
+
+
+Cask,6 stained woods + 2 iron ingots(barrel braces).
+States, charges, block face direction, contained potion id (represented by integer), potion type, fill level, time until completion/
+aging (represented in stages, again int count)
+Finally should fill level determine the amount of charges depleted when a potion has "aged"/absorbed the cask effect
+
+Aging seals. Further down the line in which players can create "wax" seals that can effect the outcome of the aging process.
+e.g, seal of potency which increases the potency level of said barrel(seal of duration)
+Thinking further down this path, if a potion of lingering or splash is used, this will fix the potion combination to that type.
+
+So,
+cask of healing, and speed potion. This will become a healing/speed potion.
+If its speed 2, will be healing/speed 2 potion. And so on
+If the cask has a seal of potency, the outcome will be healing 2/X potion.
+
+
+Late game idea, implement a "time" room, which will decrease the time taken for aging to be complete.
+A simple cubed multiblock where casks can be placed inside. Those casks have a better chance of going through the aging
+stages/process 
 
 
 Cauldron - fill level, liquid
@@ -142,3 +163,13 @@ block.getComponent("minecraft:fluidContainer").fillLevel
 block.getComponent("minecraft:fluidContainer").getFluidType()
 possibly use rgba value
 if i cant do that, just do the age old method of crafting table, 1 potion = 1 stained plank
+
+
+TODO: Implement a method to obtain shards in order to create each seed thus starting the crystal growing 
+process.
+TODO: Look into recipe to create seeds.
+TODO: Add map colours to each crystal -- DONE
+TODO: Add mining component along with item specific array --  based speed added, will look into item specific speeds at a later date
+TODo: Add explosion component to each crystal -- DONE
+TODO: Echo seeds, pretty self explanatory, use echo shards that player finds in ancient cities
+TODO: Amethyst seeds, use amethyst shards. 

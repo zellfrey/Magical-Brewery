@@ -19,6 +19,12 @@
       },
       "components": {
         "minecraft:custom_components": ["ps:ort_crystal_growth"],
+        "minecraft:destructible_by_mining": { 
+            "seconds_to_destroy": 1.5
+        },
+        "minecraft:destructible_by_explosion": {
+            "explosion_resistance": 1.5
+        },
         "minecraft:liquid_detection": {
             "detection_rules": [
                 {

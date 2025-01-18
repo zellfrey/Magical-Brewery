@@ -1,24 +1,31 @@
 {
-    "format_version": "1.20.80",
-    "minecraft:block": {
-      "description": {
-        "identifier": "ps:glowstone_shard_block",
-        "menu_category": {
-            "category": "nature"
+  "format_version": "1.20.80",
+  "minecraft:block": {
+    "description": {
+      "identifier": "ps:glowstone_shard_block",
+      "menu_category": {
+          "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:light_emission": 10,
+      "minecraft:friction": 0.4,
+      "minecraft:map_color": "#F7E9A3",
+      "minecraft:destructible_by_mining": { 
+        "seconds_to_destroy": 1.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 1.5
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "glowstone_shard_block",
+          "render_method": "alpha_test",
+          "face_dimming": false,
+          "ambient_occlusion": false
         }
       },
-      "components": {
-        "minecraft:light_emission": 10,
-        "minecraft:friction": 0.4,
-        "minecraft:material_instances": {
-          "*": {
-            "texture": "glowstone_shard_block",
-            "render_method": "alpha_test",
-            "face_dimming": false,
-            "ambient_occlusion": false
-          }
-        },
-      "minecraft:geometry": "minecraft:geometry.full_block"
-      }
+    "minecraft:geometry": "minecraft:geometry.full_block"
     }
+  }
 }
