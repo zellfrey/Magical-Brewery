@@ -13,7 +13,7 @@
           }
         },
         "states": {
-          "ps:crystal_stage": [1,2,3,4],
+          "ps:crystal_stage": [1,2,3,4,5],
           "ps:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz", "echo"]
         }
       },
@@ -51,7 +51,8 @@
                 "stage1": "q.block_state('ps:crystal_stage') == 1", 
                 "stage2": "q.block_state('ps:crystal_stage') == 2",
                 "stage3": "q.block_state('ps:crystal_stage') == 3", 
-                "stage4": "q.block_state('ps:crystal_stage') == 4" 
+                "stage4": "q.block_state('ps:crystal_stage') == 4", 
+                "stage5": "q.block_state('ps:crystal_stage') == 5" 
             }
         }
       },

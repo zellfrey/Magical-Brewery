@@ -103,8 +103,8 @@ TODO: Add echo shard stuff - textures DONE
 TODO: figure out more appropriate loot for pure quartz seeds, done, the rest is air. YOU GET NOTHING, NOOOOTTTHHIINNNG
 
 TODO: Chiselled stone texture for crystal growth
-TODO: growing crystal model
-TODO: growing crystal texture re-vamp
+TODO: growing crystal model - is it finally done?
+TODO: growing crystal texture re-vamp - DONE
 TODO: change sound of "hitting" a seed - 
 TODO: Figure out chiselled rock
 
@@ -114,8 +114,8 @@ TODO: find more appropriate sound for hammer and chisel use
 cant seem to work out a way for the texture so stand above the current block, will have to work on it. Or scrap the idea if it doesnt come out
 entirely how i want it
 
-amethyst, structural
-quartz, power transfer
+amethyst, structural, brings tranquility hence stabilising magical potions
+quartz, power transfer, focuses intentions, hence allowing for power transfer
 glowstone, potency
 redstone, duration
 echo - exception, used for brewing echo potions
@@ -173,3 +173,37 @@ TODO: Add mining component along with item specific array --  based speed added,
 TODo: Add explosion component to each crystal -- DONE
 TODO: Echo seeds, pretty self explanatory, use echo shards that player finds in ancient cities
 TODO: Amethyst seeds, use amethyst shards. 
+
+pure crystal dust acquisition,
+clean in water,
+burn near candles, use different colours for different shards
+use note blocks to cleanse, different notes clean for different shards
+let sit under the full moon to absorb lunar energy
+
+
+Selenite tower: echo selenite tower, used to link echo + potions allowing for travelling to location of echo selenite tower
+allows the focusing of echo potions to specific frequency allowing a deeper connection between the tower and potion.
+When a user drinks a potion, they absorb the vibrational energy allowing them to reconnect to the other half 
+i.e the echo selenite tower
+
+amethyst, peace, maybe the wind chimes can be used to calm mobs, e.g angry mobs turn to calm or stop pursuing the player
+Shungite? Maybe use that as a anchor or protective base
+
+Please note i do not believe this shit but im loggging it down because these absurd claims have no source, they are thrown
+out there. I mean the 2nd one is like some fucking LSD trip
+" As Albert Einstein is reported to have said, everything in life is vibration"
+"One of the first pieces of scientific evidence relating to the power of crystals is the work done by IBM scientist Marcel Vogel.
+ While watching crystals grow under a microscope, he noticed that their shape took the form of whatever he was thinking about."
+"He also tested the metaphysical power of Clear Quartz and proved that rocks can store thoughts similar to how tapes use magnetic energy to record sound"
+Of course it requires "patience", yeh no shit. Oh no it wont work right now, you just gotta believe enough, just
+please dont burst a blood vessel from believing to hard, we may get sued and we cant afford that
+
+"which is essential if you’re the type of person that easily picks up on other people’s energy"
+I'm an empath. Only sociopaths aren't empaths. Dickhead
+Looking through this site energymuse.com this "blog" is just selling shit
+"programming your crystal" bros unlocking ancient ai
+
+"If you have a Selenite wand, " bitches be waving their stone sticks at night casting 
+spells just before going to there 9-5. I align my vibrations so my boss doesnt realise im slacking today
+" healing potential was recognized through the 1996 Nobel Prize-winning research that discovered fullerenes within the stone."
+Nobel prize, I just know that this fact is a straight up lie.

@@ -32,7 +32,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
 });
 
 export function crystalGrowth(block, seedStage){
-    if(seedStage == 4){
+    if(seedStage == 5){
         switch(block.permutation.getState("ps:crystal_type")){
             case "amethyst":
                 block.setType("minecraft:budding_amethyst");
