@@ -2,17 +2,17 @@
     "format_version": "1.12",
     "minecraft:recipe_shaped": {
       "description": {
-        "identifier": "ps:seed_amethyst"
+        "identifier": "ps:seed_echo"
       },
       "tags": [ "crafting_table" ],
       "pattern": [
-        "AQA",
+        "EQE",
         "QSQ",
-        "AQA"
+        "EQE"
       ],
       "key": {
-        "A": {
-          "item": "minecraft:amethyst_shard"
+        "E": {
+          "item": "minecraft:echo_shard"
         },
         "Q": {
           "item": "ps:pure_quartz_shard"
@@ -22,7 +22,7 @@
         }
       },
       "result": {
-        "item": "ps:amethyst_seed",
+        "item": "ps:echo_seed",
         "count": 1
       }
     }

@@ -2,17 +2,17 @@
     "format_version": "1.12",
     "minecraft:recipe_shaped": {
       "description": {
-        "identifier": "ps:seed_amethyst"
+        "identifier": "ps:seed_redstone"
       },
       "tags": [ "crafting_table" ],
       "pattern": [
-        "AQA",
+        "RQR",
         "QSQ",
-        "AQA"
+        "RQR"
       ],
       "key": {
-        "A": {
-          "item": "minecraft:amethyst_shard"
+        "R": {
+          "item": "ps:redstone_shard"
         },
         "Q": {
           "item": "ps:pure_quartz_shard"
@@ -22,7 +22,7 @@
         }
       },
       "result": {
-        "item": "ps:amethyst_seed",
+        "item": "ps:redstone_seed",
         "count": 1
       }
     }
