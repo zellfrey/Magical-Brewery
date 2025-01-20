@@ -9,10 +9,12 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
 
             const crystalType = block.typeId.slice(8);
             const face = block.permutation.getState("minecraft:block_face");
+            const rotation = Math.floor(Math.random() * 4)
 
             block.setType("ps:growing_crystal");
             block.setPermutation(block.permutation.withState("ps:crystal_type", crystalType)); 
             block.setPermutation(block.permutation.withState("minecraft:block_face", face));
+            block.setPermutation(block.permutation.withState("ps:crystal_rotation", rotation));
         }
     });
 });

@@ -13,7 +13,8 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             //Cant find method, but if it exists please let this be a thing
             if(block.typeId === "ps:growing_crystal"){
                 const seedStage = block.permutation.getState('ps:crystal_stage');
-                
+                const rotation = Math.floor(Math.random() * 4)
+                block.setPermutation(block.permutation.withState("ps:crystal_rotation", rotation));
                 crystalGrowth(block, seedStage) 
 
             }else if(buddingCrystals.includes(block.typeId)){

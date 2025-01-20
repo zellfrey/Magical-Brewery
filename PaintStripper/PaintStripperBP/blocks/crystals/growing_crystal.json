@@ -13,8 +13,9 @@
           }
         },
         "states": {
-          "ps:crystal_stage": [1,2,3,4,5],
-          "ps:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz", "echo"]
+            "ps:crystal_rotation":[0,1,2,3],
+            "ps:crystal_stage": [1,2,3,4,5],
+            "ps:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz", "echo"]
         }
       },
       "components": {
@@ -58,6 +59,24 @@
       },
       "permutations": [
         {
+            "condition": "query.block_state('ps:crystal_rotation') == '1'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 90, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_rotation') == '2'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 180, 0] }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_rotation') == '3'",
+            "components": {
+            "minecraft:transformation": { "rotation": [0, 270, 0] }
+            }
+        },
+        {
             "condition": "query.block_state('minecraft:block_face') == 'north'",
             "components": {
             "minecraft:transformation": { "rotation": [-90, 0, 0] }
@@ -97,12 +116,12 @@
             "condition": "query.block_state('ps:crystal_stage') == 1",
             "components": {
                 "minecraft:collision_box": {
-                    "origin": [-1, 0, -1],
-                    "size": [2, 2, 2]
+                    "origin": [-3, 0, -3],
+                    "size": [6, 2, 6]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-1.0, 0.0, -1.0],
-                    "size": [2.0, 2.0, 2.0]
+                    "origin": [-3.0, 0.0, -3.0],
+                    "size": [6.0, 2.0, 6.0]
                 }
             }
         },
@@ -110,12 +129,12 @@
             "condition": "query.block_state('ps:crystal_stage') == 2",
             "components": {
                 "minecraft:collision_box": {
-                    "origin": [-2, 0, -2],
-                    "size": [4, 4, 4]
+                    "origin": [-4, 0, -4],
+                    "size": [8, 4, 8]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-2.0, 0.0, -2.0],
-                    "size": [4.0, 4.0, 4.0]
+                    "origin": [-4.0, 0.0, -4.0],
+                    "size": [8.0, 4.0, 8.0]
                 }
             }
         },
@@ -123,12 +142,12 @@
             "condition": "query.block_state('ps:crystal_stage') == 3",
             "components": {
                 "minecraft:collision_box": {
-                    "origin": [-4, 0, -4],
-                    "size": [8, 8, 8]
+                    "origin": [-7, 0, -7],
+                    "size": [14, 8, 14]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-4.0, 0.0, -4.0],
-                    "size": [8.0, 8.0, 8.0]
+                    "origin": [-7.0, 0.0, -7.0],
+                    "size": [14.0, 8.0, 14.0]
                 }
             }
         },
@@ -136,12 +155,25 @@
             "condition": "query.block_state('ps:crystal_stage') == 4",
             "components": {
                 "minecraft:collision_box": {
-                    "origin": [-6, 0, -6],
-                    "size": [12, 12, 12]
+                    "origin": [-7, 0, -7],
+                    "size": [14, 12, 14]
                 },
                 "minecraft:selection_box": {
-                    "origin": [-6.0, 0.0, -6.0],
-                    "size": [12.0, 12.0, 12.0]
+                    "origin": [-7.0, 0.0, -7.0],
+                    "size": [14.0, 12.0, 14.0]
+                }
+            }
+        },
+        {
+            "condition": "query.block_state('ps:crystal_stage') == 5",
+            "components": {
+                "minecraft:collision_box": {
+                    "origin": [-7, 0, -7],
+                    "size": [14, 14, 14]
+                },
+                "minecraft:selection_box": {
+                    "origin": [-7.0, 0.0, -7.0],
+                    "size": [14.0, 14.0, 14.0]
                 }
             }
         },
