@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "ps:seed_pure_quartz"
+      },
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "QQQ",
+        "QSQ",
+        "QQQ"
+      ],
+      "key": {
+        "Q": {
+          "item": "ps:pure_quartz_shard"
+        },
+        "S": {
+          "item": "minecraft:stone"
+        }
+      },
+      "result": {
+        "item": "ps:pure_quartz_seed",
+        "count": 1
+      }
+    }
+  }
+    

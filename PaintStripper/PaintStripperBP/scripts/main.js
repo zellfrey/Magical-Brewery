@@ -1,7 +1,8 @@
-import {world, system, ItemStack } from "@minecraft/server";
+import {world, system, ItemStack} from "@minecraft/server";
 import {getAdjacentBlock, getBlockFromFace} from "./utils/blockPlacementUtils.js";
 import "./crystal/buddingCrystal.js"
 import "./crystal/growingCrystal.js"
+import "./crystal/cleansingCrystal.js"
 import "./tools/glassmithHammer.js"
 import "./tools/glassmithChisel.js"
 import "./tools/agelessPocketWatch.js"
@@ -30,11 +31,3 @@ system.runInterval(
         };
     },
 );
-
-world.afterEvents.entitySpawn.subscribe((e) => {
-    const { entity } = e;
-    if(entity.typeId !== "minecraft:item") return;
-    
-    const item = entity.getComponent("item");
-    console.warn(item.typeId)
-});
