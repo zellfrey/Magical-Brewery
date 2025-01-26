@@ -1,16 +1,5 @@
-Crystals, fix hitbox. Look at stage 4. DONE
-Add seed glowstone DONE
-Hide crystal cluster block from creative & commands. DONE
-Create recipes for both seed crystals DONE
-Make texture for budding seeds DONE
-Add sounds for clusters and buds. DONE
-Change seed crystal growth to onRandomTick
-Add step on function to produce sound. Look into changing pitch/volume for randomness. No need
-add lighting to glowstone clusters DONE
-
 
 torchflower - living flame, healing
-
 potions
 figure out how to add lore
 ,
@@ -189,21 +178,8 @@ i.e the echo selenite tower
 amethyst, peace, maybe the wind chimes can be used to calm mobs, e.g angry mobs turn to calm or stop pursuing the player
 Shungite? Maybe use that as a anchor or protective base
 
-Please note i do not believe this shit but im loggging it down because these absurd claims have no source, they are thrown
-out there. I mean the 2nd one is like some fucking LSD trip
-" As Albert Einstein is reported to have said, everything in life is vibration"
-"One of the first pieces of scientific evidence relating to the power of crystals is the work done by IBM scientist Marcel Vogel.
- While watching crystals grow under a microscope, he noticed that their shape took the form of whatever he was thinking about."
-"He also tested the metaphysical power of Clear Quartz and proved that rocks can store thoughts similar to how tapes use magnetic energy to record sound"
-Of course it requires "patience", yeh no shit. Oh no it wont work right now, you just gotta believe enough, just
-please dont burst a blood vessel from believing to hard, we may get sued and we cant afford that
+alchemy research, craft special cauldron, similar to skyrim
 
-"which is essential if you’re the type of person that easily picks up on other people’s energy"
-I'm an empath. Only sociopaths aren't empaths. Dickhead
-Looking through this site energymuse.com this "blog" is just selling shit
-"programming your crystal" bros unlocking ancient ai
+lock potion, a combination of ender pearls and echo shards. Locking the player in a position for a brief period of time 
 
-"If you have a Selenite wand, " bitches be waving their stone sticks at night casting 
-spells just before going to there 9-5. I align my vibrations so my boss doesnt realise im slacking today
-" healing potential was recognized through the 1996 Nobel Prize-winning research that discovered fullerenes within the stone."
-Nobel prize, I just know that this fact is a straight up lie.
+Will continue with the mechanic of cleaning crystals later. 

@@ -15,18 +15,7 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
 
     cleanCrystal(item, entity, block, eCoords, block.location);
 
-    // let candle;
-    // switch(name){
-    //     case "minecraft:quartz":
-    //         candle = "minecraft:white_candle"
-    //     break;
-    //     case "minecraft:redstone":
-    //         candle = "minecraft:red_candle"
-    //     break;
-    //     case "minecraft:glowstone":
-    //         candle = "minecraft:yellow_candle"
-    //     break;
-    // }
+    
     
 
 });
@@ -46,23 +35,50 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
         //find blocklocation, if not there, return,
         //await some Ticks, say 1 minute or 2
         //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
-    }else if(!lore.includes('§7Heat treated')){
-        // neighbouringCross.forEach((el) => {
-        // const neighbour = block.offset({x: x+el.x, y: y, z:z+ el.z})
-        // console.warn(neighbour.type)
-        // });
-        cleanStage = '§7Heat treated';
+    }
+    if(!lore.includes('§7Heat treated')){
+        let candle;
+        switch(item.typeId){
+            case "minecraft:quartz":
+                candle = "minecraft:white_candle"
+            break;
+            case "minecraft:redstone":
+                candle = "minecraft:red_candle"
+            break;
+            case "minecraft:glowstone":
+                candle = "minecraft:yellow_candle"
+            break;
+        }
+        const crossBlocks = [];
+        neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
+        const isCandleCrossValid = crossBlocks.every(el => {
+            el.typeId === candle})
+        if(isCandleCrossValid){
+            cleanStage = '§7Heat treated';
+        }
+        
         //find blocklocation, if not there, return,
         //await some Ticks, say 1 minute or 2
         //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
-    }else if(!lore.includes('§7Harmonised')){
-        cleanStage = '§7Harmonised';
+    }
+    if(!lore.includes('§7Harmonised')){
+        if(block.below().typeId === "minecraft:noteblock"){
+            
+            cleanStage = '§7Harmonised';
+            
+        }
+        
         //find blocklocation, if not there, return,
         //await some Ticks, say 1 minute or 2
         //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
-    }else if(!lore.includes('§7Lunar charged')){
-        cleanStage = '§7Lunar charged';
-        world.getMoonPhase();
+    }
+    if(!lore.includes('§7Lunar charged')){
+        const time = world.getTimeOfDay();
+        const moonPhase = world.getMoonPhase();
+        if((time >= 15000 && time <= 20000) && moonPhase === 0){
+            cleanStage = '§7Lunar charged';
+        }
+        
         //find blocklocation, if not there, return,
         //await some Ticks, say 1 minute or 2
         //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
@@ -84,6 +100,10 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
         dim.spawnItem(quartz, entityCoords)
     }
     
+}
+
+function validCandle(block, candle){
+
 }
 //Start with the easy steps
 //Clean dust/crystal with brush
