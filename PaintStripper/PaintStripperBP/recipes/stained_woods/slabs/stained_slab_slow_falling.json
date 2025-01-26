@@ -1,0 +1,22 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+    "description": {
+        "identifier": "ps:stained_slab_slow_falling"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+        "item": "ps:stained_planks_slow_falling"
+        }
+    },
+    "result": {
+        "item": "ps:stained_slab_slow_falling",
+        "count": 6
+    }
+    }
+}
+                 

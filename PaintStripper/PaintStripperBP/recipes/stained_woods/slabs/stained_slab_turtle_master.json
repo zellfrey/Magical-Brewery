@@ -1,0 +1,22 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+    "description": {
+        "identifier": "ps:stained_slab_turtle_master"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+        "item": "ps:stained_planks_turtle_master"
+        }
+    },
+    "result": {
+        "item": "ps:stained_slab_turtle_master",
+        "count": 6
+    }
+    }
+}
+                 

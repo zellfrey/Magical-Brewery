@@ -183,3 +183,6 @@ alchemy research, craft special cauldron, similar to skyrim
 lock potion, a combination of ender pearls and echo shards. Locking the player in a position for a brief period of time 
 
 Will continue with the mechanic of cleaning crystals later. 
+
+currently there is no way of obtaining the potion id from a 
+look into giving glass bottles as a byproduct from stained planks

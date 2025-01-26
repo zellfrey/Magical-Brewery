@@ -1,0 +1,18 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "ps:stained_planks_slowness"
+        },
+        "tags": ["crafting_table"],
+        "ingredients": [
+            "minecraft:potion_type:slowness", "minecraft:planks"
+        ],
+        "result": [
+            {
+                "item": "ps:stained_planks_slowness",
+                "count": 1
+            }
+        ]
+    }
+}
