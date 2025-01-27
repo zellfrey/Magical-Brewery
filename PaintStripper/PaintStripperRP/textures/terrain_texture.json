@@ -156,6 +156,12 @@
     },
     "stained_planks_weakness":{
       "textures": "textures/blocks/stained_woods/planks_stained_weakness.png"
+    },
+    "cask_side_regeneration":{
+      "textures": "textures/blocks/casks/cask_side_regeneration.png"
+    },
+    "cask_end_regeneration":{
+      "textures": "textures/blocks/casks/cask_end_regeneration.png"
     }
   }
 } 
