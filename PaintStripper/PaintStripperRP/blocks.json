@@ -1,9 +1,54 @@
 { 
   "format_version": "1.21.20",
+  "ps:budding_pure_quartz":{
+    "sound" : "amethyst_block"
+  },
+  "ps:pure_quartz_cluster":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:pure_quartz_shard_block":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:small_pure_quartz_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:medium_pure_quartz_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:large_pure_quartz_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:seed_pure_quartz":{
+    "sound" : "amethyst_block"
+  },
+  "ps:budding_echo":{
+    "sound" : "amethyst_block"
+  },
+  "ps:echo_cluster":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:echo_shard_block":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:small_echo_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:medium_echo_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:large_echo_bud":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:seed_echo":{
+    "sound" : "amethyst_block"
+  },
   "ps:budding_glowstone":{
     "sound" : "amethyst_block"
   },
   "ps:glowstone_cluster":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:glowstone_shard_block":{
     "sound" : "amethyst_cluster"
   },
   "ps:small_glowstone_bud":{
@@ -22,6 +67,9 @@
     "sound" : "amethyst_block"
   },
   "ps:redstone_cluster":{
+    "sound" : "amethyst_cluster"
+  },
+  "ps:redstone_shard_block":{
     "sound" : "amethyst_cluster"
   },
   "ps:small_redstone_bud":{
