@@ -157,11 +157,101 @@
     "stained_planks_weakness":{
       "textures": "textures/blocks/stained_woods/planks_stained_weakness.png"
     },
+    "cask_side_decay":{
+     "textures": "textures/blocks/casks/cask_side_decay.png"
+    },
+    "cask_side_harming":{
+      "textures": "textures/blocks/casks/cask_side_harming.png"
+    },
+    "cask_side_healing":{
+      "textures": "textures/blocks/casks/cask_side_healing.png"
+    },
+    "cask_side_invisibility":{
+      "textures": "textures/blocks/casks/cask_side_invisibility.png"
+    },
+    "cask_side_leaping":{
+      "textures": "textures/blocks/casks/cask_side_leaping.png"
+    },
+    "cask_side_poison":{
+      "textures": "textures/blocks/casks/cask_side_poison.png"
+    },
     "cask_side_regeneration":{
-      "textures": "textures/blocks/casks/cask_side_regeneration.png"
+     "textures": "textures/blocks/casks/cask_side_regeneration.png"
+    },
+    "cask_side_resistance_fire":{
+      "textures": "textures/blocks/casks/cask_side_resistance_fire.png"
+    },
+    "cask_side_slow_falling":{
+      "textures": "textures/blocks/casks/cask_side_slow_falling.png"
+    },
+    "cask_side_slowness":{
+      "textures": "textures/blocks/casks/cask_side_slowness.png"
+    },
+    "cask_side_strength":{
+      "textures": "textures/blocks/casks/cask_side_strength.png"
+    },
+    "cask_side_swiftness":{
+      "textures": "textures/blocks/casks/cask_side_swiftness.png"
+    },
+    "cask_side_turtle_master":{
+      "textures": "textures/blocks/casks/cask_side_turtle_master.png"
+    },
+    "cask_side_vision_night":{
+      "textures": "textures/blocks/casks/cask_side_vision_night.png"
+    },
+    "cask_side_water_breathing":{
+     "textures": "textures/blocks/casks/cask_side_water_breathing.png"
+    },
+    "cask_side_weakness":{
+      "textures": "textures/blocks/casks/cask_side_weakness.png"
+    },
+    "cask_end_decay":{
+     "textures": "textures/blocks/casks/cask_end_decay.png"
+    },
+    "cask_end_harming":{
+      "textures": "textures/blocks/casks/cask_end_harming.png"
+    },
+    "cask_end_healing":{
+      "textures": "textures/blocks/casks/cask_end_healing.png"
+    },
+    "cask_end_invisibility":{
+      "textures": "textures/blocks/casks/cask_end_invisibility.png"
+    },
+    "cask_end_leaping":{
+      "textures": "textures/blocks/casks/cask_end_leaping.png"
+    },
+    "cask_end_poison":{
+      "textures": "textures/blocks/casks/cask_end_poison.png"
     },
     "cask_end_regeneration":{
-      "textures": "textures/blocks/casks/cask_end_regeneration.png"
+     "textures": "textures/blocks/casks/cask_end_regeneration.png"
+    },
+    "cask_end_resistance_fire":{
+      "textures": "textures/blocks/casks/cask_end_resistance_fire.png"
+    },
+    "cask_end_slow_falling":{
+      "textures": "textures/blocks/casks/cask_end_slow_falling.png"
+    },
+    "cask_end_slowness":{
+      "textures": "textures/blocks/casks/cask_end_slowness.png"
+    },
+    "cask_end_strength":{
+      "textures": "textures/blocks/casks/cask_end_strength.png"
+    },
+    "cask_end_swiftness":{
+      "textures": "textures/blocks/casks/cask_end_swiftness.png"
+    },
+    "cask_end_turtle_master":{
+      "textures": "textures/blocks/casks/cask_end_turtle_master.png"
+    },
+    "cask_end_vision_night":{
+      "textures": "textures/blocks/casks/cask_end_vision_night.png"
+    },
+    "cask_end_water_breathing":{
+     "textures": "textures/blocks/casks/cask_end_water_breathing.png"
+    },
+    "cask_end_weakness":{
+      "textures": "textures/blocks/casks/cask_end_weakness.png"
     }
   }
 } 

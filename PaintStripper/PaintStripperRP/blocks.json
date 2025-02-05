@@ -183,6 +183,55 @@
   },
   "ps:stained_slab_weakness":{
     "sound" : "wood"
+  },
+
+  "ps:cask_decay":{
+    "sound" : "wood"
+  },
+  "ps:cask_harming":{
+    "sound" : "wood"
+  },
+  "ps:cask_healing":{
+    "sound" : "wood"
+  },
+  "ps:cask_invisibility":{
+    "sound" : "wood"
+  },
+  "ps:cask_leaping":{
+    "sound" : "wood"
+  },
+  "ps:cask_poison":{
+    "sound" : "wood"
+  },
+  "ps:cask_regeneration":{
+    "sound" : "wood"
+  },
+  "ps:cask_resistance_fire":{
+    "sound" : "wood"
+  },
+  "ps:cask_slow_falling":{
+    "sound" : "wood"
+  },
+  "ps:cask_slowness":{
+    "sound" : "wood"
+  },
+  "ps:cask_strength":{
+    "sound" : "wood"
+  },
+  "ps:cask_swiftness":{
+    "sound" : "wood"
+  },
+  "ps:cask_turtle_master":{
+    "sound" : "wood"
+  },
+  "ps:cask_vision_night":{
+    "sound" : "wood"
+  },
+  "ps:cask_water_breathing":{
+    "sound" : "wood"
+  },
+  "ps:cask_weakness":{
+    "sound" : "wood"
   }
 }
 
