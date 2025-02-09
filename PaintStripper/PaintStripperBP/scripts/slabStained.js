@@ -22,7 +22,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
                     blockToCheck.setPermutation(blockToCheck.permutation.withState('ps:double', true)); 
                     world.playSound('use.wood', blockToCheck.location);
                     e.cancel = true;
-                    setMainHand(player, equipment, selectedItem);
+                    setMainHand(player, equipment, selectedItem, undefined);
                 }
                 
             }
