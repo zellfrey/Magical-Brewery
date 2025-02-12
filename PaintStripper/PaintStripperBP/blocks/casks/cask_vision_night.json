@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:cask_regeneration",
+            "identifier": "ps:cask_vision_night",
             "menu_category": {
                 "category": "construction",
                 "group": "itemGroup.name.planks"
@@ -20,7 +20,7 @@
             } 
         },
         "components": {
-            "tag:Regeneration": {},
+            "tag:Night_Vision": {},
             "minecraft:custom_components": ["ps:ort_cask_aging", "ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
             "minecraft:light_dampening": 4,
             "minecraft:destructible_by_mining": { 
@@ -35,10 +35,10 @@
             },
             "minecraft:material_instances": {
 				"*": {
-					"texture": "cask_side_regeneration"
+					"texture": "cask_side_vision_night"
 				  },
 				  "end": {
-					"texture": "cask_end_regeneration"
+					"texture": "cask_end_vision_night"
 				  },
                   "front": {
 					"texture": "barrel_top"
