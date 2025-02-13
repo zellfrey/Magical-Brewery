@@ -88,6 +88,9 @@
 		},
       "ageless_pocket_watch":{
 			"textures": "textures/items/ageless_pocket_watch.png"
+		},
+      "tasting_spoon":{
+			"textures": "textures/items/tasting_spoon.png"
 		}
    }
 }

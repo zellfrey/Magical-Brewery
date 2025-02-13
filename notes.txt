@@ -1,7 +1,6 @@
 
 torchflower - living flame, healing
 potions
-figure out how to add lore
 ,
     "stained_plank_healing":{
       "textures": [
@@ -190,7 +189,6 @@ look into giving glass bottles as a byproduct from stained planks
 
 "ps:seal_type": ["none", "potency", "longevity"],
 
-cask sides, flip horizontally, rotate left 
 
 TODO: implement function to change cask tag into localised language
 
@@ -203,25 +201,17 @@ leaping - jump_boost
 swiftness - speed
 regeneration - still returns none
 
-Strangely, swiftness and leaping blocktags arent obtained. I have no fucking clue as to why. 
-For now, make a separate gaurd clause to check the cask id and manually add the appropriate effects
-
 Turtle Master. Seeing as its mixed, make a separate guard rdclause for this unique instance. Or look into adding more block Tags
 This method of adding more block tags maybe stupid as fuck
-
- // if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
-            //tasting spoon
-            //if(selectedItem.typeId === "ps:tasting_spoon"){}
-            //Allows player to taste the liquid contained in the cask, if no liquid exists inside, return
-            //If the aging phase is incomplete, only apply the liquid effect of the potion that was placed inside
-            //if aging phase is complete, apply both the liquid effect from the potion and the cask's effect
-
-            //currently there is a bug in which "regeneration" potions do not have its effect listed in the potionEffectType. Why did i make a cask of regeneration first
-            //TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
-            //TODO: Figure out why the fuck swiftness and leaping do not give their alternative tags
-
+            
 TODO: Add sounds to various cask interactions
-
 cask sometimes cant read potion effect type nor interact with age. Maybe due to reload
-
 TODO: Send messages using .lang file. Currently its in english
+
+
+1st iteration of DB is done. Current updates are only applied via dev tool
+TODO: Update casks to utilise on random tick. Rather than manually updating cask, the cask is updated every so often transforming the aging phase
+TODO: Create edge case for "regeneration" potion id. Simply check for empty string and replace it
+TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
+TODO: Figure out why the fuck swiftness and leaping do not give their alternative tags
+TODO: Use a failsafe guard clause just in case cask data does not exist "if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})"
