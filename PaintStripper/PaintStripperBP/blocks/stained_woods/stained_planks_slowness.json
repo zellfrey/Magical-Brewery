@@ -4,8 +4,7 @@
         "description": {
             "identifier": "ps:stained_planks_slowness",
             "menu_category": {
-                "category": "construction",
-                "group": "itemGroup.name.planks"
+                "category": "construction"
             }
         },
         "components": {

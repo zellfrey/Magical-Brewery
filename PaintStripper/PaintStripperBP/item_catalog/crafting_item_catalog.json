@@ -1,0 +1,60 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:crafting_items_catalog": {
+      "categories": [
+        {
+          "category_name": "construction",
+          "groups": [
+            {
+              "group_identifier": {
+                "icon": "ps:stained_planks_swiftness",
+                "name": "paint_stripper:ps_stained_planks_construction"
+              },
+              "items": [
+                "ps:stained_planks_decay",
+                "ps:stained_planks_harming",
+                "ps:stained_planks_healing",
+                "ps:stained_planks_invisibility",
+                "ps:stained_planks_leaping",
+                "ps:stained_planks_poison",
+                "ps:stained_planks_regeneration",
+                "ps:stained_planks_resistance_fire",
+                "ps:stained_planks_slow_falling",
+                "ps:stained_planks_slowness",
+                "ps:stained_planks_strength",
+                "ps:stained_planks_swiftness",
+                "ps:stained_planks_turtle_master",
+                "ps:stained_planks_vision_night",
+                "ps:stained_planks_water_breathing",
+                "ps:stained_planks_weakness"
+              ]
+            },
+            {
+                "group_identifier": {
+                  "icon": "ps:stained_slab_swiftness",
+                  "name": "paint_stripper:ps_stained_slabs_construction"
+                },
+                "items": [
+                  "ps:stained_slab_decay",
+                  "ps:stained_slab_harming",
+                  "ps:stained_slab_healing",
+                  "ps:stained_slab_invisibility",
+                  "ps:stained_slab_leaping",
+                  "ps:stained_slab_poison",
+                  "ps:stained_slab_regeneration",
+                  "ps:stained_slab_resistance_fire",
+                  "ps:stained_slab_slow_falling",
+                  "ps:stained_slab_slowness",
+                  "ps:stained_slab_strength",
+                  "ps:stained_slab_swiftness",
+                  "ps:stained_slab_turtle_master",
+                  "ps:stained_slab_vision_night",
+                  "ps:stained_slab_water_breathing",
+                  "ps:stained_slab_weakness"
+                ]
+              }
+          ]
+        }
+      ]
+    }
+  }

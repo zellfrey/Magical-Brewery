@@ -4,8 +4,7 @@
 		"description": {
 			"identifier": "ps:stained_slab_harming",
 			"menu_category": {
-				"category": "construction",
-                "group": "itemGroup.name.slab"
+				"category": "construction"
 			},
 			"traits": {
 				"minecraft:placement_position": {
