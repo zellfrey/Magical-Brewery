@@ -51,10 +51,8 @@ item.ps.effect_absorption.name=Absorption
 ##---------------------------------
 
 
-
-
 ##---------------------------------
-##Decorative Blocks---------------------------------
+##Stained Planks/Slabs---------------------------------
 tile.ps:stained_planks_decay.name=Stained Planks of Decay
 tile.ps:stained_planks_harming.name=Stained Planks of Harming
 tile.ps:stained_planks_healing.name=Stained Planks of Healing
@@ -87,6 +85,26 @@ tile.ps:stained_slab_turtle_master.name=Stained Slab of the Turtle Master
 tile.ps:stained_slab_vision_night.name=Stained Slab of Night Vision
 tile.ps:stained_slab_water_breathing.name=Stained Slab of Water Breathing
 tile.ps:stained_slab_weakness.name=Stained Slab of Weakness
+##---------------------------------
+
+##---------------------------------
+##Casks---------------------------------
+tile.ps:cask_decay.name=Cask of Decay
+tile.ps:cask_harming.name=Cask of Harming
+tile.ps:cask_healing.name=Cask of Healing
+tile.ps:cask_invisibility.name=Cask of Invisibility
+tile.ps:cask_leaping.name=Cask of Leaping
+tile.ps:cask_poison.name=Cask of Poison
+tile.ps:cask_regeneration.name=Cask of Regeneration
+tile.ps:cask_resistance_fire.name=Cask of Fire Resistance
+tile.ps:cask_slow_falling.name=Cask of Slow Falling
+tile.ps:cask_slowness.name=Cask of Slowness
+tile.ps:cask_strength.name=Cask of Strength
+tile.ps:cask_swiftness.name=Cask of Swiftness
+tile.ps:cask_turtle_master.name=Cask of the Turtle Master
+tile.ps:cask_vision_night.name=Cask of Night Vision
+tile.ps:cask_water_breathing.name=Cask of Water Breathing
+tile.ps:cask_weakness.name=Cask of Weakness
 ##---------------------------------
 ##Crops---------------------------------
 
