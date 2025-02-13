@@ -210,8 +210,13 @@ TODO: Send messages using .lang file. Currently its in english
 
 
 1st iteration of DB is done. Current updates are only applied via dev tool
+1.5:(make it run and eliminate bugs)
 TODO: Update casks to utilise on random tick. Rather than manually updating cask, the cask is updated every so often transforming the aging phase
+TODO: Create permutation that uses ort. If fill level is !== 0 && ageingphase !==3
 TODO: Create edge case for "regeneration" potion id. Simply check for empty string and replace it
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
 TODO: Figure out why the fuck swiftness and leaping do not give their alternative tags
 TODO: Use a failsafe guard clause just in case cask data does not exist "if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})"
+
+2nd iteration,
+TODO: Allow for stacking of potion effects. Save stack
