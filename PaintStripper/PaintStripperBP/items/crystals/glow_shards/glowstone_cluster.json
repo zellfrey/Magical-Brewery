@@ -4,7 +4,7 @@
       "description": {
         "identifier": "ps:glowstone_cluster",
         "menu_category": {
-                "category": "items"
+                "category": "nature"
             }
       }, 
       "components": {

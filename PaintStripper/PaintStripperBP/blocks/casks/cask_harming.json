@@ -4,8 +4,7 @@
         "description": {
             "identifier": "ps:cask_harming",
             "menu_category": {
-                "category": "construction",
-                "group": "itemGroup.name.planks"
+                "category": "items"
             },
             "traits": {
                 "minecraft:placement_direction": {

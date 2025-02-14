@@ -114,5 +114,11 @@ tile.ps:cask_weakness.name=Cask of Weakness
 ##Item/Block Catalogues---------------------------------
 paint_stripper:ps_stained_planks_construction=Stained Planks
 paint_stripper:ps_stained_slabs_construction=Stained Slabs
-
+paint_stripper:ps_casks_items=Casks
+paint_stripper:ps_crystal_seeds_items=Crystal Seeds
+paint_stripper:ps_shards_items=Shards
+paint_stripper:ps_glowstone_crystals_nature=Glowstone Crystals
+paint_stripper:ps_redstone_crystals_nature=Redstone Crystals
+paint_stripper:ps_echo_crystals_nature=Echo Crystals
+paint_stripper:ps_pure_quartz_crystals_nature=Pure Quartz Crystals
 ##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means
