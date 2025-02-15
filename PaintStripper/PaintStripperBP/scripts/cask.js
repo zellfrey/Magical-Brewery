@@ -67,7 +67,8 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
                 block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
 
                 if(agePhase === 3 && !cask.is_aged){
-                    const effectId = block.getTags()[1] !== undefined ? block.getTags()[1] : block.getTags()[0];
+                    const effectId = getEffectfromCask(block.getTags()[0])
+                
                     console.log(effectId)
                     cask.potion_effects.push(effectId);
                     cask.is_aged = true;
@@ -204,4 +205,29 @@ function matchesPotion(caskPotion, heldPotion){
     const matchesLiquid = caskPotion.potion_liquid === heldPotion.potionLiquidType.id;
     const matchesModifier = caskPotion.potion_modifier === heldPotion.potionModifierType.id;
     return matchesEffect && matchesLiquid &&  matchesModifier;
+}
+
+//From testing, block tags seem to be sorted alphabetically. So im having to rely on this. Its not pretty, its archaic, but what can you do
+function getEffectfromCask(tag){
+    let effect;
+    switch(tag){
+        case "Decay":
+            effect = "Wither";
+        break;
+        case "Harming":
+            effect = "Instant_Damage";
+        break;
+        case "Healing":
+            effect = "Instant_Health";
+        break;
+        case "Leaping":
+            effect = "Jump_Boost";
+        break;
+        case "Swiftness":
+            effect = "Speed";
+        break;
+        default:
+        effect = tag;
+    }
+    return effect;
 }

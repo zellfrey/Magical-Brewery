@@ -20,7 +20,6 @@
         },
         "components": {
             "tag:Healing": {},
-            "tag:Instant_Health": {},
             "minecraft:custom_components": ["ps:ort_cask_aging", "ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
             "minecraft:light_dampening": 4,
             "minecraft:destructible_by_mining": { 
