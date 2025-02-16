@@ -16,7 +16,7 @@
 			  }
 		},
 		"components": {
-			"minecraft:custom_components": ["ps:before_on_place_rotatable_slab"],
+			"minecraft:custom_components": ["ps:bop_slab"],
 			"tag:slab": {},
 			"minecraft:light_dampening": 4,
             "minecraft:destructible_by_mining": { 
@@ -80,7 +80,7 @@
 			{
 				"condition": "q.block_state('ps:double')",
 				"components": {
-					"minecraft:custom_components": ["ps:on_player_destroy_slab"],
+					"minecraft:custom_components": ["ps:opd_slab"],
 					"minecraft:geometry": "minecraft:geometry.full_block",
 					"minecraft:liquid_detection": {
 						"detection_rules": [
