@@ -1,7 +1,7 @@
 import {world, system, ItemStack } from "@minecraft/server";
 
 //glowstone cluster growth via budding glowstone
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_glowstone_growth', {
         onRandomTick(e) {
             const { block } = e;
@@ -18,7 +18,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
     });
 });
 //redstone cluster growth via budding redstone
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_redstone_growth', {
         onRandomTick(e) {
             const { block } = e;
@@ -29,13 +29,13 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             if(validBlocks.length === 0) return;
 
             const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
-
+            
             growCrystalBud(budToGrow, "redstone", 3, -13)
         }
     });
 });
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_pure_quartz_growth', {
         onRandomTick(e) {
             const { block } = e;
@@ -52,7 +52,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
     });
 });
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_echo_growth', {
         onRandomTick(e) {
             const { block } = e;

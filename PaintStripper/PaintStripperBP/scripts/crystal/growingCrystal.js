@@ -2,7 +2,7 @@ import {world, system, ItemStack } from "@minecraft/server";
 
 //Functions are structured in terms of gameplay progression. 
 //seed to growing crystal
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_seed_to_crystal', {
         onRandomTick(e) {
             const { block } = e;
@@ -21,13 +21,13 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
 
 
 //Growing crystal growth mechanic.
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_crystal_growth', {
         onRandomTick(e) {
             const { block } = e;
 
             const seedStage = block.permutation.getState('ps:crystal_stage');
-
+            
             crystalGrowth(block, seedStage) 
         }
     });
