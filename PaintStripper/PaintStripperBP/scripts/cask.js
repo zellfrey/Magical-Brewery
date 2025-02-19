@@ -2,11 +2,12 @@ import {world, system, ItemStack} from "@minecraft/server";
 import {setMainHand} from './utils/containerUtils.js';
 
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:op_cask', {
         onPlace(e) {
             const {block, dimension} = e;
             const {x,y,z} = block.location
+            console.log("placing cask")
             let getCaskData = world.getDynamicProperty('magical_brewery:cask_data')
             if (getCaskData) {
                 getCaskData = JSON.parse(getCaskData)
@@ -14,12 +15,13 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             } else {
                 getCaskData = [createCask(dimension.id, {x, y, z})]
             }
+            console.log(getCaskData[getCaskData.length -1].dimensionId)
             world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(getCaskData))
         }
     });
 });
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_cask', {
         onPlayerDestroy(e) {
             const {block, dimension} = e;
@@ -28,7 +30,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
     });
 });
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:pi_cask_fill', {
         onPlayerInteract(e) {
             const {block, dimension, player} = e;
@@ -42,7 +44,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             let cask = findCask(dimension.id, {x, y, z})
             const fillLevel = block.permutation.getState("ps:fill_level");
             
-
+            
             if(selectedItem.typeId === "ps:tasting_spoon"){
                 
                 if(fillLevel === 0){
@@ -78,8 +80,9 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             } 
             if(selectedItem.typeId === "minecraft:potion" || selectedItem.typeId === "minecraft:lingering_potion" 
                 || selectedItem.typeId === "minecraft:splash_potion"){
-
-                const potion = selectedItem.getComponent('minecraft:potion')
+                
+                //v2.0.0 uses "T" (generic) instead of a string. So im using this silly method to just get the first and only component of a potion
+                const potion = selectedItem.getComponents()[0];
                 
                 if(fillLevel === 3 || potion === undefined) return;
                 
@@ -107,7 +110,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             }
             if(selectedItem.typeId === "minecraft:glass_bottle" && fillLevel !== 0){
                 block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel-1));
-
+                console.log("player used glass bottle on cask")
                 const item = ItemStack.createPotion({
                     effect: cask.potion_effects[0],
                     liquid: cask.potion_liquid,
