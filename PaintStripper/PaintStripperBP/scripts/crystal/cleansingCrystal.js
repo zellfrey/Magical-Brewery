@@ -12,7 +12,7 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
     await system.waitTicks(20);
     const eCoords = entity.location
     const block = entity.dimension.getBlock(eCoords);
-
+    console.log(item.typeId)
     cleanCrystal(item, entity, block, eCoords, block.location);
 
     
@@ -49,10 +49,11 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
                 candle = "minecraft:yellow_candle"
             break;
         }
+
         const crossBlocks = [];
         neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
-        const isCandleCrossValid = crossBlocks.every(el => {
-            el.typeId === candle})
+
+        const isCandleCrossValid = crossBlocks.every(el => el.typeId === candle)
         if(isCandleCrossValid){
             cleanStage = '§7Heat treated';
         }
