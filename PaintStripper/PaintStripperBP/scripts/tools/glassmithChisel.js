@@ -1,4 +1,4 @@
-import {world, system, ItemStack } from "@minecraft/server";
+import {system} from "@minecraft/server";
 import {getAdjacentBlock} from "utils/blockPlacementUtils.js";
 
 const willChiselBlocks = ["minecraft:budding_amethyst", "minecraft:glowstone", "ps:budding_glowstone", "minecraft:redstone_ore",
@@ -7,7 +7,7 @@ const willChiselBlocks = ["minecraft:budding_amethyst", "minecraft:glowstone", "
 const allowedRedstoneBlocks = ["minecraft:redstone_ore","minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore",
                                 "minecraft:lit_deepslate_redstone_ore", "ps:budding_redstone"];
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_on_chisel', {
         onUseOn(e) {
             const {block, blockFace} = e;
@@ -18,10 +18,10 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
                 if(chiselSize != 5){
                     block.setPermutation(block.permutation.withState("ps:chisel_size", chiselSize+1)); 
                     block.dimension.spawnParticle("minecraft:critical_hit_emitter", block.center()); 
-                    world.playSound('hit.amethyst_block', block.location);
+                    block.dimension.playSound('hit.amethyst_block', block.location);
                 }
                 else{
-                    world.playSound('dig.stone', block.location); 
+                    block.dimension.playSound('dig.stone', block.location); 
                 }
             }
             else if(willChiselBlocks.includes(block.typeId)){
@@ -41,7 +41,7 @@ world.beforeEvents.worldInitialize.subscribe(eventData => {
             } 
             
             // Dimension.playSound("hit.amethyst_block", block.location, {volume: 0.8, pitch: 1.2});
-            world.playSound('hit.amethyst_block', block.location);
+            block.dimension.playSound('hit.amethyst_block', block.location);
         }
     });
 });

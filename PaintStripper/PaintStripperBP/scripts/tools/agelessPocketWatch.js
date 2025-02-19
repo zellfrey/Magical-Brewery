@@ -4,7 +4,7 @@ import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
 
 const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
 
-world.beforeEvents.worldInitialize.subscribe(eventData => {
+system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_on_ageless_pocket_watch', {
         onUseOn(e) {
             const {block, source} = e;
