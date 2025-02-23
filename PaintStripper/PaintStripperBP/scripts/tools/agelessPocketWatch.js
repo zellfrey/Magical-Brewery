@@ -35,20 +35,20 @@ system.beforeEvents.startup.subscribe(eventData => {
                     break;
                 }
             }
+            //Will add back later when we are able to check more specific block entity properties
+            // if(block.typeId === "minecraft:cauldron"){
+            //     const fluidContainer =  block.getComponent("minecraft:fluidContainer")
+            //     console.warn(fluidContainer.fillLevel + "  " +  fluidContainer.getFluidType())
+            //     const colours = fluidContainer.fluidColor;
+            //     console.warn("colours")
+            //     console.warn(colours.alpha + colours.blue + colours.green + colours.red)
+            //     const cauldronChest = block.getComponent("inventory");
+            //     if (cauldronChest == null) {
 
-            if(block.typeId === "minecraft:cauldron"){
-                const fluidContainer =  block.getComponent("minecraft:fluidContainer")
-                console.warn(fluidContainer.fillLevel + "  " +  fluidContainer.getFluidType())
-                const colours = fluidContainer.fluidColor;
-                console.warn("colours")
-                console.warn(colours.alpha + colours.blue + colours.green + colours.red)
-                const cauldronChest = block.getComponent("inventory");
-                if (cauldronChest == null) {
-                    // Send a message to the player if the block does not have an inventory
-                    console.warn(`The block does not have an inventory component.`);
-                    return; // Exit the function early
-                }
-            }
+            //         console.warn(`The block does not have an inventory component.`);
+            //         return; 
+            //     }
+            // }
         }
     });
 });
