@@ -211,8 +211,8 @@ TODO: Send messages using .lang file. Currently its in english
 
 1st iteration of DB is done. Current updates are only applied via dev tool
 1.5:(make it run and eliminate bugs)
-TODO: Update casks to utilise on random tick. Rather than manually updating cask, the cask is updated every so often transforming the aging phase
-TODO: Create permutation that uses ort. If fill level is !== 0 && ageingphase !==3
+TODO: Update casks to utilise on random tick. Rather than manually updating cask, the cask is updated every so often transforming the aging phase DONE
+TODO: Create permutation that uses ort. If fill level is !== 0 && ageingphase !==3 DONE
 TODO: Create edge case for "regeneration" potion id. Simply check for empty string and replace it. Currently cant re-create regen potions, so this is unfortunately off the table
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
 TODO: Figure out why the fuck swiftness and leaping do not give their alternative tags, HAHAH turns out the api sorts the tags in alphabetical order. Just great
@@ -227,6 +227,8 @@ Just had a scary thought. What if players push casks with a piston?
 I have to update the cask in the caskDB. Potentially having to take the direction the piston was pushing and, uhmmm i dont have the words so ill figure it out.
 But its on the backburner
 
+TODO: Move Ageless pocket watch cask function to ageless pocket watch.js
 
-
-
+For simplicities sake, cask ageing only starts when the cask is full
+TODO: Allow for aging at any fill level, however when adding more liquid, it restarts the aging phase. Find a way to prevent adding liquids in when aging = true
+forever uncle

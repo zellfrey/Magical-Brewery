@@ -20,7 +20,7 @@
         },
         "components": {
             "tag:Water_Breathing": {},
-            "minecraft:custom_components": ["ps:ort_cask_aging", "ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
+            "minecraft:custom_components": ["ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
             "minecraft:light_dampening": 4,
             "minecraft:destructible_by_mining": { 
                 "seconds_to_destroy": 2
@@ -70,6 +70,15 @@
                 "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
                 "components": {
                 "minecraft:transformation": { "rotation": [0, -90, 0] }
+                }
+            },
+            {
+                "condition": "q.block_state('ps:fill_level') == 3 && q.block_state('ps:aging_phase') != 3",
+                "components": {
+                "minecraft:custom_components": ["ps:ort_cask_aging", "ps:pi_cask_fill", "ps:opd_cask"],
+                "minecraft:tick": {
+                    "interval_range": [20,20]
+		        }
                 }
             }
         ]

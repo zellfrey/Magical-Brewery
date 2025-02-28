@@ -7,7 +7,6 @@ system.beforeEvents.startup.subscribe(eventData => {
         onPlace(e) {
             const {block, dimension} = e;
             const {x,y,z} = block.location
-            console.log("placing cask")
             let getCaskData = world.getDynamicProperty('magical_brewery:cask_data')
             if (getCaskData) {
                 getCaskData = JSON.parse(getCaskData)
@@ -15,7 +14,6 @@ system.beforeEvents.startup.subscribe(eventData => {
             } else {
                 getCaskData = [createCask(dimension.id, {x, y, z})]
             }
-            console.log(getCaskData[getCaskData.length -1].dimensionId)
             world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(getCaskData))
         }
     });
@@ -65,13 +63,12 @@ system.beforeEvents.startup.subscribe(eventData => {
             if(selectedItem.typeId === "ps:ageless_pocket_watch"){
                 
                 const agePhase = block.permutation.getState("ps:aging_phase");
-                const newAge = agePhase !== 3 && fillLevel !== 0 ? agePhase+1 : agePhase;
+                const newAge = agePhase !== 3 && fillLevel === 3 ? agePhase+1 : agePhase;
                 block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
 
                 if(agePhase === 3 && !cask.is_aged){
-                    const effectId = getEffectfromCask(block.getTags()[0])
+                    const effectId = getEffectfromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
                 
-                    console.log(effectId)
                     cask.potion_effects.push(effectId);
                     cask.is_aged = true;
                     updateCask(cask);
@@ -83,26 +80,24 @@ system.beforeEvents.startup.subscribe(eventData => {
                 
                 //v2.0.0 uses "T" (generic) instead of a string. So im using this silly method to just get the first and only component of a potion
                 const potion = selectedItem.getComponents()[0];
-                
-                if(fillLevel === 3 || potion === undefined) return;
+
+                if(fillLevel === 3 || potion === undefined || cask.is_aged) return;
                 
                 if(fillLevel === 0){
                     cask.potion_effects.push(potion.potionEffectType.id)
                     cask.potion_liquid = potion.potionLiquidType.id
                     cask.potion_modifier = potion.potionModifierType.id
 
-                    updateCask(cask)
                     if(selectedItem.getLore().length > 0){
                         const lore = selectedItem.getLore();
-                        
+                        lore.forEach(effect => {cask.potion_effects.push(effect)})
                     }
-                    
+                    updateCask(cask)
                 }
-
-                if(!matchesPotion(cask, potion)) return;
-
-                block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel+1));
                 
+                if(!matchesPotion(cask, potion, selectedItem.getLore())) return;
+                    
+                block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel+1));
                 const emptyBottle = new ItemStack("glass_bottle", 1)
                 setMainHand(player, equipment, selectedItem, emptyBottle);
 
@@ -110,22 +105,19 @@ system.beforeEvents.startup.subscribe(eventData => {
             }
             if(selectedItem.typeId === "minecraft:glass_bottle" && fillLevel !== 0){
                 block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel-1));
-                console.log("player used glass bottle on cask")
+
                 const item = ItemStack.createPotion({
                     effect: cask.potion_effects[0],
                     liquid: cask.potion_liquid,
                     modifier: cask.potion_modifier,
                 });
                 
-                if(cask.is_aged){
-                    const newEffect = cask.potion_effects[cask.potion_effects.length-1].replace("_", " ") + " (2:00)"
-                    console.log(cask.potion_effects[cask.potion_effects.length-1])
+                if(cask.potion_effects.length > 1){
+                    const extraEffects = cask.potion_effects.slice(1)
                     const lore = selectedItem.getLore();
-
-                    lore.push(newEffect)
+                    extraEffects.forEach(effect => lore.push(effect))
+                    
                     item.setLore(lore);
-                    console.warn(item.getLore().length)
-                    console.warn(item.getLore()[item.getLore().length -1].toString())
 
                 }
                 player.getComponent("inventory").container.addItem(item)
@@ -144,7 +136,29 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
-
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_cask_aging', {
+        onRandomTick(e) {
+            const { block, dimension } = e;
+            const age = block.permutation.getState("ps:aging_phase");
+            const {x,y,z} = block.location;
+            let cask = findCask(dimension.id, {x, y, z})
+            console.log(cask.potion_effects[0])
+            block.setPermutation(block.permutation.withState("ps:aging_phase", age+1));
+            console.log("ageing")
+            
+            if(age === 3 && !cask.is_aged){
+                
+                const effectId = getEffectfromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
+                
+                cask.potion_effects.push(effectId);
+                cask.is_aged = true;
+                updateCask(cask);
+            }
+            return;
+        }
+    });
+});
 //Database functions i.e CRUD
 function createCask(dimension, {x, y, z}){
     let newCask = {
@@ -183,9 +197,6 @@ function updateCask(cask){
     caskData[caskIndex].potion_modifier = cask.potion_modifier
     caskData[caskIndex].is_aged = cask.is_aged
 
-    console.log("effects: " + caskData[caskIndex].potion_effects[0])
-    console.log("liquid: " + caskData[caskIndex].potion_liquid)
-    console.log("modifier: " + caskData[caskIndex].potion_modifier)
     world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskData))
 }
 
@@ -203,12 +214,28 @@ function deleteCask(dimension, location){
     world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskData))
 }
 
-function matchesPotion(caskPotion, heldPotion){
+function matchesPotion(caskPotion, heldPotion, extraEffects){
     const matchesEffect = caskPotion.potion_effects[0] === heldPotion.potionEffectType.id;
     const matchesLiquid = caskPotion.potion_liquid === heldPotion.potionLiquidType.id;
     const matchesModifier = caskPotion.potion_modifier === heldPotion.potionModifierType.id;
-    return matchesEffect && matchesLiquid &&  matchesModifier;
+    
+    let matchesExtraEffects;
+    console.log("cask" + caskPotion.potion_effects.length)
+    console.log("extra effects" + extraEffects.length)
+    if(caskPotion.potion_effects.length === 1 || extraEffects.length === 0) matchesExtraEffects = true;
+
+    else{
+        //Start at 2nd element as the first element will be the root potion effect
+        for(let i = 1; i > caskPotion.potion_effects.length; i++){
+
+            matchesExtraEffects = caskPotion.potion_effects[i] === extraEffects[i-1] ? true : false;
+            console.log(caskPotion.potion_effects[i])
+            if(!matchesExtraEffects) break;
+        }
+    }
+    return matchesEffect && matchesLiquid && matchesModifier && matchesExtraEffects;
 }
+
 
 //From testing, block tags seem to be sorted alphabetically. So im having to rely on this. Its not pretty, its archaic, but what can you do
 function getEffectfromCask(tag){
