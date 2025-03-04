@@ -220,16 +220,13 @@ function matchesPotion(caskPotion, heldPotion, extraEffects){
     const matchesModifier = caskPotion.potion_modifier === heldPotion.potionModifierType.id;
     
     let matchesExtraEffects;
-    console.log("cask" + caskPotion.potion_effects.length)
-    console.log("extra effects" + extraEffects.length)
-    if(caskPotion.potion_effects.length === 1 || extraEffects.length === 0) matchesExtraEffects = true;
-
+    if(caskPotion.potion_effects.length < 1 || extraEffects.length === 0){
+        matchesExtraEffects = true;
+    } 
     else{
         //Start at 2nd element as the first element will be the root potion effect
-        for(let i = 1; i > caskPotion.potion_effects.length; i++){
-
+        for(let i = 1; i < caskPotion.potion_effects.length; i++){
             matchesExtraEffects = caskPotion.potion_effects[i] === extraEffects[i-1] ? true : false;
-            console.log(caskPotion.potion_effects[i])
             if(!matchesExtraEffects) break;
         }
     }
