@@ -91,6 +91,9 @@
 		},
       "tasting_spoon":{
 			"textures": "textures/items/tasting_spoon.png"
+		},
+      "amethyst_glass_bottle":{
+			"textures": "textures/items/amethyst_glass_bottle.png"
 		}
    }
 }
