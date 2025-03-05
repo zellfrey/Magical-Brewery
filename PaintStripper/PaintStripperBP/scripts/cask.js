@@ -60,21 +60,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                     }
                 }
             }
-            if(selectedItem.typeId === "ps:ageless_pocket_watch"){
-                
-                const agePhase = block.permutation.getState("ps:aging_phase");
-                const newAge = agePhase !== 3 && fillLevel === 3 ? agePhase+1 : agePhase;
-                block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
-
-                if(agePhase === 3 && !cask.is_aged){
-                    const effectId = getEffectfromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
-                
-                    cask.potion_effects.push(effectId);
-                    cask.is_aged = true;
-                    updateCask(cask);
-                }
-                return;
-            } 
+            
             if(selectedItem.typeId === "minecraft:potion" || selectedItem.typeId === "minecraft:lingering_potion" 
                 || selectedItem.typeId === "minecraft:splash_potion"){
                 
@@ -171,7 +157,7 @@ function createCask(dimension, {x, y, z}){
     }
     return newCask
 }
-function findCask(dimension, {x, y, z}){
+export function findCask(dimension, {x, y, z}){
     const caskData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
     let cask;
     caskData.forEach(el => {
@@ -183,7 +169,7 @@ function findCask(dimension, {x, y, z}){
     return cask
 }
 
-function updateCask(cask){
+export function updateCask(cask){
     const caskData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
     let caskIndex;
     for(let i = 0; i < caskData.length; i++){
@@ -235,7 +221,7 @@ function matchesPotion(caskPotion, heldPotion, extraEffects){
 
 
 //From testing, block tags seem to be sorted alphabetically. So im having to rely on this. Its not pretty, its archaic, but what can you do
-function getEffectfromCask(tag){
+export function getEffectfromCask(tag){
     let effect;
     switch(tag){
         case "Decay":

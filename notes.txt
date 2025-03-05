@@ -134,7 +134,20 @@ Late game idea, implement a "time" room, which will decrease the time taken for 
 A simple cubed multiblock where casks can be placed inside. Those casks have a better chance of going through the aging
 stages/process 
 
+//Will add back later when we are able to check more specific block entity properties
+            // if(block.typeId === "minecraft:cauldron"){
+            //     const fluidContainer =  block.getComponent("minecraft:fluidContainer")
+            //     console.warn(fluidContainer.fillLevel + "  " +  fluidContainer.getFluidType())
+            //     const colours = fluidContainer.fluidColor;
+            //     console.warn("colours")
+            //     console.warn(colours.alpha + colours.blue + colours.green + colours.red)
+            //     const cauldronChest = block.getComponent("inventory");
+            //     if (cauldronChest == null) {
 
+            //         console.warn(`The block does not have an inventory component.`);
+            //         return; 
+            //     }
+            // }
 Cauldron - fill level, liquid
 Additional fields for cauldron:
 
@@ -209,8 +222,6 @@ Just had a scary thought. What if players push casks with a piston?
 I have to update the cask in the caskDB. Potentially having to take the direction the piston was pushing and, uhmmm i dont have the words so ill figure it out.
 But its on the backburner
 
-TODO: Move Ageless pocket watch cask function to ageless pocket watch.js
-
 For simplicities sake, cask ageing only starts when the cask is full
 TODO: Allow for aging at any fill level, however when adding more liquid, it restarts the aging phase. Find a way to prevent adding liquids in when aging = true
 forever uncle
@@ -218,3 +229,4 @@ forever uncle
 TODO: Make a check that sorts the potion extra effects allowing for potions with the same effects to combine without being order specific
 TODO: Aging time should be increased by the number of effects that are within the cask(i.e the potion). This exponentially increases
 TODO: Aging will not happen if a potion effect is the same as the cask effect
+TODO: Update Tasting Spoon to support multiple potion effects within a cask

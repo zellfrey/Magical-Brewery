@@ -1,6 +1,7 @@
 import {world, system, ItemStack } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
+import {findCask, updateCask, getEffectfromCask} from "cask.js";
 
 const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
 
@@ -8,9 +9,9 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_on_ageless_pocket_watch', {
         onUseOn(e) {
             const {block, source} = e;
-            
-            //if(!isOpped) return;
-            //Cant find method, but if it exists please let this be a thing
+
+            if(!source.isOp()) return;
+
             if(block.typeId === "ps:growing_crystal"){
                 const seedStage = block.permutation.getState('ps:crystal_stage');
                 const rotation = Math.floor(Math.random() * 4)
@@ -34,21 +35,22 @@ system.beforeEvents.startup.subscribe(eventData => {
                         forceGrowCrystal(block, "echo_bud", "echo", -9)
                     break;
                 }
-            }
-            //Will add back later when we are able to check more specific block entity properties
-            // if(block.typeId === "minecraft:cauldron"){
-            //     const fluidContainer =  block.getComponent("minecraft:fluidContainer")
-            //     console.warn(fluidContainer.fillLevel + "  " +  fluidContainer.getFluidType())
-            //     const colours = fluidContainer.fluidColor;
-            //     console.warn("colours")
-            //     console.warn(colours.alpha + colours.blue + colours.green + colours.red)
-            //     const cauldronChest = block.getComponent("inventory");
-            //     if (cauldronChest == null) {
 
-            //         console.warn(`The block does not have an inventory component.`);
-            //         return; 
-            //     }
-            // }
+            }else if(block.typeId.includes("ps:cask")){
+                const cask = findCask(block.dimension.id, block.location)
+                const fillLevel = block.permutation.getState("ps:fill_level");
+                const agePhase = block.permutation.getState("ps:aging_phase");
+                const newAge = agePhase !== 3 && fillLevel === 3 ? agePhase+1 : agePhase;
+                block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
+
+                if(agePhase === 3 && !cask.is_aged){
+                    const effectId = getEffectfromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
+                
+                    cask.potion_effects.push(effectId);
+                    cask.is_aged = true;
+                    updateCask(cask);
+                }
+            }
         }
     });
 });
