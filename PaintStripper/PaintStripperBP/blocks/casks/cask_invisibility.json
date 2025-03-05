@@ -40,7 +40,7 @@
 					"texture": "cask_end_invisibility"
 				  },
                   "front": {
-					"texture": "barrel_top"
+					"texture": "cask_front_invisibility"
 				  },
                   "south": "end",
                   "north": "front"

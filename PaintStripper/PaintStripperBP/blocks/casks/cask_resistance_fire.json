@@ -40,7 +40,7 @@
 					"texture": "cask_end_resistance_fire"
 				  },
                   "front": {
-					"texture": "barrel_top"
+					"texture": "cask_front_resistance_fire"
 				  },
                   "south": "end",
                   "north": "front"

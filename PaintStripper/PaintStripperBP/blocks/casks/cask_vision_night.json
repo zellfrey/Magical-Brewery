@@ -40,7 +40,7 @@
 					"texture": "cask_end_vision_night"
 				  },
                   "front": {
-					"texture": "barrel_top"
+					"texture": "cask_front_vision_night"
 				  },
                   "south": "end",
                   "north": "front"

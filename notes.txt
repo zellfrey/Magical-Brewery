@@ -230,3 +230,7 @@ TODO: Make a check that sorts the potion extra effects allowing for potions with
 TODO: Aging time should be increased by the number of effects that are within the cask(i.e the potion). This exponentially increases
 TODO: Aging will not happen if a potion effect is the same as the cask effect
 TODO: Update Tasting Spoon to support multiple potion effects within a cask
+TODO: Make function to spawn multiple splash/lingering potions that have extra effects
+
+TODO: Re-structure cask model
+TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")

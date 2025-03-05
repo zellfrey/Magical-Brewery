@@ -40,7 +40,7 @@
 					"texture": "cask_end_slowness"
 				  },
                   "front": {
-					"texture": "barrel_top"
+					"texture": "cask_front_slowness"
 				  },
                   "south": "end",
                   "north": "front"

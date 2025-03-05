@@ -40,7 +40,7 @@
 					"texture": "cask_end_strength"
 				  },
                   "front": {
-					"texture": "barrel_top"
+					"texture": "cask_front_strength"
 				  },
                   "south": "end",
                   "north": "front"

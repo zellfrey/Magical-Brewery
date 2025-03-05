@@ -40,7 +40,7 @@
 					"texture": "cask_end_turtle_master"
 				  },
                   "front": {
-					"texture": "barrel_top"
+					"texture": "cask_front_turtle_master"
 				  },
                   "south": "end",
                   "north": "front"

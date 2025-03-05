@@ -40,7 +40,7 @@
 					"texture": "cask_end_water_breathing"
 				  },
                   "front": {
-					"texture": "barrel_top"
+					"texture": "cask_front_water_breathing"
 				  },
                   "south": "end",
                   "north": "front"
