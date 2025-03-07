@@ -40,7 +40,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const cask = findCask(block.dimension.id, block.location)
                 const fillLevel = block.permutation.getState("ps:fill_level");
                 const agePhase = block.permutation.getState("ps:aging_phase");
-                const newAge = agePhase !== 3 && fillLevel === 3 ? agePhase+1 : agePhase;
+                const newAge = agePhase !== 3 && fillLevel > 0 ? agePhase+1 : agePhase;
                 block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
 
                 if(agePhase === 3 && !cask.is_aged){

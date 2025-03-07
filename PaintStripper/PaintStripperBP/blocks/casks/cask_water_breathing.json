@@ -73,7 +73,7 @@
                 }
             },
             {
-                "condition": "q.block_state('ps:fill_level') == 3 && q.block_state('ps:aging_phase') != 3",
+                "condition": "q.block_state('ps:fill_level') > 0 && q.block_state('ps:aging_phase') != 3",
                 "components": {
                 "minecraft:custom_components": ["ps:ort_cask_aging", "ps:pi_cask_fill", "ps:opd_cask"],
                 "minecraft:tick": {

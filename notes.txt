@@ -169,9 +169,7 @@ if i cant do that, just do the age old method of crafting table, 1 potion = 1 st
 TODO: Implement a method to obtain shards in order to create each seed thus starting the crystal growing 
 process.
 TODO: Look into recipe to create seeds.
-TODO: Add map colours to each crystal -- DONE
 TODO: Add mining component along with item specific array --  based speed added, will look into item specific speeds at a later date
-TODo: Add explosion component to each crystal -- DONE
 TODO: Echo seeds, pretty self explanatory, use echo shards that player finds in ancient cities
 TODO: Amethyst seeds, use amethyst shards. 
 
@@ -206,6 +204,7 @@ look into giving glass bottles as a byproduct from stained planks
 TODO: implement function to change cask tag into localised language
 
 regeneration - still returns none
+REGENERATION DOES NOT WORK. RETURNS AN EMPTY STRING
 
 Turtle Master. Seeing as its mixed, make a separate guard rdclause for this unique instance. Or look into adding more block Tags
 This method of adding more block tags maybe stupid as fuck
@@ -214,7 +213,6 @@ TODO: Add sounds to various cask interactions
 TODO: Send messages using .lang file. Currently its in english
 
 
-TODO: Create edge case for "regeneration" potion id. Simply check for empty string and replace it. Currently cant re-create regen potions, so this is unfortunately off the table
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
 TODO: Use a failsafe guard clause just in case cask data does not exist "if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})"
 
@@ -222,9 +220,6 @@ Just had a scary thought. What if players push casks with a piston?
 I have to update the cask in the caskDB. Potentially having to take the direction the piston was pushing and, uhmmm i dont have the words so ill figure it out.
 But its on the backburner
 
-For simplicities sake, cask ageing only starts when the cask is full
-TODO: Allow for aging at any fill level, however when adding more liquid, it restarts the aging phase. Find a way to prevent adding liquids in when aging = true
-forever uncle
 
 TODO: Make a check that sorts the potion extra effects allowing for potions with the same effects to combine without being order specific
 TODO: Aging time should be increased by the number of effects that are within the cask(i.e the potion). This exponentially increases
@@ -234,3 +229,6 @@ TODO: Make function to spawn multiple splash/lingering potions that have extra e
 
 TODO: Re-structure cask model
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
+
+So aging time. Affected by fill level and amount of effects within the potion liquid(i.e the extra effects)
+The less in the cask, the shorter the time. The greater the effects, the longer the time

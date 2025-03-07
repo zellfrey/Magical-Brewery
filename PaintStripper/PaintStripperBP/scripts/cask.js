@@ -41,6 +41,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             const {x,y,z} = block.location;
             let cask = findCask(dimension.id, {x, y, z})
             const fillLevel = block.permutation.getState("ps:fill_level");
+            const caskAge = block.permutation.getState("ps:aging_phase");
             
             
             if(selectedItem.typeId === "ps:tasting_spoon"){
@@ -87,6 +88,10 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const emptyBottle = new ItemStack("glass_bottle", 1)
                 setMainHand(player, equipment, selectedItem, emptyBottle);
 
+                if(caskAge > 0){
+                    block.setPermutation(block.permutation.withState("ps:aging_phase", 0))
+                    console.log("reset aging")
+                } 
                 return;
             }
             if(selectedItem.typeId === "minecraft:glass_bottle" && fillLevel !== 0){
@@ -126,14 +131,14 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_cask_aging', {
         onRandomTick(e) {
             const { block, dimension } = e;
-            const age = block.permutation.getState("ps:aging_phase");
+            const caskAge = block.permutation.getState("ps:aging_phase");
             const {x,y,z} = block.location;
             let cask = findCask(dimension.id, {x, y, z})
             console.log(cask.potion_effects[0])
-            block.setPermutation(block.permutation.withState("ps:aging_phase", age+1));
+            block.setPermutation(block.permutation.withState("ps:aging_phase", caskAge+1));
             console.log("ageing")
             
-            if(age === 3 && !cask.is_aged){
+            if(caskAge === 3 && !cask.is_aged){
                 
                 const effectId = getEffectfromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
                 
