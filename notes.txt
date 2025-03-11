@@ -232,3 +232,9 @@ TODO: Revision cask front textures(add cork texture, look to the glass bottle"co
 
 So aging time. Affected by fill level and amount of effects within the potion liquid(i.e the extra effects)
 The less in the cask, the shorter the time. The greater the effects, the longer the time
+
+textures to make,
+pocket watch,
+tasting spoon,
+amethyst lingering and splash potion.
+Revise casks textures
