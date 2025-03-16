@@ -68,13 +68,14 @@ system.beforeEvents.startup.subscribe(eventData => {
                 //v2.0.0 uses "T" (generic) instead of a string. So im using this silly method to just get the first and only component of a potion
                 const potion = selectedItem.getComponents()[0];
 
-                if(fillLevel === 3 || potion === undefined || cask.is_aged) return;
+                if(fillLevel === 3 || potion === undefined || cask.is_aged || potion.potionEffectType.id === "None") return;
                 
-                if(fillLevel === 0){
+                //Currently regeneration potions have an empty string for their effect. This extra check is so they arent used. Hopefully this gets fixed
+                if(fillLevel === 0 && potion.potionEffectType.id){
                     cask.potion_effects.push(potion.potionEffectType.id)
                     cask.potion_liquid = potion.potionLiquidType.id
                     cask.potion_modifier = potion.potionModifierType.id
-
+                    
                     if(selectedItem.getLore().length > 0){
                         const lore = selectedItem.getLore();
                         lore.forEach(effect => {cask.potion_effects.push(effect)})
@@ -88,10 +89,8 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const emptyBottle = new ItemStack("glass_bottle", 1)
                 setMainHand(player, equipment, selectedItem, emptyBottle);
 
-                if(caskAge > 0){
-                    block.setPermutation(block.permutation.withState("ps:aging_phase", 0))
-                    console.log("reset aging")
-                } 
+                if(caskAge > 0) block.setPermutation(block.permutation.withState("ps:aging_phase", 0))
+
                 return;
             }
             if(selectedItem.typeId === "minecraft:glass_bottle" && fillLevel !== 0){
@@ -131,16 +130,19 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_cask_aging', {
         onRandomTick(e) {
             const { block, dimension } = e;
-            const caskAge = block.permutation.getState("ps:aging_phase");
             const {x,y,z} = block.location;
             let cask = findCask(dimension.id, {x, y, z})
-            console.log(cask.potion_effects[0])
+            const canAge = shouldCaskAge(block.getTags()[0], cask.potion_effects)
+            
+            if(!canAge) return;
+
+            const caskAge = block.permutation.getState("ps:aging_phase");
             block.setPermutation(block.permutation.withState("ps:aging_phase", caskAge+1));
             console.log("ageing")
             
             if(caskAge === 3 && !cask.is_aged){
                 
-                const effectId = getEffectfromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
+                const effectId = getEffectNamefromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
                 
                 cask.potion_effects.push(effectId);
                 cask.is_aged = true;
@@ -224,9 +226,27 @@ function matchesPotion(caskPotion, heldPotion, extraEffects){
     return matchesEffect && matchesLiquid && matchesModifier && matchesExtraEffects;
 }
 
-
+export function shouldCaskAge(caskTag, potionEffects){
+    let shouldAge = true;
+    const effectId= caskTagToEffectId(caskTag.replace("_", ""))
+    if(effectId === potionEffects[0]){
+        shouldAge = false;
+    }
+    else{
+        console.log("checking extra effects")
+        for(let i = 1; i < potionEffects.length; i++){
+            const effect = potionEffects[i].split(' ');
+            effect.pop();
+            if(getEffectNamefromCask(caskTag) === effect.join("_")){
+                shouldAge = false;
+                break;
+            }
+        }
+    }
+    return shouldAge
+}
 //From testing, block tags seem to be sorted alphabetically. So im having to rely on this. Its not pretty, its archaic, but what can you do
-export function getEffectfromCask(tag){
+export function getEffectNamefromCask(tag){
     let effect;
     switch(tag){
         case "Decay":
@@ -248,4 +268,22 @@ export function getEffectfromCask(tag){
         effect = tag;
     }
     return effect;
+}
+
+function caskTagToEffectId(caskTag){
+    let name;
+    switch(caskTag){
+        case "Slowness":
+            name = "Slowing";
+        break;
+        case "WaterBreathing":
+            name = "WaterBreath";
+        break;
+        case "Decay":
+            name = "Wither";
+        break;
+        default:
+        name = caskTag;
+    }
+    return name;
 }

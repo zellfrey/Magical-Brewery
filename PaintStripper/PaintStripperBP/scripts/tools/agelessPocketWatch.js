@@ -1,7 +1,7 @@
 import {world, system, ItemStack } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
-import {findCask, updateCask, getEffectfromCask} from "cask.js";
+import {findCask, updateCask, getEffectNamefromCask, shouldCaskAge} from "cask.js";
 
 const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
 
@@ -40,11 +40,15 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const cask = findCask(block.dimension.id, block.location)
                 const fillLevel = block.permutation.getState("ps:fill_level");
                 const agePhase = block.permutation.getState("ps:aging_phase");
+                const canAge = shouldCaskAge(block.getTags()[0], cask.potion_effects)
+                            
+                if(!canAge) return;
+                console.log("you have sped up time, aging the cask")
                 const newAge = agePhase !== 3 && fillLevel > 0 ? agePhase+1 : agePhase;
                 block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
 
                 if(agePhase === 3 && !cask.is_aged){
-                    const effectId = getEffectfromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
+                    const effectId = getEffectNamefromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
                 
                     cask.potion_effects.push(effectId);
                     cask.is_aged = true;

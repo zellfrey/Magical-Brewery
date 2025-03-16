@@ -203,9 +203,6 @@ look into giving glass bottles as a byproduct from stained planks
 
 TODO: implement function to change cask tag into localised language
 
-regeneration - still returns none
-REGENERATION DOES NOT WORK. RETURNS AN EMPTY STRING
-
 Turtle Master. Seeing as its mixed, make a separate guard rdclause for this unique instance. Or look into adding more block Tags
 This method of adding more block tags maybe stupid as fuck
             
@@ -223,7 +220,7 @@ But its on the backburner
 
 TODO: Make a check that sorts the potion extra effects allowing for potions with the same effects to combine without being order specific
 TODO: Aging time should be increased by the number of effects that are within the cask(i.e the potion). This exponentially increases
-TODO: Aging will not happen if a potion effect is the same as the cask effect
+TODO: Aging will not happen if a potion effect is the same as the cask effect DONE
 TODO: Update Tasting Spoon to support multiple potion effects within a cask
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects
 
@@ -238,3 +235,6 @@ pocket watch,
 tasting spoon,
 amethyst lingering and splash potion.
 Revise casks textures
+
+
+[Scripting][error]-Unhandled promise rejection: Error: Failed to call function 'getComponent' due to the Entity being invalid (has the Entity been removed?).    at <anonymous> (crystal/cleansingCrystal.js:10)
