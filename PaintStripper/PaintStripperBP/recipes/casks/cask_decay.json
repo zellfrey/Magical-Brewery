@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "ps:cask_decay"
+      },
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "SSS",
+        "I I",
+        "SSS"
+      ],
+      "key": {
+        "S": {
+          "item": "ps:stained_planks_decay"
+        },
+        "I": {
+          "item": "minecraft:iron_ingot"
+        }
+      },
+      "result": {
+        "item": "ps:cask_decay",
+        "count": 1
+      }
+    }
+}
+    

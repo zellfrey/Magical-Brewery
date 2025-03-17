@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "ps:cask_regeneration"
+      },
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "SSS",
+        "I I",
+        "SSS"
+      ],
+      "key": {
+        "S": {
+          "item": "ps:stained_planks_regeneration"
+        },
+        "I": {
+          "item": "minecraft:iron_ingot"
+        }
+      },
+      "result": {
+        "item": "ps:cask_regeneration",
+        "count": 1
+      }
+    }
+}
+    
