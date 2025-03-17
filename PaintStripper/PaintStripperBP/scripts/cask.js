@@ -132,6 +132,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             const { block, dimension } = e;
             const {x,y,z} = block.location;
             let cask = findCask(dimension.id, {x, y, z})
+            const fillLevel = block.permutation.getState("ps:fill_level");
             const canAge = shouldCaskAge(block.getTags()[0], cask.potion_effects)
             
             if(!canAge) return;
@@ -233,7 +234,6 @@ export function shouldCaskAge(caskTag, potionEffects){
         shouldAge = false;
     }
     else{
-        console.log("checking extra effects")
         for(let i = 1; i < potionEffects.length; i++){
             const effect = potionEffects[i].split(' ');
             effect.pop();
@@ -244,6 +244,9 @@ export function shouldCaskAge(caskTag, potionEffects){
         }
     }
     return shouldAge
+}
+function chanceToAge(potionEffects, fillLevel){
+    return true;
 }
 //From testing, block tags seem to be sorted alphabetically. So im having to rely on this. Its not pretty, its archaic, but what can you do
 export function getEffectNamefromCask(tag){
