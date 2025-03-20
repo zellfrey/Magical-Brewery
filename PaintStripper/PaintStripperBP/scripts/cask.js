@@ -43,7 +43,9 @@ system.beforeEvents.startup.subscribe(eventData => {
             const fillLevel = block.permutation.getState("ps:fill_level");
             const caskAge = block.permutation.getState("ps:aging_phase");
             
-            
+            //Failsafe
+            // if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
+
             if(selectedItem.typeId === "ps:tasting_spoon"){
                 
                 if(fillLevel === 0){
