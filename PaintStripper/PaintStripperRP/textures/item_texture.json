@@ -93,7 +93,58 @@
 			"textures": "textures/items/tasting_spoon.png"
 		},
       "amethyst_bottle":{
-			"textures": "textures/items/amethyst_bottle.png"
-		}
+			"textures": "textures/items/amethyst_potions/amethyst_bottle.png"
+		},
+      "amethyst_water_bottle":{
+			"textures": "textures/items/amethyst_potions/amethyst_water_bottle.png"
+		},
+      "stained_planks_decay":{
+       "textures": "textures/items/amethyst_potions/amethyst_potion_decay.png"
+      },
+      "stained_planks_harming":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_harming.png"
+      },
+      "stained_planks_healing":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_healing.png"
+      },
+      "stained_planks_invisibility":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_invisibility.png"
+      },
+      "amethyst_potion_leaping":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_leaping.png"
+      },
+      "amethyst_potion_poison":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_poison.png"
+      },
+      "amethyst_potion_regeneration":{
+       "textures": "textures/items/amethyst_potions/amethyst_potion_regeneration.png"
+      },
+      "amethyst_potion_resistance_fire":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_resistance_fire.png"
+      },
+      "amethyst_potion_slow_falling":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_slow_falling.png"
+      },
+      "amethyst_potion_slowness":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_slowness.png"
+      },
+      "amethyst_potion_strength":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_strength.png"
+      },
+      "amethyst_potion_swiftness":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_swiftness.png"
+      },
+      "amethyst_potion_turtle_master":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_turtle_master.png"
+      },
+      "amethyst_potion_vision_night":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_vision_night.png"
+      },
+      "amethyst_potion_water_breathing":{
+       "textures": "textures/items/amethyst_potions/amethyst_potion_water_breathing.png"
+      },
+      "amethyst_potion_weakness":{
+        "textures": "textures/items/amethyst_potions/amethyst_potion_weakness.png"
+      }
    }
 }
