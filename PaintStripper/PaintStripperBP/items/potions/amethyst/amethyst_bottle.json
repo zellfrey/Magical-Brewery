@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:item": {
+        "description": {
+            "identifier": "ps:amethyst_bottle",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:custom_components": ["ps:on_use_amethyst_bottle"],
+            "minecraft:icon": "amethyst_bottle",
+            "minecraft:display_name":{
+            "value": "item.ps:amethyst_bottle.name"
+            }
+        }
+    }
+}

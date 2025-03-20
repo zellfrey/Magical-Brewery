@@ -46,3 +46,25 @@ world.afterEvents.entitySpawn.subscribe((e) => {
     
 
 });
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_amethyst_bottle', {
+        onUse(e) {
+            const {source, itemStack} = e
+            const{block} = source.getBlockFromViewDirection({includeLiquidBlocks: true, maxDistance: 4.0});
+            
+            if(block.typeId === "minecraft:water" || block.isWaterlogged){
+                console.log("filling from water")
+            }
+            //Currently I cannot edit the filllevel of a potion, in the meantime, this is what we get
+            // else if(block.typeId === "minecraft:cauldron"){
+            //     const fillLevel =  block.getComponent("minecraft:fluid_container").fillLevel;
+            //     const fluid = block.getComponent("minecraft:fluid_container").getFluidType();
+            //     console.log(fluid + fillLevel)
+            //     if(fillLevel > 1 && fluid == "Water"){
+            //         // block.setPermutation(block.permutation.withState("fill_level", fillLevel-2));
+            //         console.log("emptying cauldron")
+            //     }
+            // }
+        }
+    });
+});

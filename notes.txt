@@ -227,3 +227,7 @@ Revise casks textures
 
 
 [Scripting][error]-Unhandled promise rejection: Error: Failed to call function 'getComponent' due to the Entity being invalid (has the Entity been removed?).    at <anonymous> (crystal/cleansingCrystal.js:10)
+
+Oh boy, may need to convert to Typescript(them interfaces and types are looking like a snack)
+Amethyst bottle only works on waterlogged blocks and water blocks at are in the range of onUseOn(a solid block has to be targetted)
+Original plan was to replicate glass bottles
