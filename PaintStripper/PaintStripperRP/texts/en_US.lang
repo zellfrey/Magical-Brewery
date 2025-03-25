@@ -41,7 +41,7 @@ tile.ps:redstone_shard_block.name=Redstone Shard Block
 
 ##Tools------------------------------------
 item.ps:glassmith_hammer.name=Glassmith's Hammer
-item.ps:glassmith_chisel.name=Glassmith's Chisel
+##item.ps:glassmith_chisel.name=Glassmith's Chisel
 item.ps:ageless_pocket_watch.name=Ageless Pocket Watch
 item.ps:tasting_spoon.name=Tasting Spoon
 item.ps:amethyst_bottle.name=Amethyst Bottle
