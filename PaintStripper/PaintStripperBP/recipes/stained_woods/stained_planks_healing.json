@@ -1,18 +1,22 @@
 {
     "format_version": "1.17.41",
-    "minecraft:recipe_shapeless": {
+    "minecraft:recipe_shaped": {
         "description": {
             "identifier": "ps:stained_planks_healing"
         },
         "tags": ["crafting_table"],
-        "ingredients": [
-            "minecraft:potion_type:healing", "minecraft:planks"
-        ],
+        "pattern": ["#P"],
+        "key": {
+            "#": "minecraft:potion_type:healing",
+            "P": "minecraft:planks"
+        },
         "result": [
             {
                 "item": "ps:stained_planks_healing",
+
                 "count": 1
-            }
+            },
+            "minecraft:glass_bottle"
         ]
     }
 }

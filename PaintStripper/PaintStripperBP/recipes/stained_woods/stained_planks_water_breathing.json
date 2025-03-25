@@ -1,18 +1,22 @@
 {
     "format_version": "1.17.41",
-    "minecraft:recipe_shapeless": {
+    "minecraft:recipe_shaped": {
         "description": {
             "identifier": "ps:stained_planks_water_breathing"
         },
         "tags": ["crafting_table"],
-        "ingredients": [
-            "minecraft:potion_type:water_breathing", "minecraft:planks"
-        ],
+        "pattern": ["#P"],
+        "key": {
+            "#": "minecraft:potion_type:water_breathing",
+            "P": "minecraft:planks"
+        },
         "result": [
             {
                 "item": "ps:stained_planks_water_breathing",
+
                 "count": 1
-            }
+            },
+            "minecraft:glass_bottle"
         ]
     }
 }

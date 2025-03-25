@@ -1,18 +1,22 @@
 {
     "format_version": "1.17.41",
-    "minecraft:recipe_shapeless": {
+    "minecraft:recipe_shaped": {
         "description": {
             "identifier": "ps:stained_planks_resistance_fire"
         },
         "tags": ["crafting_table"],
-        "ingredients": [
-            "minecraft:potion_type:fire_resistance", "minecraft:planks"
-        ],
+        "pattern": ["#P"],
+        "key": {
+            "#": "minecraft:potion_type:fire_resistance",
+            "P": "minecraft:planks"
+        },
         "result": [
             {
                 "item": "ps:stained_planks_resistance_fire",
+
                 "count": 1
-            }
+            },
+            "minecraft:glass_bottle"
         ]
     }
 }
