@@ -1,7 +1,8 @@
 import {world, system, ItemStack } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
-import {findCask, updateCask, getEffectNamefromCask, shouldCaskAge} from "cask.js";
+import {getEffectNamefromCask, shouldCaskAge} from "cask/cask.js";
+import {findCask, updateCask} from "cask/caskDB.js";
 
 const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
 

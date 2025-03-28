@@ -1,6 +1,7 @@
 import {world, system, ItemStack} from "@minecraft/server";
-import {setMainHand} from './utils/containerUtils.js';
-
+import {setMainHand} from '../utils/containerUtils.js';
+import {createCask, deleteCask, findCask, updateCask} from "cask/caskDB.js";
+//'utils/containerUtils.js';
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:op_cask', {
@@ -44,7 +45,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             const caskAge = block.permutation.getState("ps:aging_phase");
             
             //Failsafe
-            // if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
+            if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
 
             if(selectedItem.typeId === "ps:tasting_spoon"){
                 
@@ -156,59 +157,6 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 //Database functions i.e CRUD
-function createCask(dimension, {x, y, z}){
-    let newCask = {
-        dimensionId: dimension,
-        location: {x, y, z},
-        potion_effects: [],
-        potion_liquid:"",
-        potion_modifier: "",
-        is_aged: false,
-    }
-    return newCask
-}
-export function findCask(dimension, {x, y, z}){
-    const caskData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
-    let cask;
-    caskData.forEach(el => {
-        if(el.dimensionId === dimension && JSON.stringify(el.location) === JSON.stringify({x, y, z})){
-            cask = el;
-            return;
-        } 
-    })
-    return cask
-}
-
-export function updateCask(cask){
-    const caskData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
-    let caskIndex;
-    for(let i = 0; i < caskData.length; i++){
-        if(caskData[i].dimensionId === cask.dimensionId && JSON.stringify(caskData[i].location) === JSON.stringify(cask.location)){
-            caskIndex = i;
-            break;
-        }
-    }
-    caskData[caskIndex].potion_effects = cask.potion_effects
-    caskData[caskIndex].potion_liquid = cask.potion_liquid
-    caskData[caskIndex].potion_modifier = cask.potion_modifier
-    caskData[caskIndex].is_aged = cask.is_aged
-
-    world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskData))
-}
-
-function deleteCask(dimension, location){
-    const caskData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
-    let caskIndex;
-
-    for(let i = 0; i < caskData.length; i++){
-        if(caskData[i].dimensionId === dimension && JSON.stringify(caskData[i].location) === JSON.stringify(location)){
-            caskIndex = i;
-            break;
-        }
-    }
-    caskData.splice(caskIndex, 1);
-    world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskData))
-}
 
 function matchesPotion(caskPotion, heldPotion, extraEffects){
     const matchesEffect = caskPotion.potion_effects[0] === heldPotion.potionEffectType.id;
@@ -247,9 +195,9 @@ export function shouldCaskAge(caskTag, potionEffects){
     }
     return shouldAge
 }
-function chanceToAge(potionEffects, fillLevel){
-    return true;
-}
+// function chanceToAge(potionEffects, fillLevel){
+//     return true;
+// }
 //From testing, block tags seem to be sorted alphabetically. So im having to rely on this. Its not pretty, its archaic, but what can you do
 export function getEffectNamefromCask(tag){
     let effect;
@@ -291,4 +239,11 @@ function caskTagToEffectId(caskTag){
         name = caskTag;
     }
     return name;
+}
+
+function getBaseEffectTime(caskTag){
+    let baseTime;
+    //Add switch case for specific casks, hopefully a default can be implemented
+    //Create a separate function that applies additional time based on seal
+    return baseTime;   
 }

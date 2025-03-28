@@ -1,0 +1,72 @@
+basically the TODO list to polish up the current state of the addon
+
+
+Casks:
+TODO: Make a check that sorts the potion extra effects allowing for potions with the same effects to combine without being order specific
+TODO: Update Tasting Spoon to support multiple potion effects within a cask
+TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
+TODO: Add sounds to various cask interactions
+TODO: Send messages using .lang file. Currently its in english
+TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
+TODO: implement function to change cask tag into localised language
+Todo: utilise shards for better effects
+Todo: apply unique base effects for casks(e.g wither 2 should be the standard)
+TODO: Add map colour to each cask
+TODO: Casks should apply the base potion effect(e.g poison 0:45)
+TODO: Implement charge level textures.
+TODO: Change casks tick to queued ticking
+TODO: Update cask db to include Start_tick and use potion effects length + fill level to determine the time it takes to age
+TODO: Use starting tick as method to check age time. Should be able to remove aging phase states. Starting tick resets when casks is filled by a potion
+TODO: Look into minecraft:queued_ticking for the start tick mechanism
+TODO: Refactor cask js to separate files
+Crystals:
+    Echo Shards:
+        TODO: Echo shards introduce light emission
+    Red Shards:
+        TODO: reduce light emissions with redstone clusters
+    Glow Shards:
+    Quartz shards:
+        TODO: figure out more appropriate loot for pure quartz seeds, done, the rest is air. YOU GET NOTHING, NOOOOTTTHHIINNNG
+    General:
+        TODO: Look into fixing lighting issue with seeds
+        TODO, implement a different growing method, - BACKBURNER
+        TODO: change crystal growth to onRandomTick - Slow down?/balance
+        TODO: growing crystal model - revise
+        TODO: change sound of "hitting" a seed - 
+        TODO: Evaluate pure quartz shard obtaining 
+        TODO: Add mining component along with item specific array --  based speed added, will look into item specific speeds at a later date
+        TODO: Sort out crystal seed loot tables
+        TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
+
+
+Stained Woods:
+TODO: add map colour to stained woods
+TODO: Item specific array mining component
+
+
+
+
+ 
+
+Items:
+TODO: find more appropriate sound for hammer and chisel use
+TODO: Seals for casks with tiers. Potency 1, Potency 2, potency 3. Simple texture idea, up arrows for potency and arrows pointing to the left for longevity. 
+The amount of arrows represent the tier quality
+
+Potions:
+TODO: Implement Potion of decay allowing for cask of decay to be made and stained wood. Try make other variants.
+TODO: add recipe for amethyst bottles
+TODO: Implement all potions and variants for amethyst tier potions,
+TODO: make texture for splash and lingering variant potions for amethyst tier
+TODO: Make function to spawn multiple splash/lingering potions that have extra effects
+TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects
+TODO: Implement function that converts string to a time stamp and then eventually to ticks per second
+Misc:
+
+TODO: Change programming language to TS
+TODO: [Scripting][error]-Unhandled promise rejection: Error: Failed to call function 'getComponent' due to the Entity being invalid (has the Entity been removed?).    at <anonymous> (crystal/cleansingCrystal.js:10)
+
+Blocks:
+TODO: look into minecraft:item_visual component. Maybe be able to compact mod
+
+

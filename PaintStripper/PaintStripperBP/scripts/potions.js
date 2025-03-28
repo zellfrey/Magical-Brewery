@@ -37,6 +37,10 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
     }
 });
 
+// const hms = '02:04:33';
+// const [hours, minutes, seconds] = hms.split(':');
+// const totalSeconds = (+hours) * 60 * 60 + (+minutes) * 60 + (+seconds);
+// console.log(totalSeconds);
 world.afterEvents.entitySpawn.subscribe((e) => {
     const {entity} = e;
     // const item = entity.getComponent("item").itemStack;

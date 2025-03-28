@@ -9,7 +9,7 @@ import "./tools/glassmithHammer.js"
 import "./tools/agelessPocketWatch.js"
 import "./potions.js"
 import "./slabStained.js"
-import "./cask.js"
+import "./cask/cask.js"
 
 
 system.runInterval(

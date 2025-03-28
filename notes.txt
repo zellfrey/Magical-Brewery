@@ -40,12 +40,10 @@ HAHAHAH do not implement. All textures broke. Ill do this another time
 Some stained wood textures have their names in odd positions e.g "resistance_fire". I want to try and implement other resistance potions
 look into warped planks, may answer data driven textures
 
-add map colour to stained woods
+
 
 tiered glass bottles
 
-TODO reduce light emissions with redstone clusters
-TODO, implement a different growing method,
 was thinking pushing the player to stay in the environment where they originally obtained the block, e.g budding glowstone would have to be grown in the nether.
 However, thinking further down the line theres either 2 possible routes to take. Either, enforce this and make the player have to invest in another area
 which can push the player in the comfort zone and hopefully feel more invested in this. The only issue i see with this method(still using budding glowstone as context)
@@ -76,27 +74,7 @@ almost acting as a return node for players.
 in order to get echo shards maybe implement something that causes quartz crystals to be "infected" by echo shards
 possibly get echo shards by using sculk blocks
 
-TODO: implement spawning of particles on hitting a seed -- DONE
-TODO: growing crystal loot tables - DONE
-TODO: change crystal growth to onRandomTick - DONE - Slow down?/balance
-TODO: refactor budding code DONE
-TODO: implement budding redstone DONE 
-TODO: rework redstone cluster textures? DONE
-TODO: Glassmith hammer texture DONE
-TODO: Glassmith chisel - DONE
-TODO: budding glowstone & redstone revamp of textures DONE
-TODO: Implement Ageless Pocket watch, implement dev tool to test various mechanics DONE
-TODO: Add pure quartz - DONE
-TODO: Add echo shard stuff - textures DONE
-TODO: figure out more appropriate loot for pure quartz seeds, done, the rest is air. YOU GET NOTHING, NOOOOTTTHHIINNNG
 
-TODO: Chiselled stone texture for crystal growth
-TODO: growing crystal model - is it finally done?
-TODO: growing crystal texture re-vamp - DONE
-TODO: change sound of "hitting" a seed - 
-TODO: Figure out chiselled rock
-
-TODO: find more appropriate sound for hammer and chisel use
 
 
 cant seem to work out a way for the texture so stand above the current block, will have to work on it. Or scrap the idea if it doesnt come out
@@ -155,12 +133,6 @@ possibly use rgba value
 if i cant do that, just do the age old method of crafting table, 1 potion = 1 stained plank
 
 
-TODO: Implement a method to obtain shards in order to create each seed thus starting the crystal growing 
-process.
-TODO: Look into recipe to create seeds.
-TODO: Add mining component along with item specific array --  based speed added, will look into item specific speeds at a later date
-TODO: Echo seeds, pretty self explanatory, use echo shards that player finds in ancient cities
-TODO: Amethyst seeds, use amethyst shards. 
 
 pure crystal dust acquisition,
 clean in water,
@@ -190,31 +162,13 @@ look into giving glass bottles as a byproduct from stained planks
 "ps:seal_type": ["none", "potency", "longevity"],
 
 
-TODO: implement function to change cask tag into localised language
 
 Turtle Master. Seeing as its mixed, make a separate guard rdclause for this unique instance. Or look into adding more block Tags
 This method of adding more block tags maybe stupid as fuck
             
-TODO: Add sounds to various cask interactions
-TODO: Send messages using .lang file. Currently its in english
-
-
-TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
-TODO: Use a failsafe guard clause just in case cask data does not exist "if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})"
-
 Just had a scary thought. What if players push casks with a piston?
 I have to update the cask in the caskDB. Potentially having to take the direction the piston was pushing and, uhmmm i dont have the words so ill figure it out.
 But its on the backburner
-
-
-TODO: Make a check that sorts the potion extra effects allowing for potions with the same effects to combine without being order specific
-TODO: Aging time should be increased by the number of effects that are within the cask(i.e the potion). This exponentially increases
-TODO: Aging will not happen if a potion effect is the same as the cask effect DONE
-TODO: Update Tasting Spoon to support multiple potion effects within a cask
-TODO: Make function to spawn multiple splash/lingering potions that have extra effects
-
-TODO: Re-structure cask model
-TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 
 So aging time. Affected by fill level and amount of effects within the potion liquid(i.e the extra effects)
 The less in the cask, the shorter the time. The greater the effects, the longer the time
@@ -226,8 +180,18 @@ amethyst lingering and splash potion.
 Revise casks textures
 
 
-[Scripting][error]-Unhandled promise rejection: Error: Failed to call function 'getComponent' due to the Entity being invalid (has the Entity been removed?).    at <anonymous> (crystal/cleansingCrystal.js:10)
+Extending that, certain casks should implement the edge cases/unique times of certain effects
+Instant effects are excluded
+Generic time is 3:00 minutes
+Regen 0:45(obviously not working)
+Slow falling, slowness, weakness 1:30
+Poison 0:45
+Tm 0:20
+Decay 0:40(2) however cant be crafted
+6-9
+Use wither rose to craft potion of decay
+Base should be wither 1, applied for 1:20
+Longevity = 3:00
+Potency= 0:40
+(Balance in the future) however check base effect
 
-Oh boy, may need to convert to Typescript(them interfaces and types are looking like a snack)
-Amethyst bottle only works on waterlogged blocks and water blocks at are in the range of onUseOn(a solid block has to be targetted)
-Original plan was to replicate glass bottles
