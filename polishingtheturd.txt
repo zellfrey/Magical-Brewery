@@ -9,7 +9,6 @@ TODO: Add sounds to various cask interactions
 TODO: Send messages using .lang file. Currently its in english
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
 TODO: implement function to change cask tag into localised language
-Todo: utilise shards for better effects
 Todo: apply unique base effects for casks(e.g wither 2 should be the standard)
 TODO: Add map colour to each cask
 TODO: Casks should apply the base potion effect(e.g poison 0:45)
@@ -37,6 +36,7 @@ Crystals:
         TODO: Add mining component along with item specific array --  based speed added, will look into item specific speeds at a later date
         TODO: Sort out crystal seed loot tables
         TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
+        Todo: utilise shards for better effects
 
 
 Stained Woods:
