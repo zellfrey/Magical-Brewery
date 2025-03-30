@@ -156,7 +156,7 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
-//Database functions i.e CRUD
+
 
 function matchesPotion(caskPotion, heldPotion, extraEffects){
     const matchesEffect = caskPotion.potion_effects[0] === heldPotion.potionEffectType.id;

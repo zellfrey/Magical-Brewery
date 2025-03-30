@@ -40,12 +40,14 @@ Crystals:
 
 
 Stained Woods:
+TODO: add map colour to stained woods DONE
+TODO: Item specific array mining component DONE
+TODO: Redstone Conductivity DONE
+
+Stained Slabs:
 TODO: add map colour to stained woods
 TODO: Item specific array mining component
-
-
-
-
+TODO: Redstone Conductivity only for double sbal
  
 
 Items:
