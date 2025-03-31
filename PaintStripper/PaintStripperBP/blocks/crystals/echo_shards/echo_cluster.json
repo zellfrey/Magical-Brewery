@@ -62,7 +62,7 @@
         "minecraft:material_instances": {
             "*": {
             "texture": "echo_cluster",
-            "render_method": "alpha_test",
+            "render_method": "alpha_test_single_sided",
             "face_dimming": false,
             "ambient_occlusion": false
             }

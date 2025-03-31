@@ -195,3 +195,4 @@ Longevity = 3:00
 Potency= 0:40
 (Balance in the future) however check base effect
 
+https://www.audacityteam.org/

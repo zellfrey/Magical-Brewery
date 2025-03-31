@@ -23,7 +23,6 @@ Crystals:
     Red Shards:
     Glow Shards:
     Quartz shards:
-        TODO: figure out more appropriate loot for pure quartz seeds, done, the rest is air. YOU GET NOTHING, NOOOOTTTHHIINNNG
     General:
         TODO: Look into fixing lighting issue with seeds
         TODO, implement a different growing method, - BACKBURNER
@@ -34,7 +33,6 @@ Crystals:
         TODO: Sort out crystal seed loot tables
         TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
         Todo: utilise shards for better effects
-        TODO: Fix z-fighting with cluster textures
         TODO: Growing crystals using only 1 loottable
 
 Stained Woods:
