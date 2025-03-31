@@ -1,27 +1,20 @@
 {
-    "format_version": "1.12",
-    "minecraft:recipe_shaped": {
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
       "description": {
-        "identifier": "ps:cask_resistance_fire"
+          "identifier": "ps:cask_resistance_fire"
       },
-      "tags": [ "crafting_table" ],
-      "pattern": [
-        "SSS",
-        "I I",
-        "SSS"
-      ],
+      "tags": ["crafting_table"],
+      "pattern": ["SSS", "I I", "SSS"],
       "key": {
-        "S": {
-          "item": "ps:stained_planks_resistance_fire"
-        },
-        "I": {
-          "item": "minecraft:iron_ingot"
-        }
+          "S": "ps:stained_planks_resistance_fire",
+          "I": "minecraft:iron_ingot"
       },
-      "result": {
-        "item": "ps:cask_resistance_fire",
-        "count": 1
-      }
-    }
+      "result": [
+          {
+            "item": "ps:cask_resistance_fire",
+            "count": 1
+          }
+      ]
+  }
 }
-    

@@ -1,27 +1,20 @@
 {
-    "format_version": "1.12",
-    "minecraft:recipe_shaped": {
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
       "description": {
-        "identifier": "ps:cask_slow_falling"
+          "identifier": "ps:cask_slow_falling"
       },
-      "tags": [ "crafting_table" ],
-      "pattern": [
-        "SSS",
-        "I I",
-        "SSS"
-      ],
+      "tags": ["crafting_table"],
+      "pattern": ["SSS", "I I", "SSS"],
       "key": {
-        "S": {
-          "item": "ps:stained_planks_slow_falling"
-        },
-        "I": {
-          "item": "minecraft:iron_ingot"
-        }
+          "S": "ps:stained_planks_slow_falling",
+          "I": "minecraft:iron_ingot"
       },
-      "result": {
-        "item": "ps:cask_slow_falling",
-        "count": 1
-      }
-    }
+      "result": [
+          {
+            "item": "ps:cask_slow_falling",
+            "count": 1
+          }
+      ]
+  }
 }
-    

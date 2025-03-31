@@ -1,22 +1,19 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.17.41",
     "minecraft:recipe_shaped": {
-    "description": {
-        "identifier": "ps:stained_slab_strength"
-    },
-    "tags": [ "crafting_table" ],
-    "pattern": [
-        "###"
-    ],
-    "key": {
-        "#": {
-        "item": "ps:stained_planks_strength"
-        }
-    },
-    "result": {
-        "item": "ps:stained_slab_strength",
-        "count": 6
-    }
+        "description": {
+            "identifier": "ps:stained_slab_strength"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["###"],
+        "key": {
+            "#": "ps:stained_planks_strength"
+        },
+        "result": [
+            {
+                "item": "ps:stained_slab_strength",
+                "count": 1
+            }
+        ]
     }
 }
-                 

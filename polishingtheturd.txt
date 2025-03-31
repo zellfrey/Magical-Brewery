@@ -37,7 +37,7 @@ Crystals:
         TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
         Todo: utilise shards for better effects
         TODO: Make recipes for each shard block
-
+        TODO: Fix z-fighting with cluster textures
 
 Stained Woods:
 Stained Slabs:
@@ -47,7 +47,7 @@ Items:
 TODO: find more appropriate sound for hammer and chisel use
 TODO: Seals for casks with tiers. Potency 1, Potency 2, potency 3. Simple texture idea, up arrows for potency and arrows pointing to the left for longevity. 
 The amount of arrows represent the tier quality
-
+TODO: Add Glasssmith Hammer recipe
 Potions:
 TODO: Implement Potion of decay allowing for cask of decay to be made and stained wood. Try make other variants.
 TODO: add recipe for amethyst bottles

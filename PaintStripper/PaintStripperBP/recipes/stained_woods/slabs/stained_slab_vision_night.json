@@ -1,22 +1,20 @@
 {
-    "format_version": "1.12.0",
+    "format_version": "1.17.41",
     "minecraft:recipe_shaped": {
-    "description": {
-        "identifier": "ps:stained_slab_vision_night"
-    },
-    "tags": [ "crafting_table" ],
-    "pattern": [
-        "###"
-    ],
-    "key": {
-        "#": {
-        "item": "ps:stained_planks_vision_night"
-        }
-    },
-    "result": {
-        "item": "ps:stained_slab_vision_night",
-        "count": 6
-    }
+        "description": {
+            "identifier": "ps:stained_slab_vision_night"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["###"],
+        "key": {
+            "#": "ps:stained_planks_vision_night"
+        },
+        "result": [
+            {
+                "item": "ps:stained_slab_vision_night",
+                "count": 1
+            }
+        ]
     }
 }
                  
