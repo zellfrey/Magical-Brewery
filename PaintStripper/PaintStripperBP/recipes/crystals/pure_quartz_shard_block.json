@@ -1,0 +1,19 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ps:pure_quartz_shard_block"
+        },
+        "tags": ["crafting_table"],
+        "pattern": ["QQ","QQ"],
+        "key": {
+            "Q": "ps:pure_quartz_shard"
+        },
+        "result": [
+            {
+                "item": "ps:pure_quartz_shard_block",
+                "count": 1
+            }
+        ]
+    }
+}
