@@ -31,12 +31,12 @@ Crystals:
         TODO, implement a different growing method, - BACKBURNER
         TODO: change crystal growth to onRandomTick - Slow down?/balance
         TODO: growing crystal model - revise
-        TODO: change sound of "hitting" a seed - 
+        TODO: change sound of "hitting" a seed, see into decreasing/increasing the pitch the further the depth
         TODO: Evaluate pure quartz shard obtaining 
-        TODO: Add mining component along with item specific array --  based speed added, will look into item specific speeds at a later date
         TODO: Sort out crystal seed loot tables
         TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
         Todo: utilise shards for better effects
+        TODO: Make recipes for each shard block
 
 
 Stained Woods:
