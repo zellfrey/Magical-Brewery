@@ -20,6 +20,7 @@
         "tag:crystal_seed": {},
         "minecraft:loot": "loot_tables/blocks/crystals/red_shards/seed_redstone.json",
         "minecraft:map_color": "#FF0000",
+        "minecraft:light_emission": 1,
         "minecraft:destructible_by_mining": {
             "seconds_to_destroy": 1.5,
             "item_specific_speeds": [

@@ -16,7 +16,7 @@
     "components": {
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:light_emission": 7,
+        "minecraft:light_emission": 6,
         "minecraft:loot": "loot_tables/blocks/crystals/red_shards/redstone_cluster.json",
         "minecraft:map_color": "#FF0000",
         "minecraft:destructible_by_mining": {

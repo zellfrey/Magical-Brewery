@@ -20,9 +20,7 @@ TODO: Look into minecraft:queued_ticking for the start tick mechanism
 TODO: Refactor cask js to separate files
 Crystals:
     Echo Shards:
-        TODO: Echo shards introduce light emission
     Red Shards:
-        TODO: reduce light emissions with redstone clusters
     Glow Shards:
     Quartz shards:
         TODO: figure out more appropriate loot for pure quartz seeds, done, the rest is air. YOU GET NOTHING, NOOOOTTTHHIINNNG
@@ -37,6 +35,7 @@ Crystals:
         TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
         Todo: utilise shards for better effects
         TODO: Fix z-fighting with cluster textures
+        TODO: Growing crystals using only 1 loottable
 
 Stained Woods:
 Stained Slabs:

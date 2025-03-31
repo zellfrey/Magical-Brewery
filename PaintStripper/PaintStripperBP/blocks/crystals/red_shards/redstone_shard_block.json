@@ -8,7 +8,7 @@
       }
     },
     "components": {
-      "minecraft:light_emission": 10,
+      "minecraft:light_emission": 6,
       "minecraft:friction": 0.4,
       "minecraft:map_color": "#FF0000",
       "minecraft:destructible_by_mining": {

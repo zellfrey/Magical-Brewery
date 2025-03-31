@@ -19,6 +19,7 @@
         "minecraft:geometry": "minecraft:geometry.cross",
         "minecraft:loot": "loot_tables/blocks/crystals/echo_shards/large_echo_bud.json",
         "minecraft:map_color": "#4C7F99",
+        "minecraft:light_emission": 2,
         "minecraft:destructible_by_mining": {
             "seconds_to_destroy": 1.5,
             "item_specific_speeds": [
