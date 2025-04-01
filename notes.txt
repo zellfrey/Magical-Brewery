@@ -196,3 +196,12 @@ Potency= 0:40
 (Balance in the future) however check base effect
 
 https://www.audacityteam.org/
+
+glow shard lore 2 options:
+sun: Glowshards require the light of the sun in order grow, the light itself is important to its glowing tranquility
+
+nether: For those that have travelled to the nether, there is 1 undeniably fact, it is a wasteland filled with horrors and fear.
+But why does glowstone exist. Such a tranquil and fragile object seems contradictory to the nature of the nether, 1 theory is that
+the glowstone represents a more malicious intent of survival. The harsh landscape of the nether actually created the glowstone as a bi-product 
+of its ecology. COuld this crystal be feeding off of the hope and glimmer of souls that are trapped in the nether? Perhaps glowstone is the solidified
+remmanents of hope. A horrible idea to dwell upon, but if we are to use this then well sacrifices must me met

@@ -24,8 +24,8 @@ Crystals:
     Glow Shards:
     Quartz shards:
     General:
-        TODO: Look into fixing lighting issue with seeds
-        TODO, implement a different growing method, - BACKBURNER
+        TODO: Look into fixing lighting issue with seeds - amethyst seeds & quartz seeds will continue to have a shadow regardless of what option i pick
+        TODO, implement a different growing method, - BACKBURNER, glowshards require exposure to the sun
         TODO: change crystal growth to onRandomTick - Slow down?/balance
         TODO: growing crystal model - revise
         TODO: change sound of "hitting" a seed, see into decreasing/increasing the pitch the further the depth
@@ -52,6 +52,7 @@ TODO: make texture for splash and lingering variant potions for amethyst tier
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects
 TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects
 TODO: Implement function that converts string to a time stamp and then eventually to ticks per second
+TODO: Fix Amethyst bottle to water bottle, needs to parse an object into the function
 Misc:
 
 TODO: Change programming language to TS

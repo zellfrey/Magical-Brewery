@@ -54,8 +54,8 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_amethyst_bottle', {
         onUse(e) {
             const {source, itemStack} = e
-            const{block} = source.getBlockFromViewDirection({includeLiquidBlocks: true, maxDistance: 4.0});
-            
+            const{block} = source.getBlockFromViewDirection({includeLiquidBlocks: true});
+            // maxDistance: 4.0
             if(block.typeId === "minecraft:water" || block.isWaterlogged){
                 console.log("filling from water")
             }
