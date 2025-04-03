@@ -22,8 +22,39 @@
             "tag:Leaping": {},
             "minecraft:custom_components": ["ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
             "minecraft:light_dampening": 4,
-            "minecraft:destructible_by_mining": { 
-                "seconds_to_destroy": 2
+            "minecraft:map_color": "#a7a857",
+            "minecraft:redstone_conductivity": {
+                "redstone_conductor": true,
+                "allows_wire_to_step_down": true
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2.0,
+                "item_specific_speeds": [
+                    {
+                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:wooden_tier')"},
+                        "destroy_speed": 1.5
+                    },
+                    {
+                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:stone_tier')"},
+                        "destroy_speed": 0.75
+                    },
+                    {
+                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:iron_tier')"},
+                        "destroy_speed": 0.5
+                    },
+                    {
+                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:diamond_tier')"},
+                        "destroy_speed": 0.4
+                    },
+                    {
+                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:netherite_tier')"},
+                        "destroy_speed": 0.35
+                    },
+                    {
+                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:golden_tier')"},
+                        "destroy_speed": 0.25
+                    }
+                ]
             },
             "minecraft:flammable": { 
                 "catch_chance_modifier": 5,

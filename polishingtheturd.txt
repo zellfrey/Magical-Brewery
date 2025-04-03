@@ -10,7 +10,6 @@ TODO: Send messages using .lang file. Currently its in english
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
 TODO: implement function to change cask tag into localised language
 Todo: apply unique base effects for casks(e.g wither 2 should be the standard)
-TODO: Add map colour to each cask
 TODO: Casks should apply the base potion effect(e.g poison 0:45)
 TODO: Implement charge level textures.
 TODO: Change casks tick to queued ticking
