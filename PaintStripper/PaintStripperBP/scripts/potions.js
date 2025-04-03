@@ -20,27 +20,26 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
     const potion = itemStack.getComponent('minecraft:potion')
     const lore = itemStack.getLore();
     if(lore.length != 0){
-        console.log(lore.length)
         lore.forEach(modifier => {
-            const words = modifier.split(' ');
-            words.pop();
-            let effect = words.join("_").toLowerCase()
-            // if(Potions.getPotionEffectType(effect) ! == undefined){
-            // }
-            console.log(effect)
-            if(effect === "instant_health" || effect === "instant_damage"){
-                source.addEffect(effect, 1, { amplifier: 0 })
-           }else{
-               source.addEffect(effect, 2400, { amplifier: 0 })
-           } 
+            if(modifier === "Instant Health" || modifier === "Instant Damage"){
+                source.addEffect(modifier.replace(" ","_").toLowerCase(), 1, { amplifier: 0 })
+            }else{
+                const words = modifier.split(' ');
+                const effectTime = words.pop();
+                let effect = words.join("_").toLowerCase()
+                // if(Potions.getPotionEffectType(effect) ! == undefined){
+                // }
+                const ms = effectTime.substring(1, 5)
+                const [minutes, seconds] = ms.split(':');
+                const totalSeconds = (+minutes) * 60 + (+seconds);
+                
+                source.addEffect(effect, totalSeconds * 20, { amplifier: 0 })
+            }
         });
     }
 });
 
-// const hms = '02:04:33';
-// const [hours, minutes, seconds] = hms.split(':');
-// const totalSeconds = (+hours) * 60 * 60 + (+minutes) * 60 + (+seconds);
-// console.log(totalSeconds);
+
 world.afterEvents.entitySpawn.subscribe((e) => {
     const {entity} = e;
     // const item = entity.getComponent("item").itemStack;

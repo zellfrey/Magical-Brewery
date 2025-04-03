@@ -206,31 +206,4 @@ the glowstone represents a more malicious intent of survival. The harsh landscap
 of its ecology. COuld this crystal be feeding off of the hope and glimmer of souls that are trapped in the nether? Perhaps glowstone is the solidified
 remmanents of hope. A horrible idea to dwell upon, but if we are to use this then well sacrifices must me met
 
-const potionEffectTimesObject = {
-    "Healing": {
-        "none": "somestring",
-        "long": "8:00",
-        "potency": false,
-    },
-    "Fire_Resistance": {
-        "none": "3:00",
-        "long": "8:00",
-        "potency": false,
-    },
-    "poison": {
-        "none": "somestring",
-        "long": 42,
-        "potency": false,
-    },
-    "poison": {
-        "none": "somestring",
-        "long": 42,
-        "potency": false,
-    },
-    "poison": {
-        "none": "somestring",
-        "long": 42,
-        "potency": false,
-    },
 
-  };

@@ -146,9 +146,14 @@ system.beforeEvents.startup.subscribe(eventData => {
             
             if(caskAge === 3 && !cask.is_aged){
                 
-                const effectId = getEffectNamefromCask(block.getTags()[0]).replace("_", " ") + " (2:00)"
+                let effectName = potionEffectsObject[block.getTags()[0]].effect_name
                 
-                cask.potion_effects.push(effectId);
+                if(potionEffectsObject[block.getTags()[0]].mod_type_none){
+                    const effectTime =" (" + potionEffectsObject[block.getTags()[0]].mod_type_none +  ")"
+                    effectName += effectTime;
+                }
+                
+                cask.potion_effects.push(effectName);
                 cask.is_aged = true;
                 updateCask(cask);
             }
@@ -187,7 +192,7 @@ export function shouldCaskAge(caskTag, potionEffects){
         for(let i = 1; i < potionEffects.length; i++){
             const effect = potionEffects[i].split(' ');
             effect.pop();
-            if(getEffectNamefromCask(caskTag) === effect.join("_")){
+            if(potionEffectsObject[caskTag].effect_name === effect.join(" ")){
                 shouldAge = false;
                 break;
             }
@@ -198,30 +203,7 @@ export function shouldCaskAge(caskTag, potionEffects){
 // function chanceToAge(potionEffects, fillLevel){
 //     return true;
 // }
-//From testing, block tags seem to be sorted alphabetically. So im having to rely on this. Its not pretty, its archaic, but what can you do
-export function getEffectNamefromCask(tag){
-    let effect;
-    switch(tag){
-        case "Decay":
-            effect = "Wither";
-        break;
-        case "Harming":
-            effect = "Instant_Damage";
-        break;
-        case "Healing":
-            effect = "Instant_Health";
-        break;
-        case "Leaping":
-            effect = "Jump_Boost";
-        break;
-        case "Swiftness":
-            effect = "Speed";
-        break;
-        default:
-        effect = tag;
-    }
-    return effect;
-}
+
 
 function caskTagToEffectId(caskTag){
     let name;
@@ -241,9 +223,105 @@ function caskTagToEffectId(caskTag){
     return name;
 }
 
-function getBaseEffectTime(caskTag){
+function getPotionEffectTime(caskTag){
     let baseTime;
-    //Add switch case for specific casks, hopefully a default can be implemented
-    //Create a separate function that applies additional time based on seal
     return baseTime;   
 }
+export const potionEffectsObject = {
+    "Decay": {
+        effect_name: "Wither",
+        mod_type_none: "0:40",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Harming": {
+        effect_name: "Instant Damage",
+        mod_type_none: "",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Healing": {
+        effect_name: "Instant Health",
+        mod_type_none: "",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Invisibility": {
+        effect_name: "Invisibility",
+        mod_type_none: "3:00",
+        "long": 42,
+        "potency": false,
+    },
+    "Leaping": {
+        effect_name: "Jump Boost",
+        mod_type_none: "3:00",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Poison": {
+        effect_name: "Poison",
+        mod_type_none: "0:45",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Regeneration": {
+        effect_name: "Regeneration",
+        mod_type_none: "0:45",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Fire_Resistance": {
+        effect_name: "Fire Resistance",
+        mod_type_none: "3:00",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Slow_Falling": {
+        effect_name: "Slow Falling",
+        mod_type_none: "1:30",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Slowness": {
+        effect_name: "Slowness",
+        mod_type_none: "1:30",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Strength": {
+        effect_name: "Strength",
+        mod_type_none: "3:00",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Swiftness": {
+        effect_name: "Speed",
+        mod_type_none: "3:00",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Turtle_Master": {
+        effect_name: "Turtle Master",
+        mod_type_none: "0:40",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Night_Vision": {
+        effect_name: "Night Vision",
+        mod_type_none: "3:00",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Water_Breathing": {
+        effect_name: "Water Breathing",
+        mod_type_none: "3:00",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    },
+    "Weakness": {
+        effect_name: "Weakness",
+        mod_type_none: "1:30",
+        "mod_type_long": "8:00",
+        "mod_type_potency": false,
+    }
+  };

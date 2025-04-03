@@ -9,8 +9,7 @@ TODO: Add sounds to various cask interactions
 TODO: Send messages using .lang file. Currently its in english
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
 TODO: implement function to change cask tag into localised language
-Todo: apply unique base effects for casks(e.g wither 2 should be the standard)
-TODO: Casks should apply the base potion effect(e.g poison 0:45)
+TODO: TurtleMaster cask effects & wither effect
 TODO: Implement charge level textures.
 TODO: Change casks tick to queued ticking
 TODO: Update cask db to include Start_tick and use potion effects length + fill level to determine the time it takes to age
