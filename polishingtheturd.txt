@@ -9,7 +9,6 @@ TODO: Add sounds to various cask interactions
 TODO: Send messages using .lang file. Currently its in english
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
 TODO: implement function to change cask tag into localised language
-TODO: TurtleMaster cask effects & wither effect
 TODO: Implement charge level textures.
 TODO: Change casks tick to queued ticking
 TODO: Update cask db to include Start_tick and use potion effects length + fill level to determine the time it takes to age
@@ -38,19 +37,17 @@ Stained Slabs:
  
 
 Items:
-TODO: find more appropriate sound for hammer and chisel use
+TODO: find more appropriate sound for hammer use
 TODO: Seals for casks with tiers. Potency 1, Potency 2, potency 3. Simple texture idea, up arrows for potency and arrows pointing to the left for longevity. 
 The amount of arrows represent the tier quality
-TODO: Add Glasssmith Hammer recipe
 Potions:
 TODO: Implement Potion of decay allowing for cask of decay to be made and stained wood. Try make other variants.
-TODO: add recipe for amethyst bottles
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects
 TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects
-TODO: Implement function that converts string to a time stamp and then eventually to ticks per second
 TODO: Fix Amethyst bottle to water bottle, needs to parse an object into the function
+TODO: Update potions to utilise addition of potion potency levels
 Misc:
 
 TODO: Change programming language to TS

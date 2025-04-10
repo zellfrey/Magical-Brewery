@@ -1,7 +1,7 @@
 import {world, system, ItemStack } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
-import {potionEffectsObject, shouldCaskAge} from "cask/cask.js";
+import {setPotionEffectForCask, shouldCaskAge} from "cask/cask.js";
 import {findCask, updateCask} from "cask/caskDB.js";
 
 const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
@@ -50,16 +50,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 
                 if(agePhase === 3 && !cask.is_aged){
                     
-                    let effectName = potionEffectsObject[block.getTags()[0]].effect_name
-                                    
-                    if(potionEffectsObject[block.getTags()[0]].mod_type_none){
-                        const effectTime =" (" + potionEffectsObject[block.getTags()[0]].mod_type_none +  ")"
-                        effectName += effectTime;
-                    }
-                    
-                    cask.potion_effects.push(effectName);
-                    cask.is_aged = true;
-                    updateCask(cask);
+                    setPotionEffectForCask(block.getTags()[0], cask)
                 }
             }
         }

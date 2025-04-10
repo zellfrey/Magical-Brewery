@@ -142,20 +142,10 @@ system.beforeEvents.startup.subscribe(eventData => {
 
             const caskAge = block.permutation.getState("ps:aging_phase");
             block.setPermutation(block.permutation.withState("ps:aging_phase", caskAge+1));
-            console.log("ageing")
             
             if(caskAge === 3 && !cask.is_aged){
                 
-                let effectName = potionEffectsObject[block.getTags()[0]].effect_name
-                
-                if(potionEffectsObject[block.getTags()[0]].mod_type_none){
-                    const effectTime =" (" + potionEffectsObject[block.getTags()[0]].mod_type_none +  ")"
-                    effectName += effectTime;
-                }
-                
-                cask.potion_effects.push(effectName);
-                cask.is_aged = true;
-                updateCask(cask);
+                setPotionEffectForCask(block.getTags()[0], cask)
             }
             return;
         }
@@ -192,7 +182,7 @@ export function shouldCaskAge(caskTag, potionEffects){
         for(let i = 1; i < potionEffects.length; i++){
             const effect = potionEffects[i].split(' ');
             effect.pop();
-            if(potionEffectsObject[caskTag].effect_name === effect.join(" ")){
+            if(potionEffectsObject[caskTag].effects === effect.join(" ")){
                 shouldAge = false;
                 break;
             }
@@ -200,9 +190,6 @@ export function shouldCaskAge(caskTag, potionEffects){
     }
     return shouldAge
 }
-// function chanceToAge(potionEffects, fillLevel){
-//     return true;
-// }
 
 
 function caskTagToEffectId(caskTag){
@@ -214,114 +201,160 @@ function caskTagToEffectId(caskTag){
         case "WaterBreathing":
             name = "WaterBreath";
         break;
-        case "Decay":
-            name = "Wither";
-        break;
+        // case "Decay":
+        //     name = "Wither";
+        // break;
         default:
         name = caskTag;
     }
     return name;
 }
+export function setPotionEffectForCask(caskTag, cask){
+    const potencySeal = false;
+    let sealStrength = 0;
+    if(caskTag === "Turtle_Master"){
+        const effects = potionEffectsObject[caskTag].effects
+        
+        if(potencySeal){
+            setTurtleMasterEffect(sealStrength, effects, potionEffectsObject[caskTag].duration_potency, cask, true)
+        }
+        else{
+            setTurtleMasterEffect(sealStrength, effects, potionEffectsObject[caskTag].duration_long, cask, false)
+        }
+    }
+    else{
+        const potionEffect = potionEffectsObject[caskTag]
+        let effectName = potionEffect.effects
+        if(potencySeal){
+            let potionPotency;
 
-function getPotionEffectTime(caskTag){
-    let baseTime;
-    return baseTime;   
+            if(effectName.includes("Instant")){
+                potionPotency = " " + potionPotencyArray[sealStrength];
+
+            }
+            else if(effectName === "Slowness"){
+                potionPotency = " " + potionPotencyArray[sealStrength+2] + 
+                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+
+            }
+            else if(potionEffect.duration_potency.length === 0){
+                potionPotency =" (" + potionEffect.duration_long[0] +  ")";
+
+            }else{
+                potionPotency = " " + potionPotencyArray[sealStrength] + 
+                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+            }
+            effectName += potionPotency;
+        }
+        else{
+            if(potionEffect.duration_long.length !== 0){
+                const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
+                effectName += effectTime;
+            }
+        }
+        cask.potion_effects.push(effectName);  
+    }       
+    cask.is_aged = true;
+    updateCask(cask);
 }
-export const potionEffectsObject = {
-    "Decay": {
-        effect_name: "Wither",
-        mod_type_none: "0:40",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
-    },
+
+function setTurtleMasterEffect(seal, effects, potionTime, cask, potency){
+
+    let effectSlowness = effects[0] +  " " + potionPotencyArray[3 + (potency *2)] 
+                        + " (" + potionTime[seal - potency] +  ")"
+    cask.potion_effects.push(effectSlowness);
+
+    let effectResistance = effects[1] +  " " + potionPotencyArray[2 + potency]
+                         + " (" + potionTime[seal - potency] +  ")"
+    cask.potion_effects.push(effectResistance);
+}
+const potionPotencyArray = ["I", "II", "III", "IV", "V", "VI"]
+//instant potions have 1 element for the array
+//Potions with long duration, 0th element represent base effect time, 1st is longevity
+//If a potion doesnt have a potency variant, it will fallback onto the base effect time in duration_long
+const potionEffectsObject = {
+    // "Decay": {
+    //     effects: "Wither",
+    //     duration_long: ["0:40", "1:00", "2:00"], 
+    //     duration_potency: [],
+    // },
     "Harming": {
-        effect_name: "Instant Damage",
-        mod_type_none: "",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Instant Damage",
+        duration_long: [],
+        duration_potency: [],
     },
     "Healing": {
-        effect_name: "Instant Health",
-        mod_type_none: "",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Instant Health",
+        duration_long: [],
+        duration_potency: [],
     },
     "Invisibility": {
-        effect_name: "Invisibility",
-        mod_type_none: "3:00",
-        "long": 42,
-        "potency": false,
+        effects: "Invisibility",
+        duration_long: ["3:00", "8:00"],
+        duration_potency: [],
     },
     "Leaping": {
-        effect_name: "Jump Boost",
-        mod_type_none: "3:00",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Jump Boost",
+        duration_long: ["3:00", "8:00"],
+        duration_potency: ["1:30"],
     },
     "Poison": {
-        effect_name: "Poison",
-        mod_type_none: "0:45",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Poison",
+        duration_long: ["0:45", "2:00"],
+        duration_potency: ["0:22"],
     },
     "Regeneration": {
-        effect_name: "Regeneration",
-        mod_type_none: "0:45",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Regeneration",
+        duration_long: ["0:45", "2:00"],
+        duration_potency: ["0:22"],
     },
     "Fire_Resistance": {
-        effect_name: "Fire Resistance",
-        mod_type_none: "3:00",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Fire Resistance",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: [],
     },
     "Slow_Falling": {
-        effect_name: "Slow Falling",
-        mod_type_none: "1:30",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Slow Falling",
+        duration_long: ["1:30", "4:00"],
+        duration_potency: [],
     },
     "Slowness": {
-        effect_name: "Slowness",
-        mod_type_none: "1:30",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Slowness",
+        duration_long: ["1:30", "4:00"],
+        duration_potency: ["0:20"],
     },
     "Strength": {
-        effect_name: "Strength",
-        mod_type_none: "3:00",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Strength",
+        duration_long: ["3:00", "8:00"],
+        duration_potency: ["1:30"],
     },
     "Swiftness": {
-        effect_name: "Speed",
-        mod_type_none: "3:00",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Speed",
+        duration_none: "3:00",
+        duration_long: ["3:00", "8:00"],
+        duration_potency: ["1:30"],
     },
     "Turtle_Master": {
-        effect_name: "Turtle Master",
-        mod_type_none: "0:40",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: ["Slowness", "Resistance"],
+        duration_long: ["0:20", "0:40", "2:00"],
+        duration_potency: ["0:20"],
     },
     "Night_Vision": {
-        effect_name: "Night Vision",
-        mod_type_none: "3:00",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Night Vision",
+        duration_long: ["3:00", "8:00"],
+        duration_potency: [],
     },
     "Water_Breathing": {
-        effect_name: "Water Breathing",
-        mod_type_none: "3:00",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Water Breathing",
+        duration_long: ["3:00", "8:00"],
+        duration_potency: [],
     },
     "Weakness": {
-        effect_name: "Weakness",
-        mod_type_none: "1:30",
-        "mod_type_long": "8:00",
-        "mod_type_potency": false,
+        effects: "Weakness",
+        duration_long: ["1:30", "4:00"],
+        duration_potency: [],
     }
   };
+//Freezes the object, initialize on server startup  
+//Object.freeze(obj);
+//Array.isArray(arr) && !ar.length
