@@ -10,14 +10,9 @@ system.beforeEvents.startup.subscribe(eventData => {
             if(seedDepth != 4){
                 block.setPermutation(block.permutation.withState("ps:seed_depth", seedDepth+1));
                 block.dimension.spawnParticle("minecraft:critical_hit_emitter", block.center()); 
-                block.dimension.playSound('hit.amethyst_block', block.location);
+                const pitch = seedDepth * 0.75
+                block.dimension.playSound("hit.amethyst_block", block.location, {volume: 0.8, pitch: pitch});
             }
-            else{
-                block.dimension.playSound('dig.stone', block.location);
-            }
-
-            block.dimension.playSound("hit.amethyst_block", block.location, {volume: 0.8, pitch: 1.2});
-            
         }
     });
 });

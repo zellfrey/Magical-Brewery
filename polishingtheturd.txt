@@ -22,8 +22,6 @@ Crystals:
     Quartz shards:
     General:
         TODO: Look into fixing lighting issue with seeds - amethyst seeds & quartz seeds will continue to have a shadow regardless of what option i pick
-        
-        TODO: change sound of "hitting" a seed, see into decreasing/increasing the pitch the further the depth
         TODO: Sort out glowstone/redstone/pure quartz shard obtaining 
         Todo: utilise shards for better effects
 
@@ -32,7 +30,6 @@ Stained Slabs:
  
 
 Items:
-TODO: find more appropriate sound for hammer use
 TODO: Seals for casks with tiers. Potency 1, Potency 2, potency 3. Simple texture idea, up arrows for potency and arrows pointing to the left for longevity. 
 The amount of arrows represent the tier quality
 Potions:
