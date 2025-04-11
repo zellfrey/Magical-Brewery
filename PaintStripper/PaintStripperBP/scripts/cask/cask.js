@@ -210,17 +210,16 @@ function caskTagToEffectId(caskTag){
     return name;
 }
 export function setPotionEffectForCask(caskTag, cask){
-    const potencySeal = false;
-    let sealStrength = 0;
+    const potencySeal = true;
+    let sealStrength = 1;
     if(caskTag === "Turtle_Master"){
         const effects = potionEffectsObject[caskTag].effects
+
+        const potionTime = potencySeal ? potionEffectsObject[caskTag].duration_potency : 
+        potionEffectsObject[caskTag].duration_long;
+
+        setTurtleMasterEffect(sealStrength, effects, potionTime, cask, potencySeal)
         
-        if(potencySeal){
-            setTurtleMasterEffect(sealStrength, effects, potionEffectsObject[caskTag].duration_potency, cask, true)
-        }
-        else{
-            setTurtleMasterEffect(sealStrength, effects, potionEffectsObject[caskTag].duration_long, cask, false)
-        }
     }
     else{
         const potionEffect = potionEffectsObject[caskTag]

@@ -7,8 +7,8 @@ TODO: Update Tasting Spoon to support multiple potion effects within a cask
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Add sounds to various cask interactions
 TODO: Send messages using .lang file. Currently its in english
-TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"]
-TODO: implement function to change cask tag into localised language
+TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"] - BACKBURNER
+TODO: implement function to change cask tag into localised language - BACKBURNER
 TODO: Implement charge level textures.
 TODO: Change casks tick to queued ticking
 TODO: Update cask db to include Start_tick and use potion effects length + fill level to determine the time it takes to age
@@ -27,10 +27,9 @@ Crystals:
         TODO: growing crystal model - revise
         TODO: change sound of "hitting" a seed, see into decreasing/increasing the pitch the further the depth
         TODO: Sort out glowstone/redstone/pure quartz shard obtaining 
-        TODO: Sort out crystal seed loot tables
+        TODO: Sort out crystal seed loot tables /Growing crystals using only 1 loottable
         TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
         Todo: utilise shards for better effects
-        TODO: Growing crystals using only 1 loottable
 
 Stained Woods:
 Stained Slabs:
@@ -41,7 +40,6 @@ TODO: find more appropriate sound for hammer use
 TODO: Seals for casks with tiers. Potency 1, Potency 2, potency 3. Simple texture idea, up arrows for potency and arrows pointing to the left for longevity. 
 The amount of arrows represent the tier quality
 Potions:
-TODO: Implement Potion of decay allowing for cask of decay to be made and stained wood. Try make other variants.
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects

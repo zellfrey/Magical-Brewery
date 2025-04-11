@@ -207,3 +207,8 @@ of its ecology. COuld this crystal be feeding off of the hope and glimmer of sou
 remmanents of hope. A horrible idea to dwell upon, but if we are to use this then well sacrifices must me met
 
 
+Removed decay related stuff. I think it fits a very small niche area of combat (namely the only real unique benefit is that it deals with undead).
+At first i thought it was available to survival, however i am wrong. And whilst their is the suggestion of using a wither rose, which is hard to obtain,
+I will add this on a later date. Mainly a world update. Secondly, the potion of decay doesnt exactly fit the usual convention of potion crafting. The
+base potion itself already has a potency level 2. Whilst i could make a base potion, it would have to be custom, i will get to that when i implement the 
+likes of echo potion
