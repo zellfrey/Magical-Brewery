@@ -22,13 +22,9 @@ Crystals:
     Quartz shards:
     General:
         TODO: Look into fixing lighting issue with seeds - amethyst seeds & quartz seeds will continue to have a shadow regardless of what option i pick
-        TODO, implement a different growing method, - BACKBURNER, glowshards require exposure to the sun
-        TODO: change crystal growth to onRandomTick - Slow down?/balance
-        TODO: growing crystal model - revise
+        
         TODO: change sound of "hitting" a seed, see into decreasing/increasing the pitch the further the depth
         TODO: Sort out glowstone/redstone/pure quartz shard obtaining 
-        TODO: Sort out crystal seed loot tables /Growing crystals using only 1 loottable
-        TODO: Seeing as the new stained woods recipe works, utilise this and create "polished quartz" with a brush
         Todo: utilise shards for better effects
 
 Stained Woods:

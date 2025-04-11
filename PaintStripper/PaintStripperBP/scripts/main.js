@@ -10,6 +10,7 @@ import "./tools/agelessPocketWatch.js"
 import "./potions.js"
 import "./slabStained.js"
 import "./cask/cask.js"
+import "./utils/lootUtils.js"
 
 
 system.runInterval(

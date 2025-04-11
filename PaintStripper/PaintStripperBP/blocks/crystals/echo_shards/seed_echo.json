@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.40",
     "minecraft:block": {
       "description": {
         "identifier": "ps:seed_echo",
@@ -18,7 +18,7 @@
       },
       "components": {
         "tag:crystal_seed": {},
-        "minecraft:loot": "loot_tables/blocks/crystals/echo_shards/seed_echo.json",
+        "minecraft:loot": "loot_tables/empty.json",
         "minecraft:map_color": "#4C7F99",
         "minecraft:light_emission": 1,
         "minecraft:destructible_by_mining": {

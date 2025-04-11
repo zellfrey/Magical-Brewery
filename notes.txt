@@ -212,3 +212,7 @@ At first i thought it was available to survival, however i am wrong. And whilst 
 I will add this on a later date. Mainly a world update. Secondly, the potion of decay doesnt exactly fit the usual convention of potion crafting. The
 base potion itself already has a potency level 2. Whilst i could make a base potion, it would have to be custom, i will get to that when i implement the 
 likes of echo potion
+
+TODO, implement a different growing method, - BACKBURNER, glowshards require exposure to the sun
+        TODO: change crystal growth to onRandomTick - Slow down?/balance
+        TODO: growing crystal model - revise

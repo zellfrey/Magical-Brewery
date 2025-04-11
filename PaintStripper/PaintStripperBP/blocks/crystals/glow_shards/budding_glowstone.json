@@ -11,7 +11,7 @@
         "minecraft:light_emission": 10,
         "minecraft:custom_components": ["ps:ort_bud_glowstone_growth"],
         "minecraft:friction": 0.4,
-        "minecraft:loot": "loot_tables/blocks/crystals/glow_shards/budding_glowstone.json",
+        "minecraft:loot": "loot_tables/empty.json",
         "minecraft:map_color": "#F7E9A3",
         "minecraft:destructible_by_mining": {
           "seconds_to_destroy": 1.5,

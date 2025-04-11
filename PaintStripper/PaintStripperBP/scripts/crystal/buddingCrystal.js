@@ -101,29 +101,3 @@ export function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum)
     selectedBlock.block.setType(newSize)
     selectedBlock.block.setPermutation(selectedBlock.block.permutation.withState("minecraft:block_face", selectedBlock.face));
 }
-
-
-// world.beforeEvents.worldInitialize.subscribe(eventData => {
-//     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_loot_cluster', {
-//         onPlayerDestroy(e) {
-//             const {player, block} = e;
-
-//             if(!player || player.getGameMode() === "creative" || !player.getComponent('equippable')) return;
-
-//             const equipment = player.getComponent('equippable');
-//             const selectedItem = equipment.getEquipment('Mainhand');
-//             const enchants = selectedItem.getComponent("minecraft:enchantable");
-//             if(enchants){
-//                 const enchantments = enchants.getEnchantments();
-//                 for (const enchant of enchantments) {
-//                     if (enchant.type.id === "silk_touch") {
-//                         console.warn("i has silk touch")
-//                     }
-//                 }
-//             }
-//             console.warn(selectedItem.typeId)
-//             console.warn("crystal broken")
-//         }
-//     });
-// });
-
