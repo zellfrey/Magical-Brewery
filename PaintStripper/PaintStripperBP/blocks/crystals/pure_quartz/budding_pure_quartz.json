@@ -41,17 +41,20 @@
               }
           ]
       },
-        "minecraft:destructible_by_explosion": {
-          "explosion_resistance": 1.5
-        },
-        "minecraft:tick": {
-          "interval_range": [20,20]
-		    },
-        "minecraft:material_instances": {
-          "*": {
-            "texture": "budding_pure_quartz"
-          }
-        },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 1.5
+      },
+      "minecraft:tick": {
+        "interval_range": [20,20]
+      },
+      "minecraft:material_instances": {
+        "*": {
+            "texture": "budding_pure_quartz",
+            "render_method": "alpha_test",
+            "face_dimming": false,
+            "ambient_occlusion": false
+        }
+      },
       "minecraft:geometry": "minecraft:geometry.full_block"
       }
     }

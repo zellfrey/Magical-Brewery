@@ -214,5 +214,9 @@ base potion itself already has a potency level 2. Whilst i could make a base pot
 likes of echo potion
 
 TODO, implement a different growing method, - BACKBURNER, glowshards require exposure to the sun
-        TODO: change crystal growth to onRandomTick - Slow down?/balance
-        TODO: growing crystal model - revise
+TODO: change crystal growth to onRandomTick - Slow down?/balance
+TODO: growing crystal model - revise
+TODO: Look into fixing lighting issue with seeds - amethyst seeds & quartz seeds will continue to have a shadow regardless of what option i pick
+The shadow seems to occur when a block that the seed is on isnt rendered in alpha test. 
+For the sake of consistency, ive made budding pure quartz render in alpha test
+splash_spell_emitter

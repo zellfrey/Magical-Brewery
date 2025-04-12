@@ -21,7 +21,7 @@ Crystals:
     Glow Shards:
     Quartz shards:
     General:
-        TODO: Look into fixing lighting issue with seeds - amethyst seeds & quartz seeds will continue to have a shadow regardless of what option i pick
+        
         TODO: Sort out glowstone/redstone/pure quartz shard obtaining 
         Todo: utilise shards for better effects
 
