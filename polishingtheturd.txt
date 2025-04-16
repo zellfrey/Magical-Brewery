@@ -15,13 +15,13 @@ TODO: Update cask db to include Start_tick and use potion effects length + fill 
 TODO: Use starting tick as method to check age time. Should be able to remove aging phase states. Starting tick resets when casks is filled by a potion
 TODO: Look into minecraft:queued_ticking for the start tick mechanism
 TODO: Refactor cask js to separate files
+TODO: Emit particles when a cask ages. - BACKBURNER
 Crystals:
     Echo Shards:
     Red Shards:
     Glow Shards:
     Quartz shards:
     General:
-        
         TODO: Sort out glowstone/redstone/pure quartz shard obtaining 
         Todo: utilise shards for better effects
 

@@ -1,8 +1,7 @@
-import {world, system, ItemStack } from "@minecraft/server";
+import {world, system, ItemStack, MolangVariableMap } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
-import {setPotionEffectForCask, shouldCaskAge} from "cask/cask.js";
-import {findCask, updateCask} from "cask/caskDB.js";
+import {ageCask} from "cask/cask.js";
 
 const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
 
@@ -38,20 +37,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 }
 
             }else if(block.typeId.includes("ps:cask")){
-                const cask = findCask(block.dimension.id, block.location)
-                const fillLevel = block.permutation.getState("ps:fill_level");
-                const agePhase = block.permutation.getState("ps:aging_phase");
-                const canAge = shouldCaskAge(block.getTags()[0], cask.potion_effects)
-                            
-                if(!canAge) return;
-                console.log("you have sped up time, aging the cask")
-                const newAge = agePhase !== 3 && fillLevel > 0 ? agePhase+1 : agePhase;
-                block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
-
-                if(agePhase === 3 && !cask.is_aged){
-                    
-                    setPotionEffectForCask(block.getTags()[0], cask)
-                }
+               ageCask(block, block.dimension)
             }
         }
     });
