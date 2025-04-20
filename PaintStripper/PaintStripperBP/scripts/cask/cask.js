@@ -60,13 +60,21 @@ system.beforeEvents.startup.subscribe(eventData => {
                 }
                 else{
                     dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
-                    const initialTaste = "The potion tastes of " + cask.potion_effects[0];
+                    let initialTaste = "The potion tastes of;\n";
+
                     if(!cask.is_aged){
-                        player.sendMessage(initialTaste);
+                        for(let i = 0; i !== cask.potion_effects.length; i++){
+                            initialTaste += cask.potion_effects[i] + "\n"
+                        }
+                        player.sendMessage(initialTaste)
                         player.sendMessage("It looks like it still needs time to age.");
                     }
                     else{
-                        player.sendMessage(initialTaste + ", and has a hint of " + cask.potion_effects[cask.potion_effects -1].toLowerCase());
+                        for(let i = 0; i !== cask.potion_effects.length-1; i++){
+                            initialTaste += cask.potion_effects[i] + "\n"
+                        }
+                        player.sendMessage(initialTaste)
+                        player.sendMessage("It also has a hint of " + cask.potion_effects[cask.potion_effects.length -1] + ".");
                         player.sendMessage("The potion has aged and is ready.");
                     }
                     return;
