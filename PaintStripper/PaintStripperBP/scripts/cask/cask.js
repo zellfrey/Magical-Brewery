@@ -24,6 +24,10 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_cask', {
         onPlayerDestroy(e) {
             const {block, dimension} = e;
+            // const fillLevel = block.permutation.getState("ps:fill_level");
+
+            // if(fillLevel > 0) 
+            // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
             deleteCask(dimension.id, block.location);
         }
     });
@@ -50,9 +54,12 @@ system.beforeEvents.startup.subscribe(eventData => {
             if(selectedItem.typeId === "ps:tasting_spoon"){
                 
                 if(fillLevel === 0){
+                    dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
                     player.sendMessage("The cask is empty.");
+                    return;
                 }
                 else{
+                    dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
                     const initialTaste = "The potion tastes of " + cask.potion_effects[0];
                     if(!cask.is_aged){
                         player.sendMessage(initialTaste);
@@ -62,6 +69,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                         player.sendMessage(initialTaste + ", and has a hint of " + cask.potion_effects[cask.potion_effects -1].toLowerCase());
                         player.sendMessage("The potion has aged and is ready.");
                     }
+                    return;
                 }
             }
             
@@ -92,13 +100,20 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const emptyBottle = new ItemStack("glass_bottle", 1)
                 setMainHand(player, equipment, selectedItem, emptyBottle);
 
-                if(caskAge > 0) block.setPermutation(block.permutation.withState("ps:aging_phase", 0))
+                //honestly just pulling numbers out of my ass to see what works
+                const pitch = fillLevel * 0.2 + 0.3
+                dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: pitch});
 
+                if(caskAge > 0) block.setPermutation(block.permutation.withState("ps:aging_phase", 0))
+                
                 return;
             }
-            if(selectedItem.typeId === "minecraft:glass_bottle" && fillLevel !== 0){
-                block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel-1));
+            if(selectedItem.typeId === "minecraft:glass_bottle"){
 
+                if(fillLevel === 0){
+                    dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
+                    return;
+                }
                 const item = ItemStack.createPotion({
                     effect: cask.potion_effects[0],
                     liquid: cask.potion_liquid,
@@ -114,6 +129,10 @@ system.beforeEvents.startup.subscribe(eventData => {
 
                 }
                 player.getComponent("inventory").container.addItem(item)
+
+                const pitch = fillLevel * 0.2 + 0.3
+                dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: pitch});
+                block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel-1));
 
                 if(block.permutation.getState("ps:fill_level") === 0){
                     cask.potion_effects.length = 0;

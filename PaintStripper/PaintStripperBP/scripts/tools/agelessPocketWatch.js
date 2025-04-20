@@ -39,6 +39,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             }else if(block.typeId.includes("ps:cask")){
                ageCask(block, block.dimension)
             }
+            block.dimension.playSound("conduit.ambient", block.location, {volume: 0.8, pitch: 3});
         }
     });
 });

@@ -5,10 +5,7 @@ Casks:
 TODO: Make a check that sorts the potion extra effects allowing for potions with the same effects to combine without being order specific
 TODO: Update Tasting Spoon to support multiple potion effects within a cask
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
-TODO: Add sounds to various cask interactions
 TODO: Send messages using .lang file. Currently its in english
-TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"] - BACKBURNER
-TODO: implement function to change cask tag into localised language - BACKBURNER
 TODO: Implement charge level textures.
 TODO: Change casks tick to queued ticking
 TODO: Update cask db to include Start_tick and use potion effects length + fill level to determine the time it takes to age
@@ -32,6 +29,7 @@ Stained Slabs:
 Items:
 TODO: Seals for casks with tiers. Potency 1, Potency 2, potency 3. Simple texture idea, up arrows for potency and arrows pointing to the left for longevity. 
 The amount of arrows represent the tier quality
+TODO: Implement message for ageless pocket watch for each block, and find more appropriate sound with a successful speed up
 Potions:
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier

@@ -220,3 +220,8 @@ TODO: Look into fixing lighting issue with seeds - amethyst seeds & quartz seeds
 The shadow seems to occur when a block that the seed is on isnt rendered in alpha test. 
 For the sake of consistency, ive made budding pure quartz render in alpha test
 splash_spell_emitter
+TODO: Add sounds to various cask interactions - sort out player destroy 
+TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"] - BACKBURNER
+TODO: implement function to change cask tag into localised language - BACKBURNER
+
+chat gpt and its users are currently generating more text than has ever appeared in every physical book ever written every two weeks
