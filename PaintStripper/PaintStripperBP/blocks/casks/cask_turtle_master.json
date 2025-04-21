@@ -15,14 +15,14 @@
             "states": {
                 "ps:fill_level":[0,1,2,3],
                 "ps:charge_level": [0,1,2,3,4],
-                "ps:aging_phase": [0,1,2,3]
+                "ps:aged": [false, true]
             } 
         },
         "components": {
             "tag:Turtle_Master": {},
             "minecraft:custom_components": ["ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
             "minecraft:light_dampening": 4,
-            "minecraft:map_color": "#5d5697",
+            "minecraft:map_color": "#a31817",
             "minecraft:redstone_conductivity": {
                 "redstone_conductor": true,
                 "allows_wire_to_step_down": true
@@ -104,11 +104,12 @@
                 }
             },
             {
-                "condition": "q.block_state('ps:fill_level') > 0 && q.block_state('ps:aging_phase') != 3",
+                "condition": "q.block_state('ps:fill_level') > 0 && !q.block_state('ps:aged')",
                 "components": {
-                "minecraft:custom_components": ["ps:ort_cask_aging", "ps:pi_cask_fill", "ps:opd_cask"],
+                "minecraft:custom_components": ["ps:ot_cask_aging", "ps:pi_cask_fill", "ps:opd_cask"],
                 "minecraft:tick": {
-                    "interval_range": [20,20]
+                    "interval_range": [60,60],
+                    "looping": true
 		        }
                 }
             }

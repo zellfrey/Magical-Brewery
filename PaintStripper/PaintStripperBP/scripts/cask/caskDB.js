@@ -7,7 +7,7 @@ export function createCask(dimension, {x, y, z}){
         potion_effects: [],
         potion_liquid:"",
         potion_modifier: "",
-        is_aged: false,
+        age_start_tick: -1
     }
     return newCask
 }
@@ -35,7 +35,7 @@ export function updateCask(cask){
     caskData[caskIndex].potion_effects = cask.potion_effects
     caskData[caskIndex].potion_liquid = cask.potion_liquid
     caskData[caskIndex].potion_modifier = cask.potion_modifier
-    caskData[caskIndex].is_aged = cask.is_aged
+    caskData[caskIndex].age_start_tick = cask.age_start_tick
 
     world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskData))
 }

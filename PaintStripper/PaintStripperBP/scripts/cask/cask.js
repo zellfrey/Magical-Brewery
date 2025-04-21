@@ -46,7 +46,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             const {x,y,z} = block.location;
             let cask = findCask(dimension.id, {x, y, z})
             const fillLevel = block.permutation.getState("ps:fill_level");
-            const caskAge = block.permutation.getState("ps:aging_phase");
+            const aged = block.permutation.getState("ps:aged");
             
             //Failsafe
             if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
@@ -62,7 +62,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                     dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
                     let initialTaste = "The potion tastes of;\n";
 
-                    if(!cask.is_aged){
+                    if(!aged){
                         for(let i = 0; i !== cask.potion_effects.length; i++){
                             initialTaste += cask.potion_effects[i] + "\n"
                         }
@@ -87,7 +87,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 //v2.0.0 uses "T" (generic) instead of a string. So im using this silly method to just get the first and only component of a potion
                 const potion = selectedItem.getComponents()[0];
 
-                if(fillLevel === 3 || potion === undefined || cask.is_aged || potion.potionEffectType.id === "None") return;
+                if(fillLevel === 3 || potion === undefined || aged || potion.potionEffectType.id === "None") return;
                 
                 //Currently regeneration potions have an empty string for their effect. This extra check is so they arent used. Hopefully this gets fixed
                 if(fillLevel === 0 && potion.potionEffectType.id){
@@ -99,7 +99,6 @@ system.beforeEvents.startup.subscribe(eventData => {
                         const lore = selectedItem.getLore();
                         lore.forEach(effect => {cask.potion_effects.push(effect)})
                     }
-                    updateCask(cask)
                 }
                 
                 if(!matchesPotion(cask, potion, selectedItem.getLore())) return;
@@ -112,8 +111,8 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const pitch = fillLevel * 0.2 + 0.3
                 dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: pitch});
 
-                if(caskAge > 0) block.setPermutation(block.permutation.withState("ps:aging_phase", 0))
-                
+                cask.age_start_tick = system.currentTick
+                updateCask(cask)
                 return;
             }
             if(selectedItem.typeId === "minecraft:glass_bottle"){
@@ -146,9 +145,9 @@ system.beforeEvents.startup.subscribe(eventData => {
                     cask.potion_effects.length = 0;
                     cask.potion_liquid = "";
                     cask.potion_modifier = "";
-                    cask.is_aged = false;
+                    cask.age_start_tick = -1
                     
-                    block.setPermutation(block.permutation.withState("ps:aging_phase", 0));
+                    block.setPermutation(block.permutation.withState("ps:aged", true));
                     updateCask(cask)
                 }
                 return;
@@ -163,7 +162,14 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
-export function ageCask(block, dimension){
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:ot_cask_aging', {
+        onTick(e) {
+            ageCask(e.block, e.dimension)
+        }
+    });
+});
+function ageCask(block, dimension){
     const {x,y,z} = block.location;
     let cask = findCask(dimension.id, {x, y, z})
     const canAge = shouldCaskAge(block.getTags()[0], cask.potion_effects)
@@ -171,16 +177,17 @@ export function ageCask(block, dimension){
     if(!canAge) return;
 
     const fillLevel = block.permutation.getState("ps:fill_level");
-    const caskAge = block.permutation.getState("ps:aging_phase");
-    const newAge = caskAge !== 3 && fillLevel > 0 ? caskAge+1 : caskAge;
-    block.setPermutation(block.permutation.withState("ps:aging_phase", newAge));
-    // const rgba = block.getComponent("minecraft:map_color").color
-    // const molang = new MolangVariableMap();
-    // molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
-    // block.dimension.spawnParticle("minecraft:crop_growth_area_emitter", block.location, molang);
-    if(caskAge === 3 && !cask.is_aged){
-        
+    const timeToAge = cask.age_start_tick + 400*cask.potion_effects.length + fillLevel*10
+    const hasAged = timeToAge <= system.currentTick
+
+    if(hasAged){
+        // const rgba = block.getComponent("minecraft:map_color").color
+        // const molang = new MolangVariableMap();
+        // molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
+        // block.dimension.spawnParticle("minecraft:crop_growth_area_emitter", block.location, molang);
+        block.setPermutation(block.permutation.withState("ps:aged", true));
         setPotionEffectForCask(block.getTags()[0], cask)
+        console.log("The cask has aged")
     }
     return;
 }
@@ -204,7 +211,7 @@ function matchesPotion(caskPotion, heldPotion, extraEffects){
     return matchesEffect && matchesLiquid && matchesModifier && matchesExtraEffects;
 }
 
-function shouldCaskAge(caskTag, potionEffects){
+export function shouldCaskAge(caskTag, potionEffects){
     let shouldAge = true;
     const effectId= caskTagToEffectId(caskTag.replace("_", ""))
     if(effectId === potionEffects[0]){
@@ -223,7 +230,7 @@ function shouldCaskAge(caskTag, potionEffects){
     return shouldAge
 }
 
-function setPotionEffectForCask(caskTag, cask){
+export function setPotionEffectForCask(caskTag, cask){
     const potencySeal = true;
     let sealStrength = 1;
     if(caskTag === "Turtle_Master"){
@@ -267,7 +274,7 @@ function setPotionEffectForCask(caskTag, cask){
         }
         cask.potion_effects.push(effectName);  
     }       
-    cask.is_aged = true;
+    // cask.is_aged = true;
     updateCask(cask);
 }
 

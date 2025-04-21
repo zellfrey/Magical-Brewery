@@ -1,7 +1,8 @@
 import {world, system, ItemStack, MolangVariableMap } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
-import {ageCask} from "cask/cask.js";
+import {shouldCaskAge, setPotionEffectForCask} from "cask/cask.js";
+import {findCask} from "cask/caskDB.js";
 
 const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
 
@@ -37,7 +38,16 @@ system.beforeEvents.startup.subscribe(eventData => {
                 }
 
             }else if(block.typeId.includes("ps:cask")){
-               ageCask(block, block.dimension)
+                const {x,y,z} = block.location;
+                let cask = findCask(block.dimension.id, {x, y, z})
+                const canAge = shouldCaskAge(block.getTags()[0], cask.potion_effects)
+                const aged = block.permutation.getState("ps:aged");
+                    
+                if(!canAge || aged) return;
+
+                block.setPermutation(block.permutation.withState("ps:aged", true));
+                setPotionEffectForCask(block.getTags()[0], cask)
+                console.log("The cask has aged")
             }
             block.dimension.playSound("conduit.ambient", block.location, {volume: 0.8, pitch: 3});
         }
