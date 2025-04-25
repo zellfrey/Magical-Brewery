@@ -1,6 +1,7 @@
 import {world, system, ItemStack} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
 import {createCask, deleteCask, findCask, updateCask} from "cask/caskDB.js";
+import {potionPotencyArray, potionEffectsObject} from "../potionEffects.js";
 //'utils/containerUtils.js';
 
 system.beforeEvents.startup.subscribe(eventData => {
@@ -233,61 +234,60 @@ export function shouldCaskAge(caskTag, potionEffects){
 export function setPotionEffectForCask(caskTag, cask){
     const potencySeal = true;
     let sealStrength = 1;
-    if(caskTag === "Turtle_Master"){
-        const effects = potionEffectsObject[caskTag].effects
+    // if(caskTag === "Turtle_Master"){
+    //     const effects = potionEffectsObject[caskTag].effects
 
-        const potionTime = potencySeal ? potionEffectsObject[caskTag].duration_potency : 
-        potionEffectsObject[caskTag].duration_long;
+    //     const potionTime = potencySeal ? potionEffectsObject[caskTag].duration_potency : 
+    //     potionEffectsObject[caskTag].duration_long;
 
-        setTurtleMasterEffect(sealStrength, effects, potionTime, cask, potencySeal)
+    //     setTurtleMasterEffect(sealStrength, effects, potionTime, cask, potencySeal)
         
+    // }
+    // else{
+    const potionEffect = potionEffectsObject[caskTag]
+    let effectName = potionEffect.effects
+    if(potencySeal){
+        let potionPotency;
+
+        if(effectName.includes("Instant")){
+            potionPotency = " " + potionPotencyArray[sealStrength];
+
+        }
+        else if(effectName === "Slowness"){
+            potionPotency = " " + potionPotencyArray[sealStrength+2] + 
+            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+
+        }
+        else if(potionEffect.duration_potency.length === 0){
+            potionPotency =" (" + potionEffect.duration_long[0] +  ")";
+
+        }else{
+            potionPotency = " " + potionPotencyArray[sealStrength] + 
+            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+        }
+        effectName += potionPotency;
     }
     else{
-        const potionEffect = potionEffectsObject[caskTag]
-        let effectName = potionEffect.effects
-        if(potencySeal){
-            let potionPotency;
-
-            if(effectName.includes("Instant")){
-                potionPotency = " " + potionPotencyArray[sealStrength];
-
-            }
-            else if(effectName === "Slowness"){
-                potionPotency = " " + potionPotencyArray[sealStrength+2] + 
-                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
-
-            }
-            else if(potionEffect.duration_potency.length === 0){
-                potionPotency =" (" + potionEffect.duration_long[0] +  ")";
-
-            }else{
-                potionPotency = " " + potionPotencyArray[sealStrength] + 
-                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
-            }
-            effectName += potionPotency;
+        if(potionEffect.duration_long.length !== 0){
+            const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
+            effectName += effectTime;
         }
-        else{
-            if(potionEffect.duration_long.length !== 0){
-                const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
-                effectName += effectTime;
-            }
-        }
-        cask.potion_effects.push(effectName);  
-    }       
-    // cask.is_aged = true;
+    }
+    cask.potion_effects.push(effectName);  
+    // }       
     updateCask(cask);
 }
 
-function setTurtleMasterEffect(seal, effects, potionTime, cask, potency){
+// function setTurtleMasterEffect(seal, effects, potionTime, cask, potency){
 
-    let effectSlowness = effects[0] +  " " + potionPotencyArray[3 + (potency *2)] 
-                        + " (" + potionTime[seal - potency] +  ")"
-    cask.potion_effects.push(effectSlowness);
+//     let effectSlowness = effects[0] +  " " + potionPotencyArray[3 + (potency *2)] 
+//                         + " (" + potionTime[seal - potency] +  ")"
+//     cask.potion_effects.push(effectSlowness);
 
-    let effectResistance = effects[1] +  " " + potionPotencyArray[2 + potency]
-                         + " (" + potionTime[seal - potency] +  ")"
-    cask.potion_effects.push(effectResistance);
-}
+//     let effectResistance = effects[1] +  " " + potionPotencyArray[2 + potency]
+//                          + " (" + potionTime[seal - potency] +  ")"
+//     cask.potion_effects.push(effectResistance);
+// }
 
 function caskTagToEffectId(caskTag){
     let name;
@@ -306,93 +306,3 @@ function caskTagToEffectId(caskTag){
     }
     return name;
 }
-const potionPotencyArray = ["I", "II", "III", "IV", "V", "VI"]
-//instant potions have 1 element for the array
-//Potions with long duration, 0th element represent base effect time, 1st is longevity
-//If a potion doesnt have a potency variant, it will fallback onto the base effect time in duration_long
-const potionEffectsObject = {
-    // "Decay": {
-    //     effects: "Wither",
-    //     duration_long: ["0:40", "1:00", "2:00"], 
-    //     duration_potency: [],
-    // },
-    "Harming": {
-        effects: "Instant Damage",
-        duration_long: [],
-        duration_potency: [],
-    },
-    "Healing": {
-        effects: "Instant Health",
-        duration_long: [],
-        duration_potency: [],
-    },
-    "Invisibility": {
-        effects: "Invisibility",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: [],
-    },
-    "Leaping": {
-        effects: "Jump Boost",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: ["1:30"],
-    },
-    "Poison": {
-        effects: "Poison",
-        duration_long: ["0:45", "2:00"],
-        duration_potency: ["0:22"],
-    },
-    "Regeneration": {
-        effects: "Regeneration",
-        duration_long: ["0:45", "2:00"],
-        duration_potency: ["0:22"],
-    },
-    "Fire_Resistance": {
-        effects: "Fire Resistance",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: [],
-    },
-    "Slow_Falling": {
-        effects: "Slow Falling",
-        duration_long: ["1:30", "4:00"],
-        duration_potency: [],
-    },
-    "Slowness": {
-        effects: "Slowness",
-        duration_long: ["1:30", "4:00"],
-        duration_potency: ["0:20"],
-    },
-    "Strength": {
-        effects: "Strength",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: ["1:30"],
-    },
-    "Swiftness": {
-        effects: "Speed",
-        duration_none: "3:00",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: ["1:30"],
-    },
-    "Turtle_Master": {
-        effects: ["Slowness", "Resistance"],
-        duration_long: ["0:20", "0:40", "2:00"],
-        duration_potency: ["0:20"],
-    },
-    "Night_Vision": {
-        effects: "Night Vision",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: [],
-    },
-    "Water_Breathing": {
-        effects: "Water Breathing",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: [],
-    },
-    "Weakness": {
-        effects: "Weakness",
-        duration_long: ["1:30", "4:00"],
-        duration_potency: [],
-    }
-  };
-//Freezes the object, initialize on server startup  
-//Object.freeze(obj);
-//Array.isArray(arr) && !ar.length
