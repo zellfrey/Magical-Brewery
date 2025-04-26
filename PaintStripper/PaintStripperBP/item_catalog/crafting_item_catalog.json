@@ -11,7 +11,6 @@
                 "name": "paint_stripper:ps_stained_planks_construction"
               },
               "items": [
-                "ps:stained_planks_decay",
                 "ps:stained_planks_harming",
                 "ps:stained_planks_healing",
                 "ps:stained_planks_invisibility",
@@ -23,7 +22,6 @@
                 "ps:stained_planks_slowness",
                 "ps:stained_planks_strength",
                 "ps:stained_planks_swiftness",
-                "ps:stained_planks_turtle_master",
                 "ps:stained_planks_vision_night",
                 "ps:stained_planks_water_breathing",
                 "ps:stained_planks_weakness"
@@ -35,7 +33,6 @@
                 "name": "paint_stripper:ps_stained_slabs_construction"
               },
               "items": [
-                "ps:stained_slab_decay",
                 "ps:stained_slab_harming",
                 "ps:stained_slab_healing",
                 "ps:stained_slab_invisibility",
@@ -47,7 +44,6 @@
                 "ps:stained_slab_slowness",
                 "ps:stained_slab_strength",
                 "ps:stained_slab_swiftness",
-                "ps:stained_slab_turtle_master",
                 "ps:stained_slab_vision_night",
                 "ps:stained_slab_water_breathing",
                 "ps:stained_slab_weakness"
@@ -64,7 +60,6 @@
                 "name": "paint_stripper:ps_casks_items"
               },
               "items": [
-                "ps:cask_decay",
                 "ps:cask_harming",
                 "ps:cask_healing",
                 "ps:cask_invisibility",
@@ -76,7 +71,6 @@
                 "ps:cask_slowness",
                 "ps:cask_strength",
                 "ps:cask_swiftness",
-                "ps:cask_turtle_master",
                 "ps:cask_vision_night",
                 "ps:cask_water_breathing",
                 "ps:cask_weakness"

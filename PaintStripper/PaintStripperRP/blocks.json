@@ -88,9 +88,9 @@
     "sound" : "amethyst_block"
   },
   
-  "ps:stained_planks_decay":{
-    "sound" : "wood"
-  },
+  // "ps:stained_planks_decay":{
+  //   "sound" : "wood"
+  // },
   "ps:stained_planks_harming":{
     "sound" : "wood"
   },
@@ -124,9 +124,9 @@
   "ps:stained_planks_swiftness":{
     "sound" : "wood"
   },
-  "ps:stained_planks_turtle_master":{
-    "sound" : "wood"
-  },
+  // "ps:stained_planks_turtle_master":{
+  //   "sound" : "wood"
+  // },
   "ps:stained_planks_vision_night":{
     "sound" : "wood"
   },
@@ -136,9 +136,9 @@
   "ps:stained_planks_weakness":{
     "sound" : "wood"
   },
-  "ps:stained_slab_decay":{
-    "sound" : "wood"
-  },
+  // "ps:stained_slab_decay":{
+  //   "sound" : "wood"
+  // },
   "ps:stained_slab_harming":{
     "sound" : "wood"
   },
@@ -172,9 +172,9 @@
   "ps:stained_slab_swiftness":{
     "sound" : "wood"
   },
-  "ps:stained_slab_turtle_master":{
-    "sound" : "wood"
-  },
+  // "ps:stained_slab_turtle_master":{
+  //   "sound" : "wood"
+  // },
   "ps:stained_slab_vision_night":{
     "sound" : "wood"
   },
@@ -185,9 +185,9 @@
     "sound" : "wood"
   },
 
-  "ps:cask_decay":{
-    "sound" : "wood"
-  },
+  // "ps:cask_decay":{
+  //   "sound" : "wood"
+  // },
   "ps:cask_harming":{
     "sound" : "wood"
   },
@@ -221,9 +221,9 @@
   "ps:cask_swiftness":{
     "sound" : "wood"
   },
-  "ps:cask_turtle_master":{
-    "sound" : "wood"
-  },
+  // "ps:cask_turtle_master":{
+  //   "sound" : "wood"
+  // },
   "ps:cask_vision_night":{
     "sound" : "wood"
   },
