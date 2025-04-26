@@ -5,7 +5,6 @@ Casks:
 TODO: Make a check that sorts the potion extra effects allowing for potions with the same effects to combine without being order specific
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
-TODO: Refactor cask js to separate files
 TODO: Emit particles when a cask ages. - BACKBURNER
 Crystals:
     Echo Shards:

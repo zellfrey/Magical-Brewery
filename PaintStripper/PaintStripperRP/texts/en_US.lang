@@ -54,7 +54,7 @@ item.ps.effect_absorption.name=Absorption
 
 ##---------------------------------
 ##Stained Planks/Slabs---------------------------------
-tile.ps:stained_planks_decay.name=Stained Planks of Decay
+##tile.ps:stained_planks_decay.name=Stained Planks of Decay
 tile.ps:stained_planks_harming.name=Stained Planks of Harming
 tile.ps:stained_planks_healing.name=Stained Planks of Healing
 tile.ps:stained_planks_invisibility.name=Stained Planks of Invisibility
@@ -66,11 +66,11 @@ tile.ps:stained_planks_slow_falling.name=Stained Planks of Slow Falling
 tile.ps:stained_planks_slowness.name=Stained Planks of Slowness
 tile.ps:stained_planks_strength.name=Stained Planks of Strength
 tile.ps:stained_planks_swiftness.name=Stained Planks of Swiftness
-tile.ps:stained_planks_turtle_master.name=Stained Planks of the Turtle Master
+##tile.ps:stained_planks_turtle_master.name=Stained Planks of the Turtle Master
 tile.ps:stained_planks_vision_night.name=Stained Planks of Night Vision
 tile.ps:stained_planks_water_breathing.name=Stained Planks of Water Breathing
 tile.ps:stained_planks_weakness.name=Stained Planks of Weakness
-tile.ps:stained_slab_decay.name=Stained Slab of Decay
+##tile.ps:stained_slab_decay.name=Stained Slab of Decay
 tile.ps:stained_slab_harming.name=Stained Slab of Harming
 tile.ps:stained_slab_healing.name=Stained Slab of Healing
 tile.ps:stained_slab_invisibility.name=Stained Slab of Invisibility
@@ -82,7 +82,7 @@ tile.ps:stained_slab_slow_falling.name=Stained Slab of Slow Falling
 tile.ps:stained_slab_slowness.name=Stained Slab of Slowness
 tile.ps:stained_slab_strength.name=Stained Slab of Strength
 tile.ps:stained_slab_swiftness.name=Stained Slab of Swiftness
-tile.ps:stained_slab_turtle_master.name=Stained Slab of the Turtle Master
+##tile.ps:stained_slab_turtle_master.name=Stained Slab of the Turtle Master
 tile.ps:stained_slab_vision_night.name=Stained Slab of Night Vision
 tile.ps:stained_slab_water_breathing.name=Stained Slab of Water Breathing
 tile.ps:stained_slab_weakness.name=Stained Slab of Weakness
@@ -90,7 +90,7 @@ tile.ps:stained_slab_weakness.name=Stained Slab of Weakness
 
 ##---------------------------------
 ##Casks---------------------------------
-tile.ps:cask_decay.name=Cask of Decay
+##tile.ps:cask_decay.name=Cask of Decay
 tile.ps:cask_harming.name=Cask of Harming
 tile.ps:cask_healing.name=Cask of Healing
 tile.ps:cask_invisibility.name=Cask of Invisibility
@@ -102,7 +102,7 @@ tile.ps:cask_slow_falling.name=Cask of Slow Falling
 tile.ps:cask_slowness.name=Cask of Slowness
 tile.ps:cask_strength.name=Cask of Strength
 tile.ps:cask_swiftness.name=Cask of Swiftness
-tile.ps:cask_turtle_master.name=Cask of the Turtle Master
+##tile.ps:cask_turtle_master.name=Cask of the Turtle Master
 tile.ps:cask_vision_night.name=Cask of Night Vision
 tile.ps:cask_water_breathing.name=Cask of Water Breathing
 tile.ps:cask_weakness.name=Cask of Weakness
