@@ -148,7 +148,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                     cask.potion_modifier = "";
                     cask.age_start_tick = -1
                     
-                    block.setPermutation(block.permutation.withState("ps:aged", true));
+                    block.setPermutation(block.permutation.withState("ps:aged", false));
                     updateCask(cask)
                 }
                 return;
@@ -203,9 +203,10 @@ function matchesPotion(caskPotion, heldPotion, extraEffects){
         matchesExtraEffects = true;
     } 
     else{
-        //Start at 2nd element as the first element will be the root potion effect
-        for(let i = 1; i < caskPotion.potion_effects.length; i++){
-            matchesExtraEffects = caskPotion.potion_effects[i] === extraEffects[i-1] ? true : false;
+        const caskExtraEffects = caskPotion.potion_effects.slice(1).sort();
+        const potionExtraEffects = extraEffects.sort();
+        for(let i = 0; i < caskExtraEffects.length; i++){
+            matchesExtraEffects = caskExtraEffects[i] === potionExtraEffects[i] ? true : false;
             if(!matchesExtraEffects) break;
         }
     }
