@@ -68,7 +68,8 @@
             "conditions": [
                 {
                     "block_filter": ["minecraft:budding_amethyst", "minecraft:glowstone", "ps:budding_glowstone", "minecraft:redstone_ore",
-                    "minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"]
+                                    "minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", 
+                                    "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo", "minecraft:sculk_catalyst"]
                 }
             ]
         },

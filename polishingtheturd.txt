@@ -7,7 +7,6 @@ TODO: Implement charge level textures.
 TODO: Emit particles when a cask ages. - BACKBURNER
 Crystals:
     Echo Shards:
-    TODO: Find an appropriate block for seeds to be placed on
     Red Shards:
     Glow Shards:
     Quartz shards:
@@ -27,9 +26,9 @@ Potions:
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects
-TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects
+TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects - Look into new inventory event
 TODO: Fix Amethyst bottle to water bottle, needs to parse an object into the function
-TODO: Update potions to utilise addition of potion potency levels
+TODO: Update potions to utilise addition of potion potency levels - NEXT
 Misc:
 
 TODO: Change programming language to TS

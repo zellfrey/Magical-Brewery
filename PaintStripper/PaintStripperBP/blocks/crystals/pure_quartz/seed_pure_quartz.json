@@ -63,7 +63,7 @@
         "minecraft:placement_filter": {
             "conditions": [
                 {
-                    "block_filter": ["ps:budding_pure_quartz"]
+                    "block_filter": ["ps:budding_pure_quartz", "minecraft:quartz_ore"]
                 }
             ]
         },

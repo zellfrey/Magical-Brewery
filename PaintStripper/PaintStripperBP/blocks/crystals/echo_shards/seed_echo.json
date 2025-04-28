@@ -56,7 +56,7 @@
         "minecraft:placement_filter": {
             "conditions": [
                 {
-                    "block_filter": ["ps:budding_echo"]
+                    "block_filter": ["ps:budding_echo", "minecraft:sculk_catalyst"]
                 }
             ]
         },
