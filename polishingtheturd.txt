@@ -5,6 +5,7 @@ Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
 TODO: Emit particles when a cask ages. - BACKBURNER
+TODO: Prevent effects with different levels to be used in a cask
 Crystals:
     Echo Shards:
     Red Shards:
@@ -28,7 +29,6 @@ TODO: make texture for splash and lingering variant potions for amethyst tier
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects
 TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects - Look into new inventory event
 TODO: Fix Amethyst bottle to water bottle, needs to parse an object into the function
-TODO: Update potions to utilise addition of potion potency levels - NEXT
 Misc:
 
 TODO: Change programming language to TS

@@ -1,5 +1,6 @@
 import {world, ItemStack, system} from '@minecraft/server';
 import {setMainHand} from './utils/containerUtils.js';
+import {potionPotencyArray, potionEffectsObject} from "./potionEffects.js";
 
 //12 mins duration in ticks i.e 12*60 *20
 const xLongDuration = 14400;
@@ -21,24 +22,39 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
     const lore = itemStack.getLore();
     if(lore.length != 0){
         lore.forEach(modifier => {
-            if(modifier === "Instant Health" || modifier === "Instant Damage"){
-                source.addEffect(modifier.replace(" ","_").toLowerCase(), 1, { amplifier: 0 })
-            }else{
-                const words = modifier.split(' ');
-                const effectTime = words.pop();
+            const words = modifier.split(' ');
+
+            if(words[0] === "Instant"){
+                const potency = getPotencyLevel(words)
+                if(potency !== 0) words.pop();
+                source.addEffect(words.join("_").toLowerCase(), 1, { amplifier: potency })
+            }
+            else{
+                
+                const effectTime = words[words.length-1].substring(1, 5)
+                const [minutes, seconds] = effectTime.split(':');
+                const totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
+                words.pop();
+
+                const potency = getPotencyLevel(words)
+                
+                if(potency !== 0) words.pop();
+
                 let effect = words.join("_").toLowerCase()
                 // if(Potions.getPotionEffectType(effect) ! == undefined){
                 // }
-                const ms = effectTime.substring(1, 5)
-                const [minutes, seconds] = ms.split(':');
-                const totalSeconds = (+minutes) * 60 + (+seconds);
-                
-                source.addEffect(effect, totalSeconds * 20, { amplifier: 0 })
+                source.addEffect(effect, totalTicks, { amplifier: potency })
             }
         });
     }
 });
 
+function getPotencyLevel(effect){
+    let potency = potionPotencyArray.findIndex(el => el === effect[effect.length-1]);
+    potency = potency !== -1 ? potency : 0
+
+    return potency;
+}
 
 world.afterEvents.entitySpawn.subscribe((e) => {
     const {entity} = e;
