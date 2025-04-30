@@ -68,7 +68,13 @@ system.beforeEvents.startup.subscribe(eventData => {
                             initialTaste += cask.potion_effects[i] + "\n"
                         }
                         player.sendMessage(initialTaste)
-                        player.sendMessage("It looks like it still needs time to age.");
+
+                        if(!shouldCaskAge(block.getTags()[0], cask.potion_effects)){
+                            player.sendMessage("It looks like it the potion contains a similar effect as the cask and cannot age.")
+                        }else{
+                            player.sendMessage("It looks like it still needs time to age.");
+                        }
+                        
                     }
                     else{
                         for(let i = 0; i !== cask.potion_effects.length-1; i++){
@@ -136,7 +142,9 @@ system.beforeEvents.startup.subscribe(eventData => {
                     item.setLore(lore);
 
                 }
+                setMainHand(player, equipment, selectedItem, undefined);
                 player.getComponent("inventory").container.addItem(item)
+                
 
                 const pitch = fillLevel * 0.2 + 0.3
                 dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: pitch});
@@ -233,8 +241,8 @@ export function shouldCaskAge(caskTag, potionEffects){
 }
 
 export function setPotionEffectForCask(caskTag, cask){
-    const potencySeal = true;
-    let sealStrength = 1;
+    const potencySeal = false;
+    let sealStrength = 0;
     // if(caskTag === "Turtle_Master"){
     //     const effects = potionEffectsObject[caskTag].effects
 

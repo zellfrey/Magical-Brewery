@@ -224,6 +224,6 @@ TODO: Add sounds to various cask interactions - sort out player destroy
 TODO: implement a method to utilise this string: ["§r§7" + capitalize(caskEffect) + "§r§7 (2:00)"] - BACKBURNER
 TODO: implement function to change cask tag into localised language - BACKBURNER
 TODO: create a config file allowing players to change the time it takes for potions to age in casks
-TODO: Send messages using .lang file. Currently its in english - BACKBURNER
-chat gpt and its users are currently generating more text than has ever appeared in every physical book ever written every two weeks
+TODO: Send messages using .lang file. Currently its in english - backburner
+TODO: Revise each crystal texture, look into crystal systems and structures
 cool world seed -4555157900916148182
