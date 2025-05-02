@@ -1,7 +1,7 @@
 import {world, system, ItemStack} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
 import {createCask, deleteCask, findCask, updateCask} from "cask/caskDB.js";
-import {potionPotencyArray, potionEffectsObject} from "../potionEffects.js";
+import {potionPotencyArray, potionEffectsObject, getPotencyLevel} from "../potionEffects.js";
 //'utils/containerUtils.js';
 
 system.beforeEvents.startup.subscribe(eventData => {
@@ -64,6 +64,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                     let initialTaste = "The potion tastes of;\n";
 
                     if(!aged){
+
                         for(let i = 0; i !== cask.potion_effects.length; i++){
                             initialTaste += cask.potion_effects[i] + "\n"
                         }
@@ -230,10 +231,24 @@ export function shouldCaskAge(caskTag, potionEffects){
     else{
         for(let i = 1; i < potionEffects.length; i++){
             const effect = potionEffects[i].split(' ');
-            effect.pop();
-            if(potionEffectsObject[caskTag].effects === effect.join(" ")){
+            if(effect[0] === "Instant"){
+                // console.log(getPotencyLevel(effect))
+
+                if(getPotencyLevel(effect) !== 0) effect.pop()
+                    
+                if(potionEffectsObject[caskTag].effects === effect.join(" ")){
+                    shouldAge = false;
+                    break;
+                }
+
+            }else{
+                effect.pop();
+                if(getPotencyLevel(effect) !== 0) effect.pop()
+
+                if(potionEffectsObject[caskTag].effects === effect.join(" ")){
                 shouldAge = false;
                 break;
+                }
             }
         }
     }

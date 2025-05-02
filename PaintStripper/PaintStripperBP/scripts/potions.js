@@ -1,6 +1,6 @@
 import {world, ItemStack, system} from '@minecraft/server';
 import {setMainHand} from './utils/containerUtils.js';
-import {potionPotencyArray, potionEffectsObject} from "./potionEffects.js";
+import {getPotencyLevel} from "./potionEffects.js";
 
 //12 mins duration in ticks i.e 12*60 *20
 const xLongDuration = 14400;
@@ -49,12 +49,7 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
     }
 });
 
-function getPotencyLevel(effect){
-    let potency = potionPotencyArray.findIndex(el => el === effect[effect.length-1]);
-    potency = potency !== -1 ? potency : 0
 
-    return potency;
-}
 
 world.afterEvents.entitySpawn.subscribe((e) => {
     const {entity} = e;

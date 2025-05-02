@@ -85,5 +85,13 @@ export const potionEffectsObject = {
         duration_potency: [],
     }
   };
+
+export function getPotencyLevel(effect){
+    let potency = potionPotencyArray.findIndex(el => el === effect[effect.length-1]);
+    potency = potency !== -1 ? potency : 0
+
+    return potency;
+}
 //Freezes the object, initialize on server startup  
 Object.freeze(potionEffectsObject);
+
