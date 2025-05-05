@@ -5,7 +5,6 @@ Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
 TODO: Emit particles when a cask ages. - BACKBURNER
-TODO: Prevent effects with different levels to be used in a cask
 Crystals:
     Echo Shards:
     Red Shards:
@@ -14,7 +13,6 @@ Crystals:
     General:
         TODO: Sort out glowstone/redstone/pure quartz shard obtaining 
         Todo: utilise shards for better effects
-        TODO: Add sand variants of glowstone and redstone
 
 Stained Woods:
 Stained Slabs:

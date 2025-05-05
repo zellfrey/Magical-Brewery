@@ -9,6 +9,8 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
     if(entity.typeId !== "minecraft:item") return;
     const item = entity.getComponent("item").itemStack;
     if(!vanillaItems.includes(item.typeId)) return;
+
+    //Wait for item entity to settle on the ground
     await system.waitTicks(20);
     const eCoords = entity.location
     const block = entity.dimension.getBlock(eCoords);
@@ -28,8 +30,20 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
     let cleanStage;
     if(!lore.includes('§7Washed')){
         if(block.typeId === "minecraft:water"){
-            
-            cleanStage = '§7Washed';
+            const initialTick = system.currentTick
+            const check = system.runInterval(() => {
+                console.log(dim.getBlock(entityCoords).typeId)
+                const entities  = dim.getEntitiesAtBlockLocation(blockCoords);
+                if(entities.length === 0){
+                    system.clearRun(check)
+                    return;
+                }  
+                if(initialTick + 240 <= system.currentTick){
+                    system.clearRun(check)
+                    setCrystalItemLore(entities[0], '§7Washed', dim, entityCoords)
+                }
+                }, 60);
+            // cleanStage = '§7Washed';
             
         }
         //find blocklocation, if not there, return,
@@ -52,7 +66,6 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
 
         const crossBlocks = [];
         neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
-
         const isCandleCrossValid = crossBlocks.every(el => el.typeId === candle)
         if(isCandleCrossValid){
             cleanStage = '§7Heat treated';
@@ -87,27 +100,33 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
 
     if(cleanStage === undefined) return;
 
-    entity.remove();
-    const quartz = new ItemStack("minecraft:quartz", 1);
-    lore.push(cleanStage)
-    quartz.setLore(lore);
-    const newLore = quartz.getLore()
-    console.warn(newLore.length)
-    console.warn(newLore.toString())
-
-    if(newLore.length === 4){
-        dim.spawnItem(new ItemStack("ps:pure_quartz_shard", 1), entityCoords)
-    }else{
-        dim.spawnItem(quartz, entityCoords)
-    }
+    setCrystalItemLore(entities[0], '§7Washed', "minecraft:quartz", entityCoords)   
     
 }
 
 function validCandle(block, candle){
 
 }
+
+function setCrystalItemLore(entity, cleanStage, dimension, entityCoords){
+
+    const item = entity.getComponent("item").itemStack;
+    const quartz = new ItemStack(item.typeId, 1);
+    const lore = item.getLore();
+    entity.remove();
+    
+    lore.push(cleanStage)
+    quartz.setLore(lore);
+    const newLore = quartz.getLore()
+
+    if(newLore.length === 4){
+        dimension.spawnItem(new ItemStack("ps:pure_quartz_shard", 1), entityCoords)
+    }else{
+        dimension.spawnItem(quartz, entityCoords)
+    }
+}
+                    
 //Start with the easy steps
-//Clean dust/crystal with brush
 //Wash in water
 //Medium steps
 //Ring noteblock with item above
