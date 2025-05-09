@@ -7,7 +7,11 @@ export function createCask(dimension, {x, y, z}){
         potion_effects: [],
         potion_liquid:"",
         potion_modifier: "",
-        age_start_tick: -1
+        age_start_tick: -1,
+        seal_location: {},
+        is_potency_seal: false,
+        seal_strength: 0,
+        seal_lifetime: 0
     }
     return newCask
 }
@@ -39,7 +43,22 @@ export function updateCask(cask){
 
     world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskData))
 }
+export function updateCaskSeal(cask){
+    const caskData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
+    let caskIndex;
+    for(let i = 0; i < caskData.length; i++){
+        if(caskData[i].dimensionId === cask.dimensionId && JSON.stringify(caskData[i].location) === JSON.stringify(cask.location)){
+            caskIndex = i;
+            break;
+        }
+    }
+    caskData[caskIndex].seal_location = cask.seal_location
+    caskData[caskIndex].is_potency_seal = cask.is_potency_seal
+    caskData[caskIndex].seal_strength = cask.seal_strength
+    caskData[caskIndex].seal_lifetime = cask.seal_lifetime
 
+    world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskData))
+}
 export function deleteCask(dimension, location){
     const caskData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
     let caskIndex;

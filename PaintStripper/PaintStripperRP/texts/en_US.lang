@@ -50,6 +50,15 @@ item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
 item.ps.effect_absorption.name=Absorption
 ##---------------------------------
+##Seals---------------------------------
+item.ps:seal_basic.name=Base Seal
+item.ps:seal_longevity_1.name=Seal Of Longevity I
+item.ps:seal_longevity_2.name=Seal Of Longevity II
+item.ps:seal_potency_1.name=Seal Of Potency I
+item.ps:seal_potency_2.name=Seal Of Potency II
+item.ps:seal_enlargement_1.name=Seal Of Enlargement I
+item.ps:seal_enlargement_2.name=Seal Of Enlargement II
+##---------------------------------
 
 
 ##---------------------------------
@@ -106,6 +115,10 @@ tile.ps:cask_swiftness.name=Cask of Swiftness
 tile.ps:cask_vision_night.name=Cask of Night Vision
 tile.ps:cask_water_breathing.name=Cask of Water Breathing
 tile.ps:cask_weakness.name=Cask of Weakness
+##---------------------------------
+
+##Seals---------------------------------
+tile.ps:seal_potency_1.name=Seal Of Potency I
 ##---------------------------------
 ##Crops---------------------------------
 

@@ -4,7 +4,11 @@ basically the TODO list to polish up the current state of the addon
 Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
-TODO: Emit particles when a cask ages. - BACKBURNER
+TODO: Emit particles when a cask ages. - try that next
+TODO: Emit coloured particles for every queued tick of aging
+TODO: implement seal lifetime, 
+TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
+TODO: have cask check block face so it doesnt destroy surrounding cask Seals
 Crystals:
     Echo Shards:
     Red Shards:
@@ -17,10 +21,8 @@ Crystals:
 Stained Woods:
 Stained Slabs:
  
-
+Seals:
 Items:
-TODO: Seals for casks with tiers. Potency 1, Potency 2, potency 3. Simple texture idea, up arrows for potency and arrows pointing to the left for longevity. 
-The amount of arrows represent the tier quality
 TODO: Implement message for ageless pocket watch for each block, and find more appropriate sound with a successful speed up
 Potions:
 TODO: Implement all potions and variants for amethyst tier potions,
@@ -29,9 +31,6 @@ TODO: Make function to spawn multiple splash/lingering potions that have extra e
 TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects - Look into new inventory event
 TODO: Fix Amethyst bottle to water bottle, needs to parse an object into the function
 Misc:
-
-TODO: Change programming language to TS
-TODO: [Scripting][error]-Unhandled promise rejection: Error: Failed to call function 'getComponent' due to the Entity being invalid (has the Entity been removed?).    at <anonymous> (crystal/cleansingCrystal.js:10)
 
 Blocks:
 TODO: look into minecraft:item_visual component. Maybe be able to compact mod

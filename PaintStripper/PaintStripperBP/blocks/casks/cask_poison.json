@@ -20,6 +20,7 @@
         },
         "components": {
             "tag:Poison": {},
+            "tag:cask": {},
             "minecraft:custom_components": ["ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
             "minecraft:light_dampening": 4,
             "minecraft:map_color": "#a31817",

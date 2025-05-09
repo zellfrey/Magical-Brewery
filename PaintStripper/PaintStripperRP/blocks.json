@@ -232,6 +232,18 @@
   },
   "ps:cask_weakness":{
     "sound" : "wood"
+  },
+  "ps:seal_basic":{
+    "sound" : "candle"
+  },
+  "ps:seal_longevity":{
+    "sound" : "candle"
+  },
+  "ps:seal_potency":{
+    "sound" : "candle"
+  },
+  "ps:seal_enlargement":{
+    "sound" : "candle"
   }
 }
 

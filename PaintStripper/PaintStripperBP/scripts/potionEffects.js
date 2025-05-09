@@ -20,23 +20,23 @@ export const potionEffectsObject = {
     },
     "Invisibility": {
         effects: "Invisibility",
-        duration_long: ["3:00", "8:00"],
+        duration_long: ["3:00", "8:00", "15:00"],
         duration_potency: [],
     },
     "Leaping": {
         effects: "Jump Boost",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: ["1:30"],
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
     },
     "Poison": {
         effects: "Poison",
-        duration_long: ["0:45", "2:00"],
-        duration_potency: ["0:22"],
+        duration_long: ["0:45", "2:00", "3:30"],
+        duration_potency: ["0:22", "0:22"],
     },
     "Regeneration": {
         effects: "Regeneration",
-        duration_long: ["0:45", "2:00"],
-        duration_potency: ["0:22"],
+        duration_long: ["0:45", "2:00", "3:30"],
+        duration_potency: ["0:22","0:22"],
     },
     "Fire_Resistance": {
         effects: "Fire Resistance",
@@ -45,24 +45,24 @@ export const potionEffectsObject = {
     },
     "Slow_Falling": {
         effects: "Slow Falling",
-        duration_long: ["1:30", "4:00"],
+        duration_long: ["1:30", "4:00", "7:00"],
         duration_potency: [],
     },
     "Slowness": {
         effects: "Slowness",
-        duration_long: ["1:30", "4:00"],
-        duration_potency: ["0:20"],
+        duration_long: ["1:30", "4:00", "7:00"],
+        duration_potency: ["0:20", "0:20"],
     },
     "Strength": {
         effects: "Strength",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: ["1:30"],
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
     },
     "Swiftness": {
         effects: "Speed",
         duration_none: "3:00",
-        duration_long: ["3:00", "8:00"],
-        duration_potency: ["1:30"],
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
     },
     // "Turtle_Master": {
     //     effects: ["Slowness", "Resistance"],
@@ -71,17 +71,17 @@ export const potionEffectsObject = {
     // },
     "Night_Vision": {
         effects: "Night Vision",
-        duration_long: ["3:00", "8:00"],
+        duration_long: ["3:00", "8:00", "15:00"],
         duration_potency: [],
     },
     "Water_Breathing": {
         effects: "Water Breathing",
-        duration_long: ["3:00", "8:00"],
+        duration_long: ["3:00", "8:00", "15:00"],
         duration_potency: [],
     },
     "Weakness": {
         effects: "Weakness",
-        duration_long: ["1:30", "4:00"],
+        duration_long: ["1:30", "4:00", "7:00"],
         duration_potency: [],
     }
   };

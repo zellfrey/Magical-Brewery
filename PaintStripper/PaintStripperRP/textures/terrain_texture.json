@@ -300,6 +300,27 @@
     },
     "cask_front_weakness":{
       "textures": "textures/blocks/casks/cask_front_weakness.png"
+    },
+    "seal_basic":{
+      "textures": "textures/items/seals/seal_basic.png"
+    },
+    "seal_longevity_1":{
+      "textures": "textures/items/seals/seal_longevity_1.png"
+    },
+    "seal_longevity_2":{
+      "textures": "textures/items/seals/seal_longevity_2.png"
+    },
+    "seal_potency_1":{
+      "textures": "textures/items/seals/seal_potency_1.png"
+    },
+    "seal_potency_2":{
+      "textures": "textures/items/seals/seal_potency_2.png"
+    },
+    "seal_enlargement_1":{
+      "textures": "textures/items/seals/seal_enlargement_1.png"
+    },
+    "seal_enlargement_2":{
+      "textures": "textures/items/seals/seal_enlargement_2.png"
     }
   }
 } 

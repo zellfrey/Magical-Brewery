@@ -1,0 +1,21 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+      "description": {
+          "identifier": "ps:seal_potency_1"
+      },
+      "tags": ["crafting_table"],
+      "pattern": ["GQG", "QSQ", "GQG"],
+      "key": {
+          "Q": "minecraft:quartz",
+          "S": "ps:seal_basic",
+          "G": "minecraft:glowstone"
+      },
+      "result": [
+          {
+            "item": "ps:seal_potency_1",
+            "count": 1
+          }
+      ]
+  }
+}

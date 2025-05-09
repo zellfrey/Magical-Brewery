@@ -1,6 +1,7 @@
 import {world, system, ItemStack} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
-import {createCask, deleteCask, findCask, updateCask} from "cask/caskDB.js";
+import {neighbouringCross} from "../utils/blockPlacementUtils.js";
+import {createCask, deleteCask, findCask, updateCask, updateCaskSeal} from "cask/caskDB.js";
 import {potionPotencyArray, potionEffectsObject, getPotencyLevel} from "../potionEffects.js";
 //'utils/containerUtils.js';
 
@@ -48,11 +49,13 @@ system.beforeEvents.startup.subscribe(eventData => {
             let cask = findCask(dimension.id, {x, y, z})
             const fillLevel = block.permutation.getState("ps:fill_level");
             const aged = block.permutation.getState("ps:aged");
-            
+
             //Failsafe
-            if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
+            // if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
 
             if(selectedItem.typeId === "ps:tasting_spoon"){
+
+                const caskEffect = block.getTags().find(el => el !== "cask");
                 
                 if(fillLevel === 0){
                     dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
@@ -70,8 +73,8 @@ system.beforeEvents.startup.subscribe(eventData => {
                         }
                         player.sendMessage(initialTaste)
 
-                        if(!shouldCaskAge(block.getTags()[0], cask.potion_effects)){
-                            player.sendMessage("It looks like it the potion contains a similar effect as the cask and cannot age.")
+                        if(!shouldCaskAge(caskEffect, cask.potion_effects)){
+                            player.sendMessage("It looks like the potion contains a similar effect as the cask, and cannot age.")
                         }else{
                             player.sendMessage("It looks like it still needs time to age.");
                         }
@@ -119,6 +122,10 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const pitch = fillLevel * 0.2 + 0.3
                 dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: pitch});
 
+                const seal = findCaskSeal(block, cask)
+
+                setCaskSeal(seal, cask)
+                    
                 cask.age_start_tick = system.currentTick
                 updateCask(cask)
                 return;
@@ -165,13 +172,7 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_cask_aging', {
-        onRandomTick(e) {
-            ageCask(e.block, e.dimension)
-        }
-    });
-});
+
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ot_cask_aging', {
         onTick(e) {
@@ -182,26 +183,84 @@ system.beforeEvents.startup.subscribe(eventData => {
 function ageCask(block, dimension){
     const {x,y,z} = block.location;
     let cask = findCask(dimension.id, {x, y, z})
-    const canAge = shouldCaskAge(block.getTags()[0], cask.potion_effects)
+    const caskEffect = block.getTags().find(el => el !== "cask");
+    const canAge = shouldCaskAge(caskEffect, cask.potion_effects)
     
     if(!canAge) return;
 
     const fillLevel = block.permutation.getState("ps:fill_level");
-    const timeToAge = cask.age_start_tick + 400*cask.potion_effects.length + fillLevel*10
+    const timeToAge = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
     const hasAged = timeToAge <= system.currentTick
 
+    // let caskSeal = getCaskSeal(block, cask.seal_location)
+
+    // if(!caskSeal.hasTag("seal")){
+    //     caskSeal = findCaskSeal(block, cask)
+    //     console.log(caskSeal)
+    //     const newSeal = isSameSeal(caskSeal, cask)
+    //     console.log(newSeal)
+    // } 
+    
     if(hasAged){
         // const rgba = block.getComponent("minecraft:map_color").color
         // const molang = new MolangVariableMap();
         // molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
         // block.dimension.spawnParticle("minecraft:crop_growth_area_emitter", block.location, molang);
         block.setPermutation(block.permutation.withState("ps:aged", true));
-        setPotionEffectForCask(block.getTags()[0], cask)
+        setPotionEffectForCask(caskEffect, cask, block)
         console.log("The cask has aged")
     }
     return;
 }
+function destroyCaskSeal(cask){
+    const dim = world.getDimension(cask.dimensionId)
+    dim.setBlockType(cask.seal_location, "minecraft:air");
+    dim.spawnParticle("minecraft:basic_flame_particle", cask.seal_location);
+    cask.seal_location = {};
+    cask.is_potency_seal = false;
+    cask.seal_strength = 0;
+    cask.seal_lifetime = 0;
 
+    updateCaskSeal(cask)
+    console.log("destroying seal")
+}
+    
+function findCaskSeal(block){
+    const crossBlocks = [];
+    neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
+    const seal = crossBlocks.find(el => el.hasTag("seal"))
+    return seal;
+}
+function getCaskSeal(cask, sealLocation){
+    return cask.dimension.getBlock(sealLocation);
+}
+function setCaskSeal(seal, cask){
+
+    if(!seal){
+        cask.seal_location = {};
+        cask.is_potency_seal = false;
+        cask.seal_strength = 0;
+    }
+    else{
+        cask.seal_location = seal.location
+        cask.seal_strength = seal.permutation.getState("ps:seal_level");
+        const sealType = seal.getTags().find(el => el !== "seal");
+        cask.is_potency_seal = sealType === "potency" ? true : false;
+    }
+
+    cask.seal_lifetime = 0;
+    updateCaskSeal(cask)
+}
+function isSameSeal(caskSeal, cask){
+
+    if(!caskSeal) return false;
+
+    const sealType = caskSeal.getTags().find(el => el !== "seal");
+    const sealStrength = caskSeal.permutation.getState("ps:seal_level");
+    const isPotency = sealType === "potency" ? true : false;
+
+    return cask.seal_strength === sealStrength && cask.is_potency_seal === isPotency;
+}
 function matchesPotion(caskPotion, heldPotion, extraEffects){
     const matchesEffect = caskPotion.potion_effects[0] === heldPotion.potionEffectType.id;
     const matchesLiquid = caskPotion.potion_liquid === heldPotion.potionLiquidType.id;
@@ -232,7 +291,6 @@ export function shouldCaskAge(caskTag, potionEffects){
         for(let i = 1; i < potionEffects.length; i++){
             const effect = potionEffects[i].split(' ');
             if(effect[0] === "Instant"){
-                // console.log(getPotencyLevel(effect))
 
                 if(getPotencyLevel(effect) !== 0) effect.pop()
                     
@@ -255,9 +313,9 @@ export function shouldCaskAge(caskTag, potionEffects){
     return shouldAge
 }
 
-export function setPotionEffectForCask(caskTag, cask){
-    const potencySeal = false;
-    let sealStrength = 0;
+export function setPotionEffectForCask(caskTag, cask, block){
+    const potencySeal = cask.is_potency_seal;
+    const sealStrength = cask.seal_strength;
     // if(caskTag === "Turtle_Master"){
     //     const effects = potionEffectsObject[caskTag].effects
 
@@ -278,7 +336,7 @@ export function setPotionEffectForCask(caskTag, cask){
 
         }
         else if(effectName === "Slowness"){
-            potionPotency = " " + potionPotencyArray[sealStrength+2] + 
+            potionPotency = " " + potionPotencyArray[sealStrength+1] + 
             " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
 
         }
@@ -298,7 +356,10 @@ export function setPotionEffectForCask(caskTag, cask){
         }
     }
     cask.potion_effects.push(effectName);  
-    // }       
+
+    const effectiveAgeTime = 100
+    if(Object.keys(cask.seal_location).length !== 0 && effectiveAgeTime >= 75) destroyCaskSeal(cask)    
+
     updateCask(cask);
 }
 
