@@ -4,9 +4,6 @@ basically the TODO list to polish up the current state of the addon
 Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
-TODO: Emit particles when a cask ages. - try that next
-TODO: Emit coloured particles for every queued tick of aging
-TODO: implement seal lifetime, 
 TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
 TODO: have cask check block face so it doesnt destroy surrounding cask Seals
 Crystals:
@@ -23,7 +20,6 @@ Stained Slabs:
  
 Seals:
 Items:
-TODO: Implement message for ageless pocket watch for each block, and find more appropriate sound with a successful speed up
 Potions:
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier

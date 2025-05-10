@@ -1,4 +1,4 @@
-import {world, system, ItemStack} from "@minecraft/server";
+import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
 import {neighbouringCross} from "../utils/blockPlacementUtils.js";
 import {createCask, deleteCask, findCask, updateCask, updateCaskSeal} from "cask/caskDB.js";
@@ -188,6 +188,12 @@ function ageCask(block, dimension){
     
     if(!canAge) return;
 
+    //pretty colours, currently placeholder colours. For some reason
+    const rgba = block.getComponent("minecraft:map_color").color
+    const molang = new MolangVariableMap();
+    molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
+    dimension.spawnParticle("minecraft:mobspell_emitter", block.center(), molang);
+
     const fillLevel = block.permutation.getState("ps:fill_level");
     const timeToAge = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
     const hasAged = timeToAge <= system.currentTick
@@ -202,13 +208,12 @@ function ageCask(block, dimension){
     // } 
     
     if(hasAged){
-        // const rgba = block.getComponent("minecraft:map_color").color
-        // const molang = new MolangVariableMap();
-        // molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
-        // block.dimension.spawnParticle("minecraft:crop_growth_area_emitter", block.location, molang);
+        
         block.setPermutation(block.permutation.withState("ps:aged", true));
         setPotionEffectForCask(caskEffect, cask, block)
-        console.log("The cask has aged")
+        const particleLocation = block.center();
+        particleLocation.y += 0.4
+        block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
     }
     return;
 }

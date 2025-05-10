@@ -11,13 +11,18 @@ system.beforeEvents.startup.subscribe(eventData => {
         onUseOn(e) {
             const {block, source} = e;
 
-            if(!source.isOp()) return;
+            if(!source.isOp()) {
+                source.sendMessage("You do not have the strength to use such an artifact!")
+                return;
+            }
+                
 
             if(block.typeId === "ps:growing_crystal"){
                 const seedStage = block.permutation.getState('ps:crystal_stage');
                 const rotation = Math.floor(Math.random() * 4)
                 block.setPermutation(block.permutation.withState("ps:crystal_rotation", rotation));
-                crystalGrowth(block, seedStage) 
+                crystalGrowth(block, seedStage)
+                source.sendMessage("The crystal creaks as it grows from the passage of time") 
 
             }else if(buddingCrystals.includes(block.typeId)){
                 const buddingCrystal = buddingCrystals.find(bud => bud === block.typeId)
@@ -36,19 +41,27 @@ system.beforeEvents.startup.subscribe(eventData => {
                         forceGrowCrystal(block, "echo_bud", "echo", -9)
                     break;
                 }
+                source.sendMessage("Sparks fly out of the budding crystal as its forced to grow shards.") 
 
             }else if(block.typeId.includes("ps:cask")){
                 const {x,y,z} = block.location;
                 let cask = findCask(block.dimension.id, {x, y, z})
+                const fillLevel = block.permutation.getState("ps:fill_level");
                 const caskEffect = block.getTags().find(el => el !== "cask");
                 const canAge = shouldCaskAge(caskEffect, cask.potion_effects)
                 const aged = block.permutation.getState("ps:aged");
-                    
-                if(!canAge || aged) return;
+                
 
+                if(!canAge || aged || fillLevel === 0){
+                    source.sendMessage("Despite accelerating time, the cask cannot age.")
+                    return;
+                } 
+                const particleLocation = block.center();
+                particleLocation.y += 0.4
+                block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
                 block.setPermutation(block.permutation.withState("ps:aged", true));
                 setPotionEffectForCask(caskEffect, cask, block)
-                console.log("The cask has aged")
+                source.sendMessage("The watch has sped up time, and has aged the cask.")
             }
             block.dimension.playSound("conduit.ambient", block.location, {volume: 0.8, pitch: 3});
         }

@@ -23,7 +23,7 @@
             "tag:cask": {},
             "minecraft:custom_components": ["ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
             "minecraft:light_dampening": 4,
-            "minecraft:map_color": "#a31817",
+            "minecraft:map_color": "#a88300",
             "minecraft:redstone_conductivity": {
                 "redstone_conductor": true,
                 "allows_wire_to_step_down": true
