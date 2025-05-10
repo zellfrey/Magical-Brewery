@@ -62,23 +62,30 @@ world.afterEvents.entitySpawn.subscribe((e) => {
 });
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_amethyst_bottle', {
-        onUse(e) {
-            const {source, itemStack} = e
-            const{block} = source.getBlockFromViewDirection({includeLiquidBlocks: true});
-            // maxDistance: 4.0
-            if(block.typeId === "minecraft:water" || block.isWaterlogged){
-                console.log("filling from water")
-            }
-            //Currently I cannot edit the filllevel of a potion, in the meantime, this is what we get
-            // else if(block.typeId === "minecraft:cauldron"){
+        onUseOn(e) {
+            const {source, itemStack, block} = e
+            console.log(block.typeId)
+            if(block.typeId !== "minecraft:water") return;
+            
+            const equipment = source.getComponent('equippable');
+            const selectedItem = equipment.getEquipment('Mainhand');
+            const amethystWaterBottle = new ItemStack("ps:amethyst_water_bottle", 1)
+            
+
+            // if (block.typeId === "minecraft:cauldron"){
+
             //     const fillLevel =  block.getComponent("minecraft:fluid_container").fillLevel;
             //     const fluid = block.getComponent("minecraft:fluid_container").getFluidType();
-            //     console.log(fluid + fillLevel)
-            //     if(fillLevel > 1 && fluid == "Water"){
-            //         // block.setPermutation(block.permutation.withState("fill_level", fillLevel-2));
-            //         console.log("emptying cauldron")
-            //     }
+
+            //     if(fillLevel < 1 || fluid !== "Water") return;
+
+            //     block.setPermutation(block.permutation.withState("fill_level", fillLevel-2));
             // }
+
+            block.dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: 1.0});
+
+            setMainHand(source, equipment, selectedItem, undefined);
+            source.getComponent("inventory").container.addItem(amethystWaterBottle)
         }
     });
 });

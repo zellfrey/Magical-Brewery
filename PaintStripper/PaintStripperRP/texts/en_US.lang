@@ -45,6 +45,7 @@ item.ps:glassmith_hammer.name=Glassmith's Hammer
 item.ps:ageless_pocket_watch.name=Ageless Pocket Watch
 item.ps:tasting_spoon.name=Tasting Spoon
 item.ps:amethyst_bottle.name=Amethyst Bottle
+item.ps:amethyst_water_bottle.name=Amethyst Water Bottle
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------

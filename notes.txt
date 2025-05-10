@@ -25,7 +25,7 @@ scrapped texture overlaying and data driven textures. THey just dont have that P
 lang file, full stop is needed in some cases, string must start with "item, tile". Cannot have "potion" regardless of adding unique id of addon, also needs ".name" at the end
 find paintstripper textures file
 Somehow its gone
-Amethyst wind chimes, dipstick
+Amethyst wind chimes
 
 v1.21.60  -loot tables
 {
@@ -98,14 +98,7 @@ States, charges, block face direction, contained potion id (represented by integ
 aging (represented in stages, again int count)
 Finally should fill level determine the amount of charges depleted when a potion has "aged"/absorbed the cask effect
 
-Aging seals. Further down the line in which players can create "wax" seals that can effect the outcome of the aging process.
-e.g, seal of potency which increases the potency level of said barrel(seal of duration)
 Thinking further down this path, if a potion of lingering or splash is used, this will fix the potion combination to that type.
-
-So,
-cask of healing, and speed potion. This will become a healing/speed potion.
-If its speed 2, will be healing/speed 2 potion. And so on
-If the cask has a seal of potency, the outcome will be healing 2/X potion.
 
 
 Late game idea, implement a "time" room, which will decrease the time taken for aging to be complete.
@@ -132,8 +125,6 @@ block.getComponent("minecraft:fluidContainer").getFluidType()
 possibly use rgba value
 if i cant do that, just do the age old method of crafting table, 1 potion = 1 stained plank
 
-
-
 pure crystal dust acquisition,
 clean in water,
 burn near candles, use different colours for different shards
@@ -153,47 +144,16 @@ alchemy research, craft special cauldron, similar to skyrim
 
 lock potion, a combination of ender pearls and echo shards. Locking the player in a position for a brief period of time 
 
-Will continue with the mechanic of cleaning crystals later. 
-
-currently there is no way of obtaining the potion id from a 
-look into giving glass bottles as a byproduct from stained planks
-
-
-"ps:seal_type": ["none", "potency", "longevity"],
-
-
-
-Turtle Master. Seeing as its mixed, make a separate guard rdclause for this unique instance. Or look into adding more block Tags
-This method of adding more block tags maybe stupid as fuck
             
 Just had a scary thought. What if players push casks with a piston?
 I have to update the cask in the caskDB. Potentially having to take the direction the piston was pushing and, uhmmm i dont have the words so ill figure it out.
 But its on the backburner
-
-So aging time. Affected by fill level and amount of effects within the potion liquid(i.e the extra effects)
-The less in the cask, the shorter the time. The greater the effects, the longer the time
 
 textures to make,
 pocket watch,
 tasting spoon,
 amethyst lingering and splash potion.
 Revise casks textures
-
-
-Extending that, certain casks should implement the edge cases/unique times of certain effects
-Instant effects are excluded
-Generic time is 3:00 minutes
-Regen 0:45(obviously not working)
-Slow falling, slowness, weakness 1:30
-Poison 0:45
-Tm 0:20
-Decay 0:40(2) however cant be crafted
-6-9
-Use wither rose to craft potion of decay
-Base should be wither 1, applied for 1:20
-Longevity = 3:00
-Potency= 0:40
-(Balance in the future) however check base effect
 
 https://www.audacityteam.org/
 
@@ -231,6 +191,9 @@ TODO: Evaluate seed placements, allow placement on any blocks. Players will need
 TODO: implement seal lifetime, 
 TODO: Allow players to break seeds and give back the seed item
 TODO: add burper
+TODO: Allow bottle to be filled from cauldron and waterlogged blocks
 cool world seed -4555157900916148182
 
 Hipshot joe
+
+Borealis tulip, use pollen to create potion of tranquility

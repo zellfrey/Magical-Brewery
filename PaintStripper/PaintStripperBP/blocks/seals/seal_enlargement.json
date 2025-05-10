@@ -22,7 +22,7 @@
         "minecraft:friction": 0.4,
         "minecraft:geometry": "geometry.seal",
         "minecraft:destructible_by_mining": {
-            "seconds_to_destroy": 1.5
+            "seconds_to_destroy": 0.3
         },
         "minecraft:destructible_by_explosion": {
             "explosion_resistance": 0.3
