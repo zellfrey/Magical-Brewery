@@ -1,8 +1,8 @@
 import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
-import {neighbouringCross} from "../utils/blockPlacementUtils.js";
-import {createCask, deleteCask, findCask, updateCask, updateCaskSeal} from "cask/caskDB.js";
 import {potionPotencyArray, potionEffectsObject, getPotencyLevel} from "../potionEffects.js";
+import {setCaskSeal, findCaskSeal, getCaskSeal, destroyCaskSeal, isSameSeal} from "cask/seal.js";
+import {createCask, deleteCask, findCask, updateCask} from "cask/caskDB.js";
 //'utils/containerUtils.js';
 
 system.beforeEvents.startup.subscribe(eventData => {
@@ -217,55 +217,7 @@ function ageCask(block, dimension){
     }
     return;
 }
-function destroyCaskSeal(cask){
-    const dim = world.getDimension(cask.dimensionId)
-    dim.setBlockType(cask.seal_location, "minecraft:air");
-    dim.spawnParticle("minecraft:basic_flame_particle", cask.seal_location);
-    cask.seal_location = {};
-    cask.is_potency_seal = false;
-    cask.seal_strength = 0;
-    cask.seal_lifetime = 0;
 
-    updateCaskSeal(cask)
-    console.log("destroying seal")
-}
-    
-function findCaskSeal(block){
-    const crossBlocks = [];
-    neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
-    const seal = crossBlocks.find(el => el.hasTag("seal"))
-    return seal;
-}
-function getCaskSeal(cask, sealLocation){
-    return cask.dimension.getBlock(sealLocation);
-}
-function setCaskSeal(seal, cask){
-
-    if(!seal){
-        cask.seal_location = {};
-        cask.is_potency_seal = false;
-        cask.seal_strength = 0;
-    }
-    else{
-        cask.seal_location = seal.location
-        cask.seal_strength = seal.permutation.getState("ps:seal_level");
-        const sealType = seal.getTags().find(el => el !== "seal");
-        cask.is_potency_seal = sealType === "potency" ? true : false;
-    }
-
-    cask.seal_lifetime = 0;
-    updateCaskSeal(cask)
-}
-function isSameSeal(caskSeal, cask){
-
-    if(!caskSeal) return false;
-
-    const sealType = caskSeal.getTags().find(el => el !== "seal");
-    const sealStrength = caskSeal.permutation.getState("ps:seal_level");
-    const isPotency = sealType === "potency" ? true : false;
-
-    return cask.seal_strength === sealStrength && cask.is_potency_seal === isPotency;
-}
 function matchesPotion(caskPotion, heldPotion, extraEffects){
     const matchesEffect = caskPotion.potion_effects[0] === heldPotion.potionEffectType.id;
     const matchesLiquid = caskPotion.potion_liquid === heldPotion.potionLiquidType.id;
@@ -321,18 +273,9 @@ export function shouldCaskAge(caskTag, potionEffects){
 export function setPotionEffectForCask(caskTag, cask, block){
     const potencySeal = cask.is_potency_seal;
     const sealStrength = cask.seal_strength;
-    // if(caskTag === "Turtle_Master"){
-    //     const effects = potionEffectsObject[caskTag].effects
-
-    //     const potionTime = potencySeal ? potionEffectsObject[caskTag].duration_potency : 
-    //     potionEffectsObject[caskTag].duration_long;
-
-    //     setTurtleMasterEffect(sealStrength, effects, potionTime, cask, potencySeal)
-        
-    // }
-    // else{
     const potionEffect = potionEffectsObject[caskTag]
     let effectName = potionEffect.effects
+
     if(potencySeal){
         let potionPotency;
 
@@ -367,17 +310,6 @@ export function setPotionEffectForCask(caskTag, cask, block){
 
     updateCask(cask);
 }
-
-// function setTurtleMasterEffect(seal, effects, potionTime, cask, potency){
-
-//     let effectSlowness = effects[0] +  " " + potionPotencyArray[3 + (potency *2)] 
-//                         + " (" + potionTime[seal - potency] +  ")"
-//     cask.potion_effects.push(effectSlowness);
-
-//     let effectResistance = effects[1] +  " " + potionPotencyArray[2 + potency]
-//                          + " (" + potionTime[seal - potency] +  ")"
-//     cask.potion_effects.push(effectResistance);
-// }
 
 function caskTagToEffectId(caskTag){
     let name;

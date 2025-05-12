@@ -19,7 +19,6 @@ Stained Woods:
 Stained Slabs:
  
 Seals:
-TODO: Make item catalog
 Items:
 Potions:
 TODO: Implement all potions and variants for amethyst tier potions,

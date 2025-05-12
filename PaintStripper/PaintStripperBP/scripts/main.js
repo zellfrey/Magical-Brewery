@@ -10,6 +10,7 @@ import "./tools/agelessPocketWatch.js"
 import "./potions.js"
 import "./slabStained.js"
 import "./cask/cask.js"
+import "./cask/seal.js"
 import "./potionEffects.js"
 import "./utils/lootUtils.js"
 
@@ -36,17 +37,3 @@ system.runInterval(
         };
     },
 );
-
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:bop_seal', {
-        beforeOnPlayerPlace(e) {
-            const {player, permutationToPlace } = e;
-            const equipment = player.getComponent('equippable');
-            const selectedItem = equipment.getEquipment('Mainhand');
-            
-            const sealStrength = Number(selectedItem.typeId.slice(selectedItem.typeId.length-1))
-
-            e.permutationToPlace = permutationToPlace.withState('ps:seal_level', sealStrength);
-        },
-    });
-});
