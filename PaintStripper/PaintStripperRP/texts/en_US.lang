@@ -136,4 +136,5 @@ paint_stripper:ps_glowstone_crystals_nature=Glowstone Crystals
 paint_stripper:ps_redstone_crystals_nature=Redstone Crystals
 paint_stripper:ps_echo_crystals_nature=Echo Crystals
 paint_stripper:ps_pure_quartz_crystals_nature=Pure Quartz Crystals
+paint_stripper:ps_seals_items=Cask Seals
 ##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means

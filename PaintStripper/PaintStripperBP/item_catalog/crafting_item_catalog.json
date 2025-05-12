@@ -99,6 +99,21 @@
                 "ps:glowstone_shard",
                 "ps:redstone_shard"
               ]
+            },
+            {
+              "group_identifier": {
+                "icon": "ps:seal_potency_1",
+                "name": "paint_stripper:ps_seals_items"
+              },
+              "items": [
+                "ps:seal_basic",
+                "ps:seal_enlargement_1",
+                "ps:seal_enlargement_2",
+                "ps:seal_longevity_1",
+                "ps:seal_longevity_2",
+                "ps:seal_potency_1",
+                "ps:seal_potency_2"
+              ]
             }
           ]
         },
