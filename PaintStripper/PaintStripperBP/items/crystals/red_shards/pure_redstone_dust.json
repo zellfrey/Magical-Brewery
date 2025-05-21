@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.10",
+    "minecraft:item": {
+      "description": {
+        "identifier": "ps:pure_redstone_dust",
+        "menu_category": {
+                "category": "items"
+            }
+      }, 
+      "components": {
+        "minecraft:hand_equipped": false,
+        "minecraft:icon": "pure_redstone_dust",
+        "minecraft:display_name":{
+          "value": "item.ps:pure_redstone_dust.name"
+        }
+      }
+    }
+  }

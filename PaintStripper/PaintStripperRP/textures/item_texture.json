@@ -23,6 +23,9 @@
       "echo_cluster":{
          "textures": "textures/blocks/crystals/echo_cluster.png"
       },
+      "echo_dust":{
+			  "textures": "textures/items/echo_dust.png"
+		},
       "echo_seed":{
 			"textures": "textures/items/echo_seed.png"
 		},
@@ -41,6 +44,9 @@
       "glowstone_cluster":{
          "textures": "textures/blocks/crystals/glowstone_cluster.png"
       },
+      "pure_glowstone_dust":{
+			"textures": "textures/items/pure_glowstone_dust.png"
+		},
       "glowstone_seed":{
 			"textures": "textures/items/glowstone_seed.png"
 		},
@@ -77,6 +83,9 @@
       "redstone_cluster":{
          "textures": "textures/blocks/crystals/redstone_cluster.png"
       },
+      "pure_redstone_dust":{
+			"textures": "textures/items/pure_redstone_dust.png"
+		},
       "redstone_seed":{
 			"textures": "textures/items/redstone_seed.png"
 		},

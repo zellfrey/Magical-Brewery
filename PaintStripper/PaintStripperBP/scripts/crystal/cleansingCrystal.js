@@ -1,7 +1,7 @@
 import {world, system, ItemStack} from "@minecraft/server";
 import {neighbouringCross} from "utils/blockPlacementUtils.js";
 
-const vanillaItems = ["minecraft:quartz", "minecraft:redstone", "minecraft:glowstone"]
+const vanillaItems = ["minecraft:quartz", "minecraft:redstone_dust", "minecraft:glowstone_dust"]
 //purging with heat
 //heat treated
 world.afterEvents.entitySpawn.subscribe(async (e) => {

@@ -2,18 +2,18 @@
   "format_version": "1.17.41",
   "minecraft:recipe_shaped": {
       "description": {
-          "identifier": "ps:seal_potency_1"
+          "identifier": "ps:seal_longevity_2"
       },
       "tags": ["crafting_table"],
-      "pattern": ["GQG", "QSQ", "GQG"],
+      "pattern": ["RQR", "QSQ", "RQR"],
       "key": {
-          "Q": "minecraft:quartz",
+          "Q": "ps:pure_quartz_shard",
           "S": "ps:seal_basic",
-          "G": "minecraft:glowstone_dust"
+          "R": "ps:pure_redstone_dust"
       },
       "result": [
           {
-            "item": "ps:seal_potency_1",
+            "item": "ps:seal_longevity_2",
             "count": 1
           }
       ]

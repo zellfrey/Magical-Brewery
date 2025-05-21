@@ -1,0 +1,17 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "ps:pure_redstone_dust"
+        },
+        "tags": ["crafting_table"],
+        "ingredients": [
+            {
+                "item": "ps:redstone_shard"
+            }
+        ],
+        "result": {
+            "item": "ps:pure_redstone_dust"
+        }
+    }
+}
