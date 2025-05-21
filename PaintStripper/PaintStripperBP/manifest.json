@@ -1,11 +1,11 @@
 {
     "format_version": 2, 
     "header": { 
-     "description": "Behaviour pack for Paint Stripper addon v1.0.0 - alpha", 
-     "name": "PaintStripperBP", 
-     "uuid": "dbbbb4fb-bf6d-4551-871c-45862f31a014", 
-     "version": [ 1, 0, 0 ], 
-     "min_engine_version": [ 1, 21, 10 ] 
+        "description": "Behaviour pack for Paint Stripper addon v1.0.0 - alpha", 
+        "name": "PaintStripperBP", 
+        "uuid": "dbbbb4fb-bf6d-4551-871c-45862f31a014", 
+        "version": [ 1, 0, 0 ], 
+        "min_engine_version": [ 1, 21, 10 ] 
     },
     "metadata":{
         "authors":["Beardedflea/Zellfrey"],
@@ -13,28 +13,28 @@
         "url":"https://github.com/zellfrey"
     }, 
     "modules": [ 
-     { 
-      "description":"Behaviour pack for Paint Stripper addon v1.0.0 - alpha", 
-      "type": "data", 
-      "uuid": "d6383502-c606-4c70-970c-a21086b9c843", 
-      "version": [ 1, 0, 0 ] 
-     },
-     {
-        "uuid": "efc912b2-2809-4a28-ba04-e5b8c6ac7c7b",
-        "version": [1, 0, 0],
-        "type": "script",
-        "language": "javascript",
-        "entry": "scripts/main.js"
-    } 
+        { 
+            "description":"Behaviour pack for Paint Stripper addon v1.0.0 - alpha", 
+            "type": "data", 
+            "uuid": "d6383502-c606-4c70-970c-a21086b9c843", 
+            "version": [ 1, 0, 0 ] 
+        },
+        {
+            "uuid": "efc912b2-2809-4a28-ba04-e5b8c6ac7c7b",
+            "version": [1, 0, 0],
+            "type": "script",
+            "language": "javascript",
+            "entry": "scripts/main.js"
+        } 
     ],
     "dependencies": [ 
-     { 
-      "uuid": "b980ea2e-49a0-4098-89b6-6db625d2b05d", 
-      "version": [ 1, 0, 0 ] 
-     },
-     {
-         "module_name": "@minecraft/server",
-         "version": "2.0.0-beta"
-     } 
+        { 
+            "uuid": "b980ea2e-49a0-4098-89b6-6db625d2b05d", 
+            "version": [ 1, 0, 0 ] 
+        },
+        {
+            "module_name": "@minecraft/server",
+            "version": "2.0.0-beta"
+        }
     ]
    }

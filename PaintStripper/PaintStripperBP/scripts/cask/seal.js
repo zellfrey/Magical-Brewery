@@ -1,5 +1,5 @@
-import {world, system} from "@minecraft/server";
-import {neighbouringCross} from "../utils/blockPlacementUtils.js";
+import {world, system, Direction} from "@minecraft/server";
+import {neighbouringCross, getBlockFromFace} from "../utils/blockPlacementUtils.js";
 import {updateCaskSeal} from "cask/caskDB.js";
 
 system.beforeEvents.startup.subscribe(eventData => {
@@ -20,6 +20,7 @@ export function destroyCaskSeal(cask){
     const dim = world.getDimension(cask.dimensionId)
     dim.setBlockType(cask.seal_location, "minecraft:air");
     dim.spawnParticle("minecraft:basic_flame_particle", cask.seal_location);
+
     cask.seal_location = {};
     cask.is_potency_seal = false;
     cask.seal_strength = 0;
@@ -32,12 +33,18 @@ export function destroyCaskSeal(cask){
 export function findCaskSeal(block){
     const crossBlocks = [];
     neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
+
     const seal = crossBlocks.find(el => el.hasTag("seal"))
+
+    if(!seal) return undefined;
+    const face = seal.permutation.getState("minecraft:block_face");
+    const potentialCask = getBlockFromFace(seal, face)
+    //temp, TODO: add vector maths mojang module
+    if(JSON.stringify(potentialCask.location) !== (JSON.stringify(block.location))) return undefined;
+
     return seal;
 }
-export function getCaskSeal(cask, sealLocation){
-    return cask.dimension.getBlock(sealLocation);
-}
+
 export function setCaskSeal(seal, cask){
 
     if(!seal){
@@ -55,8 +62,7 @@ export function setCaskSeal(seal, cask){
     cask.seal_lifetime = 0;
     updateCaskSeal(cask)
 }
-export function isSameSeal(caskSeal, cask){
-
+export function isSameSealType(caskSeal, cask){
     if(!caskSeal) return false;
 
     const sealType = caskSeal.getTags().find(el => el !== "seal");

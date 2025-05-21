@@ -5,7 +5,6 @@ Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
 TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
-TODO: have cask check block face so it doesnt destroy surrounding cask Seals
 Crystals:
     Echo Shards:
     Red Shards:
@@ -25,7 +24,6 @@ TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects
 TODO: Once amethyst potions are implemented. Create a hard limit for glass potions and make the "break" when they do contain +2 potion effects - Look into new inventory event
-TODO: Make item catalog
 Misc:
 
 Blocks:

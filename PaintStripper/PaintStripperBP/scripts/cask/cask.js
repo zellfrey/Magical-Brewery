@@ -1,8 +1,8 @@
 import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
 import {potionPotencyArray, potionEffectsObject, getPotencyLevel} from "../potionEffects.js";
-import {setCaskSeal, findCaskSeal, getCaskSeal, destroyCaskSeal, isSameSeal} from "cask/seal.js";
-import {createCask, deleteCask, findCask, updateCask} from "cask/caskDB.js";
+import {setCaskSeal, findCaskSeal, destroyCaskSeal, isSameSealType} from "cask/seal.js";
+import {createCask, deleteCask, findCask, updateCask, updateCaskSeal} from "cask/caskDB.js";
 //'utils/containerUtils.js';
 
 system.beforeEvents.startup.subscribe(eventData => {
@@ -122,7 +122,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const pitch = fillLevel * 0.2 + 0.3
                 dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: pitch});
 
-                const seal = findCaskSeal(block, cask)
+                const seal = findCaskSeal(block)
 
                 setCaskSeal(seal, cask)
                     
@@ -188,7 +188,6 @@ function ageCask(block, dimension){
     
     if(!canAge) return;
 
-    //pretty colours, currently placeholder colours. For some reason
     const rgba = block.getComponent("minecraft:map_color").color
     const molang = new MolangVariableMap();
     molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
@@ -198,19 +197,15 @@ function ageCask(block, dimension){
     const timeToAge = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
     const hasAged = timeToAge <= system.currentTick
 
-    // let caskSeal = getCaskSeal(block, cask.seal_location)
-
-    // if(!caskSeal.hasTag("seal")){
-    //     caskSeal = findCaskSeal(block, cask)
-    //     console.log(caskSeal)
-    //     const newSeal = isSameSeal(caskSeal, cask)
-    //     console.log(newSeal)
-    // } 
+    checkCaskSeal(block, cask)
     
     if(hasAged){
-        
+        const caskAgeTime = (12000*cask.potion_effects.length + fillLevel*10)/3
+        const caskSealAgeTime = Math.ceil(cask.seal_lifetime*20 / caskAgeTime *100)
+        setPotionEffectForCask(caskEffect, cask, caskSealAgeTime)
+
         block.setPermutation(block.permutation.withState("ps:aged", true));
-        setPotionEffectForCask(caskEffect, cask, block)
+        
         const particleLocation = block.center();
         particleLocation.y += 0.4
         block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
@@ -241,6 +236,7 @@ function matchesPotion(caskPotion, heldPotion, extraEffects){
 export function shouldCaskAge(caskTag, potionEffects){
     let shouldAge = true;
     const effectId= caskTagToEffectId(caskTag.replace("_", ""))
+    
     if(effectId === potionEffects[0]){
         shouldAge = false;
     }
@@ -270,44 +266,71 @@ export function shouldCaskAge(caskTag, potionEffects){
     return shouldAge
 }
 
-export function setPotionEffectForCask(caskTag, cask, block){
-    const potencySeal = cask.is_potency_seal;
-    const sealStrength = cask.seal_strength;
+function checkCaskSeal(block, cask){
+    let caskSeal = findCaskSeal(block)
+
+    //If there is no seal the lifetime will remain the same, reducing the ability of effecting the age
+    if(isSameSealType(caskSeal, cask)){
+
+        if(JSON.stringify(caskSeal.location) == JSON.stringify(cask.seal_location)){
+             cask.seal_lifetime++;
+        }
+        else{
+            const previousSealLifeTime = cask.seal_lifetime;
+            setCaskSeal(caskSeal, cask)
+            cask.seal_lifetime = previousSealLifeTime;
+        }
+      
+    }
+    else if(caskSeal){
+        setCaskSeal(caskSeal, cask)
+        console.log(caskSeal.typeId)
+    }
+    console.log(cask.seal_lifetime)
+    updateCaskSeal(cask)
+}
+
+export function setPotionEffectForCask(caskTag, cask, caskSealAge){
+    
     const potionEffect = potionEffectsObject[caskTag]
     let effectName = potionEffect.effects
 
-    if(potencySeal){
-        let potionPotency;
+    if(caskSealAge >= 75){
 
-        if(effectName.includes("Instant")){
-            potionPotency = " " + potionPotencyArray[sealStrength];
+        const potencySeal = cask.is_potency_seal;
+        const sealStrength = cask.seal_strength;
 
-        }
-        else if(effectName === "Slowness"){
-            potionPotency = " " + potionPotencyArray[sealStrength+1] + 
-            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+        if(potencySeal){
+            let potionPotency;
 
-        }
-        else if(potionEffect.duration_potency.length === 0){
-            potionPotency =" (" + potionEffect.duration_long[0] +  ")";
+            if(effectName.includes("Instant")){
+                potionPotency = " " + potionPotencyArray[sealStrength];
 
-        }else{
-            potionPotency = " " + potionPotencyArray[sealStrength] + 
-            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+            }
+            else if(effectName === "Slowness"){
+                potionPotency = " " + potionPotencyArray[sealStrength+1] + 
+                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+
+            }
+            else if(potionEffect.duration_potency.length === 0){
+                potionPotency =" (" + potionEffect.duration_long[0] +  ")";
+
+            }else{
+                potionPotency = " " + potionPotencyArray[sealStrength] + 
+                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+            }
+            effectName += potionPotency;
         }
-        effectName += potionPotency;
-    }
-    else{
-        if(potionEffect.duration_long.length !== 0){
-            const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
-            effectName += effectTime;
+        
+        else{
+            if(potionEffect.duration_long.length !== 0){
+                const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
+                effectName += effectTime;
+            }
         }
+        destroyCaskSeal(cask)
     }
     cask.potion_effects.push(effectName);  
-
-    const effectiveAgeTime = 100
-    if(Object.keys(cask.seal_location).length !== 0 && effectiveAgeTime >= 75) destroyCaskSeal(cask)    
-
     updateCask(cask);
 }
 
