@@ -5,6 +5,7 @@ Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
 TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
+TODO: utilise vector maths from @minecraft/maths module
 Crystals:
     Echo Shards:
     Red Shards:

@@ -294,42 +294,45 @@ export function setPotionEffectForCask(caskTag, cask, caskSealAge){
     
     const potionEffect = potionEffectsObject[caskTag]
     let effectName = potionEffect.effects
-
-    if(caskSealAge >= 75){
-
-        const potencySeal = cask.is_potency_seal;
-        const sealStrength = cask.seal_strength;
-
-        if(potencySeal){
-            let potionPotency;
-
-            if(effectName.includes("Instant")){
-                potionPotency = " " + potionPotencyArray[sealStrength];
-
-            }
-            else if(effectName === "Slowness"){
-                potionPotency = " " + potionPotencyArray[sealStrength+1] + 
-                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
-
-            }
-            else if(potionEffect.duration_potency.length === 0){
-                potionPotency =" (" + potionEffect.duration_long[0] +  ")";
-
-            }else{
-                potionPotency = " " + potionPotencyArray[sealStrength] + 
-                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
-            }
-            effectName += potionPotency;
-        }
+    let potencySeal = false;
+    let sealStrength = 0;
+    if(Object.keys(cask.seal_location).length !== 0 && caskSealAge >= 75){
         
-        else{
-            if(potionEffect.duration_long.length !== 0){
-                const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
-                effectName += effectTime;
-            }
-        }
+        potencySeal = cask.is_potency_seal;
+        sealStrength = cask.seal_strength;
         destroyCaskSeal(cask)
     }
+
+    if(potencySeal){
+        let potionPotency;
+
+        if(effectName.includes("Instant")){
+            potionPotency = " " + potionPotencyArray[sealStrength];
+
+        }
+        else if(effectName === "Slowness"){
+            potionPotency = " " + potionPotencyArray[sealStrength+1] + 
+            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+
+        }
+        else if(potionEffect.duration_potency.length === 0){
+            potionPotency =" (" + potionEffect.duration_long[0] +  ")";
+
+        }else{
+            potionPotency = " " + potionPotencyArray[sealStrength] + 
+            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+        }
+        effectName += potionPotency;
+    }
+    
+    else{
+        if(potionEffect.duration_long.length !== 0){
+            const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
+            effectName += effectTime;
+        }
+    }
+    
+
     cask.potion_effects.push(effectName);  
     updateCask(cask);
 }

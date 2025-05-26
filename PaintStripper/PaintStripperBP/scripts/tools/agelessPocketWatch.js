@@ -60,7 +60,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 particleLocation.y += 0.4
                 block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
                 block.setPermutation(block.permutation.withState("ps:aged", true));
-                setPotionEffectForCask(caskEffect, cask, block)
+                setPotionEffectForCask(caskEffect, cask, 100)
                 source.sendMessage("The watch has sped up time, and has aged the cask.")
             }
             block.dimension.playSound("conduit.ambient", block.location, {volume: 0.8, pitch: 3});

@@ -34,15 +34,17 @@ export function findCaskSeal(block){
     const crossBlocks = [];
     neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
 
-    const seal = crossBlocks.find(el => el.hasTag("seal"))
+    const seals = crossBlocks.filter(el => el.hasTag("seal"))
 
-    if(!seal) return undefined;
-    const face = seal.permutation.getState("minecraft:block_face");
-    const potentialCask = getBlockFromFace(seal, face)
-    //temp, TODO: add vector maths mojang module
-    if(JSON.stringify(potentialCask.location) !== (JSON.stringify(block.location))) return undefined;
+    if(seals.length === 0) return undefined;
 
-    return seal;
+    const seal = seals.find(el =>{
+        const face = el.permutation.getState("minecraft:block_face");
+        const potentialCask = getBlockFromFace(el, face)
+        if(JSON.stringify(potentialCask.location) === (JSON.stringify(block.location))) return el;
+    })
+
+    return seal ? seal : undefined
 }
 
 export function setCaskSeal(seal, cask){
