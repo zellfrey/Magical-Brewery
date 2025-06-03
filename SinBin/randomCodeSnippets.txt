@@ -1,0 +1,25 @@
+This is a place for code that I have commented out and have not decided whether or not i want to keep it
+
+//CleansingCrytal.js
+// world.beforeEvents.entityRemove.subscribe(async (e) => {
+//     const {removedEntity} = e;
+//     if(removedEntity.typeId !== "minecraft:item") return;
+//     const item = removedEntity.getComponent("item").itemStack
+//     if(!vanillaItems.includes(item.typeId)) return;
+//     console.log(removedEntity.typeId)
+    
+// });
+// function cleanCrystal(item, entity, block, entityCoords, blockCoords){
+    
+//     const dim = entity.dimension
+//     const lore = item.getLore();
+    
+//     let cleanStage;
+    
+    
+//     // if(!lore.includes('§7Harmonised')){
+//     //     if(block.below().typeId === "minecraft:noteblock"){
+            
+//     //         cleanStage = '§7Harmonised';
+            
+//     //     }

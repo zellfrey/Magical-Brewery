@@ -1,135 +1,171 @@
 import {world, system, ItemStack} from "@minecraft/server";
 import {neighbouringCross} from "utils/blockPlacementUtils.js";
 
-const vanillaItems = ["minecraft:quartz", "minecraft:redstone_dust", "minecraft:glowstone_dust"]
-//purging with heat
-//heat treated
-world.afterEvents.entitySpawn.subscribe(async (e) => {
-    const {entity} = e;
-    if(entity.typeId !== "minecraft:item") return;
-    const item = entity.getComponent("item").itemStack;
-    if(!vanillaItems.includes(item.typeId)) return;
+const crystalEntityIds=[]
+class Crystal {
+    constructor(entity, block, lore, initialTick) {
+        this.entity = entity
+        this.block = block
+        this.lore  = lore
+        this.entityItem = this.entity.getComponent("item").itemStack;
+        this.initialTick = initialTick;
+        this.crystalCandle = getCandleType(this.entityItem.typeId)
+        // crystalEntityIds.push(entity.id)
+    }
 
-    //Wait for item entity to settle on the ground
-    await system.waitTicks(20);
-    const eCoords = entity.location
-    const block = entity.dimension.getBlock(eCoords);
-    console.log(item.typeId)
-    cleanCrystal(item, entity, block, eCoords, block.location);
-
-    
-    
-
-});
-  function cleanCrystal(item, entity, block, entityCoords, blockCoords){
-    
-    const {x,y,z} = blockCoords
-    const dim = entity.dimension
-    const lore = item.getLore();
-    
-    let cleanStage;
-    if(!lore.includes('§7Washed')){
-        if(block.typeId === "minecraft:water"){
-            const initialTick = system.currentTick
-            const check = system.runInterval(() => {
-                console.log(dim.getBlock(entityCoords).typeId)
-                const entities  = dim.getEntitiesAtBlockLocation(blockCoords);
-                if(entities.length === 0){
-                    system.clearRun(check)
+    cleanCrystal() {
+        const id = this.entity.id;
+        const dim = this.entity.dimension;
+        const location = this.block.location
+        let isCandleCrossValid = this.getCandleCross().every(el =>validCandle(el, this.crystalCandle))
+        
+        if(!this.lore.includes('§7Washed') && this.block.typeId === "minecraft:water" && this.block.below().typeId !== "minecraft:lodestone"){
+            const washing = system.runInterval(() => {
+                console.log("washing")
+                if(!entityExists(id, location, dim) || this.block.typeId !== "minecraft:water" 
+                || this.block.below().typeId === "minecraft:lodestone"){
+                    system.clearRun(washing)
                     return;
                 }  
-                if(initialTick + 240 <= system.currentTick){
-                    system.clearRun(check)
-                    setCrystalItemLore(entities[0], '§7Washed', dim, entityCoords)
+                if(this.initialTick + 240 <= system.currentTick){
+                    system.clearRun(washing)
+                    this.setCrystalLore('§7Washed', dim)
                 }
-                }, 60);
-            // cleanStage = '§7Washed';
-            
+            }, 30);
         }
-        //find blocklocation, if not there, return,
-        //await some Ticks, say 1 minute or 2
-        //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
-    }
-    if(!lore.includes('§7Heat treated')){
-        let candle;
-        switch(item.typeId){
-            case "minecraft:quartz":
-                candle = "minecraft:white_candle"
-            break;
-            case "minecraft:redstone":
-                candle = "minecraft:red_candle"
-            break;
-            case "minecraft:glowstone":
-                candle = "minecraft:yellow_candle"
-            break;
+        
+        if(!this.lore.includes('§7Heat treated') && isCandleCrossValid && this.block.typeId === "minecraft:air"){
+            
+            const heating = system.runInterval(() => {
+                console.log("heating")
+                isCandleCrossValid = this.getCandleCross().every(el =>validCandle(el, this.crystalCandle))
+                if(!entityExists(id, location, dim) || !isCandleCrossValid || this.block.typeId !== "minecraft:air"
+                    || this.block.below().typeId === "minecraft:lodestone"){
+                    system.clearRun(heating)
+                    return;
+                }  
+                if(this.initialTick + 240 <= system.currentTick){
+                    system.clearRun(heating)
+                    console.log('§7Heat treated')
+                    this.setCrystalLore('§7Heat treated', dim)
+                }
+            }, 30);        
         }
 
+        if(!this.lore.includes('§7Lunar charged') && this.block.below().typeId === "minecraft:lodestone"
+            && this.block.typeId === "minecraft:air"){
+            
+            const moon = system.runInterval(() => {
+                const time = world.getTimeOfDay();
+                const moonPhase = world.getMoonPhase();
+                const {x,y,z} = this.block.location
+                const topBlock = this.entity.dimension.getTopmostBlock({x,z})
+                console.log("lunar charging")
+                if((time >= 15000 && time <= 20000) && moonPhase === 0){
+
+                    if(!entityExists(id, location, dim) 
+                    || (JSON.stringify(topBlock.location) !== JSON.stringify(this.block.below().location))){
+                        system.clearRun(moon)
+                        return;
+                    }
+                    if(this.initialTick + 240 <= system.currentTick){
+                        system.clearRun(moon)
+                        console.log('§7Lunar charged')
+                        this.setCrystalLore('§7Lunar charged', dim)
+                    }
+                }
+                
+            }, 30);
+        }
+    }
+    getCandleCross(){
         const crossBlocks = [];
-        neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
-        const isCandleCrossValid = crossBlocks.every(el => el.typeId === candle)
-        if(isCandleCrossValid){
-            cleanStage = '§7Heat treated';
-        }
+        neighbouringCross.forEach((el) => { crossBlocks.push(this.block.offset({x:el.x, y: 0, z: el.z}))})
         
-        //find blocklocation, if not there, return,
-        //await some Ticks, say 1 minute or 2
-        //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
+        return crossBlocks
     }
-    if(!lore.includes('§7Harmonised')){
-        if(block.below().typeId === "minecraft:noteblock"){
-            
-            cleanStage = '§7Harmonised';
-            
-        }
-        
-        //find blocklocation, if not there, return,
-        //await some Ticks, say 1 minute or 2
-        //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
-    }
-    if(!lore.includes('§7Lunar charged')){
-        const time = world.getTimeOfDay();
-        const moonPhase = world.getMoonPhase();
-        if((time >= 15000 && time <= 20000) && moonPhase === 0){
-            cleanStage = '§7Lunar charged';
-        }
-        
-        //find blocklocation, if not there, return,
-        //await some Ticks, say 1 minute or 2
-        //check again for block so people dont cheese it. TODO:Check every second or 2 seconds if block is
-    }
+    setCrystalLore(cleanStage, dimension){
 
-    if(cleanStage === undefined) return;
+        if(!entityExists(this.entity.id, this.block.location, dimension)) return;
 
-    setCrystalItemLore(entities[0], '§7Washed', "minecraft:quartz", entityCoords)   
-    
+        const item = this.entity.getComponent("item").itemStack;
+        const spawnLocation= this.entity.location
+        let shard = new ItemStack(item.typeId, 1);
+        this.entity.remove();
+
+        this.lore.push(cleanStage)
+        shard.setLore(this.lore);
+        const newLore = shard.getLore()
+
+        if(newLore.length === 3){
+            let pureItem;
+            switch(item.typeId){
+                case "ps:sifted_quartz":
+                    pureItem = "ps:pure_quartz_shard";
+                break;
+                case "ps:sifted_redstone_dust":
+                    pureItem = "ps:pure_redstone_dust";
+                break;
+                case "ps:sifted_glowstone_dust":
+                    pureItem = "ps:pure_glowstone_dust";
+            }
+        shard = new ItemStack(pureItem, 1);
+        }
+        const newItemEntity = dimension.spawnItem(shard, spawnLocation)
+        newItemEntity.teleport(spawnLocation)
+    }
 }
 
 function validCandle(block, candle){
-
+    const lit = block.permutation.getState("lit");
+    const candles = block.permutation.getState("candles");
+    const validCandleBlock = lit && candles === 3
+    return validCandleBlock && block.typeId === candle
 }
-
-function setCrystalItemLore(entity, cleanStage, dimension, entityCoords){
-
-    const item = entity.getComponent("item").itemStack;
-    const quartz = new ItemStack(item.typeId, 1);
-    const lore = item.getLore();
-    entity.remove();
-    
-    lore.push(cleanStage)
-    quartz.setLore(lore);
-    const newLore = quartz.getLore()
-
-    if(newLore.length === 4){
-        dimension.spawnItem(new ItemStack("ps:pure_quartz_shard", 1), entityCoords)
-    }else{
-        dimension.spawnItem(quartz, entityCoords)
+function getCandleType(itemName){
+    let candle;
+        switch(itemName){
+            case "ps:sifted_quartz":
+                candle = "minecraft:white_candle"
+            break;
+            case "ps:sifted_redstone_dust":
+                candle = "minecraft:red_candle"
+            break;
+            case "ps:sifted_glowstone_dust":
+                candle = "minecraft:yellow_candle"
+            break;
+        }
+    return candle;
+}
+function entityExists(entityId, location, dimension){
+    const entities  = dimension.getEntitiesAtBlockLocation(location);
+    if(entities.length === 0){
+        return false;
+    }  
+    for(let i = 0; i < entities.length; i++){
+        if(entities[i].id === entityId){
+             console.log("exists?")
+            return true;
+        }
     }
+    return false;
 }
-                    
-//Start with the easy steps
-//Wash in water
-//Medium steps
-//Ring noteblock with item above
-//heat treat item
-//Final step
-//leave to soak up lunar light
+
+
+const siftedItems = ["ps:sifted_quartz", "ps:sifted_redstone_dust", "ps:sifted_glowstone_dust"]
+world.afterEvents.entitySpawn.subscribe(async (e) => {
+    const {entity} = e;
+    
+    if(entity.typeId !== "minecraft:item") return;
+    const item = entity.getComponent("item").itemStack;
+    if(!siftedItems.includes(item.typeId)) return;
+    await system.waitTicks(40);
+    try{
+        const block = entity.dimension.getBlock(entity.location);
+        if(!entityExists(entity.id, block.location, entity.dimension)) return; 
+        const crystal = new Crystal(entity, block, item.getLore(), system.currentTick);
+        crystal.cleanCrystal();
+    }catch(e){
+        console.warn("Magical Brewery: Sifted Item Entity wasn't found " + e)
+    }
+});

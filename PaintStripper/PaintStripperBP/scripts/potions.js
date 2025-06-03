@@ -51,15 +51,23 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
 
 
 
-world.afterEvents.entitySpawn.subscribe((e) => {
-    const {entity} = e;
-    // const item = entity.getComponent("item").itemStack;
-    if(entity.typeId !== "minecraft:splash_potion") return;
+// world.afterEvents.entitySpawn.subscribe((e) => {
+//     const {entity} = e;
+//     // const item = entity.getComponent("item").itemStack;
+//     if(entity.typeId !== "minecraft:splash_potion") return;
 
-    console.warn(entity.typeId)
-    
+//     console.warn(entity.typeId)
+//     console.log(entity.getComponents()[0].typeId)
 
-});
+// });
+
+// world.afterEvents.projectileHitBlock.subscribe((e) => {
+//     const {projectile} = e;
+//     // const item = entity.getComponent("item").itemStack;
+//     console.warn(projectile.typeId)
+//     // console.warn(projectile.getComponents()[0].typeId)
+
+// });
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_amethyst_bottle', {
         onUseOn(e) {
