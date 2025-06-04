@@ -7,7 +7,7 @@
       "tags": ["crafting_table"],
       "pattern": ["RQR", "QSQ", "RQR"],
       "key": {
-          "R": "ps:redstone_shard",
+          "R": "ps:pure_redstone_dust",
           "Q": "ps:pure_quartz_shard",
           "S": "minecraft:stone"
       },
