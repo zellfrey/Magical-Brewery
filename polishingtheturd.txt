@@ -6,14 +6,26 @@ TODO: Revision cask front textures(add cork texture, look to the glass bottle"co
 TODO: Implement charge level textures.
 TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
 TODO: utilise vector maths from @minecraft/maths module
+Todo;
+Finish crystal cleansing,
+Implement times taken for each method
+Lunar charging requires a block height above the clouds
+Implement unique particles for each method. 
+The transformation of dust to pure version should have a particle effect
+Implement wood creakingg sounds
+Implement check tick so the cask can age appropriately when the chunk is loaded back in same with crystal cleaning
+Give better feed with tasting spoon. 
+Play around with mod, get nick in 
+Fix slab placement
+Fix isAir check for crystals
+Update casks to class system,
+Separate slab geo 
 Crystals:
     Echo Shards:
     Red Shards:
     Glow Shards:
     Quartz shards:
     General:
-        TODO: Sort out glowstone/redstone/pure quartz shard obtaining 
-        Todo: utilise shards for better effects
 
 Stained Woods:
 Stained Slabs:

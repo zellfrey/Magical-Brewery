@@ -196,4 +196,3 @@ cool world seed -4555157900916148182
 TODO: Re-design cask database, classes. Array, save DB every 5 mins not every operation
 Hipshot joe
 
-Borealis tulip, use pollen to create potion of tranquility

@@ -1,34 +1,6 @@
-import {system} from "@minecraft/server"
+import {system, world} from "@minecraft/server"
 import {setMainHand} from './utils/containerUtils.js';
-import {getBlockFromFace} from "./utils/blockPlacementUtils.js";
-
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:bop_slab', {
-        beforeOnPlayerPlace(e) {
-            const {block, player, face, dimension } = e;
-            const equipment = player.getComponent('equippable');
-            const selectedItem = equipment.getEquipment('Mainhand');
-
-            let blockToCheck = getBlockFromFace(block, face)
-            
-            if (selectedItem?.typeId === blockToCheck.typeId && !blockToCheck.permutation.getState('ps:double')){
-                
-                const verticalHalf = blockToCheck.permutation.getState('minecraft:vertical_half');
-                const isBottomUp = verticalHalf === 'bottom' && face === 'Up';
-                const isTopDown = verticalHalf === 'top' && face === 'Down';
-                
-                if (isBottomUp || isTopDown) {
-
-                    blockToCheck.setPermutation(blockToCheck.permutation.withState('ps:double', true)); 
-                    dimension.playSound('use.wood', blockToCheck.location);
-                    e.cancel = true;
-                    setMainHand(player, equipment, selectedItem, undefined);
-                }
-                
-            }
-        },
-    });
-});
+import {getAdjacentBlock} from "./utils/blockPlacementUtils.js";
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_slab', {
@@ -45,3 +17,38 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
+
+// system.beforeEvents.startup.subscribe(eventData => {
+//     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_slab_stained', {
+//         onUseOn(e) {
+//             const {source, itemStack, block, blockFace} = e
+
+//             const equipment = source.getComponent('equippable');
+//             const selectedItem = equipment.getEquipment('Mainhand');
+            
+
+//             if (itemStack.typeId === block.typeId){
+                
+//                 const verticalHalf = block.permutation.getState('minecraft:vertical_half');
+//                 const isBottomUp = verticalHalf === 'bottom' && blockFace === 'Up';
+//                 const isTopDown = verticalHalf === 'top' && blockFace === 'Down';
+                
+//                 if (isBottomUp || isTopDown) {
+
+//                     block.setPermutation(block.permutation.withState('ps:double', true)); 
+//                     block.dimension.playSound('use.wood', block.location);
+//                     setMainHand(source, equipment, selectedItem, undefined);
+//                 }
+//             }
+//             else{
+//                 let adjacentBlock = getAdjacentBlock(block, blockFace)
+//                 if(itemStack.typeId === adjacentBlock.typeId){
+//                     adjacentBlock.setPermutation(adjacentBlock.permutation.withState('ps:double', true)); 
+//                     adjacentBlock.dimension.playSound('use.wood', adjacentBlock.location);
+//                     setMainHand(source, equipment, selectedItem, undefined);
+//                 }
+//             }
+//         }
+//     });
+// });
+

@@ -16,7 +16,6 @@
 			  }
 		},
 		"components": {
-			"minecraft:custom_components": ["ps:bop_slab"],
 			"tag:slab": {},
 			"minecraft:light_dampening": 4,
 			"minecraft:map_color": "#80a843",
