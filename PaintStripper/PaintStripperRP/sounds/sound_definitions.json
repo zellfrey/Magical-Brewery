@@ -1,0 +1,16 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"ps:block.cask.creak": {
+            "category": "block",
+            "max_distance": 8,
+            "sounds": [
+                "sounds/block/cask/creak1",
+                "sounds/block/cask/creak2",
+                "sounds/block/cask/creak3",
+                "sounds/block/cask/creak4",
+                "sounds/block/cask/creak5"
+            ]
+        }
+	}
+}

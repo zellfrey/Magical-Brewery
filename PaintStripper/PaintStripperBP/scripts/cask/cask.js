@@ -188,11 +188,8 @@ function ageCask(block, dimension){
     
     if(!canAge) return;
 
-    const rgba = block.getComponent("minecraft:map_color").color
-    const molang = new MolangVariableMap();
-    molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
-    dimension.spawnParticle("minecraft:mobspell_emitter", block.center(), molang);
-
+    createAgeingFeedback(block, cask.potion_effects.length)
+    
     const fillLevel = block.permutation.getState("ps:fill_level");
     const timeToAge = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
     const hasAged = timeToAge <= system.currentTick
@@ -336,7 +333,18 @@ export function setPotionEffectForCask(caskTag, cask, caskSealAge){
     cask.potion_effects.push(effectName);  
     updateCask(cask);
 }
+function createAgeingFeedback(block, noOfPotions){
+    
+    const rgba = block.getComponent("minecraft:map_color").color
+    const molang = new MolangVariableMap();
+    molang.setColorRGBA("variable.color", { red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha});
+    block.dimension.spawnParticle("minecraft:mobspell_emitter", block.center(), molang);
 
+    if(Math.random() <= 0.1){
+        const vol = 0.7 + (noOfPotions/10);
+        block.dimension.playSound("ps:block.cask.creak", block.location, {volume: vol, pitch: 1.5});
+    }
+}
 function caskTagToEffectId(caskTag){
     let name;
     switch(caskTag){
