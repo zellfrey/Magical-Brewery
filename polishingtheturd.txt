@@ -7,32 +7,10 @@ TODO: Implement charge level textures.
 TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
 TODO: utilise vector maths from @minecraft/maths module
 Todo;
-Finish crystal cleansing,
-Implement times taken for each method
-Lunar charging requires a block height above the clouds
-Implement unique particles for each method. 
-The transformation of dust to pure version should have a particle effect
-Implement wood creakingg sounds
-Implement check tick so the cask can age appropriately when the chunk is loaded back in same with crystal cleaning
 Give better feed with tasting spoon. 
 Play around with mod, get nick in 
-Fix slab placement
-Fix isAir check for crystals
 Update casks to class system,
-Separate slab geo 
-Crystals:
-    Echo Shards:
-    Red Shards:
-    Glow Shards:
-    Quartz shards:
-    General:
 
-Stained Woods:
-Stained Slabs:
- 
-Seals:
-Items:
-Potions:
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier
 TODO: Make function to spawn multiple splash/lingering potions that have extra effects
@@ -43,3 +21,58 @@ Blocks:
 TODO: look into minecraft:item_visual component. Maybe be able to compact mod
 
 
+-----V2 polishingtheturd
+
+Go through gameplay
+
+Crystal tree
+Cleaning crystal
+1. Obtain Redstone, quartz, and glowstone - DONE
+2. Clean Redstone, quartz, and glowstone with brush - DONE
+3. Clean crystals using, washing, heating and lunar charging method
+    TODO: Implement sound effects and particle effects to each cleaning method
+    TODO: Make entity objects persist during reload
+    TODO: Balance time for each time
+    TODO: Create particle effect that "transforms" the items on each cleaning completion.
+    TODO: Create final particle completion on creating a pure form crystal
+    TODO: do some renaming of functions
+4. Once pure shards are obtained, create crystal seeds
+    TODO: Update echo shard seed recipe
+    TODO: Update pure quartz shard seed recipe
+Cystal seeds
+5. Find the right block, hit seeds into block.
+    TODO: Make glasssmith hammer recipe
+    TODO: Allow seeds to be placed anywhere
+    TODO: change it that they can drop the item rather than being destroyed
+    TODO: Pistons pop seed block
+6. Depending on the environment, let the seeds grow to then become a budding crystal
+growing crystals
+7. Crystals growing in dependant environment.
+    - pure quartz can be grown anywhere
+    - redstone requires to be under the ground below y = 0
+    - glowstone requires to be in the nether
+    - echo shards can be grown anywhere
+8. Let budding crystals grow creating crystals
+    TODO: Solve "isAir" bug 
+    TODO: Create objects so 
+    TODO: Pistons pop crystals
+    TODO: Pistons destroy budding blocks
+9. Mine shards to then use for recipes
+    TODO: Update red shard image
+Using recipes
+1. Shards can be used for shard Blocks
+2. Shards can be turned into powders
+Cask/Ageing tree
+
+General
+TODO: Rename addon and pre-fixes to "magical_brewery"
+TODO: Rename files with appropriate aliases e.g "dust.item" or "cask.block"
+TODO: Rename folder structure and add author name: https://github.com/microsoft/minecraft-samples/tree/main/casual_creator/gray_wave/behavior_packs/mikeamm_gwve/loot_tables
+TODO: Look into particle systems
+1 kg of floury potatoes
+100 grams of flour
+2 egg yolks
+
+
+1000:100:2
+500:50:1

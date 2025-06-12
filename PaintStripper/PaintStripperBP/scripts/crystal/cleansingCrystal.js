@@ -1,4 +1,4 @@
-import {world, system, ItemStack} from "@minecraft/server";
+import {world, system, ItemStack,MolangVariableMap} from "@minecraft/server";
 import {neighbouringCross} from "utils/blockPlacementUtils.js";
 
 const crystalEntityIds=[]
@@ -19,14 +19,16 @@ class Crystal {
         const location = this.block.location
         let isCandleCrossValid = this.getCandleCross().every(el =>validCandle(el, this.crystalCandle))
         
-        if(!this.lore.includes('§7Washed') && this.block.typeId === "minecraft:water" && this.block.below().typeId !== "minecraft:lodestone"){
+        if(!this.lore.includes('§7Washed') && this.block.typeId === "minecraft:water" 
+        && this.block.below().typeId !== "minecraft:lodestone"){
+
             const washing = system.runInterval(() => {
-                console.log("washing")
                 if(!entityExists(id, location, dim) || this.block.typeId !== "minecraft:water" 
                 || this.block.below().typeId === "minecraft:lodestone"){
                     system.clearRun(washing)
                     return;
-                }  
+                }
+
                 if(this.initialTick + 240 <= system.currentTick){
                     system.clearRun(washing)
                     this.setCrystalLore('§7Washed', dim)
@@ -37,13 +39,16 @@ class Crystal {
         if(!this.lore.includes('§7Heat treated') && isCandleCrossValid && this.block.typeId === "minecraft:air"){
             
             const heating = system.runInterval(() => {
-                console.log("heating")
+                 
                 isCandleCrossValid = this.getCandleCross().every(el =>validCandle(el, this.crystalCandle))
                 if(!entityExists(id, location, dim) || !isCandleCrossValid || this.block.typeId !== "minecraft:air"
                     || this.block.below().typeId === "minecraft:lodestone"){
                     system.clearRun(heating)
                     return;
-                }  
+                }
+            //     const molang = new MolangVariableMap();
+            //     molang.setColorRGBA("variable.color", { red: 3, green: 4, blue: 3, alpha: 0});
+            //    dim.spawnParticle("minecraft:colored_flame_particle", this.entity.location);  
                 if(this.initialTick + 240 <= system.currentTick){
                     system.clearRun(heating)
                     console.log('§7Heat treated')
@@ -56,23 +61,25 @@ class Crystal {
             && this.block.typeId === "minecraft:air"){
             
             const moon = system.runInterval(() => {
+                
+                if(!entityExists(id, location, dim)){
+                    system.clearRun(moon)
+                    return;
+                }
                 const time = world.getTimeOfDay();
                 const moonPhase = world.getMoonPhase();
                 const {x,y,z} = this.block.location
                 const topBlock = this.entity.dimension.getTopmostBlock({x,z})
-                console.log("lunar charging")
-                if((time >= 15000 && time <= 20000) && moonPhase === 0){
-
-                    if(!entityExists(id, location, dim) 
-                    || (JSON.stringify(topBlock.location) !== JSON.stringify(this.block.below().location))){
-                        system.clearRun(moon)
-                        return;
-                    }
-                    if(this.initialTick + 240 <= system.currentTick){
-                        system.clearRun(moon)
-                        console.log('§7Lunar charged')
-                        this.setCrystalLore('§7Lunar charged', dim)
-                    }
+                
+                if((JSON.stringify(topBlock.location) !== JSON.stringify(this.block.below().location)) 
+                    || !(time >= 15000 && time <= 20000) || moonPhase !== 0){
+                    system.clearRun(moon)
+                    return;
+                }
+                if(this.initialTick + 240 <= system.currentTick){
+                    system.clearRun(moon)
+                    console.log('§7Lunar charged')
+                    this.setCrystalLore('§7Lunar charged', dim)
                 }
                 
             }, 30);
@@ -144,7 +151,6 @@ function entityExists(entityId, location, dimension){
     }  
     for(let i = 0; i < entities.length; i++){
         if(entities[i].id === entityId){
-             console.log("exists?")
             return true;
         }
     }
@@ -155,17 +161,20 @@ function entityExists(entityId, location, dimension){
 const siftedItems = ["ps:sifted_quartz", "ps:sifted_redstone_dust", "ps:sifted_glowstone_dust"]
 world.afterEvents.entitySpawn.subscribe(async (e) => {
     const {entity} = e;
-    
-    if(entity.typeId !== "minecraft:item") return;
-    const item = entity.getComponent("item").itemStack;
-    if(!siftedItems.includes(item.typeId)) return;
-    await system.waitTicks(40);
     try{
-        const block = entity.dimension.getBlock(entity.location);
+        if(entity.typeId !== "minecraft:item") return;
+        const item = entity.getComponent("item").itemStack;
+        if(!siftedItems.includes(item.typeId)) return;
+        await system.waitTicks(40);
+        let block;
+        block = entity.dimension.getBlock(entity.location);
         if(!entityExists(entity.id, block.location, entity.dimension)) return; 
+
         const crystal = new Crystal(entity, block, item.getLore(), system.currentTick);
         crystal.cleanCrystal();
-    }catch(e){
-        console.warn("Magical Brewery: Sifted Item Entity wasn't found " + e)
+    }catch(error){
+        // console.warn("Magical Brewery: Sifted Item Entity wasn't found " + e)
+        //Look there is going to be an error the entity disappears during the await period.
+        //This is fine. Im just supressing the error
     }
 });
