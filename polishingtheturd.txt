@@ -37,11 +37,11 @@ Cleaning crystal
     TODO: Create final particle completion on creating a pure form crystal
     TODO: do some renaming of functions
 4. Once pure shards are obtained, create crystal seeds
-    TODO: Update echo shard seed recipe
-    TODO: Update pure quartz shard seed recipe
+    TODO: Update echo shard seed recipe - DONE
+    TODO: Update pure quartz shard seed recipe - DONE
 Cystal seeds
 5. Find the right block, hit seeds into block.
-    TODO: Make glasssmith hammer recipe
+    TODO: Make glasssmith hammer recipe - DONE
     TODO: Allow seeds to be placed anywhere
     TODO: change it that they can drop the item rather than being destroyed
     TODO: Pistons pop seed block
@@ -54,7 +54,7 @@ growing crystals
     - echo shards can be grown anywhere
 8. Let budding crystals grow creating crystals
     TODO: Solve "isAir" bug 
-    TODO: Create objects so 
+    TODO: Create objects so crystals can "grow" even when you arent in the chunk
     TODO: Pistons pop crystals
     TODO: Pistons destroy budding blocks
 9. Mine shards to then use for recipes

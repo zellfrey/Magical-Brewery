@@ -5,7 +5,7 @@
           "identifier": "ps:seed_pure_quartz"
       },
       "tags": ["crafting_table"],
-      "pattern": ["QQQ", "QSQ", "QQQ"],
+      "pattern": [" Q ", "QSQ", " Q "],
       "key": {
           "Q": "ps:pure_quartz_shard",
           "S": "minecraft:stone"
