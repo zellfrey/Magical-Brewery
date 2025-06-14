@@ -18,7 +18,7 @@
   "ps:large_pure_quartz_bud":{
     "sound" : "amethyst_cluster"
   },
-  "ps:seed_pure_quartz":{
+  "ps:pure_quartz_seed":{
     "sound" : "amethyst_block"
   },
   "ps:budding_echo":{
@@ -39,7 +39,7 @@
   "ps:large_echo_bud":{
     "sound" : "amethyst_cluster"
   },
-  "ps:seed_echo":{
+  "ps:echo_seed":{
     "sound" : "amethyst_block"
   },
   "ps:budding_glowstone":{
@@ -60,7 +60,7 @@
   "ps:large_glowstone_bud":{
     "sound" : "amethyst_cluster"
   },
-  "ps:seed_glowstone":{
+  "ps:glowstone_seed":{
     "sound" : "amethyst_block"
   },
   "ps:budding_redstone":{
@@ -81,10 +81,10 @@
   "ps:large_redstone_bud":{
     "sound" : "amethyst_cluster"
   },
-  "ps:seed_redstone":{
+  "ps:redstone_seed":{
     "sound" : "amethyst_block"
   },
-  "ps:seed_amethyst":{
+  "ps:amethyst_seed":{
     "sound" : "amethyst_block"
   },
   

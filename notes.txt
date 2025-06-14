@@ -188,11 +188,9 @@ TODO: Send messages using .lang file. Currently its in english - backburner
 TODO: Revise each crystal texture, look into crystal systems and structures
 TODO: WindCharging split to make more readable
 TODO: Evaluate seed placements, allow placement on any blocks. Players will need to find the right block that can produce a budding block
-TODO: implement seal lifetime, 
 TODO: Allow players to break seeds and give back the seed item
 TODO: add burper
 TODO: Allow bottle to be filled from cauldron and waterlogged blocks
 cool world seed -4555157900916148182
 TODO: Re-design cask database, classes. Array, save DB every 5 mins not every operation
 Hipshot joe
-

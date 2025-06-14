@@ -42,6 +42,7 @@ Cleaning crystal
 Cystal seeds
 5. Find the right block, hit seeds into block.
     TODO: Make glasssmith hammer recipe - DONE
+    TODO: Glassmith hammer durability, -1 every seed hit
     TODO: Allow seeds to be placed anywhere
     TODO: change it that they can drop the item rather than being destroyed
     TODO: Pistons pop seed block
@@ -66,13 +67,15 @@ Cask/Ageing tree
 
 General
 TODO: Rename addon and pre-fixes to "magical_brewery"
-TODO: Rename files with appropriate aliases e.g "dust.item" or "cask.block"
-TODO: Rename folder structure and add author name: https://github.com/microsoft/minecraft-samples/tree/main/casual_creator/gray_wave/behavior_packs/mikeamm_gwve/loot_tables
 TODO: Look into particle systems
+
+TODO; Polish budding crystal code
+
+
+
 1 kg of floury potatoes
 100 grams of flour
 2 egg yolks
-
 
 1000:100:2
 500:50:1

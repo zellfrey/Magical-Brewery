@@ -7,7 +7,7 @@ system.beforeEvents.startup.subscribe(eventData => {
         onRandomTick(e) {
             const { block } = e;
 
-            const crystalType = block.typeId.slice(8);
+            const crystalType = block.typeId.slice(3,-5);
             const face = block.permutation.getState("minecraft:block_face");
             const rotation = Math.floor(Math.random() * 4)
 
