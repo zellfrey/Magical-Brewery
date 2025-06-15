@@ -11,9 +11,8 @@ world.beforeEvents.playerBreakBlock.subscribe((e) => {
     if(!player || player.getGameMode() === "creative" || !player.getComponent('equippable')) return;
 
     const validBlock = nonSilkTouchBlocks.find((e) => e === block.typeId);
-    const crystalSeed = block.getTags()[0] === "crystal_seed"
     
-    if(validBlock || crystalSeed){
+    if(validBlock){
         let hasSilkTouch = false;
         const equipment = player.getComponent('equippable');
         const selectedItem = equipment.getEquipment('Mainhand');

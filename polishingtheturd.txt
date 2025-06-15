@@ -42,9 +42,9 @@ Cleaning crystal
 Cystal seeds
 5. Find the right block, hit seeds into block.
     TODO: Make glasssmith hammer recipe - DONE
-    TODO: Glassmith hammer durability, -1 every seed hit
+    TODO: Glassmith hammer durability, -1 every seed hit - DONE
     TODO: Allow seeds to be placed anywhere
-    TODO: change it that they can drop the item rather than being destroyed
+    TODO: change it that they can drop the item rather than being destroyed - DONE
     TODO: Pistons pop seed block
 6. Depending on the environment, let the seeds grow to then become a budding crystal
 growing crystals
@@ -58,6 +58,7 @@ growing crystals
     TODO: Create objects so crystals can "grow" even when you arent in the chunk
     TODO: Pistons pop crystals
     TODO: Pistons destroy budding blocks
+    TODO: Update each bud, cluster & budding crystal with specific mining times
 9. Mine shards to then use for recipes
     TODO: Update red shard image
 Using recipes
@@ -79,3 +80,17 @@ TODO; Polish budding crystal code
 
 1000:100:2
 500:50:1
+
+"tag:minecraft:is_pickaxe_item_destructible": {},
+"tag:minecraft:is_axe_item_destructible": {},
+minecraft:is_axe_item_destructible
+"tag:minecraft:is_pickaxe_item_destructible": {},
+        "minecraft:friction": 0.4,
+        "minecraft:geometry": "minecraft:geometry.cross",
+        "minecraft:loot": "loot_tables/beardedflea/blocks/crystals/echo_shards/echo_cluster.loot.json",
+        "minecraft:map_color": "#4C7F99",
+        "minecraft:light_emission": 3,
+        "minecraft:destructible_by_mining": {
+            "seconds_to_destroy": 1.75
+            
+        },
