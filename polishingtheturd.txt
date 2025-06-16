@@ -58,7 +58,7 @@ growing crystals
     TODO: Create objects so crystals can "grow" even when you arent in the chunk
     TODO: Pistons pop crystals
     TODO: Pistons destroy budding blocks
-    TODO: Update each bud, cluster & budding crystal with specific mining times
+    TODO: Update each bud, cluster & budding crystal with specific mining times - DONE
 9. Mine shards to then use for recipes
     TODO: Update red shard image
 Using recipes

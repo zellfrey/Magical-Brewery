@@ -14,6 +14,7 @@
         }
     },
     "components": {
+        "tag:minecraft:is_pickaxe_item_destructible": {},
         "tag:glowstone_bud": {},
         "minecraft:friction": 0.4,
         "minecraft:geometry": "minecraft:geometry.cross",
@@ -21,33 +22,7 @@
         "minecraft:loot": "loot_tables/beardedflea/blocks/crystals/glow_shards/large_glowstone_bud.loot.json",
         "minecraft:map_color": "#F7E9A3",
         "minecraft:destructible_by_mining": {
-            "seconds_to_destroy": 1.5,
-            "item_specific_speeds": [
-                {
-                    "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:wooden_tier')"},
-                    "destroy_speed": 1.15
-                },
-                {
-                    "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:stone_tier')"},
-                    "destroy_speed": 0.6
-                },
-                {
-                    "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:iron_tier')"},
-                    "destroy_speed": 0.4
-                },
-                {
-                    "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:diamond_tier')"},
-                    "destroy_speed": 0.3
-                },
-                {
-                    "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:netherite_tier')"},
-                    "destroy_speed": 0.25
-                },
-                {
-                    "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:golden_tier')"},
-                    "destroy_speed": 0.2
-                }
-            ]
+            "seconds_to_destroy": 1.5
         },
         "minecraft:destructible_by_explosion": {
             "explosion_resistance": 1.5
