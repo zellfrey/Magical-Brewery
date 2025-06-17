@@ -1,4 +1,5 @@
 import {world, system, ItemStack } from "@minecraft/server";
+import {BuddingCrystal} from "crystal/buddingCrystal.js";
 
 //Functions are structured in terms of gameplay progression. 
 //seed to growing crystal
@@ -52,6 +53,7 @@ export function crystalGrowth(block, seedStage){
                 block.setType("ps:budding_pure_quartz");
             break;
         }
+        new BuddingCrystal(block.location, block.dimension.id, system.currentTick)
     }else{
         block.setPermutation(block.permutation.withState('ps:crystal_stage', seedStage+1)); 
     }
