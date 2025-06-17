@@ -24,7 +24,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_cask', {
-        onPlayerDestroy(e) {
+        onPlayerBreak(e) {
             const {block, dimension} = e;
             // const fillLevel = block.permutation.getState("ps:fill_level");
 

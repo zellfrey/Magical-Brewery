@@ -11,7 +11,7 @@ system.beforeEvents.startup.subscribe(eventData => {
         onUseOn(e) {
             const {block, source} = e;
 
-            if(!source.isOp()) {
+            if(source.playerPermissionLevel != 2) {
                 source.sendMessage("You do not have the strength to use such an artifact!")
                 return;
             }

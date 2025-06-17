@@ -4,7 +4,7 @@ import {getAdjacentBlock} from "./utils/blockPlacementUtils.js";
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_slab', {
-        onPlayerDestroy(e) {
+        onPlayerBreak(e) {
             const {player, destroyedBlockPermutation: perm } = e;
 
             if (!player || !player.getComponent('equippable'))  return;

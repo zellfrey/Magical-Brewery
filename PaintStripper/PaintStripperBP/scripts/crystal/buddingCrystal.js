@@ -28,12 +28,13 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:opd_bud_glowstone', {
-        onPlayerDestroy(e) {
+        onPlayerBreak(e) {
             const {block, dimension} = e;
             // const fillLevel = block.permutation.getState("ps:fill_level");
 
             // if(fillLevel > 0) 
             // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
+            console.log("breaking cask")
             deleteCask(dimension.id, block.location);
         }
     });
