@@ -22,13 +22,14 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const rotation = Math.floor(Math.random() * 4)
                 block.setPermutation(block.permutation.withState("ps:crystal_rotation", rotation));
                 crystalGrowth(block, seedStage)
-                source.sendMessage("The crystal creaks as it grows from the passage of time") 
+                // source.sendMessage("The crystal creaks as it grows from the passage of time") 
 
             }else if(buddingCrystals.includes(block.typeId)){
                 const buddingCrystal = buddingCrystals.find(bud => bud === block.typeId)
 
                 switch(buddingCrystal){
                     case "ps:budding_glowstone":
+                        if(block.dimension.id !== "minecraft:nether") return;
                         forceGrowCrystal(block, "glowstone_bud", "glowstone", -14)
                     break;
                     case "ps:budding_redstone":
@@ -41,7 +42,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                         forceGrowCrystal(block, "echo_bud", "echo", -9)
                     break;
                 }
-                source.sendMessage("Sparks fly out of the budding crystal as its forced to grow shards.") 
+                // source.sendMessage("Sparks fly out of the budding crystal as its forced to grow shards.") 
 
             }else if(block.typeId.includes("ps:cask")){
                 const {x,y,z} = block.location;

@@ -1,82 +1,72 @@
 import {world, system, ItemStack } from "@minecraft/server";
 
-const buddingCrystals = []
+const BUDDING_BLOCK_IDS = ["ps:budding_pure_quartz", "ps:budding_redstone", "ps:budding_glowstone", "ps:budding_echo"]
 export class BuddingCrystal {
+
+    static buddingCrystals = []
+
     constructor(location, dimensionID, previousTick) {
         this.location = location
         this.dimension  = dimensionID
-        this.previousTick = previousTick;
-        buddingCrystals.push(this)
-        console.log(buddingCrystals.length)
+        this.previousTick = previousTick;    
+        BuddingCrystal.buddingCrystals.push(this)
+    }
+
+    setPreviousTick(tick){
+        this.previousTick = tick;
+    }
+
+    static createBuddingCrystal(location, dimensionID, previousTick){
+        new BuddingCrystal(location, dimensionID, previousTick)
+        
+        let getBuddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
+        if (getBuddingCrystalData) {
+            getBuddingCrystalData = JSON.parse(getBuddingCrystalData)
+            getBuddingCrystalData.push(BuddingCrystal.buddingCrystals[BuddingCrystal.buddingCrystals.length-1])
+        } else {
+            getBuddingCrystalData = [BuddingCrystal.buddingCrystals[0]]
+        }
+        world.setDynamicProperty('magical_brewery:budding_crystal_data', JSON.stringify(getBuddingCrystalData))
+        console.log(BuddingCrystal.buddingCrystals.length)
+        console.log(getBuddingCrystalData.length)
+    }
+
+    static destroyCrystal(blockLocation, blockDimensionID){
+        const index = BuddingCrystal.findIndexCrystal(blockLocation, blockDimensionID)
+
+        BuddingCrystal.buddingCrystals.splice(index, 1)
+        
+        const buddingCrystalsData = JSON.parse(world.getDynamicProperty('magical_brewery:budding_crystal_data'));
+        buddingCrystalsData.splice(index, 1);
+        world.setDynamicProperty('magical_brewery:budding_crystal_data', JSON.stringify(buddingCrystalsData))
+    }
+
+    static findIndexCrystal(blockLocation, blockDimensionID){
+        return BuddingCrystal.buddingCrystals.findIndex(el => JSON.stringify(el.location) == JSON.stringify(blockLocation) 
+                                                            && el.dimension === blockDimensionID)
     }
 }
-//glowstone cluster growth via budding glowstone
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_glowstone_growth', {
-        onRandomTick(e) {
-            canCrystalGrow(e.block, "glowstone_bud", "glowstone", -14)
-        }
-    });
-});
 
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:op_bud_glowstone', {
-        onPlace(e) {
-            new BuddingCrystal(e.block.location, e.block.dimension.id, system.currentTick)
-        }
-    });
-});
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_bud_glowstone', {
-        onPlayerBreak(e) {
-            const {block, dimension} = e;
-            // const fillLevel = block.permutation.getState("ps:fill_level");
-
-            // if(fillLevel > 0) 
-            // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
-            console.log("breaking cask")
-            deleteCask(dimension.id, block.location);
-        }
-    });
-});
-
-//redstone cluster growth via budding redstone
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_redstone_growth', {
-        onRandomTick(e) {
-            canCrystalGrow(e.block, "redstone_bud", "redstone", -13)
-        }
-    });
-});
-
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_pure_quartz_growth', {
-        onRandomTick(e) {
-            canCrystalGrow(e.block, "pure_quartz_bud", "pure_quartz", -16)
-        }
-    });
-});
-
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_bud_echo_growth', {
-        onRandomTick(e) {
-            canCrystalGrow(e.block, "echo_bud", "echo", -9)
-        }
-    });
-});
-
-
-function canCrystalGrow(block, budType, crystalType, lastCharNum){
-    console.log(system.currentTick)
-    if(Math.floor(Math.random() * 100) > 20) return;
-            
-    const validBlocks = getSurroundingBlocks(block, budType)
+function crystalGrowth(block, budType, crystalType, lastCharNum){
+    let buddingCrystal = BuddingCrystal.buddingCrystals[BuddingCrystal.findIndexCrystal(block.location, block.dimension.id)]
+    console.log(buddingCrystal.previousTick)
+    let unloadTimeCompensation = 1;
+    let blockUnloadedTime = system.currentTick - buddingCrystal.previousTick
     
-    if(validBlocks.length === 0) return;
-
-    const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
+    if(blockUnloadedTime >= 8000) unloadTimeCompensation += Math.trunc(blockUnloadedTime/8000)
+    
+    buddingCrystal.setPreviousTick(system.currentTick)
+    for(let i = 0; i < unloadTimeCompensation; i++){
+        if(Math.floor(Math.random() * 100) > 20) continue;
             
-    growCrystalBud(budToGrow, crystalType, 3, lastCharNum)
+        const validBlocks = getSurroundingBlocks(block, budType)
+    
+        if(validBlocks.length === 0) return;
+
+        const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
+            
+        growCrystalBud(budToGrow, crystalType, 3, lastCharNum)
+    }
 }
 
 
@@ -108,3 +98,60 @@ export function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum)
     selectedBlock.block.setType(newSize)
     selectedBlock.block.setPermutation(selectedBlock.block.permutation.withState("minecraft:block_face", selectedBlock.face));
 }
+
+//This is also triggered when a growing crystal transforms to a budding crystal
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_budding_crystal_place', {
+        onPlace(e) {
+            BuddingCrystal.createBuddingCrystal(e.block.location, e.block.dimension.id, system.currentTick)
+        }
+    });
+});
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_budding_crystal_destroy', {
+        onPlayerBreak(e) {
+            BuddingCrystal.destroyCrystal(e.block.location, e.dimension.id)
+        }
+    });
+});
+
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_budding_crystal_growth', {
+        onRandomTick(e) {
+            switch(e.block.typeId){
+                case "ps:budding_glowstone":
+                    if(e.block.dimension.id !== "minecraft:nether") return;
+                    crystalGrowth(e.block, "glowstone_bud", "glowstone", -14)
+                break;
+                case "ps:budding_redstone":
+                    crystalGrowth(e.block, "redstone_bud", "redstone", -13)
+                break;
+                case "ps:budding_pure_quartz":
+                    crystalGrowth(e.block, "pure_quartz_bud", "pure_quartz", -16)
+                break;
+                case "ps:budding_echo":
+                    crystalGrowth(e.block, "echo_bud", "echo", -9)
+                break;
+            }
+        }
+    });
+});
+
+world.afterEvents.worldLoad.subscribe((e) => {
+    console.log("loading budding crystal data")
+    let getBuddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
+    if(!getBuddingCrystalData || getBuddingCrystalData.length === 0) return;
+
+    getBuddingCrystalData = JSON.parse(getBuddingCrystalData)
+
+    getBuddingCrystalData.forEach(crystal => {new BuddingCrystal(crystal.location, crystal.dimension, crystal.previousTick)});
+});
+
+world.afterEvents.blockExplode.subscribe((e) => {
+    const { block, explodedBlockPermutation} = e;
+
+    const validBlock = BUDDING_BLOCK_IDS.find((el) => el === explodedBlockPermutation.type.id);
+    if(validBlock){
+        BuddingCrystal.destroyCrystal(block.location, block.dimension.id)
+    }
+});

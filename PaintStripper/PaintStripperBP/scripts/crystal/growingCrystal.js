@@ -1,5 +1,4 @@
 import {world, system, ItemStack } from "@minecraft/server";
-import {BuddingCrystal} from "crystal/buddingCrystal.js";
 
 //Functions are structured in terms of gameplay progression. 
 //seed to growing crystal
@@ -7,6 +6,7 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_seed_to_crystal', {
         onRandomTick(e) {
             const { block } = e;
+            if(block.typeId === "ps:glowstone_seed" && block.dimension.id !== "minecraft:nether") return;
 
             const crystalType = block.typeId.slice(3,-5);
             const face = block.permutation.getState("minecraft:block_face");
@@ -25,11 +25,9 @@ system.beforeEvents.startup.subscribe(eventData => {
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('ps:ort_crystal_growth', {
         onRandomTick(e) {
-            const { block } = e;
-
-            const seedStage = block.permutation.getState('ps:crystal_stage');
+            const seedStage = e.block.permutation.getState('ps:crystal_stage');
             
-            crystalGrowth(block, seedStage) 
+            crystalGrowth(e.block, seedStage) 
         }
     });
 });
@@ -53,7 +51,8 @@ export function crystalGrowth(block, seedStage){
                 block.setType("ps:budding_pure_quartz");
             break;
         }
-        new BuddingCrystal(block.location, block.dimension.id, system.currentTick)
+        //Setting the block type triggers the budding crystal "onPlace" event. So creating a new BuddingCrystal is not only redundant but also
+        //can create 2 objects in the same space. Not good
     }else{
         block.setPermutation(block.permutation.withState('ps:crystal_stage', seedStage+1)); 
     }

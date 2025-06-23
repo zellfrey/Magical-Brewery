@@ -49,16 +49,19 @@ Cystal seeds
 6. Depending on the environment, let the seeds grow to then become a budding crystal
 growing crystals
 7. Crystals growing in dependant environment.
-    - pure quartz can be grown anywhere
-    - redstone requires to be under the ground below y = 0
-    - glowstone requires to be in the nether
-    - echo shards can be grown anywhere
+    - pure quartz can be grown anywhere - DONE
+    - redstone requires to be under the ground below - DONE
+    - glowstone requires to be in the nether - DONE
+    - echo shards can be grown anywhere - DONE
 8. Let budding crystals grow creating crystals
-    TODO: Solve "isAir" bug 
-    TODO: Create objects so crystals can "grow" even when you arent in the chunk
+    TODO: Solve "isAir" bug - DONE
+    TODO: Create objects so crystals can "grow" even when you arent in the chunk - DONE
+    TODO: Detect when chunkloads to trigger crystalgrowth - BACKBURNER/not possible(supposedly)
+    TODO: increase compensation time threshold - DONE
     TODO: Pistons pop crystals
     TODO: Pistons destroy budding blocks
     TODO: Update each bud, cluster & budding crystal with specific mining times - DONE
+    TODO: Crystal objects are deleted when block is destroyed - DONE
 9. Mine shards to then use for recipes
     TODO: Update red shard image
 Using recipes
@@ -70,9 +73,13 @@ General
 TODO: Rename addon and pre-fixes to "magical_brewery"
 TODO: Look into particle systems
 
-TODO; Polish budding crystal code
+TODO; Polish budding crystal code - DONE
 
-
+"minecraft:movable": {
+            "movement_type": "popped"
+}
+"immovable"
+"push_pull"
 
 1 kg of floury potatoes
 100 grams of flour
@@ -83,14 +90,3 @@ TODO; Polish budding crystal code
 
 "tag:minecraft:is_pickaxe_item_destructible": {},
 "tag:minecraft:is_axe_item_destructible": {},
-minecraft:is_axe_item_destructible
-"tag:minecraft:is_pickaxe_item_destructible": {},
-        "minecraft:friction": 0.4,
-        "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:loot": "loot_tables/beardedflea/blocks/crystals/echo_shards/echo_cluster.loot.json",
-        "minecraft:map_color": "#4C7F99",
-        "minecraft:light_emission": 3,
-        "minecraft:destructible_by_mining": {
-            "seconds_to_destroy": 1.75
-            
-        },
