@@ -1,18 +1,18 @@
 {
-    "format_version": "1.21.10",
-    "minecraft:item": {
-      "description": {
-        "identifier": "ps:pure_quartz_shard",
-        "menu_category": {
-                "category": "items"
-            }
-      }, 
-      "components": {
-        "minecraft:hand_equipped": false,
-        "minecraft:icon": "pure_quartz_shard",
-        "minecraft:display_name":{
-          "value": "item.ps:pure_quartz_shard.name"
-        }
-      }
-    }
-  }
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ps:pure_quartz_shard",
+			"menu_category": {
+				"category": "items"
+			}
+		}, 
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:icon": "pure_quartz_shard",
+			"minecraft:display_name":{
+				"value": "item.ps:pure_quartz_shard.name"
+			}
+		}
+	}
+}

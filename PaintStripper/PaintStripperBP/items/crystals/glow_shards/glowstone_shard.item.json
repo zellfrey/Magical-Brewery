@@ -1,18 +1,18 @@
 {
-    "format_version": "1.21.10",
-    "minecraft:item": {
-      "description": {
-        "identifier": "ps:glowstone_shard",
-        "menu_category": {
-                "category": "items"
-            }
-      }, 
-      "components": {
-        "minecraft:hand_equipped": false,
-        "minecraft:icon": "glowstone_shard",
-        "minecraft:display_name":{
-          "value": "item.ps:glowstone_shard.name"
-        }
-      }
-    }
-  }
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ps:glowstone_shard",
+			"menu_category": {
+				"category": "items"
+			}
+		}, 
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:icon": "glowstone_shard",
+			"minecraft:display_name":{
+				"value": "item.ps:glowstone_shard.name"
+			}
+		}
+	}
+}

@@ -1,24 +1,24 @@
 {
-    "format_version": "1.21.10",
-    "minecraft:item": {
-      "description": {
-        "identifier": "ps:seal_basic",
-        "menu_category": {
-                "category": "items"
-            }
-      }, 
-      "components": {
-        "minecraft:hand_equipped": false,
-        "minecraft:max_stack_size": {
-          "value": 16
-        },
-        "minecraft:icon": "seal_basic",
-        "minecraft:display_name":{
-          "value": "item.ps:seal_basic.name"
-        },
-        "minecraft:block_placer": {
-          "block": "ps:seal_basic"
-        }
-      }
-    }
-  }
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ps:seal_basic",
+			"menu_category": {
+				"category": "items"
+			}
+		}, 
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:max_stack_size": {
+				"value": 16
+			},
+			"minecraft:icon": "seal_basic",
+			"minecraft:display_name":{
+				"value": "item.ps:seal_basic.name"
+			},
+			"minecraft:block_placer": {
+				"block": "ps:seal_basic"
+			}
+		}
+	}
+}

@@ -1,18 +1,18 @@
 {
-    "format_version": "1.21.10",
-    "minecraft:item": {
-      "description": {
-        "identifier": "ps:echo_dust",
-        "menu_category": {
-                "category": "items"
-            }
-      }, 
-      "components": {
-        "minecraft:hand_equipped": false,
-        "minecraft:icon": "echo_dust",
-        "minecraft:display_name":{
-          "value": "item.ps:echo_dust.name"
-        }
-      }
-    }
-  }
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ps:echo_dust",
+			"menu_category": {
+							"category": "items"
+					}
+		}, 
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:icon": "echo_dust",
+			"minecraft:display_name":{
+				"value": "item.ps:echo_dust.name"
+			}
+		}
+	}
+}

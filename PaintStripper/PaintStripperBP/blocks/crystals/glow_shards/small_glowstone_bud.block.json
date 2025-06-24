@@ -1,94 +1,94 @@
 {
-    "format_version": "1.20.80",
-    "minecraft:block": {
-      "description": {
-        "identifier": "ps:small_glowstone_bud",
-        "menu_category": {
-            "category": "none",
-            "is_hidden_in_commands": true
-        },
-        "traits": {
-          "minecraft:placement_position": {
-            "enabled_states": ["minecraft:block_face"]
-          }
-        }
-    },
-    "components": {
-        "tag:minecraft:is_pickaxe_item_destructible": {},
-        "tag:glowstone_bud": {},
-        "minecraft:friction": 0.4,
-        "minecraft:geometry": "minecraft:geometry.cross",
-        "minecraft:light_emission": 4,
-        "minecraft:loot": "loot_tables/beardedflea/blocks/crystals/glow_shards/small_glowstone_bud.loot.json",
-        "minecraft:map_color": "#F7E9A3",
-        "minecraft:destructible_by_mining": {
-            "seconds_to_destroy": 1.5
-        },
-        "minecraft:destructible_by_explosion": {
-            "explosion_resistance": 1.5
-        },
-        "minecraft:liquid_detection": {
-            "detection_rules": [
-                {
-                    "liquid_type": "water",
-                    "can_contain_liquid": true
-                }
-            ]
-        },
-        "minecraft:material_instances": {
-            "*": {
-            "texture": "small_glowstone_bud",
-            "render_method": "alpha_test_single_sided",
-            "face_dimming": false,
-            "ambient_occlusion": false
-            }
-        },
-        "minecraft:collision_box": {
-            "origin": [-4, 0, -4],
-            "size": [8, 3, 8]
-        },
-        "minecraft:selection_box": {
-            "origin": [-4.0, 0.0, -4.0],
-            "size": [8.0, 3.0, 8.0]
-        }
-    },
-    "permutations": [
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'north'",
-            "components": {
-            "minecraft:transformation": { "rotation": [-90, 0, 0] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'south'",
-            "components": {
-                "minecraft:transformation": { "rotation": [90, 0, 0] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'west'",
-            "components": {
-            "minecraft:transformation": { "rotation": [0, 0, 90] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'east'",
-            "components": {
-                "minecraft:transformation": { "rotation": [0, 0, -90] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'up'",
-            "components": {
-            "minecraft:transformation": { "rotation": [0, 0, 0] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'down'",
-            "components": {
-                "minecraft:transformation": { "rotation": [-180, 0, 0] }
-            }
-        }
-      ]
-    }
+	"format_version": "1.20.80",
+	"minecraft:block": {
+	  "description": {
+		"identifier": "ps:small_glowstone_bud",
+		"menu_category": {
+			"category": "none",
+			"is_hidden_in_commands": true
+		},
+		"traits": {
+			"minecraft:placement_position": {
+				"enabled_states": ["minecraft:block_face"]
+			}
+		}
+	},
+	"components": {
+		"tag:minecraft:is_pickaxe_item_destructible": {},
+		"tag:glowstone_bud": {},
+		"minecraft:friction": 0.4,
+		"minecraft:geometry": "minecraft:geometry.cross",
+		"minecraft:light_emission": 4,
+		"minecraft:loot": "loot_tables/beardedflea/blocks/crystals/glow_shards/small_glowstone_bud.loot.json",
+		"minecraft:map_color": "#F7E9A3",
+		"minecraft:destructible_by_mining": {
+			"seconds_to_destroy": 1.5
+		},
+		"minecraft:destructible_by_explosion": {
+			"explosion_resistance": 1.5
+		},
+		"minecraft:liquid_detection": {
+			"detection_rules": [
+				{
+					"liquid_type": "water",
+					"can_contain_liquid": true
+				}
+			]
+		},
+		"minecraft:material_instances": {
+			"*": {
+				"texture": "small_glowstone_bud",
+				"render_method": "alpha_test_single_sided",
+				"face_dimming": false,
+				"ambient_occlusion": false
+			}
+		},
+		"minecraft:collision_box": {
+			"origin": [-4, 0, -4],
+			"size": [8, 3, 8]
+		},
+		"minecraft:selection_box": {
+			"origin": [-4.0, 0.0, -4.0],
+			"size": [8.0, 3.0, 8.0]
+		}
+	},
+	"permutations": [
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'north'",
+				"components": {
+					"minecraft:transformation": { "rotation": [-90, 0, 0] }
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'south'",
+				"components": {
+					"minecraft:transformation": { "rotation": [90, 0, 0] }
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'west'",
+				"components": {
+					"minecraft:transformation": { "rotation": [0, 0, 90] }
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'east'",
+				"components": {
+					"minecraft:transformation": { "rotation": [0, 0, -90] }
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'up'",
+				"components": {
+					"minecraft:transformation": { "rotation": [0, 0, 0] }
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'down'",
+				"components": {
+					"minecraft:transformation": { "rotation": [-180, 0, 0] }
+				}
+			}
+		]
+	}
 }

@@ -2,9 +2,9 @@
 	"pools": [
 		{
 			"rolls": {
-                "min": 1,
-                "max": 2
-            },
+				"min": 1,
+				"max": 2
+			},
 			"entries": [
 				{
 					"type": "item",
@@ -14,30 +14,30 @@
 			]
 		},
 		{
-            "rolls": 1,
-            "conditions": [
-                {
-                    "condition": "match_tool",
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "match_tool",
 					"enchantments": [  
 						{  
 						"enchantment": "silk_touch"
 						}  
 					], 
-                    "item": [
-                        "minecraft:netherite_pickaxe",
-                        "minecraft:diamond_pickaxe",
-                        "minecraft:iron_pickaxe",
+					"item": [
+						"minecraft:netherite_pickaxe",
+						"minecraft:diamond_pickaxe",
+						"minecraft:iron_pickaxe",
 						"minecraft:stone_pickaxe"
-                    ],
-                    "count": 1
-                }
-            ],
-            "entries": [
-                {
-                    "type": "item",
-                    "name": "ps:echo_cluster"
-                }
-            ]
-        }
+					],
+					"count": 1
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "ps:echo_cluster"
+				}
+			]
+		}
 	]
 }

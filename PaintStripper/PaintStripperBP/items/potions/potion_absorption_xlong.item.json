@@ -1,35 +1,33 @@
 {
-    "format_version": "1.21.30",
-    "minecraft:item": {
-      "description": {
-        "identifier": "ps:potion_absorption_xlong",
-        "menu_category": {
-                "category": "equipment"
-            }
-      }, 
-      "components": {
-        "minecraft:custom_components": ["ps:oc_potion"],
-        "minecraft:display_name": {
-				  "value": "%item.ps.generic_potion.name %item.ps.effect_absorption.name \n§7%item.ps.effect_absorption.name (12:00)\n\n§5When Applied:\n§9+2 Hearts"
-			  },
-        "minecraft:tags": {
-            "tags": [
-                "absorption"
-            ]
-        },
-        "minecraft:max_stack_size": {
-            "value": 1
-        },
-        "minecraft:hand_equipped": false,
-        "minecraft:icon": "placeholder",
-        "minecraft:food": {},
-        "minecraft:use_modifiers": {
-          "use_duration": 2,
-          "movement_modifier": 0.35
-        },
-        "minecraft:use_animation": {
-          "value": "drink"
-        }
-      }
-    }
+	"format_version": "1.21.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ps:potion_absorption_xlong",
+			"menu_category": {
+				"category": "equipment"
+			}
+		}, 
+		"components": {
+			"minecraft:custom_components": ["ps:oc_potion"],
+			"minecraft:display_name": {
+				"value": "%item.ps.generic_potion.name %item.ps.effect_absorption.name \n§7%item.ps.effect_absorption.name (12:00)\n\n§5When Applied:\n§9+2 Hearts"
+			},
+			"minecraft:tags": {
+				"tags": ["absorption"]
+			},
+			"minecraft:max_stack_size": {
+				"value": 1
+			},
+			"minecraft:hand_equipped": false,
+			"minecraft:icon": "placeholder",
+			"minecraft:food": {},
+			"minecraft:use_modifiers": {
+				"use_duration": 2,
+				"movement_modifier": 0.35
+			},
+			"minecraft:use_animation": {
+				"value": "drink"
+			}
+		}
+	}
 }

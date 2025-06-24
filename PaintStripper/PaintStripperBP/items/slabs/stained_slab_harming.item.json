@@ -1,21 +1,21 @@
 {
-    "format_version": "1.21.80",
-    "minecraft:item": {
-      "description": {
-        "identifier": "ps:stained_slab_harming",
-        "menu_category": {
-                "category": "construction"
-            }
-      }, 
-      "components": {
-        // "minecraft:custom_components": ["ps:on_use_slab_stained"],
-        "minecraft:display_name":{
-          "value": "tile.ps:stained_slab_harming.name"
-        },
-        "minecraft:block_placer": {
-				        "block": "ps:stained_slab_harming",
-                "replace_block_item": true
-        }
-      }
-    }
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ps:stained_slab_harming",
+			"menu_category": {
+				"category": "construction"
+			}
+		}, 
+		"components": {
+			// "minecraft:custom_components": ["ps:on_use_slab_stained"],
+			"minecraft:display_name":{
+				"value": "tile.ps:stained_slab_harming.name"
+			},
+			"minecraft:block_placer": {
+				"block": "ps:stained_slab_harming",
+				"replace_block_item": true
+			}
+		}
+	}
 }

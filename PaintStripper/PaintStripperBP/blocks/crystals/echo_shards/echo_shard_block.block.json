@@ -1,32 +1,32 @@
 {
-    "format_version": "1.20.80",
-    "minecraft:block": {
-      "description": {
-        "identifier": "ps:echo_shard_block",
-        "menu_category": {
-            "category": "nature"
-        }
-      },
-      "components": {
-        "tag:minecraft:is_pickaxe_item_destructible": {},
-        "minecraft:friction": 0.4,
-        "minecraft:map_color": "#4C7F99",
-        "minecraft:light_emission": 3,
-        "minecraft:destructible_by_mining": {
-          "seconds_to_destroy": 1.5
-        },
-        "minecraft:destructible_by_explosion": {
-          "explosion_resistance": 1.5
-        },
-        "minecraft:material_instances": {
-          "*": {
-            "texture": "echo_shard_block",
-            "render_method": "alpha_test",
-            "face_dimming": false,
-            "ambient_occlusion": false
-          }
-        },
-      "minecraft:geometry": "minecraft:geometry.full_block"
-      }
-    }
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "ps:echo_shard_block",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"minecraft:friction": 0.4,
+			"minecraft:map_color": "#4C7F99",
+			"minecraft:light_emission": 3,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1.5
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "echo_shard_block",
+					"render_method": "alpha_test",
+					"face_dimming": false,
+					"ambient_occlusion": false
+				}
+			},
+		"minecraft:geometry": "minecraft:geometry.full_block"
+		}
+	}
 }

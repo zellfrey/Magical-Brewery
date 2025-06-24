@@ -1,21 +1,21 @@
 {
-    "format_version": "1.21.10",
-    "minecraft:item": {
-      "description": {
-        "identifier": "ps:pure_quartz_cluster",
-        "menu_category": {
-                "category": "nature"
-            }
-      }, 
-      "components": {
-        "minecraft:hand_equipped": false,
-        "minecraft:icon": "pure_quartz_cluster",
-        "minecraft:display_name":{
-          "value": "item.ps:pure_quartz_cluster.name"
-        },
-        "minecraft:block_placer": {
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ps:pure_quartz_cluster",
+			"menu_category": {
+				"category": "nature"
+			}
+		}, 
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:icon": "pure_quartz_cluster",
+			"minecraft:display_name":{
+				"value": "item.ps:pure_quartz_cluster.name"
+			},
+			"minecraft:block_placer": {
 				"block": "ps:pure_quartz_cluster"
-        }
-      }
-    }
+			}
+		}
+	}
 }

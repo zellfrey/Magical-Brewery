@@ -1,183 +1,183 @@
 {
-    "format_version": "1.21.60",
-    "minecraft:crafting_items_catalog": {
-      "categories": [
-        {
-          "category_name": "construction",
-          "groups": [
-            {
-              "group_identifier": {
-                "icon": "ps:stained_planks_swiftness",
-                "name": "paint_stripper:ps_stained_planks_construction"
-              },
-              "items": [
-                "ps:stained_planks_harming",
-                "ps:stained_planks_healing",
-                "ps:stained_planks_invisibility",
-                "ps:stained_planks_leaping",
-                "ps:stained_planks_poison",
-                "ps:stained_planks_regeneration",
-                "ps:stained_planks_resistance_fire",
-                "ps:stained_planks_slow_falling",
-                "ps:stained_planks_slowness",
-                "ps:stained_planks_strength",
-                "ps:stained_planks_swiftness",
-                "ps:stained_planks_vision_night",
-                "ps:stained_planks_water_breathing",
-                "ps:stained_planks_weakness"
-              ]
-            },
-            {
-              "group_identifier": {
-                "icon": "ps:stained_slab_swiftness",
-                "name": "paint_stripper:ps_stained_slabs_construction"
-              },
-              "items": [
-                "ps:stained_slab_harming",
-                "ps:stained_slab_healing",
-                "ps:stained_slab_invisibility",
-                "ps:stained_slab_leaping",
-                "ps:stained_slab_poison",
-                "ps:stained_slab_regeneration",
-                "ps:stained_slab_resistance_fire",
-                "ps:stained_slab_slow_falling",
-                "ps:stained_slab_slowness",
-                "ps:stained_slab_strength",
-                "ps:stained_slab_swiftness",
-                "ps:stained_slab_vision_night",
-                "ps:stained_slab_water_breathing",
-                "ps:stained_slab_weakness"
-              ]
-            }
-          ]
-        },
-        {
-          "category_name": "items",
-          "groups": [
-            {
-              "group_identifier": {
-                "icon": "ps:cask_swiftness",
-                "name": "paint_stripper:ps_casks_items"
-              },
-              "items": [
-                "ps:cask_harming",
-                "ps:cask_healing",
-                "ps:cask_invisibility",
-                "ps:cask_leaping",
-                "ps:cask_poison",
-                "ps:cask_regeneration",
-                "ps:cask_resistance_fire",
-                "ps:cask_slow_falling",
-                "ps:cask_slowness",
-                "ps:cask_strength",
-                "ps:cask_swiftness",
-                "ps:cask_vision_night",
-                "ps:cask_water_breathing",
-                "ps:cask_weakness"
-              ]
-            },
-            {
-              "group_identifier": {
-                "icon": "ps:amethyst_seed",
-                "name": "paint_stripper:ps_crystal_seeds_items"
-              },
-              "items": [
-                "ps:amethyst_seed",
-                "ps:redstone_seed",
-                "ps:echo_seed",
-                "ps:glowstone_seed",
-                "ps:pure_quartz_seed"
-              ]
-            },
-            {
-              "group_identifier": {
-                "icon": "ps:pure_quartz_shard",
-                "name": "paint_stripper:ps_shards_items"
-              },
-              "items": [
-                "ps:pure_quartz_shard",
-                "ps:glowstone_shard",
-                "ps:redstone_shard"
-              ]
-            },
-            {
-              "group_identifier": {
-                "icon": "ps:seal_potency_1",
-                "name": "paint_stripper:ps_seals_items"
-              },
-              "items": [
-                "ps:seal_basic",
-                "ps:seal_enlargement_1",
-                "ps:seal_enlargement_2",
-                "ps:seal_longevity_1",
-                "ps:seal_longevity_2",
-                "ps:seal_potency_1",
-                "ps:seal_potency_2"
-              ]
-            }
-          ]
-        },
-        {
-          "category_name": "nature",
-          "groups": [
-            {
-              "group_identifier": {
-                "icon": "ps:echo_cluster",
-                "name": "paint_stripper:ps_echo_crystals_nature"
-              },
-              "items": [
-                "ps:budding_echo",
-                "ps:echo_shard_block",
-                "ps:echo_cluster",
-                "ps:large_echo_bud",
-                "ps:medium_echo_bud",
-                "ps:small_echo_bud"
-              ]
-            },
-            {
-              "group_identifier": {
-                "icon": "ps:glowstone_cluster",
-                "name": "paint_stripper:ps_glowstone_crystals_nature"
-              },
-              "items": [
-                "ps:budding_glowstone",
-                "ps:glowstone_shard_block",
-                "ps:glowstone_cluster",
-                "ps:large_glowstone_bud",
-                "ps:medium_glowstone_bud",
-                "ps:small_glowstone_bud"
-              ]
-            },
-            {
-              "group_identifier": {
-                "icon": "ps:redstone_cluster",
-                "name": "paint_stripper:ps_redstone_crystals_nature"
-              },
-              "items": [
-                "ps:budding_redstone",
-                "ps:redstone_shard_block",
-                "ps:redstone_cluster",
-                "ps:large_redstone_bud",
-                "ps:medium_redstone_bud",
-                "ps:small_redstone_bud"
-              ]
-            },
-            {
-              "group_identifier": {
-                "icon": "ps:pure_quartz_cluster",
-                "name": "paint_stripper:ps_pure_quartz_crystals_nature"
-              },
-              "items": [
-                "ps:budding_pure_quartz",
-                "ps:pure_quartz_shard_block",
-                "ps:pure_quartz_cluster",
-                "ps:large_pure_quartz_bud",
-                "ps:medium_pure_quartz_bud",
-                "ps:small_pure_quartz_bud"
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  }
+"format_version": "1.21.60",
+"minecraft:crafting_items_catalog": {
+	"categories": [
+			{
+				"category_name": "construction",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "ps:stained_planks_swiftness",
+							"name": "paint_stripper:ps_stained_planks_construction"
+						},
+						"items": [
+							"ps:stained_planks_harming",
+							"ps:stained_planks_healing",
+							"ps:stained_planks_invisibility",
+							"ps:stained_planks_leaping",
+							"ps:stained_planks_poison",
+							"ps:stained_planks_regeneration",
+							"ps:stained_planks_resistance_fire",
+							"ps:stained_planks_slow_falling",
+							"ps:stained_planks_slowness",
+							"ps:stained_planks_strength",
+							"ps:stained_planks_swiftness",
+							"ps:stained_planks_vision_night",
+							"ps:stained_planks_water_breathing",
+							"ps:stained_planks_weakness"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "ps:stained_slab_swiftness",
+							"name": "paint_stripper:ps_stained_slabs_construction"
+						},
+						"items": [
+							"ps:stained_slab_harming",
+							"ps:stained_slab_healing",
+							"ps:stained_slab_invisibility",
+							"ps:stained_slab_leaping",
+							"ps:stained_slab_poison",
+							"ps:stained_slab_regeneration",
+							"ps:stained_slab_resistance_fire",
+							"ps:stained_slab_slow_falling",
+							"ps:stained_slab_slowness",
+							"ps:stained_slab_strength",
+							"ps:stained_slab_swiftness",
+							"ps:stained_slab_vision_night",
+							"ps:stained_slab_water_breathing",
+							"ps:stained_slab_weakness"
+						]
+					}
+				]
+			},
+			{
+				"category_name": "items",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "ps:cask_swiftness",
+							"name": "paint_stripper:ps_casks_items"
+						},
+						"items": [
+							"ps:cask_harming",
+							"ps:cask_healing",
+							"ps:cask_invisibility",
+							"ps:cask_leaping",
+							"ps:cask_poison",
+							"ps:cask_regeneration",
+							"ps:cask_resistance_fire",
+							"ps:cask_slow_falling",
+							"ps:cask_slowness",
+							"ps:cask_strength",
+							"ps:cask_swiftness",
+							"ps:cask_vision_night",
+							"ps:cask_water_breathing",
+							"ps:cask_weakness"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "ps:amethyst_seed",
+							"name": "paint_stripper:ps_crystal_seeds_items"
+						},
+						"items": [
+							"ps:amethyst_seed",
+							"ps:redstone_seed",
+							"ps:echo_seed",
+							"ps:glowstone_seed",
+							"ps:pure_quartz_seed"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "ps:pure_quartz_shard",
+							"name": "paint_stripper:ps_shards_items"
+						},
+						"items": [
+							"ps:pure_quartz_shard",
+							"ps:glowstone_shard",
+							"ps:redstone_shard"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "ps:seal_potency_1",
+							"name": "paint_stripper:ps_seals_items"
+						},
+						"items": [
+							"ps:seal_basic",
+							"ps:seal_enlargement_1",
+							"ps:seal_enlargement_2",
+							"ps:seal_longevity_1",
+							"ps:seal_longevity_2",
+							"ps:seal_potency_1",
+							"ps:seal_potency_2"
+						]
+					}
+				]
+			},
+			{
+				"category_name": "nature",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "ps:echo_cluster",
+							"name": "paint_stripper:ps_echo_crystals_nature"
+						},
+						"items": [
+							"ps:budding_echo",
+							"ps:echo_shard_block",
+							"ps:echo_cluster",
+							"ps:large_echo_bud",
+							"ps:medium_echo_bud",
+							"ps:small_echo_bud"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "ps:glowstone_cluster",
+							"name": "paint_stripper:ps_glowstone_crystals_nature"
+						},
+						"items": [
+							"ps:budding_glowstone",
+							"ps:glowstone_shard_block",
+							"ps:glowstone_cluster",
+							"ps:large_glowstone_bud",
+							"ps:medium_glowstone_bud",
+							"ps:small_glowstone_bud"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "ps:redstone_cluster",
+							"name": "paint_stripper:ps_redstone_crystals_nature"
+						},
+						"items": [
+							"ps:budding_redstone",
+							"ps:redstone_shard_block",
+							"ps:redstone_cluster",
+							"ps:large_redstone_bud",
+							"ps:medium_redstone_bud",
+							"ps:small_redstone_bud"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "ps:pure_quartz_cluster",
+							"name": "paint_stripper:ps_pure_quartz_crystals_nature"
+						},
+						"items": [
+							"ps:budding_pure_quartz",
+							"ps:pure_quartz_shard_block",
+							"ps:pure_quartz_cluster",
+							"ps:large_pure_quartz_bud",
+							"ps:medium_pure_quartz_bud",
+							"ps:small_pure_quartz_bud"
+						]
+					}
+				]
+			}
+		]
+	}
+}

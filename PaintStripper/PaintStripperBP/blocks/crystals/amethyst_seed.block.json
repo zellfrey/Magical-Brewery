@@ -1,22 +1,22 @@
 {
     "format_version": "1.20.80",
     "minecraft:block": {
-      "description": {
+	"description": {
         "identifier": "ps:amethyst_seed",
         "menu_category": {
             "category": "none",
             "is_hidden_in_commands": true
         },
         "traits": {
-          "minecraft:placement_position": {
-            "enabled_states": ["minecraft:block_face"]
-          }
+            "minecraft:placement_position": {
+				"enabled_states": ["minecraft:block_face"]
+            }
         },
         "states": {
-          "ps:seed_depth": [1,2,3,4]
+            "ps:seed_depth": [1,2,3,4]
         }
-      },
-      "components": {
+	},
+	"components": {
         "tag:minecraft:is_pickaxe_item_destructible": {},
         "tag:crystal_seed": {},
         "minecraft:loot": "loot_tables/beardedflea/blocks/crystals/amethyst_seed.loot.json",
@@ -66,56 +66,56 @@
             }
         }
       },
-      "permutations": [
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'north'",
-            "components": {
-            "minecraft:transformation": { "rotation": [-90, 0, 0] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'south'",
-            "components": {
-                "minecraft:transformation": { "rotation": [90, 0, 0] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'west'",
-            "components": {
-            "minecraft:transformation": { "rotation": [0, 0, 90] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'east'",
-            "components": {
-                "minecraft:transformation": { "rotation": [0, 0, -90] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'up'",
-            "components": {
-            "minecraft:transformation": { "rotation": [0, 0, 0] }
-            }
-        },
-        {
-            "condition": "query.block_state('minecraft:block_face') == 'down'",
-            "components": {
-                "minecraft:transformation": { "rotation": [-180, 0, 0] }
-            }
-        },
-        {
-            "condition": "query.block_state('ps:seed_depth') == 4",
-            "components": {
-                "minecraft:custom_components": ["ps:ort_seed_to_crystal"],
-                "minecraft:tick": {
-                    "interval_range": [20,20]
-                },
-                "minecraft:selection_box": {
-                    "origin": [-2.0, 0.0, -2.0],
-                    "size": [4.0, 2.0, 4.0]
+	"permutations": [
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'north'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [-90, 0, 0] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'south'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [90, 0, 0] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'west'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 0, 90] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'east'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 0, -90] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'up'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 0, 0] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:block_face') == 'down'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [-180, 0, 0] }
+                }
+            },
+            {
+                "condition": "query.block_state('ps:seed_depth') == 4",
+                "components": {
+                    "minecraft:custom_components": ["ps:ort_seed_to_crystal"],
+                    "minecraft:tick": {
+                        "interval_range": [20,20]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [-2.0, 0.0, -2.0],
+                        "size": [4.0, 2.0, 4.0]
+                    }
                 }
             }
-        }
-      ]
+        ]
     }
-  }
+}
