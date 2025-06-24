@@ -3,7 +3,7 @@ import {world, system, ItemStack } from "@minecraft/server";
 //Functions are structured in terms of gameplay progression. 
 //seed to growing crystal
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_seed_to_crystal', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_seed_to_crystal', {
         onRandomTick(e) {
             const { block } = e;
             if(block.typeId === "ps:glowstone_seed" && block.dimension.id !== "minecraft:nether") return;

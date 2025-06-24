@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.40",
+	"format_version": "1.21.90",
 	"minecraft:block": {
 		"description": {
 			"identifier": "ps:echo_seed",
@@ -65,6 +65,9 @@
 					"depth3": "q.block_state('ps:seed_depth') == 3",
 					"depth4": "q.block_state('ps:seed_depth') == 4"
 				}
+			},
+			"minecraft:movable": {
+            	"movement_type": "popped"
 			}
 		},
 		"permutations": [
@@ -107,7 +110,7 @@
 			{
 				"condition": "query.block_state('ps:seed_depth') == 4",
 				"components": {
-					"minecraft:custom_components": ["ps:ort_seed_to_crystal"],
+					"magical_brewery:ort_seed_to_crystal": {},
 					"minecraft:tick": {
 						"interval_range": [20,20]
 					},

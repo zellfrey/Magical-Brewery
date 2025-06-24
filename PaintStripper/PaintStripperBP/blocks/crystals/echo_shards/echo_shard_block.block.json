@@ -26,7 +26,7 @@
 					"ambient_occlusion": false
 				}
 			},
-		"minecraft:geometry": "minecraft:geometry.full_block"
+			"minecraft:geometry": "minecraft:geometry.full_block"
 		}
 	}
 }

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.90",
 	"minecraft:block": {
 	  "description": {
 		"identifier": "ps:medium_echo_bud",
@@ -50,6 +50,9 @@
 		"minecraft:selection_box": {
 			"origin": [-5.0, 0.0, -5.0],
 			"size": [10.0, 4.0, 10.0]
+		},
+		"minecraft:movable": {
+			"movement_type": "popped"
 		}
 	},
 	"permutations": [
