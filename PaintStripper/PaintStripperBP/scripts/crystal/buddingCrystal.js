@@ -38,7 +38,9 @@ export class BuddingCrystal {
         
         const buddingCrystalsData = JSON.parse(world.getDynamicProperty('magical_brewery:budding_crystal_data'));
         buddingCrystalsData.splice(index, 1);
-        world.setDynamicProperty('magical_brewery:budding_crystal_data', JSON.stringify(buddingCrystalsData))
+        // buddingCrystalsData.length = 0;
+        // BuddingCrystal.buddingCrystals.length = 0;
+        world.setDynamicProperty('magical_brewery:budding_crystal_data', JSON.stringify(buddingCrystalsData));
     }
 
     static findIndexCrystal(blockLocation, blockDimensionID){
@@ -101,14 +103,14 @@ export function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum)
 
 //This is also triggered when a growing crystal transforms to a budding crystal
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_budding_crystal_place', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_budding_crystal_place', {
         onPlace(e) {
             BuddingCrystal.createBuddingCrystal(e.block.location, e.block.dimension.id, system.currentTick)
         }
     });
 });
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_budding_crystal_destroy', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_budding_crystal_destroy', {
         onPlayerBreak(e) {
             BuddingCrystal.destroyCrystal(e.block.location, e.dimension.id)
         }
@@ -116,7 +118,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_budding_crystal_growth', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_budding_crystal_growth', {
         onRandomTick(e) {
             switch(e.block.typeId){
                 case "ps:budding_glowstone":

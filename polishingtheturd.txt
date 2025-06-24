@@ -49,17 +49,18 @@ Cystal seeds
 6. Depending on the environment, let the seeds grow to then become a budding crystal
 growing crystals
 7. Crystals growing in dependant environment.
+    - use destruction particle component for each crystal permutation
     - pure quartz can be grown anywhere - DONE
     - redstone requires to be under the ground below - DONE
     - glowstone requires to be in the nether - DONE
-    - echo shards can be grown anywhere - DONE
+    - echo shards can be grown anywhere - BACKBURNER(currently there is no check as to whether a block is air. So will keep it as it is)
 8. Let budding crystals grow creating crystals
     TODO: Solve "isAir" bug - DONE
     TODO: Create objects so crystals can "grow" even when you arent in the chunk - DONE
     TODO: Detect when chunkloads to trigger crystalgrowth - BACKBURNER/not possible(supposedly)
     TODO: increase compensation time threshold - DONE
     TODO: Pistons pop crystals - DONE
-    TODO: Pistons destroy budding blocks
+    TODO: Pistons destroy budding blocks - making immovable for the time being - DONE
     TODO: Update each bud, cluster & budding crystal with specific mining times - DONE
     TODO: Crystal objects are deleted when block is destroyed - DONE
 9. Mine shards to then use for recipes
