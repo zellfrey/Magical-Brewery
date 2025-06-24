@@ -43,17 +43,17 @@ Cystal seeds
 5. Find the right block, hit seeds into block.
     TODO: Make glasssmith hammer recipe - DONE
     TODO: Glassmith hammer durability, -1 every seed hit - DONE
-    TODO: Allow seeds to be placed anywhere
+    TODO: Allow seeds to be placed anywhere - - BACKBURNER(currently there is no check as to whether a block is air. So will keep it as it is)
     TODO: change it that they can drop the item rather than being destroyed - DONE
     TODO: Pistons pop seed block - DONE
 6. Depending on the environment, let the seeds grow to then become a budding crystal
 growing crystals
 7. Crystals growing in dependant environment.
-    - use destruction particle component for each crystal permutation
+    - use destruction particle component for each crystal permutation - DONE
     - pure quartz can be grown anywhere - DONE
     - redstone requires to be under the ground below - DONE
     - glowstone requires to be in the nether - DONE
-    - echo shards can be grown anywhere - BACKBURNER(currently there is no check as to whether a block is air. So will keep it as it is)
+    - echo shards can be grown anywhere - DONE
 8. Let budding crystals grow creating crystals
     TODO: Solve "isAir" bug - DONE
     TODO: Create objects so crystals can "grow" even when you arent in the chunk - DONE
@@ -65,6 +65,7 @@ growing crystals
     TODO: Crystal objects are deleted when block is destroyed - DONE
 9. Mine shards to then use for recipes
     TODO: Update red shard image
+    TODO: Make clusters work with fortune enchant
 Using recipes
 1. Shards can be used for shard Blocks
 2. Shards can be turned into powders

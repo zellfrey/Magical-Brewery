@@ -6,7 +6,7 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_seed_to_crystal', {
         onRandomTick(e,p) {
             const { block } = e;
-            // if(block.typeId === "ps:glowstone_seed" && block.dimension.id !== "minecraft:nether") return;
+            if(block.typeId === "ps:glowstone_seed" && block.dimension.id !== "minecraft:nether") return;
             const face = block.permutation.getState("minecraft:block_face");
             const rotation = Math.floor(Math.random() * 4)
 
@@ -21,7 +21,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 //Growing crystal growth mechanic.
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ort_crystal_growth', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_crystal_growth', {
         onRandomTick(e) {
             const seedStage = e.block.permutation.getState('ps:crystal_stage');
             
