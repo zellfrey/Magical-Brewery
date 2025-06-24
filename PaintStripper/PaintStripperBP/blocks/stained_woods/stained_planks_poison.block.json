@@ -8,35 +8,10 @@
             }
         },
         "components": {
+            "tag:minecraft:is_axe_item_destructible": {},
             "minecraft:light_dampening": 4,
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 2.0,
-                "item_specific_speeds": [
-                    {
-                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:wooden_tier')"},
-                        "destroy_speed": 1.5
-                    },
-                    {
-                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:stone_tier')"},
-                        "destroy_speed": 0.75
-                    },
-                    {
-                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:iron_tier')"},
-                        "destroy_speed": 0.5
-                    },
-                    {
-                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:diamond_tier')"},
-                        "destroy_speed": 0.4
-                    },
-                    {
-                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:netherite_tier')"},
-                        "destroy_speed": 0.35
-                    },
-                    {
-                        "item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:golden_tier')"},
-                        "destroy_speed": 0.25
-                    }
-                ]
+                "seconds_to_destroy": 2.0
             },
             "minecraft:flammable": { 
                 "catch_chance_modifier": 5,
