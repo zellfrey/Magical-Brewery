@@ -10,6 +10,10 @@ Todo;
 Give better feed with tasting spoon. 
 Play around with mod, get nick in 
 Update casks to class system,
+Update dig speeds
+update to custom components V2
+use piston component
+Remove splash and lingering potion interaction from casks
 
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier
@@ -64,7 +68,7 @@ growing crystals
     TODO: Update each bud, cluster & budding crystal with specific mining times - DONE
     TODO: Crystal objects are deleted when block is destroyed - DONE
 9. Mine shards to then use for recipes
-    TODO: Update red shard image
+    TODO: Update red shard image - DONE
     TODO: Make clusters work with fortune enchant
 Using recipes
 1. Shards can be used for shard Blocks

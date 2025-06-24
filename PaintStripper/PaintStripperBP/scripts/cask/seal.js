@@ -3,7 +3,7 @@ import {neighbouringCross, getBlockFromFace} from "../utils/blockPlacementUtils.
 import {updateCaskSeal} from "cask/caskDB.js";
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:bop_seal', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:bop_seal', {
         beforeOnPlayerPlace(e) {
             const {player, permutationToPlace } = e;
             const equipment = player.getComponent('equippable');
