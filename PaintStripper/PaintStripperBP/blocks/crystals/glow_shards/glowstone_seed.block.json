@@ -110,7 +110,9 @@
 			{
 				"condition": "query.block_state('ps:seed_depth') == 4",
 				"components": {
-					"magical_brewery:ort_seed_to_crystal": {},
+					"magical_brewery:ort_seed_to_crystal": {
+						"crystal_type": "glowstone"
+					},
 					"minecraft:tick": {
 						"interval_range": [20,20]
 					},

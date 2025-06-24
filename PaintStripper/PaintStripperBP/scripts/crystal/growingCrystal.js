@@ -4,16 +4,14 @@ import {world, system, ItemStack } from "@minecraft/server";
 //seed to growing crystal
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_seed_to_crystal', {
-        onRandomTick(e) {
+        onRandomTick(e,p) {
             const { block } = e;
-            if(block.typeId === "ps:glowstone_seed" && block.dimension.id !== "minecraft:nether") return;
-
-            const crystalType = block.typeId.slice(3,-5);
+            // if(block.typeId === "ps:glowstone_seed" && block.dimension.id !== "minecraft:nether") return;
             const face = block.permutation.getState("minecraft:block_face");
             const rotation = Math.floor(Math.random() * 4)
 
             block.setType("ps:growing_crystal");
-            block.setPermutation(block.permutation.withState("ps:crystal_type", crystalType)); 
+            block.setPermutation(block.permutation.withState("ps:crystal_type", p.params.crystal_type)); 
             block.setPermutation(block.permutation.withState("minecraft:block_face", face));
             block.setPermutation(block.permutation.withState("ps:crystal_rotation", rotation));
         }

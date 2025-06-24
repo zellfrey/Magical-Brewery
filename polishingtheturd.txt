@@ -45,7 +45,7 @@ Cystal seeds
     TODO: Glassmith hammer durability, -1 every seed hit - DONE
     TODO: Allow seeds to be placed anywhere
     TODO: change it that they can drop the item rather than being destroyed - DONE
-    TODO: Pistons pop seed block
+    TODO: Pistons pop seed block - DONE
 6. Depending on the environment, let the seeds grow to then become a budding crystal
 growing crystals
 7. Crystals growing in dependant environment.
@@ -58,7 +58,7 @@ growing crystals
     TODO: Create objects so crystals can "grow" even when you arent in the chunk - DONE
     TODO: Detect when chunkloads to trigger crystalgrowth - BACKBURNER/not possible(supposedly)
     TODO: increase compensation time threshold - DONE
-    TODO: Pistons pop crystals
+    TODO: Pistons pop crystals - DONE
     TODO: Pistons destroy budding blocks
     TODO: Update each bud, cluster & budding crystal with specific mining times - DONE
     TODO: Crystal objects are deleted when block is destroyed - DONE
