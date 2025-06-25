@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.90",
 	"minecraft:block": {
 		"description": {
 			"identifier": "ps:cask_weakness",
@@ -19,9 +19,13 @@
 			} 
 		},
 		"components": {
-			"tag:Weakness": {},
+			"tag:minecraft:is_axe_item_destructible": {},
 			"tag:cask": {},
-			"minecraft:custom_components": ["ps:pi_cask_fill", "ps:opd_cask", "ps:op_cask"],
+			"magical_brewery:pi_cask_fill": {
+				"cask_effect": "Weakness"
+			},
+			"magical_brewery:opd_cask": {},
+			"magical_brewery:op_cask": {},
 			"minecraft:light_dampening": 4,
 			"minecraft:map_color": "#2f332f",
 			"minecraft:redstone_conductivity": {
@@ -29,33 +33,7 @@
 				"allows_wire_to_step_down": true
 			},
 			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 2.0,
-				"item_specific_speeds": [
-					{
-						"item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:wooden_tier')"},
-						"destroy_speed": 1.5
-					},
-					{
-						"item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:stone_tier')"},
-						"destroy_speed": 0.75
-					},
-					{
-						"item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:iron_tier')"},
-						"destroy_speed": 0.5
-					},
-					{
-						"item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:diamond_tier')"},
-						"destroy_speed": 0.4
-					},
-					{
-						"item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:netherite_tier')"},
-						"destroy_speed": 0.35
-					},
-					{
-						"item": {"tags": "q.all_tags('minecraft:is_axe', 'minecraft:golden_tier')"},
-						"destroy_speed": 0.25
-					}
-				]
+				"seconds_to_destroy": 2.0
 			},
 			"minecraft:flammable": { 
 				"catch_chance_modifier": 5,
@@ -110,7 +88,13 @@
 			{
 				"condition": "q.block_state('ps:fill_level') > 0 && !q.block_state('ps:aged')",
 				"components": {
-					"minecraft:custom_components": ["ps:ot_cask_aging", "ps:pi_cask_fill", "ps:opd_cask"],
+					"magical_brewery:pi_cask_fill": {
+						"cask_effect": "Weakness"
+					},
+					"magical_brewery:ot_cask_aging": {
+						"cask_effect": "Weakness"
+					},
+					"magical_brewery:opd_cask": {},
 					"minecraft:tick": {
 						"interval_range": [60,60],
 						"looping": true

@@ -6,7 +6,7 @@ import {createCask, deleteCask, findCask, updateCask, updateCaskSeal} from "cask
 //'utils/containerUtils.js';
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:op_cask', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:op_cask', {
         onPlace(e) {
             const {block, dimension} = e;
             const {x,y,z} = block.location
@@ -23,21 +23,20 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_cask', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_cask', {
         onPlayerBreak(e) {
-            const {block, dimension} = e;
             // const fillLevel = block.permutation.getState("ps:fill_level");
 
             // if(fillLevel > 0) 
             // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
-            deleteCask(dimension.id, block.location);
+            deleteCask(e.dimension.id, e.block.location);
         }
     });
 });
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:pi_cask_fill', {
-        onPlayerInteract(e) {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:pi_cask_fill', {
+        onPlayerInteract(e,p) {
             const {block, dimension, player} = e;
 
             const equipment = player.getComponent('equippable');
@@ -55,7 +54,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 
             if(selectedItem.typeId === "ps:tasting_spoon"){
 
-                const caskEffect = block.getTags().find(el => el !== "cask");
+                const caskEffect = p.params.cask_effect;
                 
                 if(fillLevel === 0){
                     dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
@@ -91,9 +90,10 @@ system.beforeEvents.startup.subscribe(eventData => {
                     return;
                 }
             }
-            
-            if(selectedItem.typeId === "minecraft:potion" || selectedItem.typeId === "minecraft:lingering_potion" 
-                || selectedItem.typeId === "minecraft:splash_potion"){
+            //Will implement splash and lingering potions at a later date
+            //  || selectedItem.typeId === "minecraft:lingering_potion" 
+            //     || selectedItem.typeId === "minecraft:splash_potion"
+            if(selectedItem.typeId === "minecraft:potion"){
                 
                 //v2.0.0 uses "T" (generic) instead of a string. So im using this silly method to just get the first and only component of a potion
                 const potion = selectedItem.getComponents()[0];
@@ -174,16 +174,15 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:ot_cask_aging', {
-        onTick(e) {
-            ageCask(e.block, e.dimension)
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ot_cask_aging', {
+        onTick(e,p) {
+            ageCask(e.block, e.dimension, p.params.cask_effect)
         }
     });
 });
-function ageCask(block, dimension){
+function ageCask(block, dimension, caskEffect){
     const {x,y,z} = block.location;
     let cask = findCask(dimension.id, {x, y, z})
-    const caskEffect = block.getTags().find(el => el !== "cask");
     const canAge = shouldCaskAge(caskEffect, cask.potion_effects)
     
     if(!canAge) return;
@@ -283,7 +282,7 @@ function checkCaskSeal(block, cask){
         setCaskSeal(caskSeal, cask)
         console.log(caskSeal.typeId)
     }
-    console.log(cask.seal_lifetime)
+    // console.log(cask.seal_lifetime)
     updateCaskSeal(cask)
 }
 

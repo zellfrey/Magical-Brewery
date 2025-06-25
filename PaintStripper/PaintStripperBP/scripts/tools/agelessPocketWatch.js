@@ -48,7 +48,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const {x,y,z} = block.location;
                 let cask = findCask(block.dimension.id, {x, y, z})
                 const fillLevel = block.permutation.getState("ps:fill_level");
-                const caskEffect = block.getTags().find(el => el !== "cask");
+                const caskEffect = block.getComponent("magical_brewery:pi_cask_fill").customComponentParameters.params.cask_effect
                 const canAge = shouldCaskAge(caskEffect, cask.potion_effects)
                 const aged = block.permutation.getState("ps:aged");
                 

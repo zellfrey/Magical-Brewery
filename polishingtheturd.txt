@@ -11,7 +11,7 @@ Give better feed with tasting spoon.
 Play around with mod, get nick in 
 Update casks to class system,
 Update dig speeds
-update to custom components V2
+update to custom components V2 - DONE
 use piston component - DONE (Currently immovable until i figure out changing the object to match the new location)
 Remove splash and lingering potion interaction from casks
 
