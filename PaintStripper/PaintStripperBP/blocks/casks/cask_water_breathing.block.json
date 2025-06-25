@@ -77,7 +77,10 @@
 					"south": "end",
 					"north": "front"
 			},
-			"minecraft:geometry": "geometry.cask"
+			"minecraft:geometry": "geometry.cask",
+			"minecraft:movable": {
+            	"movement_type": "immovable"
+			}
 		},
 		"permutations": [
 			{
