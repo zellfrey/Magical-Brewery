@@ -5,15 +5,15 @@ Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
 TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
-TODO: utilise vector maths from @minecraft/maths module
+TODO: utilise vector maths from @minecraft/maths module - BACKBURNER(possibly not necessary )
 Todo;
 Give better feed with tasting spoon. 
 Play around with mod, get nick in 
 Update casks to class system,
-Update dig speeds
+Update dig speeds - DONE
 update to custom components V2 - DONE
 use piston component - DONE (Currently immovable until i figure out changing the object to match the new location)
-Remove splash and lingering potion interaction from casks
+Remove splash and lingering potion interaction from casks - DONE
 
 TODO: Implement all potions and variants for amethyst tier potions,
 TODO: make texture for splash and lingering variant potions for amethyst tier
@@ -82,10 +82,10 @@ TODO: Look into particle systems
 TODO; Polish budding crystal code - DONE
 
 "minecraft:movable": {
-            "movement_type": "popped"
+            "movement_type": "push_pull"
 }
-"immovable"
-"push_pull"
+
+
 
 1 kg of floury potatoes
 100 grams of flour
@@ -93,6 +93,3 @@ TODO; Polish budding crystal code - DONE
 
 1000:100:2
 500:50:1
-
-"tag:minecraft:is_pickaxe_item_destructible": {},
-"tag:minecraft:is_axe_item_destructible": {},

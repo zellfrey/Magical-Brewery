@@ -1,131 +1,131 @@
 ##---------------------------------
 ##Items---------------------------------
 ##Crystals---------------------------------
-item.ps:amethyst_dust.name=Amethyst Dust
-item.ps:amethyst_seed.name=Amethyst Seed
+item.magical_brewery:amethyst_dust.name=Amethyst Dust
+item.magical_brewery:amethyst_seed.name=Amethyst Seed
 ##Echo shards---------------------------------
-item.ps:small_echo_bud.name=Small Echo Bud
-item.ps:medium_echo_bud.name=Medium Echo Bud
-item.ps:large_echo_bud.name=Large Echo Bud
-item.ps:echo_cluster.name=Echo Cluster
-item.ps:echo_dust.name=Echo Dust
-item.ps:echo_seed.name=Echo Seed
-tile.ps:budding_echo.name=Budding Echo
-tile.ps:echo_shard_block.name=Echo Shard Block
+item.magical_brewery:small_echo_bud.name=Small Echo Bud
+item.magical_brewery:medium_echo_bud.name=Medium Echo Bud
+item.magical_brewery:large_echo_bud.name=Large Echo Bud
+item.magical_brewery:echo_cluster.name=Echo Cluster
+item.magical_brewery:echo_dust.name=Echo Dust
+item.magical_brewery:echo_seed.name=Echo Seed
+tile.magical_brewery:budding_echo.name=Budding Echo
+tile.magical_brewery:echo_shard_block.name=Echo Shard Block
 ##Glow shards---------------------------------
-item.ps:glowstone_shard.name=Glowstone Shard
-item.ps:small_glowstone_bud.name=Small Glowstone Bud
-item.ps:medium_glowstone_bud.name=Medium Glowstone Bud
-item.ps:large_glowstone_bud.name=Large Glowstone Bud
-item.ps:glowstone_cluster.name=Glowstone Cluster
-item.ps:pure_glowstone_dust.name=Pure Glowstone Dust
-item.ps:sifted_glowstone_dust.name=Sifted Glowstone Dust
-item.ps:glowstone_seed.name=Glowstone Seed
-tile.ps:budding_glowstone.name=Budding Glowstone
-tile.ps:glowstone_shard_block.name=Glowstone Shard Block
+item.magical_brewery:glowstone_shard.name=Glowstone Shard
+item.magical_brewery:small_glowstone_bud.name=Small Glowstone Bud
+item.magical_brewery:medium_glowstone_bud.name=Medium Glowstone Bud
+item.magical_brewery:large_glowstone_bud.name=Large Glowstone Bud
+item.magical_brewery:glowstone_cluster.name=Glowstone Cluster
+item.magical_brewery:pure_glowstone_dust.name=Pure Glowstone Dust
+item.magical_brewery:sifted_glowstone_dust.name=Sifted Glowstone Dust
+item.magical_brewery:glowstone_seed.name=Glowstone Seed
+tile.magical_brewery:budding_glowstone.name=Budding Glowstone
+tile.magical_brewery:glowstone_shard_block.name=Glowstone Shard Block
 ##Pure quartz shards---------------------------------
-item.ps:pure_quartz_shard.name=Pure Quartz Shard
-item.ps:sifted_quartz.name=Sifted Quartz
-item.ps:small_pure_quartz_bud.name=Small Pure Quartz Bud
-item.ps:medium_pure_quartz_bud.name=Medium Pure Quartz Bud
-item.ps:large_pure_quartz_bud.name=Large Pure Quartz Bud
-item.ps:pure_quartz_cluster.name=Pure Quartz Cluster
-item.ps:pure_quartz_seed.name=Pure Quartz Seed
-tile.ps:budding_pure_quartz.name=Budding Pure Quartz
-tile.ps:pure_quartz_shard_block.name=Pure Quartz Shard Block
+item.magical_brewery:pure_quartz_shard.name=Pure Quartz Shard
+item.magical_brewery:sifted_quartz.name=Sifted Quartz
+item.magical_brewery:small_pure_quartz_bud.name=Small Pure Quartz Bud
+item.magical_brewery:medium_pure_quartz_bud.name=Medium Pure Quartz Bud
+item.magical_brewery:large_pure_quartz_bud.name=Large Pure Quartz Bud
+item.magical_brewery:pure_quartz_cluster.name=Pure Quartz Cluster
+item.magical_brewery:pure_quartz_seed.name=Pure Quartz Seed
+tile.magical_brewery:budding_pure_quartz.name=Budding Pure Quartz
+tile.magical_brewery:pure_quartz_shard_block.name=Pure Quartz Shard Block
 ##Red shards---------------------------------
-item.ps:redstone_shard.name=Redstone Shard
-item.ps:small_redstone_bud.name=Small Redstone Bud
-item.ps:medium_redstone_bud.name=Medium Redstone Bud
-item.ps:large_redstone_bud.name=Large Redstone Bud
-item.ps:redstone_cluster.name=Redstone Cluster
-item.ps:pure_redstone_dust.name=Pure Redstone Dust
-item.ps:sifted_redstone_dust.name=Sifted Redstone Dust
-item.ps:redstone_seed.name=Redstone Seed
-tile.ps:budding_redstone.name=Budding Redstone
-tile.ps:redstone_shard_block.name=Redstone Shard Block
+item.magical_brewery:redstone_shard.name=Redstone Shard
+item.magical_brewery:small_redstone_bud.name=Small Redstone Bud
+item.magical_brewery:medium_redstone_bud.name=Medium Redstone Bud
+item.magical_brewery:large_redstone_bud.name=Large Redstone Bud
+item.magical_brewery:redstone_cluster.name=Redstone Cluster
+item.magical_brewery:pure_redstone_dust.name=Pure Redstone Dust
+item.magical_brewery:sifted_redstone_dust.name=Sifted Redstone Dust
+item.magical_brewery:redstone_seed.name=Redstone Seed
+tile.magical_brewery:budding_redstone.name=Budding Redstone
+tile.magical_brewery:redstone_shard_block.name=Redstone Shard Block
 
 ##Tools------------------------------------
-item.ps:glassmith_hammer.name=Glassmith's Hammer
-##item.ps:glassmith_chisel.name=Glassmith's Chisel
-item.ps:ageless_pocket_watch.name=Ageless Pocket Watch
-item.ps:tasting_spoon.name=Tasting Spoon
-item.ps:amethyst_bottle.name=Amethyst Bottle
-item.ps:amethyst_water_bottle.name=Amethyst Water Bottle
+item.magical_brewery:glassmith_hammer.name=Glassmith's Hammer
+##item.magical_brewery:glassmith_chisel.name=Glassmith's Chisel
+item.magical_brewery:ageless_pocket_watch.name=Ageless Pocket Watch
+item.magical_brewery:tasting_spoon.name=Tasting Spoon
+item.magical_brewery:amethyst_bottle.name=Amethyst Bottle
+item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
 item.ps.effect_absorption.name=Absorption
 ##---------------------------------
 ##Seals---------------------------------
-item.ps:seal_basic.name=Base Seal
-item.ps:seal_longevity_1.name=Seal Of Longevity I
-item.ps:seal_longevity_2.name=Seal Of Longevity II
-item.ps:seal_potency_1.name=Seal Of Potency I
-item.ps:seal_potency_2.name=Seal Of Potency II
-item.ps:seal_enlargement_1.name=Seal Of Enlargement I
-item.ps:seal_enlargement_2.name=Seal Of Enlargement II
+item.magical_brewery:seal_basic.name=Base Seal
+item.magical_brewery:seal_longevity_1.name=Seal Of Longevity I
+item.magical_brewery:seal_longevity_2.name=Seal Of Longevity II
+item.magical_brewery:seal_potency_1.name=Seal Of Potency I
+item.magical_brewery:seal_potency_2.name=Seal Of Potency II
+item.magical_brewery:seal_enlargement_1.name=Seal Of Enlargement I
+item.magical_brewery:seal_enlargement_2.name=Seal Of Enlargement II
 ##---------------------------------
 
 
 ##---------------------------------
 ##Stained Planks/Slabs---------------------------------
-##tile.ps:stained_planks_decay.name=Stained Planks of Decay
-tile.ps:stained_planks_harming.name=Stained Planks of Harming
-tile.ps:stained_planks_healing.name=Stained Planks of Healing
-tile.ps:stained_planks_invisibility.name=Stained Planks of Invisibility
-tile.ps:stained_planks_leaping.name=Stained Planks of Leaping
-tile.ps:stained_planks_poison.name=Stained Planks of Poison
-tile.ps:stained_planks_regeneration.name=Stained Planks of Regeneration
-tile.ps:stained_planks_resistance_fire.name=Stained Planks of Fire Resistance
-tile.ps:stained_planks_slow_falling.name=Stained Planks of Slow Falling
-tile.ps:stained_planks_slowness.name=Stained Planks of Slowness
-tile.ps:stained_planks_strength.name=Stained Planks of Strength
-tile.ps:stained_planks_swiftness.name=Stained Planks of Swiftness
-##tile.ps:stained_planks_turtle_master.name=Stained Planks of the Turtle Master
-tile.ps:stained_planks_vision_night.name=Stained Planks of Night Vision
-tile.ps:stained_planks_water_breathing.name=Stained Planks of Water Breathing
-tile.ps:stained_planks_weakness.name=Stained Planks of Weakness
-##tile.ps:stained_slab_decay.name=Stained Slab of Decay
-tile.ps:stained_slab_harming.name=Stained Slab of Harming
-tile.ps:stained_slab_healing.name=Stained Slab of Healing
-tile.ps:stained_slab_invisibility.name=Stained Slab of Invisibility
-tile.ps:stained_slab_leaping.name=Stained Slab of Leaping
-tile.ps:stained_slab_poison.name=Stained Slab of Poison
-tile.ps:stained_slab_regeneration.name=Stained Slab of Regeneration
-tile.ps:stained_slab_resistance_fire.name=Stained Slab of Fire Resistance
-tile.ps:stained_slab_slow_falling.name=Stained Slab of Slow Falling
-tile.ps:stained_slab_slowness.name=Stained Slab of Slowness
-tile.ps:stained_slab_strength.name=Stained Slab of Strength
-tile.ps:stained_slab_swiftness.name=Stained Slab of Swiftness
-##tile.ps:stained_slab_turtle_master.name=Stained Slab of the Turtle Master
-tile.ps:stained_slab_vision_night.name=Stained Slab of Night Vision
-tile.ps:stained_slab_water_breathing.name=Stained Slab of Water Breathing
-tile.ps:stained_slab_weakness.name=Stained Slab of Weakness
+##tile.magical_brewery:stained_planks_decay.name=Stained Planks of Decay
+tile.magical_brewery:stained_planks_harming.name=Stained Planks of Harming
+tile.magical_brewery:stained_planks_healing.name=Stained Planks of Healing
+tile.magical_brewery:stained_planks_invisibility.name=Stained Planks of Invisibility
+tile.magical_brewery:stained_planks_leaping.name=Stained Planks of Leaping
+tile.magical_brewery:stained_planks_poison.name=Stained Planks of Poison
+tile.magical_brewery:stained_planks_regeneration.name=Stained Planks of Regeneration
+tile.magical_brewery:stained_planks_resistance_fire.name=Stained Planks of Fire Resistance
+tile.magical_brewery:stained_planks_slow_falling.name=Stained Planks of Slow Falling
+tile.magical_brewery:stained_planks_slowness.name=Stained Planks of Slowness
+tile.magical_brewery:stained_planks_strength.name=Stained Planks of Strength
+tile.magical_brewery:stained_planks_swiftness.name=Stained Planks of Swiftness
+##tile.magical_brewery:stained_planks_turtle_master.name=Stained Planks of the Turtle Master
+tile.magical_brewery:stained_planks_vision_night.name=Stained Planks of Night Vision
+tile.magical_brewery:stained_planks_water_breathing.name=Stained Planks of Water Breathing
+tile.magical_brewery:stained_planks_weakness.name=Stained Planks of Weakness
+##tile.magical_brewery:stained_slab_decay.name=Stained Slab of Decay
+tile.magical_brewery:stained_slab_harming.name=Stained Slab of Harming
+tile.magical_brewery:stained_slab_healing.name=Stained Slab of Healing
+tile.magical_brewery:stained_slab_invisibility.name=Stained Slab of Invisibility
+tile.magical_brewery:stained_slab_leaping.name=Stained Slab of Leaping
+tile.magical_brewery:stained_slab_poison.name=Stained Slab of Poison
+tile.magical_brewery:stained_slab_regeneration.name=Stained Slab of Regeneration
+tile.magical_brewery:stained_slab_resistance_fire.name=Stained Slab of Fire Resistance
+tile.magical_brewery:stained_slab_slow_falling.name=Stained Slab of Slow Falling
+tile.magical_brewery:stained_slab_slowness.name=Stained Slab of Slowness
+tile.magical_brewery:stained_slab_strength.name=Stained Slab of Strength
+tile.magical_brewery:stained_slab_swiftness.name=Stained Slab of Swiftness
+##tile.magical_brewery:stained_slab_turtle_master.name=Stained Slab of the Turtle Master
+tile.magical_brewery:stained_slab_vision_night.name=Stained Slab of Night Vision
+tile.magical_brewery:stained_slab_water_breathing.name=Stained Slab of Water Breathing
+tile.magical_brewery:stained_slab_weakness.name=Stained Slab of Weakness
 ##---------------------------------
 
 ##---------------------------------
 ##Casks---------------------------------
-##tile.ps:cask_decay.name=Cask of Decay
-tile.ps:cask_harming.name=Cask of Harming
-tile.ps:cask_healing.name=Cask of Healing
-tile.ps:cask_invisibility.name=Cask of Invisibility
-tile.ps:cask_leaping.name=Cask of Leaping
-tile.ps:cask_poison.name=Cask of Poison
-tile.ps:cask_regeneration.name=Cask of Regeneration
-tile.ps:cask_resistance_fire.name=Cask of Fire Resistance
-tile.ps:cask_slow_falling.name=Cask of Slow Falling
-tile.ps:cask_slowness.name=Cask of Slowness
-tile.ps:cask_strength.name=Cask of Strength
-tile.ps:cask_swiftness.name=Cask of Swiftness
-##tile.ps:cask_turtle_master.name=Cask of the Turtle Master
-tile.ps:cask_vision_night.name=Cask of Night Vision
-tile.ps:cask_water_breathing.name=Cask of Water Breathing
-tile.ps:cask_weakness.name=Cask of Weakness
+##tile.magical_brewery:cask_decay.name=Cask of Decay
+tile.magical_brewery:cask_harming.name=Cask of Harming
+tile.magical_brewery:cask_healing.name=Cask of Healing
+tile.magical_brewery:cask_invisibility.name=Cask of Invisibility
+tile.magical_brewery:cask_leaping.name=Cask of Leaping
+tile.magical_brewery:cask_poison.name=Cask of Poison
+tile.magical_brewery:cask_regeneration.name=Cask of Regeneration
+tile.magical_brewery:cask_resistance_fire.name=Cask of Fire Resistance
+tile.magical_brewery:cask_slow_falling.name=Cask of Slow Falling
+tile.magical_brewery:cask_slowness.name=Cask of Slowness
+tile.magical_brewery:cask_strength.name=Cask of Strength
+tile.magical_brewery:cask_swiftness.name=Cask of Swiftness
+##tile.magical_brewery:cask_turtle_master.name=Cask of the Turtle Master
+tile.magical_brewery:cask_vision_night.name=Cask of Night Vision
+tile.magical_brewery:cask_water_breathing.name=Cask of Water Breathing
+tile.magical_brewery:cask_weakness.name=Cask of Weakness
 ##---------------------------------
 
 ##Seals---------------------------------
-tile.ps:seal_potency_1.name=Seal Of Potency I
+tile.magical_brewery:seal_potency_1.name=Seal Of Potency I
 ##---------------------------------
 ##Crops---------------------------------
 
