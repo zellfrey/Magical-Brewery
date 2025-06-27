@@ -2,7 +2,7 @@
 	"format_version": "1.21.10",
 	"minecraft:item": {
 		"description": {
-			"identifier": "ps:sifted_glowstone_dust",
+			"identifier": "magical_brewery:sifted_glowstone_dust",
 			"menu_category": {
 				"category": "items"
 			}
@@ -14,7 +14,7 @@
 				"value": 1
 			},
 			"minecraft:display_name":{
-				"value": "item.ps:sifted_glowstone_dust.name"
+				"value": "item.magical_brewery:sifted_glowstone_dust.name"
 			}
 		}
 	}

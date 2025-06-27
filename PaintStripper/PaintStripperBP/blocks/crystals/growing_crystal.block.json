@@ -2,7 +2,7 @@
 	"format_version": "1.21.90",
 	"minecraft:block": {
 	  	"description": {
-			"identifier": "ps:growing_crystal",
+			"identifier": "magical_brewery:growing_crystal",
 			"menu_category": {
 				"category": "none",
 				"is_hidden_in_commands": true
@@ -13,9 +13,9 @@
 				}
 			},
 			"states": {
-				"ps:crystal_rotation":[0,1,2,3],
-				"ps:crystal_stage": [1,2,3,4,5],
-				"ps:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz", "echo"]
+				"magical_brewery:crystal_rotation":[0,1,2,3],
+				"magical_brewery:crystal_stage": [1,2,3,4,5],
+				"magical_brewery:crystal_type": ["amethyst","glowstone","redstone", "pure_quartz", "echo"]
 			}
 	  	},
 		"components": {
@@ -42,9 +42,9 @@
 			"minecraft:placement_filter": {
 				"conditions": [
 					{
-						"block_filter": ["minecraft:budding_amethyst", "minecraft:glowstone", "ps:budding_glowstone", "minecraft:redstone_ore",
+						"block_filter": ["minecraft:budding_amethyst", "minecraft:glowstone", "magical_brewery:budding_glowstone", "minecraft:redstone_ore",
 										"minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", 
-										"ps:budding_redstone", "ps:budding_pure_quartz","minecraft:quartz_ore", "ps:budding_echo", "minecraft:sculk_catalyst"]
+										"magical_brewery:budding_redstone", "magical_brewery:budding_pure_quartz","minecraft:quartz_ore", "magical_brewery:budding_echo", "minecraft:sculk_catalyst"]
 					}
 				]
 			},
@@ -54,19 +54,19 @@
 		},
 	  "permutations": [
 			{
-				"condition": "query.block_state('ps:crystal_rotation') == '1'",
+				"condition": "query.block_state('magical_brewery:crystal_rotation') == '1'",
 				"components": {
 					"minecraft:transformation": { "rotation": [0, 90, 0] }
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_rotation') == '2'",
+				"condition": "query.block_state('magical_brewery:crystal_rotation') == '2'",
 				"components": {
 					"minecraft:transformation": { "rotation": [0, 180, 0] }
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_rotation') == '3'",
+				"condition": "query.block_state('magical_brewery:crystal_rotation') == '3'",
 				"components": {
 					"minecraft:transformation": { "rotation": [0, 270, 0] }
 				}
@@ -108,7 +108,7 @@
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_stage') == 1",
+				"condition": "query.block_state('magical_brewery:crystal_stage') == 1",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [-3, 0, -3],
@@ -121,7 +121,7 @@
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_stage') == 2",
+				"condition": "query.block_state('magical_brewery:crystal_stage') == 2",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [-4, 0, -4],
@@ -134,7 +134,7 @@
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_stage') == 3",
+				"condition": "query.block_state('magical_brewery:crystal_stage') == 3",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [-7, 0, -7],
@@ -147,7 +147,7 @@
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_stage') == 4",
+				"condition": "query.block_state('magical_brewery:crystal_stage') == 4",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [-7, 0, -7],
@@ -160,7 +160,7 @@
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_stage') == 5",
+				"condition": "query.block_state('magical_brewery:crystal_stage') == 5",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [-7, 0, -7],
@@ -173,125 +173,125 @@
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_type') == 'amethyst'",
+				"condition": "query.block_state('magical_brewery:crystal_type') == 'amethyst'",
 				"components": {
 					"minecraft:loot": "loot_tables/empty.json",
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "growing_bud_amethyst"
+							"texture": "magical_brewery:growing_bud_amethyst"
 						}
 					},
 					"minecraft:destruction_particles": {
-    					"texture": "growing_bud_amethyst"
+    					"texture": "magical_brewery:growing_bud_amethyst"
 					},
 					"minecraft:geometry":{
 						"identifier":"geometry.growing_crystal",
 						"bone_visibility": { 
-							"stage1": "q.block_state('ps:crystal_stage') == 1", 
-							"stage2": "q.block_state('ps:crystal_stage') == 2",
-							"stage3": "q.block_state('ps:crystal_stage') == 3", 
-							"stage4": "q.block_state('ps:crystal_stage') == 4", 
-							"stage5": "q.block_state('ps:crystal_stage') == 5" 
+							"stage1": "q.block_state('magical_brewery:crystal_stage') == 1", 
+							"stage2": "q.block_state('magical_brewery:crystal_stage') == 2",
+							"stage3": "q.block_state('magical_brewery:crystal_stage') == 3", 
+							"stage4": "q.block_state('magical_brewery:crystal_stage') == 4", 
+							"stage5": "q.block_state('magical_brewery:crystal_stage') == 5" 
 						}
 					}
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_type') == 'glowstone'",
+				"condition": "query.block_state('magical_brewery:crystal_type') == 'glowstone'",
 				"components": {
 					"minecraft:loot": "loot_tables/empty.json",
 					"minecraft:light_emission": 4,
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "glowstone_shard_block",
+							"texture": "magical_brewery:glowstone_shard_block",
 							"render_method": "alpha_test",
 							"face_dimming": false,
 							"ambient_occlusion": false
 						}
 					},
 					"minecraft:destruction_particles": {
-    					"texture": "glowstone_shard_block"
+    					"texture": "magical_brewery:glowstone_shard_block"
 					},
 					"minecraft:geometry":{
 						"identifier":"geometry.growing_crystal",
 						"bone_visibility": { 
-							"stage1": "q.block_state('ps:crystal_stage') == 1", 
-							"stage2": "q.block_state('ps:crystal_stage') == 2",
-							"stage3": "q.block_state('ps:crystal_stage') == 3", 
-							"stage4": "q.block_state('ps:crystal_stage') == 4", 
-							"stage5": "q.block_state('ps:crystal_stage') == 5" 
+							"stage1": "q.block_state('magical_brewery:crystal_stage') == 1", 
+							"stage2": "q.block_state('magical_brewery:crystal_stage') == 2",
+							"stage3": "q.block_state('magical_brewery:crystal_stage') == 3", 
+							"stage4": "q.block_state('magical_brewery:crystal_stage') == 4", 
+							"stage5": "q.block_state('magical_brewery:crystal_stage') == 5" 
 						}
 					}
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_type') == 'redstone'",
+				"condition": "query.block_state('magical_brewery:crystal_type') == 'redstone'",
 				"components": {
 					"minecraft:loot": "loot_tables/empty.json",
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "redstone_shard_block"
+							"texture": "magical_brewery:redstone_shard_block"
 						}
 					},
 					"minecraft:destruction_particles": {
-    					"texture": "redstone_shard_block"
+    					"texture": "magical_brewery:redstone_shard_block"
 					},
 					"minecraft:geometry":{
 						"identifier":"geometry.growing_crystal",
 						"bone_visibility": { 
-							"stage1": "q.block_state('ps:crystal_stage') == 1", 
-							"stage2": "q.block_state('ps:crystal_stage') == 2",
-							"stage3": "q.block_state('ps:crystal_stage') == 3", 
-							"stage4": "q.block_state('ps:crystal_stage') == 4", 
-							"stage5": "q.block_state('ps:crystal_stage') == 5" 
+							"stage1": "q.block_state('magical_brewery:crystal_stage') == 1", 
+							"stage2": "q.block_state('magical_brewery:crystal_stage') == 2",
+							"stage3": "q.block_state('magical_brewery:crystal_stage') == 3", 
+							"stage4": "q.block_state('magical_brewery:crystal_stage') == 4", 
+							"stage5": "q.block_state('magical_brewery:crystal_stage') == 5" 
 						}
 					}
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_type') == 'pure_quartz'",
+				"condition": "query.block_state('magical_brewery:crystal_type') == 'pure_quartz'",
 				"components": {
 					"minecraft:loot": "loot_tables/empty.json",
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "pure_quartz_shard_block"
+							"texture": "magical_brewery:pure_quartz_shard_block"
 						}
 					},
 					"minecraft:destruction_particles": {
-    					"texture": "pure_quartz_shard_block"
+    					"texture": "magical_brewery:pure_quartz_shard_block"
 					},
 					"minecraft:geometry":{
 						"identifier":"geometry.growing_crystal",
 						"bone_visibility": { 
-							"stage1": "q.block_state('ps:crystal_stage') == 1", 
-							"stage2": "q.block_state('ps:crystal_stage') == 2",
-							"stage3": "q.block_state('ps:crystal_stage') == 3", 
-							"stage4": "q.block_state('ps:crystal_stage') == 4", 
-							"stage5": "q.block_state('ps:crystal_stage') == 5" 
+							"stage1": "q.block_state('magical_brewery:crystal_stage') == 1", 
+							"stage2": "q.block_state('magical_brewery:crystal_stage') == 2",
+							"stage3": "q.block_state('magical_brewery:crystal_stage') == 3", 
+							"stage4": "q.block_state('magical_brewery:crystal_stage') == 4", 
+							"stage5": "q.block_state('magical_brewery:crystal_stage') == 5" 
 						}
 					}
 				}
 			},
 			{
-				"condition": "query.block_state('ps:crystal_type') == 'echo'",
+				"condition": "query.block_state('magical_brewery:crystal_type') == 'echo'",
 				"components": {
 					"minecraft:loot": "loot_tables/empty.json",
 					"minecraft:material_instances": {
 						"*": {
-							"texture": "echo_shard_block"
+							"texture": "magical_brewery:echo_shard_block"
 						}
 					},
 					"minecraft:destruction_particles": {
-    					"texture": "echo_shard_block"
+    					"texture": "magical_brewery:echo_shard_block"
 					},
 					"minecraft:geometry":{
 						"identifier":"geometry.growing_crystal",
 						"bone_visibility": { 
-							"stage1": "q.block_state('ps:crystal_stage') == 1", 
-							"stage2": "q.block_state('ps:crystal_stage') == 2",
-							"stage3": "q.block_state('ps:crystal_stage') == 3", 
-							"stage4": "q.block_state('ps:crystal_stage') == 4", 
-							"stage5": "q.block_state('ps:crystal_stage') == 5" 
+							"stage1": "q.block_state('magical_brewery:crystal_stage') == 1", 
+							"stage2": "q.block_state('magical_brewery:crystal_stage') == 2",
+							"stage3": "q.block_state('magical_brewery:crystal_stage') == 3", 
+							"stage4": "q.block_state('magical_brewery:crystal_stage') == 4", 
+							"stage5": "q.block_state('magical_brewery:crystal_stage') == 5" 
 						}
 					}
 				}

@@ -1,20 +1,20 @@
 {
-  "format_version": "1.17.41",
-  "minecraft:recipe_shaped": {
-      "description": {
-          "identifier": "ps:cask_vision_night"
-      },
-      "tags": ["crafting_table"],
-      "pattern": ["SSS", "I I", "SSS"],
-      "key": {
-          "S": "ps:stained_planks_vision_night",
-          "I": "minecraft:iron_ingot"
-      },
-      "result": [
-          {
-            "item": "ps:cask_vision_night",
-            "count": 1
-          }
-      ]
-  }
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:cask_vision_night"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["SSS", "I I", "SSS"],
+		"key": {
+			"S": "magical_brewery:stained_planks_vision_night",
+			"I": "minecraft:iron_ingot"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:cask_vision_night",
+				"count": 1
+			}
+		]
+	}
 }

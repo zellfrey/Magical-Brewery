@@ -1,20 +1,20 @@
 {
 	"format_version": "1.21.10",
-		"minecraft:item": {
+	"minecraft:item": {
 		"description": {
-			"identifier": "ps:echo_seed",
+			"identifier": "magical_brewery:echo_seed",
 			"menu_category": {
 				"category": "items"
 			}
 		}, 
 		"components": {
 			"minecraft:hand_equipped": false,
-			"minecraft:icon": "echo_seed",
+			"minecraft:icon": "magical_brewery:echo_seed",
 			"minecraft:display_name":{
-				"value": "item.ps:echo_seed.name"
+				"value": "item.magical_brewery:echo_seed.name"
 			},
 			"minecraft:block_placer": {
-				"block": "ps:echo_seed"
+				"block": "magical_brewery:echo_seed"
 			}
 		}
 	}

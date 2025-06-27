@@ -2,7 +2,7 @@
 	"format_version": "1.21.90",
 	"minecraft:block": {
 		"description": {
-			"identifier": "ps:glowstone_seed",
+			"identifier": "magical_brewery:glowstone_seed",
 			"menu_category": {
 				"category": "none",
 				"is_hidden_in_commands": true
@@ -13,7 +13,7 @@
 				}
 			},
 			"states": {
-				"ps:seed_depth": [1,2,3,4]
+				"magical_brewery:seed_depth": [1,2,3,4]
 			}
 	  	},
 		"components": {
@@ -39,14 +39,14 @@
 			"minecraft:placement_filter": {
 				"conditions": [
 					{
-						"block_filter": ["minecraft:glowstone", "ps:budding_glowstone"]
+						"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
 					}
 				]
 			},
 			"minecraft:friction": 0.4,
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "glowstone_seed",
+					"texture": "magical_brewery:glowstone_seed",
 					"render_method": "alpha_test",
 					"face_dimming": false,
 					"ambient_occlusion": false
@@ -60,10 +60,10 @@
 			"minecraft:geometry":{
 				"identifier":"geometry.seed_crystal",
 				"bone_visibility": { 
-					"depth1": "q.block_state('ps:seed_depth') == 1", 
-					"depth2": "q.block_state('ps:seed_depth') == 2",
-					"depth3": "q.block_state('ps:seed_depth') == 3",
-					"depth4": "q.block_state('ps:seed_depth') == 4"
+					"depth1": "q.block_state('magical_brewery:seed_depth') == 1", 
+					"depth2": "q.block_state('magical_brewery:seed_depth') == 2",
+					"depth3": "q.block_state('magical_brewery:seed_depth') == 3",
+					"depth4": "q.block_state('magical_brewery:seed_depth') == 4"
 				}
 			},
 			"minecraft:movable": {
@@ -108,7 +108,7 @@
 				}
 			},
 			{
-				"condition": "query.block_state('ps:seed_depth') == 4",
+				"condition": "query.block_state('magical_brewery:seed_depth') == 4",
 				"components": {
 					"magical_brewery:ort_seed_to_crystal": {
 						"crystal_type": "glowstone"

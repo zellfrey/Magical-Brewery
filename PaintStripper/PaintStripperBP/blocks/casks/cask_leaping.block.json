@@ -2,7 +2,7 @@
 	"format_version": "1.21.90",
 	"minecraft:block": {
 		"description": {
-			"identifier": "ps:cask_leaping",
+			"identifier": "magical_brewery:cask_leaping",
 			"menu_category": {
 				"category": "items"
 			},
@@ -13,9 +13,9 @@
 				}
 			},
 			"states": {
-				"ps:fill_level":[0,1,2,3],
-				"ps:charge_level": [0,1,2,3,4],
-				"ps:aged": [false, true]
+				"magical_brewery:fill_level":[0,1,2,3],
+				"magical_brewery:charge_level": [0,1,2,3,4],
+				"magical_brewery:aged": [false, true]
 			} 
 		},
 		"components": {
@@ -44,13 +44,13 @@
 			},
 			"minecraft:material_instances": {
 				"*": {
-						"texture": "cask_side_leaping"
+						"texture": "magical_brewery:cask_side_leaping"
 					},
 					"end": {
-						"texture": "cask_end_leaping"
+						"texture": "magical_brewery:cask_end_leaping"
 					},
 					"front": {
-						"texture": "cask_front_leaping"
+						"texture": "magical_brewery:cask_front_leaping"
 					},
 					"south": "end",
 					"north": "front"
@@ -86,7 +86,7 @@
 				}
 			},
 			{
-				"condition": "q.block_state('ps:fill_level') > 0 && !q.block_state('ps:aged')",
+				"condition": "q.block_state('magical_brewery:fill_level') > 0 && !q.block_state('magical_brewery:aged')",
 				"components": {
 					"magical_brewery:pi_cask_fill": {
 						"cask_effect": "Leaping"

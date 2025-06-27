@@ -1,19 +1,19 @@
 {
-    "format_version": "1.17.41",
-    "minecraft:recipe_shaped": {
-        "description": {
-            "identifier": "ps:stained_slab_swiftness"
-        },
-        "tags": ["crafting_table"],
-        "pattern": ["###"],
-        "key": {
-            "#": "ps:stained_planks_swiftness"
-        },
-        "result": [
-            {
-                "item": "ps:stained_slab_swiftness",
-                "count": 6
-            }
-        ]
-    }
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:stained_slab_swiftness"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["###"],
+		"key": {
+			"#": "magical_brewery:stained_planks_swiftness"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:stained_slab_swiftness",
+				"count": 6
+			}
+		]
+	}
 }

@@ -2,7 +2,7 @@
     "format_version": "1.17.41",
     "minecraft:recipe_shaped": {
         "description": {
-            "identifier": "ps:stained_planks_invisibility"
+            "identifier": "magical_brewery:stained_planks_invisibility"
         },
         "tags": ["crafting_table"],
         "pattern": ["#P"],
@@ -12,8 +12,7 @@
         },
         "result": [
             {
-                "item": "ps:stained_planks_invisibility",
-
+                "item": "magical_brewery:stained_planks_invisibility",
                 "count": 1
             },
             "minecraft:glass_bottle"

@@ -2,7 +2,7 @@
     "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:stained_planks_strength",
+            "identifier": "magical_brewery:stained_planks_strength",
             "menu_category": {
                 "category": "construction"
             }
@@ -27,7 +27,7 @@
             "minecraft:map_color": "#a88300",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stained_planks_strength"
+                    "texture": "magical_brewery:stained_planks_strength"
                 }
             },
             "minecraft:geometry": "minecraft:geometry.full_block"

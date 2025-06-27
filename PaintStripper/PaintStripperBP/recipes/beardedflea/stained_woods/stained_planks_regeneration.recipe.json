@@ -1,22 +1,22 @@
 {
-    "format_version": "1.17.41",
-    "minecraft:recipe_shaped": {
-        "description": {
-            "identifier": "ps:stained_planks_regeneration"
-        },
-        "tags": ["crafting_table"],
-        "pattern": ["#P"],
-        "key": {
-            "#": "minecraft:potion_type:regeneration",
-            "P": "minecraft:planks"
-        },
-        "result": [
-            {
-                "item": "ps:stained_planks_regeneration",
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:stained_planks_regeneration"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["#P"],
+		"key": {
+			"#": "minecraft:potion_type:regeneration",
+			"P": "minecraft:planks"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:stained_planks_regeneration",
 
-                "count": 1
-            },
-            "minecraft:glass_bottle"
-        ]
-    }
+				"count": 1
+			},
+			"minecraft:glass_bottle"
+		]
+	}
 }

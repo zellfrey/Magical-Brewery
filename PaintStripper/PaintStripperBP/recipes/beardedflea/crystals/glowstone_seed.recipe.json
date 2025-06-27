@@ -1,21 +1,21 @@
 {
-  "format_version": "1.17.41",
-  "minecraft:recipe_shaped": {
-      "description": {
-          "identifier": "ps:seed_glowstone"
-      },
-      "tags": ["crafting_table"],
-      "pattern": ["GQG", "QSQ", "GQG"],
-      "key": {
-          "G": "ps:pure_glowstone_dust",
-          "Q": "ps:pure_quartz_shard",
-          "S": "minecraft:stone"
-      },
-      "result": [
-          {
-            "item": "ps:glowstone_seed",
-            "count": 1
-          }
-      ]
-  }
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:seed_glowstone"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["GQG", "QSQ", "GQG"],
+		"key": {
+			"G": "magical_brewery:pure_glowstone_dust",
+			"Q": "magical_brewery:pure_quartz_shard",
+			"S": "minecraft:stone"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:glowstone_seed",
+				"count": 1
+			}
+		]
+	}
 }

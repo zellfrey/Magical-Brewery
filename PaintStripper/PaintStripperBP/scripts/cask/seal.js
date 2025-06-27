@@ -11,7 +11,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             
             const sealStrength = Number(selectedItem.typeId.slice(selectedItem.typeId.length-1))
 
-            e.permutationToPlace = permutationToPlace.withState('ps:seal_level', sealStrength);
+            e.permutationToPlace = permutationToPlace.withState('magical_brewery:seal_level', sealStrength);
         },
     });
 });
@@ -56,7 +56,7 @@ export function setCaskSeal(seal, cask){
     }
     else{
         cask.seal_location = seal.location
-        cask.seal_strength = seal.permutation.getState("ps:seal_level");
+        cask.seal_strength = seal.permutation.getState("magical_brewery:seal_level");
         const sealType = seal.getTags().find(el => el !== "seal");
         cask.is_potency_seal = sealType === "potency" ? true : false;
     }
@@ -68,7 +68,7 @@ export function isSameSealType(caskSeal, cask){
     if(!caskSeal) return false;
 
     const sealType = caskSeal.getTags().find(el => el !== "seal");
-    const sealStrength = caskSeal.permutation.getState("ps:seal_level");
+    const sealStrength = caskSeal.permutation.getState("magical_brewery:seal_level");
     const isPotency = sealType === "potency" ? true : false;
 
     return cask.seal_strength === sealStrength && cask.is_potency_seal === isPotency;

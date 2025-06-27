@@ -7,7 +7,7 @@
 			"entries": [
 				{
 					"type": "item",
-					"name": "ps:redstone_seed",
+					"name": "magical_brewery:redstone_seed",
 					"weight": 1
 				}
 			]

@@ -2,7 +2,7 @@
 	"format_version": "1.21.90",
 	"minecraft:block": {
 		"description": {
-			"identifier": "ps:budding_glowstone",
+			"identifier": "magical_brewery:budding_glowstone",
 			"menu_category": {
 				"category": "nature"
 			}
@@ -27,7 +27,7 @@
 			},
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "budding_glowstone",
+					"texture": "magical_brewery:budding_glowstone",
 					"render_method": "alpha_test",
 					"face_dimming": false,
 					"ambient_occlusion": false

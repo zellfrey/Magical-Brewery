@@ -2,7 +2,7 @@
 	"format_version": "1.21.80",
 	"minecraft:block": {
 		"description": {
-			"identifier": "ps:stained_slab_harming",
+			"identifier": "magical_brewery:stained_slab_harming",
 			"menu_category": {
 				"category": "none",
 				"is_hidden_in_commands": true
@@ -13,7 +13,7 @@
 				}	
 			},
 			"states": {
-				"ps:double": [false, true]
+				"magical_brewery:double": [false, true]
 			}
 		},
 		"components": {
@@ -33,7 +33,7 @@
 			},
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "stained_planks_harming"
+					"texture": "magical_brewery:stained_planks_harming"
 				}
 			},
 			"minecraft:liquid_detection": {
@@ -54,7 +54,7 @@
 				},
 				"material_instances": {
 					"*": {
-						"texture": "stained_planks_harming"
+						"texture": "magical_brewery:stained_planks_harming"
 					}
 				}
 			},
@@ -68,7 +68,7 @@
 		},
 		"permutations": [
 			{
-				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && !q.block_state('ps:double')",
+				"condition": "q.block_state('minecraft:vertical_half') == 'bottom' && !q.block_state('magical_brewery:double')",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [-8, 0, -8],
@@ -81,7 +81,7 @@
 				}
 			},
 			{
-				"condition": "q.block_state('minecraft:vertical_half') == 'top' && !q.block_state('ps:double')",
+				"condition": "q.block_state('minecraft:vertical_half') == 'top' && !q.block_state('magical_brewery:double')",
 				"components": {
 					"minecraft:collision_box": {
 						"origin": [-8, 8, -8],
@@ -94,9 +94,9 @@
 				}
 			},
 			{
-				"condition": "q.block_state('ps:double')",
+				"condition": "q.block_state('magical_brewery:double')",
 				"components": {
-					"minecraft:custom_components": ["ps:opd_slab"],
+					"minecraft:custom_components": ["magical_brewery:opd_slab"],
 					"minecraft:geometry": "minecraft:geometry.full_block",
 					"minecraft:liquid_detection": {
 						"detection_rules": [

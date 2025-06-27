@@ -2,20 +2,20 @@
 	"format_version": "1.21.40",
 	"minecraft:item": {
 		"description": {
-			"identifier": "ps:amethyst_bottle",
+			"identifier": "magical_brewery:amethyst_bottle",
 			"menu_category": {
 				"category": "equipment"
 			}
 		},
 		"components": {
-			"minecraft:custom_components": ["ps:on_use_amethyst_bottle"],
+			"minecraft:custom_components": ["magical_brewery:on_use_amethyst_bottle"],
 			"minecraft:hand_equipped": false,
-			"minecraft:icon": "amethyst_bottle",
+			"minecraft:icon": "magical_brewery:amethyst_bottle",
 			"minecraft:liquid_clipped": {
 				"value": true
 			},
 			"minecraft:display_name":{
-				"value": "item.ps:amethyst_bottle.name"
+				"value": "item.magical_brewery:amethyst_bottle.name"
 			}
 		}
 	}

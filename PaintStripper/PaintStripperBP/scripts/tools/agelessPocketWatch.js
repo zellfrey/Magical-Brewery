@@ -4,10 +4,11 @@ import {getSurroundingBlocks, growCrystalBud} from "crystal/buddingCrystal.js";
 import {shouldCaskAge, setPotionEffectForCask} from "cask/cask.js";
 import {findCask} from "cask/caskDB.js";
 
-const buddingCrystals = ["ps:budding_glowstone", "ps:budding_redstone", "ps:budding_pure_quartz", "ps:budding_echo"];
+const buddingCrystals = ["magical_brewery:budding_glowstone", "magical_brewery:budding_redstone", 
+    "magical_brewery:budding_pure_quartz", "magical_brewery:budding_echo"];
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_on_ageless_pocket_watch', {
+    eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_on_ageless_pocket_watch', {
         onUseOn(e) {
             const {block, source} = e;
 
@@ -17,10 +18,10 @@ system.beforeEvents.startup.subscribe(eventData => {
             }
                 
 
-            if(block.typeId === "ps:growing_crystal"){
-                const seedStage = block.permutation.getState('ps:crystal_stage');
+            if(block.typeId === "magical_brewery:growing_crystal"){
+                const seedStage = block.permutation.getState('magical_brewery:crystal_stage');
                 const rotation = Math.floor(Math.random() * 4)
-                block.setPermutation(block.permutation.withState("ps:crystal_rotation", rotation));
+                block.setPermutation(block.permutation.withState("magical_brewery:crystal_rotation", rotation));
                 crystalGrowth(block, seedStage)
                 // source.sendMessage("The crystal creaks as it grows from the passage of time") 
 
@@ -28,29 +29,29 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const buddingCrystal = buddingCrystals.find(bud => bud === block.typeId)
 
                 switch(buddingCrystal){
-                    case "ps:budding_glowstone":
+                    case "magical_brewery:budding_glowstone":
                         if(block.dimension.id !== "minecraft:nether") return;
                         forceGrowCrystal(block, "glowstone_bud", "glowstone", -14)
                     break;
-                    case "ps:budding_redstone":
+                    case "magical_brewery:budding_redstone":
                         forceGrowCrystal(block, "redstone_bud", "redstone", -13)
                     break;
-                    case "ps:budding_pure_quartz":
+                    case "magical_brewery:budding_pure_quartz":
                         forceGrowCrystal(block, "pure_quartz_bud", "pure_quartz", -16)
                     break;
-                    case "ps:budding_echo":
+                    case "magical_brewery:budding_echo":
                         forceGrowCrystal(block, "echo_bud", "echo", -9)
                     break;
                 }
                 // source.sendMessage("Sparks fly out of the budding crystal as its forced to grow shards.") 
 
-            }else if(block.typeId.includes("ps:cask")){
+            }else if(block.typeId.includes("magical_brewery:cask")){
                 const {x,y,z} = block.location;
                 let cask = findCask(block.dimension.id, {x, y, z})
-                const fillLevel = block.permutation.getState("ps:fill_level");
+                const fillLevel = block.permutation.getState("magical_brewery:fill_level");
                 const caskEffect = block.getComponent("magical_brewery:pi_cask_fill").customComponentParameters.params.cask_effect
                 const canAge = shouldCaskAge(caskEffect, cask.potion_effects)
-                const aged = block.permutation.getState("ps:aged");
+                const aged = block.permutation.getState("magical_brewery:aged");
                 
 
                 if(!canAge || aged || fillLevel === 0){
@@ -60,7 +61,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const particleLocation = block.center();
                 particleLocation.y += 0.4
                 block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
-                block.setPermutation(block.permutation.withState("ps:aged", true));
+                block.setPermutation(block.permutation.withState("magical_brewery:aged", true));
                 setPotionEffectForCask(caskEffect, cask, 100)
                 source.sendMessage("The watch has sped up time, and has aged the cask.")
             }

@@ -1,20 +1,20 @@
 {
   "format_version": "1.17.41",
   "minecraft:recipe_shaped": {
-      "description": {
-          "identifier": "ps:cask_healing"
-      },
-      "tags": ["crafting_table"],
-      "pattern": ["SSS", "I I", "SSS"],
-      "key": {
-          "S": "ps:stained_planks_healing",
-          "I": "minecraft:iron_ingot"
-      },
-      "result": [
-          {
-            "item": "ps:cask_healing",
-            "count": 1
-          }
-      ]
+	  "description": {
+		  "identifier": "magical_brewery:cask_healing"
+	  },
+	  "tags": ["crafting_table"],
+	  "pattern": ["SSS", "I I", "SSS"],
+	  "key": {
+		  "S": "magical_brewery:stained_planks_healing",
+		  "I": "minecraft:iron_ingot"
+	  },
+	  "result": [
+		  {
+			"item": "magical_brewery:cask_healing",
+			"count": 1
+		  }
+	  ]
   }
 }

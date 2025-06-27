@@ -2,7 +2,7 @@
     "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:stained_planks_regeneration",
+            "identifier": "magical_brewery:stained_planks_regeneration",
             "menu_category": {
                 "category": "construction"
             }
@@ -27,7 +27,7 @@
             "minecraft:map_color": "#873d71",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stained_planks_regeneration"
+                    "texture": "magical_brewery:stained_planks_regeneration"
                 }
             },
             "minecraft:geometry": "minecraft:geometry.full_block"

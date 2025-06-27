@@ -2,7 +2,7 @@
 	"format_version": "1.21.40",
 	"minecraft:item": {
 		"description": {
-			"identifier": "ps:tasting_spoon",
+			"identifier": "magical_brewery:tasting_spoon",
 			"menu_category": {
 				"category": "equipment"
 			}
@@ -11,9 +11,9 @@
 			"minecraft:hand_equipped": {
 				"value": true
 			},
-			"minecraft:icon": "tasting_spoon",
+			"minecraft:icon": "magical_brewery:tasting_spoon",
 			"minecraft:display_name":{
-				"value": "item.ps:tasting_spoon.name"
+				"value": "item.magical_brewery:tasting_spoon.name"
 			}
 		}
 	}

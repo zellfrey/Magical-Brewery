@@ -1,21 +1,21 @@
 {
-  "format_version": "1.17.41",
-  "minecraft:recipe_shaped": {
-      "description": {
-          "identifier": "ps:seal_longevity_1"
-      },
-      "tags": ["crafting_table"],
-      "pattern": ["RQR", "QSQ", "RQR"],
-      "key": {
-          "Q": "minecraft:quartz",
-          "S": "ps:seal_basic",
-          "R": "minecraft:redstone"
-      },
-      "result": [
-          {
-            "item": "ps:seal_longevity_1",
-            "count": 1
-          }
-      ]
-  }
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:seal_longevity_1"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["RQR", "QSQ", "RQR"],
+		"key": {
+			"Q": "minecraft:quartz",
+			"S": "magical_brewery:seal_basic",
+			"R": "minecraft:redstone"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:seal_longevity_1",
+				"count": 1
+			}
+		]
+	}
 }

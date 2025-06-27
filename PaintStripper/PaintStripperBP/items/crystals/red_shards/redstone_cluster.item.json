@@ -2,19 +2,19 @@
 	"format_version": "1.21.10",
 	"minecraft:item": {
 		"description": {
-			"identifier": "ps:redstone_cluster",
+			"identifier": "magical_brewery:redstone_cluster",
 			"menu_category": {
 				"category": "nature"
 			}
 		}, 
 		"components": {
 			"minecraft:hand_equipped": false,
-			"minecraft:icon": "redstone_cluster",
+			"minecraft:icon": "magical_brewery:redstone_cluster",
 			"minecraft:display_name":{
-				"value": "item.ps:redstone_cluster.name"
+				"value": "item.magical_brewery:redstone_cluster.name"
 			},
 			"minecraft:block_placer": {
-				"block": "ps:redstone_cluster"
+				"block": "magical_brewery:redstone_cluster"
 			}
 		}
 	}

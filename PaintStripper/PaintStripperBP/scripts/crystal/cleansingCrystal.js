@@ -107,14 +107,14 @@ class Crystal {
         if(newLore.length === 3){
             let pureItem;
             switch(item.typeId){
-                case "ps:sifted_quartz":
-                    pureItem = "ps:pure_quartz_shard";
+                case "magical_brewery:sifted_quartz":
+                    pureItem = "magical_brewery:pure_quartz_shard";
                 break;
-                case "ps:sifted_redstone_dust":
-                    pureItem = "ps:pure_redstone_dust";
+                case "magical_brewery:sifted_redstone_dust":
+                    pureItem = "magical_brewery:pure_redstone_dust";
                 break;
-                case "ps:sifted_glowstone_dust":
-                    pureItem = "ps:pure_glowstone_dust";
+                case "magical_brewery:sifted_glowstone_dust":
+                    pureItem = "magical_brewery:pure_glowstone_dust";
             }
         shard = new ItemStack(pureItem, 1);
         }
@@ -132,13 +132,13 @@ function validCandle(block, candle){
 function getCandleType(itemName){
     let candle;
         switch(itemName){
-            case "ps:sifted_quartz":
+            case "magical_brewery:sifted_quartz":
                 candle = "minecraft:white_candle"
             break;
-            case "ps:sifted_redstone_dust":
+            case "magical_brewery:sifted_redstone_dust":
                 candle = "minecraft:red_candle"
             break;
-            case "ps:sifted_glowstone_dust":
+            case "magical_brewery:sifted_glowstone_dust":
                 candle = "minecraft:yellow_candle"
             break;
         }
@@ -158,7 +158,7 @@ function entityExists(entityId, location, dimension){
 }
 
 
-const siftedItems = ["ps:sifted_quartz", "ps:sifted_redstone_dust", "ps:sifted_glowstone_dust"]
+const siftedItems = ["magical_brewery:sifted_quartz", "magical_brewery:sifted_redstone_dust", "magical_brewery:sifted_glowstone_dust"]
 world.afterEvents.entitySpawn.subscribe(async (e) => {
     const {entity} = e;
     try{

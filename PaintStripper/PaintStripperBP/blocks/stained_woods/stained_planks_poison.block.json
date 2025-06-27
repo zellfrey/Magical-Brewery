@@ -2,7 +2,7 @@
     "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:stained_planks_poison",
+            "identifier": "magical_brewery:stained_planks_poison",
             "menu_category": {
                 "category": "construction"
             }
@@ -27,7 +27,7 @@
             "minecraft:map_color": "#596b41",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stained_planks_poison"
+                    "texture": "magical_brewery:stained_planks_poison"
                 }
             },
             "minecraft:geometry": "minecraft:geometry.full_block"

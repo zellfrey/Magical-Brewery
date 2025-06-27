@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:seal_potency",
+            "identifier": "magical_brewery:seal_potency",
             "menu_category": {
                 "category": "none",
                 "is_hidden_in_commands": true
@@ -13,7 +13,7 @@
                 }
             },
             "states": {
-                "ps:seal_level":[1,2,3]
+                "magical_brewery:seal_level":[1,2,3]
             }   
         },
         "components": {
@@ -99,12 +99,12 @@
                 }
             },
             {
-                "condition": "q.block_state('ps:seal_level') == 1",
+                "condition": "q.block_state('magical_brewery:seal_level') == 1",
                 "components": {
                     "minecraft:loot": "loot_tables/beardedflea/blocks/seals/seal_potency_1.loot.json",
                     "minecraft:material_instances": {
                         "*": {
-                                "texture": "seal_potency_1",
+                                "texture": "magical_brewery:seal_potency_1",
                                 "render_method": "alpha_test",
                                 "face_dimming": false,
                                 "ambient_occlusion": false
@@ -113,12 +113,12 @@
                 }
             },
             {
-                "condition": "q.block_state('ps:seal_level') == 2",
+                "condition": "q.block_state('magical_brewery:seal_level') == 2",
                 "components": {
                     "minecraft:loot": "loot_tables/beardedflea/blocks/seals/seal_potency_2.loot.json",
                     "minecraft:material_instances": {
                         "*": {
-                                "texture": "seal_potency_2",
+                                "texture": "magical_brewery:seal_potency_2",
                                 "render_method": "alpha_test",
                                 "face_dimming": false,
                                 "ambient_occlusion": false

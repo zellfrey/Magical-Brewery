@@ -2,7 +2,7 @@
     "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:stained_planks_resistance_fire",
+            "identifier": "magical_brewery:stained_planks_resistance_fire",
             "menu_category": {
                 "category": "construction"
             }
@@ -27,7 +27,7 @@
             "minecraft:map_color": "#a86500",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stained_planks_resistance_fire"
+                    "texture": "magical_brewery:stained_planks_resistance_fire"
                 }
             },
             "minecraft:geometry": "minecraft:geometry.full_block"

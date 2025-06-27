@@ -2,19 +2,19 @@
 	"format_version": "1.21.10",
 	"minecraft:item": {
 		"description": {
-			"identifier": "ps:redstone_seed",
+			"identifier": "magical_brewery:redstone_seed",
 			"menu_category": {
 				"category": "items"
 			}
 		}, 
 		"components": {
 			"minecraft:hand_equipped": false,
-			"minecraft:icon": "redstone_seed",
+			"minecraft:icon": "magical_brewery:redstone_seed",
 			"minecraft:display_name":{
-				"value": "item.ps:redstone_seed.name"
+				"value": "item.magical_brewery:redstone_seed.name"
 			},
 			"minecraft:block_placer": {
-				"block": "ps:redstone_seed"
+				"block": "magical_brewery:redstone_seed"
 			}
 		}
 	}

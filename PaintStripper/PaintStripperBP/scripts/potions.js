@@ -5,7 +5,7 @@ import {getPotencyLevel} from "./potionEffects.js";
 //12 mins duration in ticks i.e 12*60 *20
 const xLongDuration = 14400;
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.itemComponentRegistry.registerCustomComponent('ps:oc_potion', {
+    eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:oc_potion', {
         onConsume(e) {
             const { source, itemStack} = e;
             source.addEffect(itemStack.getTags()[0], xLongDuration, { amplifier: 0 })
@@ -69,7 +69,7 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
 
 // });
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_amethyst_bottle', {
+    eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_amethyst_bottle', {
         onUseOn(e) {
             const {source, itemStack, block} = e
             console.log(block.typeId)
@@ -77,7 +77,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             
             const equipment = source.getComponent('equippable');
             const selectedItem = equipment.getEquipment('Mainhand');
-            const amethystWaterBottle = new ItemStack("ps:amethyst_water_bottle", 1)
+            const amethystWaterBottle = new ItemStack("magical_brewery:amethyst_water_bottle", 1)
             
 
             // if (block.typeId === "minecraft:cauldron"){

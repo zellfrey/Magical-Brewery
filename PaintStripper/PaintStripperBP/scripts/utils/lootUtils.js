@@ -1,7 +1,8 @@
 import {world, system, ItemStack } from "@minecraft/server";
 
 //Functions used to hook into vanilla blocks/entities to drop custom loot
-const nonSilkTouchBlocks = ["ps:growing_crystal","ps:budding_pure_quartz", "ps:budding_redstone", "ps:budding_glowstone", "ps:budding_echo"]
+const nonSilkTouchBlocks = ["magical_brewery:growing_crystal","magical_brewery:budding_pure_quartz", 
+    "magical_brewery:budding_redstone", "magical_brewery:budding_glowstone", "magical_brewery:budding_echo"]
 //Hook into vanilla events to create custom loot table
 
 

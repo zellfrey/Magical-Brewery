@@ -2,7 +2,7 @@
     "format_version": "1.21.90",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:small_redstone_bud",
+            "identifier": "magical_brewery:small_redstone_bud",
             "menu_category": {
                 "category": "none",
                 "is_hidden_in_commands": true
@@ -37,7 +37,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "small_redstone_bud",
+                    "texture": "magical_brewery:small_redstone_bud",
                     "render_method": "alpha_test_single_sided",
                     "face_dimming": false,
                     "ambient_occlusion": false

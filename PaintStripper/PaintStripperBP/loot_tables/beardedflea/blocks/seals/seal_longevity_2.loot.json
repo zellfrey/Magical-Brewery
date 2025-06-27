@@ -5,7 +5,7 @@
 			"entries": [
 				{
 					"type": "item",
-					"name": "ps:seal_longevity_2"
+					"name": "magical_brewery:seal_longevity_2"
 				}
 			]
 		},
@@ -31,7 +31,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "ps:seal_longevity_2"
+                    "name": "magical_brewery:seal_longevity_2"
                 }
             ]
         }

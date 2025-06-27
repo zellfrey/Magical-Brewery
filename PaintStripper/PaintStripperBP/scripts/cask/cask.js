@@ -25,7 +25,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_cask', {
         onPlayerBreak(e) {
-            // const fillLevel = block.permutation.getState("ps:fill_level");
+            // const fillLevel = block.permutation.getState("magical_brewery:fill_level");
 
             // if(fillLevel > 0) 
             // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
@@ -46,13 +46,13 @@ system.beforeEvents.startup.subscribe(eventData => {
 
             const {x,y,z} = block.location;
             let cask = findCask(dimension.id, {x, y, z})
-            const fillLevel = block.permutation.getState("ps:fill_level");
-            const aged = block.permutation.getState("ps:aged");
+            const fillLevel = block.permutation.getState("magical_brewery:fill_level");
+            const aged = block.permutation.getState("magical_brewery:aged");
 
             //Failsafe
             // if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
 
-            if(selectedItem.typeId === "ps:tasting_spoon"){
+            if(selectedItem.typeId === "magical_brewery:tasting_spoon"){
 
                 const caskEffect = p.params.cask_effect;
                 
@@ -114,7 +114,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 
                 if(!matchesPotion(cask, potion, selectedItem.getLore())) return;
                     
-                block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel+1));
+                block.setPermutation(block.permutation.withState("magical_brewery:fill_level", fillLevel+1));
                 const emptyBottle = new ItemStack("glass_bottle", 1)
                 setMainHand(player, equipment, selectedItem, emptyBottle);
 
@@ -156,15 +156,15 @@ system.beforeEvents.startup.subscribe(eventData => {
 
                 const pitch = fillLevel * 0.2 + 0.3
                 dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: pitch});
-                block.setPermutation(block.permutation.withState("ps:fill_level", fillLevel-1));
+                block.setPermutation(block.permutation.withState("magical_brewery:fill_level", fillLevel-1));
 
-                if(block.permutation.getState("ps:fill_level") === 0){
+                if(block.permutation.getState("magical_brewery:fill_level") === 0){
                     cask.potion_effects.length = 0;
                     cask.potion_liquid = "";
                     cask.potion_modifier = "";
                     cask.age_start_tick = -1
                     
-                    block.setPermutation(block.permutation.withState("ps:aged", false));
+                    block.setPermutation(block.permutation.withState("magical_brewery:aged", false));
                     updateCask(cask)
                 }
                 return;
@@ -189,7 +189,7 @@ function ageCask(block, dimension, caskEffect){
 
     createAgeingFeedback(block, cask.potion_effects.length)
     
-    const fillLevel = block.permutation.getState("ps:fill_level");
+    const fillLevel = block.permutation.getState("magical_brewery:fill_level");
     const timeToAge = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
     const hasAged = timeToAge <= system.currentTick
 
@@ -200,7 +200,7 @@ function ageCask(block, dimension, caskEffect){
         const caskSealAgeTime = Math.ceil(cask.seal_lifetime*20 / caskAgeTime *100)
         setPotionEffectForCask(caskEffect, cask, caskSealAgeTime)
 
-        block.setPermutation(block.permutation.withState("ps:aged", true));
+        block.setPermutation(block.permutation.withState("magical_brewery:aged", true));
         
         const particleLocation = block.center();
         particleLocation.y += 0.4
@@ -341,7 +341,7 @@ function createAgeingFeedback(block, noOfPotions){
 
     if(Math.random() <= 0.1){
         const vol = 0.7 + (noOfPotions/10);
-        block.dimension.playSound("ps:block.cask.creak", block.location, {volume: vol, pitch: 1.5});
+        block.dimension.playSound("magical_brewery:block.cask.creak", block.location, {volume: vol, pitch: 1.5});
     }
 }
 function caskTagToEffectId(caskTag){

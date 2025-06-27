@@ -2,7 +2,7 @@
 	"format_version": "1.21.50",
 	"minecraft:block": {
 		"description": {
-			"identifier": "ps:stained_slab_invisibility",
+			"identifier": "magical_brewery:stained_slab_invisibility",
 			"menu_category": {
 				"category": "construction"
 			},
@@ -12,7 +12,7 @@
 				}
 			},
 			"states": {
-				"ps:double": [false, true]
+				"magical_brewery:double": [false, true]
 			  }
 		},
 		"components": {
@@ -32,7 +32,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stained_planks_invisibility"
+                    "texture": "magical_brewery:stained_planks_invisibility"
                 }
             },
 			"minecraft:liquid_detection": {
@@ -53,7 +53,7 @@
 		},
 		"permutations": [
             {
-                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && !q.block_state('ps:double')",
+                "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && !q.block_state('magical_brewery:double')",
                 "components": {
                     "minecraft:collision_box": {
                         "origin": [-8, 0, -8],
@@ -66,7 +66,7 @@
                 }
             },
             {
-                "condition": "q.block_state('minecraft:vertical_half') == 'top' && !q.block_state('ps:double')",
+                "condition": "q.block_state('minecraft:vertical_half') == 'top' && !q.block_state('magical_brewery:double')",
                 "components": {
                     "minecraft:collision_box": {
                         "origin": [-8, 8, -8],
@@ -79,9 +79,9 @@
                 }
             },
 			{
-				"condition": "q.block_state('ps:double')",
+				"condition": "q.block_state('magical_brewery:double')",
 				"components": {
-					"minecraft:custom_components": ["ps:opd_slab"],
+					"minecraft:custom_components": ["magical_brewery:opd_slab"],
 					"minecraft:geometry": "minecraft:geometry.full_block",
 					"minecraft:liquid_detection": {
 						"detection_rules": [

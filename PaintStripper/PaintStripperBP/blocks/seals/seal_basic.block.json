@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
 		"description": {
-			"identifier": "ps:seal_basic",
+			"identifier": "magical_brewery:seal_basic",
 			"menu_category": {
 				"category": "none",
 				"is_hidden_in_commands": true
@@ -34,7 +34,7 @@
 			},
 			"minecraft:material_instances": {
 			"*": {
-					"texture": "seal_basic",
+					"texture": "magical_brewery:seal_basic",
 					"render_method": "alpha_test",
 					"face_dimming": false,
 					"ambient_occlusion": false

@@ -3,7 +3,7 @@ import {setMainHand} from './utils/containerUtils.js';
 import {getAdjacentBlock} from "./utils/blockPlacementUtils.js";
 
 system.beforeEvents.startup.subscribe(eventData => {
-    eventData.blockComponentRegistry.registerCustomComponent('ps:opd_slab', {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_slab', {
         onPlayerBreak(e) {
             const {player, destroyedBlockPermutation: perm } = e;
 
@@ -19,7 +19,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 
 // system.beforeEvents.startup.subscribe(eventData => {
-//     eventData.itemComponentRegistry.registerCustomComponent('ps:on_use_slab_stained', {
+//     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_slab_stained', {
 //         onUseOn(e) {
 //             const {source, itemStack, block, blockFace} = e
 
@@ -35,7 +35,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 
 //                 if (isBottomUp || isTopDown) {
 
-//                     block.setPermutation(block.permutation.withState('ps:double', true)); 
+//                     block.setPermutation(block.permutation.withState('magical_brewery:double', true)); 
 //                     block.dimension.playSound('use.wood', block.location);
 //                     setMainHand(source, equipment, selectedItem, undefined);
 //                 }
@@ -43,7 +43,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 //             else{
 //                 let adjacentBlock = getAdjacentBlock(block, blockFace)
 //                 if(itemStack.typeId === adjacentBlock.typeId){
-//                     adjacentBlock.setPermutation(adjacentBlock.permutation.withState('ps:double', true)); 
+//                     adjacentBlock.setPermutation(adjacentBlock.permutation.withState('magical_brewery:double', true)); 
 //                     adjacentBlock.dimension.playSound('use.wood', adjacentBlock.location);
 //                     setMainHand(source, equipment, selectedItem, undefined);
 //                 }

@@ -2,7 +2,7 @@
     "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "ps:stained_planks_slow_falling",
+            "identifier": "magical_brewery:stained_planks_slow_falling",
             "menu_category": {
                 "category": "construction"
             }
@@ -27,7 +27,7 @@
             "minecraft:map_color": "#a28a7b",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stained_planks_slow_falling"
+                    "texture": "magical_brewery:stained_planks_slow_falling"
                 }
             },
             "minecraft:geometry": "minecraft:geometry.full_block"

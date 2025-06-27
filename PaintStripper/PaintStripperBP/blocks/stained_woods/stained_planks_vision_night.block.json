@@ -1,36 +1,36 @@
 {
-    "format_version": "1.21.60",
-    "minecraft:block": {
-        "description": {
-            "identifier": "ps:stained_planks_vision_night",
-            "menu_category": {
-                "category": "construction"
-            }
-        },
-        "components": {
-            "tag:minecraft:is_axe_item_destructible": {},
-            "minecraft:light_dampening": 4,
-            "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 2.0
-            },
-            "minecraft:flammable": { 
-                "catch_chance_modifier": 5,
-                "destroy_chance_modifier": 20
-            },
-            "minecraft:destructible_by_explosion": {
-                "explosion_resistance": 3
-            },
-            "minecraft:redstone_conductivity": {
-                "redstone_conductor": true,
-                "allows_wire_to_step_down": true
-            },
-            "minecraft:map_color": "#80a843",
-            "minecraft:material_instances": {
-                "*": {
-                    "texture": "stained_planks_vision_night"
-                }
-            },
-            "minecraft:geometry": "minecraft:geometry.full_block"
-        }
-    }
+	"format_version": "1.21.60",
+	"minecraft:block": {
+		"description": {
+			"identifier": "magical_brewery:stained_planks_vision_night",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"tag:minecraft:is_axe_item_destructible": {},
+			"minecraft:light_dampening": 4,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 2.0
+			},
+			"minecraft:flammable": { 
+				"catch_chance_modifier": 5,
+				"destroy_chance_modifier": 20
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 3
+			},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true,
+				"allows_wire_to_step_down": true
+			},
+			"minecraft:map_color": "#80a843",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "magical_brewery:stained_planks_vision_night"
+				}
+			},
+			"minecraft:geometry": "minecraft:geometry.full_block"
+		}
+	}
 }

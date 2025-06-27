@@ -2,7 +2,7 @@
 	"format_version": "1.21.90",
 	"minecraft:block": {
 		"description": {
-			"identifier": "ps:budding_echo",
+			"identifier": "magical_brewery:budding_echo",
 			"menu_category": {
 				"category": "nature"
 			}
@@ -24,7 +24,7 @@
 			},
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "budding_echo",
+					"texture": "magical_brewery:budding_echo",
 					"render_method": "alpha_test",
 					"face_dimming": false,
 					"ambient_occlusion": false
