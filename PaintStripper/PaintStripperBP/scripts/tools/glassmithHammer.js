@@ -5,7 +5,7 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_on_hammer', {
         onUseOn(e) {
             const {block, itemStack, source} = e;
-            if(!block.hasTag("crystal_seed")) return;
+            if(!block.hasTag("magical_brewery:crystal_seed")) return;
 
             const seedDepth = block.permutation.getState("magical_brewery:seed_depth")
             if(seedDepth != 4){

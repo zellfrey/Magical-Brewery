@@ -54,7 +54,7 @@
 					"allowed_faces": ["north", "south", "west", "east"],
 					"block_filter": [
 						{
-							"tags": "q.any_tag('cask')"
+							"tags": "q.any_tag('magical_brewery:cask')"
 						}
 					]
 					}

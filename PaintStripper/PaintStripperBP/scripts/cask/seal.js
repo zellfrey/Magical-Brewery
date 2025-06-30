@@ -34,7 +34,7 @@ export function findCaskSeal(block){
     const crossBlocks = [];
     neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
 
-    const seals = crossBlocks.filter(el => el.hasTag("seal"))
+    const seals = crossBlocks.filter(el => el.hasTag("magical_brewery:seal"))
 
     if(seals.length === 0) return undefined;
 
@@ -57,7 +57,7 @@ export function setCaskSeal(seal, cask){
     else{
         cask.seal_location = seal.location
         cask.seal_strength = seal.permutation.getState("magical_brewery:seal_level");
-        const sealType = seal.getTags().find(el => el !== "seal");
+        const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
         cask.is_potency_seal = sealType === "potency" ? true : false;
     }
 
@@ -67,7 +67,7 @@ export function setCaskSeal(seal, cask){
 export function isSameSealType(caskSeal, cask){
     if(!caskSeal) return false;
 
-    const sealType = caskSeal.getTags().find(el => el !== "seal");
+    const sealType = caskSeal.getTags().find(el => el !== "magical_brewery:seal");
     const sealStrength = caskSeal.permutation.getState("magical_brewery:seal_level");
     const isPotency = sealType === "potency" ? true : false;
 

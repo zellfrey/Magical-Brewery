@@ -15,7 +15,7 @@
 		},
 		"components": {
 			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:glowstone_bud": {},
+			"tag:magical_brewery:glowstone_bud": {},
 			"minecraft:friction": 0.4,
 			"minecraft:geometry": "minecraft:geometry.cross",
 			"minecraft:light_emission": 11,

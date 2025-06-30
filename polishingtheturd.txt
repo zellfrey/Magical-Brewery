@@ -71,12 +71,12 @@ growing crystals
     TODO: Update red shard image - DONE
     TODO: Make clusters work with fortune enchant
 Using recipes
-1. Shards can be used for shard Blocks
-2. Shards can be turned into powders
+1. Shards can be used for shard Blocks - DONE
+2. Shards can be turned into powders - DONE
 Cask/Ageing tree
 
 General
-TODO: Rename addon and pre-fixes to "magical_brewery"
+TODO: Rename addon and pre-fixes to "magical_brewery" - DONE
 TODO: Look into particle systems
 
 TODO; Polish budding crystal code - DONE

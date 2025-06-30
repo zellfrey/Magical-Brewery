@@ -20,7 +20,7 @@
 		},
 		"components": {
 			"tag:minecraft:is_axe_item_destructible": {},
-			"tag:cask": {},
+			"tag:magical_brewery:cask": {},
 			"magical_brewery:pi_cask_fill": {
 				"cask_effect": "Slowness"
 			},

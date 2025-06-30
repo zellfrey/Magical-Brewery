@@ -31,16 +31,16 @@ system.beforeEvents.startup.subscribe(eventData => {
                 switch(buddingCrystal){
                     case "magical_brewery:budding_glowstone":
                         if(block.dimension.id !== "minecraft:nether") return;
-                        forceGrowCrystal(block, "glowstone_bud", "glowstone", -14)
+                        forceGrowCrystal(block, "magical_brewery:glowstone_bud", "glowstone", -14)
                     break;
                     case "magical_brewery:budding_redstone":
-                        forceGrowCrystal(block, "redstone_bud", "redstone", -13)
+                        forceGrowCrystal(block, "magical_brewery:redstone_bud", "redstone", -13)
                     break;
                     case "magical_brewery:budding_pure_quartz":
-                        forceGrowCrystal(block, "pure_quartz_bud", "pure_quartz", -16)
+                        forceGrowCrystal(block, "magical_brewery:pure_quartz_bud", "pure_quartz", -16)
                     break;
                     case "magical_brewery:budding_echo":
-                        forceGrowCrystal(block, "echo_bud", "echo", -9)
+                        forceGrowCrystal(block, "magical_brewery:echo_bud", "echo", -9)
                     break;
                 }
                 // source.sendMessage("Sparks fly out of the budding crystal as its forced to grow shards.") 
@@ -70,12 +70,12 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
-function forceGrowCrystal(block, budBlock, type, CharNum){
-    const validBlocks = getSurroundingBlocks(block, budBlock)
+function forceGrowCrystal(block, budTag, type, CharNum){
+    const validBlocks = getSurroundingBlocks(block, budTag)
 
     if(validBlocks.length === 0) return;
 
     const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
 
-    growCrystalBud(budToGrow, type, 3, CharNum)
+    growCrystalBud(budToGrow, type, CharNum)
 }

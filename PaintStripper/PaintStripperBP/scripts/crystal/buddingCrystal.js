@@ -68,7 +68,7 @@ function crystalGrowth(block, budType, crystalType, lastCharNum){
 
         const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
             
-        growCrystalBud(budToGrow, crystalType, 3, lastCharNum)
+        growCrystalBud(budToGrow, crystalType, lastCharNum)
     }
 }
 
@@ -80,13 +80,14 @@ export function getSurroundingBlocks(block, budTag){
     return blockdAndFaces.filter(lumps => lumps.block.typeId === "minecraft:air" || lumps.block.typeId === "minecraft:water" || lumps.block.hasTag(budTag));
 }
 
-export function growCrystalBud(selectedBlock, type, firstCharNum, secondCharNum){
+export function growCrystalBud(selectedBlock, type, lastCharNum){
     let newSize;
     if(selectedBlock.block.typeId === "minecraft:air" || selectedBlock.block.typeId === "minecraft:water"){
         newSize = `magical_brewery:small_${type}_bud`;
     }
     else{
-        const budSize =selectedBlock.block.typeId.slice(firstCharNum, secondCharNum);
+        const budSize =selectedBlock.block.typeId.slice(16, lastCharNum);
+        console.log(budSize)
         switch(budSize){
             case "small":
                 newSize = `magical_brewery:medium_${type}_bud`;
@@ -124,16 +125,16 @@ system.beforeEvents.startup.subscribe(eventData => {
             switch(e.block.typeId){
                 case "magical_brewery:budding_glowstone":
                     if(e.block.dimension.id !== "minecraft:nether") return;
-                    crystalGrowth(e.block, "glowstone_bud", "glowstone", -14)
+                    crystalGrowth(e.block, "magical_brewery:glowstone_bud", "glowstone", -14)
                 break;
                 case "magical_brewery:budding_redstone":
-                    crystalGrowth(e.block, "redstone_bud", "redstone", -13)
+                    crystalGrowth(e.block, "magical_brewery:redstone_bud", "redstone", -13)
                 break;
                 case "magical_brewery:budding_pure_quartz":
-                    crystalGrowth(e.block, "pure_quartz_bud", "pure_quartz", -16)
+                    crystalGrowth(e.block, "magical_brewery:pure_quartz_bud", "pure_quartz", -16)
                 break;
                 case "magical_brewery:budding_echo":
-                    crystalGrowth(e.block, "echo_bud", "echo", -9)
+                    crystalGrowth(e.block, "magical_brewery:echo_bud", "echo", -9)
                 break;
             }
         }
