@@ -194,3 +194,88 @@ TODO: Allow bottle to be filled from cauldron and waterlogged blocks
 cool world seed -4555157900916148182
 TODO: Re-design cask database, classes. Array, save DB every 5 mins not every operation
 Hipshot joe
+
+
+const potionEffectDisplayNames = {
+    "Harming": {
+        name: "Instant Damage",
+    },
+    "Healing": {
+        name: "Instant Health",
+    },
+    "Invisibility": {
+        name: "Invisibility",
+    },
+    "Leaping": {
+        name: "Leaping",
+    },
+    "Poison": {
+        name: "Poison",
+    },
+    "Regeneration": {
+        name: "Regeneration",
+    },
+    "FireResistance": {
+        name: "Fire Resistance",
+    },
+    "SlowFalling": {
+        name: "Slow Falling",
+    },
+    "Slowing": {
+        name: "Slowness",
+    },
+    "Strength": {
+        name: "Strength",
+    },
+    "Swiftness": {
+        name: "Speed",
+    },
+    "TurtleMaster": {
+        name: "Turtle Master (Slowness, Resistance)",
+    },
+    "NightVision": {
+        name: "Night Vision",
+    },
+    "WaterBreath": {
+        name: "Water Breathing",
+    },
+    "Weakness": {
+        name: "Weakness",
+    },
+    "WindCharged": {
+        name: "Wind Charged",
+    },
+    "Weaving": {
+        name: "Weaving",
+    },
+    "Infested": {
+        name: "Infested",
+    },
+    "Oozing": {
+        name: "Oozing",
+    }
+  };
+
+
+Long
+Regular
+Normal
+Regular
+Long
+Regular
+Strong
+Regular
+Normal
+Splash
+Long
+Splash
+Strong
+Splash
+Normal
+Lingering
+Long
+Lingering
+Strong
+Lingering
+
+Separate Lingering potion times into separate constant

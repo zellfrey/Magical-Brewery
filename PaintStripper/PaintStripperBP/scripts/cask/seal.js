@@ -18,16 +18,18 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 export function destroyCaskSeal(cask){
     const dim = world.getDimension(cask.dimensionId)
-    dim.setBlockType(cask.seal_location, "minecraft:air");
-    dim.spawnParticle("minecraft:basic_flame_particle", cask.seal_location);
+    const seal = dim.getBlock(cask.seal_location)
 
+    spawnSealSmokeParticle(dim, seal.center(), seal.permutation.getState("minecraft:block_face"))
+    
+    dim.setBlockType(cask.seal_location, "minecraft:air");
+    
     cask.seal_location = {};
     cask.is_potency_seal = false;
     cask.seal_strength = 0;
     cask.seal_lifetime = 0;
 
     updateCaskSeal(cask)
-    console.log("destroying seal")
 }
     
 export function findCaskSeal(block){
@@ -72,4 +74,22 @@ export function isSameSealType(caskSeal, cask){
     const isPotency = sealType === "potency" ? true : false;
 
     return cask.seal_strength === sealStrength && cask.is_potency_seal === isPotency;
+}
+
+function spawnSealSmokeParticle(dimension, particleSpawnVector3, blockFace){
+    switch(blockFace){
+        case "north":
+            particleSpawnVector3.z += 0.4;
+        break;
+        case "south":
+            particleSpawnVector3.z -= 0.4;
+        break;
+        case "west":
+            particleSpawnVector3.x += 0.4;
+        break;
+        case "east":
+            particleSpawnVector3.x -= 0.4;
+        break;
+    }
+    dimension.spawnParticle("magical_brewery:seal_coloured_smoke", particleSpawnVector3);
 }
