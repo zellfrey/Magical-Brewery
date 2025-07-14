@@ -1,7 +1,7 @@
 import {ItemStack} from '@minecraft/server';
 
 export function setMainHand(player, equipment, item, newItem){
-    if (player.getGameMode() !== "creative") {
+    if (player.getGameMode() !== "Creative") {
         if (item.amount > 1) {
             item.amount -= 1;
             equipment.setEquipment('Mainhand', item);
