@@ -60,7 +60,7 @@ export function setCaskSeal(seal, cask){
         cask.seal_location = seal.location
         cask.seal_strength = seal.permutation.getState("magical_brewery:seal_level");
         const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
-        cask.is_potency_seal = sealType === "potency" ? true : false;
+        cask.is_potency_seal = sealType.slice(16) === "potency" ? true : false;
     }
 
     cask.seal_lifetime = 0;
@@ -71,7 +71,7 @@ export function isSameSealType(caskSeal, cask){
 
     const sealType = caskSeal.getTags().find(el => el !== "magical_brewery:seal");
     const sealStrength = caskSeal.permutation.getState("magical_brewery:seal_level");
-    const isPotency = sealType === "potency" ? true : false;
+    const isPotency = sealType.slice(16) === "potency" ? true : false;
 
     return cask.seal_strength === sealStrength && cask.is_potency_seal === isPotency;
 }
