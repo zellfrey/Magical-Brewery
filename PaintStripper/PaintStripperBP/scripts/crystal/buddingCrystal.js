@@ -52,7 +52,6 @@ export class BuddingCrystal {
 
 function crystalGrowth(block, budType, crystalType, lastCharNum){
     let buddingCrystal = BuddingCrystal.buddingCrystals[BuddingCrystal.findIndexCrystal(block.location, block.dimension.id)]
-    console.log(buddingCrystal.previousTick)
     let unloadTimeCompensation = 1;
     let blockUnloadedTime = system.currentTick - buddingCrystal.previousTick
     
@@ -87,7 +86,6 @@ export function growCrystalBud(selectedBlock, type, lastCharNum){
     }
     else{
         const budSize =selectedBlock.block.typeId.slice(16, lastCharNum);
-        console.log(budSize)
         switch(budSize){
             case "small":
                 newSize = `magical_brewery:medium_${type}_bud`;
