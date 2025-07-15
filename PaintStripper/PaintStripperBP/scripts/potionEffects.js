@@ -1,8 +1,8 @@
-export const potionPotencyArray = ["I", "II", "III", "IV", "V", "VI"]
+export const POTION_POTENCY_LEVELS = ["I", "II", "III", "IV", "V", "VI"]
 //instant potions have 1 element for the array
 //Potions with long duration, 0th element represent base effect time, 1st is longevity
 //If a potion doesnt have a potency variant, it will fallback onto the base effect time in duration_long
-export const potionEffectsObject = {
+export const POTION_EFFECTS = {
     // "Decay": {
     //     effects: "Wither",
     //     duration_long: ["0:40", "1:00", "2:00"], 
@@ -87,11 +87,10 @@ export const potionEffectsObject = {
   };
 
 export function getPotencyLevel(effect){
-    let potency = potionPotencyArray.findIndex(el => el === effect[effect.length-1]);
+    let potency = POTION_POTENCY_LEVELS.findIndex(el => el === effect[effect.length-1]);
     potency = potency !== -1 ? potency : 0
 
     return potency;
 }
-//Freezes the object, initialize on server startup  
-Object.freeze(potionEffectsObject);
+
 

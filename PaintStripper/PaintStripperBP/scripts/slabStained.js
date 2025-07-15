@@ -9,7 +9,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 
             if (!player || !player.getComponent('equippable'))  return;
 
-            if (player.getGameMode() === "creative") return;
+            if (player.getGameMode() === "Creative") return;
 
             const slabItem = perm.getItemStack(1);
             if (slabItem) e.dimension.spawnItem(slabItem, e.block.location);

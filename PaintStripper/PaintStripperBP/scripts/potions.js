@@ -7,67 +7,47 @@ const xLongDuration = 14400;
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:oc_potion', {
         onConsume(e) {
-            const { source, itemStack} = e;
-            source.addEffect(itemStack.getTags()[0], xLongDuration, { amplifier: 0 })
-            
+            e.source.addEffect(e.itemStack.getTags()[0], xLongDuration, { amplifier: 0 })
         }
     });
 });
 
 world.afterEvents.itemCompleteUse.subscribe((e) => {
-    const { source, itemStack } = e;
-    if(itemStack.typeId !== "minecraft:potion") return;
-
-    const potion = itemStack.getComponent('minecraft:potion')
-    const lore = itemStack.getLore();
-    if(lore.length != 0){
-        lore.forEach(modifier => {
-            const words = modifier.split(' ');
-
-            if(words[0] === "Instant"){
-                const potency = getPotencyLevel(words)
-                if(potency !== 0) words.pop();
-                source.addEffect(words.join("_").toLowerCase(), 1, { amplifier: potency })
-            }
-            else{
-                
-                const effectTime = words[words.length-1].substring(1, 5)
-                const [minutes, seconds] = effectTime.split(':');
-                const totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-                words.pop();
-
-                const potency = getPotencyLevel(words)
-                
-                if(potency !== 0) words.pop();
-
-                let effect = words.join("_").toLowerCase()
-                // if(Potions.getPotionEffectType(effect) ! == undefined){
-                // }
-                source.addEffect(effect, totalTicks, { amplifier: potency })
-            }
-        });
-    }
+    giveEffectsToEntity(e.source, e.itemStack)
 });
 
+function giveEffectsToEntity(entity, heldPotion){
+    if(heldPotion.typeId !== "minecraft:potion" || heldPotion.getLore().length == 0) return;
+    // const potion = e.itemStack.getComponent('minecraft:potion')
+    heldPotion.getLore().forEach(modifier => {
+        const words = modifier.split(' ');
+        let effect, potency;
+        let totalTicks = 1;
+        if(words[0] === "Instant"){
+            potency = getPotencyLevel(words)
+            if(potency !== 0) words.pop();
+            effect = words.join("_").toLowerCase()
+        }
+        else{
+            
+            const effectTime = words[words.length-1].substring(1, 5)
+            const [minutes, seconds] = effectTime.split(':');
+            totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
+            words.pop();
 
+            potency = getPotencyLevel(words)
+            
+            if(potency !== 0) words.pop();
 
-// world.afterEvents.entitySpawn.subscribe((e) => {
-//     const {entity} = e;
-//     // const item = entity.getComponent("item").itemStack;
-//     if(entity.typeId !== "minecraft:splash_potion") return;
+            effect = words.join("_").toLowerCase()
+            // if(Potions.getPotionEffectType(effect) ! == undefined){
+            // }
+            
+        }
+        entity.addEffect(effect, totalTicks, { amplifier: potency })
+    });
+}
 
-//     console.warn(entity.typeId)
-//     console.log(entity.getComponents()[0].typeId)
-
-// });
-
-// world.afterEvents.projectileHitBlock.subscribe((e) => {
-//     const {projectile} = e;
-//     // const item = entity.getComponent("item").itemStack;
-//     console.warn(projectile.typeId)
-//     // console.warn(projectile.getComponents()[0].typeId)
-
-// });
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_amethyst_bottle', {
         onUseOn(e) {
@@ -97,3 +77,21 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
+
+// world.afterEvents.entitySpawn.subscribe((e) => {
+//     const {entity} = e;
+//     // const item = entity.getComponent("item").itemStack;
+//     if(entity.typeId !== "minecraft:splash_potion") return;
+
+//     console.warn(entity.typeId)
+//     console.log(entity.getComponents()[0].typeId)
+
+// });
+
+// world.afterEvents.projectileHitBlock.subscribe((e) => {
+//     const {projectile} = e;
+//     // const item = entity.getComponent("item").itemStack;
+//     console.warn(projectile.typeId)
+//     // console.warn(projectile.getComponents()[0].typeId)
+
+// });

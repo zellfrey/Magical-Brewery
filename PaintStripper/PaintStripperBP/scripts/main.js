@@ -1,11 +1,10 @@
 import {world, system, ItemStack} from "@minecraft/server";
 import {getAdjacentBlock, getBlockFromFace} from "./utils/blockPlacementUtils.js";
 import {setMainHand} from './utils/containerUtils.js';
-import "./crystal/buddingCrystal.js"
+import "./crystal/BuddingCrystal.js"
 import "./crystal/growingCrystal.js"
 import "./crystal/cleansingCrystal.js"
 import "./tools/glassmithHammer.js"
-// import "./tools/glassmithChisel.js"
 import "./tools/agelessPocketWatch.js"
 import "./potions.js"
 import "./slabStained.js"
