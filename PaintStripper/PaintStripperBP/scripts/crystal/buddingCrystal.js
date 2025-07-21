@@ -7,8 +7,8 @@ export class BuddingCrystal {
     static buddingCrystals = []
 
     constructor(location, dimensionID, previousTick) {
-        this.location = location
-        this.dimension  = dimensionID
+        this.location = location;
+        this.dimension  = dimensionID;
         this.previousTick = previousTick;    
         BuddingCrystal.buddingCrystals.push(this)
     }
@@ -17,19 +17,19 @@ export class BuddingCrystal {
         this.previousTick = tick;
     }
 
-    static createBuddingCrystal(location, dimensionID, previousTick){
-        new BuddingCrystal(location, dimensionID, previousTick)
+    static createBuddingCrystal(blockLocation, blockDimensionID, previousTick){
+        new BuddingCrystal(blockLocation, blockDimensionID, previousTick)
         
-        let getBuddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
-        if (getBuddingCrystalData) {
-            getBuddingCrystalData = JSON.parse(getBuddingCrystalData)
-            getBuddingCrystalData.push(BuddingCrystal.buddingCrystals[BuddingCrystal.buddingCrystals.length-1])
+        let buddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
+        if (buddingCrystalData) {
+            buddingCrystalData = JSON.parse(buddingCrystalData)
+            buddingCrystalData.push(BuddingCrystal.buddingCrystals[BuddingCrystal.buddingCrystals.length-1])
         } else {
-            getBuddingCrystalData = [BuddingCrystal.buddingCrystals[0]]
+            buddingCrystalData = [BuddingCrystal.buddingCrystals[0]]
         }
-        world.setDynamicProperty('magical_brewery:budding_crystal_data', JSON.stringify(getBuddingCrystalData))
-        console.log(BuddingCrystal.buddingCrystals.length)
-        console.log(getBuddingCrystalData.length)
+        world.setDynamicProperty('magical_brewery:budding_crystal_data', JSON.stringify(buddingCrystalData))
+        // console.log(BuddingCrystal.buddingCrystals.length)
+        // console.log(buddingCrystalData.length)
     }
 
     static destroyCrystal(blockLocation, blockDimensionID){
@@ -141,12 +141,12 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 world.afterEvents.worldLoad.subscribe((e) => {
     console.log("loading budding crystal data")
-    let getBuddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
-    if(!getBuddingCrystalData || getBuddingCrystalData.length === 0) return;
+    let buddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
+    if(!buddingCrystalData || buddingCrystalData.length === 0) return;
 
-    getBuddingCrystalData = JSON.parse(getBuddingCrystalData)
+    buddingCrystalData = JSON.parse(buddingCrystalData)
 
-    getBuddingCrystalData.forEach(crystal => {new BuddingCrystal(crystal.location, crystal.dimension, crystal.previousTick)});
+    buddingCrystalData.forEach(crystal => {new BuddingCrystal(crystal.location, crystal.dimension, crystal.previousTick)});
 });
 
 world.afterEvents.blockExplode.subscribe((e) => {

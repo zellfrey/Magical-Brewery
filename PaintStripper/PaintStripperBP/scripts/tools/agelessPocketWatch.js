@@ -1,8 +1,7 @@
 import {world, system, ItemStack, MolangVariableMap } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/BuddingCrystal.js";
-import {shouldCaskAge, setPotionEffectForCask} from "cask/cask.js";
-import {findCask} from "cask/caskDB.js";
+import {Cask} from "cask/Cask.js";
 
 const buddingCrystals = ["magical_brewery:budding_glowstone", "magical_brewery:budding_redstone", 
     "magical_brewery:budding_pure_quartz", "magical_brewery:budding_echo"];
@@ -70,11 +69,12 @@ function checkValidCrystalGrowth(block, budTag, type, CharNum){
 }
 
 function forceAgeCask(block, source){
-    const {x,y,z} = block.location;
-    let cask = findCask(block.dimension.id, {x, y, z})
+
+    let cask = Cask.casks[Cask.findIndexCask(block.dimension.id, block.location)]
+
     const fillLevel = block.permutation.getState("magical_brewery:fill_level");
-    const caskEffect = block.getComponent("magical_brewery:pi_cask_fill").customComponentParameters.params.cask_effect
-    const canAge = shouldCaskAge(caskEffect, cask.potion_effects)
+    const caskPotionType = block.getComponent("magical_brewery:pi_cask_fill").customComponentParameters.params.cask_effect
+    const canAge = cask.canCaskAge(caskPotionType)
     const aged = block.permutation.getState("magical_brewery:aged");
     
 
@@ -86,6 +86,7 @@ function forceAgeCask(block, source){
     particleLocation.y += 0.4
     block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
     block.setPermutation(block.permutation.withState("magical_brewery:aged", true));
-    setPotionEffectForCask(caskEffect, cask, 100)
+    cask.addAgedPotionEffect(caskPotionType, 100)
+    Cask.updateCask(cask)
     source.sendMessage("The watch has sped up time, and has aged the cask.")
 }

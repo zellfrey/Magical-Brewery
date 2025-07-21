@@ -4,12 +4,12 @@ basically the TODO list to polish up the current state of the addon
 Casks:
 TODO: Revision cask front textures(add cork texture, look to the glass bottle"corks")
 TODO: Implement charge level textures.
-TODO: Then work on seals particle effects when in use? But more importantly when being destroyed
+TODO: Then work on seals particle effects when in use? But more importantly when being destroyed - DONE(add enlargement seal)
 TODO: utilise vector maths from @minecraft/maths module - BACKBURNER(possibly not necessary )
 Todo;
 Give better feed with tasting spoon. 
 Play around with mod, get nick in 
-Update casks to class system,
+Update casks to class system, - DONE
 Update dig speeds - DONE
 update to custom components V2 - DONE
 use piston component - DONE (Currently immovable until i figure out changing the object to match the new location)
