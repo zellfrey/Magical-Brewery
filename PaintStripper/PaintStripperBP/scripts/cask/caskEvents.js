@@ -43,12 +43,12 @@ system.beforeEvents.startup.subscribe(eventData => {
 
             if(selectedItem.typeId === "magical_brewery:tasting_spoon"){
                 const caskPotionType = p.params.cask_effect;
-                tasteCaskPotion(cask, fillLevel, caskPotionType, block, dimension, player)
+                tasteCaskPotion(cask, fillLevel, aged, caskPotionType, block, dimension, player)
             }
             //Will implement splash and lingering potions at a later date
             //  || selectedItem.typeId === "minecraft:lingering_potion" 
             //     || selectedItem.typeId === "minecraft:splash_potion"
-            if(selectedItem.typeId === "minecraft:potion")  emptyPotion(cask, fillLevel, block, dimension, player, equipment, selectedItem)
+            if(selectedItem.typeId === "minecraft:potion")  emptyPotion(cask, fillLevel, aged, block, dimension, player, equipment, selectedItem)
 
             if(selectedItem.typeId === "minecraft:glass_bottle")    fillBottle(cask, fillLevel, block, dimension, player)
 
@@ -57,7 +57,7 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
-function tasteCaskPotion(cask, fillLevel, caskPotionType, block, dimension, player){
+function tasteCaskPotion(cask, fillLevel, aged, caskPotionType, block, dimension, player){
     
     if(fillLevel === 0){
         dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
@@ -160,7 +160,7 @@ function fillBottle(cask, fillLevel, block, dimension, player, equipment, select
         cask.resetCaskPotion();
         Cask.updateCask(cask)
     }
-    
+
     return;
 }
 
