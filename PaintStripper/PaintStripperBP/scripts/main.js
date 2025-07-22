@@ -9,7 +9,7 @@ import "./tools/agelessPocketWatch.js"
 import "./potions.js"
 import "./slabStained.js"
 import "./cask/caskEvents.js"
-import "./cask/seal.js"
+import "./cask/Seal.js"
 import "./potionEffects.js"
 import "./utils/lootUtils.js"
 

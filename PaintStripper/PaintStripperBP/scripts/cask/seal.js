@@ -6,7 +6,7 @@ export class Seal {
     constructor(location = {}, isPotencySeal = false, sealStrength = 0){
 
         this.location = location;
-        this.is_potency =  isPotencySeal;
+        this.is_potency = isPotencySeal;
         this.strength = sealStrength;
         this.lifetime = 0;
     }

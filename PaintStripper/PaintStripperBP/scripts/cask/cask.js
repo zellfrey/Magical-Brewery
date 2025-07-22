@@ -1,6 +1,6 @@
 import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potionEffects.js";
-import {spawnSealSmokeParticle, Seal} from "cask/seal.js";
+import {spawnSealSmokeParticle, Seal} from "cask/Seal.js";
 
 export class Cask {
 
