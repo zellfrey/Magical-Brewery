@@ -2,10 +2,10 @@
 	"format_version": "1.10.0",
 	"particle_effect": {
 		"description": {
-			"identifier": "magical_brewery:dust_longevity_flame",
+			"identifier": "magical_brewery:lunar_charge",
 			"basic_render_parameters": {
 				"material": "particles_alpha",
-				"texture": "textures/particles/seal_longevity_flames.png"
+				"texture": "textures/particles/lunar_charge.png"
 			}
 		},
 		"components": {
@@ -21,10 +21,10 @@
 			},
 			"minecraft:particle_initial_speed": "math.random(0,1)",
 			"minecraft:particle_appearance_billboard": {
-				"size": [0.1, 0.1],
+				"size": [0.25, 0.25],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
-					"texture_width": 72,
+					"texture_width": 56,
 					"texture_height": 8,
 					"flipbook": {
 						"base_UV": [0, 0],

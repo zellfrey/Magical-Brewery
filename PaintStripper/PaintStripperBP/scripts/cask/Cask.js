@@ -173,6 +173,8 @@ export class Cask {
         const dim = world.getDimension(this.dimensionID)
         const seal = dim.getBlock(this.seal.location)
         const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
+        
+        dim.playSound("mob.ghast.fireball", this.seal.location, {volume: 0.5, pitch: 0.3});
         spawnSealSmokeParticle(dim, seal.center(), seal.permutation.getState("minecraft:block_face"), sealType)
         
         dim.setBlockType(this.seal.location, "minecraft:air");
