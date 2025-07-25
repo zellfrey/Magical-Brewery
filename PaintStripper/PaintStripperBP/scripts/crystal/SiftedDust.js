@@ -1,7 +1,7 @@
 import {world, system, ItemStack,MolangVariableMap} from "@minecraft/server";
 import {neighbouringCross} from "utils/blockPlacementUtils.js";
 
-const TIME_TICKS_TO_CLEAN = 3600;
+const TIME_TICKS_TO_CLEAN = 2400;
 
 const siftedDustEntityIds=[]
 class SiftedDust {

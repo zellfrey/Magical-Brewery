@@ -1,7 +1,7 @@
 {
 	"format_version": "1.14.0",
 	"sound_definitions": {
-		"ps:block.cask.creak": {
+		"magical_brewery:block.cask.creak": {
             "category": "block",
             "max_distance": 8,
             "sounds": [

@@ -21,8 +21,8 @@
 			},
 			"minecraft:particle_initial_speed": "math.random(0,1)",
 			"minecraft:particle_appearance_billboard": {
-				"size": [0.25, 0.25],
-				"facing_camera_mode": "rotate_xyz",
+				"size": [0.2, 0.2],
+				"facing_camera_mode": "rotate_y",
 				"uv": {
 					"texture_width": 56,
 					"texture_height": 8,
