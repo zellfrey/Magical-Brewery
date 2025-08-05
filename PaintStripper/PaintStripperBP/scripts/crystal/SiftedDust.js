@@ -1,4 +1,4 @@
-import {world, system, ItemStack,MolangVariableMap} from "@minecraft/server";
+import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {neighbouringCross} from "utils/blockPlacementUtils.js";
 
 const TIME_TICKS_TO_CLEAN = 2400;
@@ -28,8 +28,7 @@ class SiftedDust {
         const location = this.block.location
         let isCandleCrossValid = this.getCandleCross().every(el =>validCandle(el, this.siftedDustCandle))
         
-        if(!this.lore.includes('§7Washed') && this.block.typeId === "minecraft:water" 
-        && this.block.below().typeId !== "minecraft:lodestone"){
+        if(this.isWashed()){
 
             this.washSiftedDust(id, location, dim)
         }    
@@ -43,17 +42,32 @@ class SiftedDust {
             this.lunarChargeSiftedDust(id, location, dim)    
         }
     }
+
+    isWashed(){
+        const isCauldronBlock = this.block.typeId === "minecraft:cauldron";
+        const isFluidWater =  this.block.permutation.getState("cauldron_liquid") === "water";
+        const isLodestoneBlockBelow = this.block.below().typeId === "minecraft:lodestone";
+
+        return !this.lore.includes('§7Washed') && isCauldronBlock && isFluidWater && !isLodestoneBlockBelow
+    }
+
     washSiftedDust(id, location, dim){
 
         const washing = system.runInterval(() => {
 
-            if(!entityExists(id, location, dim) || this.block.typeId !== "minecraft:water" 
+            const isFluidWater =  this.block.permutation.getState("cauldron_liquid") === "water";
+
+            if(!entityExists(id, location, dim) || this.block.typeId !== "minecraft:cauldron" || !isFluidWater
             || this.block.below().typeId === "minecraft:lodestone"){
                 system.clearRun(washing)
                 return;
             }
-            dim.playSound("bubble.pop", this.entity.location, {volume: 0.5, pitch: 2});
+            dim.playSound("bubble.pop", this.entity.location, {volume: 0.5, pitch: 2})
+            // const molang = new MolangVariableMap();
+            // const direction = getParticleRandomVector3(this.entity.location)
+            // molang.setSpeedAndDirection("variable.direction", { x: direction.x, y: direction.y, z: direction.z});
             this.entity.dimension.spawnParticle("magical_brewery:bubble", this.entity.location);
+            
             if(this.initialTick + TIME_TICKS_TO_CLEAN <= system.currentTick){
                 system.clearRun(washing)
                 this.setSiftedDustLore('§7Washed', dim)

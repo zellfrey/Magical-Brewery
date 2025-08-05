@@ -11,12 +11,10 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
-2
+
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_cask', {
         onPlayerBreak(e) {
-            // const fillLevel = block.permutation.getState("magical_brewery:fill_level");
-
             // if(fillLevel > 0) 
             // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
             Cask.destroyCask(e.block.location, e.block.dimension.id)
@@ -37,7 +35,6 @@ system.beforeEvents.startup.subscribe(eventData => {
             let cask = Cask.casks[Cask.findIndexCask(block.dimension.id, block.location)]
             const fillLevel = block.permutation.getState("magical_brewery:fill_level");
             const aged = block.permutation.getState("magical_brewery:aged");
-
             //Failsafe
             // if(Object.keys(cask).length === 0) cask = createCask(dimension.id, {x, y, z})
 
@@ -204,6 +201,14 @@ world.afterEvents.worldLoad.subscribe((e) => {
 
     caskData = JSON.parse(caskData)
     caskData.forEach(caskEl => {
+        //implement a better test to validate if a block is cask. Somehow need to do it when the player has logged in and loading chunks
+        // const caskBlock = world.getDimension(caskEl.dimensionID).getBlock(caskEl.location)
+        // console.log(caskBlock.hasTag("magical_brewery:cask"))
+        //TODO: Change to a for loop. A "continue" statement is not allowed in a function(despite the functions purpose being of iteration. Like why else would i use it)
+        // if(!caskBlock.hasTag("magical_brewery:cask")){
+        //     console.log("not a valid block")
+        //     return;
+        // }
         let cask = new Cask(caskEl.dimensionID, caskEl.location)
         cask.potion_effects = caskEl.potion_effects
         cask.potion_liquid = caskEl.potion_liquid
