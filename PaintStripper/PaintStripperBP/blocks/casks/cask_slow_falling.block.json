@@ -21,6 +21,7 @@
 		"components": {
 			"tag:minecraft:is_axe_item_destructible": {},
 			"tag:magical_brewery:cask": {},
+			"tag:wood": {},
 			"magical_brewery:pi_cask_fill": {
 				"cask_effect": "Slow_Falling"
 			},
