@@ -287,6 +287,8 @@ Tools folder is done
 Remove torch from seal recipe
 Add seal compensation time
 Change crystals from onRandomTick to onTick
+Add stone tag to crystals for compatibilty - DONE
+Change seed placement filters - DONE
 
 Update tasting spoon and give more specific detail as to the time needed take 5 stages. Nothing -> Done
 add more tags to blocks for better compatibilty

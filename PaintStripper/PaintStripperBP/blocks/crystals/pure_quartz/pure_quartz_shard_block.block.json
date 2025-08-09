@@ -9,6 +9,7 @@
 		},
 		"components": {
 			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
 			"minecraft:friction": 0.4,
 			"minecraft:map_color": "#FFFCF5",
 			"minecraft:destructible_by_mining": {

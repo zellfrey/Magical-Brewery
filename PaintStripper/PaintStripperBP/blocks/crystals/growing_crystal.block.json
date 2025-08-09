@@ -21,6 +21,7 @@
 		"components": {
 			"tag:minecraft:is_pickaxe_item_destructible": {},
 			"magical_brewery:ort_crystal_growth": {},
+			"tag:stone": {},
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 1.5
 			},

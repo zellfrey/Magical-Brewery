@@ -9,6 +9,7 @@
 		},
 		"components": {
 			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
 			"magical_brewery:ort_budding_crystal_growth": {},
 			"magical_brewery:opd_budding_crystal_destroy": {},
 			"magical_brewery:opd_budding_crystal_place": {},
