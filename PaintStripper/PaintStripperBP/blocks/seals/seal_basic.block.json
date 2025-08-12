@@ -48,6 +48,18 @@
 			"minecraft:transformation": {
 				"scale": [1, 16, 1]
 			},
+			"minecraft:placement_filter": {
+                "conditions": [
+                    {
+                    "allowed_faces": ["side"],
+                    "block_filter": [
+                        {
+                            "tags": "q.any_tag('magical_brewery:cask')"
+                        }
+                    ]
+                    }
+                ]
+            },
 			"minecraft:movable": {
 				"movement_type": "popped"
 			}

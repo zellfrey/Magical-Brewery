@@ -37,6 +37,13 @@
 					}
 				]
 			},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+					"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
+					}
+				]
+			},
 			"minecraft:friction": 0.4,
 			"minecraft:material_instances": {
 				"*": {
@@ -68,84 +75,36 @@
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'north'",
 				"components": {
-					"minecraft:placement_filter": {
-						"conditions": [
-							{
-							"allowed_faces": ["north"],
-							"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
-							}
-						]
-					},
 					"minecraft:transformation": { "rotation": [-90, 0, 0] }
 				}
 			},
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'south'",
 				"components": {
-					"minecraft:placement_filter": {
-						"conditions": [
-							{
-							"allowed_faces": ["south"],
-							"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
-							}
-						]
-					},
 					"minecraft:transformation": { "rotation": [90, 0, 0] }
 				}
 			},
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'west'",
 				"components": {
-					"minecraft:placement_filter": {
-						"conditions": [
-							{
-							"allowed_faces": ["west"],
-							"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
-							}
-						]
-					},
 					"minecraft:transformation": { "rotation": [0, 0, 90] }
 				}
 			},
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'east'",
 				"components": {
-					"minecraft:placement_filter": {
-						"conditions": [
-							{
-							"allowed_faces": ["east"],
-							"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
-							}
-						]
-					},
 					"minecraft:transformation": { "rotation": [0, 0, -90] }
 				}
 			},
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'up'",
 				"components": {
-					"minecraft:placement_filter": {
-						"conditions": [
-							{
-							"allowed_faces": ["up"],
-							"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
-							}
-						]
-					},
 					"minecraft:transformation": { "rotation": [0, 0, 0] }
 				}
 			},
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'down'",
 				"components": {
-					"minecraft:placement_filter": {
-						"conditions": [
-							{
-							"allowed_faces": ["down"],
-							"block_filter": ["minecraft:glowstone", "magical_brewery:budding_glowstone"]
-							}
-						]
-					},
 					"minecraft:transformation": { "rotation": [-180, 0, 0] }
 				}
 			},

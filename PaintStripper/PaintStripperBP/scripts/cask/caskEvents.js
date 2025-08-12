@@ -89,7 +89,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 
                 //Currently regeneration potions have an empty string for their effect. This extra check is so they arent used. Hopefully this gets fixed
                 if(fillLevel === 0 && potion.potionEffectType.id){
-
+                    console.log("cask potions length:" + cask.potion_effects.length)
                     cask.setCaskPotion(potion, selectedItem.getLore())
                 }
                 
@@ -170,7 +170,7 @@ function ageCask(block, caskPotionType){
     const fillLevel = block.permutation.getState("magical_brewery:fill_level");
     const timeToAge = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
 
-    cask.checkSeal(block)
+    cask.checkSeal(block, timeToAge)
     
     if(timeToAge <= system.currentTick){
         const caskAgeTime = (12000*cask.potion_effects.length + fillLevel*10)/3

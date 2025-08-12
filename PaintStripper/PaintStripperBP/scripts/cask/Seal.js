@@ -3,12 +3,29 @@ import {neighbouringCross, getBlockFromFace} from "../utils/blockPlacementUtils.
 
 export class Seal {
 
-    constructor(location = {}, isPotencySeal = false, sealStrength = 0){
+    constructor(location = {}, isPotencySeal = false, sealStrength = 0, currentTick){
 
         this.location = location;
         this.is_potency = isPotencySeal;
         this.strength = sealStrength;
+        this.previousTick = currentTick;
         this.lifetime = 0;
+    }
+    
+
+    addLifetime(timeToAge){
+        
+        if(system.currentTick - this.previousTick === 60){
+            this.lifetime++;
+        }
+        else{
+            const tickTime = system.currentTick < timeToAge ? timeToAge : system.currentTick
+            const lifeTimeUnloadTimeCompensation = Math.trunc((tickTime - this.previousTick)/60) 
+            this.lifetime += lifeTimeUnloadTimeCompensation;
+        }
+        console.log("seal lifetime: " + this.lifetime)
+        
+        this.previousTick = system.currentTick
     }
     
     static setSeal(seal, cask){
@@ -20,9 +37,8 @@ export class Seal {
             const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
             const isPotencySeal = sealType.slice(16) === "potency" ? true : false;
             
-            cask.seal = new Seal(seal.location, isPotencySeal, sealStrength);
+            cask.seal = new Seal(seal.location, isPotencySeal, sealStrength, system.currentTick);
         }
-        cask.seal.lifetime = 0;
     }
 
     static isSameType(seal, cask){
@@ -36,20 +52,26 @@ export class Seal {
 
     }
     static findSeal(block){
-        const crossBlocks = [];
-        neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
+        try{
+            const crossBlocks = [];
+            neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
 
-        const seals = crossBlocks.filter(el => el.hasTag("magical_brewery:seal"))
+            const seals = crossBlocks.filter(el => el.hasTag("magical_brewery:seal"))
 
-        if(seals.length === 0) return undefined;
+            if(seals.length === 0) return undefined;
 
-        const seal = seals.find(el =>{
-            const face = el.permutation.getState("minecraft:block_face");
-            const potentialCask = getBlockFromFace(el, face)
-            if(JSON.stringify(potentialCask.location) === (JSON.stringify(block.location))) return el;
-        })
+            const seal = seals.find(el =>{
+                const face = el.permutation.getState("minecraft:block_face");
+                const potentialCask = getBlockFromFace(el, face)
+                if(JSON.stringify(potentialCask.location) === (JSON.stringify(block.location))) return el;
+            })
 
-        return seal ? seal : undefined
+            return seal ? seal : undefined
+        }
+        catch(e){
+            console.warn("Magical brewery: Tried to find seal, but its unloaded. \n Now how do i check if a block is unloaded")
+            return undefined;
+        }
     }
 }
 

@@ -15,7 +15,7 @@ export class Cask {
         this.potion_modifier = "";
         this.age_start_tick = -1;
         this.seal = {};
-
+        console.log("cask location: " + JSON.stringify(this.location))
         Cask.casks.push(this)
     }
 
@@ -101,14 +101,15 @@ export class Cask {
         }
     }
 
-    checkSeal(block){
+    checkSeal(block, timeToAge){
         let seal = Seal.findSeal(block)
 
         //If there is no seal the lifetime will remain the same, reducing the ability of effecting the age
         if(Seal.isSameType(seal, this)){
 
             if(JSON.stringify(seal.location) == JSON.stringify(this.seal.location)){
-                this.seal.lifetime++;
+                
+                this.seal.addLifetime(system.currentTick, timeToAge)
             }
             else{
                 const previousSealLifeTime = this.seal.lifetime;
@@ -216,8 +217,10 @@ export class Cask {
     }
 
     static findIndexCask(blockDimensionID, blockLocation){
-        return Cask.casks.findIndex(el => JSON.stringify(el.location) == JSON.stringify(blockLocation) 
+        const index = Cask.casks.findIndex(el => JSON.stringify(el.location) == JSON.stringify(blockLocation) 
                                                             && el.dimensionID === blockDimensionID);
+        console.log(index)
+        return index;                                            
     }
 
 }
