@@ -2,10 +2,10 @@
 	"format_version": "1.10.0",
 	"particle_effect": {
 		"description": {
-			"identifier": "magical_brewery:dust_enlargement_flame",
+			"identifier": "magical_brewery:dust_expansion_flame",
 			"basic_render_parameters": {
 				"material": "particles_alpha",
-				"texture": "textures/particles/seal_enlargement_flames.png"
+				"texture": "textures/particles/seal_expansion_flames.png"
 			}
 		},
 		"components": {

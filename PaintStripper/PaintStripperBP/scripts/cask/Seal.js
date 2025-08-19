@@ -1,7 +1,10 @@
 import {world, system, Direction} from "@minecraft/server";
 import {neighbouringCross, getBlockFromFace} from "../utils/blockPlacementUtils.js";
+import {Cask} from "cask/Cask.js";
 
 export class Seal {
+
+    static lifetimeSaveBoundary = 30;
 
     constructor(location = {}, isPotencySeal = false, sealStrength = 0, currentTick){
 
@@ -13,17 +16,22 @@ export class Seal {
     }
     
 
-    addLifetime(timeToAge){
-        
+    addLifetime(timeToAge, cask){
+
+        let lifeTimeUnloadTimeCompensation = 0;
+
         if(system.currentTick - this.previousTick === 60){
             this.lifetime++;
         }
         else{
-            const tickTime = system.currentTick < timeToAge ? timeToAge : system.currentTick
-            const lifeTimeUnloadTimeCompensation = Math.trunc((tickTime - this.previousTick)/60) 
+            const tickTime = system.currentTick < timeToAge ? system.currentTick : timeToAge 
+            lifeTimeUnloadTimeCompensation = (tickTime - this.previousTick) % 60 ;
             this.lifetime += lifeTimeUnloadTimeCompensation;
         }
-        console.log("seal lifetime: " + this.lifetime)
+        
+        if(lifeTimeUnloadTimeCompensation > Seal.lifetimeSaveBoundary || this.lifetime % Seal.lifetimeSaveBoundary === 0){
+            Cask.updateCask(cask)
+        }
         
         this.previousTick = system.currentTick
     }
@@ -107,3 +115,5 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
+
+        

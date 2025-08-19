@@ -15,7 +15,6 @@ export class Cask {
         this.potion_modifier = "";
         this.age_start_tick = -1;
         this.seal = {};
-        console.log("cask location: " + JSON.stringify(this.location))
         Cask.casks.push(this)
     }
 
@@ -109,7 +108,7 @@ export class Cask {
 
             if(JSON.stringify(seal.location) == JSON.stringify(this.seal.location)){
                 
-                this.seal.addLifetime(system.currentTick, timeToAge)
+                this.seal.addLifetime(timeToAge, this)
             }
             else{
                 const previousSealLifeTime = this.seal.lifetime;
@@ -219,7 +218,6 @@ export class Cask {
     static findIndexCask(blockDimensionID, blockLocation){
         const index = Cask.casks.findIndex(el => JSON.stringify(el.location) == JSON.stringify(blockLocation) 
                                                             && el.dimensionID === blockDimensionID);
-        console.log(index)
         return index;                                            
     }
 

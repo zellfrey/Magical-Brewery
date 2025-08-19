@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "magical_brewery:seal_enlargement",
+            "identifier": "magical_brewery:seal_expansion",
             "menu_category": {
                 "category": "none",
                 "is_hidden_in_commands": true
@@ -19,7 +19,7 @@
         "components": {
             "magical_brewery:bop_seal": {},
             "tag:magical_brewery:seal": {},
-            "tag:magical_brewery:enlargement":{},
+            "tag:magical_brewery:expansion":{},
             "minecraft:friction": 0.4,
             "minecraft:geometry": "geometry.seal",
             "minecraft:destructible_by_mining": {
@@ -149,10 +149,10 @@
             {
                 "condition": "q.block_state('magical_brewery:seal_level') == 1",
                 "components": {
-                    "minecraft:loot": "loot_tables/beardedflea/blocks/seals/seal_enlargement_1.loot.json",
+                    "minecraft:loot": "loot_tables/beardedflea/blocks/seals/seal_expansion_1.loot.json",
                     "minecraft:material_instances": {
                         "*": {
-                                "texture": "magical_brewery:seal_enlargement_1",
+                                "texture": "magical_brewery:seal_expansion_1",
                                 "render_method": "alpha_test",
                                 "face_dimming": false,
                                 "ambient_occlusion": false
@@ -163,10 +163,10 @@
             {
                 "condition": "q.block_state('magical_brewery:seal_level') == 2",
                 "components": {
-                    "minecraft:loot": "loot_tables/beardedflea/blocks/seals/seal_enlargement_2.loot.json",
+                    "minecraft:loot": "loot_tables/beardedflea/blocks/seals/seal_expansion_2.loot.json",
                     "minecraft:material_instances": {
                         "*": {
-                                "texture": "magical_brewery:seal_enlargement_2",
+                                "texture": "magical_brewery:seal_expansion_2",
                                 "render_method": "alpha_test",
                                 "face_dimming": false,
                                 "ambient_occlusion": false

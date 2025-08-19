@@ -158,7 +158,7 @@ class SiftedDust {
         let dustType;
         switch(this.entityItem.typeId){
             case "magical_brewery:sifted_quartz":
-                dustType = "enlargement";
+                dustType = "expansion";
             break;
             case "magical_brewery:sifted_redstone_dust":
                 dustType = "longevity";
@@ -237,7 +237,7 @@ function spawnPureParticle(dimension, itemName, location){
     let dustType;
     switch(itemName){
         case "magical_brewery:sifted_quartz":
-            dustType = "enlargement";
+            dustType = "expansion";
         break;
         case "magical_brewery:sifted_redstone_dust":
             dustType = "longevity";

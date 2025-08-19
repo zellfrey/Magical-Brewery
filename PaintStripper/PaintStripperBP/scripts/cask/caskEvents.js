@@ -60,7 +60,11 @@ system.beforeEvents.startup.subscribe(eventData => {
                         if(!cask.canCaskAge(caskPotionType)){
                             player.sendMessage("It looks like the potion contains a similar effect as the cask, and cannot age.")
                         }else{
-                            player.sendMessage("It looks like it still needs time to age.");
+                            const ageTime = 12000*cask.potion_effects.length + fillLevel*10;
+                            const ageEndTick = cask.age_start_tick + ageTime;
+                            const ageCompletionPercentage = Math.trunc(100 - ((ageEndTick - system.currentTick)/ageTime) * 100);
+
+                            sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage);
                         }
                         
                     }
@@ -69,7 +73,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                             initialTaste += cask.potion_effects[i] + "\n"
                         }
                         player.sendMessage(initialTaste)
-                        player.sendMessage("It also has a hint of " + cask.potion_effects[cask.potion_effects.length -1] + ".");
+                        player.sendMessage("It also has a taste of " + cask.potion_effects[cask.potion_effects.length -1] + ".");
                         player.sendMessage("The potion has aged and is ready.");
                     }
                    
@@ -160,19 +164,39 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
+function sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage){
+
+    if(ageCompletionPercentage < 20){
+        player.sendMessage(`There is no taste of ${caskPotionType}`);
+    }
+    else if(20 <= ageCompletionPercentage &&  ageCompletionPercentage < 40){
+        player.sendMessage(`It has the aroma of ${caskPotionType}, but nothing substantial`);
+    }
+    else if(40 <= ageCompletionPercentage &&  ageCompletionPercentage < 60){
+        player.sendMessage(`The potion has a hint of ${caskPotionType}`);
+    }
+    else if(60 <= ageCompletionPercentage &&  ageCompletionPercentage < 80){
+        player.sendMessage(`A good flavour of ${caskPotionType} is present`);
+    }
+    else if(80 <= ageCompletionPercentage){
+        player.sendMessage(`Your tongue tingles to the strong flavour of ${caskPotionType}, but it needs a touch longer`);
+    }
+    player.sendMessage("It still needs time to age.");
+}
+
 function ageCask(block, caskPotionType){
     let cask = Cask.casks[Cask.findIndexCask(block.dimension.id, block.location)]
     
     if(!cask || !cask.canCaskAge(caskPotionType)) return;
 
-    cask.createAgeingFeedback(block)
-    
     const fillLevel = block.permutation.getState("magical_brewery:fill_level");
-    const timeToAge = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
+    const ageEndTick = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
 
-    cask.checkSeal(block, timeToAge)
+    cask.createAgeingFeedback(block)
+    cask.checkSeal(block, ageEndTick)
+    // cask.seal.spawnSealSingleFlameParticle(block)
     
-    if(timeToAge <= system.currentTick){
+    if(ageEndTick <= system.currentTick){
         const caskAgeTime = (12000*cask.potion_effects.length + fillLevel*10)/3
         const caskSealAgeTime = Math.ceil(cask.seal.lifetime*20 / caskAgeTime *100)
         cask.addAgedPotionEffect(caskPotionType, caskSealAgeTime)
@@ -187,10 +211,9 @@ function ageCask(block, caskPotionType){
 }
 
 world.afterEvents.blockExplode.subscribe((e) => {
-    const { block, explodedBlockPermutation} = e;
 
-    if(explodedBlockPermutation.hasTag("magical_brewery:cask")){
-        Cask.destroyCask(block.dimension.id, block.location)
+    if(e.explodedBlockPermutation.hasTag("magical_brewery:cask")){
+        Cask.destroyCask(e.block.dimension.id, e.block.location)
     }
 });
 
@@ -214,7 +237,14 @@ world.afterEvents.worldLoad.subscribe((e) => {
         cask.potion_liquid = caskEl.potion_liquid
         cask.potion_modifier = caskEl.potion_modifier
         cask.age_start_tick = caskEl.age_start_tick
-        cask.seal = caskEl.seal
+        
+        if(caskEl.seal.location !== undefined){
+
+            cask.seal = new Seal(caskEl.seal.location, caskEl.seal.is_potency, 
+                                caskEl.seal.strength, caskEl.seal.previousTick);
+
+            cask.seal.lifetime = caskEl.seal.lifetime                 
+        }
     });
 });
 

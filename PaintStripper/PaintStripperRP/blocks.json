@@ -240,7 +240,7 @@
 	"magical_brewery:seal_potency":{
 		"sound" : "candle"
 	},
-	"magical_brewery:seal_enlargement":{
+	"magical_brewery:seal_expansion":{
 		"sound" : "candle"
 	}
 }

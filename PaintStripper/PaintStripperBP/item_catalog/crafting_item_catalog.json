@@ -8,7 +8,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:stained_planks_swiftness",
-							"name": "paint_stripper:ps_stained_planks_construction"
+							"name": "magical_brewery:stained_planks_construction"
 						},
 						"items": [
 							"magical_brewery:stained_planks_harming",
@@ -30,7 +30,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:stained_slab_swiftness",
-							"name": "paint_stripper:ps_stained_slabs_construction"
+							"name": "magical_brewery:stained_slabs_construction"
 						},
 						"items": [
 							"magical_brewery:stained_slab_harming",
@@ -57,7 +57,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:cask_swiftness",
-							"name": "paint_stripper:ps_casks_items"
+							"name": "magical_brewery:casks_items"
 						},
 						"items": [
 							"magical_brewery:cask_harming",
@@ -79,7 +79,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:amethyst_seed",
-							"name": "paint_stripper:ps_crystal_seeds_items"
+							"name": "magical_brewery:crystal_seeds_items"
 						},
 						"items": [
 							"magical_brewery:amethyst_seed",
@@ -92,7 +92,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:pure_quartz_shard",
-							"name": "paint_stripper:ps_shards_items"
+							"name": "magical_brewery:shards_items"
 						},
 						"items": [
 							"magical_brewery:pure_quartz_shard",
@@ -103,12 +103,12 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:seal_potency_1",
-							"name": "paint_stripper:ps_seals_items"
+							"name": "magical_brewery:seals_items"
 						},
 						"items": [
 							"magical_brewery:seal_basic",
-							"magical_brewery:seal_enlargement_1",
-							"magical_brewery:seal_enlargement_2",
+							"magical_brewery:seal_expansion_1",
+							"magical_brewery:seal_expansion_2",
 							"magical_brewery:seal_longevity_1",
 							"magical_brewery:seal_longevity_2",
 							"magical_brewery:seal_potency_1",
@@ -123,7 +123,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:echo_cluster",
-							"name": "paint_stripper:ps_echo_crystals_nature"
+							"name": "magical_brewery:echo_crystals_nature"
 						},
 						"items": [
 							"magical_brewery:budding_echo",
@@ -137,7 +137,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:glowstone_cluster",
-							"name": "paint_stripper:ps_glowstone_crystals_nature"
+							"name": "magical_brewery:glowstone_crystals_nature"
 						},
 						"items": [
 							"magical_brewery:budding_glowstone",
@@ -151,7 +151,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:redstone_cluster",
-							"name": "paint_stripper:ps_redstone_crystals_nature"
+							"name": "magical_brewery:redstone_crystals_nature"
 						},
 						"items": [
 							"magical_brewery:budding_redstone",
@@ -165,7 +165,7 @@
 					{
 						"group_identifier": {
 							"icon": "magical_brewery:pure_quartz_cluster",
-							"name": "paint_stripper:ps_pure_quartz_crystals_nature"
+							"name": "magical_brewery:pure_quartz_crystals_nature"
 						},
 						"items": [
 							"magical_brewery:budding_pure_quartz",

@@ -293,3 +293,5 @@ Change seed placement filters - DONE
 Update tasting spoon and give more specific detail as to the time needed take 5 stages. Nothing -> Done
 add more tags to blocks for better compatibilty - DONE
 Check cask database, log interaction of casks. Casks seem to loose data - DONE
+allow all signs to be used for seals - problem with sign tag
+change enlargement to expansion - DONE

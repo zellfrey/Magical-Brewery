@@ -59,12 +59,12 @@ item.ps.effect_absorption.name=Absorption
 ##---------------------------------
 ##Seals---------------------------------
 item.magical_brewery:seal_basic.name=Base Seal
-item.magical_brewery:seal_longevity_1.name=Seal Of Longevity I
-item.magical_brewery:seal_longevity_2.name=Seal Of Longevity II
-item.magical_brewery:seal_potency_1.name=Seal Of Potency I
-item.magical_brewery:seal_potency_2.name=Seal Of Potency II
-item.magical_brewery:seal_enlargement_1.name=Seal Of Enlargement I §c[W.I.P]
-item.magical_brewery:seal_enlargement_2.name=Seal Of Enlargement II §c[W.I.P]
+item.magical_brewery:seal_longevity_1.name=Seal of Longevity I
+item.magical_brewery:seal_longevity_2.name=Seal of Longevity II
+item.magical_brewery:seal_potency_1.name=Seal of Potency I
+item.magical_brewery:seal_potency_2.name=Seal of Potency II
+item.magical_brewery:seal_expansion_1.name=Seal of Expansion I §c[W.I.P]
+item.magical_brewery:seal_expansion_2.name=Seal of Expansion II §c[W.I.P]
 ##---------------------------------
 
 
@@ -125,7 +125,7 @@ tile.magical_brewery:cask_weakness.name=Cask of Weakness
 ##---------------------------------
 
 ##Seals---------------------------------
-tile.magical_brewery:seal_potency_1.name=Seal Of Potency I
+tile.magical_brewery:seal_potency_1.name=Seal of Potency I
 ##---------------------------------
 ##Crops---------------------------------
 
@@ -133,14 +133,14 @@ tile.magical_brewery:seal_potency_1.name=Seal Of Potency I
 ##Misc---------------------------------
 
 ##Item/Block Catalogues---------------------------------
-paint_stripper:ps_stained_planks_construction=Stained Planks
-paint_stripper:ps_stained_slabs_construction=Stained Slabs
-paint_stripper:ps_casks_items=Casks
-paint_stripper:ps_crystal_seeds_items=Crystal Seeds
-paint_stripper:ps_shards_items=Shards
-paint_stripper:ps_glowstone_crystals_nature=Glowstone Crystals
-paint_stripper:ps_redstone_crystals_nature=Redstone Crystals
-paint_stripper:ps_echo_crystals_nature=Echo Crystals
-paint_stripper:ps_pure_quartz_crystals_nature=Pure Quartz Crystals
-paint_stripper:ps_seals_items=Cask Seals
+magical_brewery:stained_planks_construction=Stained Planks
+magical_brewery:stained_slabs_construction=Stained Slabs
+magical_brewery:casks_items=Casks
+magical_brewery:crystal_seeds_items=Crystal Seeds
+magical_brewery:shards_items=Shards
+magical_brewery:glowstone_crystals_nature=Glowstone Crystals
+magical_brewery:redstone_crystals_nature=Redstone Crystals
+magical_brewery:echo_crystals_nature=Echo Crystals
+magical_brewery:pure_quartz_crystals_nature=Pure Quartz Crystals
+magical_brewery:seals_items=Cask Seals
 ##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means
