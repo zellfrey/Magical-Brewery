@@ -171,10 +171,10 @@
 			"textures": "textures/items/seals/seal_potency_2.png"
 		},
 		"magical_brewery:seal_expansion_1":{
-			"textures": "textures/items/seals/seal_enlargement_1.png"
+			"textures": "textures/items/seals/seal_expansion_1.png"
 		},
 		"magical_brewery:seal_expansion_2":{
-			"textures": "textures/items/seals/seal_enlargement_2.png"
+			"textures": "textures/items/seals/seal_expansion_2.png"
 		}
 	}
 }

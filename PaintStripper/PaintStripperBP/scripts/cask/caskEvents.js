@@ -194,7 +194,7 @@ function ageCask(block, caskPotionType){
 
     cask.createAgeingFeedback(block)
     cask.checkSeal(block, ageEndTick)
-    // cask.seal.spawnSealSingleFlameParticle(block)
+    cask.seal.spawnSealSingleFlameParticle(block.dimension, ageEndTick)
     
     if(ageEndTick <= system.currentTick){
         const caskAgeTime = (12000*cask.potion_effects.length + fillLevel*10)/3

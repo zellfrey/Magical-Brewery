@@ -1,5 +1,6 @@
 import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {neighbouringCross} from "utils/blockPlacementUtils.js";
+import {MathUtils} from "../utils/MathUtils.js";
 
 const TIME_TICKS_TO_CLEAN = 2400;
 
@@ -64,7 +65,7 @@ class SiftedDust {
             }
             dim.playSound("bubble.pop", this.entity.location, {volume: 0.5, pitch: 2})
             // const molang = new MolangVariableMap();
-            // const direction = getParticleRandomVector3(this.entity.location)
+            // const direction = MathUtils.getParticleRandomVectors3(this.entity.location)
             // molang.setSpeedAndDirection("variable.direction", { x: direction.x, y: direction.y, z: direction.z});
             this.entity.dimension.spawnParticle("magical_brewery:bubble", this.entity.location);
             
@@ -112,7 +113,7 @@ class SiftedDust {
                 return;
             }
             dim.playSound("beacon.ambient", this.entity.location, {volume: 0.3, pitch: 2.5});
-            this.entity.dimension.spawnParticle("magical_brewery:lunar_charge", getParticleRandomVector3(this.entity.location));
+            this.entity.dimension.spawnParticle("magical_brewery:lunar_charge", MathUtils.getParticleRandomVectors3(this.entity.location));
             if(this.initialTick + TIME_TICKS_TO_CLEAN <= system.currentTick){
                 system.clearRun(moon)
                 this.setSiftedDustLore('§7Lunar charged', dim)
@@ -166,7 +167,7 @@ class SiftedDust {
             case "magical_brewery:sifted_glowstone_dust":
                 dustType = "potency";
         }
-        this.entity.dimension.spawnParticle(`magical_brewery:dust_${dustType}_flame`, getParticleRandomVector3(this.entity.location));
+        this.entity.dimension.spawnParticle(`magical_brewery:dust_${dustType}_flame`, MathUtils.getParticleRandomVectors3(this.entity.location));
     }
 
     
@@ -229,9 +230,7 @@ world.afterEvents.entitySpawn.subscribe(async (e) => {
     }
 });
 
-function getRndFloat(min, max) {
-  return (Math.floor(Math.random() * (max - min) ) + min)/10;
-}
+
 
 function spawnPureParticle(dimension, itemName, location){
     let dustType;
@@ -245,13 +244,5 @@ function spawnPureParticle(dimension, itemName, location){
         case "magical_brewery:sifted_glowstone_dust":
             dustType = "potency";
     }
-    dimension.spawnParticle(`magical_brewery:seal_${dustType}_flame`, getParticleRandomVector3(location));
-}
-
-function getParticleRandomVector3(location){
-    let particleSpawnVector3 = location;
-    particleSpawnVector3.x += getRndFloat(-2, 2)
-    particleSpawnVector3.y += getRndFloat(-2, 2) + 0.5;
-    particleSpawnVector3.z += getRndFloat(-2, 2);
-    return particleSpawnVector3;
+    dimension.spawnParticle(`magical_brewery:seal_${dustType}_flame`, MathUtils.getParticleRandomVectors3(location));
 }

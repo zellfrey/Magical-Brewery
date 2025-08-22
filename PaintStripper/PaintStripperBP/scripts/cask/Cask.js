@@ -1,7 +1,6 @@
 import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potionEffects.js";
-import {spawnSealSmokeParticle, Seal} from "cask/Seal.js";
-
+import {Seal} from "cask/Seal.js";
 export class Cask {
 
     static casks = []
@@ -133,7 +132,7 @@ export class Cask {
             
             potencySeal = this.seal.is_potency;
             sealStrength = this.seal.strength;
-            this.destroySealBlock()
+            this.seal.destroySealBlock(this.dimensionID)
             this.seal = {};
         }
 
@@ -166,18 +165,6 @@ export class Cask {
             }
         }
         this.potion_effects.push(effectName);
-    }
-
-    
-    destroySealBlock(){
-        const dim = world.getDimension(this.dimensionID)
-        const seal = dim.getBlock(this.seal.location)
-        const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
-        
-        dim.playSound("mob.ghast.fireball", this.seal.location, {volume: 0.5, pitch: 0.3});
-        spawnSealSmokeParticle(dim, seal.center(), seal.permutation.getState("minecraft:block_face"), sealType)
-        
-        dim.setBlockType(this.seal.location, "minecraft:air");
     }
 
     static createCask(blockDimensionID, blockLocation){
