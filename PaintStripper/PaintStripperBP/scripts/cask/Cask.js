@@ -126,17 +126,17 @@ export class Cask {
         
         const potionEffect = POTION_EFFECTS[caskPotionType]
         let effectName = potionEffect.effects
-        let potencySeal = false;
+        let sealType = "";
         let sealStrength = 0;
         if(Object.keys(this.seal.location).length !== 0 && caskSealAge >= 75){
             
-            potencySeal = this.seal.is_potency;
+            sealType = this.seal.type;
             sealStrength = this.seal.strength;
             this.seal.destroySealBlock(this.dimensionID)
             this.seal = {};
         }
 
-        if(potencySeal){
+        if(sealType === "potency"){
             let potionPotency;
 
             if(effectName.includes("Instant")){

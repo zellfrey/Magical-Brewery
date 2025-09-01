@@ -82,8 +82,9 @@ system.beforeEvents.startup.subscribe(eventData => {
                 return;
             }
             //Will implement splash and lingering potions at a later date
-            //  || selectedItem.typeId === "minecraft:lingering_potion" 
-            //     || selectedItem.typeId === "minecraft:splash_potion"
+            if(selectedItem.typeId === "minecraft:lingering_potion" || selectedItem.typeId === "minecraft:splash_potion"){
+                player.sendMessage("§cCurrently unavailable. Functionality will be added at a later date.")
+            }
             if(selectedItem.typeId === "minecraft:potion"){
 
                 //v2.0.0 uses "T" (generic) instead of a string. So im using this silly method to just get the first and only component of a potion
@@ -195,7 +196,6 @@ function ageCask(block, caskPotionType){
     cask.createAgeingFeedback(block)
     cask.checkSeal(block, ageEndTick)
     cask.seal.spawnSealSingleFlameParticle(block.dimension, ageEndTick)
-    
     if(ageEndTick <= system.currentTick){
         const caskAgeTime = (12000*cask.potion_effects.length + fillLevel*10)/3
         const caskSealAgeTime = Math.ceil(cask.seal.lifetime*20 / caskAgeTime *100)
@@ -240,7 +240,7 @@ world.afterEvents.worldLoad.subscribe((e) => {
         
         if(caskEl.seal.location !== undefined){
 
-            cask.seal = new Seal(caskEl.seal.location, caskEl.seal.is_potency, 
+            cask.seal = new Seal(caskEl.seal.location, caskEl.seal.type, 
                                 caskEl.seal.strength, caskEl.seal.previousTick);
 
             cask.seal.lifetime = caskEl.seal.lifetime                 

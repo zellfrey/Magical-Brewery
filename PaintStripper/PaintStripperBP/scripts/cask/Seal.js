@@ -7,10 +7,10 @@ export class Seal {
 
     static lifetimeSaveBoundary = 30;
 
-    constructor(location = {}, isPotencySeal = false, sealStrength = 0, currentTick){
+    constructor(location = {}, sealType = "", sealStrength = 0, currentTick){
 
         this.location = location;
-        this.is_potency = isPotencySeal;
+        this.type = sealType;
         this.strength = sealStrength;
         this.previousTick = currentTick;
         this.lifetime = 0;
@@ -80,21 +80,19 @@ export class Seal {
         }
         else{
             const sealStrength = seal.permutation.getState("magical_brewery:seal_level");
-            const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
-            const isPotencySeal = sealType.slice(16) === "potency" ? true : false;
+            const sealType = seal.getTags().find(el => el !== "magical_brewery:seal").slice(16);
             
-            cask.seal = new Seal(seal.location, isPotencySeal, sealStrength, system.currentTick);
+            cask.seal = new Seal(seal.location, sealType, sealStrength, system.currentTick);
         }
     }
 
     static isSameType(seal, cask){
     if(!seal) return false;
 
-    const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
+    const sealType = seal.getTags().find(el => el !== "magical_brewery:seal").slice(16);
     const sealStrength = seal.permutation.getState("magical_brewery:seal_level");
-    const isPotency = sealType.slice(16) === "potency" ? true : false;
 
-    return cask.seal.strength === sealStrength && cask.seal.is_potency  === isPotency;
+    return cask.seal.strength === sealStrength && cask.seal.type  === sealType;
 
     }
     static findSeal(block){
