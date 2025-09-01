@@ -108,7 +108,7 @@ class SiftedDust {
             const topBlock = this.entity.dimension.getTopmostBlock({x,z})
             
             if((JSON.stringify(topBlock.location) !== JSON.stringify(this.block.below().location)) 
-                || !(time >= 15000 && time <= 20000) || moonPhase !== 0){
+                || !(time >= 13000 && time <= 20000) || moonPhase !== 0){
                 system.clearRun(moon)
                 return;
             }
@@ -176,9 +176,7 @@ class SiftedDust {
 
 function validCandle(block, candle){
     const lit = block.permutation.getState("lit");
-    const candles = block.permutation.getState("candles");
-    const validCandleBlock = lit && candles === 3
-    return validCandleBlock && block.typeId === candle
+    return lit && block.typeId === candle
 }
 function getCandleType(itemName){
     let candle;
