@@ -37,6 +37,7 @@ export function crystalGrowth(block, seedStage){
                 block.setType("minecraft:budding_amethyst");
             break;
             case "glowstone":
+                if(block.dimension.id !== "minecraft:nether") return;
                 block.setType("magical_brewery:budding_glowstone");
             break;
             case "redstone":
