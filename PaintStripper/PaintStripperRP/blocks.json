@@ -184,52 +184,52 @@
 		"sound" : "wood"
 	},
 	// "magical_brewery:cask_decay":{
-	//   "sound" : "wood"
+	//   "sound" : "chiseled_bookshelf"
 	// },
 	"magical_brewery:cask_harming":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_healing":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_invisibility":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_leaping":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_poison":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_regeneration":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_resistance_fire":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_slow_falling":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_slowness":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_strength":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_swiftness":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	// "magical_brewery:cask_turtle_master":{
-	//   "sound" : "wood"
+	//   "sound" : "chiseled_bookshelf"
 	// },
 	"magical_brewery:cask_vision_night":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_water_breathing":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_weakness":{
-		"sound" : "wood"
+		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:seal_basic":{
 		"sound" : "candle"
@@ -241,6 +241,9 @@
 		"sound" : "candle"
 	},
 	"magical_brewery:seal_expansion":{
+		"sound" : "candle"
+	},
+	"magical_brewery:seal_retainment":{
 		"sound" : "candle"
 	}
 }
