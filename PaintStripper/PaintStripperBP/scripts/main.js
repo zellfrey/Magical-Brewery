@@ -11,6 +11,7 @@ import "./slabStained.js"
 import "./cask/caskEvents.js"
 import "./cask/Seal.js"
 import "./potionEffects.js"
+import "./tome/tome.js"
 import "./utils/lootUtils.js"
 
 

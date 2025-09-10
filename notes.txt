@@ -163,8 +163,10 @@ sun: Glowshards require the light of the sun in order grow, the light itself is 
 nether: For those that have travelled to the nether, there is 1 undeniably fact, it is a wasteland filled with horrors and fear.
 But why does glowstone exist. Such a tranquil and fragile object seems contradictory to the nature of the nether, 1 theory is that
 the glowstone represents a more malicious intent of survival. The harsh landscape of the nether actually created the glowstone as a bi-product 
-of its ecology. COuld this crystal be feeding off of the hope and glimmer of souls that are trapped in the nether? Perhaps glowstone is the solidified
-remmanents of hope. A horrible idea to dwell upon, but if we are to use this then well sacrifices must me met
+of its ecology. Scholars believe this crystal to be feeding off of the hope and glimmer of souls that are trapped in the nether? Perhaps glowstone is the solidified
+remmanents of hope. A horrible idea to dwell upon, but if we are to use this then well sacrifices must me met.
+
+With that being said, the only way of growing glowstone shards is having a glowstone seed be placed in the nether. Then eventually we can harvest the shards at a later date
 
 
 Removed decay related stuff. I think it fits a very small niche area of combat (namely the only real unique benefit is that it deals with undead).
@@ -295,3 +297,31 @@ add more tags to blocks for better compatibilty - DONE
 Check cask database, log interaction of casks. Casks seem to loose data - DONE
 allow all signs to be used for seals - problem with sign tag
 change enlargement to expansion - DONE
+
+
+BOOK:
+Add sounds when using the book, both opening, closing & flipping through pages DONE
+Add an open book when opening the  DONE
+save players book progress(i.e open book at 1 page, close of page 3. Reopen at page 3) DONE
+
+Change heat treating to allow all candles, and only 1 each side DONE
+Change casks to have bookshelf sounds DONE
+
+
+
+
+Tomorrow 8/9/25
+BOOK:
+Finish icons - heat treating - DONE
+Finish pages textures - crystal & seals - DONE
+Finish tome textures - Keep for now
+polish chapters - DONE
+add theories chapters - DONE
+Add colour to various parts for readability - More work to be done
+Add authors chapter - DONE
+Create tome DB for playerdata - DONE
+
+Upload on github
+
+Work on structures
+Build structures - 

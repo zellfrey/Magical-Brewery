@@ -175,6 +175,18 @@
 		},
 		"magical_brewery:seal_expansion_2":{
 			"textures": "textures/items/seals/seal_expansion_2.png"
+		},
+		"magical_brewery:seal_retainment":{
+			"textures": "textures/items/seals/seal_retainment.png"
+		},
+		"magical_brewery:brewers_tome":{
+			"textures": "textures/items/chapter_of_wisdom_3.png"
+		},
+		"magical_brewery:pages_crystallography":{
+			"textures": "textures/items/pages_crystallography.png"
+		},
+		"magical_brewery:pages_seals":{
+			"textures": "textures/items/pages_seals.png"
 		}
 	}
 }

@@ -321,6 +321,9 @@
 		},
 		"magical_brewery:seal_expansion_2":{
 			"textures": "textures/items/seals/seal_expansion_2.png"
+		},
+		"magical_brewery:seal_retainment":{
+			"textures": "textures/items/seals/seal_retainment.png"
 		}
 	}
 } 

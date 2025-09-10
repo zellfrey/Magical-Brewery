@@ -1,0 +1,21 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:brewers_tome",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": ["magical_brewery:on_use_brewers_tome"],
+			"minecraft:icon": "magical_brewery:brewers_tome",
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:brewers_tome.name"
+			},
+			"minecraft:max_stack_size": {
+				"value": 1
+			}
+		}
+	}
+}

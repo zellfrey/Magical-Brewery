@@ -52,6 +52,10 @@ item.magical_brewery:ageless_pocket_watch.name=Ageless Pocket Watch
 item.magical_brewery:tasting_spoon.name=Tasting Spoon
 item.magical_brewery:amethyst_bottle.name=Amethyst Bottle
 item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle
+##Tome&Scrolls------------------------------------
+item.magical_brewery:brewers_tome.name=§dBrewers' Tome
+item.magical_brewery:pages_crystallography.name=§eCrystallography Pages
+item.magical_brewery:pages_seals.name=§eSeals Pages
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
@@ -60,11 +64,12 @@ item.ps.effect_absorption.name=Absorption
 ##Seals---------------------------------
 item.magical_brewery:seal_basic.name=Base Seal
 item.magical_brewery:seal_longevity_1.name=Seal of Longevity I
-item.magical_brewery:seal_longevity_2.name=Seal of Longevity II
+item.magical_brewery:seal_longevity_2.name=§eSeal of Longevity II
 item.magical_brewery:seal_potency_1.name=Seal of Potency I
-item.magical_brewery:seal_potency_2.name=Seal of Potency II
+item.magical_brewery:seal_potency_2.name=§eSeal of Potency II
 item.magical_brewery:seal_expansion_1.name=Seal of Expansion I §c[W.I.P]
-item.magical_brewery:seal_expansion_2.name=Seal of Expansion II §c[W.I.P]
+item.magical_brewery:seal_expansion_2.name=§eSeal of Expansion II §c[W.I.P]
+item.magical_brewery:seal_retainment.name=Seal of Retainment §c[W.I.P]
 ##---------------------------------
 
 
@@ -125,7 +130,6 @@ tile.magical_brewery:cask_weakness.name=Cask of Weakness
 ##---------------------------------
 
 ##Seals---------------------------------
-tile.magical_brewery:seal_potency_1.name=Seal of Potency I
 ##---------------------------------
 ##Crops---------------------------------
 
@@ -144,3 +148,73 @@ magical_brewery:echo_crystals_nature=Echo Crystals
 magical_brewery:pure_quartz_crystals_nature=Pure Quartz Crystals
 magical_brewery:seals_items=Cask Seals
 ##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means
+
+
+##Tome Chapters--------------------
+magical_brewery:tome_chapter_main.title=Brewers' Tome
+magical_brewery:tome_chapter_main.body=If you have picked up this book, then either you have stolen it, in which case you should give it back to the rightful owner. Or you have been given this copy for very good reasons.\nSomeone must have seen great potential in you, and saw that you have an appreciation for the arts of alchemy.\nIn that case, I welcome you to the art of §6Magical Brewery§r! This book contains knowledge that will grow you as an alchemist and as a brewer. Throughout this book, you will uncover newly discovered magicks that will bring wonder to those around you.\nAre you ready? Then let us begin...
+
+##---------------------------------
+##Tome Chapters-----Crystallography---------------
+magical_brewery:tome_chapter_crystallography.title=Crystallography
+magical_brewery:tome_chapter_crystallography.body=The study of crystals is an important aspect of potion brewing and is crucial for bringing out the very best of ingredients utilised in making potions.\nBy following the steps below you will be able to produce potions far more powerful and complex than the average person's alchemy arsenal.
+
+magical_brewery:tome_chapter_purifying.title=Purifying
+magical_brewery:tome_chapter_purifying.body=In order to produce more powerful potions we need to start looking at the catalysts that affect the outcome of potions. In this case we are going to purify redstone and glowstone.\nWe will also need to purify quartz as it is necessary for items to further enhance potions and to create crystal seeds.\n\nThe first step is very simple. We need to use a brush and dust on a crafting table to remove bits of dirt and stone that are still present in the dust we have mined.\n\nNow we can truly begin. There are three steps that are required to complete the purifying process. Those are, heat treating, washing, and lunar charging. These can be done in any order.
+
+magical_brewery:tome_chapter_crystal_seeds.title=Crystal Seeds
+magical_brewery:tome_chapter_crystal_seeds.body=As you have probably discovered through purifying, the steps taken can be quite laborious. Now you could just continue doing these steps, but that will get tiresome. However there is a better option.\nWith your purified dust and pure quartz in hand we can start to get into the more interesting elements of crystallography.\nCrystal seeds are the next step in your brewing journey. It allows brewers to grow crystals from existing sources of the seeds' type.\nIt is recommended that you craft a pure quartz seed. As you will need pure quartz to craft the other seed varieties. All crystal seed recipes can be found in the Crafting Menu.\nWith your seed in hand you will also need a Glassmith's Hammer.\nA seed can be placed onto its respected block;\n\nRedstone seed -> redstone ore, redstone deepslate ore, budding redstone\nGlowstone seed -> glowstone, budding glowstone\nPure quartz seed -> nether quartz ore, budding pure quartz\nAmethyst seed -> budding amethyst\n\nWith the seed placed you have to take the rudimentary approach and strike the seed with the glassmith hammer until the seed is sufficiently embedded within the block.\nThis seed will eventually grow into a budding crystal.\nFinally, glowstone seeds only grow in the nether!
+
+magical_brewery:tome_chapter_theories_glowstone.title=Theories: Glowstone
+magical_brewery:tome_chapter_theories_glowstone.body=Throughout my travels I've always had one question floating around my head. If you are familiar with the nether then there is 1 undeniable fact, it is a wasteland filled with horrors and fear.\n\nBut why does glowstone exist? Such a tranquil and fragile object seems contradictory to the nature of the nether. One theory of mine  is that the glowstone represents a more malicious intent of survival. In that the harsh landscape of the nether created glowstone as a bi-product of it's ecology.\n\nIs this crystal feeding off of the hope and glimmer of souls that are trapped in the nether?\nPerhaps glowstone is the solidified remnants of hope. 
+
+magical_brewery:tome_chapter_crystal_harvesting.title=Crystal Harvesting
+magical_brewery:tome_chapter_crystal_harvesting.body=Now that the seeds have grown into a budding crystal, you will see that the budding crystals act exactly like budding amethyst.\nJust like amethyst clusters, shards can only be obtained once the crystals have grown to their final stage.\n\nSome shards can be broken down into pure dust, namely redstone & glowstone.
+
+##---------------------------------
+##Tome Sub Chapters-----Purifying---------------
+magical_brewery:tome_chapter_washing.title=Washing
+magical_brewery:tome_chapter_washing.body=The easiest of the lot. Throw your sifted dust into a cauldron filled with water. You will know it's done when the bubbles stop forming.
+
+magical_brewery:tome_chapter_heat_treating.title=Heat Treating
+magical_brewery:tome_chapter_heat_treating.body=Place 4 candles, 1 on each block surrounding an empty space. If it looks like a cross, you've done it right.\nThe colour of the candle is important. For redstone, you will need red candles. You get the idea.\n\nThrow the sifted dust into the centre and you should see small sparks and flames appear. The process will finish when no flames are emanating from the dust.
+
+magical_brewery:tome_chapter_lunar_charging.title=Lunar Charging
+magical_brewery:tome_chapter_lunar_charging.body=The last step to mention is "lunar charging". There is only a short window when we can enact this step. We need to charge our sifted dust under the gaze of a full moon.\nSecondly your dust, or quartz needs to be thrown on top of a lodestone. If you've done this correctly, a mildly sounding hum will be heard.\nOnce the hum has silenced and there are no more lunar rays, the process should be done.
+
+##---------------------------------
+##Tome Chapters-----Ageing-------------------
+magical_brewery:tome_chapter_ageing.title=Ageing
+magical_brewery:tome_chapter_ageing.body=In traditional brewing there are two main methods used to add more complexity to drinks, that is brewing and ageing.\nAgeing is the humble side to the craft. It is the act of storing a beverage in a cask over a long period of time to allow the liquid to extract the flavours of the cask material, adding more depth to the beverage.\nWe can apply this idea to potion brewing.
+
+magical_brewery:tome_chapter_casks.title=Casks
+magical_brewery:tome_chapter_casks.body=To begin ageing potions you need to create woods that are stained with potion effects. Any wooden plank will work.\nTo craft a cask, you will need 6 stained wood planks and 2 iron ingots. The stained planks need to have the same effect. All of the cask recipes can be found in the Crafting Menu.\n\nA cask can only have one type of potion inside, and a potion that has the same effect as the cask will not trigger the ageing process.\n\nThe aging process will usually take about a day to complete. This time is increased depending on the amount of potion effects contained in a cask.\n\nTo check how long the potion needs to age, you can use a tasting spoon to well... taste the contents.\nOnce the cask contents have aged, you can pour the contents into a bottle. You should now have a potion with 2 unique effects.
+
+magical_brewery:tome_chapter_theories_cask_effects.title=Theories: Cask Effects
+magical_brewery:tome_chapter_theories_cask_effects.body=As you have probably found out, there is no recipe for cask of the Turtle Master. Unfortunately I couldn't find a simple method to extract the effects of a turtle master potion properly. All attempts yielded no results.\n\nMy suspicion is that due to the potion containing mixed effects, the magic is diluted and lacks the ability to impart these effects to any potion in a cask\n\nI have an idea to split these effects, which may also help bring out magicks from other sources, but currently I have nothing to show. If I do make any progress, I will send a message your way.
+
+
+magical_brewery:tome_chapter_seals.title=Seals
+magical_brewery:tome_chapter_seals.body=Ageing potions in casks is fun and all. But the excitement of the activity wears off pretty quickly.\nYou can spice ageing up by using seals. Disks of wax that can impart the same properties that we attain from adding dusts to brewing potions.\nThere are multiple seals, each with their own unique properties. You can find more information in the sub chapters listed below. 
+
+
+magical_brewery:tome_chapter_seal_base.title=Base Seal
+magical_brewery:tome_chapter_seal_base.body=To start using seals you need to craft base seals. Using a crafting table, you will need a grey candle, a sign, & a torch.\nEach seal requires 3 ingredients. The base seal, quartz, and dust. The type of dust determines the seal's effects.\n\nLevel 1 seals can be crafted with non-pure varieties of dust and quartz.\nLevel 2 seals require pure versions of dust and quartz.\n\nTo use a seal, place it on the side of a cask. When the cask is ageing, the seal will affect the ageing process creating a different outcome.\nOnce a potion has aged, if the seal has been attached to the cask long enough during the ageing lifetime it will set ablaze disappearing in the flames.
+
+
+magical_brewery:tome_chapter_seal_longevity.title=Seals of Longevity
+magical_brewery:tome_chapter_seal_longevity.body=As with brewing, seals of longevity increase the duration of the cask's potion effect. Each level further increases the duration\nSeals of longevity can be crafted with variants of redstone. 
+
+
+magical_brewery:tome_chapter_seal_potency.title=Seals of Potency
+magical_brewery:tome_chapter_seal_potency.body=Similar to brewing, seals of potency increase the power of a cask's potion effect. Each level increases the power by one tier. \nSeals of potency can be crafted with variants of glowstone. 
+
+
+magical_brewery:tome_chapter_seal_expansion.title=Seals of Expansion §c[W.I.P]
+magical_brewery:tome_chapter_seal_expansion.body=This seal can be applied to casks containing potions of lingering and potions of splash. It will increase the potions splash radius. Each level increases splash radius by one block.
+
+magical_brewery:tome_chapter_seal_retainment.title=Seal of Retainment §c[W.I.P]
+magical_brewery:tome_chapter_seal_retainment.body=Unlike other seals, the seal of retainment does not affect the cask effect being applied to the liquid contents. Instead it can be used to prevent casks from degrading. As with most seals, it will burn away once used.\nSeals of retainment are crafted using amethyst shards.
+
+magical_brewery:tome_chapter_author.title=About the Author
+magical_brewery:tome_chapter_author.body=Once again, welcome to Magical Brewery. Let's rip the plaster off and say it how it is. This is the mod/addon author talking directly to you(the player).\nFrom here on this page will be a wall of text and will contain potential spoilers about the addon.\n\nI'm pleased to see you have downloaded the add-on. If you have got this book through survival means then you are certainly curious, which is what I would like.\nThis addon is currently in an alpha state(v0.3), so there will be bugs and features maybe missing or incomplete(see seals of expansion).\nI am aware of 1 bug which is that the cask sometimes doesn't register that it's there.(Re-placing the cask will resolve the issue) I have an easy fix, but I want to know WHY it's happening rather than use duct tape as a solution.\nAnother issue is that Potions of Regeneration do not work with casks. This is because they have an internal potion effect = "None". Because of this, I can't create the potion. This is a minecraft API bug.\n\nSpeaking of bugs, if you have any issues, you can submit the issues here at my github:\n https://github.com/ \n\nAnd if you would like to sing praise or throw rotten tomatoes at me, you can either make a comment on the curseforge page:\n https://www.curseforge.com/ \n\nOr whisper into my ear on discord:\nBeardedflea\n\nThank you for your patience, and enjoy the addon.
