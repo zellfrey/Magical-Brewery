@@ -1,17 +1,17 @@
 ##---------------------------------
 ##Items---------------------------------
 ##Crystals---------------------------------
-item.magical_brewery:amethyst_dust.name=Amethyst Dust
+item.magical_brewery:amethyst_dust.name=Amethyst Dust §c[W.I.P]
 item.magical_brewery:amethyst_seed.name=Amethyst Seed
 ##Echo shards---------------------------------
-item.magical_brewery:small_echo_bud.name=Small Echo Bud
-item.magical_brewery:medium_echo_bud.name=Medium Echo Bud
-item.magical_brewery:large_echo_bud.name=Large Echo Bud
-item.magical_brewery:echo_cluster.name=Echo Cluster
-item.magical_brewery:echo_dust.name=Echo Dust
-item.magical_brewery:echo_seed.name=Echo Seed
-tile.magical_brewery:budding_echo.name=Budding Echo
-tile.magical_brewery:echo_shard_block.name=Echo Shard Block
+item.magical_brewery:small_echo_bud.name=Small Echo Bud §c[W.I.P]
+item.magical_brewery:medium_echo_bud.name=Medium Echo Bud §c[W.I.P]
+item.magical_brewery:large_echo_bud.name=Large Echo Bud §c[W.I.P]
+item.magical_brewery:echo_cluster.name=Echo Cluster §c[W.I.P]
+item.magical_brewery:echo_dust.name=Echo Dust §c[W.I.P]
+item.magical_brewery:echo_seed.name=Echo Seed §c[W.I.P]
+tile.magical_brewery:budding_echo.name=Budding Echo §c[W.I.P]
+tile.magical_brewery:echo_shard_block.name=Echo Shard Block §c[W.I.P]
 ##Glow shards---------------------------------
 item.magical_brewery:glowstone_shard.name=Glowstone Shard
 item.magical_brewery:small_glowstone_bud.name=Small Glowstone Bud
@@ -50,8 +50,8 @@ item.magical_brewery:glassmith_hammer.name=Glassmith's Hammer
 ##item.magical_brewery:glassmith_chisel.name=Glassmith's Chisel
 item.magical_brewery:ageless_pocket_watch.name=Ageless Pocket Watch
 item.magical_brewery:tasting_spoon.name=Tasting Spoon
-item.magical_brewery:amethyst_bottle.name=Amethyst Bottle
-item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle
+item.magical_brewery:amethyst_bottle.name=Amethyst Bottle §c[W.I.P]
+item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle §c[W.I.P]
 ##Tome&Scrolls------------------------------------
 item.magical_brewery:brewers_tome.name=§dBrewers' Tome
 item.magical_brewery:pages_crystallography.name=§eCrystallography Pages
