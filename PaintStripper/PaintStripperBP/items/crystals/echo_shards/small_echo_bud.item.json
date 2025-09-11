@@ -13,10 +13,10 @@
 			"minecraft:icon": "magical_brewery:small_echo_bud",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:small_echo_bud.name"
-			},
-			"minecraft:block_placer": {
-				"block": "magical_brewery:small_echo_bud"
 			}
+			// "minecraft:block_placer": {
+			// 	"block": "magical_brewery:small_echo_bud"
+			// }
 		}
 	}
 }

@@ -175,16 +175,16 @@ export const TOME_CHAPTERS = {
 				id: "Potency",
 				icon: "textures/items/seals/seal_potency_1.png"
 			},
-			{
-				chapter: "magical_brewery:tome_chapter_seal_expansion.title",
-				id: "Expansion",
-				icon: "textures/items/seals/seal_expansion_1.png"
-			},
-			{
-				chapter: "magical_brewery:tome_chapter_seal_retainment.title",
-				id: "Retainment",
-				icon: "textures/items/seals/seal_retainment.png"
-			},
+			// {
+			// 	chapter: "magical_brewery:tome_chapter_seal_expansion.title",
+			// 	id: "Expansion",
+			// 	icon: "textures/items/seals/seal_expansion_1.png"
+			// },
+			// {
+			// 	chapter: "magical_brewery:tome_chapter_seal_retainment.title",
+			// 	id: "Retainment",
+			// 	icon: "textures/items/seals/seal_retainment.png"
+			// },
 		],
 		exitPage: "Ageing"
     },

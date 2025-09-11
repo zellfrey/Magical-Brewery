@@ -13,10 +13,10 @@
 			"minecraft:icon": "magical_brewery:echo_cluster",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:echo_cluster.name"
-			},
-			"minecraft:block_placer": {
-				"block": "magical_brewery:echo_cluster"
 			}
+			// "minecraft:block_placer": {
+			// 	"block": "magical_brewery:echo_cluster"
+			// }
 		}
 	}
 }

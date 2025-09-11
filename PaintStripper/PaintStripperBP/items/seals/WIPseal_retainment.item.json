@@ -4,7 +4,8 @@
 		"description": {
 			"identifier": "magical_brewery:seal_retainment",
 			"menu_category": {
-				"category": "items"
+				"category": "none",
+				"is_hidden_in_commands": true
 			}
 		}, 
 		"components": {
@@ -15,10 +16,10 @@
 			"minecraft:icon": "magical_brewery:seal_retainment",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:seal_retainment.name"
-			},
-			"minecraft:block_placer": {
-				"block": "magical_brewery:seal_retainment"
 			}
+			// "minecraft:block_placer": {
+			// 	"block": "magical_brewery:seal_retainment"
+			// }
 		}
 	}
 }
