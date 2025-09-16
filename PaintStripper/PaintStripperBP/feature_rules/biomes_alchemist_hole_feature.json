@@ -1,0 +1,45 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:feature_rules": {
+		"description": {
+            "identifier": "magical_brewery:biomes_alchemist_hole_feature",
+			"places_feature": "magical_brewery:alchemist_hole_feature"
+		},
+		"conditions": {
+			// "placement_pass": "first_pass",
+			"placement_pass": "after_surface_pass",
+			"minecraft:biome_filter": {
+				"any_of": [
+                    {
+                        "test": "has_biome_tag",
+                        "value": "taiga"
+                    },
+                    {
+                        "test": "has_biome_tag",
+                        "value": "savanna"
+                    },
+                    {
+                        "test": "has_biome_tag",
+                        "value": "savanna"
+                    }
+				]
+			}
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": {
+				"extent": [0, 16],
+				"distribution": "uniform"
+			},
+			"y": "q.heightmap(v.worldx, v.worldz) + -6",
+			"z": {
+				"extent": [0, 16],
+				"distribution": "uniform"
+			},
+			"scatter_chance": {
+				"numerator": 1,
+				"denominator": 50
+			}
+		}
+	}
+}

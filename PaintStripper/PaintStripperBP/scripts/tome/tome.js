@@ -118,6 +118,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 			if(!tomePlayerData){
 				createTomeData(e.source)
 				e.source.sendMessage("Upon examining the book, it appears some of the pages are missing. There should be some chapters to be found");
+				tomePlayerData = e.source.getDynamicProperty('magical_brewery:tome_data')
 			}
 			tomePlayerData = JSON.parse(tomePlayerData)
 			

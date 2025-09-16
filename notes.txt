@@ -325,3 +325,8 @@ Upload on github
 
 Work on structures
 Build structures - 
+custom blocks work, they just dont show up on the GUI 
+novice house done
+5030072936364136448
+
+5044373671550110703
