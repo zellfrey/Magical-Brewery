@@ -6,7 +6,6 @@
 			"places_feature": "magical_brewery:alchemist_hole_feature"
 		},
 		"conditions": {
-			// "placement_pass": "first_pass",
 			"placement_pass": "after_surface_pass",
 			"minecraft:biome_filter": {
 				"any_of": [
@@ -16,11 +15,11 @@
                     },
                     {
                         "test": "has_biome_tag",
-                        "value": "savanna"
+                        "value": "meadow"
                     },
                     {
                         "test": "has_biome_tag",
-                        "value": "savanna"
+                        "value": "plains"
                     }
 				]
 			}
@@ -38,7 +37,7 @@
 			},
 			"scatter_chance": {
 				"numerator": 1,
-				"denominator": 50
+				"denominator": 40
 			}
 		}
 	}

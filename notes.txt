@@ -330,3 +330,10 @@ novice house done
 5030072936364136448
 
 5044373671550110703
+
+Tomorrow 17/09
+
+Update lectern book, 
+carry on polishing generation
+add curseforge updatehandler - not possible/ BACKBURNER
+change addon folders to magical brewery

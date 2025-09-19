@@ -218,7 +218,7 @@ world.afterEvents.blockExplode.subscribe((e) => {
 });
 
 world.afterEvents.worldLoad.subscribe((e) => {
-    console.log("loading cask data")
+    // console.log("loading cask data")
     let caskData = world.getDynamicProperty('magical_brewery:cask_data')
     if(!caskData || caskData.length === 0) return;
 

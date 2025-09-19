@@ -140,7 +140,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 
 world.afterEvents.worldLoad.subscribe((e) => {
-    console.log("loading budding crystal data")
+    // console.log("loading budding crystal data")
     let buddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
     if(!buddingCrystalData || buddingCrystalData.length === 0) return;
 

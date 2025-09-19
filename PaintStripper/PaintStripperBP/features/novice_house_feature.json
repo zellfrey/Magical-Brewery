@@ -12,9 +12,8 @@
 			"block_intersection": {
 				"block_allowlist": [
 					"minecraft:air",
-                    "minecraft:dirt",
-                    "minecraft:grass",
-					"minecraft:leaves"
+					"minecraft:dirt",
+					"minecraft:grass"
 				]
 			}
 		}

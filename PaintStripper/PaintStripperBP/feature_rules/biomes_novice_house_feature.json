@@ -6,7 +6,7 @@
 			"places_feature": "magical_brewery:novice_house_feature"
 		},
 		"conditions": {
-			"placement_pass": "after_surface_pass",
+			"placement_pass": "first_pass",
 			"minecraft:biome_filter": {
 				"any_of": [
                     {
@@ -37,7 +37,7 @@
 			},
 			"scatter_chance": {
 				"numerator": 1,
-				"denominator": 50
+				"denominator": 70
 			}
 		}
 	}
