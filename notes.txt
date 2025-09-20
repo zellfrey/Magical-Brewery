@@ -333,7 +333,12 @@ novice house done
 
 Tomorrow 17/09
 
-Update lectern book, 
-carry on polishing generation
+
+carry on polishing generation - DONE
 add curseforge updatehandler - not possible/ BACKBURNER
+
+
+Update lectern book,
+polish loottables - DONE
 change addon folders to magical brewery
+had a thought, the hobbit hole is a little too natural. Even I, the dev, was struggling to find it. I.e, blink and you miss it
