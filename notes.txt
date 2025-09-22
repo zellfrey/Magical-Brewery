@@ -333,12 +333,14 @@ novice house done
 
 Tomorrow 17/09
 
+3091539806857517439
 
 carry on polishing generation - DONE
 add curseforge updatehandler - not possible/ BACKBURNER
 
 
-Update lectern book,
+Update lectern book, - DO LATER, CBA
 polish loottables - DONE
 change addon folders to magical brewery
 had a thought, the hobbit hole is a little too natural. Even I, the dev, was struggling to find it. I.e, blink and you miss it
+ DONE
