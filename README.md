@@ -22,5 +22,5 @@ Download the latest .mcaddon file, and once downloaded left click the file and m
 This mod is available under the MIT License.
 
 ### Spoilers:
-[video](https://www.youtube.com/watch?v=qSL6OkRyVDg)
-[video](www.youtube.com/watch?v=eubHd1Vgd80)
+[Ageing](https://www.youtube.com/watch?v=qSL6OkRyVDg)
+[Purifying](www.youtube.com/watch?v=eubHd1Vgd80)
