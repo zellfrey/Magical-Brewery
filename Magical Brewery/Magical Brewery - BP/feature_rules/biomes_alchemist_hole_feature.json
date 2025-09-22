@@ -11,7 +11,15 @@
 				"any_of": [
                     {
                         "test": "has_biome_tag",
-                        "value": "overworld"
+                        "value": "meadow"
+                    },
+                    {
+                        "test": "has_biome_tag",
+                        "value": "plains"
+                    },
+					{
+                        "test": "has_biome_tag",
+                        "value": "taiga"
                     }
 				]
 			}
@@ -29,7 +37,7 @@
 			},
 			"scatter_chance": {
 				"numerator": 1,
-				"denominator": 4
+				"denominator": 40
 			}
 		}
 	}
