@@ -13,7 +13,9 @@
 				"block_allowlist": [
 					"minecraft:air",
 					"minecraft:dirt",
-					"minecraft:grass"
+					"minecraft:grass",
+					"minecraft:cornflower",
+					"minecraft:dandelion"
 				]
 			}
 		}
