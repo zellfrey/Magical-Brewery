@@ -12,6 +12,7 @@ You can find the latest .mcaddon file at [Curseforge](https://www.curseforge.com
 
 **This addon is currently is in ALPHA, which means some content may change or be removed. However I am striving not too do that. 
 So, with crossed fingers I would say the content that is currently in is here to stay.**<br/>
+Aswell as that, the mod is currently only in English(translation is still on the table).
 
 ## Requirements
 Minecraft Bedrock Edition - min version 1.21.100(as of v0.3)
