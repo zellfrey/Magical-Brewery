@@ -31,4 +31,4 @@ This mod is available under the MIT License.
 
 ### Spoilers:
 [Ageing](https://www.youtube.com/watch?v=qSL6OkRyVDg)<br/>
-[Purifying](www.youtube.com/watch?v=eubHd1Vgd80)
+[Purifying](https://www.youtube.com/watch?v=eubHd1Vgd80)
