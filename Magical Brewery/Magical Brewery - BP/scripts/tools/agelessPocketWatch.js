@@ -81,12 +81,10 @@ function forceAgeCask(block, source){
     if(!canAge || aged || fillLevel === 0){
         source.sendMessage("Despite accelerating time, the cask cannot age.")
         return;
-    } 
-    const particleLocation = block.center();
-    particleLocation.y += 0.4
-    block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
-    block.setPermutation(block.permutation.withState("magical_brewery:aged", true));
+    }
+    cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel, 100)
     cask.addAgedPotionEffect(caskPotionType, 100)
     Cask.updateCask(cask)
+    cask.setCaskAge(block);
     source.sendMessage("The watch has sped up time, and has aged the cask.")
 }

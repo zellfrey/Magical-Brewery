@@ -126,15 +126,12 @@ export class Cask {
         
         const potionEffect = POTION_EFFECTS[caskPotionType]
         let effectName = potionEffect.effects
-        let sealType = "";
-        let sealStrength = 0;
-        if(Object.keys(this.seal.location).length !== 0 && caskSealAge >= 75){
+        let sealType = this.seal.type;
+        let sealStrength = this.seal.strength;
+        // if(Object.keys(this.seal.location).length !== 0 && caskSealAge >= 75){
             
-            sealType = this.seal.type;
-            sealStrength = this.seal.strength;
-            this.seal.destroySealBlock(this.dimensionID)
-            this.seal = {};
-        }
+            
+        // }
 
         if(sealType === "potency"){
             let potionPotency;
@@ -167,6 +164,23 @@ export class Cask {
         this.potion_effects.push(effectName);
     }
 
+    setCaskAge(block){
+
+        block.setPermutation(block.permutation.withState("magical_brewery:aged", true));
+        const particleLocation = block.center();
+        particleLocation.y += 0.4
+        block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
+
+    }
+
+    deleteCaskSeal(){
+        if(Object.keys(this.seal.location).length === 0) return;
+        
+        if(this.seal.affectCaskAgeing){
+            this.seal.destroySealBlock(this.dimensionID)
+            this.seal = {};
+        }
+    }
     static createCask(blockDimensionID, blockLocation){
 
         new Cask(blockDimensionID, blockLocation)

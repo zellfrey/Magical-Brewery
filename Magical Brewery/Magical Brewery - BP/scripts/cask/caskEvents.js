@@ -197,15 +197,20 @@ function ageCask(block, caskPotionType){
     cask.checkSeal(block, ageEndTick)
     cask.seal.spawnSealSingleFlameParticle(block.dimension, ageEndTick)
     if(ageEndTick <= system.currentTick){
-        const caskAgeTime = (12000*cask.potion_effects.length + fillLevel*10)/3
-        const caskSealAgeTime = Math.ceil(cask.seal.lifetime*20 / caskAgeTime *100)
-        cask.addAgedPotionEffect(caskPotionType, caskSealAgeTime)
-        Cask.updateCask(cask)
-        block.setPermutation(block.permutation.withState("magical_brewery:aged", true));
         
-        const particleLocation = block.center();
-        particleLocation.y += 0.4
-        block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
+        cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel)
+        cask.addAgedPotionEffect(caskPotionType)
+        Cask.updateCask(cask)
+        cask.setCaskAge(block);
+        cask.deleteCaskSeal();
+        
+        // cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel)
+        // cask.addAgedPotionEffect(caskPotionType)
+        // Cask.updateCask(cask)
+        // cask.setCaskAge(block);
+        // cask.setCaskChargeLevel(block)
+        // cask.deleteCaskSeal();
+        
     }
     return;
 }
@@ -240,9 +245,9 @@ world.afterEvents.worldLoad.subscribe((e) => {
         
         if(caskEl.seal.location !== undefined){
 
-            cask.seal = new Seal(caskEl.seal.location, caskEl.seal.type, 
-                                caskEl.seal.strength, caskEl.seal.previousTick);
-
+            cask.seal = new Seal(caskEl.seal.location, caskEl.seal.type, caskEl.seal.strength, caskEl.seal.previousTick);
+            
+            cask.seal.affectCaskAgeing = caskEl.seal.affectCaskAgeing
             cask.seal.lifetime = caskEl.seal.lifetime                 
         }
     });
