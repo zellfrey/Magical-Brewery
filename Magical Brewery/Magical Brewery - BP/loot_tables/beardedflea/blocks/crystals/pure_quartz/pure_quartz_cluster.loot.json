@@ -23,11 +23,8 @@
 						"enchantment": "silk_touch"
 						}  
 					], 
-					"item": [
-						"minecraft:netherite_pickaxe",
-						"minecraft:diamond_pickaxe",
-						"minecraft:iron_pickaxe",
-						"minecraft:stone_pickaxe"
+					"minecraft:match_tool_filter_all": [
+						"minecraft:is_pickaxe"
 					],
 					"count": 1
 				}
