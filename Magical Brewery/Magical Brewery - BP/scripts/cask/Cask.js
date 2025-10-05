@@ -10,7 +10,9 @@ export class Cask {
         this.dimensionID = dimensionID;
         this.location = location;
         this.potion_effects = [];
+        //Delivery Type
         this.potion_liquid = "";
+        //Not used, as modifier is now used in the effectType id, but keeping as it may break some old worlds
         this.potion_modifier = "";
         this.age_start_tick = -1;
         this.seal = {};
@@ -19,8 +21,7 @@ export class Cask {
 
     setCaskPotion(potion, extraEffects){
         this.potion_effects.push(potion.potionEffectType.id)
-        this.potion_liquid = potion.potionLiquidType.id
-        this.potion_modifier = potion.potionModifierType.id
+        this.potion_liquid = potion.potionDeliveryType.id
         
         if(extraEffects.length > 0){
             extraEffects.forEach(effect => {this.potion_effects.push(effect)})
@@ -35,8 +36,7 @@ export class Cask {
 
     matchesCaskPotion(potion, extraEffects){
         const matchesEffect = this.potion_effects[0] === potion.potionEffectType.id;
-        const matchesLiquid = this.potion_liquid === potion.potionLiquidType.id;
-        const matchesModifier = this.potion_modifier === potion.potionModifierType.id;
+        const matchesLiquid = this.potion_liquid === potion.potionDeliveryType.id;
 
         let matchesExtraEffects;
         if(this.potion_effects.length < 1 || extraEffects.length === 0){
@@ -50,7 +50,7 @@ export class Cask {
                 if(!matchesExtraEffects) break;
             }
         }
-        return matchesEffect && matchesLiquid && matchesModifier && matchesExtraEffects;
+        return matchesEffect && matchesLiquid && matchesExtraEffects;
     }
 
     canCaskAge(caskPotionType){
