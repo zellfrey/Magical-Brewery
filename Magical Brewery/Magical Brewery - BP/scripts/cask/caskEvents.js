@@ -164,24 +164,30 @@ function getCaskFirstPotionString(caskFirstPotion){
     
     let modifier = ""; 
 
-    switch(effectID[0]){
-    case "strong":
+    if(effectID[0] === "strong" || effectID[0] === "long"){
 
-        if(potionString === "Slowness"){
-            modifier += " IV"
-        }else{
-            modifier += " II" 
+        switch(effectID[0]){
+            case "strong":
+                if(effectID[1] === "slowness"){
+                    modifier += " IV"
+                }else{
+                    modifier += " II" 
+                }
+            break;
+            case "long": 
+                modifier += " Extended" 
+            break;
         }
-
-    break;
-    case "long": 
-        modifier += " Extended" 
-
-    break;
+        effectID.shift();
     }
-    console.log(modifier)
-	
-		// return effect[0].toUpperCase() + effect.substring(1);
+    
+    for(let i = 0; i < effectID.length; i++){
+        effectID[i] = effectID[i][0].toUpperCase() + effectID[i].substring(1);
+    }
+
+    const effectString = effectID.join(" ") + modifier;
+
+    return effectString
 }
 
 function sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage){
