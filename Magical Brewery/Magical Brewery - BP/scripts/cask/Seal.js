@@ -1,4 +1,4 @@
-import {world, system, Direction} from "@minecraft/server";
+import {world, system, Direction, Dimension} from "@minecraft/server";
 import {neighbouringCross, getBlockFromFace} from "../utils/blockPlacementUtils.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {Cask} from "cask/Cask.js";
@@ -99,8 +99,8 @@ export class Seal {
         try{
             const crossBlocks = [];
             neighbouringCross.forEach((el) => { crossBlocks.push(block.offset({x:el.x, y: 0, z: el.z}))})
-
-            const seals = crossBlocks.filter(el => el.hasTag("magical_brewery:seal"))
+			
+            const seals = crossBlocks.filter(el => el.dimension.isChunkLoaded(el.location) && el.hasTag("magical_brewery:seal"))
 
             if(seals.length === 0) return undefined;
 
@@ -113,10 +113,9 @@ export class Seal {
             return seal ? seal : undefined
         }
         catch(e){
-            console.warn("Magical brewery: Tried to find seal, but its unloaded. \n Now how do i check if a block is unloaded")
-            return undefined;
+            console.error("Despite the block occupying a loaded chunk. It can't find the seal tag ¯\\_(ツ)_/¯")
         }
-    }
+    }     
 }
 
 

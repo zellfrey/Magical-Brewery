@@ -1,10 +1,10 @@
 {
     "format_version": 2,
     "header": {
-      "description": "Resource pack for Magical Brewery addon v0.3.2 - alpha", 
+      "description": "Resource pack for Magical Brewery addon v0.3.3 - alpha", 
       "name": "Magical Brewery RP",
       "uuid":"b980ea2e-49a0-4098-89b6-6db625d2b05d",
-      "version": [0, 3, 2],
+      "version": [0, 3, 3],
       "min_engine_version": [1, 21, 10]
      },
      "metadata": {
@@ -14,10 +14,10 @@
     },
     "modules": [
       {
-        "description": "Resource pack for Magical Brewery addon v0.3.2", 
+        "description": "Resource pack for Magical Brewery addon v0.3.3", 
         "type": "resources",
         "uuid": "80ef3ab1-361d-4dde-a17d-4c965c70f05f",
-        "version": [0, 3, 2]
+        "version": [0, 3, 3]
       }
     ]
    }

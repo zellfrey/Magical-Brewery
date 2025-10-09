@@ -1,4 +1,15 @@
 -----------------------------------------------
+v0.3.3
+Updated:
+    Generation:
+    Scripts:
+        For realsies this time, Updated tasting spoon has better feedback of initial potion in cask
+    loottables:
+        Updated Alchemist_under_bed book. Fixed typo
+Author comment:
+Forgot to push the tasting spoon update(I never saved the code)
+-----------------------------------------------
+-----------------------------------------------
 v0.3.2
 Updated:
     Generation:
