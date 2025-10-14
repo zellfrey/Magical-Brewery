@@ -1,22 +1,27 @@
 -----------------------------------------------
-v1.0.0
-Added:
-    Generation:
-    Scripts:
-    Blocks:
-    Entities:
-    Recipes:
-    Items:
+v0.3.3
 Updated:
     Generation:
     Scripts:
-    Blocks:
-    Recipes:
-    Items:
-Removed:
+        For realsies this time, Updated tasting spoon has better feedback of initial potion in cask
+    loottables:
+        Updated Alchemist_under_bed book. Fixed typo
+Author comment:
+Forgot to push the tasting spoon update(I never saved the code)
+-----------------------------------------------
+-----------------------------------------------
+v0.3.2
+Updated:
     Generation:
     Scripts:
-    Items:
+        @minecraft/server bumped to "2.3.0-beta"
+        Fixed a bug where potions of Regeneration wouldn't work with casks
+        Updated casks to work with new Potion api changes
+        Updated tasting spoon has better feedback of initial potion in cask. This will be improved upon in the future
     Blocks:
+        Crystal cluster loottables now changed to check for item tags rather than fixed names. Hopefully modded pickaxes can be used with this
+    Recipes:
+    Items:
 Author comment:
+Amazing timing of me to upload an addon just before a game drop.
 -----------------------------------------------

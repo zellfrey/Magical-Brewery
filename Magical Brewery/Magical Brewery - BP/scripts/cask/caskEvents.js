@@ -1,4 +1,4 @@
-import {world, system, ItemStack} from "@minecraft/server";
+import {world, system, ItemStack, Potions} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
 import {Seal} from "cask/Seal.js";
 import {Cask} from "cask/Cask.js";
@@ -53,7 +53,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                     if(!aged){
 
                         for(let i = 0; i !== cask.potion_effects.length; i++){
-                            initialTaste += cask.potion_effects[i] + "\n"
+                            initialTaste += getCaskFirstPotionString(cask.potion_effects[i]) + "\n"
                         }
                         player.sendMessage(initialTaste)
 
@@ -70,7 +70,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                     }
                     else{
                         for(let i = 0; i !== cask.potion_effects.length-1; i++){
-                            initialTaste += cask.potion_effects[i] + "\n"
+                            initialTaste += getCaskFirstPotionString(cask.potion_effects[i]) + "\n"
                         }
                         player.sendMessage(initialTaste)
                         player.sendMessage("It also has a taste of " + cask.potion_effects[cask.potion_effects.length -1] + ".");
@@ -87,14 +87,12 @@ system.beforeEvents.startup.subscribe(eventData => {
             }
             if(selectedItem.typeId === "minecraft:potion"){
 
-                //v2.0.0 uses "T" (generic) instead of a string. So im using this silly method to just get the first and only component of a potion
-                const potion = selectedItem.getComponents()[0];
+                const potion = selectedItem.getComponent("minecraft:potion");
 
-                if(fillLevel === 3 || potion === undefined || aged || potion.potionEffectType.id === "None") return;
+                if(fillLevel === 3 || !potion.isValid || aged || potion.potionEffectType.id === "None") return;
                 
-                //Currently regeneration potions have an empty string for their effect. This extra check is so they arent used. Hopefully this gets fixed
+                
                 if(fillLevel === 0 && potion.potionEffectType.id){
-                    console.log("cask potions length:" + cask.potion_effects.length)
                     cask.setCaskPotion(potion, selectedItem.getLore())
                 }
                 
@@ -124,12 +122,8 @@ system.beforeEvents.startup.subscribe(eventData => {
                     dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
                     return;
                 }
-                
-                const item = ItemStack.createPotion({
-                    effect: cask.potion_effects[0],
-                    liquid: cask.potion_liquid,
-                    modifier: cask.potion_modifier,
-                });
+               
+                const item = Potions.resolve(cask.potion_effects[0], cask.potion_liquid)
 
                 if(cask.potion_effects.length > 1){
                     const extraEffects = cask.potion_effects.slice(1)
@@ -164,6 +158,37 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
+
+function getCaskFirstPotionString(caskFirstPotion){
+    const effectID = caskFirstPotion.split(":")[1].split("_")
+    
+    let modifier = ""; 
+
+    if(effectID[0] === "strong" || effectID[0] === "long"){
+
+        switch(effectID[0]){
+            case "strong":
+                if(effectID[1] === "slowness"){
+                    modifier += " IV"
+                }else{
+                    modifier += " II" 
+                }
+            break;
+            case "long": 
+                modifier += " Extended" 
+            break;
+        }
+        effectID.shift();
+    }
+    
+    for(let i = 0; i < effectID.length; i++){
+        effectID[i] = effectID[i][0].toUpperCase() + effectID[i].substring(1);
+    }
+
+    const effectString = effectID.join(" ") + modifier;
+
+    return effectString
+}
 
 function sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage){
 
@@ -240,6 +265,7 @@ world.afterEvents.worldLoad.subscribe((e) => {
         let cask = new Cask(caskEl.dimensionID, caskEl.location)
         cask.potion_effects = caskEl.potion_effects
         cask.potion_liquid = caskEl.potion_liquid
+        //not used but again keeping
         cask.potion_modifier = caskEl.potion_modifier
         cask.age_start_tick = caskEl.age_start_tick
         
