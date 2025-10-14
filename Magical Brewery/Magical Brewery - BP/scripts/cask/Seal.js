@@ -13,6 +13,7 @@ export class Seal {
         this.type = sealType;
         this.strength = sealStrength;
         this.previousTick = currentTick;
+        this.affectCaskAgeing = true;
         this.lifetime = 0;
     }
     
@@ -58,6 +59,20 @@ export class Seal {
 
             dimension.spawnParticle(`magical_brewery:dust_${sealType.slice(16)}_flame`, particleSpawnVector3);
         }, tickDelay);
+    }
+
+    checkAgedLifetime(potionEffectsLength, fillLevel, agelessPocketWatchAddition = 0){
+
+        const caskAgeTime = (12000 * potionEffectsLength + fillLevel*10)/3;
+        let caskSealAgeTime = Math.ceil(this.lifetime*20 / caskAgeTime *100);
+		
+		caskSealAgeTime += agelessPocketWatchAddition;
+
+		if(caskSealAgeTime < 75){
+			this.type = "";
+			this.strength = 0;
+            this.affectCaskAgeing  = false;
+		}
     }
     
     destroySealBlock(dimensionID){
