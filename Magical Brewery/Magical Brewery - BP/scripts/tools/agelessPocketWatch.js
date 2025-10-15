@@ -12,7 +12,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             const {block, source} = e;
 
             if(source.playerPermissionLevel != 2) {
-                source.sendMessage("You do not have the strength to use such an artifact!")
+                source.sendMessage({ translate: "magical_brewery:message.ageless_pocket_watch.not_opped"});
                 return;
             }
                 
@@ -79,12 +79,12 @@ function forceAgeCask(block, source){
     
 
     if(!canAge || aged || fillLevel === 0){
-        source.sendMessage("Despite accelerating time, the cask cannot age.")
+        source.sendMessage({ translate: "magical_brewery:message.ageless_pocket_watch.cask_cannot_age"});
         return;
     }
     cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel, 100)
     cask.addAgedPotionEffect(caskPotionType, 100)
     Cask.updateCask(cask)
     cask.setCaskAge(block);
-    source.sendMessage("The watch has sped up time, and has aged the cask.")
+    source.sendMessage({ translate: "magical_brewery:message.ageless_pocket_watch.cask_aged"});
 }

@@ -36,7 +36,7 @@ function addPagesChaptersToPlayer(player, mainChapter){
 	let tomePlayerData = player.getDynamicProperty('magical_brewery:tome_data')
 	
 	if(!tomePlayerData){
-		player.sendMessage("Maybe these pages can be added to a book.")
+		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.add"})
 		return;
 	}
 	
@@ -45,7 +45,7 @@ function addPagesChaptersToPlayer(player, mainChapter){
 	tomePlayerData = JSON.parse(tomePlayerData);
 	if(tomePlayerData.unlocked_chapters.includes(pagesChapters[0])){
 
-		player.sendMessage("These chapters are already in your book.\nPerhaps you can share them with someone you trust. Or destroy these pages to stop prying hands.")
+		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.owned"})
 		return;
 
 	}else{
@@ -60,7 +60,7 @@ function addPagesChaptersToPlayer(player, mainChapter){
 		
 		player.setDynamicProperty('magical_brewery:tome_data', JSON.stringify(tomePlayerData))
 		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1})
-		player.sendMessage(`You have added ${mainChapter} chapters to your Brewers' tome.`)
+		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.added", with: [mainChapter] });
 	}
 }
 function getPagesChapters(pagesChapters){
@@ -117,7 +117,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 			
 			if(!tomePlayerData){
 				createTomeData(e.source)
-				e.source.sendMessage("Upon examining the book, it appears some of the pages are missing. There should be some chapters to be found");
+				e.source.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.missing"});
 				tomePlayerData = e.source.getDynamicProperty('magical_brewery:tome_data')
 			}
 			tomePlayerData = JSON.parse(tomePlayerData)

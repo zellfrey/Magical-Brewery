@@ -44,21 +44,25 @@ system.beforeEvents.startup.subscribe(eventData => {
                 
                 if(fillLevel === 0){
                     dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
-                    player.sendMessage("The cask is empty.");
+                    player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.empty"});
                 }
                 else{
                     dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
-                    let initialTaste = "The potion tastes of;\n";
+
+                    let caskPotions = getCaskFirstPotionString(cask.potion_effects[0]) + "\n";
+
+                    player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.initial_taste"})
 
                     if(!aged){
 
-                        for(let i = 0; i !== cask.potion_effects.length; i++){
-                            initialTaste += getCaskFirstPotionString(cask.potion_effects[i]) + "\n"
+                        for(let i = 1; i !== cask.potion_effects.length; i++){
+                            caskPotions += cask.potion_effects[i] + "\n"
                         }
-                        player.sendMessage(initialTaste)
+
+                        player.sendMessage(caskPotions)
 
                         if(!cask.canCaskAge(caskPotionType)){
-                            player.sendMessage("It looks like the potion contains a similar effect as the cask, and cannot age.")
+                            player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.cannot_age"});
                         }else{
                             const ageTime = 12000*cask.potion_effects.length + fillLevel*10;
                             const ageEndTick = cask.age_start_tick + ageTime;
@@ -69,12 +73,14 @@ system.beforeEvents.startup.subscribe(eventData => {
                         
                     }
                     else{
-                        for(let i = 0; i !== cask.potion_effects.length-1; i++){
-                            initialTaste += getCaskFirstPotionString(cask.potion_effects[i]) + "\n"
+                        for(let i = 1; i !== cask.potion_effects.length-1; i++){
+                            caskPotions = cask.potion_effects[i] + "\n"
                         }
-                        player.sendMessage(initialTaste)
-                        player.sendMessage("It also has a taste of " + cask.potion_effects[cask.potion_effects.length -1] + ".");
-                        player.sendMessage("The potion has aged and is ready.");
+                        
+                        player.sendMessage(caskPotions)
+                        player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.new_effect", 
+                                            with: [cask.potion_effects[cask.potion_effects.length -1]] });
+                        player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.aged"});
                     }
                    
                 }
@@ -83,7 +89,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             }
             //Will implement splash and lingering potions at a later date
             if(selectedItem.typeId === "minecraft:lingering_potion" || selectedItem.typeId === "minecraft:splash_potion"){
-                player.sendMessage("§cCurrently unavailable. Functionality will be added at a later date.")
+                player.sendMessage({ translate: "magical_brewery:message.magical_brewery_general.wip"});
             }
             if(selectedItem.typeId === "minecraft:potion"){
 
@@ -192,22 +198,26 @@ function getCaskFirstPotionString(caskFirstPotion){
 
 function sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage){
 
+    let agingStage;
+
     if(ageCompletionPercentage < 20){
-        player.sendMessage(`There is no taste of ${caskPotionType}`);
+        agingStage = 0;
     }
     else if(20 <= ageCompletionPercentage &&  ageCompletionPercentage < 40){
-        player.sendMessage(`It has the aroma of ${caskPotionType}, but nothing substantial`);
+        agingStage = 1;
     }
     else if(40 <= ageCompletionPercentage &&  ageCompletionPercentage < 60){
-        player.sendMessage(`The potion has a hint of ${caskPotionType}`);
+        agingStage = 2;
     }
     else if(60 <= ageCompletionPercentage &&  ageCompletionPercentage < 80){
-        player.sendMessage(`A good flavour of ${caskPotionType} is present`);
+        agingStage = 3;
     }
     else if(80 <= ageCompletionPercentage){
-        player.sendMessage(`Your tongue tingles to the strong flavour of ${caskPotionType}, but it needs a touch longer`);
+        agingStage = 4;
     }
-    player.sendMessage("It still needs time to age.");
+    player.sendMessage({ translate: `magical_brewery:message.cask.tasting_spoon.aging.${agingStage}`, with: [caskPotionType] });
+
+    player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.aging"});
 }
 
 function ageCask(block, caskPotionType){
