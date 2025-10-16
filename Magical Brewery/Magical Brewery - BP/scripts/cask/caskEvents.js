@@ -40,8 +40,9 @@ system.beforeEvents.startup.subscribe(eventData => {
 
             if(selectedItem.typeId === "magical_brewery:tasting_spoon"){
 
-                const caskPotionType = p.params.cask_effect;
-                
+                const caskPotionType = p.params.cask.effect;
+                const caskTranslateKey = p.params.cask.translate_key;
+
                 if(fillLevel === 0){
                     dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
                     player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.empty"});
@@ -68,7 +69,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                             const ageEndTick = cask.age_start_tick + ageTime;
                             const ageCompletionPercentage = Math.trunc(100 - ((ageEndTick - system.currentTick)/ageTime) * 100);
 
-                            sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage);
+                            sendAgingTasteMessage(player, caskTranslateKey, ageCompletionPercentage);
                         }
                         
                     }
@@ -76,7 +77,6 @@ system.beforeEvents.startup.subscribe(eventData => {
                         for(let i = 1; i !== cask.potion_effects.length-1; i++){
                             caskPotions = cask.potion_effects[i] + "\n"
                         }
-                        
                         player.sendMessage(caskPotions)
                         player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.new_effect", 
                                             with: [cask.potion_effects[cask.potion_effects.length -1]] });
@@ -160,7 +160,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ot_cask_aging', {
         onTick(e,p) {
-            ageCask(e.block, p.params.cask_effect)
+            ageCask(e.block, p.params.cask.effect)
         }
     });
 });
@@ -196,7 +196,7 @@ function getCaskFirstPotionString(caskFirstPotion){
     return effectString
 }
 
-function sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage){
+function sendAgingTasteMessage(player, caskTranslateKey, ageCompletionPercentage){
 
     let agingStage;
 
@@ -215,7 +215,13 @@ function sendAgingTasteMessage(player, caskPotionType, ageCompletionPercentage){
     else if(80 <= ageCompletionPercentage){
         agingStage = 4;
     }
-    player.sendMessage({ translate: `magical_brewery:message.cask.tasting_spoon.aging.${agingStage}`, with: [caskPotionType] });
+    
+    const agingStageMessage = {
+        translate: `magical_brewery:message.cask.tasting_spoon.aging.${agingStage}`,
+        with: { rawtext: [{ translate: `potion.${caskTranslateKey}` }] },
+        };
+
+    player.sendMessage(agingStageMessage);
 
     player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.aging"});
 }

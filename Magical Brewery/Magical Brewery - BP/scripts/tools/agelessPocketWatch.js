@@ -73,7 +73,7 @@ function forceAgeCask(block, source){
     let cask = Cask.casks[Cask.findIndexCask(block.dimension.id, block.location)]
 
     const fillLevel = block.permutation.getState("magical_brewery:fill_level");
-    const caskPotionType = block.getComponent("magical_brewery:pi_cask_fill").customComponentParameters.params.cask_effect
+    const caskPotionType = block.getComponent("magical_brewery:pi_cask_fill").customComponentParameters.params.cask.effect
     const canAge = cask.canCaskAge(caskPotionType)
     const aged = block.permutation.getState("magical_brewery:aged");
     

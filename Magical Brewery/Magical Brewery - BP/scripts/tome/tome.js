@@ -60,16 +60,22 @@ function addPagesChaptersToPlayer(player, mainChapter){
 		
 		player.setDynamicProperty('magical_brewery:tome_data', JSON.stringify(tomePlayerData))
 		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1})
-		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.added", with: [mainChapter] });
+
+		const pagesAddedMessage = {
+        translate: "magical_brewery:message.tome.chapter_pages.added",
+        with: { rawtext: [{ translate: `magical_brewery:tome_chapter_${mainChapter}.title` }] },
+        };
+		
+		player.sendMessage(pagesAddedMessage);
 	}
 }
 function getPagesChapters(pagesChapters){
 
 	switch(pagesChapters){
-		case "Crystallography":
+		case "crystallography":
 			pagesChapters = CRYSTAL_CHAPTERS;
 		break;
-		case "Seals":
+		case "seals":
 			pagesChapters = SEAL_CHAPTERS;
 		break;
 	}

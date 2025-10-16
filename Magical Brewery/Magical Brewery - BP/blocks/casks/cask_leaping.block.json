@@ -23,7 +23,10 @@
 			"tag:magical_brewery:cask": {},
 			"tag:wood": {},
 			"magical_brewery:pi_cask_fill": {
-				"cask_effect": "Leaping"
+				"cask":{
+					"effect": "Leaping",
+					"translate_key": "jump"
+				}
 			},
 			"magical_brewery:opd_cask": {},
 			"magical_brewery:op_cask": {},
@@ -90,10 +93,15 @@
 				"condition": "q.block_state('magical_brewery:fill_level') > 0 && !q.block_state('magical_brewery:aged')",
 				"components": {
 					"magical_brewery:pi_cask_fill": {
-						"cask_effect": "Leaping"
+						"cask":{
+							"effect": "Leaping",
+							"translate_key": "jump"
+						}
 					},
 					"magical_brewery:ot_cask_aging": {
-						"cask_effect": "Leaping"
+						"cask":{
+							"effect": "Leaping"
+						}
 					},
 					"magical_brewery:opd_cask": {},
 					"minecraft:tick": {
