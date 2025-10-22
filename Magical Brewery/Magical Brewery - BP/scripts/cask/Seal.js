@@ -1,7 +1,7 @@
 import {world, system, Direction, Dimension} from "@minecraft/server";
 import {neighbouringCross, getBlockFromFace} from "../utils/blockPlacementUtils.js";
 import {MathUtils} from "../utils/MathUtils.js";
-import {Cask} from "cask/Cask.js";
+import {Cask} from "../cask/Cask.js";
 
 export class Seal {
 
@@ -122,7 +122,8 @@ export class Seal {
             const seal = seals.find(el =>{
                 const face = el.permutation.getState("minecraft:block_face");
                 const potentialCask = getBlockFromFace(el, face)
-                if(JSON.stringify(potentialCask.location) === (JSON.stringify(block.location))) return el;
+                // if(JSON.stringify(potentialCask.location) === (JSON.stringify(block.location))) return el;
+                if(MathUtils.equalsVector3(potentialCask.location, block.location)) return el;
             })
 
             return seal ? seal : undefined

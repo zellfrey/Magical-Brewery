@@ -39,12 +39,21 @@ export class MathUtils {
 
 	static getParticleRandomVectors3(location){
 
-    let particleSpawnVector3 = location;
-    particleSpawnVector3.x += MathUtils.getRndFloat(-2, 2)
-    particleSpawnVector3.y += MathUtils.getRndFloat(-2, 2) + 0.5;
-    particleSpawnVector3.z += MathUtils.getRndFloat(-2, 2);
+        let particleSpawnVector3 = location;
+        particleSpawnVector3.x += MathUtils.getRndFloat(-2, 2)
+        particleSpawnVector3.y += MathUtils.getRndFloat(-2, 2) + 0.5;
+        particleSpawnVector3.z += MathUtils.getRndFloat(-2, 2);
 
-    return particleSpawnVector3;
-}
+        return particleSpawnVector3;
+    }
+
+    static equalsVector3(vector1, vector2){
+
+        let equalsX = vector1.x === vector2.x;
+        let equalsY = vector1.y === vector2.y;
+        let equalsZ = vector1.z === vector2.z;
+
+        return equalsX && equalsY && equalsZ;
+    }
 }
 

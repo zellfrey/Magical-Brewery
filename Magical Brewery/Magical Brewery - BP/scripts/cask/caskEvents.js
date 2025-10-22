@@ -1,7 +1,7 @@
 import {world, system, ItemStack, Potions} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
-import {Seal} from "cask/Seal.js";
-import {Cask} from "cask/Cask.js";
+import {Seal} from "../cask/Seal.js";
+import {Cask} from "../cask/Cask.js";
 //'utils/containerUtils.js';
 
 system.beforeEvents.startup.subscribe(eventData => {
@@ -17,7 +17,7 @@ system.beforeEvents.startup.subscribe(eventData => {
         onPlayerBreak(e) {
             // if(fillLevel > 0) 
             // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
-            Cask.destroyCask(e.block.location, e.block.dimension.id)
+            Cask.destroyCask(e.block.dimension.id, e.block.location)
         }
     });
 });
@@ -243,14 +243,8 @@ function ageCask(block, caskPotionType){
         cask.addAgedPotionEffect(caskPotionType)
         Cask.updateCask(cask)
         cask.setCaskAge(block);
-        cask.deleteCaskSeal();
-        
-        // cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel)
-        // cask.addAgedPotionEffect(caskPotionType)
-        // Cask.updateCask(cask)
-        // cask.setCaskAge(block);
         // cask.setCaskChargeLevel(block)
-        // cask.deleteCaskSeal();
+        cask.deleteCaskSeal();
         
     }
     return;

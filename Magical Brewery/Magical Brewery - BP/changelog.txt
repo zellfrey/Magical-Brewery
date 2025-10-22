@@ -4,6 +4,7 @@ Updated:
     Generation:
     Scripts:
         For realsies this time, Updated tasting spoon has better feedback of initial potion in cask
+        Cask database functions properly. Casks are deleted appropiately. (I swapped parameters. Literally it, like neck me)
     loottables:
         Updated Alchemist_under_bed book. Fixed typo
 Author comment:

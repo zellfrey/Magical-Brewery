@@ -1,7 +1,7 @@
 import {world, system, ItemStack, MolangVariableMap } from "@minecraft/server";
 import {crystalGrowth} from "crystal/growingCrystal.js";
 import {getSurroundingBlocks, growCrystalBud} from "crystal/BuddingCrystal.js";
-import {Cask} from "cask/Cask.js";
+import {Cask} from "../cask/Cask.js";
 
 const buddingCrystals = ["magical_brewery:budding_glowstone", "magical_brewery:budding_redstone", 
     "magical_brewery:budding_pure_quartz", "magical_brewery:budding_echo"];
@@ -83,8 +83,9 @@ function forceAgeCask(block, source){
         return;
     }
     cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel, 100)
-    cask.addAgedPotionEffect(caskPotionType, 100)
-    Cask.updateCask(cask)
+    cask.addAgedPotionEffect(caskPotionType);
+    Cask.updateCask(cask);
     cask.setCaskAge(block);
+    cask.deleteCaskSeal();
     source.sendMessage({ translate: "magical_brewery:message.ageless_pocket_watch.cask_aged"});
 }

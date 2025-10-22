@@ -1,6 +1,7 @@
 import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potionEffects.js";
-import {Seal} from "cask/Seal.js";
+import {Seal} from "../cask/Seal.js";
+import {MathUtils} from "../utils/MathUtils.js";
 export class Cask {
 
     static casks = []
@@ -105,7 +106,7 @@ export class Cask {
         //If there is no seal the lifetime will remain the same, reducing the ability of effecting the age
         if(Seal.isSameType(seal, this)){
 
-            if(JSON.stringify(seal.location) == JSON.stringify(this.seal.location)){
+            if(MathUtils.equalsVector3(seal.location, this.seal.location)){
                 
                 this.seal.addLifetime(timeToAge, this)
             }
@@ -122,16 +123,12 @@ export class Cask {
     }
 
 
-    addAgedPotionEffect(caskPotionType, caskSealAge){
+    addAgedPotionEffect(caskPotionType){
         
         const potionEffect = POTION_EFFECTS[caskPotionType]
         let effectName = potionEffect.effects
         let sealType = this.seal.type;
         let sealStrength = this.seal.strength;
-        // if(Object.keys(this.seal.location).length !== 0 && caskSealAge >= 75){
-            
-            
-        // }
 
         if(sealType === "potency"){
             let potionPotency;
@@ -217,8 +214,7 @@ export class Cask {
     }
 
     static findIndexCask(blockDimensionID, blockLocation){
-        const index = Cask.casks.findIndex(el => JSON.stringify(el.location) == JSON.stringify(blockLocation) 
-                                                            && el.dimensionID === blockDimensionID);
+        const index = Cask.casks.findIndex(el => MathUtils.equalsVector3(el.location, blockLocation) && el.dimensionID === blockDimensionID);
         return index;                                            
     }
 
