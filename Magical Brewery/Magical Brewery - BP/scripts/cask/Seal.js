@@ -122,7 +122,6 @@ export class Seal {
             const seal = seals.find(el =>{
                 const face = el.permutation.getState("minecraft:block_face");
                 const potentialCask = getBlockFromFace(el, face)
-                // if(JSON.stringify(potentialCask.location) === (JSON.stringify(block.location))) return el;
                 if(MathUtils.equalsVector3(potentialCask.location, block.location)) return el;
             })
 

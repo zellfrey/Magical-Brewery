@@ -1,4 +1,5 @@
 import {world, system, ItemStack } from "@minecraft/server";
+import {MathUtils} from "../utils/MathUtils.js";
 
 const BUDDING_BLOCK_IDS = ["magical_brewery:budding_pure_quartz", "magical_brewery:budding_redstone", 
     "magical_brewery:budding_glowstone", "magical_brewery:budding_echo"]
@@ -45,8 +46,8 @@ export class BuddingCrystal {
     }
 
     static findIndexCrystal(blockLocation, blockDimensionID){
-        return BuddingCrystal.buddingCrystals.findIndex(el => JSON.stringify(el.location) == JSON.stringify(blockLocation) 
-                                                            && el.dimension === blockDimensionID)
+        const index = BuddingCrystal.buddingCrystals.findIndex(el => MathUtils.equalsVector3(el.location, blockLocation) && el.dimension === blockDimensionID);
+        return index;
     }
 }
 

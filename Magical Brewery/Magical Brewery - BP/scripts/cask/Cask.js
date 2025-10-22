@@ -196,7 +196,7 @@ export class Cask {
 
         const caskJSONData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
 
-        const caskIndex = caskJSONData.findIndex(el => el.dimensionID === cask.dimensionID && JSON.stringify(el.location) === JSON.stringify(cask.location))
+        const caskIndex = caskJSONData.findIndex(el => el.dimensionID === cask.dimensionID && MathUtils.equalsVector3(el.location, cask.location))
 
         caskJSONData[caskIndex] = cask;
         world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskJSONData))

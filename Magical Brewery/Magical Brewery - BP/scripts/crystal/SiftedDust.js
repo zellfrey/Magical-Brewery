@@ -107,8 +107,8 @@ class SiftedDust {
             const {x,y,z} = this.block.location
             const topBlock = this.entity.dimension.getTopmostBlock({x,z})
             
-            if((JSON.stringify(topBlock.location) !== JSON.stringify(this.block.below().location)) 
-                || !(time >= 13000 && time <= 20000) || moonPhase !== 0){
+            if(!MathUtils.equalsVector3(topBlock.location, this.block.below().location) || !(time >= 13000 && time <= 20000) || moonPhase !== 0){
+                
                 system.clearRun(moon)
                 return;
             }
