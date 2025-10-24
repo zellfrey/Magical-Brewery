@@ -60,15 +60,14 @@ export const POTION_EFFECTS = {
     },
     "Swiftness": {
         effects: "Speed",
-        duration_none: "3:00",
         duration_long: ["3:00", "8:00", "15:00"],
         duration_potency: ["1:30", "1:30"],
     },
-    // "Turtle_Master": {
-    //     effects: ["Slowness", "Resistance"],
-    //     duration_long: ["0:20", "0:40", "2:00"],
-    //     duration_potency: ["0:20"],
-    // },
+    "Turtle_Master": {
+        effects: ["Slowness", "Resistance"],
+        duration_long: ["0:20", "0:40", "1:10"],
+        duration_potency: ["0:20", "0:20"], 
+    },
     "Night_Vision": {
         effects: "Night Vision",
         duration_long: ["3:00", "8:00", "15:00"],

@@ -1,0 +1,12 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_brewing_mix": {
+        "description": {
+            "identifier": "magical_brewery:potion_xlong_weakness"
+        },
+        "tags": ["brewing_stand"],
+        "input": "minecraft:potion_type:weakness",
+        "reagent": "magical_brewery:pure_redstone_dust",
+        "output": "magical_brewery:potion_xlong_weakness"
+    }
+}

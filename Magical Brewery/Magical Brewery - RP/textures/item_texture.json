@@ -187,6 +187,51 @@
 		},
 		"magical_brewery:pages_seals":{
 			"textures": "textures/beardedflea/magical_brewery/items/pages_seals.png"
+		},
+		"magical_brewery:glass_potion_harming":{
+			"textures": "textures/items/potion_bottle_harm"
+		},
+		"magical_brewery:glass_potion_healing":{
+			"textures": "textures/items/potion_bottle_heal"
+		},
+		"magical_brewery:glass_potion_invisibility":{
+			"textures": "textures/items/potion_bottle_invisibility"
+		},
+		"magical_brewery:glass_potion_leaping":{
+			"textures": "textures/items/potion_bottle_jump"
+		},
+		"magical_brewery:glass_potion_poison":{
+			"textures": "textures/items/potion_bottle_poison"
+		},
+		"magical_brewery:glass_potion_regeneration":{
+			"textures": "textures/items/potion_bottle_regeneration"
+		},
+		"magical_brewery:glass_potion_resistance_fire":{
+			"textures": "textures/items/potion_bottle_fireResistance"
+		},
+		"magical_brewery:glass_potion_slow_falling":{
+			"textures": "textures/items/potion_bottle_slowFall"
+		},
+		"magical_brewery:glass_potion_slowness":{
+			"textures": "textures/items/potion_bottle_moveSlowdown"
+		},
+		"magical_brewery:glass_potion_strength":{
+			"textures": "textures/items/potion_bottle_damageBoost"
+		},
+		"magical_brewery:glass_potion_swiftness":{
+			"textures": "textures/items/potion_bottle_moveSpeed"
+		},
+		"magical_brewery:glass_potion_vision_night":{
+			"textures": "textures/items/potion_bottle_nightVision"
+		},
+		"magical_brewery:glass_potion_water_breathing":{
+			"textures": "textures/items/potion_bottle_waterBreathing"
+		},
+		"magical_brewery:glass_potion_weakness":{
+			"textures": "textures/items/potion_bottle_weakness"
+		},
+		"magical_brewery:glass_potion_turtle_master":{
+			"textures": "textures/items/potion_bottle_turtleMaster"
 		}
 	}
 }

@@ -135,6 +135,7 @@ tile.magical_brewery:cask_weakness.name=Cask of Weakness
 
 ##---------------------------------
 ##Misc---------------------------------
+magical_brewery.potion.potency.6=VII
 
 ##Item/Block Catalogues---------------------------------
 magical_brewery:stained_planks_construction=Stained Planks
@@ -147,6 +148,8 @@ magical_brewery:redstone_crystals_nature=Redstone Crystals
 magical_brewery:echo_crystals_nature=Echo Crystals
 magical_brewery:pure_quartz_crystals_nature=Pure Quartz Crystals
 magical_brewery:seals_items=Cask Seals
+magical_brewery:glass_potion_xlong_equipment=Glass Potions Duration +
+magical_brewery:glass_potion_xstrong_equipment=Glass Potions Potency +
 ##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means
 
 

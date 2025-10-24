@@ -178,6 +178,49 @@
 						]
 					}
 				]
+			},
+			{
+				"category_name": "equipment",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "magical_brewery:potion_xlong_regeneration",
+							"name": "magical_brewery:glass_potion_xlong_equipment"
+						},
+						"items": [
+							"magical_brewery:potion_xlong_invisibility",
+							"magical_brewery:potion_xlong_leaping",
+							"magical_brewery:potion_xlong_poison",
+							"magical_brewery:potion_xlong_regeneration",
+							"magical_brewery:potion_xlong_resistance_fire",
+							"magical_brewery:potion_xlong_slow_falling",
+							"magical_brewery:potion_xlong_slowness",
+							"magical_brewery:potion_xlong_strength",
+							"magical_brewery:potion_xlong_swiftness",
+							"magical_brewery:potion_xlong_vision_night",
+							"magical_brewery:potion_xlong_water_breathing",
+							"magical_brewery:potion_xlong_weakness",
+							"magical_brewery:potion_xlong_turtle_master"
+						]
+					},
+					{
+						"group_identifier": {
+							"icon": "magical_brewery:potion_xstrong_healing",
+							"name": "magical_brewery:glass_potion_xstrong_equipment"
+						},
+						"items": [
+							"magical_brewery:potion_xstrong_harming",
+							"magical_brewery:potion_xstrong_healing",
+							"magical_brewery:potion_xstrong_leaping",
+							"magical_brewery:potion_xstrong_poison",
+							"magical_brewery:potion_xstrong_regeneration",
+							"magical_brewery:potion_xstrong_slowness",
+							"magical_brewery:potion_xstrong_strength",
+							"magical_brewery:potion_xstrong_swiftness",
+							"magical_brewery:potion_xstrong_turtle_master"
+						]
+					}
+				]
 			}
 		]
 	}
