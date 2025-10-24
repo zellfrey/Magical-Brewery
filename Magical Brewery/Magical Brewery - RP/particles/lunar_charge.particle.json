@@ -5,7 +5,7 @@
 			"identifier": "magical_brewery:lunar_charge",
 			"basic_render_parameters": {
 				"material": "particles_alpha",
-				"texture": "textures/particles/lunar_charge.png"
+				"texture": "textures/beardedflea/magical_brewery/particles/lunar_charge.png"
 			}
 		},
 		"components": {
