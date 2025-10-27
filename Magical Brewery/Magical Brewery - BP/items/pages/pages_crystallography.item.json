@@ -9,7 +9,7 @@
 		},
 		"components": {
 			"magical_brewery:ou_get_pages": {
-				"tome_chapter": "crystallography"
+				"tome_chapter": "Crystallography"
 			},
 			"minecraft:icon": "magical_brewery:pages_crystallography",
 			"minecraft:display_name":{

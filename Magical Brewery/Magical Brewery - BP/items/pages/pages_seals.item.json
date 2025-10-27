@@ -9,7 +9,7 @@
 		},
 		"components": {
 			"magical_brewery:ou_get_pages": {
-				"tome_chapter": "seals"
+				"tome_chapter": "Seals"
 			},
 			"minecraft:icon": "magical_brewery:pages_seals",
 			"minecraft:display_name":{
