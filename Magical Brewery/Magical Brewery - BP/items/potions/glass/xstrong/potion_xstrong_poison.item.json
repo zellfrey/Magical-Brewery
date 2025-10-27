@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.poison.name\n§7%potion.poison %potion.potency.2 (0:22)"

@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.regeneration.name\n§7%potion.regeneration %potion.potency.2 (0:22)"

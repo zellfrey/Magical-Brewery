@@ -1,111 +1,26 @@
-import {world, ItemStack, system} from '@minecraft/server';
-import {setMainHand} from './utils/containerUtils.js';
-import {getPotencyLevel, POTION_EFFECTS} from "./potionEffects.js";
+import {world, system} from '@minecraft/server';
+import {MagicalBreweryPotion} from "./MagicalBreweryPotion.js";
+import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 
 //12 mins duration in ticks i.e 12*60 *20
-const xLongDuration = 14400;
+//const xLongDuration = 14400;
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:oc_potion', {
         onConsume(e,p) {
-            entityConsumeMBPotion(e.source, p.params)
+            MagicalBreweryPotion.onConsume(e.source, e.itemStack, p.params)
         }
     });
 });
 
-function entityConsumeMBPotion(entity, potionParams){
-    
-    if(potionParams.potion.effect === "Turtle_Master"){
-        applyTurtleMasterEffect(entity, potionParams)
-    }
-    else{
-        const potionEffectObj = POTION_EFFECTS[potionParams.potion.effect]
-        const effectID = potionEffectObj.effects.replace(" ", "_").toLowerCase()
-
-        let totalTicks;
-
-        if(potionParams.potion.duration === "instant"){
-            totalTicks = 1;
-        }
-        else{
-            const durationTime  = getEffectDuration(potionEffectObj, potionParams.potion.duration) 
-            const [minutes, seconds] = durationTime.split(':');
-        
-            let totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-        }
-        
-
-        entity.addEffect(effectID, totalTicks, { amplifier: potionParams.potion.potency })
-    }
-
-}
-function applyTurtleMasterEffect(entity, potionParams){
-    const potionEffectObj = POTION_EFFECTS[potionParams.potion.effect]
-
-    const durationTime  = getEffectDuration(potionEffectObj, potionParams.potion.duration) 
-    const [minutes, seconds] = durationTime.split(':');
-
-    totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-
-    entity.addEffect("slowness", totalTicks, { amplifier: potionParams.potion.potency[0] })
-    entity.addEffect("resistance", totalTicks, { amplifier: potionParams.potion.potency[1] })
-}
-
-function getEffectDuration(effectObj, potionDuration){
-
-    let effectTime;
-
-    switch(potionDuration){
-        case "long":
-            effectTime = effectObj.duration_long[1];
-        break;
-        case "xlong":
-            effectTime = effectObj.duration_long[2];
-        break;
-        case "strong":
-            effectTime = effectObj.duration_potency[0];
-        break;
-        case "xstrong":
-            effectTime = effectObj.duration_potency[1];
-        break;
-    }
-    return effectTime;
-}
 
 world.afterEvents.itemCompleteUse.subscribe((e) => {
-    giveExtraEffectsToEntity(e.source, e.itemStack)
+
+    if(e.itemStack.typeId !== "minecraft:potion") return; 
+
+    MinecraftPotion.giveExtraEffectsToEntity(e.source, e.itemStack)
 });
 
-function giveExtraEffectsToEntity(entity, heldPotion){
-    if(heldPotion.typeId !== "minecraft:potion" || heldPotion.getLore().length == 0) return;
-    // const potion = e.itemStack.getComponent('minecraft:potion')
-    heldPotion.getLore().forEach(modifier => {
-        const words = modifier.split(' ');
-        let effect, potency;
-        let totalTicks = 1;
-        if(words[0] === "Instant"){
-            potency = getPotencyLevel(words)
-            if(potency !== 0) words.pop();
-            effect = words.join("_").toLowerCase()
-        }
-        else{
-            
-            const effectTime = words[words.length-1].substring(1, 5)
-            const [minutes, seconds] = effectTime.split(':');
-            totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-            words.pop();
 
-            potency = getPotencyLevel(words)
-            
-            if(potency !== 0) words.pop();
-
-            effect = words.join("_").toLowerCase()
-            // if(Potions.getPotionEffectType(effect) ! == undefined){
-            // }
-            
-        }
-        entity.addEffect(effect, totalTicks, { amplifier: potency })
-    });
-}
 
 // system.beforeEvents.startup.subscribe(eventData => {
 //     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_amethyst_bottle', {
@@ -163,10 +78,10 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
-world.afterEvents.entityHurt.subscribe((e) => {
-    const {damage} = e;
-    console.log("damage: " + damage)
-});
+// world.afterEvents.entityHurt.subscribe((e) => {
+//     const {damage} = e;
+//     console.log("damage: " + damage)
+// });
 // world.afterEvents.entityHealthChanged.subscribe((e) => {
 //     const {entity, newValue} = e;
 //     if(newValue > 0) return;

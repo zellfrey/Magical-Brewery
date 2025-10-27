@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.damageBoost.name\n§7%potion.damageBoost %potion.potency.2 (1:30)\n\n§5%potion.effects.whenDrank\n§9+5.2 %attribute.name.generic.attackDamage"

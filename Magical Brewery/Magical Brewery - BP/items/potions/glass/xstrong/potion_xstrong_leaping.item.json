@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.jump.name\n§7%potion.jump %potion.potency.2 (1:30)"

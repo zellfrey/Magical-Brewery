@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.moveSlowdown.name\n§c%potion.moveSlowdown %potion.potency.4 (0:20)\n\n§5%potion.effects.whenDrank\n§c-75%% %potion.moveSpeed"

@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.weakness.name\n§c%potion.weakness (7:00)\n\n§5%potion.effects.whenDrank\n§c-0.7 %attribute.name.generic.attackDamage"

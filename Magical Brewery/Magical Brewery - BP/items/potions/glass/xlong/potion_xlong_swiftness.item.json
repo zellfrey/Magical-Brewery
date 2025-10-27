@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.moveSpeed.name\n§7%potion.moveSpeed (15:00)\n\n§5%potion.effects.whenDrank\n§9+20%% %potion.moveSpeed"

@@ -16,7 +16,7 @@
 				}
 			},
 			"minecraft:tags": {
-				"tags": ["glass"]
+				"tags": ["magical_brewery:potion", "glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.turtleMaster.name\n§c%potion.turtleMaster %magical_brewery.potion.potency.6 (0:20)\n§r§7%potion.turtleMaster2 %potion.potency.4 (0:20)\n\n§5%potion.effects.whenDrank\n§c-100%% %potion.moveSpeed"

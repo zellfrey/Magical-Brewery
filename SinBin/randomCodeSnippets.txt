@@ -23,6 +23,7 @@ This is a place for code that I have commented out and have not decided whether 
 //     //         cleanStage = '§7Harmonised';
             
 //     //     }
+import {world, system, ItemStack, Potions} from "@minecraft/server";
 
 system.runInterval(
     () => {

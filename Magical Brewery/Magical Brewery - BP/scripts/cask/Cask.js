@@ -1,7 +1,11 @@
 import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
-import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potionEffects.js";
+import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potion/potionEffects.js";
+import {MagicalBreweryPotion} from "../potion/MagicalBreweryPotion.js";
+import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {Seal} from "../cask/Seal.js";
 import {MathUtils} from "../utils/MathUtils.js";
+import {setMainHand} from '../utils/containerUtils.js';
+
 export class Cask {
 
     static casks = []
@@ -21,13 +25,14 @@ export class Cask {
     }
 
     setCaskPotion(potion, extraEffects){
-        this.potion_effects.push(potion.potionEffectType.id)
-        this.potion_liquid = potion.potionDeliveryType.id
+        this.potion_effects.push(potion["effectID"])
+        this.potion_liquid = potion["deliveryType"]
         
         if(extraEffects.length > 0){
             extraEffects.forEach(effect => {this.potion_effects.push(effect)})
         }
     }
+
     resetCaskPotion(){
         this.potion_effects.length = 0;
         this.potion_liquid = "";
@@ -36,8 +41,8 @@ export class Cask {
     }
 
     matchesCaskPotion(potion, extraEffects){
-        const matchesEffect = this.potion_effects[0] === potion.potionEffectType.id;
-        const matchesLiquid = this.potion_liquid === potion.potionDeliveryType.id;
+        const matchesEffect = this.potion_effects[0] === potion["effectID"];
+        const matchesLiquid = this.potion_liquid === potion["deliveryType"];
 
         let matchesExtraEffects;
         if(this.potion_effects.length < 1 || extraEffects.length === 0){
@@ -52,6 +57,23 @@ export class Cask {
             }
         }
         return matchesEffect && matchesLiquid && matchesExtraEffects;
+    }
+
+    getFirstPotionString(){
+        
+        const potionRootID = this.potion_effects[0].split(":")[0]
+        const effectID = this.potion_effects[0].split(":")[1].split("_")
+
+        let caskPotionIdString;
+
+        if(potionRootID === "minecraft"){
+           caskPotionIdString = MinecraftPotion.getEffectString(effectID)
+        }
+        else{
+            caskPotionIdString = MagicalBreweryPotion.getEffectString(effectID)
+        }
+        
+        return caskPotionIdString;
     }
 
     canCaskAge(caskPotionType){
@@ -87,6 +109,55 @@ export class Cask {
         return canAge
     }
 
+    fillCask(selectedItem, block, dimension, player){
+    
+        const fillLevel = block.permutation.getState("magical_brewery:fill_level");
+        const aged = block.permutation.getState("magical_brewery:aged");
+        let potion = {"effectID": "", "deliveryType": ""};
+        
+        if(selectedItem.hasTag("magical_brewery:potion")){
+		
+		    potion = MagicalBreweryPotion.getPotionProperties(selectedItem, potion)
+		
+        }else{
+
+            potion = MinecraftPotion.getPotionProperties(selectedItem, potion)
+
+        }
+
+        if(fillLevel === 3 || aged || potion["effectID"] === "None") return;
+
+        if(fillLevel === 0 && potion["effectID"]){
+            this.setCaskPotion(potion, selectedItem.getLore())
+        }
+
+        if(!this.matchesCaskPotion(potion, selectedItem.getLore())) return;
+                        
+                    
+        this.updateCaskBlock(block, fillLevel, dimension)
+
+        const equipment = player.getComponent('equippable');
+        const emptyBottle = new ItemStack("glass_bottle", 1);
+        setMainHand(player, equipment, selectedItem, emptyBottle);
+
+        return;
+    }
+
+    updateCaskBlock(block, fillLevel, dimension){
+    
+        block.setPermutation(block.permutation.withState("magical_brewery:fill_level", fillLevel+1));
+        
+        //honestly just pulling numbers out of my ass to see what works
+        const pitch = fillLevel * 0.2 + 0.3
+        dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: pitch});
+    
+        const seal = Seal.findSeal(block)
+    
+        Seal.setSeal(seal, this)
+        this.age_start_tick = system.currentTick
+        Cask.updateCask(this)
+    }
+
     createAgeingFeedback(block){
     
         const rgba = block.getComponent("minecraft:map_color").color
@@ -103,7 +174,7 @@ export class Cask {
     checkSeal(block, timeToAge){
         let seal = Seal.findSeal(block)
 
-        //If there is no seal the lifetime will remain the same, reducing the ability of effecting the age
+        //If there is no seal the lifetime will remain the same, reducing the ability of affecting the age
         if(Seal.isSameType(seal, this)){
 
             if(MathUtils.equalsVector3(seal.location, this.seal.location)){

@@ -1,5 +1,7 @@
-import {world, system, ItemStack, Potions} from "@minecraft/server";
+import {world, system} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
+import {MagicalBreweryPotion} from "../potion/MagicalBreweryPotion.js";
+import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {Seal} from "../cask/Seal.js";
 import {Cask} from "../cask/Cask.js";
 //'utils/containerUtils.js';
@@ -50,7 +52,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 else{
                     dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
 
-                    let caskPotions = getCaskFirstPotionString(cask.potion_effects[0]) + "\n";
+                    let caskPotions = cask.getFirstPotionString() + "\n";
 
                     player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.initial_taste"})
 
@@ -91,34 +93,10 @@ system.beforeEvents.startup.subscribe(eventData => {
             if(selectedItem.typeId === "minecraft:lingering_potion" || selectedItem.typeId === "minecraft:splash_potion"){
                 player.sendMessage({ translate: "magical_brewery:message.magical_brewery_general.wip"});
             }
-            if(selectedItem.typeId === "minecraft:potion"){
-
-                const potion = selectedItem.getComponent("minecraft:potion");
-
-                if(fillLevel === 3 || !potion.isValid || aged || potion.potionEffectType.id === "None") return;
+            if(selectedItem.typeId === "minecraft:potion" || selectedItem.hasTag("magical_brewery:potion")){
                 
-                
-                if(fillLevel === 0 && potion.potionEffectType.id){
-                    cask.setCaskPotion(potion, selectedItem.getLore())
-                }
-                
-                if(!cask.matchesCaskPotion(potion, selectedItem.getLore())) return;
-                    
-                block.setPermutation(block.permutation.withState("magical_brewery:fill_level", fillLevel+1));
-                const emptyBottle = new ItemStack("glass_bottle", 1)
-                setMainHand(player, equipment, selectedItem, emptyBottle);
-
-                //honestly just pulling numbers out of my ass to see what works
-                const pitch = fillLevel * 0.2 + 0.3
-                dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: pitch});
-
-                const seal = Seal.findSeal(block)
-
-                Seal.setSeal(seal, cask)
-                
-                cask.age_start_tick = system.currentTick
-                Cask.updateCask(cask)
-
+                cask.fillCask(selectedItem, block, dimension, player);
+				
                 return;
             }
 
@@ -128,9 +106,19 @@ system.beforeEvents.startup.subscribe(eventData => {
                     dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
                     return;
                 }
-               
-                const item = Potions.resolve(cask.potion_effects[0], cask.potion_liquid)
+                
+                let item;
+                const potionCreationType = cask.potion_effects[0].split(":")[0]
 
+                if(potionCreationType === "minecraft"){
+
+                    item = MinecraftPotion.setItemStack(cask.potion_effects[0], cask.potion_liquid)
+                }
+                else{
+                    item = MagicalBreweryPotion.setItemStack(cask.potion_effects[0])
+                }
+
+                
                 if(cask.potion_effects.length > 1){
                     const extraEffects = cask.potion_effects.slice(1)
                     const lore = selectedItem.getLore();
@@ -165,36 +153,6 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
-function getCaskFirstPotionString(caskFirstPotion){
-    const effectID = caskFirstPotion.split(":")[1].split("_")
-    
-    let modifier = ""; 
-
-    if(effectID[0] === "strong" || effectID[0] === "long"){
-
-        switch(effectID[0]){
-            case "strong":
-                if(effectID[1] === "slowness"){
-                    modifier += " IV"
-                }else{
-                    modifier += " II" 
-                }
-            break;
-            case "long": 
-                modifier += " Extended" 
-            break;
-        }
-        effectID.shift();
-    }
-    
-    for(let i = 0; i < effectID.length; i++){
-        effectID[i] = effectID[i][0].toUpperCase() + effectID[i].substring(1);
-    }
-
-    const effectString = effectID.join(" ") + modifier;
-
-    return effectString
-}
 
 function sendAgingTasteMessage(player, caskTranslateKey, ageCompletionPercentage){
 
