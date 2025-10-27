@@ -72,10 +72,10 @@ function addPagesChaptersToPlayer(player, mainChapter){
 function getPagesChapters(pagesChapters){
 
 	switch(pagesChapters){
-		case "crystallography":
+		case "Crystallography":
 			pagesChapters = CRYSTAL_CHAPTERS;
 		break;
-		case "seals":
+		case "Seals":
 			pagesChapters = SEAL_CHAPTERS;
 		break;
 	}

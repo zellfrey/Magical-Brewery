@@ -14,17 +14,17 @@ export const TOME_CHAPTERS = {
 			{
 				chapter: "magical_brewery:tome_chapter_ageing.title",
 				id: "Ageing",
-				icon: "textures/tome/chapter_icon_cask.png"
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_crystallography.title",
 				id: "Crystallography",
-				icon: "textures/blocks/crystals/glowstone_cluster.png"
+				icon: "textures/beardedflea/magical_brewery/blocks/crystals/glowstone_cluster.png"
 			},
 			{
 				chapter: "About the Author",
 				id: "About the Author",
-				icon: "textures/items/chapter_of_wisdom_3.png"
+				icon: "textures/beardedflea/magical_brewery/items/chapter_of_wisdom_3.png"
 			}
 		],
 		exitPage: ""
@@ -37,17 +37,17 @@ export const TOME_CHAPTERS = {
 			{
 				chapter: "magical_brewery:tome_chapter_purifying.title",
 				id: "Purifying",
-				icon: "textures/items/pure_glowstone_dust.png"
+				icon: "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_crystal_seeds.title",
 				id: "Crystal Seeds",
-				icon: "textures/items/pure_quartz_seed.png"
+				icon: "textures/beardedflea/magical_brewery/items/pure_quartz_seed.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_crystal_harvesting.title",
 				id: "Crystal Harvesting",
-				icon: "textures/items/redstone_shard.png"
+				icon: "textures/beardedflea/magical_brewery/items/redstone_shard.png"
 			}
 		],
 		exitPage: "Main"
@@ -60,17 +60,17 @@ export const TOME_CHAPTERS = {
 			{
 				chapter: "magical_brewery:tome_chapter_washing.title",
 				id: "Washing",
-				icon: "textures/tome/chapter_icon_washing.png"
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_washing.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_heat_treating.title",
 				id: "Heat Treating",
-				icon: "textures/tome/chapter_icon_heat_treating.png"
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heat_treating.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_lunar_charging.title",
 				id: "Lunar Charging",
-				icon: "textures/tome/chapter_icon_lunar_charging.png"
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_lunar_charging.png"
 			},
 		],
 		exitPage: "Crystallography"
@@ -101,7 +101,7 @@ export const TOME_CHAPTERS = {
 			{
 				chapter: "magical_brewery:tome_chapter_theories_glowstone.title",
 				id: "Theories: Glowstone",
-				icon: "textures/tome/chapter_icon_theories_glowstone.png"
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_theories_glowstone.png"
 			},
 		],
 		exitPage: "Crystallography"
@@ -126,12 +126,12 @@ export const TOME_CHAPTERS = {
 			{
 				chapter: "magical_brewery:tome_chapter_casks.title",
 				id: "Casks",
-				icon: "textures/tome/chapter_icon_cask.png"
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_seals.title",
 				id: "Seals",
-				icon: "textures/items/seals/seal_potency_1.png"
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_potency_1.png"
 			},
 		],
 		exitPage: "Main"
@@ -163,27 +163,27 @@ export const TOME_CHAPTERS = {
 			{
 				chapter: "magical_brewery:tome_chapter_seal_base.title",
 				id: "Base Seal",
-				icon: "textures/items/seals/seal_basic.png"
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_basic.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_seal_longevity.title",
 				id: "Longevity",
-				icon: "textures/items/seals/seal_longevity_1.png"
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_longevity_1.png"
 			},
 			{
 				chapter: "magical_brewery:tome_chapter_seal_potency.title",
 				id: "Potency",
-				icon: "textures/items/seals/seal_potency_1.png"
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_potency_1.png"
 			},
 			// {
 			// 	chapter: "magical_brewery:tome_chapter_seal_expansion.title",
 			// 	id: "Expansion",
-			// 	icon: "textures/items/seals/seal_expansion_1.png"
+			// 	icon: "textures/beardedflea/magical_brewery/items/seals/seal_expansion_1.png"
 			// },
 			// {
 			// 	chapter: "magical_brewery:tome_chapter_seal_retainment.title",
 			// 	id: "Retainment",
-			// 	icon: "textures/items/seals/seal_retainment.png"
+			// 	icon: "texturesbeardedflea/magical_brewery/items/seals/seal_retainment.png"
 			// },
 		],
 		exitPage: "Ageing"

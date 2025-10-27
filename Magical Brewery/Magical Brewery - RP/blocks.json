@@ -21,27 +21,27 @@
 	"magical_brewery:pure_quartz_seed":{
 		"sound" : "amethyst_block"
 	},
-	"magical_brewery:budding_echo":{
-		"sound" : "amethyst_block"
-	},
-	"magical_brewery:echo_cluster":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:echo_shard_block":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:small_echo_bud":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:medium_echo_bud":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:large_echo_bud":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:echo_seed":{
-		"sound" : "amethyst_block"
-	},
+	// "magical_brewery:budding_echo":{
+	// 	"sound" : "amethyst_block"
+	// },
+	// "magical_brewery:echo_cluster":{
+	// 	"sound" : "amethyst_cluster"
+	// },
+	// "magical_brewery:echo_shard_block":{
+	// 	"sound" : "amethyst_cluster"
+	// },
+	// "magical_brewery:small_echo_bud":{
+	// 	"sound" : "amethyst_cluster"
+	// },
+	// "magical_brewery:medium_echo_bud":{
+	// 	"sound" : "amethyst_cluster"
+	// },
+	// "magical_brewery:large_echo_bud":{
+	// 	"sound" : "amethyst_cluster"
+	// },
+	// "magical_brewery:echo_seed":{
+	// 	"sound" : "amethyst_block"
+	// },
 	"magical_brewery:budding_glowstone":{
 		"sound" : "amethyst_block"
 	},

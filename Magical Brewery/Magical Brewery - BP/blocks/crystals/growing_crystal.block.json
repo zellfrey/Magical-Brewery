@@ -45,7 +45,7 @@
 					{
 						"block_filter": ["minecraft:budding_amethyst", "minecraft:glowstone", "magical_brewery:budding_glowstone", "minecraft:redstone_ore",
 										"minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore","minecraft:lit_deepslate_redstone_ore", 
-										"magical_brewery:budding_redstone", "magical_brewery:budding_pure_quartz","minecraft:quartz_ore", "magical_brewery:budding_echo", "minecraft:sculk_catalyst"]
+										"magical_brewery:budding_redstone", "magical_brewery:budding_pure_quartz","minecraft:quartz_ore",  "minecraft:sculk_catalyst"]
 					}
 				]
 			},
@@ -300,4 +300,5 @@
 		]
 	}
   }
-	
+
+//"magical_brewery:budding_echo",
