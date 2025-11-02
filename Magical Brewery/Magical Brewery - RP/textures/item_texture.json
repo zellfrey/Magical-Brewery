@@ -188,6 +188,9 @@
 		"magical_brewery:pages_seals":{
 			"textures": "textures/beardedflea/magical_brewery/items/pages_seals.png"
 		},
+		"magical_brewery:pages_brewing":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_brewing.png"
+		},
 		"magical_brewery:glass_potion_harming":{
 			"textures": "textures/items/potion_bottle_harm"
 		},

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:pages_brewing_redstone"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["PSP", "PTP", "PRP"],
+		"key": {
+			"P": "minecraft:paper",
+			"T": "magical_brewery:brewers_tome",
+			"S": "minecraft:brewing_stand",
+			"R": "magical_brewery:pure_redstone_dust"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:pages_brewing",
+				"count": 1
+			},
+			"magical_brewery:brewers_tome"
+		]
+	}
+}

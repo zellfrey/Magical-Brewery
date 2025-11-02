@@ -5,6 +5,8 @@ export const CRYSTAL_CHAPTERS = ["Crystallography", "Purifying", "Washing", "Hea
 
 export const SEAL_CHAPTERS = ["Seals", "Base Seal", "Longevity", "Potency", "Expansion", "Retainment"]
 
+export const BREWING_CHAPTERS = ["Brewing", "Enhanced Potions", "Potency +", "Duration +", "Expansion +", "Ingredients", "Potion Materials", "Glass", "Amethyst"]
+
 //Add "Expansion", "Retainment"
 export const TOME_CHAPTERS = {
 	"Main": {
@@ -20,6 +22,11 @@ export const TOME_CHAPTERS = {
 				chapter: "magical_brewery:tome_chapter_crystallography.title",
 				id: "Crystallography",
 				icon: "textures/beardedflea/magical_brewery/blocks/crystals/glowstone_cluster.png"
+			},
+			{
+				chapter: "magical_brewery:tome_chapter_brewing.title",
+				id: "Brewing",
+				icon: "textures/items/brewing_stand"
 			},
 			{
 				chapter: "About the Author",
@@ -225,4 +232,108 @@ export const TOME_CHAPTERS = {
         buttons: [],
 		exitPage: "Main"
     },
+	"Brewing": {
+        title: "magical_brewery:tome_chapter_brewing.title",
+        body: "magical_brewery:tome_chapter_brewing.body",
+        buttons: [
+			{
+				chapter: "magical_brewery:tome_chapter_enhanced_potions.title",
+				id: "Enhanced Potions",
+				icon: "textures/beardedflea/magical_brewery/tome/potion_potency_plus.png"
+			},
+			// {
+			// 	chapter: "magical_brewery:tome_chapter_ingredients.title",
+			// 	id: "Ingredients",
+			// 	icon: "textures/items/spider_eye_fermented"
+			// },
+			// {
+			// 	chapter: "magical_brewery:tome_chapter_potion_materials.title",
+			// 	id: "Potion Materials",
+			// 	icon: "textures/beardedflea/magical_brewery/items/redstone_shard.png"
+			// }
+		],
+		exitPage: "Main"
+	//Brewing SubChapters
+    },
+	"Enhanced Potions": {
+        title: "magical_brewery:tome_chapter_enhanced_potions.title",
+        body: "magical_brewery:tome_chapter_enhanced_potions.body",
+        buttons: [
+			{
+				chapter: "magical_brewery:tome_chapter_potency_plus.title",
+				id: "Potency +",
+				icon: "textures/beardedflea/magical_brewery/tome/potion_potency_plus.png"
+			},
+			{
+				chapter: "magical_brewery:tome_chapter_duration_plus.title",
+				id: "Duration +",
+				icon: "textures/beardedflea/magical_brewery/tome/potion_duration_plus.png"
+			},
+			// {
+			// 	chapter: "magical_brewery:tome_chapter_crystal_expansion_plus.title",
+			// 	id: "Expansion +",
+			// 	icon: "textures/beardedflea/magical_brewery/tome/potion_expansion_plus.png"
+			// }
+		],
+		exitPage: "Brewing"
+	},
+	//Enhanced Potions SubChapters
+	"Potency +": {
+        title: "magical_brewery:tome_chapter_potency_plus.title",
+        body: "magical_brewery:tome_chapter_potency_plus.body",
+        buttons: [],
+		exitPage: "Enhanced Potions"
+	},
+	"Duration +": {
+        title: "magical_brewery:tome_chapter_duration_plus.title",
+        body: "magical_brewery:tome_chapter_duration_plus.body",
+        buttons: [],
+		exitPage: "Enhanced Potions"
+	},
+	"Expansion +": {
+        title: "magical_brewery:tome_chapter_expansion_plus.title",
+        body: "magical_brewery:tome_chapter_expansion_plus.body",
+        buttons: [],
+		exitPage: "Enhanced Potions"
+	},
+	"Ingredients": {
+        title: "magical_brewery:tome_chapter_ingredients.title",
+        body: "magical_brewery:tome_chapter_ingredients.body",
+        buttons: [
+			//Probably just a load of sub chapters showing various new potions added my MB
+			//However as of right now(28/10/2025) I'm thinking of changing the tome player data structure
+			//A flat array was not a pro gamer move
+		],
+		exitPage: "Brewing"
+	},
+	"Potion Materials": {
+        title: "magical_brewery:tome_chapter_potion_materials.title",
+        body: "magical_brewery:tome_chapter_potion_materials.body",
+        buttons: [
+			{
+				chapter: "magical_brewery:tome_chapter_glass_bottle.title",
+				id: "Glass",
+				icon: "textures/items/potion_bottle_empty"
+			},
+			{
+				chapter: "magical_brewery:tome_chapter_amethyst_bottle.title",
+				id: "Amethyst",
+				icon: "textures/beardedflea/magical_brewery/items/amethyst/amethyst_bottle.png"
+			},
+		],
+		exitPage: "Brewing"
+	},
+	//Potion Materials SubChapters
+	"Glass": {
+        title: "magical_brewery:tome_chapter_glass_bottle.title",
+        body: "magical_brewery:tome_chapter_glass_bottle.body",
+        buttons: [],
+		exitPage: "Enhanced Potions"
+	},
+	"Amethyst": {
+        title: "magical_brewery:tome_chapter_amethyst_bottle.title",
+        body: "magical_brewery:tome_chapter_amethyst_bottle.body",
+        buttons: [],
+		exitPage: "Enhanced Potions"
+	}
 }

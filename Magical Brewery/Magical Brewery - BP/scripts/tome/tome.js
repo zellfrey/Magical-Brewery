@@ -1,7 +1,7 @@
 import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {setMainHand} from '../utils/containerUtils.js';
-import {TOME_CHAPTERS, STARTER_CHAPTERS, CRYSTAL_CHAPTERS, SEAL_CHAPTERS} from "tome/tomeChapters.js"
+import {TOME_CHAPTERS, STARTER_CHAPTERS, CRYSTAL_CHAPTERS, SEAL_CHAPTERS, BREWING_CHAPTERS} from "tome/tomeChapters.js"
 
 let tomePlayerData = {
 	"Player":{
@@ -77,6 +77,9 @@ function getPagesChapters(pagesChapters){
 		break;
 		case "Seals":
 			pagesChapters = SEAL_CHAPTERS;
+		break;
+		case "Brewing":
+			pagesChapters = BREWING_CHAPTERS;
 		break;
 	}
 	return pagesChapters;

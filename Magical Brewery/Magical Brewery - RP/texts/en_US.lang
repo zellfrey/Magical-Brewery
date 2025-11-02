@@ -56,6 +56,7 @@ item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle §c[W.I.P]
 item.magical_brewery:brewers_tome.name=§dBrewers' Tome
 item.magical_brewery:pages_crystallography.name=§eCrystallography Pages
 item.magical_brewery:pages_seals.name=§eSeals Pages
+item.magical_brewery:pages_brewing.name=§eBrewing Pages
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
@@ -255,6 +256,34 @@ magical_brewery:tome_chapter_seal_retainment.body=Unlike other seals, the seal o
 magical_brewery:tome_chapter_author.title=About the Author
 magical_brewery:tome_chapter_author.body=Once again, welcome to Magical Brewery. Let's rip the plaster off and say it how it is. This is the mod/addon author talking directly to you(the player).\nFrom here on this page will be a wall of text and will contain potential spoilers about the addon.\n\nI'm pleased to see you have downloaded the add-on. If you have got this book through survival means then you are certainly curious, which is what I would like.\nThis addon is currently in an alpha state(v0.3.3), so there will be bugs and features maybe missing or incomplete(see seals of expansion).\nIf you have any issues, you can submit the issues here at my github:\n §bhttps://github.com/zellfrey/Magical-Brewery §r  \n\nAnd if you would like to sing praise or throw rotten tomatoes at me, you can either make a comment on the curseforge page:\n §bhttps://www.curseforge.com/minecraft-bedrock/addons/magical-brewery §r \n\nOr whisper into my ear on discord:\nBeardedflea\n\nThank you for your patience, and enjoy the addon.
 
+##---------------------------------
+##Tome Chapters-----Brewing-------------------
+magical_brewery:tome_chapter_brewing.title=Brewing
+magical_brewery:tome_chapter_brewing.body=Brewing
+
+magical_brewery:tome_chapter_enhanced_potions.title=Enhanced Potions
+magical_brewery:tome_chapter_enhanced_potions.body=Enhanced BODY
+
+magical_brewery:tome_chapter_ingredients.title=Ingredients
+magical_brewery:tome_chapter_ingredients.body=ingredients
+
+magical_brewery:tome_chapter_potion_materials.title=Potion Materials
+magical_brewery:tome_chapter_potion_materials.body=Potion Materials
+
+magical_brewery:tome_chapter_potency_plus.title=Potency +
+magical_brewery:tome_chapter_potency_plus.body=Potency + body
+
+magical_brewery:tome_chapter_duration_plus.title=Duration +
+magical_brewery:tome_chapter_duration_plus.body=Duration + body
+
+magical_brewery:tome_chapter_crystal_expansion_plus.title=Expansion +
+magical_brewery:tome_chapter_crystal_expansion_plus.body=Expansion + body
+
+magical_brewery:tome_chapter_glass_bottle.title=Glass
+magical_brewery:tome_chapter_glass_bottle.body=Glass
+
+magical_brewery:tome_chapter_amethyst_bottle.title=Amethyst 
+magical_brewery:tome_chapter_amethyst_bottle.body=amethyst body
 ##---------------------------------
 ##Magical Brewery general messages 
 magical_brewery:message.magical_brewery_general.wip=§cCurrently unavailable. Functionality will be added at a later date.
