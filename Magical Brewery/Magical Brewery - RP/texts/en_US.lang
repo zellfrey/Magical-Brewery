@@ -259,10 +259,10 @@ magical_brewery:tome_chapter_author.body=Once again, welcome to Magical Brewery.
 ##---------------------------------
 ##Tome Chapters-----Brewing-------------------
 magical_brewery:tome_chapter_brewing.title=Brewing
-magical_brewery:tome_chapter_brewing.body=Brewing
+magical_brewery:tome_chapter_brewing.body=I have been at this "magical brewing" for quite some time now, and I haven't come across any brewing chapter. So from now on I think I will have to do my own research and continue where Malgrith left off from.\nThis will be the brewing chapter and it will be my own work and so I will have to be concise and thorough as to not trip over myself in the future.
 
 magical_brewery:tome_chapter_enhanced_potions.title=Enhanced Potions
-magical_brewery:tome_chapter_enhanced_potions.body=Enhanced BODY
+magical_brewery:tome_chapter_enhanced_potions.body=Now that I have pure versions of dusts, I should be able to enhance base potions far more than the non-pure variants.\nIf the dust can be applied to aging then surely they should work for brewing.\nAfter a lot of tests, I have found that the majority of potions that accept non-pure dusts also accept the purified dusts and as a consequence to using purified dust, the potion liquid now has a lovely shimmer to it reflecting light creating a mild glinting effect.\nI need to make more notes on this so I don't forget what I have discovered.
 
 magical_brewery:tome_chapter_ingredients.title=Ingredients
 magical_brewery:tome_chapter_ingredients.body=ingredients
@@ -271,10 +271,10 @@ magical_brewery:tome_chapter_potion_materials.title=Potion Materials
 magical_brewery:tome_chapter_potion_materials.body=Potion Materials
 
 magical_brewery:tome_chapter_potency_plus.title=Potency +
-magical_brewery:tome_chapter_potency_plus.body=Potency + body
+magical_brewery:tome_chapter_potency_plus.body=Purified Glowstone dust can be brewed with a base potion to make potions far more potent.\nA few examples include:\n\nInstant Health -> Instant Health III\nSwiftness -> Swiftness III (1:30)\nRegeneration -> Regeneration III (0:22)\n\nSo far, I haven't come across any side effects. 
 
 magical_brewery:tome_chapter_duration_plus.title=Duration +
-magical_brewery:tome_chapter_duration_plus.body=Duration + body
+magical_brewery:tome_chapter_duration_plus.body=Purified Redstone dust can be brewed with a base potion to make potions last far longer than non-purified potions.\nA few examples include:\n\nFire Resistance -> Fire Resistance (15:00)\nSwiftness -> Swiftness (15:00)\nRegeneration -> Regeneration (3:30)\n\nSo far, I haven't come across any side effects.
 
 magical_brewery:tome_chapter_crystal_expansion_plus.title=Expansion +
 magical_brewery:tome_chapter_crystal_expansion_plus.body=Expansion + body
