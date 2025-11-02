@@ -1,0 +1,51 @@
+{
+    "pools": [
+      {
+		"rolls": 1,
+		"entries": [
+			{
+				"type": "item",
+				"name": "minecraft:written_book",
+				"functions": [
+						{
+							"function": "set_book_contents",
+							"author": " ",
+							"title": " ",
+							"pages": [
+								"Charming is it? I thought so, the mice definitely find this place cozy. This has been my place for about 2 weeks. But I doubt I'll be here for much longer. I've been hiding in countless places trying to avoid the Puritan Order. I'm sure a lot of questions",
+								"are racing through your mind, but I can only answer a few..",
+								"The Puritan Order is a group that was formed 300 years ago that seeks to stamp out any arcane knowledge that could cause cataclysmic events, but over time instead of steering people away from dangerous magicks, they've recently been using an iron fist to",
+								"eradicate any knowledge of the mystical arts.",
+								"I am one out of many people that they wish to silence. I was a student at a magic academy along with many others. But now, the academy is nothing but cobble and ash. You may have already encountered past members.",
+								"Witchery was a popular subject in the academy but now they too hide in fear of fates worse than death. Why do you think witches hide in the most remote of places?",
+								"However, this order that considers itself so high and mighty doesn't even have the class to send one of their own. Instead they insult me by sending their automatons.",
+								"No matter, I will take this advantage and this will be their downfall!",
+								"In this trunk, you should find another book, \"The Brewers tome\". Take it and leave this place as members of the order may come to purge this burrow.\n\nTwo things before you depart...",
+								"1. Bees are your friends.\n2. I've hidden a chapter of the book at the back of the house under some rooted dirt.\n\nStay safe, and keep an eye out for any movement in the shadows. Farewell\n -Valor Margrith"
+							]
+						}
+					]
+				}
+			]	
+		},
+		{
+		"rolls": 1,
+		"entries": [
+			{
+				"type": "item",
+				"name": "magical_brewery:brewers_tome"
+			}
+			]	
+		},
+		{
+		"rolls": 1,
+		"entries": [
+			{
+				"type": "item",
+				"name": "magical_brewery:redstone_shard"
+			}
+			]	
+		}
+	]
+}
+    

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:ageless_pocket_watch",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": ["magical_brewery:on_use_on_ageless_pocket_watch"],
+			"minecraft:damage": 2,
+			"minecraft:durability": {
+				"max_durability": 36
+			},
+			"minecraft:icon": "magical_brewery:ageless_pocket_watch",
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:ageless_pocket_watch.name"
+			}
+		}
+	}
+}

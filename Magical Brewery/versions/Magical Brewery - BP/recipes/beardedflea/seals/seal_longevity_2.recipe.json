@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:seal_longevity_2"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["RQR", "QSQ", "RQR"],
+		"key": {
+			"Q": "magical_brewery:pure_quartz_shard",
+			"S": "magical_brewery:seal_basic",
+			"R": "magical_brewery:pure_redstone_dust"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:seal_longevity_2",
+				"count": 1
+			}
+		]
+	}
+}

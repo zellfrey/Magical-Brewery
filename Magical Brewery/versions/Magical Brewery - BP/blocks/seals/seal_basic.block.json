@@ -1,0 +1,154 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+		"description": {
+			"identifier": "magical_brewery:seal_basic",
+			"menu_category": {
+				"category": "none",
+				"is_hidden_in_commands": true
+			},
+			"traits": {
+				"minecraft:placement_position": {
+					"enabled_states": ["minecraft:block_face"]
+				}
+			}
+		},
+		"components": {
+			"minecraft:friction": 0.4,
+			"minecraft:loot": "loot_tables/beardedflea/blocks/seals/seal_basic.loot.json",
+			"minecraft:geometry": "geometry.seal",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1.5
+			},
+			"minecraft:liquid_detection": {
+			"detection_rules": [
+					{
+						"liquid_type": "water",
+						"on_liquid_touches": "popped",
+						"can_contain_liquid": false
+					}
+				]
+			},
+			"minecraft:material_instances": {
+			"*": {
+					"texture": "magical_brewery:seal_basic",
+					"render_method": "alpha_test",
+					"face_dimming": false,
+					"ambient_occlusion": false
+				}
+			},
+			"minecraft:collision_box": false,
+			"minecraft:selection_box": {
+				"origin": [-6.5, 0.0, -6.5],
+				"size": [13.0, 1.0, 13.0]
+			},
+			"minecraft:transformation": {
+				"scale": [1, 16, 1]
+			},
+			"minecraft:placement_filter": {
+                "conditions": [
+                    {
+                    "allowed_faces": ["side"],
+                    "block_filter": [
+                        {
+                            "tags": "q.any_tag('magical_brewery:cask')"
+                        }
+                    ]
+                    }
+                ]
+            },
+			"minecraft:movable": {
+				"movement_type": "popped"
+			}
+		},
+    "permutations": [
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'north'",
+				"components": {
+					"minecraft:placement_filter": {
+						"conditions": [
+							{
+							"allowed_faces": ["north"],
+							"block_filter": [
+								{
+									"tags": "q.any_tag('magical_brewery:cask')"
+								}
+							]
+							}
+						]
+					},
+					"minecraft:transformation": { 
+						"rotation": [-90, 0, 180], 
+						"scale": [0.6, 1, 0.6]
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'south'",
+				"components": {
+					"minecraft:placement_filter": {
+						"conditions": [
+							{
+							"allowed_faces": ["south"],
+							"block_filter": [
+								{
+									"tags": "q.any_tag('magical_brewery:cask')"
+								}
+							]
+							}
+						]
+					},
+					"minecraft:transformation": { 
+						"rotation": [90, 0, 0],
+						"scale": [0.6, 1, 0.6] 
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'west'",
+				"components": {
+					"minecraft:placement_filter": {
+						"conditions": [
+							{
+							"allowed_faces": ["west"],
+							"block_filter": [
+								{
+									"tags": "q.any_tag('magical_brewery:cask')"
+								}
+							]
+							}
+						]
+					},
+					"minecraft:transformation": { 
+						"rotation": [0, -90, 90],
+						"scale": [0.6, 1, 0.6] 
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('minecraft:block_face') == 'east'",
+				"components": {
+					"minecraft:placement_filter": {
+						"conditions": [
+							{
+							"allowed_faces": ["east"],
+							"block_filter": [
+								{
+									"tags": "q.any_tag('magical_brewery:cask')"
+								}
+							]
+							}
+						]
+					},
+					"minecraft:transformation": { 
+						"rotation": [0, 90, -90],
+						"scale": [0.6, 1, 0.6]
+					}
+				}
+			}
+      	]
+    }
+}

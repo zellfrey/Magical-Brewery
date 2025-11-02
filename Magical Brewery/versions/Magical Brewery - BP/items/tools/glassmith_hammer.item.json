@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:glassmith_hammer",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": ["magical_brewery:on_use_on_hammer"],
+			"minecraft:damage": 2,
+			"minecraft:durability": {
+				"max_durability": 90
+			},
+			"minecraft:enchantable": {
+				"slot": "flintsteel",
+				"value": 10
+			},
+			"minecraft:hand_equipped": {
+				"value": true
+			},
+			"minecraft:icon": "magical_brewery:glassmith_hammer",
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:glassmith_hammer.name"
+			}
+		}
+	}
+}

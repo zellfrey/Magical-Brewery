@@ -1,0 +1,20 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:tasting_spoon",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:hand_equipped": {
+				"value": true
+			},
+			"minecraft:icon": "magical_brewery:tasting_spoon",
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:tasting_spoon.name"
+			}
+		}
+	}
+}

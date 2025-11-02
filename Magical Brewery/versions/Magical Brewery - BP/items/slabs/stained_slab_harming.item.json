@@ -1,0 +1,21 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:stained_slab_harming",
+			"menu_category": {
+				"category": "construction"
+			}
+		}, 
+		"components": {
+			// "minecraft:custom_components": ["magical_brewery:on_use_slab_stained"],
+			"minecraft:display_name":{
+				"value": "tile.magical_brewery:stained_slab_harming.name"
+			},
+			"minecraft:block_placer": {
+				"block": "magical_brewery:stained_slab_harming",
+				"replace_block_item": true
+			}
+		}
+	}
+}

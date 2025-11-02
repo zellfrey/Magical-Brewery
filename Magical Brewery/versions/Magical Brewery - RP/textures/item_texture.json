@@ -1,0 +1,240 @@
+{
+	"resource_pack_name" : "Magical Brewery item textures",
+	"texture_name" : "atlas.items",
+	"texture_data" : {
+		"magical_brewery:placeholder":{
+			"textures": "textures/beardedflea/magical_brewery/items/item_placeholder.png"
+		},
+		"magical_brewery:amethyst_dust":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst_dust.png"
+		},
+		"magical_brewery:amethyst_seed":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst_seed.png"
+		},
+		"magical_brewery:small_echo_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/small_echo_bud.png"
+		},
+		"magical_brewery:medium_echo_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/medium_echo_bud.png"
+		},
+		"magical_brewery:large_echo_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/large_echo_bud.png"
+		},
+		"magical_brewery:echo_cluster":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/echo_cluster.png"
+		},
+		"magical_brewery:echo_dust":{
+			"textures": "textures/beardedflea/magical_brewery/items/echo_dust.png"
+		},
+		"magical_brewery:echo_seed":{
+			"textures": "textures/beardedflea/magical_brewery/items/echo_seed.png"
+		},
+		"magical_brewery:glowstone_shard":{
+			"textures": "textures/beardedflea/magical_brewery/items/glowstone_shard.png"
+		},
+		"magical_brewery:small_glowstone_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/small_glowstone_bud.png"
+		},
+		"magical_brewery:medium_glowstone_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/medium_glowstone_bud.png"
+		},
+		"magical_brewery:large_glowstone_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/large_glowstone_bud.png"
+		},
+		"magical_brewery:glowstone_cluster":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/glowstone_cluster.png"
+		},
+		"magical_brewery:pure_glowstone_dust":{
+			"textures": "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png"
+		},
+		"magical_brewery:glowstone_seed":{
+			"textures": "textures/beardedflea/magical_brewery/items/glowstone_seed.png"
+		},
+		"magical_brewery:pure_quartz_shard":{
+			"textures": "textures/beardedflea/magical_brewery/items/pure_quartz_shard.png"
+		},
+		"magical_brewery:small_pure_quartz_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/small_pure_quartz_bud.png"
+		},
+		"magical_brewery:medium_pure_quartz_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/medium_pure_quartz_bud.png"
+		},
+		"magical_brewery:large_pure_quartz_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/large_pure_quartz_bud.png"
+		},
+		"magical_brewery:pure_quartz_cluster":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/pure_quartz_cluster.png"
+		},
+		"magical_brewery:pure_quartz_seed":{
+			"textures": "textures/beardedflea/magical_brewery/items/pure_quartz_seed.png"
+		},
+		"magical_brewery:redstone_shard":{
+			"textures": "textures/beardedflea/magical_brewery/items/redstone_shard.png"
+		},
+		"magical_brewery:small_redstone_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/small_redstone_bud.png"
+		},
+		"magical_brewery:medium_redstone_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/medium_redstone_bud.png"
+		},
+		"magical_brewery:large_redstone_bud":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/large_redstone_bud.png"
+		},
+		"magical_brewery:redstone_cluster":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crystals/redstone_cluster.png"
+		},
+		"magical_brewery:pure_redstone_dust":{
+			"textures": "textures/beardedflea/magical_brewery/items/pure_redstone_dust.png"
+		},
+		"magical_brewery:redstone_seed":{
+			"textures": "textures/beardedflea/magical_brewery/items/redstone_seed.png"
+		},
+		"magical_brewery:glassmith_hammer":{
+			"textures": "textures/beardedflea/magical_brewery/items/glassmith_hammer.png"
+		},
+		"magical_brewery:glassmith_chisel":{
+			"textures": "textures/beardedflea/magical_brewery/items/glassmith_chisel.png"
+		},
+		"magical_brewery:ageless_pocket_watch":{
+			"textures": "textures/beardedflea/magical_brewery/items/ageless_pocket_watch.png"
+		},
+		"magical_brewery:tasting_spoon":{
+			"textures": "textures/beardedflea/magical_brewery/items/tasting_spoon.png"
+		},
+		"magical_brewery:amethyst_bottle":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_bottle.png"
+		},
+		"magical_brewery:amethyst_water_bottle":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_water_bottle.png"
+		},
+		"magical_brewery:stained_planks_decay":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_decay.png"
+		},
+		"magical_brewery:stained_planks_harming":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_harming.png"
+		},
+		"magical_brewery:stained_planks_healing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_healing.png"
+		},
+		"magical_brewery:stained_planks_invisibility":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_invisibility.png"
+		},
+		"magical_brewery:amethyst_potion_leaping":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_leaping.png"
+		},
+		"magical_brewery:amethyst_potion_poison":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_poison.png"
+		},
+		"magical_brewery:amethyst_potion_regeneration":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_regeneration.png"
+		},
+		"magical_brewery:amethyst_potion_resistance_fire":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_resistance_fire.png"
+		},
+		"magical_brewery:amethyst_potion_slow_falling":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_slow_falling.png"
+		},
+		"magical_brewery:amethyst_potion_slowness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_slowness.png"
+		},
+		"magical_brewery:amethyst_potion_strength":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strength.png"
+		},
+		"magical_brewery:amethyst_potion_swiftness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_swiftness.png"
+		},
+		"magical_brewery:amethyst_potion_turtle_master":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_turtle_master.png"
+		},
+		"magical_brewery:amethyst_potion_vision_night":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_vision_night.png"
+		},
+		"magical_brewery:amethyst_potion_water_breathing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_water_breathing.png"
+		},
+		"magical_brewery:amethyst_potion_weakness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_weakness.png"
+		},
+		"magical_brewery:seal_basic":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_basic.png"
+		},
+		"magical_brewery:seal_longevity_1":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_longevity_1.png"
+		},
+		"magical_brewery:seal_longevity_2":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_longevity_2.png"
+		},
+		"magical_brewery:seal_potency_1":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_potency_1.png"
+		},
+		"magical_brewery:seal_potency_2":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_potency_2.png"
+		},
+		"magical_brewery:seal_expansion_1":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_expansion_1.png"
+		},
+		"magical_brewery:seal_expansion_2":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_expansion_2.png"
+		},
+		"magical_brewery:seal_retainment":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png"
+		},
+		"magical_brewery:brewers_tome":{
+			"textures": "textures/beardedflea/magical_brewery/items/chapter_of_wisdom_3.png"
+		},
+		"magical_brewery:pages_crystallography":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_crystallography.png"
+		},
+		"magical_brewery:pages_seals":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_seals.png"
+		},
+		"magical_brewery:pages_brewing":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_brewing.png"
+		},
+		"magical_brewery:glass_potion_harming":{
+			"textures": "textures/items/potion_bottle_harm"
+		},
+		"magical_brewery:glass_potion_healing":{
+			"textures": "textures/items/potion_bottle_heal"
+		},
+		"magical_brewery:glass_potion_invisibility":{
+			"textures": "textures/items/potion_bottle_invisibility"
+		},
+		"magical_brewery:glass_potion_leaping":{
+			"textures": "textures/items/potion_bottle_jump"
+		},
+		"magical_brewery:glass_potion_poison":{
+			"textures": "textures/items/potion_bottle_poison"
+		},
+		"magical_brewery:glass_potion_regeneration":{
+			"textures": "textures/items/potion_bottle_regeneration"
+		},
+		"magical_brewery:glass_potion_resistance_fire":{
+			"textures": "textures/items/potion_bottle_fireResistance"
+		},
+		"magical_brewery:glass_potion_slow_falling":{
+			"textures": "textures/items/potion_bottle_slowFall"
+		},
+		"magical_brewery:glass_potion_slowness":{
+			"textures": "textures/items/potion_bottle_moveSlowdown"
+		},
+		"magical_brewery:glass_potion_strength":{
+			"textures": "textures/items/potion_bottle_damageBoost"
+		},
+		"magical_brewery:glass_potion_swiftness":{
+			"textures": "textures/items/potion_bottle_moveSpeed"
+		},
+		"magical_brewery:glass_potion_vision_night":{
+			"textures": "textures/items/potion_bottle_nightVision"
+		},
+		"magical_brewery:glass_potion_water_breathing":{
+			"textures": "textures/items/potion_bottle_waterBreathing"
+		},
+		"magical_brewery:glass_potion_weakness":{
+			"textures": "textures/items/potion_bottle_weakness"
+		},
+		"magical_brewery:glass_potion_turtle_master":{
+			"textures": "textures/items/potion_bottle_turtleMaster"
+		}
+	}
+}

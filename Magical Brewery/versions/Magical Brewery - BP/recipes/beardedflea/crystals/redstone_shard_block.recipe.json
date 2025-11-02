@@ -1,0 +1,19 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:redstone_shard_block"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["RR","RR"],
+		"key": {
+			"R": "magical_brewery:redstone_shard"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:redstone_shard_block",
+				"count": 1
+			}
+		]
+	}
+}

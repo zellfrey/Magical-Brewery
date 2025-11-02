@@ -1,0 +1,30 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "match_tool",
+					"enchantments": [  
+						{  
+						"enchantment": "silk_touch"
+						}  
+					], 
+					"item": [
+						"minecraft:netherite_pickaxe",
+						"minecraft:diamond_pickaxe",
+						"minecraft:iron_pickaxe",
+						"minecraft:stone_pickaxe"
+					],
+					"count": 1
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "magical_brewery:large_glowstone_bud"
+				}
+			]
+		}
+	]
+}

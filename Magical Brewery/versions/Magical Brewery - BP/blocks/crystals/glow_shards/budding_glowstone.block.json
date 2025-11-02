@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:block": {
+		"description": {
+			"identifier": "magical_brewery:budding_glowstone",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"magical_brewery:ort_budding_crystal_growth": {},
+			"magical_brewery:opd_budding_crystal_destroy": {},
+			"magical_brewery:opd_budding_crystal_place": {},
+			"minecraft:light_emission": 10,
+			"minecraft:friction": 0.4,
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:map_color": "#F7E9A3",
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 1.5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1.5
+			},
+			"minecraft:tick": {
+				"interval_range": [20,20]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "magical_brewery:budding_glowstone",
+					"render_method": "alpha_test",
+					"face_dimming": false,
+					"ambient_occlusion": false
+				}
+			},
+			"minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:movable": {
+            	"movement_type": "immovable"
+			}
+		}
+	}
+}

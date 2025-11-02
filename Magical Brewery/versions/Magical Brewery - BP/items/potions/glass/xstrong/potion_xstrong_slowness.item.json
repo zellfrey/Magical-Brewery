@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:potion_xstrong_slowness",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"magical_brewery:oc_potion": {
+				"potion":{
+					"effect": "Slowness",
+					"duration": "xstrong",
+					"potency": 4
+				}
+			},
+			"minecraft:tags": {
+				"tags": ["magical_brewery:potion", "glass"]
+			},
+			"minecraft:display_name": {
+				"value": "%potion.moveSlowdown.name\n§c%potion.moveSlowdown %potion.potency.4 (0:20)\n\n§5%potion.effects.whenDrank\n§c-75%% %potion.moveSpeed"
+			},
+			"minecraft:icon": "magical_brewery:glass_potion_slowness",
+			"minecraft:glint": true,
+			"minecraft:max_stack_size": {
+				"value": 1
+			},
+			"minecraft:hand_equipped": false,
+			"minecraft:food": {
+				"can_always_eat": true,
+				"using_converts_to": "glass_bottle"
+			},
+			"minecraft:use_modifiers": {
+				"use_duration": 2
+			},
+			"minecraft:use_animation": {
+				"value": "drink"
+			}
+		}
+	}
+}
