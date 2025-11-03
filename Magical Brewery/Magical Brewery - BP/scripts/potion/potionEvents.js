@@ -82,14 +82,15 @@ system.beforeEvents.startup.subscribe(eventData => {
 //     const {damage} = e;
 //     console.log("damage: " + damage)
 // });
-// world.afterEvents.entityHealthChanged.subscribe((e) => {
-//     const {entity, newValue} = e;
-//     if(newValue > 0) return;
-//     console.log("name" + entity.typeId)
-// 	console.log("effects length " + entity.getEffects().length)
-// 	console.log("1st effect " + entity.getEffects()[0].typeId)
-// 	console.log("1st effect level" +entity.getEffects()[0].amplifier)
-// });
+world.afterEvents.entityHealthChanged.subscribe((e) => {
+    const {entity, newValue} = e;
+    if(newValue > 0 || entity.getEffects().length === 0) return;
+    
+    console.log("name" + entity.typeId)
+	console.log("effects length " + entity.getEffects().length)
+	console.log("1st effect " + entity.getEffects()[0].typeId)
+	console.log("1st effect level" +entity.getEffects()[0].amplifier)
+});
 // world.afterEvents.entitySpawn.subscribe((e) => {
 //     const {entity} = e;
 //     // const item = entity.getComponent("item").itemStack;

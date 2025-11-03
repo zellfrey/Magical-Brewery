@@ -235,6 +235,18 @@
 		},
 		"magical_brewery:glass_potion_turtle_master":{
 			"textures": "textures/items/potion_bottle_turtleMaster"
+		},
+		"magical_brewery:glass_potion_oozing":{
+			"textures": "textures/items/potion_bottle_oozing"
+		},
+		"magical_brewery:glass_potion_infested":{
+			"textures": "textures/items/potion_bottle_infested"
+		},
+		"magical_brewery:glass_potion_weaving":{
+			"textures": "textures/items/potion_bottle_weaving"
+		},
+		"magical_brewery:glass_potion_wind_charged":{
+			"textures": "textures/items/potion_bottle_windCharged"
 		}
 	}
 }

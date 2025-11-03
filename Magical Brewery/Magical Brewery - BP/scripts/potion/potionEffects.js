@@ -82,7 +82,27 @@ export const POTION_EFFECTS = {
         effects: "Weakness",
         duration_long: ["1:30", "4:00", "7:00"],
         duration_potency: [],
-    }
+    },
+    "Oozing": {
+        effects: "Oozing",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
+    "Infested": {
+        effects: "Infested",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
+    "Weaving": {
+        effects: "Weaving",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
+    "Wind_Charged": {
+        effects: "Wind Charged",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
   };
 
 export function getPotencyLevel(effect){
