@@ -2,11 +2,11 @@
     "format_version": "1.17.41",
     "minecraft:recipe_brewing_mix": {
         "description": {
-            "identifier": "magical_brewery:potion_strong_infested"
+            "identifier": "magical_brewery:potion_strong_oozing"
         },
         "tags": ["brewing_stand"],
-        "input": "minecraft:potion_type:infested",
+        "input": "minecraft:potion_type:oozing",
         "reagent": "minecraft:glowstone_dust",
-        "output": "magical_brewery:potion_strong_infested"
+        "output": "magical_brewery:potion_strong_oozing"
     }
 }
