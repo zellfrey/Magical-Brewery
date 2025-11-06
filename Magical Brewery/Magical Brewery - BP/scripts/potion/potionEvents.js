@@ -1,6 +1,7 @@
 import {world, system} from '@minecraft/server';
 import {MagicalBreweryPotion} from "./MagicalBreweryPotion.js";
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
+import {MathUtils} from "../utils/MathUtils.js";
 
 //12 mins duration in ticks i.e 12*60 *20
 //const xLongDuration = 14400;
@@ -82,15 +83,111 @@ system.beforeEvents.startup.subscribe(eventData => {
 //     const {damage} = e;
 //     console.log("damage: " + damage)
 // });
+
+const ON_DEATH_EFFECTS= ["minecraft:oozing", "minecraft:weaving", "minecraft:wind_charged"];
+
+const ON_HIT_EFFECTS= ["minecraft:infested"];
 world.afterEvents.entityHealthChanged.subscribe((e) => {
-    const {entity, newValue} = e;
-    if(newValue > 0 || entity.getEffects().length === 0) return;
+
+    if(e.newValue > 0 || e.entity.getEffects().length === 0) return;
+
+    applyOnDeathEffects(e.entity)
     
-    console.log("name" + entity.typeId)
-	console.log("effects length " + entity.getEffects().length)
-	console.log("1st effect " + entity.getEffects()[0].typeId)
-	console.log("1st effect level" +entity.getEffects()[0].amplifier)
 });
+
+function applyOnDeathEffects(entity){
+
+    const onDeathEffects = entity.getEffects().filter((effect) => ON_DEATH_EFFECTS.includes(effect.typeId));
+
+    if(onDeathEffects.length === 0) return;
+
+    onDeathEffects.forEach(effect => {
+
+        if(effect.amplifier ===0) return;
+
+        switch(effect.typeId){
+        case "minecraft:oozing":
+            system.runJob(applyOozingEffect(entity, effect.amplifier));
+        break;
+        case "minecraft:weaving":
+            applyWeavingEffect(entity, effect.amplifier);
+            
+        break;
+    }
+    });
+    
+}
+
+function* applyOozingEffect(entity, noSlimesToSpawn){
+    for(let i = 0; i < noSlimesToSpawn; i++){
+        entity.dimension.spawnEntity("minecraft:slime", entity.location,{spawnEvent: "spawn_medium"})
+        yield;
+    }
+    
+}
+function applyWeavingEffect(entity, potencyLevel){
+
+    if(!world.gameRules.mobGriefing) return;
+    
+    const dimension = entity.dimension;
+    let webSpawnArea = getAirBlockBox(entity, potencyLevel);
+
+    let validSpawnLocations = webSpawnArea.filter(location =>{
+
+        const block = dimension.getBlock({ x: location.x, y: location.y, z: location.z });
+
+        if(!block.below().isAir && block.below().typeId !== "minecraft:web") return true;
+    })
+
+    let noOfCobWebs = potencyLevel *3
+    system.runJob(spawnWeavingWebs(noOfCobWebs, dimension, validSpawnLocations))
+}
+
+function* spawnWeavingWebs(noOfWebsToSpawn, dimension, validSpawnLocations){
+   for(let i = 0; i <= noOfWebsToSpawn; i++){
+        const location = validSpawnLocations[MathUtils.getRandomInt(validSpawnLocations.length)];
+        const block = dimension.getBlock({ x: location.x, y: location.y, z: location.z });
+        block.setType("minecraft:web")
+        yield;
+    }
+}
+
+
+
+function getAirBlockBox(entity, potencyLevel){
+    let boxCorner = entity.location;
+
+    boxCorner.y += - potencyLevel
+	boxCorner.x += - potencyLevel
+	boxCorner.z += - potencyLevel
+
+    const boxSize = 1 + potencyLevel*2
+
+    return getAirBlockVectors(boxCorner, entity.dimension, boxSize);
+}
+
+function getAirBlockVectors(startingLocation, dimension, size) {
+    
+    const heightMax = dimension.heightRange.max;
+    const heightMin = dimension.heightRange.min;
+
+    let validAirBlocks = [];
+    for (let x = startingLocation.x; x < startingLocation.x + size; x++) {
+        for (let y = startingLocation.y; y < startingLocation.y + size; y++) {
+            for (let z = startingLocation.z; z < startingLocation.z + size; z++) {
+
+                if(y <= heightMin || y >= heightMax) continue;
+
+                const block = dimension.getBlock({ x: x, y: y, z: z });
+                
+                if (block && (block.isAir)) {
+                validAirBlocks.push(block.location)
+                }
+            }
+        }
+    }
+    return validAirBlocks
+}
 // world.afterEvents.entitySpawn.subscribe((e) => {
 //     const {entity} = e;
 //     // const item = entity.getComponent("item").itemStack;

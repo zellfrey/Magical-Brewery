@@ -6,6 +6,10 @@ export class MathUtils {
   		return (Math.floor(Math.random() * (max - min) ) + min)/10;
 	}
 
+    static getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
 	static addVectorFromBlockFace(face, blockCentre){
         switch(face){
             case "north":
