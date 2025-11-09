@@ -1,4 +1,5 @@
 import {Direction} from "@minecraft/server"
+import {MathUtils} from "../utils/MathUtils.js";
 
 //Down,Up,North,South,West,East
 const adjacentVectors = [{x: 0, y:-1, z:0},{x: 0, y:1, z:0},{x: 0, y:0, z:-1},{x: 0, y:0, z:1},{x: -1, y:0, z:0},{x: 1, y:0, z:0}]
@@ -27,4 +28,22 @@ export function getBlockFromFace(source, face){
 //Subtle change from mojang not allowing lowercase entries for the Direction Enum
 function faceToUpperCase(face){
     return face.charAt(0).toUpperCase() + face.slice(1)
+}
+
+export function getAirBlockBox(location, dimension, potencyLevel){
+
+    location.y += - potencyLevel
+	location.x += - potencyLevel
+	location.z += - potencyLevel
+
+    const boxSize = 1 + potencyLevel*2
+
+    let airBlockBox = MathUtils.getVectorsCube(location, dimension, boxSize)
+                        .filter(vector =>{
+                            const block = dimension.getBlock(vector);
+                
+                            if (block && (block.isAir) && dimension.isChunkLoaded(vector)) return true;
+                        });
+
+    return airBlockBox;
 }

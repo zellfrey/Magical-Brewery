@@ -59,5 +59,24 @@ export class MathUtils {
 
         return equalsX && equalsY && equalsZ;
     }
+
+    static getVectorsCube(startingLocation, dimension, size){
+        const heightMax = dimension.heightRange.max;
+        const heightMin = dimension.heightRange.min;
+
+        let validVectorsCube = [];
+        
+        for (let x = startingLocation.x; x < startingLocation.x + size; x++) {
+            for (let y = startingLocation.y; y < startingLocation.y + size; y++) {
+                for (let z = startingLocation.z; z < startingLocation.z + size; z++) {
+
+                    if(y <= heightMin || y >= heightMax) continue;
+
+                    validVectorsCube.push({ x: x, y: y, z: z })
+                }
+            }
+        }
+        return validVectorsCube;
+    }
 }
 

@@ -1,4 +1,6 @@
 export const POTION_POTENCY_LEVELS = ["I", "II", "III", "IV", "V", "VI"]
+export const ON_DEATH_EFFECTS= ["minecraft:oozing", "minecraft:weaving", "minecraft:wind_charged"];
+export const ON_HIT_EFFECTS= ["minecraft:infested"];
 //instant potions have 1 element for the array
 //Potions with long duration, 0th element represent base effect time, 1st is longevity
 //If a potion doesnt have a potency variant, it will fallback onto the base effect time in duration_long

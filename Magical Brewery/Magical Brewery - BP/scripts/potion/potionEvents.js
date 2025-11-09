@@ -1,7 +1,9 @@
 import {world, system} from '@minecraft/server';
 import {MagicalBreweryPotion} from "./MagicalBreweryPotion.js";
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
+import {ON_DEATH_EFFECTS, ON_HIT_EFFECTS} from "../potion/potionEffects.js";
 import {MathUtils} from "../utils/MathUtils.js";
+import {getAirBlockBox} from "../utils/blockPlacementUtils.js";
 
 //12 mins duration in ticks i.e 12*60 *20
 //const xLongDuration = 14400;
@@ -79,25 +81,54 @@ system.beforeEvents.startup.subscribe(eventData => {
         }
     });
 });
-// world.afterEvents.entityHurt.subscribe((e) => {
-//     const {damage} = e;
-//     console.log("damage: " + damage)
-// });
 
-const ON_DEATH_EFFECTS= ["minecraft:oozing", "minecraft:weaving", "minecraft:wind_charged"];
+world.afterEvents.entityHurt.subscribe((e) => {
 
-const ON_HIT_EFFECTS= ["minecraft:infested"];
+    if(!e.hurtEntity.isValid || !e.hurtEntity.dimension.isChunkLoaded(e.hurtEntity.location) || 
+        e.hurtEntity.getEffects().length === 0) return;
+
+    applyOnHitEffects(e.hurtEntity)
+});
+
+function applyOnHitEffects(hurtEntity){
+
+    const onHitEffects = hurtEntity.getEffects().filter((effect) => ON_HIT_EFFECTS.includes(effect.typeId));
+
+    if(onHitEffects.length === 0) return;
+
+    onHitEffects.forEach(effect => {
+
+        if(effect.amplifier ===0) return;
+
+        switch(effect.typeId){
+            case "minecraft:infested":
+                // system.runJob(applyOozingEffect(entity, dimension, effect.amplifier));
+                console.log("spoopy silver")
+            break;
+        }
+    });
+    
+    console.log(JSON.stringify(hurtEntity.getViewDirection()))
+}
+
+function applyWindChargedEffect(entity, dimension, potency){
+   console.log("Must have been the wind") 
+}
+
 world.afterEvents.entityHealthChanged.subscribe((e) => {
 
-    if(e.newValue > 0 || e.entity.getEffects().length === 0) return;
+    if(!e.entity.isValid || !e.entity.dimension.isChunkLoaded(e.entity.location) 
+        || e.newValue > 0 || e.entity.getEffects().length === 0) return;
 
     applyOnDeathEffects(e.entity)
     
 });
 
+
 function applyOnDeathEffects(entity){
 
     const onDeathEffects = entity.getEffects().filter((effect) => ON_DEATH_EFFECTS.includes(effect.typeId));
+    const dimension = entity.dimension;
 
     if(onDeathEffects.length === 0) return;
 
@@ -106,46 +137,57 @@ function applyOnDeathEffects(entity){
         if(effect.amplifier ===0) return;
 
         switch(effect.typeId){
-        case "minecraft:oozing":
-            system.runJob(applyOozingEffect(entity, effect.amplifier));
-        break;
-        case "minecraft:weaving":
-            applyWeavingEffect(entity, effect.amplifier);
-            
-        break;
-    }
+            case "minecraft:oozing":
+                system.runJob(applyOozingEffect(entity, dimension, effect.amplifier));
+            break;
+            case "minecraft:weaving":
+                applyWeavingEffect(entity, dimension, effect.amplifier);
+                
+            break;
+            case "minecraft:wind_charged":
+                applyWindChargedEffect(entity, dimension, effect.amplifier);
+                
+            break;
+        }
     });
     
 }
 
-function* applyOozingEffect(entity, noSlimesToSpawn){
+function* applyOozingEffect(entity, dimension, noSlimesToSpawn){
     for(let i = 0; i < noSlimesToSpawn; i++){
-        entity.dimension.spawnEntity("minecraft:slime", entity.location,{spawnEvent: "spawn_medium"})
+        dimension.spawnEntity("minecraft:slime", entity.location,{spawnEvent: "spawn_medium"})
         yield;
-    }
-    
+    }    
 }
-function applyWeavingEffect(entity, potencyLevel){
+
+function applyWeavingEffect(entity, dimension, potencyLevel){
 
     if(!world.gameRules.mobGriefing) return;
-    
-    const dimension = entity.dimension;
-    let webSpawnArea = getAirBlockBox(entity, potencyLevel);
 
-    let validSpawnLocations = webSpawnArea.filter(location =>{
+    let webSpawnArea = getAirBlockBox(entity.location, entity.dimension, potencyLevel);
+
+    if(webSpawnArea.length === 0) return;
+
+    let validWebSpawnLocations = webSpawnArea.filter(location =>{
 
         const block = dimension.getBlock({ x: location.x, y: location.y, z: location.z });
 
         if(!block.below().isAir && block.below().typeId !== "minecraft:web") return true;
     })
 
+    if(validWebSpawnLocations.length === 0) return;
+
     let noOfCobWebs = potencyLevel *3
-    system.runJob(spawnWeavingWebs(noOfCobWebs, dimension, validSpawnLocations))
+    system.runJob(placeWeavingWebs(noOfCobWebs, dimension, validWebSpawnLocations))
 }
 
-function* spawnWeavingWebs(noOfWebsToSpawn, dimension, validSpawnLocations){
+function* placeWeavingWebs(noOfWebsToSpawn, dimension, validWebSpawnLocations){
    for(let i = 0; i <= noOfWebsToSpawn; i++){
-        const location = validSpawnLocations[MathUtils.getRandomInt(validSpawnLocations.length)];
+    
+        const location = validWebSpawnLocations[MathUtils.getRandomInt(validWebSpawnLocations.length)];
+
+        if(!dimension.isChunkLoaded(location)) return;
+
         const block = dimension.getBlock({ x: location.x, y: location.y, z: location.z });
         block.setType("minecraft:web")
         yield;
@@ -154,40 +196,7 @@ function* spawnWeavingWebs(noOfWebsToSpawn, dimension, validSpawnLocations){
 
 
 
-function getAirBlockBox(entity, potencyLevel){
-    let boxCorner = entity.location;
 
-    boxCorner.y += - potencyLevel
-	boxCorner.x += - potencyLevel
-	boxCorner.z += - potencyLevel
-
-    const boxSize = 1 + potencyLevel*2
-
-    return getAirBlockVectors(boxCorner, entity.dimension, boxSize);
-}
-
-function getAirBlockVectors(startingLocation, dimension, size) {
-    
-    const heightMax = dimension.heightRange.max;
-    const heightMin = dimension.heightRange.min;
-
-    let validAirBlocks = [];
-    for (let x = startingLocation.x; x < startingLocation.x + size; x++) {
-        for (let y = startingLocation.y; y < startingLocation.y + size; y++) {
-            for (let z = startingLocation.z; z < startingLocation.z + size; z++) {
-
-                if(y <= heightMin || y >= heightMax) continue;
-
-                const block = dimension.getBlock({ x: x, y: y, z: z });
-                
-                if (block && (block.isAir)) {
-                validAirBlocks.push(block.location)
-                }
-            }
-        }
-    }
-    return validAirBlocks
-}
 // world.afterEvents.entitySpawn.subscribe((e) => {
 //     const {entity} = e;
 //     // const item = entity.getComponent("item").itemStack;
