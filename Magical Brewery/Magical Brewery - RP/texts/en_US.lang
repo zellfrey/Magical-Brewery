@@ -92,6 +92,11 @@ tile.magical_brewery:stained_planks_swiftness.name=Stained Planks of Swiftness
 tile.magical_brewery:stained_planks_vision_night.name=Stained Planks of Night Vision
 tile.magical_brewery:stained_planks_water_breathing.name=Stained Planks of Water Breathing
 tile.magical_brewery:stained_planks_weakness.name=Stained Planks of Weakness
+tile.magical_brewery:stained_planks_oozing.name=Stained Planks of Oozing
+tile.magical_brewery:stained_planks_infested.name=Stained Planks of Infestation
+tile.magical_brewery:stained_planks_wind_charged.name=Stained Planks of Wind Charged
+tile.magical_brewery:stained_planks_weaving.name=Stained Planks of Weaving
+
 ##tile.magical_brewery:stained_slab_decay.name=Stained Slab of Decay
 tile.magical_brewery:stained_slab_harming.name=Stained Slab of Harming
 tile.magical_brewery:stained_slab_healing.name=Stained Slab of Healing
@@ -108,6 +113,10 @@ tile.magical_brewery:stained_slab_swiftness.name=Stained Slab of Swiftness
 tile.magical_brewery:stained_slab_vision_night.name=Stained Slab of Night Vision
 tile.magical_brewery:stained_slab_water_breathing.name=Stained Slab of Water Breathing
 tile.magical_brewery:stained_slab_weakness.name=Stained Slab of Weakness
+tile.magical_brewery:stained_slab_oozing.name=Stained Slab of Oozing
+tile.magical_brewery:stained_slab_infested.name=Stained Slab of Infestation
+tile.magical_brewery:stained_slab_wind_charged.name=Stained Slab of Wind Charged
+tile.magical_brewery:stained_slab_weaving.name=Stained Slab of Weaving
 ##---------------------------------
 
 ##---------------------------------
@@ -128,6 +137,10 @@ tile.magical_brewery:cask_swiftness.name=Cask of Swiftness
 tile.magical_brewery:cask_vision_night.name=Cask of Night Vision
 tile.magical_brewery:cask_water_breathing.name=Cask of Water Breathing
 tile.magical_brewery:cask_weakness.name=Cask of Weakness
+tile.magical_brewery:cask_oozing.name=Cask of Oozing
+tile.magical_brewery:cask_infested.name=Cask of Infestation
+tile.magical_brewery:cask_wind_charged.name=Cask of Wind Charged
+tile.magical_brewery:cask_weaving.name=Cask of Weaving
 ##---------------------------------
 
 ##Seals---------------------------------

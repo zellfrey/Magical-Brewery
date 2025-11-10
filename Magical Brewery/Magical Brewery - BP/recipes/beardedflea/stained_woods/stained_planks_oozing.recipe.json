@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:stained_planks_oozing"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["#P"],
+		"key": {
+			"#": "minecraft:potion_type:oozing",
+			"P": { "tag": "minecraft:planks" }
+		},
+		"result": [
+			{
+				"item": "magical_brewery:stained_planks_oozing",
+				"count": 1
+			},
+			"minecraft:glass_bottle"
+		]
+	}
+}

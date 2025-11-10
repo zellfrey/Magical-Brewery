@@ -1,0 +1,19 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:stained_slab_infested"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["###"],
+		"key": {
+			"#": "magical_brewery:stained_planks_infested"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:stained_slab_infested",
+				"count": 6
+			}
+		]
+    }
+}

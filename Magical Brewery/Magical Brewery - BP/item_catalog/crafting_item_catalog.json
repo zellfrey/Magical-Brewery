@@ -24,7 +24,11 @@
 							"magical_brewery:stained_planks_swiftness",
 							"magical_brewery:stained_planks_vision_night",
 							"magical_brewery:stained_planks_water_breathing",
-							"magical_brewery:stained_planks_weakness"
+							"magical_brewery:stained_planks_weakness",
+							"magical_brewery:stained_planks_oozing",
+							"magical_brewery:stained_planks_infested",
+							"magical_brewery:stained_planks_wind_charged",
+							"magical_brewery:stained_planks_weaving"
 						]
 					},
 					{
@@ -46,7 +50,11 @@
 							"magical_brewery:stained_slab_swiftness",
 							"magical_brewery:stained_slab_vision_night",
 							"magical_brewery:stained_slab_water_breathing",
-							"magical_brewery:stained_slab_weakness"
+							"magical_brewery:stained_slab_weakness",
+							"magical_brewery:stained_slab_oozing",
+							"magical_brewery:stained_slab_infested",
+							"magical_brewery:stained_slab_wind_charged",
+							"magical_brewery:stained_slab_weaving"
 						]
 					}
 				]
@@ -73,7 +81,11 @@
 							"magical_brewery:cask_swiftness",
 							"magical_brewery:cask_vision_night",
 							"magical_brewery:cask_water_breathing",
-							"magical_brewery:cask_weakness"
+							"magical_brewery:cask_weakness",
+							"magical_brewery:cask_oozing",
+							"magical_brewery:cask_infested",
+							"magical_brewery:cask_wind_charged",
+							"magical_brewery:cask_weaving"
 						]
 					},
 					{

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:cask_infested"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["SSS", "I I", "SSS"],
+		"key": {
+			"S": "magical_brewery:stained_planks_infested",
+			"I": "minecraft:iron_ingot"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:cask_infested",
+				"count": 1
+			}
+		]
+	}
+}

@@ -157,6 +157,18 @@
 		"magical_brewery:stained_planks_weakness":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/stained_woods/planks_stained_weakness.png"
 		},
+		"magical_brewery:stained_planks_infested":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/stained_woods/planks_stained_infested.png"
+		},
+		"magical_brewery:stained_planks_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/stained_woods/planks_stained_oozing.png"
+		},
+		"magical_brewery:stained_planks_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/stained_woods/planks_stained_wind_charged.png"
+		},
+		"magical_brewery:stained_planks_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/stained_woods/planks_stained_weaving.png"
+		},
 		"magical_brewery:cask_side_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_decay.png"
 		},
@@ -204,6 +216,18 @@
 		},
 		"magical_brewery:cask_side_weakness":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_weakness.png"
+		},
+		"magical_brewery:cask_side_infested":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_infested.png"
+		},
+		"magical_brewery:cask_side_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_oozing.png"
+		},
+		"magical_brewery:cask_side_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_wind_charged.png"
+		},
+		"magical_brewery:cask_side_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_weaving.png"
 		},
 		"magical_brewery:cask_end_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_decay.png"
@@ -253,6 +277,18 @@
 		"magical_brewery:cask_end_weakness":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_weakness.png"
 		},
+		"magical_brewery:cask_end_infested":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_infested.png"
+		},
+		"magical_brewery:cask_end_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_oozing.png"
+		},
+		"magical_brewery:cask_end_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_wind_charged.png"
+		},
+		"magical_brewery:cask_end_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_weaving.png"
+		},
 		"magical_brewery:cask_front_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_decay.png"
 		},
@@ -300,6 +336,18 @@
 		},
 		"magical_brewery:cask_front_weakness":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_weakness.png"
+		},
+		"magical_brewery:cask_front_infested":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_infested.png"
+		},
+		"magical_brewery:cask_front_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_oozing.png"
+		},
+		"magical_brewery:cask_front_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_wind_charged.png"
+		},
+		"magical_brewery:cask_front_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_weaving.png"
 		},
 		"magical_brewery:seal_basic":{
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_basic.png"

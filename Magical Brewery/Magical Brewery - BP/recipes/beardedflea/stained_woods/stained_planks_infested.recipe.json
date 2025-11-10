@@ -1,0 +1,21 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:stained_planks_infested"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["#P"],
+		"key": {
+			"#": "minecraft:potion_type:infested",
+			"P": { "tag": "minecraft:planks" }
+		},
+		"result": [
+			{
+				"item": "magical_brewery:stained_planks_infested",
+				"count": 1
+			},
+			"minecraft:glass_bottle"
+		]
+	}
+}

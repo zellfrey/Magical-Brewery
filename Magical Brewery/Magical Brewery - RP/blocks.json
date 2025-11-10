@@ -132,7 +132,16 @@
 	"magical_brewery:stained_planks_water_breathing":{
 		"sound" : "wood"
 	},
-	"magical_brewery:stained_planks_weakness":{
+	"magical_brewery:stained_planks_infested":{
+		"sound" : "wood"
+	},
+	"magical_brewery:stained_planks_oozing":{
+		"sound" : "wood"
+	},
+	"magical_brewery:stained_planks_wind_charged":{
+		"sound" : "wood"
+	},
+	"magical_brewery:stained_planks_weaving":{
 		"sound" : "wood"
 	},
 	// "magical_brewery:stained_slab_decay":{
@@ -183,6 +192,18 @@
 	"magical_brewery:stained_slab_weakness":{
 		"sound" : "wood"
 	},
+	"magical_brewery:stained_slab_infested":{
+		"sound" : "wood"
+	},
+	"magical_brewery:stained_slab_oozing":{
+		"sound" : "wood"
+	},
+	"magical_brewery:stained_slab_wind_charged":{
+		"sound" : "wood"
+	},
+	"magical_brewery:stained_slab_weaving":{
+		"sound" : "wood"
+	},
 	// "magical_brewery:cask_decay":{
 	//   "sound" : "chiseled_bookshelf"
 	// },
@@ -229,6 +250,18 @@
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_weakness":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_infested":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_oozing":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_wind_charged":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weaving":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:seal_basic":{
