@@ -1,5 +1,5 @@
 import {Potions} from "@minecraft/server";
-import {getPotencyLevel} from "../potion/potionEffects.js";
+import {getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
 
 export class MinecraftPotion {
 
@@ -53,8 +53,7 @@ export class MinecraftPotion {
 	static getEffectString(effectID){
 		
 		let modifier = ""; 
-
-		if(effectID[0] === "strong" || effectID[0] === "long"){
+		if(POTION_DURATION_LEVELS.includes(effectID[0])){
 
 			switch(effectID[0]){
 				case "strong":
@@ -79,6 +78,16 @@ export class MinecraftPotion {
 		const effectString = effectID.join(" ") + modifier;
 
 		return effectString;
+	}
+
+	static getEffectID(effectID){
+
+		if(POTION_DURATION_LEVELS.includes(effectID[0])){
+
+			effectID.shift();
+		}
+		
+		return effectID.join("_");
 	}
 	
 	static setItemStack(caskFirstPotionEffect, caskPotionLiquid){

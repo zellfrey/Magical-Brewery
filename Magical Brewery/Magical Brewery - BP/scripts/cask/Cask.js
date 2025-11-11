@@ -75,12 +75,25 @@ export class Cask {
         
         return caskPotionIdString;
     }
+	
+	getFirstPotionEffectID(){
 
+		const potionRootID = this.potion_effects[0].split(":")[0]
+		const effectID = this.potion_effects[0].split(":")[1].split("_")
+
+		if(potionRootID === "minecraft"){
+			return MinecraftPotion.getEffectID(effectID);
+        }
+        else{
+            return MagicalBreweryPotion.getEffectID(effectID);
+        }
+	}
+	
     canCaskAge(caskPotionType){
         let canAge = true;
-        const effectId= caskParamEffectToEffectId(caskPotionType.replace("_", ""))
+        const effectId= caskParamEffectToEffectId(caskPotionType).toLowerCase()
         
-        if(effectId === this.potion_effects[0]){
+        if(effectId === this.getFirstPotionEffectID()){
             canAge = false;
         }
         else{

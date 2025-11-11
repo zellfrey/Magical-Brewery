@@ -1,5 +1,5 @@
 import {ItemStack} from "@minecraft/server";
-import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potion/potionEffects.js";
+import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 
 export class MagicalBreweryPotion {
@@ -81,9 +81,19 @@ export class MagicalBreweryPotion {
 
 		let modifier = ""; 
 
-		if(effectID[0] === "xstrong" || effectID[0] === "xlong"){
+		if(POTION_DURATION_LEVELS.includes(effectID[0])){
 
 			switch(effectID[0]){
+				case "strong":
+					if(effectID[1] === "slowness"){
+						modifier += " IV"
+					}else{
+						modifier += " II" 
+					}
+				break;
+				case "long": 
+					modifier += " Extended" 
+				break;
 				case "xstrong":
 					if(effectID[1] === "slowness"){
 						modifier += " V"
@@ -99,6 +109,10 @@ export class MagicalBreweryPotion {
 			effectID.shift();
 		}
 		
+		if(effectID[0] === "vision" || effectID[0] === "resistance"){
+			effectID = [effectID[1], effectID[0]]
+		}
+		
 		for(let i = 0; i < effectID.length; i++){
 			effectID[i] = effectID[i][0].toUpperCase() + effectID[i].substring(1);
 		}
@@ -106,6 +120,23 @@ export class MagicalBreweryPotion {
 		const effectString = effectID.join(" ") + modifier;
 
 		return effectString;
+	}
+
+	static getEffectID(effectID){
+		
+		//remove potion element(1st)
+		effectID.shift();
+		
+		if(POTION_DURATION_LEVELS.includes(effectID[0])){
+
+			effectID.shift();
+		}
+		
+		
+		if(effectID[0] === "vision" || effectID[0] === "resistance"){
+			effectID = [effectID[1], effectID[0]]
+		}
+		return effectID.join("_");
 	}
 
 	static setItemStack(caskFirstPotionEffect){
