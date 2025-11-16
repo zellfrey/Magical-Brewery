@@ -90,6 +90,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
     applyOnHitEffects(e.hurtEntity)
 });
 
+
 function applyOnHitEffects(hurtEntity){
 
     const onHitEffects = hurtEntity.getEffects().filter((effect) => ON_HIT_EFFECTS.includes(effect.typeId));
@@ -102,13 +103,36 @@ function applyOnHitEffects(hurtEntity){
 
         switch(effect.typeId){
             case "minecraft:infested":
-                // system.runJob(applyOozingEffect(entity, dimension, effect.amplifier));
-                console.log("spoopy silver")
+                applyInfestedEffect(hurtEntity, hurtEntity.dimension, effect.amplifier)
             break;
         }
     });
     
-    console.log(JSON.stringify(hurtEntity.getViewDirection()))
+	
+	   
+}
+
+function applyInfestedEffect(entity, dimension, potency){
+	
+    let amountToSpawn = potency + MathUtils.getRandomInt(2)
+	
+    system.runJob(spawnInfestedSilverFish(entity, dimension, amountToSpawn, entity.getViewDirection()))
+    
+}
+
+function* spawnInfestedSilverFish(entity, dimension, amountToSpawn, appliedVelocity){
+
+    for(let i = 0; i < amountToSpawn; i++){
+
+        let silverfishEntity  = dimension.spawnEntity("minecraft:silverfish", entity.location)
+
+		appliedVelocity.x = appliedVelocity.x/10 + MathUtils.getRndFloat(-5, 5)/10
+		appliedVelocity.z = appliedVelocity.z/10 + MathUtils.getRndFloat(-5, 5)/10
+
+	    silverfishEntity.applyImpulse(appliedVelocity)
+        yield;
+    } 
+
 }
 
 function applyWindChargedEffect(entity, dimension, potency){
