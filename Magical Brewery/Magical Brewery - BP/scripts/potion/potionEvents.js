@@ -114,6 +114,8 @@ function applyOnHitEffects(hurtEntity){
 
 function applyInfestedEffect(entity, dimension, potency){
 	
+	if(Math.floor(Math.random() * 100) > (10 + (potency * 2.5))) return;
+	
     let amountToSpawn = potency + MathUtils.getRandomInt(2)
 	
     system.runJob(spawnInfestedSilverFish(entity, dimension, amountToSpawn, entity.getViewDirection()))
