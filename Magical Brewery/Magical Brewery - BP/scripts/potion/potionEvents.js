@@ -60,11 +60,11 @@ system.beforeEvents.startup.subscribe(eventData => {
         onUse(e) {
 
             const {source, itemStack} = e
-            const{block} = source.getBlockFromViewDirection({includeLiquidBlocks: true, maxDistance: 4.0});
-            
-            if(block.typeId === "minecraft:water" || block.isWaterlogged){
-                console.log("filling from water")
-            }
+            // const{block} = source.getBlockFromViewDirection({includeLiquidBlocks: true, maxDistance: 4.0});
+            //Another for loop to iterate through each horizontal cardinal direction adding to the y value
+            // if(block.typeId === "minecraft:water" || block.isWaterlogged){
+            //     console.log("filling from water")
+            // }
             //Currently I cannot edit the filllevel of a potion, in the meantime, this is what we get
 
             // else if(block.typeId === "minecraft:cauldron"){
@@ -137,17 +137,14 @@ function* spawnInfestedSilverFish(entity, dimension, amountToSpawn, appliedVeloc
 
 }
 
-function applyWindChargedEffect(entity, dimension, potency){
-   console.log("Must have been the wind") 
-}
+
 
 world.afterEvents.entityHealthChanged.subscribe((e) => {
 
     if(!e.entity.isValid || !e.entity.dimension.isChunkLoaded(e.entity.location) 
         || e.newValue > 0 || e.entity.getEffects().length === 0) return;
-
-    applyOnDeathEffects(e.entity)
     
+    applyOnDeathEffects(e.entity)
 });
 
 
@@ -220,6 +217,61 @@ function* placeWeavingWebs(noOfWebsToSpawn, dimension, validWebSpawnLocations){
     }
 }
 
+function applyWindChargedEffect(entity, dimension, potency){
+
+    const deadEntityLocation = entity.location;
+    const deadEntityID = entity.id;
+
+    const degreeInterval  = 10;
+    const vector3Directions = MathUtils.getVector3Sphere(MathUtils.getHorizontalDirectionalVectors(degreeInterval), degreeInterval)
+    
+    const totalEntities = [];
+    const uniqueEntityIDs = []
+    const maxDistance = 6;
+	const entityRaycastOptions = {includePassableBlocks: true, includeLiquidBlocks: true, maxDistance: maxDistance};
+
+    vector3Directions.forEach(vector3Direction => {
+        const entities =  dimension.getEntitiesFromRay(deadEntityLocation, vector3Direction, entityRaycastOptions)
+			
+		if(entities.length > 0){
+		    entities.forEach(entityRayCastHit => {
+                if(entityRayCastHit.entity.id == deadEntityID || uniqueEntityIDs.includes(entityRayCastHit.entity.id) ) return;
+                    totalEntities.push(entityRayCastHit)
+                    uniqueEntityIDs.push(entityRayCastHit.entity.id)
+                })
+		}
+    })
+
+	system.runJob(launchEntity(deadEntityLocation, totalEntities, maxDistance, potency))
+}
+
+function* launchEntity(deadEntityLocation, totalEntities, maxDistance, potency){
+    
+	const impulseStrength = potency /2.25
+
+    for(let i = 0; i <= totalEntities.length; i++){
+
+        if(totalEntities[i] === undefined) continue;
+
+        const location  = totalEntities[i].entity.location;
+        
+        const distance = Math.abs(MathUtils.euclideanVector3Distance(deadEntityLocation.x, deadEntityLocation.y, deadEntityLocation.z,
+                                                             location.x, location.y, location.z))
+  
+		if(distance > maxDistance) continue;
+		
+        const fallOffDistancePercentage =  100 - Math.round(distance / maxDistance * 100);
+        const slopeDirection = {x:location.x - deadEntityLocation.x, y:location.y - deadEntityLocation.y, z:location.z - deadEntityLocation.z}
+        
+		slopeDirection.x *= fallOffDistancePercentage/100 * impulseStrength;
+		slopeDirection.y*= fallOffDistancePercentage/100 * impulseStrength;
+		slopeDirection.z *= fallOffDistancePercentage/100 * impulseStrength;
+		
+		totalEntities[i].entity.applyImpulse(slopeDirection)
+
+        yield;
+    }
+}
 
 
 
