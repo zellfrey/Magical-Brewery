@@ -1,4 +1,12 @@
 -----------------------------------------------
+v0.3.6
+Updated:
+    Magical Brewery is now compatible with Vibrant Visuals
+Author comment:
+I will continue with PBR textures at a later date. For now, I've just added 
+the capabilities "pbr". MERS and that jazz will be in the works
+-----------------------------------------------
+-----------------------------------------------
 v0.3.5
 Updated:
     General:
