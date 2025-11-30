@@ -1,4 +1,20 @@
 -----------------------------------------------
+v0.3.5
+Updated:
+    General:
+        Added Potion variants, stained woods, stained slabs and casks for;
+             - Oozing
+             - Wind Charged
+             - Infested
+             - Weaving
+    Scripts:
+        Fixed a typo in the Brewer'tome
+        Casks shouldn't age when a potion has a similar effect
+        Added Potency functionality for Oozing, Wind Charged, Infested, and Weaving.
+Author comment:
+Can't think of anything to comments. It's 4am. Next update will be more impactful
+-----------------------------------------------
+-----------------------------------------------
 v0.3.4
 Updated:
     Scripts:

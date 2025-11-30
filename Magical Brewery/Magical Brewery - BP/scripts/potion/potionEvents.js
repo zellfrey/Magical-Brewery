@@ -101,9 +101,11 @@ function applyOnHitEffects(hurtEntity){
 
         if(effect.amplifier ===0) return;
 
+        let potency = effect.amplifier > 5 ? 5 : effect.amplifier;
+
         switch(effect.typeId){
             case "minecraft:infested":
-                applyInfestedEffect(hurtEntity, hurtEntity.dimension, effect.amplifier)
+                applyInfestedEffect(hurtEntity, hurtEntity.dimension, potency)
             break;
         }
     });
@@ -159,16 +161,18 @@ function applyOnDeathEffects(entity){
 
         if(effect.amplifier ===0) return;
 
+        let potency = effect.amplifier > 5 ? 5 : effect.amplifier;
+
         switch(effect.typeId){
             case "minecraft:oozing":
-                system.runJob(applyOozingEffect(entity, dimension, effect.amplifier));
+                system.runJob(applyOozingEffect(entity, dimension, potency));
             break;
             case "minecraft:weaving":
-                applyWeavingEffect(entity, dimension, effect.amplifier);
+                applyWeavingEffect(entity, dimension, potency);
                 
             break;
             case "minecraft:wind_charged":
-                applyWindChargedEffect(entity, dimension, effect.amplifier);
+                applyWindChargedEffect(entity, dimension, potency);
                 
             break;
         }
