@@ -11,31 +11,31 @@ import "./potion/potionEffects.js"
 import "./tome/tome.js"
 import "./utils/lootUtils.js"
 
-// import {world, system} from "@minecraft/server";
+import {world, system} from "@minecraft/server";
 
-// system.runInterval(
-//     () => {
-//         const players = world.getAllPlayers();
-//         for (let i = 0; i < players.length; i++) {
-//             const player = players[i];
-//             try {
-//                 const { block, face } = player.getBlockFromViewDirection();
-// 				// const directionVector  = player.getViewDirection();
-//                 if (!block) {
-//                     player.onScreenDisplay.setActionBar( "Not looking at a Block." );
-//                     return;
-//                 };
+system.runInterval(
+    () => {
+        const players = world.getAllPlayers();
+        for (let i = 0; i < players.length; i++) {
+            const player = players[i];
+            try {
+                const { block, face } = player.getBlockFromViewDirection();
+				// const directionVector  = player.getViewDirection();
+                if (!block) {
+                    player.onScreenDisplay.setActionBar( "Not looking at a Block." );
+                    return;
+                };
                 
-//                 player.onScreenDisplay.setActionBar(
-//                     `§rblock: §7${block.typeId}§r, face: §7${face}§r, xyz: §6${block.location.x} §r/ §6${block.location.y} §r/ §6${block.location.z}§r,\n`
-//                     + `data: §7${JSON.stringify(block.permutation.getAllStates(), null, 4)}`
-//                 );
-// 				// player.onScreenDisplay.setActionBar(
-//                 //     `x: ${directionVector.x}, y: ${directionVector.y}, z: ${directionVector.z}`
-//                 // );
-//             } catch {
-//                 player.onScreenDisplay.setActionBar( "Not looking at a Block." );
-//             };
-//         };
-//     },
-// );
+                player.onScreenDisplay.setActionBar(
+                    `§rblock: §7${block.typeId}§r, face: §7${face}§r, xyz: §6${block.location.x} §r/ §6${block.location.y} §r/ §6${block.location.z}§r,\n`
+                    + `data: §7${JSON.stringify(block.permutation.getAllStates(), null, 4)}`
+                );
+				// player.onScreenDisplay.setActionBar(
+                //     `x: ${directionVector.x}, y: ${directionVector.y}, z: ${directionVector.z}`
+                // );
+            } catch {
+                player.onScreenDisplay.setActionBar( "Not looking at a Block." );
+            };
+        };
+    },
+);

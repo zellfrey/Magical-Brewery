@@ -1,10 +1,10 @@
 {
     "format_version": 2, 
     "header": { 
-        "description": "Behaviour pack for Magical Brewery addon v0.3.6 - alpha", 
-        "name": "Magical Brewery BP", 
+        "description": "Behaviour pack for Magical Brewery addon v0.4 - alpha", 
+        "name": "Magical Brewery BP - v0.4", 
         "uuid": "dbbbb4fb-bf6d-4551-871c-45862f31a014", 
-        "version": [0, 3, 6], 
+        "version": [0, 4, 0], 
         "min_engine_version": [ 1, 21, 120 ] 
     },
     "metadata":{
@@ -14,10 +14,10 @@
     }, 
     "modules": [ 
         { 
-            "description":"Behaviour pack for Magical Brewery addon v0.3.6 - alpha", 
+            "description":"Behaviour pack for Magical Brewery addon v0.4 - alpha", 
             "type": "data", 
             "uuid": "d6383502-c606-4c70-970c-a21086b9c843", 
-            "version": [0, 3, 6] 
+            "version": [0, 4, 0] 
         },
         {
             "uuid": "efc912b2-2809-4a28-ba04-e5b8c6ac7c7b",
@@ -30,7 +30,7 @@
     "dependencies": [ 
         { 
             "uuid": "b980ea2e-49a0-4098-89b6-6db625d2b05d", 
-            "version": [0, 3, 6] 
+            "version": [0, 4, 0] 
         },
         {
             "module_name": "@minecraft/server",

@@ -86,6 +86,7 @@ function forceAgeCask(block, source){
     cask.addAgedPotionEffect(caskPotionType);
     Cask.updateCask(cask);
     cask.setCaskAge(block);
+	cask.setCaskQuality(block);
     cask.deleteCaskSeal();
     source.sendMessage({ translate: "magical_brewery:message.ageless_pocket_watch.cask_aged"});
 }

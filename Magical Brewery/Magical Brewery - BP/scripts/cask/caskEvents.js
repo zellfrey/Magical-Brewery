@@ -207,7 +207,7 @@ function ageCask(block, caskPotionType){
         cask.addAgedPotionEffect(caskPotionType)
         Cask.updateCask(cask)
         cask.setCaskAge(block);
-        // cask.setCaskChargeLevel(block)
+        cask.setCaskQuality(block)
         cask.deleteCaskSeal();
         
     }

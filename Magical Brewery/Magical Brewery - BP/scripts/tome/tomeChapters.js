@@ -187,11 +187,11 @@ export const TOME_CHAPTERS = {
 			// 	id: "Expansion",
 			// 	icon: "textures/beardedflea/magical_brewery/items/seals/seal_expansion_1.png"
 			// },
-			// {
-			// 	chapter: "magical_brewery:tome_chapter_seal_retainment.title",
-			// 	id: "Retainment",
-			// 	icon: "texturesbeardedflea/magical_brewery/items/seals/seal_retainment.png"
-			// },
+			{
+				chapter: "magical_brewery:tome_chapter_seal_retainment.title",
+				id: "Retainment",
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png"
+			},
 		],
 		exitPage: "Ageing"
     },

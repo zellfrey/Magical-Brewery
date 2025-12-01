@@ -50,8 +50,12 @@ export class Seal {
             if(!seal.hasTag("magical_brewery:seal") || system.currentTick > ageEndTick) return;
 
             const face = seal.permutation.getState("minecraft:block_face")
-            const sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
-        
+            let sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
+            console.log()
+            if(sealType === "magical_brewery:retainment"){
+                console.log("retainment particle")
+                sealType = "magical_brewery:potency";
+            }
             let particleSpawnVector3 = MathUtils.addVectorFromBlockFace(face, seal.center());
             particleSpawnVector3.y += MathUtils.getRndFloat(-2.5, 3)
 
@@ -89,6 +93,7 @@ export class Seal {
     
         dim.setBlockType(this.location, "minecraft:air");
     }
+	
     static setSeal(seal, cask){
         if(!seal){
             cask.seal = new Seal();
@@ -102,14 +107,15 @@ export class Seal {
     }
 
     static isSameType(seal, cask){
-    if(!seal) return false;
+		if(!seal) return false;
 
-    const sealType = seal.getTags().find(el => el !== "magical_brewery:seal").slice(16);
-    const sealStrength = seal.permutation.getState("magical_brewery:seal_level");
+		const sealType = seal.getTags().find(el => el !== "magical_brewery:seal").slice(16);
+		const sealStrength = seal.permutation.getState("magical_brewery:seal_level");
 
-    return cask.seal.strength === sealStrength && cask.seal.type  === sealType;
+		return cask.seal.strength === sealStrength && cask.seal.type  === sealType;
 
     }
+	
     static findSeal(block){
         try{
             const crossBlocks = [];

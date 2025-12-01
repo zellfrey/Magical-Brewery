@@ -211,10 +211,10 @@ export class Cask {
         
         const potionEffect = POTION_EFFECTS[caskPotionType]
         let effectName = potionEffect.effects
-        let sealType = this.seal.type;
         let sealStrength = this.seal.strength;
 
-        if(sealType === "potency"){
+        if(this.seal.type === "potency"){
+
             let potionPotency;
 
             if(effectName.includes("Instant")){
@@ -252,6 +252,27 @@ export class Cask {
         particleLocation.y += 0.4
         block.dimension.spawnParticle("minecraft:crop_growth_emitter", particleLocation);
 
+    }
+
+    setCaskQuality(block){
+        if(this.seal.type === "retainment" && this.seal.affectCaskAgeing){
+            console.log("Retaining quality of cask")
+            return;
+        } 
+
+        const charge_level = block.permutation.getState("magical_brewery:charge_level");
+        const fillLevel = block.permutation.getState("magical_brewery:fill_level");
+
+        if(charge_level == 4){
+            console.log("setting cask to default cask")
+
+            // const caskNoEffect = block.setType("magical_brewery:cask");
+            // caskNoEffect.setPermutation(block.permutation.withState("magical_brewery:fillLevel", fillLevel));
+
+        }else{
+            console.log("degrading cask quality")
+            block.setPermutation(block.permutation.withState("magical_brewery:charge_level", charge_level+1));
+        }
     }
 
     deleteCaskSeal(){
