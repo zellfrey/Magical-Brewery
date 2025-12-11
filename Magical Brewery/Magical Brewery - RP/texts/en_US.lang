@@ -141,6 +141,15 @@ tile.magical_brewery:cask_oozing.name=Cask of Oozing
 tile.magical_brewery:cask_infested.name=Cask of Infestation
 tile.magical_brewery:cask_wind_charged.name=Cask of Wind Charged
 tile.magical_brewery:cask_weaving.name=Cask of Weaving
+magical_brewery:cask_quality=Quality
+##---------------------------------
+
+
+##Cask Variants---------------------------------
+tile.magical_brewery:cask_harming_quality_4.name=Cask of Harming\n§7Quality: 4
+tile.magical_brewery:cask_harming_quality_3.name=Cask of Harming\n§7Quality: 3
+tile.magical_brewery:cask_harming_quality_2.name=Cask of Harming\n§7Quality: 2
+tile.magical_brewery:cask_harming_quality_1.name=Cask of Harming\n§7Quality: 1
 ##---------------------------------
 
 ##Seals---------------------------------

@@ -1,4 +1,4 @@
-import {world, system, ItemStack, MolangVariableMap} from "@minecraft/server";
+import {world, system, ItemStack, MolangVariableMap, BlockPermutation} from "@minecraft/server";
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potion/potionEffects.js";
 import {MagicalBreweryPotion} from "../potion/MagicalBreweryPotion.js";
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
@@ -93,7 +93,7 @@ export class Cask {
         let canAge = true;
         const effectId= caskParamEffectToEffectId(caskPotionType).toLowerCase()
         
-        if(effectId === this.getFirstPotionEffectID()){
+        if(this.potion_effects.length == 0 || effectId === this.getFirstPotionEffectID()){
             canAge = false;
         }
         else{
@@ -254,24 +254,33 @@ export class Cask {
 
     }
 
-    setCaskQuality(block){
+    setCaskQuality(block, caskBlockEffectId){
         if(this.seal.type === "retainment" && this.seal.affectCaskAgeing){
             console.log("Retaining quality of cask")
             return;
         } 
 
-        const charge_level = block.permutation.getState("magical_brewery:charge_level");
-        const fillLevel = block.permutation.getState("magical_brewery:fill_level");
-
-        if(charge_level == 4){
+		let caskQuality = parseInt(block.typeId.charAt(block.typeId.length-1))
+		const fillLevel = block.permutation.getState("magical_brewery:fill_level");
+		const caskDirection = block.permutation.getState("minecraft:cardinal_direction");
+		
+		caskQuality = isNaN(caskQuality) ? 5 : caskQuality;
+        
+        if(caskQuality == 1){
             console.log("setting cask to default cask")
 
             // const caskNoEffect = block.setType("magical_brewery:cask");
             // caskNoEffect.setPermutation(block.permutation.withState("magical_brewery:fillLevel", fillLevel));
 
         }else{
-            console.log("degrading cask quality")
-            block.setPermutation(block.permutation.withState("magical_brewery:charge_level", charge_level+1));
+			caskQuality--;
+			
+			block.setType(`magical_brewery:cask_harming_quality_${caskQuality}`)
+			
+			const caskStates = { "magical_brewery:fill_level": fillLevel, "magical_brewery:aged": true, "minecraft:cardinal_direction": caskDirection }
+			const caskPermutations = BlockPermutation.resolve(`magical_brewery:cask_${caskBlockEffectId}_quality_${caskQuality}`, caskStates);
+			
+			block.setPermutation(caskPermutations);
         }
     }
 
@@ -285,6 +294,10 @@ export class Cask {
     }
     static createCask(blockDimensionID, blockLocation){
 
+        const index = Cask.findIndexCask(blockDimensionID, blockLocation)
+        //Setting the cask quality does "place" a new block, so the check is to prevent duplicate values being created
+        if(index !== -1) return;
+        
         new Cask(blockDimensionID, blockLocation)
         let caskJSONData = world.getDynamicProperty('magical_brewery:cask_data')
         if (caskJSONData) {
@@ -294,7 +307,7 @@ export class Cask {
             caskJSONData = [Cask.casks[0]]
         }
         world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskJSONData))
-
+        console.log(Cask.casks.length)
     }
 
     static updateCask(cask){
@@ -316,7 +329,6 @@ export class Cask {
         
         const caskJSONData = JSON.parse(world.getDynamicProperty('magical_brewery:cask_data'));
         caskJSONData.splice(index, 1);
-
         world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskJSONData));
     }
 

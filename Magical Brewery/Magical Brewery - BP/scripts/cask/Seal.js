@@ -51,7 +51,8 @@ export class Seal {
 
             const face = seal.permutation.getState("minecraft:block_face")
             let sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
-            console.log()
+
+            //TODO Make seal of retainment particles
             if(sealType === "magical_brewery:retainment"){
                 console.log("retainment particle")
                 sealType = "magical_brewery:potency";

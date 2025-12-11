@@ -154,7 +154,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ot_cask_aging', {
         onTick(e,p) {
-            ageCask(e.block, p.params.cask.effect)
+            ageCask(e.block, p.params.cask)
         }
     });
 });
@@ -190,10 +190,10 @@ function sendAgingTasteMessage(player, caskTranslateKey, ageCompletionPercentage
     player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.aging"});
 }
 
-function ageCask(block, caskPotionType){
+function ageCask(block, caskParameters){
     let cask = Cask.casks[Cask.findIndexCask(block.dimension.id, block.location)]
     
-    if(!cask || !cask.canCaskAge(caskPotionType)) return;
+    if(!cask || !cask.canCaskAge(caskParameters.effect)) return;
 
     const fillLevel = block.permutation.getState("magical_brewery:fill_level");
     const ageEndTick = cask.age_start_tick + 12000*cask.potion_effects.length + fillLevel*10
@@ -204,10 +204,10 @@ function ageCask(block, caskPotionType){
     if(ageEndTick <= system.currentTick){
         
         cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel)
-        cask.addAgedPotionEffect(caskPotionType)
+        cask.addAgedPotionEffect(caskParameters.effect)
         Cask.updateCask(cask)
         cask.setCaskAge(block);
-        cask.setCaskQuality(block)
+        cask.setCaskQuality(block, caskParameters.id)
         cask.deleteCaskSeal();
         
     }

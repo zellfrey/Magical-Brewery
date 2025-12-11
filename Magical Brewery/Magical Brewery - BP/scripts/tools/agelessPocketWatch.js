@@ -82,11 +82,13 @@ function forceAgeCask(block, source){
         source.sendMessage({ translate: "magical_brewery:message.ageless_pocket_watch.cask_cannot_age"});
         return;
     }
+    const caskBlockParams = block.getComponent("magical_brewery:ot_cask_aging").customComponentParameters.params.cask
+	
     cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel, 100)
-    cask.addAgedPotionEffect(caskPotionType);
+    cask.addAgedPotionEffect(caskBlockParams.effect);
     Cask.updateCask(cask);
     cask.setCaskAge(block);
-	cask.setCaskQuality(block);
+	cask.setCaskQuality(block, caskBlockParams.id);
     cask.deleteCaskSeal();
     source.sendMessage({ translate: "magical_brewery:message.ageless_pocket_watch.cask_aged"});
 }
