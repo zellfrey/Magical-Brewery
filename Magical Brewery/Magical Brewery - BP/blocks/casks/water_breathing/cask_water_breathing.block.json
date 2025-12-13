@@ -101,6 +101,9 @@
 						"cask":{
 							"effect": "Water_Breathing",
 							"id": "water_breathing"
+						},
+						"seal":{
+							"no_effect": ["potency", "memories"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

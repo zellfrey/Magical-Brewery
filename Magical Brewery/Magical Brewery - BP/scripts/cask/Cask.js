@@ -184,14 +184,13 @@ export class Cask {
         }
     }
 
-    checkSeal(block, timeToAge){
+    checkSeal(block, timeToAge, caskNoEffectSeals){
         let seal = Seal.findSeal(block)
 
         //If there is no seal the lifetime will remain the same, reducing the ability of affecting the age
         if(Seal.isSameType(seal, this)){
-
-            if(MathUtils.equalsVector3(seal.location, this.seal.location)){
-                
+            
+            if(MathUtils.equalsVector3(seal.location, this.seal.location) && !caskNoEffectSeals.includes(this.seal.type)){
                 this.seal.addLifetime(timeToAge, this)
             }
             else{

@@ -38,7 +38,7 @@ export class Seal {
         this.previousTick = system.currentTick
     }
 
-    spawnSealSingleFlameParticle(dimension, ageEndTick){
+    spawnSealSingleFlameParticle(dimension, ageEndTick, caskNoEffectSeals){
         if(this.location === undefined ||Object.keys(this.location).length === 0) return;
 
         const tickDelay = Math.floor(Math.random() * 30)
@@ -47,7 +47,7 @@ export class Seal {
 
             const seal = dimension.getBlock(this.location);
 
-            if(!seal.hasTag("magical_brewery:seal") || system.currentTick > ageEndTick) return;
+            if(!seal.hasTag("magical_brewery:seal") || caskNoEffectSeals.includes(this.type) || system.currentTick > ageEndTick) return;
 
             const face = seal.permutation.getState("minecraft:block_face")
             let sealType = seal.getTags().find(el => el !== "magical_brewery:seal");

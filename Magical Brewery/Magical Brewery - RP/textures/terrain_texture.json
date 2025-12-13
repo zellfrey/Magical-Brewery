@@ -359,7 +359,13 @@
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_water_breathing.png"
 		},
 		"magical_brewery:cask_side_water_breathing_quality_4":{
-			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_quality_overlay_4_test.png"
+			"textures": [
+                "textures/beardedflea/magical_brewery/blocks/casks/cask_side_water_breathing.png",
+                {
+                    "path": "textures/beardedflea/magical_brewery/blocks/casks/cask_quality_overlay_4_test.png"
+                }
+            ],
+            "additive": true
 		},
 		"magical_brewery:cask_side_water_breathing_quality_3":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_quality_overlay_3_test.png"
