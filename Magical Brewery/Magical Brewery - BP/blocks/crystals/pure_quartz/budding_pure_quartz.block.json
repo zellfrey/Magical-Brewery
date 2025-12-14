@@ -22,6 +22,10 @@
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 1.5
 			},
+			"minecraft:redstone_conductivity": {
+                "redstone_conductor": false,
+                "allows_wire_to_step_down": true
+            },
 			"minecraft:tick": {
 				"interval_range": [20,20]
 			},

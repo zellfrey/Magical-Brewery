@@ -1,5 +1,5 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.80",
 	"minecraft:block": {
 		"description": {
 			"identifier": "magical_brewery:glowstone_shard_block",
@@ -19,6 +19,10 @@
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 1.5
 			},
+			"minecraft:redstone_conductivity": {
+                "redstone_conductor": false,
+                "allows_wire_to_step_down": true
+            },
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "magical_brewery:glowstone_shard_block",
