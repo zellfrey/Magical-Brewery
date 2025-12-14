@@ -102,6 +102,9 @@
 						"cask":{
 							"effect": "Slowness",
 							"id": "slowness"
+						},
+						"seal":{
+							"no_effect": []
 						}
 					},
 					"magical_brewery:opd_cask": {},

@@ -101,6 +101,9 @@
 						"cask":{
 							"effect": "Oozing",
 							"id": "oozing"
+						},
+						"seal":{
+							"no_effect": ["memories"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

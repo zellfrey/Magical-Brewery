@@ -102,6 +102,9 @@
 						"cask":{
 							"effect": "Infested",
 							"id": "infested"
+						},
+						"seal":{
+							"no_effect": []
 						}
 					},
 					"magical_brewery:opd_cask": {},

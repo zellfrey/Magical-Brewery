@@ -101,6 +101,9 @@
 						"cask":{
 							"effect": "Fire_Resistance",
 							"id": "resistance_fire"
+						},
+						"seal":{
+							"no_effect": ["potency", "memories"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

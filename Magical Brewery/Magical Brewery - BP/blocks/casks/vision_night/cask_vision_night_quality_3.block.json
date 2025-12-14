@@ -102,6 +102,9 @@
 						"cask":{
 							"effect": "Night_Vision",
 							"id": "vision_night"
+						},
+						"seal":{
+							"no_effect": ["potency"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

@@ -101,6 +101,9 @@
 						"cask":{
 							"effect": "Wind_Charged",
 							"id": "wind_charged"
+						},
+						"seal":{
+							"no_effect": ["memories"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

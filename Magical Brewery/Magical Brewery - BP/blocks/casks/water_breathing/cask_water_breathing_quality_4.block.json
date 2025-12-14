@@ -104,7 +104,7 @@
 							"id": "water_breathing"
 						},
 						"seal":{
-							"no_effect": ["potency", "memories"]
+							"no_effect": ["potency"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

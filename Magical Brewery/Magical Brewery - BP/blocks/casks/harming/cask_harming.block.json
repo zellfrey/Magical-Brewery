@@ -101,6 +101,9 @@
 						"cask":{
 							"effect": "Harming",
 							"id": "harming"
+						},
+						"seal":{
+							"no_effect": ["longevity", "memories"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

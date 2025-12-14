@@ -102,6 +102,9 @@
 						"cask":{
 							"effect": "Healing",
 							"id": "healing"
+						},
+						"seal":{
+							"no_effect": ["longevity"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

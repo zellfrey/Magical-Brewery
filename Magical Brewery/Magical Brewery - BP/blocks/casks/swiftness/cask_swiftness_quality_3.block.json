@@ -102,6 +102,9 @@
 						"cask":{
 							"effect": "Swiftness",
 							"id": "swiftness"
+						},
+						"seal":{
+							"no_effect": []
 						}
 					},
 					"magical_brewery:opd_cask": {},

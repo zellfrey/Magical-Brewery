@@ -101,6 +101,9 @@
 						"cask":{
 							"effect": "Weakness",
 							"id": "weakness"
+						},
+						"seal":{
+							"no_effect": ["potency", "memories"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

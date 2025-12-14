@@ -102,6 +102,9 @@
 						"cask":{
 							"effect": "Strength",
 							"id": "strength"
+						},
+						"seal":{
+							"no_effect": []
 						}
 					},
 					"magical_brewery:opd_cask": {},

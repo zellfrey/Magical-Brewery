@@ -101,6 +101,9 @@
 						"cask":{
 							"effect": "Slow_Falling",
 							"id": "slow_falling"
+						},
+						"seal":{
+							"no_effect": ["potency", "memories"]
 						}
 					},
 					"magical_brewery:opd_cask": {},
