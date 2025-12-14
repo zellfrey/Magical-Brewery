@@ -4,7 +4,8 @@
 		"description": {
 			"identifier": "magical_brewery:potion_long_oozing",
 			"menu_category": {
-				"category": "equipment"
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.potion"
 			}
 		},
 		"components": {

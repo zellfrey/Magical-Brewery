@@ -212,7 +212,11 @@
 							"magical_brewery:potion_xlong_vision_night",
 							"magical_brewery:potion_xlong_water_breathing",
 							"magical_brewery:potion_xlong_weakness",
-							"magical_brewery:potion_xlong_turtle_master"
+							"magical_brewery:potion_xlong_turtle_master",
+							"magical_brewery:potion_xlong_infested",
+							"magical_brewery:potion_xlong_oozing",
+							"magical_brewery:potion_xlong_weaving",
+							"magical_brewery:potion_xlong_wind_charged"
 						]
 					},
 					{
@@ -229,7 +233,11 @@
 							"magical_brewery:potion_xstrong_slowness",
 							"magical_brewery:potion_xstrong_strength",
 							"magical_brewery:potion_xstrong_swiftness",
-							"magical_brewery:potion_xstrong_turtle_master"
+							"magical_brewery:potion_xstrong_turtle_master",
+							"magical_brewery:potion_xstrong_infested",
+							"magical_brewery:potion_xstrong_oozing",
+							"magical_brewery:potion_xstrong_weaving",
+							"magical_brewery:potion_xstrong_wind_charged"
 						]
 					}
 				]
