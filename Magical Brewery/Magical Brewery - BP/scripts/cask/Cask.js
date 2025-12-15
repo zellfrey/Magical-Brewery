@@ -43,14 +43,21 @@ export class Cask {
     matchesCaskPotion(potion, extraEffects){
         const matchesEffect = this.potion_effects[0] === potion["effectID"];
         const matchesLiquid = this.potion_liquid === potion["deliveryType"];
-
-        let matchesExtraEffects;
-        if(this.potion_effects.length < 1 || extraEffects.length === 0){
+		
+		if(!matchesEffect || !matchesLiquid) return false;
+        
+        const caskExtraEffects = this.potion_effects.slice(1).sort();
+        const potionExtraEffects = extraEffects.sort();
+        
+		if(caskExtraEffects.length != potionExtraEffects.length) return false;
+		
+		let matchesExtraEffects;
+		
+        if(potionExtraEffects.length === 0|| caskExtraEffects.length < 1){
             matchesExtraEffects = true;
-        } 
+        }
         else{
-            const caskExtraEffects = this.potion_effects.slice(1).sort();
-            const potionExtraEffects = extraEffects.sort();
+            
             for(let i = 0; i < caskExtraEffects.length; i++){
                 matchesExtraEffects = caskExtraEffects[i] === potionExtraEffects[i] ? true : false;
                 if(!matchesExtraEffects) break;
@@ -265,22 +272,22 @@ export class Cask {
 		
 		caskQuality = isNaN(caskQuality) ? 5 : caskQuality;
         
+        let newBlockTypeId;
+        
         if(caskQuality == 1){
-            console.log("setting cask to default cask")
-
-            // const caskNoEffect = block.setType("magical_brewery:cask");
-            // caskNoEffect.setPermutation(block.permutation.withState("magical_brewery:fillLevel", fillLevel));
-
-        }else{
-			caskQuality--;
-			
-			block.setType(`magical_brewery:cask_harming_quality_${caskQuality}`)
-			
-			const caskStates = { "magical_brewery:fill_level": fillLevel, "magical_brewery:aged": true, "minecraft:cardinal_direction": caskDirection }
-			const caskPermutations = BlockPermutation.resolve(`magical_brewery:cask_${caskBlockEffectId}_quality_${caskQuality}`, caskStates);
-			
-			block.setPermutation(caskPermutations);
+            newBlockTypeId = "magical_brewery:cask_no_effect";
         }
+        else{
+			caskQuality--;
+			newBlockTypeId = `magical_brewery:cask_${caskBlockEffectId}_quality_${caskQuality}`;
+        }
+        block.setType(newBlockTypeId)
+			
+        const caskStates = { "magical_brewery:fill_level": fillLevel, "magical_brewery:aged": true, "minecraft:cardinal_direction": caskDirection }
+        const caskPermutations = BlockPermutation.resolve(newBlockTypeId, caskStates);
+        
+        block.setPermutation(caskPermutations);
+
     }
 
     deleteCaskSeal(){

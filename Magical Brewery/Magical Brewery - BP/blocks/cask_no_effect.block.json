@@ -19,11 +19,18 @@
 		},
 		"components": {
 			"tag:minecraft:is_axe_item_destructible": {},
-			//"tag:magical_brewery:cask": {},
+			"tag:magical_brewery:cask": {},
 			"tag:wood": {},
+			"magical_brewery:pi_cask_fill": {
+				"cask":{
+					"effect": "",
+					"translate_key": ""
+				}
+			},
+			"magical_brewery:opd_cask": {},
+			"magical_brewery:op_cask": {},
 			"minecraft:light_dampening": 4,
-			//sort colour
-			"minecraft:map_color": "#6f4246",
+			"minecraft:map_color": "#8F7748",
 			"minecraft:redstone_conductivity": {
 				"redstone_conductor": true,
 				"allows_wire_to_step_down": true

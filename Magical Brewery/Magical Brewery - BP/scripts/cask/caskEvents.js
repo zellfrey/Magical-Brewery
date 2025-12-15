@@ -70,16 +70,19 @@ system.beforeEvents.startup.subscribe(eventData => {
 
                         player.sendMessage(caskPotions)
 
-                        if(!cask.canCaskAge(caskPotionType)){
+                        if(block.typeId === "magical_brewery:cask_no_effect"){
+                            player.sendMessage("This cask has degraded and has no effect. The contents inside will not age.");
+                        }
+                        else if(!cask.canCaskAge(caskPotionType)){
                             player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.cannot_age"});
-                        }else{
+                        }
+                        else{
                             const ageTime = 12000*cask.potion_effects.length + fillLevel*10;
                             const ageEndTick = cask.age_start_tick + ageTime;
                             const ageCompletionPercentage = Math.trunc(100 - ((ageEndTick - system.currentTick)/ageTime) * 100);
 
                             sendAgingTasteMessage(player, caskTranslateKey, ageCompletionPercentage);
                         }
-                        
                     }
                     else{
                         for(let i = 1; i !== cask.potion_effects.length-1; i++){
