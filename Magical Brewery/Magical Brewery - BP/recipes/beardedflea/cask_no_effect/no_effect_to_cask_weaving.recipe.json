@@ -1,0 +1,24 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:no_effect_to_cask_weaving"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["PPP", " C ", "PPP"],
+		"key": {
+			"P": "minecraft:potion_type:weaving",
+			"C": "magical_brewery:cask_no_effect"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:cask_weaving",
+				"count": 1
+		  	},
+			{
+				"item": "minecraft:glass_bottle",
+				"count": 6
+		  	}
+		]
+	}
+}
