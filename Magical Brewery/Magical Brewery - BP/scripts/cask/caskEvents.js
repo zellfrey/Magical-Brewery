@@ -71,7 +71,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                         player.sendMessage(caskPotions)
 
                         if(block.typeId === "magical_brewery:cask_no_effect"){
-                            player.sendMessage("This cask has degraded and has no effect. The contents inside will not age.");
+                            player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.cask_no_effect"});
                         }
                         else if(!cask.canCaskAge(caskPotionType)){
                             player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.cannot_age"});

@@ -47,13 +47,13 @@
 			},
 			"minecraft:material_instances": {
 				"*": {
-						"texture": "wood_oak"
+						"texture": "magical_brewery:cask_side_no_effect"
 					},
 					"end": {
-						"texture": "wood_spruce"
+						"texture": "magical_brewery:cask_end_no_effect"
 					},
 					"front": {
-						"texture": "wood_spruce"
+						"texture": "magical_brewery:cask_front_no_effect"
 					},
 					"south": "end",
 					"north": "front"

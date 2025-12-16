@@ -182,6 +182,7 @@ magical_brewery:glass_potion_xstrong_equipment=Glass Potions Potency +
 ##Cask tasting spoon Feedback
 magical_brewery:message.cask.tasting_spoon.empty=The cask is empty.
 magical_brewery:message.cask.tasting_spoon.initial_taste=The potion tastes of;
+magical_brewery:message.cask.tasting_spoon.cask_no_effect=This cask has degraded and has no effect. The contents inside will not age.
 magical_brewery:message.cask.tasting_spoon.cannot_age=It looks like the potion contains a similar effect as the cask, and cannot age.
 magical_brewery:message.cask.tasting_spoon.new_effect=It also has a taste of %s.
 magical_brewery:message.cask.tasting_spoon.aged=The potion has aged and is ready.

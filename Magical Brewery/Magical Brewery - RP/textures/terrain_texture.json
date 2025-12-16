@@ -451,6 +451,9 @@
 		"magical_brewery:cask_side_weaving_quality_1":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_quality_overlay_1_test.png"
 		},
+		"magical_brewery:cask_side_no_effect":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_no_effect.png"
+		},
 		"magical_brewery:cask_end_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_decay.png"
 		},
@@ -511,6 +514,9 @@
 		"magical_brewery:cask_end_weaving":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_weaving.png"
 		},
+		"magical_brewery:cask_end_no_effect":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_no_effect.png"
+		},
 		"magical_brewery:cask_front_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_decay.png"
 		},
@@ -570,6 +576,9 @@
 		},
 		"magical_brewery:cask_front_weaving":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_weaving.png"
+		},
+		"magical_brewery:cask_front_no_effect":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_no_effect.png"
 		},
 		"magical_brewery:seal_basic":{
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_basic.png"
