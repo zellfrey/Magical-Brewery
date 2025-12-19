@@ -273,13 +273,22 @@ export class Cask {
 		caskQuality = isNaN(caskQuality) ? 5 : caskQuality;
         
         let newBlockTypeId;
-        
-        if(caskQuality == 1){
-            newBlockTypeId = "magical_brewery:cask_no_effect";
+
+        if(this.seal.type === "memories" && this.seal.affectCaskAgeing){
+
+            caskQuality++;
+            newBlockTypeId = `magical_brewery:cask_${caskBlockEffectId}`;
+            newBlockTypeId += caskQuality === 5 ? "" : `_quality_${caskQuality}`;
         }
         else{
-			caskQuality--;
-			newBlockTypeId = `magical_brewery:cask_${caskBlockEffectId}_quality_${caskQuality}`;
+            if(caskQuality == 1){
+            newBlockTypeId = "magical_brewery:cask_no_effect";
+            }
+            else{
+                caskQuality--;
+                newBlockTypeId = `magical_brewery:cask_${caskBlockEffectId}_quality_${caskQuality}`;
+            }
+            
         }
         block.setType(newBlockTypeId)
 			

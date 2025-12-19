@@ -71,6 +71,8 @@ item.magical_brewery:seal_potency_2.name=§eSeal of Potency II
 item.magical_brewery:seal_expansion_1.name=Seal of Expansion I §c[W.I.P]
 item.magical_brewery:seal_expansion_2.name=§eSeal of Expansion II §c[W.I.P]
 item.magical_brewery:seal_retainment.name=Seal of Retainment
+item.magical_brewery:seal_memories.name=Seal of Memories §c[W.I.P]
+item.magical_brewery:seal_inspiration.name=Seal of Inspiration §c[W.I.P]
 ##---------------------------------
 
 
@@ -150,6 +152,91 @@ tile.magical_brewery:cask_harming_quality_4.name=Cask of Harming\n§7Quality: 4
 tile.magical_brewery:cask_harming_quality_3.name=Cask of Harming\n§7Quality: 3
 tile.magical_brewery:cask_harming_quality_2.name=Cask of Harming\n§7Quality: 2
 tile.magical_brewery:cask_harming_quality_1.name=Cask of Harming\n§7Quality: 1
+
+tile.magical_brewery:cask_healing_quality_4.name=Cask of Healing\n§7Quality: 4
+tile.magical_brewery:cask_healing_quality_3.name=Cask of Healing\n§7Quality: 3
+tile.magical_brewery:cask_healing_quality_2.name=Cask of Healing\n§7Quality: 2
+tile.magical_brewery:cask_healing_quality_1.name=Cask of Healing\n§7Quality: 1
+
+tile.magical_brewery:cask_invisibility_quality_4.name=Cask of Invisibility\n§7Quality: 4
+tile.magical_brewery:cask_invisibility_quality_3.name=Cask of Invisibility\n§7Quality: 3
+tile.magical_brewery:cask_invisibility_quality_2.name=Cask of Invisibility\n§7Quality: 2
+tile.magical_brewery:cask_invisibility_quality_1.name=Cask of Invisibility\n§7Quality: 1
+
+tile.magical_brewery:cask_leaping_quality_4.name=Cask of Leaping\n§7Quality: 4
+tile.magical_brewery:cask_leaping_quality_3.name=Cask of Leaping\n§7Quality: 3
+tile.magical_brewery:cask_leaping_quality_2.name=Cask of Leaping\n§7Quality: 2
+tile.magical_brewery:cask_leaping_quality_1.name=Cask of Leaping\n§7Quality: 1
+
+tile.magical_brewery:cask_poison_quality_4.name=Cask of Poison\n§7Quality: 4
+tile.magical_brewery:cask_poison_quality_3.name=Cask of Poison\n§7Quality: 3
+tile.magical_brewery:cask_poison_quality_2.name=Cask of Poison\n§7Quality: 2
+tile.magical_brewery:cask_poison_quality_1.name=Cask of Poison\n§7Quality: 1
+
+tile.magical_brewery:cask_regeneration_quality_4.name=Cask of Regeneration\n§7Quality: 4
+tile.magical_brewery:cask_regeneration_quality_3.name=Cask of Regeneration\n§7Quality: 3
+tile.magical_brewery:cask_regeneration_quality_2.name=Cask of Regeneration\n§7Quality: 2
+tile.magical_brewery:cask_regeneration_quality_1.name=Cask of Regeneration\n§7Quality: 1
+
+tile.magical_brewery:cask_resistance_fire_quality_4.name=Cask of Fire Resistance\n§7Quality: 4
+tile.magical_brewery:cask_resistance_fire_quality_3.name=Cask of Fire Resistance\n§7Quality: 3
+tile.magical_brewery:cask_resistance_fire_quality_2.name=Cask of Fire Resistance\n§7Quality: 2
+tile.magical_brewery:cask_resistance_fire_quality_1.name=Cask of Fire Resistance\n§7Quality: 1
+
+tile.magical_brewery:cask_slow_falling_quality_4.name=Cask of Slow Falling\n§7Quality: 4
+tile.magical_brewery:cask_slow_falling_quality_3.name=Cask of Slow Falling\n§7Quality: 3
+tile.magical_brewery:cask_slow_falling_quality_2.name=Cask of Slow Falling\n§7Quality: 2
+tile.magical_brewery:cask_slow_falling_quality_1.name=Cask of Slow Falling\n§7Quality: 1
+
+tile.magical_brewery:cask_slowness_quality_4.name=Cask of Slowness\n§7Quality: 4
+tile.magical_brewery:cask_slowness_quality_3.name=Cask of Slowness\n§7Quality: 3
+tile.magical_brewery:cask_slowness_quality_2.name=Cask of Slowness\n§7Quality: 2
+tile.magical_brewery:cask_slowness_quality_1.name=Cask of Slowness\n§7Quality: 1
+
+tile.magical_brewery:cask_strength_quality_4.name=Cask of Strength\n§7Quality: 4
+tile.magical_brewery:cask_strength_quality_3.name=Cask of Strength\n§7Quality: 3
+tile.magical_brewery:cask_strength_quality_2.name=Cask of Strength\n§7Quality: 2
+tile.magical_brewery:cask_strength_quality_1.name=Cask of Strength\n§7Quality: 1
+
+tile.magical_brewery:cask_swiftness_quality_4.name=Cask of Swiftness\n§7Quality: 4
+tile.magical_brewery:cask_swiftness_quality_3.name=Cask of Swiftness\n§7Quality: 3
+tile.magical_brewery:cask_swiftness_quality_2.name=Cask of Swiftness\n§7Quality: 2
+tile.magical_brewery:cask_swiftness_quality_1.name=Cask of Swiftness\n§7Quality: 1
+
+tile.magical_brewery:cask_vision_night_quality_4.name=Cask of Night Vision\n§7Quality: 4
+tile.magical_brewery:cask_vision_night_quality_3.name=Cask of Night Vision\n§7Quality: 3
+tile.magical_brewery:cask_vision_night_quality_2.name=Cask of Night Vision\n§7Quality: 2
+tile.magical_brewery:cask_vision_night_quality_1.name=Cask of Night Vision\n§7Quality: 1
+
+tile.magical_brewery:cask_water_breathing_quality_4.name=Cask of Water Breathing\n§7Quality: 4
+tile.magical_brewery:cask_water_breathing_quality_3.name=Cask of Water Breathing\n§7Quality: 3
+tile.magical_brewery:cask_water_breathing_quality_2.name=Cask of Water Breathing\n§7Quality: 2
+tile.magical_brewery:cask_water_breathing_quality_1.name=Cask of Water Breathing\n§7Quality: 1
+
+tile.magical_brewery:cask_weakness_quality_4.name=Cask of Weakness\n§7Quality: 4
+tile.magical_brewery:cask_weakness_quality_3.name=Cask of Weakness\n§7Quality: 3
+tile.magical_brewery:cask_weakness_quality_2.name=Cask of Weakness\n§7Quality: 2
+tile.magical_brewery:cask_weakness_quality_1.name=Cask of Weakness\n§7Quality: 1
+
+tile.magical_brewery:cask_oozing_quality_4.name=Cask of Oozing\n§7Quality: 4
+tile.magical_brewery:cask_oozing_quality_3.name=Cask of Oozing\n§7Quality: 3
+tile.magical_brewery:cask_oozing_quality_2.name=Cask of Oozing\n§7Quality: 2
+tile.magical_brewery:cask_oozing_quality_1.name=Cask of Oozing\n§7Quality: 1
+
+tile.magical_brewery:cask_infested_quality_4.name=Cask of Infested\n§7Quality: 4
+tile.magical_brewery:cask_infested_quality_3.name=Cask of Infested\n§7Quality: 3
+tile.magical_brewery:cask_infested_quality_2.name=Cask of Infested\n§7Quality: 2
+tile.magical_brewery:cask_infested_quality_1.name=Cask of Infested\n§7Quality: 1
+
+tile.magical_brewery:cask_wind_charged_quality_4.name=Cask of Wind Charged\n§7Quality: 4
+tile.magical_brewery:cask_wind_charged_quality_3.name=Cask of Wind Charged\n§7Quality: 3
+tile.magical_brewery:cask_wind_charged_quality_2.name=Cask of Wind Charged\n§7Quality: 2
+tile.magical_brewery:cask_wind_charged_quality_1.name=Cask of Wind Charged\n§7Quality: 1
+
+tile.magical_brewery:cask_weaving_quality_4.name=Cask of Weaving\n§7Quality: 4
+tile.magical_brewery:cask_weaving_quality_3.name=Cask of Weaving\n§7Quality: 3
+tile.magical_brewery:cask_weaving_quality_2.name=Cask of Weaving\n§7Quality: 2
+tile.magical_brewery:cask_weaving_quality_1.name=Cask of Weaving\n§7Quality: 1
 ##---------------------------------
 
 ##Seals---------------------------------

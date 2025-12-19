@@ -179,6 +179,12 @@
 		"magical_brewery:seal_retainment":{
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png"
 		},
+		"magical_brewery:seal_memories":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
+		},
+		"magical_brewery:seal_inspiration_dormant":{
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
+		},
 		"magical_brewery:brewers_tome":{
 			"textures": "textures/beardedflea/magical_brewery/items/chapter_of_wisdom_3.png"
 		},
