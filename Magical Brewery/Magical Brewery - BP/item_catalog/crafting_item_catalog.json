@@ -85,7 +85,8 @@
 							"magical_brewery:cask_oozing",
 							"magical_brewery:cask_infested",
 							"magical_brewery:cask_wind_charged",
-							"magical_brewery:cask_weaving"
+							"magical_brewery:cask_weaving",
+							"magical_brewery:cask_no_effect"
 						]
 					},
 					{

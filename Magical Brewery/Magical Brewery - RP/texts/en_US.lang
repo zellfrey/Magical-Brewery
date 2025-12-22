@@ -143,6 +143,7 @@ tile.magical_brewery:cask_oozing.name=Cask of Oozing
 tile.magical_brewery:cask_infested.name=Cask of Infestation
 tile.magical_brewery:cask_wind_charged.name=Cask of Wind Charged
 tile.magical_brewery:cask_weaving.name=Cask of Weaving
+tile.magical_brewery:cask_no_effect.name=Cask
 magical_brewery:cask_quality=Quality
 ##---------------------------------
 
