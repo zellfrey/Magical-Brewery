@@ -278,6 +278,12 @@
 	},
 	"magical_brewery:seal_retainment":{
 		"sound" : "candle"
+	},
+	"magical_brewery:seal_memories":{
+		"sound" : "candle"
+	},
+	"magical_brewery:seal_inspiration":{
+		"sound" : "candle"
 	}
 }
 
