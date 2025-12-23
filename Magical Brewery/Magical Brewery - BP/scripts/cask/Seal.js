@@ -58,7 +58,7 @@ export class Seal {
                 sealType = "magical_brewery:potency";
                 particleId = "magical_brewery:seal_retainment_shield";
                 particleSpawnVector3 = caskCenterLocation;
-				particleSpawnVector3.y += MathUtils.getRndFloat(-5, 5)
+				particleSpawnVector3.y += MathUtils.getRndFloat(-4, 5)
             }
             else{
                 particleSpawnVector3 = MathUtils.addVectorFromBlockFace(face, seal.center());
