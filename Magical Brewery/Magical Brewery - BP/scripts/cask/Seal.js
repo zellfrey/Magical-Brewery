@@ -34,11 +34,10 @@ export class Seal {
         if(lifeTimeUnloadTimeCompensation > Seal.lifetimeSaveBoundary || this.lifetime % Seal.lifetimeSaveBoundary === 0){
             Cask.updateCask(cask)
         }
-        
         this.previousTick = system.currentTick
     }
 
-    spawnSealSingleFlameParticle(dimension, ageEndTick, caskNoEffectSeals){
+    spawnSealSingleParticle(caskCenterLocation, dimension, ageEndTick, caskNoEffectSeals){
         if(this.location === undefined ||Object.keys(this.location).length === 0) return;
 
         const tickDelay = Math.floor(Math.random() * 30)
@@ -52,17 +51,24 @@ export class Seal {
             const face = seal.permutation.getState("minecraft:block_face")
             let sealType = seal.getTags().find(el => el !== "magical_brewery:seal");
 
+            let particleSpawnVector3;
+            let particleId;
             //TODO Make seal of retainment particles
             if(sealType === "magical_brewery:retainment"){
-                console.log("retainment particle")
                 sealType = "magical_brewery:potency";
+                particleId = "magical_brewery:seal_retainment_shield";
+                particleSpawnVector3 = caskCenterLocation;
+				particleSpawnVector3.y += MathUtils.getRndFloat(-5, 5)
             }
-            let particleSpawnVector3 = MathUtils.addVectorFromBlockFace(face, seal.center());
-            particleSpawnVector3.y += MathUtils.getRndFloat(-2.5, 3)
+            else{
+                particleSpawnVector3 = MathUtils.addVectorFromBlockFace(face, seal.center());
+                particleSpawnVector3.y += MathUtils.getRndFloat(-2.5, 3)
+                particleSpawnVector3 = MathUtils.addRandomVectorBlockFace(face, particleSpawnVector3)
 
-            particleSpawnVector3 = MathUtils.addRandomVectorBlockFace(face, particleSpawnVector3)
-
-            dimension.spawnParticle(`magical_brewery:dust_${sealType.slice(16)}_flame`, particleSpawnVector3);
+                particleId = `magical_brewery:dust_${sealType.slice(16)}_flame`
+            }
+            
+            dimension.spawnParticle(particleId, particleSpawnVector3);
         }, tickDelay);
     }
 
@@ -91,7 +97,10 @@ export class Seal {
         particleSpawnVector3 = MathUtils.addVectorFromBlockFace(face, seal.center());
 
         dim.spawnParticle(`magical_brewery:seal_${sealType.slice(16)}_flame`, particleSpawnVector3);
-    
+
+        dim.playSound("mob.ghast.fireball", this.location, {volume: 0.5, pitch: 0.3});
+        dim.playSound("beacon.power", this.location, {volume: 0.2, pitch: 1});
+        
         dim.setBlockType(this.location, "minecraft:air");
     }
 	
@@ -100,9 +109,11 @@ export class Seal {
             cask.seal = new Seal();
         }
         else{
-            const sealStrength = seal.permutation.getState("magical_brewery:seal_level");
             const sealType = seal.getTags().find(el => el !== "magical_brewery:seal").slice(16);
-            
+			let sealStrength = seal.permutation.getState("magical_brewery:seal_level");
+			
+            sealStrength = sealStrength !== undefined ? sealStrength : 0;
+			
             cask.seal = new Seal(seal.location, sealType, sealStrength, system.currentTick);
         }
     }
@@ -111,7 +122,9 @@ export class Seal {
 		if(!seal) return false;
 
 		const sealType = seal.getTags().find(el => el !== "magical_brewery:seal").slice(16);
-		const sealStrength = seal.permutation.getState("magical_brewery:seal_level");
+		let sealStrength = seal.permutation.getState("magical_brewery:seal_level");
+		
+		sealStrength = sealStrength !== undefined ? sealStrength : 0;
 
 		return cask.seal.strength === sealStrength && cask.seal.type  === sealType;
 

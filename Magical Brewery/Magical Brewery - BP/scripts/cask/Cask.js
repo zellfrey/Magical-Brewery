@@ -262,7 +262,6 @@ export class Cask {
 
     setCaskQuality(block, caskBlockEffectId){
         if(this.seal.type === "retainment" && this.seal.affectCaskAgeing){
-            console.log("Retaining quality of cask")
             return;
         } 
 

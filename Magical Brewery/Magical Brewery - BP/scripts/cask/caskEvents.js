@@ -203,7 +203,7 @@ function ageCask(block, caskAgingParameters){
 
     cask.createAgeingFeedback(block)
     cask.checkSeal(block, ageEndTick, caskAgingParameters.seal.no_effect)
-    cask.seal.spawnSealSingleFlameParticle(block.dimension, ageEndTick, caskAgingParameters.seal.no_effect)
+    cask.seal.spawnSealSingleParticle(block.center(), block.dimension, ageEndTick, caskAgingParameters.seal.no_effect)
     if(ageEndTick <= system.currentTick){
         
         cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel)
