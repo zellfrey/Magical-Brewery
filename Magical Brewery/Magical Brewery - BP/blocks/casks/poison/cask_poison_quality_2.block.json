@@ -51,10 +51,10 @@
 						"texture": "magical_brewery:cask_side_poison_quality_2"
 					},
 					"end": {
-						"texture": "magical_brewery:cask_end_poison"
+						"texture": "magical_brewery:cask_end_poison_quality_2"
 					},
 					"front": {
-						"texture": "magical_brewery:cask_front_poison"
+						"texture": "magical_brewery:cask_front_poison_quality_2"
 					},
 					"south": "end",
 					"north": "front"

@@ -51,10 +51,10 @@
 						"texture": "magical_brewery:cask_side_wind_charged_quality_2"
 					},
 					"end": {
-						"texture": "magical_brewery:cask_end_wind_charged"
+						"texture": "magical_brewery:cask_end_wind_charged_quality_2"
 					},
 					"front": {
-						"texture": "magical_brewery:cask_front_wind_charged"
+						"texture": "magical_brewery:cask_front_wind_charged_quality_2"
 					},
 					"south": "end",
 					"north": "front"

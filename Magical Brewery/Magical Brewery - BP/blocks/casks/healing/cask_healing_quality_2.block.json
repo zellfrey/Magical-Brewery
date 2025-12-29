@@ -51,10 +51,10 @@
 						"texture": "magical_brewery:cask_side_healing_quality_2"
 					},
 					"end": {
-						"texture": "magical_brewery:cask_end_healing"
+						"texture": "magical_brewery:cask_end_healing_quality_2"
 					},
 					"front": {
-						"texture": "magical_brewery:cask_front_healing"
+						"texture": "magical_brewery:cask_front_healing_quality_2"
 					},
 					"south": "end",
 					"north": "front"

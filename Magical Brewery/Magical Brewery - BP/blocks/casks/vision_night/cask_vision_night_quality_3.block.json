@@ -51,10 +51,10 @@
 						"texture": "magical_brewery:cask_side_vision_night_quality_3"
 					},
 					"end": {
-						"texture": "magical_brewery:cask_end_vision_night"
+						"texture": "magical_brewery:cask_end_vision_night_quality_3"
 					},
 					"front": {
-						"texture": "magical_brewery:cask_front_vision_night"
+						"texture": "magical_brewery:cask_front_vision_night_quality_3"
 					},
 					"south": "end",
 					"north": "front"

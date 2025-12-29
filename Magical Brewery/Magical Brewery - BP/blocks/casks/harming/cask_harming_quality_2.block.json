@@ -51,10 +51,10 @@
 						"texture": "magical_brewery:cask_side_harming_quality_2"
 					},
 					"end": {
-						"texture": "magical_brewery:cask_end_harming"
+						"texture": "magical_brewery:cask_end_harming_quality_2"
 					},
 					"front": {
-						"texture": "magical_brewery:cask_front_harming"
+						"texture": "magical_brewery:cask_front_harming_quality_2"
 					},
 					"south": "end",
 					"north": "front"

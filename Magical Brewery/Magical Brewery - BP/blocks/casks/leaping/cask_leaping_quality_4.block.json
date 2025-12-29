@@ -51,10 +51,10 @@
 						"texture": "magical_brewery:cask_side_leaping_quality_4"
 					},
 					"end": {
-						"texture": "magical_brewery:cask_end_leaping"
+						"texture": "magical_brewery:cask_end_leaping_quality_4"
 					},
 					"front": {
-						"texture": "magical_brewery:cask_front_leaping"
+						"texture": "magical_brewery:cask_front_leaping_quality_4"
 					},
 					"south": "end",
 					"north": "front"

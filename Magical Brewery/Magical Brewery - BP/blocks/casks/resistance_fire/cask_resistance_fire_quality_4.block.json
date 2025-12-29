@@ -51,10 +51,10 @@
 						"texture": "magical_brewery:cask_side_resistance_fire_quality_4"
 					},
 					"end": {
-						"texture": "magical_brewery:cask_end_resistance_fire"
+						"texture": "magical_brewery:cask_end_resistance_fire_quality_4"
 					},
 					"front": {
-						"texture": "magical_brewery:cask_front_resistance_fire"
+						"texture": "magical_brewery:cask_front_resistance_fire_quality_4"
 					},
 					"south": "end",
 					"north": "front"
