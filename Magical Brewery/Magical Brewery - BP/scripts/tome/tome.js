@@ -152,6 +152,10 @@ function createTomeScreen(tomePage, player, tomePlayerData){
 			if(tomePlayerData.unlocked_chapters.includes(el.id)){
 				buttonLayout.push(el)
 			}
+
+			//Temporary addition
+			//TODO: Work on V2 of tome database
+			if(el.id === "Cask Degrading") buttonLayout.push(el)
 		})
 	
 	buttonLayout.forEach(el => form.button(el.chapter, el.icon))

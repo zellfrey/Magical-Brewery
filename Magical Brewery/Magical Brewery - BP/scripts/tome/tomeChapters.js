@@ -1,6 +1,6 @@
 
 export const STARTER_CHAPTERS = ["Main", "Ageing", "Casks", "Theories: Cask Effects", "About the Author"]
-
+//"Cask Degrading",
 export const CRYSTAL_CHAPTERS = ["Crystallography", "Purifying", "Washing", "Heat Treating", "Lunar Charging", "Crystal Seeds", "Theories: Glowstone", "Crystal Harvesting"]
 
 export const SEAL_CHAPTERS = ["Seals", "Base Seal", "Longevity", "Potency", "Expansion", "Retainment"]
@@ -149,6 +149,11 @@ export const TOME_CHAPTERS = {
         body: "magical_brewery:tome_chapter_casks.body",
         buttons: [
 			{
+				chapter: "magical_brewery:tome_chapter_cask_degrading.title",
+				id: "Cask Degrading",
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask_degrading.png"
+			},
+			{
 				chapter: "magical_brewery:tome_chapter_theories_cask_effects.title",
 				id: "Theories: Cask Effects",
 				icon: "textures/items/potion_bottle_turtleMaster"
@@ -157,6 +162,12 @@ export const TOME_CHAPTERS = {
 		exitPage: "Ageing"
 	},
 	//Cask SubChapter
+	"Cask Degrading": {
+        title: "magical_brewery:tome_chapter_cask_degrading.title",
+        body: "magical_brewery:tome_chapter_cask_degrading.body",
+        buttons: [],
+		exitPage: "Casks"
+	},
 	"Theories: Cask Effects": {
         title: "magical_brewery:tome_chapter_theories_cask_effects.title",
         body: "magical_brewery:tome_chapter_theories_cask_effects.body",
@@ -192,6 +203,16 @@ export const TOME_CHAPTERS = {
 				id: "Retainment",
 				icon: "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png"
 			},
+			{
+				chapter: "magical_brewery:tome_chapter_seal_memories.title",
+				id: "Memories",
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
+			},
+			{
+				chapter: "magical_brewery:tome_chapter_seal_inspiration.title",
+				id: "Inspiration",
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
+			},
 		],
 		exitPage: "Ageing"
     },
@@ -223,6 +244,18 @@ export const TOME_CHAPTERS = {
 	"Retainment": {
         title: "magical_brewery:tome_chapter_seal_retainment.title",
         body: "magical_brewery:tome_chapter_seal_retainment.body",
+        buttons: [],
+		exitPage: "Seals"
+	},
+	"Memories": {
+        title: "magical_brewery:tome_chapter_seal_memories.title",
+        body: "magical_brewery:tome_chapter_seal_memories.body",
+        buttons: [],
+		exitPage: "Seals"
+	},
+	"Inspiration": {
+        title: "magical_brewery:tome_chapter_seal_inspiration.title",
+        body: "magical_brewery:tome_chapter_seal_inspiration.body",
         buttons: [],
 		exitPage: "Seals"
 	},
