@@ -1,3 +1,8 @@
+v0.4
+Updated:
+    Magical Brewery is now compatible with Vibrant Visuals
+Author comment:
+-----------------------------------------------
 -----------------------------------------------
 v0.3.6
 Updated:

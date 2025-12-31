@@ -1034,7 +1034,7 @@
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
 		},
 		"magical_brewery:seal_inspiration_dormant":{
-			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_awake.png"
 		}
 	}
 } 
