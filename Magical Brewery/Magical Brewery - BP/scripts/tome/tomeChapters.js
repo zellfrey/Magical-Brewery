@@ -203,16 +203,16 @@ export const TOME_CHAPTERS = {
 				id: "Retainment",
 				icon: "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png"
 			},
-			{
-				chapter: "magical_brewery:tome_chapter_seal_memories.title",
-				id: "Memories",
-				icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
-			},
-			{
-				chapter: "magical_brewery:tome_chapter_seal_inspiration.title",
-				id: "Inspiration",
-				icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
-			},
+			// {
+			// 	chapter: "magical_brewery:tome_chapter_seal_memories.title",
+			// 	id: "Memories",
+			// 	icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
+			// },
+			// {
+			// 	chapter: "magical_brewery:tome_chapter_seal_inspiration.title",
+			// 	id: "Inspiration",
+			// 	icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
+			// },
 		],
 		exitPage: "Ageing"
     },
