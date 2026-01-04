@@ -321,7 +321,7 @@ export class Cask {
             caskJSONData = [Cask.casks[0]]
         }
         world.setDynamicProperty('magical_brewery:cask_data', JSON.stringify(caskJSONData))
-        console.log(Cask.casks.length)
+        //console.log(Cask.casks.length)
     }
 
     static updateCask(cask){

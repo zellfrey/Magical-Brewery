@@ -1,7 +1,18 @@
 v0.4
+Added:
+    - Seal of Retainment
+    - Cask quality variants (ranging from 1-4)
+    - Cask(no effect)
+    - Oozing, Wind Charged, Infested, Weaving potions have been added to Glass Potions + Creative Categories
+    - Cask aging has a new parameter that determines whether certain seals can affect the aging process of potions
+        E.g. A seal of potency will not be used with a cask of water breathing as there is no potency variant.
+    - Redstone wire step down behaviour added for shard blocks
+    - Cask degrading chapter added to Brewer's tome
 Updated:
-    Magical Brewery is now compatible with Vibrant Visuals
+    - Cask & Budding Crystal databases have better checks when objects are created.
 Author comment:
+A bigger update, one that took a lot more time than usual. The main reason being dealing with the laborious task
+of adding all cask variant textures manually.
 -----------------------------------------------
 -----------------------------------------------
 v0.3.6
