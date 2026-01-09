@@ -1,23 +1,24 @@
 {
     "format_version": 2,
     "header": {
-      "description": "Resource pack for Magical Brewery addon v0.4 - alpha", 
-      "name": "Magical Brewery RP - v0.4",
+      "description": "Resource pack for Magical Brewery addon v0.4.1 - alpha", 
+      "name": "Magical Brewery RP - v0.4.1",
       "uuid":"b980ea2e-49a0-4098-89b6-6db625d2b05d",
-      "version": [0, 4, 0],
+      "version": [0, 4, 1],
       "min_engine_version": [1, 21, 120]
      },
      "metadata": {
       "authors": ["Beardedflea/Zellfrey"],
       "license": "Please don't copy my homework",
-          "url": "https://github.com/zellfrey"
+      "url": "https://github.com/zellfrey",
+      "product_type": "addon"
     },
     "modules": [
       {
-        "description": "Resource pack for Magical Brewery addon v0.4", 
+        "description": "Resource pack for Magical Brewery addon v0.4.1", 
         "type": "resources",
         "uuid": "80ef3ab1-361d-4dde-a17d-4c965c70f05f",
-        "version": [0, 4, 0]
+        "version": [0, 4, 1]
       }
     ],
     "capabilities": [
