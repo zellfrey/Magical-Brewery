@@ -40,7 +40,7 @@
 			},
 			"minecraft:geometry": "minecraft:geometry.full_block",
 			"minecraft:movable": {
-            	"movement_type": "immovable"
+            	"movement_type": "popped"
 			}
 		}
 	}
