@@ -52,7 +52,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 const caskTranslateKey = p.params.cask.translate_key;
 
                 if(fillLevel === 0){
-                    dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
+                    dimension.playSound("hit.chiseled_bookshelf", block.location, {volume: 0.8, pitch: 0.6});
                     player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.empty"});
                 }
                 else{
@@ -112,7 +112,7 @@ system.beforeEvents.startup.subscribe(eventData => {
             if(selectedItem.typeId === "minecraft:glass_bottle"){
 
                 if(fillLevel === 0){
-                    dimension.playSound("hit.wood", block.location, {volume: 0.8, pitch: 0.6});
+                    dimension.playSound("hit.chiseled_bookshelf", block.location, {volume: 0.8, pitch: 0.6});
                     return;
                 }
                 
