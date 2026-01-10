@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.100",
+    "format_version": "1.21.130",
     "minecraft:block": {
         "description": {
             "identifier": "magical_brewery:redstone_cluster",
@@ -53,6 +53,9 @@
             },
 			"minecraft:movable": {
 				"movement_type": "popped"
+			},
+			"minecraft:precipitation_interactions": {
+				"precipitation_behavior": "none"
 			}
         },
         "permutations": [

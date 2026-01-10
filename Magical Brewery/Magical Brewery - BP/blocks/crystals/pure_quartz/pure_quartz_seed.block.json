@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.100",
+    "format_version": "1.21.130",
     "minecraft:block": {
         "description": {
             "identifier": "magical_brewery:pure_quartz_seed",
@@ -68,6 +68,9 @@
             },
 			"minecraft:movable": {
 				"movement_type": "popped"
+			},
+			"minecraft:precipitation_interactions": {
+				"precipitation_behavior": "none"
 			}
         },
         "permutations": [
