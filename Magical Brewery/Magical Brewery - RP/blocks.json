@@ -210,58 +210,274 @@
 	"magical_brewery:cask_harming":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_harming_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_harming_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_harming_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_harming_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_healing":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_healing_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_healing_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_healing_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_healing_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_invisibility":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_invisibility_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_invisibility_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_invisibility_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_invisibility_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_leaping":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_leaping_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_leaping_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_leaping_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_leaping_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_poison":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_poison_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_poison_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_poison_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_poison_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_regeneration":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_regeneration_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_regeneration_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_regeneration_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_regeneration_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_resistance_fire":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_resistance_fire_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_resistance_fire_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_resistance_fire_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_resistance_fire_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_slow_falling":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_slow_falling_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_slow_falling_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_slow_falling_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_slow_falling_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_slowness":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_slowness_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_slowness_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_slowness_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_slowness_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_strength":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_strength_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_strength_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_strength_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_strength_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_swiftness":{
 		"sound" : "chiseled_bookshelf"
 	},
-	// "magical_brewery:cask_turtle_master":{
-	//   "sound" : "chiseled_bookshelf"
-	// },
+	"magical_brewery:cask_swiftness_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_swiftness_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_swiftness_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_swiftness_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_vision_night":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_vision_night_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_vision_night_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_vision_night_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_vision_night_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_water_breathing":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_water_breathing_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_water_breathing_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_water_breathing_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_water_breathing_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_weakness":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weakness_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weakness_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weakness_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weakness_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_infested":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_infested_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_infested_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_infested_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_infested_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_oozing":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_oozing_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_oozing_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_oozing_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_oozing_quality_4":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:cask_wind_charged":{
 		"sound" : "chiseled_bookshelf"
 	},
+	"magical_brewery:cask_wind_charged_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_wind_charged_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_wind_charged_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_wind_charged_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_weaving":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weaving_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weaving_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weaving_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_weaving_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_no_effect":{
 		"sound" : "chiseled_bookshelf"
 	},
 	"magical_brewery:seal_basic":{
