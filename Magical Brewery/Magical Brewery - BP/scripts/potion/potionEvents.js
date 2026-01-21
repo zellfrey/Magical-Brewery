@@ -59,28 +59,20 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_amethyst_bottle', {
         onUse(e) {
 
-            const {source, itemStack} = e
-            // const{block} = source.getBlockFromViewDirection({includeLiquidBlocks: true, maxDistance: 4.0});
+            const {source, itemStack } = e
+            // console.log(usedOnBlockPermutation.type.id)
+            const blockRayCastOptions = {includeLiquidBlocks: true, maxDistance: 6};
+            const blockRaycastHit = source.getBlockFromViewDirection(blockRayCastOptions);
+			if(blockRaycastHit === undefined) return;
+            console.log(blockRaycastHit.block.typeId)
             //Another for loop to iterate through each horizontal cardinal direction adding to the y value
             // if(block.typeId === "minecraft:water" || block.isWaterlogged){
             //     console.log("filling from water")
             // }
-            //Currently I cannot edit the filllevel of a potion, in the meantime, this is what we get
-
-            // else if(block.typeId === "minecraft:cauldron"){
-            //     const fillLevel =  block.getComponent("minecraft:fluid_container").fillLevel;
-            //     const fluid = block.getComponent("minecraft:fluid_container").getFluidType();
-            //     console.log(fluid + fillLevel)
-
-            //     if(fillLevel > 1 && fluid == "Water"){
-
-            //         // block.setPermutation(block.permutation.withState("fill_level", fillLevel-2));
-            //         console.log("emptying cauldron")
-            //     }
-            // }
         }
     });
 });
+
 
 world.afterEvents.entityHurt.subscribe((e) => {
 
