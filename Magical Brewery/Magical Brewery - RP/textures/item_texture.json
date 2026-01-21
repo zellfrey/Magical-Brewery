@@ -253,6 +253,9 @@
 		},
 		"magical_brewery:glass_potion_wind_charged":{
 			"textures": "textures/items/potion_bottle_windCharged"
+		},
+		"magical_brewery:brewers_desk_item":{
+			"textures": "textures/beardedflea/magical_brewery/items/brewers_desk_item.png"
 		}
 	}
 }

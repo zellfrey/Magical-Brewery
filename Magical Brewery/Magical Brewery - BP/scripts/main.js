@@ -10,8 +10,9 @@ import "./cask/Seal.js"
 import "./potion/potionEffects.js"
 import "./tome/tome.js"
 import "./utils/lootUtils.js"
+import "./brewersDesk.js"
 
-import {world, system} from "@minecraft/server";
+import {world, system, BlockPermutation} from "@minecraft/server";
 
 system.runInterval(
     () => {
@@ -35,3 +36,4 @@ system.runInterval(
         };
     },
 );
+

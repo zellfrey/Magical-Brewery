@@ -1,0 +1,90 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "magical_brewery:brewers_desk_left",
+            "menu_category": {
+				"category": "none",
+				"is_hidden_in_commands": true
+			},
+            "traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": ["minecraft:cardinal_direction"]
+				}
+			}
+        },
+        "components": {
+            "tag:minecraft:is_axe_item_destructible": {},
+            "tag:wood": {},
+            "magical_brewery:bop_brewers_desk_left_side": {},
+			"magical_brewery:op_brewers_desk_left_side": {},
+			"magical_brewery:ob_brewers_desk_left_side": {},
+			"minecraft:crafting_table": {
+				"table_name": "Brewer's Desk",
+				"crafting_tags": [
+					"magical_brewery:brewers_desk"
+				]
+			},
+			"minecraft:loot": "loot_tables/beardedflea/blocks/brewers_desk.loot.json",
+            "minecraft:light_dampening": 4,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2.0
+            },
+            "minecraft:flammable": { 
+                "catch_chance_modifier": 5,
+                "destroy_chance_modifier": 20
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 3
+            },
+            "minecraft:redstone_conductivity": {
+                "redstone_conductor": true,
+                "allows_wire_to_step_down": true
+            },
+            "minecraft:map_color": "#a31817",
+            "minecraft:material_instances": {
+				"*": {
+						"texture": "magical_brewery:cask_side_no_effect"
+					},
+					"end": {
+						"texture": "magical_brewery:cask_end_no_effect"
+					},
+					"front": {
+						"texture": "magical_brewery:cask_front_no_effect"
+					},
+					"south": "end",
+					"north": "front"
+			},
+			"minecraft:geometry": "geometry.cask",
+			"minecraft:movable": {
+            	"movement_type": "popped"
+			}
+        },
+        "permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": { "rotation": [0, 0, 0] }
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": { "rotation": [0, 90, 0] }
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": { "rotation": [0, 180, 0] }
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": { "rotation": [0, -90, 0] }
+				}
+			}
+		]
+    }
+}
