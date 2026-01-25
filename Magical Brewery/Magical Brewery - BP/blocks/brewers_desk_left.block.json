@@ -43,19 +43,14 @@
             },
             "minecraft:map_color": "#a31817",
             "minecraft:material_instances": {
-				"*": {
-						"texture": "magical_brewery:cask_side_no_effect"
-					},
-					"end": {
-						"texture": "magical_brewery:cask_end_no_effect"
-					},
-					"front": {
-						"texture": "magical_brewery:cask_front_no_effect"
-					},
-					"south": "end",
-					"north": "front"
+			"*": {
+					"texture": "magical_brewery:brewers_desk_left_test",
+					"render_method": "alpha_test_to_opaque",
+					"face_dimming": true,
+					"ambient_occlusion": true
+				}
 			},
-			"minecraft:geometry": "geometry.cask",
+			"minecraft:geometry": "geometry.brewers_desk_left",
 			"minecraft:movable": {
             	"movement_type": "popped"
 			}
