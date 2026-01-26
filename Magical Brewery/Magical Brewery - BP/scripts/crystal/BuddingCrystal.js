@@ -112,7 +112,8 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_budding_crystal_destroy', {
-        onPlayerBreak(e) {
+        onBreak(e) {
+            console.log("I am being broken")
             BuddingCrystal.destroyCrystal(e.block.location, e.dimension.id)
         }
     });
@@ -150,11 +151,3 @@ world.afterEvents.worldLoad.subscribe((e) => {
     buddingCrystalData.forEach(crystal => {new BuddingCrystal(crystal.location, crystal.dimension, crystal.previousTick)});
 });
 
-world.afterEvents.blockExplode.subscribe((e) => {
-    const { block, explodedBlockPermutation} = e;
-
-    const validBlock = BUDDING_BLOCK_IDS.find((el) => el === explodedBlockPermutation.type.id);
-    if(validBlock){
-        BuddingCrystal.destroyCrystal(block.location, block.dimension.id)
-    }
-});

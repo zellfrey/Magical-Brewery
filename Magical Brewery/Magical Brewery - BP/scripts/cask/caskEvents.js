@@ -16,7 +16,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_cask', {
-        onPlayerBreak(e) {
+        onBreak(e) {
             // if(fillLevel > 0) 
             // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
             Cask.destroyCask(e.block.dimension.id, e.block.location)
@@ -216,13 +216,6 @@ function ageCask(block, caskAgingParameters){
     }
     return;
 }
-
-world.afterEvents.blockExplode.subscribe((e) => {
-
-    if(e.explodedBlockPermutation.hasTag("magical_brewery:cask")){
-        Cask.destroyCask(e.block.dimension.id, e.block.location)
-    }
-});
 
 world.afterEvents.worldLoad.subscribe((e) => {
     // console.log("loading cask data")
