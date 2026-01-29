@@ -17,8 +17,12 @@ system.beforeEvents.startup.subscribe(eventData => {
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_cask', {
         onBreak(e) {
-            // if(fillLevel > 0) 
-            // dimension.playSound("bucket.empty_powder_snow", block.location, {volume: 0.8, pitch: 1.0});
+            const fillLevel = e.brokenBlockPermutation.getState("magical_brewery:fill_level")
+
+            if(fillLevel > 0){
+                e.dimension.playSound("bucket.empty_water", e.block.location, {volume: 1.0, pitch: 1.3});
+            }
+            
             Cask.destroyCask(e.block.dimension.id, e.block.location)
         }
     });
