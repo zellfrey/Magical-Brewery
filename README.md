@@ -15,13 +15,14 @@ So, with crossed fingers I would say the content that is currently in is here to
 Aswell as that, the mod is currently only in English(translation is still on the table).
 
 ## Requirements
-Minecraft Bedrock Edition - min version 1.21.100(as of v0.3)
+Minecraft Bedrock Edition - latest version(Not that we have a choice)
 
-**Experiments:**
-- [x] Custom biomes
-- [x] Forthcoming Creator Features(Needed for v0.3)
-- [x] Beta APIs
- 
+##
+**No Experiments are required**
+
+**Achievement Friendly**
+##
+
 ## Installation
 Download the latest .mcaddon file, and once downloaded left click the file and minecraft bedrock should import both the RP and BP folder onto your game
 
