@@ -1,3 +1,25 @@
+v0.4.1
+Updated:
+    - Stained Slabs bumped to format version 1.21.60
+    - Casks bumped to format version 1.21.100
+    - Budding Crystals bumped to format version 1.21.100
+    - Shard Blocks bumped to format version 1.21.100
+    - Seals bumped to format version 1.21.130
+    - Crystal Clusters/Buds bumped to format version 1.21.130
+    - precipitation_interactions introduced to both crystals and seals.
+    - Seal model updated(minor rotation value changes)
+    - Empty Casks sound more like empty cask when interacted.
+    - Cask quality variants now have appropiate block sounds
+    - onPlayerBreak event changed to onBreak event for both Casks and Budding Crystals
+    - Casks that are filled with a potion now play a sound when destroyed.
+    - Script API bumped to 2.4.0(WE STABLE BABBEEEEYYYYY)
+    - Finally, Magical Brewery is achievement friendly.
+Author comment:
+This update could have come out 2 weeks ago but I was messing around with stuff. Ultimately however
+I wasn't happy with the state of those things so I scrapped them for another time.
+The good, no great news is that this addon does not use beta APIs and is also achievement friendly!!
+-----------------------------------------------
+-----------------------------------------------
 v0.4
 Added:
     - Seal of Retainment
