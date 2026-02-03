@@ -256,6 +256,9 @@
 		},
 		"magical_brewery:brewers_desk_item":{
 			"textures": "textures/beardedflea/magical_brewery/items/brewers_desk_item.png"
+		},
+		"magical_brewery:pages_temp":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_temp.png"
 		}
 	}
 }

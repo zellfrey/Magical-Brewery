@@ -1,7 +1,7 @@
 import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {setMainHand} from '../utils/containerUtils.js';
-import {TOME_CHAPTERS, STARTER_CHAPTERS, SEAL_CHAPTERS, CRYSTAL_CHAPTERS, BREWING_CHAPTERS} from "tome/tomeChapters.js"
+import {TOME_CHAPTERS, STARTER_CHAPTERS, SEAL_CHAPTERS, CRYSTAL_CHAPTERS, BREWING_CHAPTERS, TEMP_CHAPTERS} from "tome/tomeChapters.js"
 
 let dummyTomePlayerData = {
 	// "Beardedflea5998":
@@ -55,7 +55,7 @@ function addPagesChaptersToPlayer(player, pagesParameters){
 	
 	addChaptersToPlayerTomeData(player.name, pagesChapters)
 
-	dummyTomePlayerData[player.name].page_last_opened = pagesParameters.tome_chapter;
+	dummyTomePlayerData[player.name].page_last_opened = pagesParameters.tome_parent_chapter;
 	
 	setMainHand(player, equipment, selectedItem, undefined);
 	
@@ -75,17 +75,19 @@ function doesPlayerMeetChapterRequirements(player, pagesParameters){
 		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.add"})
 		return false;
 	}
-
-	else if(Object.keys(dummyTomePlayerData[player.name].unlocked_chapters).includes(pagesParameters.tome_chapter)){
-
-		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.owned"})
-		return false;
-	}
 	//TODO Make check for multiple parent chapters
+	//TODO don't check multiple parent chapters. Have a page give information for specific chapters only. Don't rock the boat
+	//by adding chapters in various places.
 	else if(!Object.keys(dummyTomePlayerData[player.name].unlocked_chapters).includes(pagesParameters.tome_parent_chapter)){	
 
 		//TODO change object
 		player.sendMessage("You do not have the knowledge required to understand these notes. Your tome needs more stuff")
+		return false;
+	}
+	//TODO: Check playerDB for value in parentChapter Key - DONE
+	else if(dummyTomePlayerData[player.name].unlocked_chapters[pagesParameters.tome_parent_chapter].includes(pagesParameters.tome_chapter)){
+
+		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.owned"})
 		return false;
 	}
 
@@ -102,6 +104,9 @@ function getPagesChapters(pagesChapters){
 		break;
 		case "Brewing":
 			pagesChapters = BREWING_CHAPTERS;
+		break;
+		case "Temp":
+			pagesChapters = TEMP_CHAPTERS;
 		break;
 	}
 	return pagesChapters;

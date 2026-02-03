@@ -20,7 +20,10 @@ export const BREWING_CHAPTERS =  {
 					"Brewing" : ["Enhanced Potions"],
 					"Enhanced Potions": ["Potency +", "Duration +"]
 				};
-				
+export const TEMP_CHAPTERS =  {
+					"Seals" : ["Memories", "Inspiration"],
+				};
+
 export const TOME_CHAPTERS = {
 	"Main": {
         title: "magical_brewery:tome_chapter_main.title",
@@ -221,11 +224,11 @@ export const TOME_CHAPTERS = {
 				id: "Memories",
 				icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
 			},
-			// {
-			// 	chapter: "magical_brewery:tome_chapter_seal_inspiration.title",
-			// 	id: "Inspiration",
-			// 	icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
-			// },
+			{
+				chapter: "magical_brewery:tome_chapter_seal_inspiration.title",
+				id: "Inspiration",
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
+			},
 		],
 		exitPage: "Ageing"
     },

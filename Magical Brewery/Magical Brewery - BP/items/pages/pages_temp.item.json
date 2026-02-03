@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:pages_temp",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"magical_brewery:ou_get_pages": {
+				"tome_parent_chapter": "Seals",
+				"tome_chapter": "Temp"
+			},
+			"minecraft:icon": "magical_brewery:pages_temp",
+			"minecraft:display_name":{
+				"value": "temporary pages chapter"
+			},
+			"minecraft:max_stack_size": {
+				"value": 1
+			}
+		}
+	}
+}
