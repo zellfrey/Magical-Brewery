@@ -1,13 +1,26 @@
+export const STARTER_CHAPTERS = {
+					"Main": ["Ageing", "About the Author"],
+					"Ageing": ["Casks"],
+					"Casks": ["Cask Degrading", "Theories: Cask Effects"]
+				};
 
-export const STARTER_CHAPTERS = ["Main", "Ageing", "Casks", "Theories: Cask Effects", "About the Author"]
-//"Cask Degrading",
-export const CRYSTAL_CHAPTERS = ["Crystallography", "Purifying", "Washing", "Heat Treating", "Lunar Charging", "Crystal Seeds", "Theories: Glowstone", "Crystal Harvesting"]
+export const SEAL_CHAPTERS = {
+					"Ageing": ["Seals"],
+					"Seals": ["Base Seal", "Longevity", "Potency", "Retainment"],
+				};
 
-export const SEAL_CHAPTERS = ["Seals", "Base Seal", "Longevity", "Potency", "Expansion", "Retainment"]
-
-export const BREWING_CHAPTERS = ["Brewing", "Enhanced Potions", "Potency +", "Duration +", "Expansion +", "Ingredients", "Potion Materials", "Glass", "Amethyst"]
-
-//Add "Expansion", "Retainment"
+export const CRYSTAL_CHAPTERS = {
+					"Main": ["Crystallography"],
+					"Crystallography": ["Purifying", "Crystal Seeds", "Crystal Harvesting"],
+					"Purifying": ["Washing", "Heat Treating", "Lunar Charging"],
+					"Crystal Seeds": ["Theories: Glowstone"],
+				};
+export const BREWING_CHAPTERS =  {
+					"Main": ["Brewing"],
+					"Brewing" : ["Enhanced Potions"],
+					"Enhanced Potions": ["Potency +", "Duration +"]
+				};
+				
 export const TOME_CHAPTERS = {
 	"Main": {
         title: "magical_brewery:tome_chapter_main.title",
@@ -203,11 +216,11 @@ export const TOME_CHAPTERS = {
 				id: "Retainment",
 				icon: "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png"
 			},
-			// {
-			// 	chapter: "magical_brewery:tome_chapter_seal_memories.title",
-			// 	id: "Memories",
-			// 	icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
-			// },
+			{
+				chapter: "magical_brewery:tome_chapter_seal_memories.title",
+				id: "Memories",
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
+			},
 			// {
 			// 	chapter: "magical_brewery:tome_chapter_seal_inspiration.title",
 			// 	id: "Inspiration",

@@ -1,16 +1,30 @@
 import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {setMainHand} from '../utils/containerUtils.js';
-import {TOME_CHAPTERS, STARTER_CHAPTERS, CRYSTAL_CHAPTERS, SEAL_CHAPTERS, BREWING_CHAPTERS} from "tome/tomeChapters.js"
+import {TOME_CHAPTERS, STARTER_CHAPTERS, SEAL_CHAPTERS, CRYSTAL_CHAPTERS, BREWING_CHAPTERS} from "tome/tomeChapters.js"
 
-let tomePlayerData = {
-	"Player":{
-		unlocked_chapters:["Main"],
-		page_last_opened: "",
-	},
-	// "Beardedflea5998":{
-	// 	unlocked_chapters:["Main"],
-	// 	page_last_opened: "Bazinga",
+let dummyTomePlayerData = {
+	// "Beardedflea5998":
+	// {
+	// 	unlocked_chapters:
+	// 			{
+	// 				"Main": ["Ageing", "Crystallography", "Brewing", "About the Author"],
+
+	// 				//Ageing Chapters & subChapters
+	// 				"Ageing": ["Casks", "Seals"],
+	// 				"Casks": ["Cask Degrading", "Theories: Cask Effects"],
+	// 				"Seals": ["Base Seal", "Longevity", "Potency", "Retainment"],
+					
+	// 				//Crystal Chapters and subChapters
+	// 				"Crystallography": ["Purifying", "Crystal Seeds", "Crystal Harvesting"],
+	// 				"Purifying": ["Washing", "Heat Treating", "Lunar Charging"],
+	// 				"Crystal Seeds": ["Theories: Glowstone"],
+
+	// 				//Brewing Chapters & subChapters
+	// 				"Brewing" : ["Enhanced Potions"],
+	// 				"Enhanced Potions": ["Potency +", "Duration +"]
+	// 			},
+	// 	page_last_opened: "Main",
 	// }
 }
 
@@ -21,53 +35,61 @@ system.beforeEvents.startup.subscribe(eventData => {
         onUse(e,p) {
 			
 			if(e.source.isSneaking){
-				addPagesChaptersToPlayer(e.source, p.params.tome_chapter)
+				addPagesChaptersToPlayer(e.source, p.params)
 			} 
 			else{
-				createPagesScreen(p.params.tome_chapter, e.source)
-			}
-			
+				createPagesFormData(p.params.tome_chapter, e.source)
+			}		
         }
     });
 });
 
-function addPagesChaptersToPlayer(player, mainChapter){
+function addPagesChaptersToPlayer(player, pagesParameters){
+	
+	if(!doesPlayerMeetChapterRequirements(player, pagesParameters)) return;
 
-	let tomePlayerData = player.getDynamicProperty('magical_brewery:tome_data')
+	let pagesChapters = getPagesChapters(pagesParameters.tome_chapter)
+	const equipment = player.getComponent('equippable');
+	const selectedItem = equipment.getEquipment('Mainhand');
+	//We set players last page as the obtained chapter to show whats been added
 	
-	if(!tomePlayerData){
+	addChaptersToPlayerTomeData(player.name, pagesChapters)
+
+	dummyTomePlayerData[player.name].page_last_opened = pagesParameters.tome_chapter;
+	
+	setMainHand(player, equipment, selectedItem, undefined);
+	
+	player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1})
+
+	const pagesAddedMessage = {
+	translate: "magical_brewery:message.tome.chapter_pages.added",
+	with: { rawtext: [{ translate: `magical_brewery:tome_chapter_${pagesParameters.tome_chapter}.title` }] },
+	};
+	
+	player.sendMessage(pagesAddedMessage);
+}
+
+function doesPlayerMeetChapterRequirements(player, pagesParameters){
+
+	if(!dummyTomePlayerData[player.name]){
 		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.add"})
-		return;
+		return false;
 	}
-	
-	let pagesChapters = getPagesChapters(mainChapter)
-	
-	tomePlayerData = JSON.parse(tomePlayerData);
-	if(tomePlayerData.unlocked_chapters.includes(pagesChapters[0])){
+
+	else if(Object.keys(dummyTomePlayerData[player.name].unlocked_chapters).includes(pagesParameters.tome_chapter)){
 
 		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.owned"})
-		return;
-
-	}else{
-		const equipment = player.getComponent('equippable');
-		const selectedItem = equipment.getEquipment('Mainhand');
-		//We set players last page as the obtained chapter to show whats been added
-		
-		pagesChapters.forEach(el => tomePlayerData.unlocked_chapters.push(el));
-		tomePlayerData.page_last_opened = pagesChapters[0];
-		
-		setMainHand(player, equipment, selectedItem, undefined);
-		
-		player.setDynamicProperty('magical_brewery:tome_data', JSON.stringify(tomePlayerData))
-		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1})
-
-		const pagesAddedMessage = {
-        translate: "magical_brewery:message.tome.chapter_pages.added",
-        with: { rawtext: [{ translate: `magical_brewery:tome_chapter_${mainChapter}.title` }] },
-        };
-		
-		player.sendMessage(pagesAddedMessage);
+		return false;
 	}
+	//TODO Make check for multiple parent chapters
+	else if(!Object.keys(dummyTomePlayerData[player.name].unlocked_chapters).includes(pagesParameters.tome_parent_chapter)){	
+
+		//TODO change object
+		player.sendMessage("You do not have the knowledge required to understand these notes. Your tome needs more stuff")
+		return false;
+	}
+
+	return true;
 }
 function getPagesChapters(pagesChapters){
 
@@ -85,7 +107,7 @@ function getPagesChapters(pagesChapters){
 	return pagesChapters;
 }
 
-function createPagesScreen(pagesChapters, player){
+function createPagesFormData(pagesChapters, player){
 	
 	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 	
@@ -96,6 +118,12 @@ function createPagesScreen(pagesChapters, player){
 	
 	TOME_CHAPTERS[pagesChapters].buttons.forEach(el => form.button(el.chapter, el.icon))
 	
+	displayPagesFormData(form, player, TOME_CHAPTERS[pagesChapters])
+	
+}
+
+function displayPagesFormData(form, player, pagesChapters){
+
 	form.show(player)
 	.then((response) => {
 		
@@ -104,12 +132,12 @@ function createPagesScreen(pagesChapters, player){
 			return;
 		}
 		
-		if(response.selection === TOME_CHAPTERS[pagesChapters].buttons.length){
+		if(response.selection === pagesChapters.buttons.length){
 			
-			createPagesScreen(TOME_CHAPTERS[pagesChapters].exitPage, player)
+			createPagesFormData(pagesChapters.exitPage, player)
 		}
 		else{
-			createPagesScreen(TOME_CHAPTERS[pagesChapters].buttons[response.selection].id, player);
+			createPagesFormData(pagesChapters.buttons[response.selection].id, player);
 		}
 		
 	})
@@ -121,24 +149,17 @@ function createPagesScreen(pagesChapters, player){
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_brewers_tome', {
         onUse(e) {
-			
-			let tomePlayerData = e.source.getDynamicProperty('magical_brewery:tome_data')
-			
-			if(!tomePlayerData){
-				createTomeData(e.source)
+			if(!dummyTomePlayerData[e.source.name]){
+				createTomeData(e.source.name)
 				e.source.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.missing"});
-				tomePlayerData = e.source.getDynamicProperty('magical_brewery:tome_data')
 			}
-			tomePlayerData = JSON.parse(tomePlayerData)
+			let playerLastOpenedPage = e.source.isSneaking ? "Main" : dummyTomePlayerData[e.source.name].page_last_opened;
 			
-			let playerLastOpenedPage = e.source.isSneaking ? "Main" : getTomePlayerLastPage(e.source)
-			
-			
-			createTomeScreen(playerLastOpenedPage, e.source, tomePlayerData)
+			createTomeFormData(playerLastOpenedPage, e.source, dummyTomePlayerData[e.source.name])
         }
     });
 });
-function createTomeScreen(tomePage, player, tomePlayerData){
+function createTomeFormData(tomePage, player, tomePlayerData){
 	
 	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 	
@@ -147,38 +168,46 @@ function createTomeScreen(tomePage, player, tomePlayerData){
 	form.title({translate: TOME_CHAPTERS[tomePage].title});
 	form.body({translate: TOME_CHAPTERS[tomePage].body});
 	
-	let buttonLayout = [];
-	TOME_CHAPTERS[tomePage].buttons.forEach(el => {
-			if(tomePlayerData.unlocked_chapters.includes(el.id)){
-				buttonLayout.push(el)
-			}
-
-			//Temporary addition
-			//TODO: Work on V2 of tome database
-			if(el.id === "Cask Degrading") buttonLayout.push(el)
-		})
+	let buttonLayout = getTomePageButtonLayout(TOME_CHAPTERS[tomePage], tomePlayerData.unlocked_chapters[tomePage]);
 	
 	buttonLayout.forEach(el => form.button(el.chapter, el.icon))
 	
 	if(TOME_CHAPTERS[tomePage].exitPage) form.button("Go back", "")
 	
+	displayTomePageFormData(form, player, tomePlayerData, tomePage, TOME_CHAPTERS[tomePage].exitPage, buttonLayout)
+	
+}
+
+function getTomePageButtonLayout(tomeChaptersPage, playerUnlockedChapters){
+
+	let buttonPageLayout = [];
+	tomeChaptersPage.buttons.forEach(el => {
+			if(playerUnlockedChapters.includes(el.id)){
+				buttonPageLayout.push(el)
+			}
+		})
+	
+	return buttonPageLayout;
+}
+
+function displayTomePageFormData( form, player, tomePlayerData, tomePage, exitPage, buttons){
+
 	form.show(player)
 	.then((response) => {
 		
 		if (response.canceled){ 
 			
 			tomePlayerData.page_last_opened = tomePage;
-			player.setDynamicProperty('magical_brewery:tome_data', JSON.stringify(tomePlayerData))
 			player.dimension.playSound("item.book.put", player.location, {volume: 0.7, pitch: 0.7})
 			
 			return;
 		}
-		if(response.selection === buttonLayout.length){
+		if(response.selection === buttons.length){
 			
-			createTomeScreen(TOME_CHAPTERS[tomePage].exitPage, player, tomePlayerData)
+			createTomeFormData(exitPage, player, tomePlayerData)
 		}
 		else{
-			createTomeScreen(buttonLayout[response.selection].id, player, tomePlayerData);
+			createTomeFormData(buttons[response.selection].id, player, tomePlayerData);
 		}
 		
 	})
@@ -188,26 +217,32 @@ function createTomeScreen(tomePage, player, tomePlayerData){
 }
 
 function createTomeData(player){
-	const tomeChapterData = {
-		unlocked_chapters:[""],
+
+	dummyTomePlayerData[player] = {
+		unlocked_chapters:{},
 		page_last_opened: "Main",
 	};
-	STARTER_CHAPTERS.forEach(el => tomeChapterData.unlocked_chapters.push(el))
-	player.setDynamicProperty('magical_brewery:tome_data', JSON.stringify(tomeChapterData))
+
+	for (const [key, value] of Object.entries(STARTER_CHAPTERS)) {
+		dummyTomePlayerData[player].unlocked_chapters[key] = value;
+	}
 }
 
-function getTomePlayerLastPage(player){
-	tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data'))
-	return tomePlayerData.page_last_opened;
-}
 
 // function setTomePlayerLastPage(playerName, tomePage){
 // 	tomePlayerData[playerName].page_last_opened = tomePage;
 // }
 
-// function addTomePlayerChapters(player, tomePlayerData, pagesChapters){
-	
-// 	pagesChapters.forEach(el => tomePlayerData.unlocked_chapters.push(el));
-	
-// 	player.setDynamicProperty('magical_brewery:tome_data', JSON.stringify(tomePlayerData))
-// }
+function addChaptersToPlayerTomeData(player, pagesChapters){
+
+	for (const [key, values] of Object.entries(pagesChapters)) {
+		
+		if(dummyTomePlayerData[player].unlocked_chapters[key] && dummyTomePlayerData[player].unlocked_chapters[key].length != 0){
+				
+			values.forEach(el => dummyTomePlayerData[player].unlocked_chapters[key].push(el))
+
+		}else{
+			dummyTomePlayerData[player].unlocked_chapters[key] = values;
+		}
+	}
+}
