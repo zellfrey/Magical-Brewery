@@ -2,6 +2,7 @@ import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {setMainHand} from '../utils/containerUtils.js';
 import {TOME_CHAPTERS, SEAL_CHAPTERS, CRYSTAL_CHAPTERS, BREWING_CHAPTERS, TEMP_CHAPTERS} from "tome/tomeChapters.js"
+import {getTomePageButtonLayout} from "tome/tome.js"
 
 //Implement the use of pages to be opened but only have those chapters
 //Create separate function for chapters only
@@ -51,7 +52,7 @@ function doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParamete
 	else if(!Object.keys(tomePlayerData.unlocked_chapters).includes(pagesParameters.tome_parent_chapter)){	
 
 		//TODO change object
-		player.sendMessage("You do not have the knowledge required to understand these notes. Your need to do more research")
+		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.insufficient_knowledge"})
 		return false;
 	}
 	//TODO: Check playerDB for value in parentChapter Key - DONE
@@ -76,29 +77,31 @@ function getPagesChapters(pagesChapters){
 		case "Brewing":
 			pagesChapters = BREWING_CHAPTERS;
 		break;
-		case "Temp":
+		case "Memories":
 			pagesChapters = TEMP_CHAPTERS;
 		break;
 	}
 	return pagesChapters;
 }
 
-function createPagesFormData(pagesChapters, player){
+function createPagesFormData(tomeChapter, player){
 	
-	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
-	
+	const pagesChapters = getPagesChapters(tomeChapter);
 	let form = new ActionFormData();
 
-	form.title({translate: TOME_CHAPTERS[pagesChapters].title});
-	form.body({translate: TOME_CHAPTERS[pagesChapters].body});
+	form.title({translate: TOME_CHAPTERS[tomeChapter].title});
+	form.body({translate: TOME_CHAPTERS[tomeChapter].body});
 	
-	TOME_CHAPTERS[pagesChapters].buttons.forEach(el => form.button(el.chapter, el.icon))
+	let buttonLayout = getTomePageButtonLayout(TOME_CHAPTERS[tomeChapter], pagesChapters[tomeChapter]);
+		
+	buttonLayout.forEach(el => form.button(el.chapter, el.icon))
 	
-	displayPagesFormData(form, player, TOME_CHAPTERS[pagesChapters])
-	
+	displayPagesFormData(form, player, TOME_CHAPTERS[tomeChapter])
+
+	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 }
 
-function displayPagesFormData(form, player, pagesChapters){
+function displayPagesFormData(form, player, tomeChapter){
 
 	form.show(player)
 	.then((response) => {
@@ -108,12 +111,12 @@ function displayPagesFormData(form, player, pagesChapters){
 			return;
 		}
 		
-		if(response.selection === pagesChapters.buttons.length){
+		if(response.selection === tomeChapter.buttons.length){
 			
-			createPagesFormData(pagesChapters.exitPage, player)
+			createPagesFormData(tomeChapter.exitPage, player)
 		}
 		else{
-			createPagesFormData(pagesChapters.buttons[response.selection].id, player);
+			createPagesFormData(tomeChapter.buttons[response.selection].id, player);
 		}
 		
 	})

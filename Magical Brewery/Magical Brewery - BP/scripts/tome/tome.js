@@ -2,7 +2,7 @@ import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {TOME_CHAPTERS, STARTER_CHAPTERS} from "tome/tomeChapters.js"
 
-export let dummyTomePlayerData = {
+let dummyTomePlayerData = {
 	// "Beardedflea5998":
 	// {
 	// 	unlocked_chapters:
@@ -45,8 +45,6 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 function createTomeFormData(tomePage, player, tomePlayerData){
 	
-	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
-	
 	let form = new ActionFormData();
 
 	form.title({translate: TOME_CHAPTERS[tomePage].title});
@@ -60,9 +58,10 @@ function createTomeFormData(tomePage, player, tomePlayerData){
 	
 	displayTomePageFormData(form, player, tomePlayerData, tomePage, TOME_CHAPTERS[tomePage].exitPage, buttonLayout)
 	
+	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 }
 
-function getTomePageButtonLayout(tomeChaptersPage, playerUnlockedChapters){
+export function getTomePageButtonLayout(tomeChaptersPage, playerUnlockedChapters){
 
 	let buttonPageLayout = [];
 	tomeChaptersPage.buttons.forEach(el => {

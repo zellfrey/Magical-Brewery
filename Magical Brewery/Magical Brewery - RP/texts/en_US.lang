@@ -287,6 +287,7 @@ magical_brewery:message.tome.chapter_pages.add=Maybe these pages can be added to
 magical_brewery:message.tome.chapter_pages.owned=These chapters are already in your book.\nPerhaps you can share them with someone you trust. Or destroy these pages to stop prying hands.
 magical_brewery:message.tome.chapter_pages.added=You have added %s chapters to your Brewers' tome.
 magical_brewery:message.tome.chapter_pages.missing=Upon examining the book, it appears some of the pages are missing. There should be some chapters to be found.
+magical_brewery:message.tome.chapter_pages.insufficient_knowledge=You do not have the knowledge required to understand these notes. Your need to do more research.
 ##---------------------------------
 
 ##---------------------------------
