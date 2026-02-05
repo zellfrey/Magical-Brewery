@@ -9,6 +9,7 @@ import "./cask/caskEvents.js"
 import "./cask/Seal.js"
 import "./potion/potionEffects.js"
 import "./tome/tome.js"
+import "./tome/pages.js"
 import "./utils/lootUtils.js"
 import "./brewersDesk.js"
 
