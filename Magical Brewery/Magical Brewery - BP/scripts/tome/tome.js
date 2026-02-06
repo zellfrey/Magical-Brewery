@@ -32,14 +32,22 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_brewers_tome', {
         onUse(e) {
 
-			let tomePlayerData = JSON.parse(e.source.getDynamicProperty('magical_brewery:tome_data_v2'))
+			let tomePlayerData = e.source.getDynamicProperty('magical_brewery:tome_data_v2');
+			let playerLastOpenedPage = "Main";
 			
 			if(!tomePlayerData){
 				createTomeDataV2(e.source)
 				e.source.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.missing"});
-				tomePlayerData = JSON.parse(e.source.getDynamicProperty('magical_brewery:tome_data_v2'))
+				tomePlayerData = JSON.parse(tomePlayerData)
 			}
-			let playerLastOpenedPage = e.source.isSneaking ? "Main" : getTomePlayerLastPage(e.source);
+
+			if(tomePlayerData && e.source.isSneaking){
+				playerLastOpenedPage = "Main";
+			}
+
+			tomePlayerData = JSON.parse(tomePlayerData)
+			playerLastOpenedPage = getTomePlayerLastPage(e.source);
+
 			createTomeFormData(playerLastOpenedPage, e.source, tomePlayerData)
         }
     });

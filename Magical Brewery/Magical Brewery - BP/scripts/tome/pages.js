@@ -24,8 +24,15 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 function addPagesChaptersToPlayer(player, pagesParameters, pagesChapters){
 
-	let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'))
-	
+	let tomePlayerData = player.getDynamicProperty('magical_brewery:tome_data_v2');
+
+	if(!tomePlayerData){
+		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.add"})
+		return false;
+	}
+
+	tomePlayerData = JSON.parse(tomePlayerData);
+
 	if(!doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParameters)) return;
 	
 	//We set players last page as the obtained chapter to show whats been added
@@ -42,14 +49,11 @@ function addPagesChaptersToPlayer(player, pagesParameters, pagesChapters){
 
 function doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParameters){
 
-	if(!tomePlayerData){
-		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.add"})
-		return false;
-	}
+	
 	//TODO Make check for multiple parent chapters
 	//TODO don't check multiple parent chapters. Have a page give information for specific chapters only. Don't rock the boat
 	//by adding chapters in various places.
-	else if(!Object.keys(tomePlayerData.unlocked_chapters).includes(pagesParameters.tome_parent_chapter)){	
+	if(!Object.keys(tomePlayerData.unlocked_chapters).includes(pagesParameters.tome_parent_chapter)){	
 
 		//TODO change object
 		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.insufficient_knowledge"})
