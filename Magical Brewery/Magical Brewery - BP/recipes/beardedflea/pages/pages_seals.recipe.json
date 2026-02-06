@@ -1,0 +1,25 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:pages_seals"
+		},
+		"tags": ["magical_brewery:brewers_desk"],
+		"pattern": ["pBp", "PTL", "pRp"],
+		"key": {
+			"p": "minecraft:paper",
+			"B": "magical_brewery:seal_basic",
+			"P": "magical_brewery:seal_potency_1",
+			"T": "magical_brewery:brewers_tome",
+			"L": "magical_brewery:seal_longevity_1",
+			"R": "magical_brewery:seal_retainment"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:pages_seals",
+				"count": 1
+			},
+			"magical_brewery:brewers_tome"
+		]
+	}
+}

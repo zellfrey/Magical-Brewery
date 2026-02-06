@@ -12,6 +12,11 @@
 			"minecraft:icon": "magical_brewery:pure_quartz_shard",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:pure_quartz_shard.name"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"magical_brewery:pure_shard"
+				]
 			}
 		}
 	}

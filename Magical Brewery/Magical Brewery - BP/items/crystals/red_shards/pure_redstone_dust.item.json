@@ -12,6 +12,11 @@
 			"minecraft:icon": "magical_brewery:pure_redstone_dust",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:pure_redstone_dust.name"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"magical_brewery:pure_dust"
+				]
 			}
 		}
 	}
