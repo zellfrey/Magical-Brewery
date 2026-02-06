@@ -10,23 +10,23 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:ou_get_pages', {
         onUse(e,p) {
 			
+			let pagesChapters = getPagesChapters(p.params.tome_chapter)
+			
 			if(e.source.isSneaking){
-				addPagesChaptersToPlayer(e.source, p.params)
+				addPagesChaptersToPlayer(e.source, p.params, pagesChapters)
 			} 
 			else{
-				createPagesFormData(p.params.tome_chapter, e.source)
+				createPagesFormData(p.params.tome_chapter, e.source, pagesChapters)
 			}		
         }
     });
 });
 
-function addPagesChaptersToPlayer(player, pagesParameters){
+function addPagesChaptersToPlayer(player, pagesParameters, pagesChapters){
 
 	let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'))
 	
 	if(!doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParameters)) return;
-
-	let pagesChapters = getPagesChapters(pagesParameters.tome_chapter)
 	
 	//We set players last page as the obtained chapter to show whats been added
 	
@@ -65,7 +65,7 @@ function doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParamete
 	return true;
 }
 
-function getPagesChapters(pagesChapters){
+export function getPagesChapters(pagesChapters){
 
 	switch(pagesChapters){
 		case "Crystallography":
@@ -84,9 +84,8 @@ function getPagesChapters(pagesChapters){
 	return pagesChapters;
 }
 
-function createPagesFormData(tomeChapter, player){
+function createPagesFormData(tomeChapter, player, pagesChapters){
 	
-	const pagesChapters = getPagesChapters(tomeChapter);
 	let form = new ActionFormData();
 
 	form.title({translate: TOME_CHAPTERS[tomeChapter].title});
@@ -96,12 +95,12 @@ function createPagesFormData(tomeChapter, player){
 		
 	buttonLayout.forEach(el => form.button(el.chapter, el.icon))
 	
-	displayPagesFormData(form, player, TOME_CHAPTERS[tomeChapter])
+	displayPagesFormData(form, player, TOME_CHAPTERS[tomeChapter], pagesChapters)
 
 	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 }
 
-function displayPagesFormData(form, player, tomeChapter){
+function displayPagesFormData(form, player, tomeChapter, pagesChapters){
 
 	form.show(player)
 	.then((response) => {
@@ -113,10 +112,10 @@ function displayPagesFormData(form, player, tomeChapter){
 		
 		if(response.selection === tomeChapter.buttons.length){
 			
-			createPagesFormData(tomeChapter.exitPage, player)
+			createPagesFormData(tomeChapter.exitPage, player, pagesChapters)
 		}
 		else{
-			createPagesFormData(tomeChapter.buttons[response.selection].id, player);
+			createPagesFormData(tomeChapter.buttons[response.selection].id, player, pagesChapters);
 		}
 		
 	})
