@@ -38,11 +38,3 @@ system.runInterval(
     },
 );
 
-world.afterEvents.playerSpawn.subscribe((e) => {
-    
-    const tomeDataV1 = e.player.getDynamicProperty('magical_brewery:tome_data')
-	if(!e.initialSpawn) return;
-	
-	console.log("me big dum")
-});
-

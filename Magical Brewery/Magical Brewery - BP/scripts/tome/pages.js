@@ -124,7 +124,7 @@ function displayPagesFormData(form, player, tomeChapter, pagesChapters){
 	});
 }
 
-function addChaptersToPlayerTomeData(tomePlayerData, pagesChapters){
+export function addChaptersToPlayerTomeData(tomePlayerData, pagesChapters){
 
 	for (const [key, values] of Object.entries(pagesChapters)) {
 		
