@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:seal_inspiration"
 		},
-		"tags": ["crafting_table"],
+		"tags": ["magical_brewery:brewers_desk"],
 		"pattern": ["EQE", "QSQ", "EQE"],
 		"key": {
 			"Q": "magical_brewery:pure_quartz_shard",

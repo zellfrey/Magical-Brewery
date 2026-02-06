@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:seal_basic"
 		},
-		"tags": ["crafting_table"],
+		"tags": ["magical_brewery:brewers_desk"],
 		"ingredients": [
 			{
 				"item": "minecraft:gray_candle"

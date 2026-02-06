@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:pages_brewing_glowstone"
 		},
-		"tags": ["crafting_table"],
+		"tags": ["magical_brewery:brewers_desk"],
 		"pattern": ["PSP", "PTP", "PGP"],
 		"key": {
 			"P": "minecraft:paper",

@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:seal_potency_1"
 		},
-		"tags": ["crafting_table"],
+		"tags": ["magical_brewery:brewers_desk"],
 		"pattern": ["GQG", "QSQ", "GQG"],
 		"key": {
 			"Q": "minecraft:quartz",

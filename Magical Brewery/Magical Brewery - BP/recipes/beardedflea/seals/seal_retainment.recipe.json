@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:seal_retainment"
 		},
-		"tags": ["crafting_table"],
+		"tags": ["magical_brewery:brewers_desk"],
 		"pattern": ["AQA", "QSQ", "AQA"],
 		"key": {
 			"Q": "minecraft:quartz",
