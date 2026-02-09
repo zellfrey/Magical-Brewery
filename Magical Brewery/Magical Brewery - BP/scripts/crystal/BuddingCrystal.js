@@ -113,7 +113,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_budding_crystal_destroy', {
         onBreak(e) {
-            console.log("I am being broken")
+            //console.log("I am being broken")
             BuddingCrystal.destroyCrystal(e.block.location, e.dimension.id)
         }
     });

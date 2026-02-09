@@ -4,8 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:medium_echo_bud",
 			"menu_category": {
-				"category": "none",
-				"is_hidden_in_commands": true
+				"category": "nature"
 			}
 		}, 
 		"components": {
@@ -13,10 +12,10 @@
 			"minecraft:icon": "magical_brewery:medium_echo_bud",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:medium_echo_bud.name"
+			},
+			"minecraft:block_placer": {
+				"block": "magical_brewery:medium_echo_bud"
 			}
-			// "minecraft:block_placer": {
-			// 	"block": "magical_brewery:medium_echo_bud"
-			// }
 		}
 	}
 }

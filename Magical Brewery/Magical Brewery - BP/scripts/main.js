@@ -38,3 +38,10 @@ system.runInterval(
     },
 );
 
+world.beforeEvents.entityRemove.subscribe((e) => {
+
+    if(!e.hurtEntity.isValid || !e.hurtEntity.dimension.isChunkLoaded(e.hurtEntity.location) || 
+        e.hurtEntity.getEffects().length === 0) return;
+
+    applyOnHitEffects(e.hurtEntity)
+});

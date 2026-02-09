@@ -1,8 +1,8 @@
 {
-	"format_version": "1.21.90",
+	"format_version": "1.21.130",
 	"minecraft:block": {
 		"description": {
-			"identifier": "magical_brewery:large_echo_bud",
+			"identifier": "magical_brewery:small_echo_bud",
 			"menu_category": {
 				"category": "none",
 				"is_hidden_in_commands": true
@@ -15,13 +15,13 @@
 		},
 		"components": {
 			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:magical_brewery:echo_bud": {},
 			"tag:stone": {},
+			"tag:magical_brewery:echo_bud": {},
 			"minecraft:friction": 0.4,
 			"minecraft:geometry": "minecraft:geometry.cross",
-			"minecraft:loot": "loot_tables/beardedflea/blocks/crystals/echo_shards/large_echo_bud.loot.json",
+			"minecraft:light_emission": 1,
+			"minecraft:loot": "loot_tables/beardedflea/blocks/crystals/echo_shards/small_echo_bud.loot.json",
 			"minecraft:map_color": "#4C7F99",
-			"minecraft:light_emission": 2,
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 1.5
 			},
@@ -38,22 +38,25 @@
 			},
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "magical_brewery:large_echo_bud",
+					"texture": "magical_brewery:small_echo_bud",
 					"render_method": "alpha_test_single_sided",
 					"face_dimming": false,
 					"ambient_occlusion": false
 				}
 			},
 			"minecraft:collision_box": {
-				"origin": [-5, 0, -5],
-				"size": [10, 5, 10]
+				"origin": [-4, 0, -4],
+				"size": [8, 3, 8]
 			},
 			"minecraft:selection_box": {
-				"origin": [-5.0, 0.0, -5.0],
-				"size": [10.0, 5.0, 10.0]
+				"origin": [-4.0, 0.0, -4.0],
+				"size": [8.0, 3.0, 8.0]
 			},
 			"minecraft:movable": {
 				"movement_type": "popped"
+			},
+			"minecraft:precipitation_interactions": {
+				"precipitation_behavior": "none"
 			}
 		},
 		"permutations": [

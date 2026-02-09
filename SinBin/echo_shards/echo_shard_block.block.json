@@ -1,19 +1,18 @@
 {
-	"format_version": "1.21.80",
+	"format_version": "1.21.100",
 	"minecraft:block": {
 		"description": {
 			"identifier": "magical_brewery:echo_shard_block",
 			"menu_category": {
-				"category": "none",
-				"is_hidden_in_commands": true
+				"category": "nature"
 			}
 		},
 		"components": {
 			"tag:minecraft:is_pickaxe_item_destructible": {},
 			"tag:stone": {},
+			"minecraft:light_emission": 3,
 			"minecraft:friction": 0.4,
 			"minecraft:map_color": "#4C7F99",
-			"minecraft:light_emission": 3,
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 1.5
 			},

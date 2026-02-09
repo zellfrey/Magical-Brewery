@@ -4,8 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:echo_seed",
 			"menu_category": {
-				"category": "none",
-				"is_hidden_in_commands": true
+				"category": "items"
 			}
 		}, 
 		"components": {
@@ -13,10 +12,15 @@
 			"minecraft:icon": "magical_brewery:echo_seed",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:echo_seed.name"
+			},
+			"minecraft:block_placer": {
+				"block": "magical_brewery:echo_seed"
+			},
+			"minecraft:tags": {
+				"tags": [
+					"magical_brewery:crystal_seed"
+				]
 			}
-			// "minecraft:block_placer": {
-			// 	"block": "magical_brewery:echo_seed"
-			// }
 		}
 	}
 }
