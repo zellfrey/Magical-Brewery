@@ -16,12 +16,12 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_cask', {
-        onBreak(e) {
-            const fillLevel = e.brokenBlockPermutation.getState("magical_brewery:fill_level")
+        onPlayerBreak(e) {
+            //const fillLevel = e.brokenBlockPermutation.getState("magical_brewery:fill_level")
 
-            if(fillLevel > 0){
-                e.dimension.playSound("bucket.empty_water", e.block.location, {volume: 1.0, pitch: 1.3});
-            }
+            // if(fillLevel > 0){
+            //     e.dimension.playSound("bucket.empty_water", e.block.location, {volume: 1.0, pitch: 1.3});
+            // }
             
             Cask.destroyCask(e.block.dimension.id, e.block.location)
         }
@@ -121,6 +121,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 }
                 
                 let item;
+                
                 const potionCreationType = cask.potion_effects[0].split(":")[0]
 
                 if(potionCreationType === "minecraft"){
@@ -254,4 +255,10 @@ world.afterEvents.worldLoad.subscribe((e) => {
 });
 
 
+world.afterEvents.blockExplode.subscribe((e) => {
+
+    if(e.explodedBlockPermutation.hasTag("magical_brewery:cask")){
+        Cask.destroyCask(e.block.dimension.id, e.block.location)
+    }
+});
 
