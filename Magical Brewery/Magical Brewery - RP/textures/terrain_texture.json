@@ -11,7 +11,7 @@
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst_seed.png"
 		},
 		"magical_brewery:growing_bud_amethyst":{
-			"textures": "textures/beardedflea/magical_brewery/blocks/budding_amethyst"
+			"textures": "textures/blocks/budding_amethyst"
 		},
 		"magical_brewery:echo_seed":{
 			"textures": "textures/beardedflea/magical_brewery/items/echo_seed.png"
