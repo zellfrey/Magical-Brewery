@@ -1,3 +1,10 @@
+v0.4.2
+Updated:
+    - Reverted Cask break back to onPlayerBreak
+    - Reverted Cask sound on destroying(doesn't play)
+Author comment:
+Quick fix, realised that casks don't work with the onBreak function. 
+-----------------------------------------------
 v0.4.1
 Updated:
     - Stained Slabs bumped to format version 1.21.60

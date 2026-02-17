@@ -1,5 +1,6 @@
-import {world, system, ItemStack } from "@minecraft/server";
+import {world, system} from "@minecraft/server";
 import {MathUtils} from "../utils/MathUtils.js";
+import {getRandomAdjacentBlockAndFace} from "../utils/blockPlacementUtils.js";
 
 const BUDDING_BLOCK_IDS = ["magical_brewery:budding_pure_quartz", "magical_brewery:budding_redstone", 
     "magical_brewery:budding_glowstone", "magical_brewery:budding_echo"]
@@ -51,27 +52,45 @@ export class BuddingCrystal {
     }
 }
 
-function crystalGrowth(block, budType, crystalType, lastCharNum){
-    let buddingCrystal = BuddingCrystal.buddingCrystals[BuddingCrystal.findIndexCrystal(block.location, block.dimension.id)]
+function crystalGrowth(buddingBlock, crystalBudParams){
+	
+    let buddingCrystal = BuddingCrystal.buddingCrystals[BuddingCrystal.findIndexCrystal(buddingBlock.location, buddingBlock.dimension.id)]
     let unloadTimeCompensation = 1;
     let blockUnloadedTime = system.currentTick - buddingCrystal.previousTick
     
-    if(blockUnloadedTime >= 8000) unloadTimeCompensation += Math.trunc(blockUnloadedTime/8000)
+    if(blockUnloadedTime >= 8000) unloadTimeCompensation += Math.trunc(blockUnloadedTime/8000);
+
+    for(let i = 0; i < unloadTimeCompensation; i++){
+            
+        const budToGrow = getValidGrowthSpace(buddingBlock, crystalBudParams);
+
+        if(!budToGrow || Math.floor(Math.random() * 100) > 20) continue;
+            
+        growCrystalBud(budToGrow, crystalBudParams.type, crystalBudParams.lastCharNum)
+    }
     
     buddingCrystal.setPreviousTick(system.currentTick)
-    for(let i = 0; i < unloadTimeCompensation; i++){
-        if(Math.floor(Math.random() * 100) > 20) continue;
-            
-        const validBlocks = getSurroundingBlocks(block, budType)
-    
-        if(validBlocks.length === 0) return;
-
-        const budToGrow = validBlocks[Math.floor(Math.random() * validBlocks.length)]
-            
-        growCrystalBud(budToGrow, crystalType, lastCharNum)
-    }
+    console.log(system.currentTick)
 }
 
+function getValidGrowthSpace(buddingBlock, crystalBudParams){
+
+    const adjacentBlock = getRandomAdjacentBlockAndFace(buddingBlock)
+    const budTag = "magical_brewery:" + crystalBudParams.type + "_bud";
+
+    if(!adjacentBlock.block){
+        return undefined;
+    }
+	else if(canCrystalBudGrow(adjacentBlock.block) || adjacentBlock.block.hasTag(budTag)){
+		
+		return adjacentBlock;
+	}
+    return undefined;
+}
+
+function canCrystalBudGrow(adjacentBlock){
+    return adjacentBlock.typeId === "minecraft:air" || adjacentBlock.typeId === "minecraft:water";
+}
 
 export function getSurroundingBlocks(block, budTag){
     const blockdAndFaces = [{block:block.above(), face:"up"},{block:block.below(), face:"down"},{block:block.north(), face:"north"}, 
@@ -80,13 +99,13 @@ export function getSurroundingBlocks(block, budTag){
     return blockdAndFaces.filter(lumps => lumps.block.typeId === "minecraft:air" || lumps.block.typeId === "minecraft:water" || lumps.block.hasTag(budTag));
 }
 
-export function growCrystalBud(selectedBlock, type, lastCharNum){
+export function growCrystalBud(budToGrow, type, lastCharNum){
     let newSize;
-    if(selectedBlock.block.typeId === "minecraft:air" || selectedBlock.block.typeId === "minecraft:water"){
+    if(budToGrow.block.typeId === "minecraft:air" || budToGrow.block.typeId === "minecraft:water"){
         newSize = `magical_brewery:small_${type}_bud`;
     }
     else{
-        const budSize =selectedBlock.block.typeId.slice(16, lastCharNum);
+        const budSize = budToGrow.block.typeId.slice(16, lastCharNum);
         switch(budSize){
             case "small":
                 newSize = `magical_brewery:medium_${type}_bud`;
@@ -98,8 +117,8 @@ export function growCrystalBud(selectedBlock, type, lastCharNum){
                 newSize = `magical_brewery:${type}_cluster`;
         }
     }
-    selectedBlock.block.setType(newSize)
-    selectedBlock.block.setPermutation(selectedBlock.block.permutation.withState("minecraft:block_face", selectedBlock.face));
+    budToGrow.block.setType(newSize)
+    budToGrow.block.setPermutation(budToGrow.block.permutation.withState("minecraft:block_face", budToGrow.face.toLowerCase()));
 }
 
 //This is also triggered when a growing crystal transforms to a budding crystal
@@ -113,7 +132,6 @@ system.beforeEvents.startup.subscribe(eventData => {
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_budding_crystal_destroy', {
         onBreak(e) {
-            //console.log("I am being broken")
             BuddingCrystal.destroyCrystal(e.block.location, e.dimension.id)
         }
     });
@@ -121,22 +139,17 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_budding_crystal_growth', {
-        onRandomTick(e) {
-            switch(e.block.typeId){
-                case "magical_brewery:budding_glowstone":
-                    if(e.block.dimension.id !== "minecraft:nether") return;
-                    crystalGrowth(e.block, "magical_brewery:glowstone_bud", "glowstone", -14)
-                break;
-                case "magical_brewery:budding_redstone":
-                    crystalGrowth(e.block, "magical_brewery:redstone_bud", "redstone", -13)
-                break;
-                case "magical_brewery:budding_pure_quartz":
-                    crystalGrowth(e.block, "magical_brewery:pure_quartz_bud", "pure_quartz", -16)
-                break;
-                case "magical_brewery:budding_echo":
-                    crystalGrowth(e.block, "magical_brewery:echo_bud", "echo", -9)
-                break;
-            }
+        onRandomTick(e, p) {
+            crystalGrowth(e.block, p.params.crystal_bud)
+        }
+    });
+});
+
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_budding_crystal_nether_growth', {
+        onRandomTick(e, p) {
+            if(e.block.dimension.id !== "minecraft:nether") return;
+            crystalGrowth(e.block, p.params.crystal_bud)
         }
     });
 });

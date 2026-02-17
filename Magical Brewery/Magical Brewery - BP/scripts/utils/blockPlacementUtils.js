@@ -18,11 +18,22 @@ export function getAdjacentBlock(source, face){
     return adjacentBlock;
 }
 
+export function getRandomAdjacentBlockAndFace(source){
+    const face = getRandomFace();
+    const adjacentBlock = getAdjacentBlock(source, face)
+    return {block: adjacentBlock, face: face.toLowerCase()};
+}
+
 //Gets the block that the non-solid block is attached to. E.g finds what the item frame is attached to
 export function getBlockFromFace(source, face){
     const faceNum = Object.keys(Direction).indexOf(faceToUpperCase(face));
     const attachedBlock = source.dimension.getBlock(getRelativeBlockLocation(source.location, blockFaceLocations[faceNum]));
     return attachedBlock;
+}
+
+function getRandomFace(){
+    const directionValues = Object.values(Direction)
+    return directionValues[Math.floor(Math.random() * 6)]
 }
 
 //Subtle change from mojang not allowing lowercase entries for the Direction Enum
