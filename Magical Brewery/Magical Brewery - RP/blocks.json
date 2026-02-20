@@ -129,6 +129,9 @@
 	"magical_brewery:stained_planks_vision_night":{
 		"sound" : "wood"
 	},
+	"magical_brewery:stained_planks_weakness":{
+		"sound" : "wood"
+	},
 	"magical_brewery:stained_planks_water_breathing":{
 		"sound" : "wood"
 	},
