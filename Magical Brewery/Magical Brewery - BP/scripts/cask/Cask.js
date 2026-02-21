@@ -218,7 +218,7 @@ export class Cask {
         const potionEffect = POTION_EFFECTS[caskPotionType]
         let effectName = potionEffect.effects
         let sealStrength = this.seal.strength;
-
+        //TODO: add expansion & inspiration seal choices
         if(this.seal.type === "potency"){
 
             let potionPotency;

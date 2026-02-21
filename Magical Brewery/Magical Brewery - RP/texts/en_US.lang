@@ -68,11 +68,11 @@ item.magical_brewery:seal_longevity_1.name=Seal of Longevity I
 item.magical_brewery:seal_longevity_2.name=§eSeal of Longevity II
 item.magical_brewery:seal_potency_1.name=Seal of Potency I
 item.magical_brewery:seal_potency_2.name=§eSeal of Potency II
-item.magical_brewery:seal_expansion_1.name=Seal of Expansion I §c[W.I.P]
-item.magical_brewery:seal_expansion_2.name=§eSeal of Expansion II §c[W.I.P]
+item.magical_brewery:seal_expansion_1.name=Seal of Expansion I
+item.magical_brewery:seal_expansion_2.name=§eSeal of Expansion II
 item.magical_brewery:seal_retainment.name=Seal of Retainment
 item.magical_brewery:seal_memories.name=Seal of Memories §c[W.I.P]
-item.magical_brewery:seal_inspiration.name=Seal of Inspiration §c[W.I.P]
+item.magical_brewery:seal_inspiration.name=Seal of Inspiration
 ##---------------------------------
 
 

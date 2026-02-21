@@ -6,7 +6,7 @@ export const STARTER_CHAPTERS = {
 
 export const SEAL_CHAPTERS = {
 					"Ageing": ["Seals"],
-					"Seals": ["Base Seal", "Longevity", "Potency", "Retainment"],
+					"Seals": ["Base Seal", "Longevity", "Expansion", "Potency", "Retainment"],
 				};
 
 export const CRYSTAL_CHAPTERS = {
@@ -209,11 +209,11 @@ export const TOME_CHAPTERS = {
 				id: "Potency",
 				icon: "textures/beardedflea/magical_brewery/items/seals/seal_potency_1.png"
 			},
-			// {
-			// 	chapter: "magical_brewery:tome_chapter_seal_expansion.title",
-			// 	id: "Expansion",
-			// 	icon: "textures/beardedflea/magical_brewery/items/seals/seal_expansion_1.png"
-			// },
+			{
+				chapter: "magical_brewery:tome_chapter_seal_expansion.title",
+				id: "Expansion",
+				icon: "textures/beardedflea/magical_brewery/items/seals/seal_expansion_1.png"
+			},
 			{
 				chapter: "magical_brewery:tome_chapter_seal_retainment.title",
 				id: "Retainment",

@@ -120,8 +120,8 @@
 						},
 						"items": [
 							"magical_brewery:seal_basic",
-							// "magical_brewery:seal_expansion_1",
-							// "magical_brewery:seal_expansion_2",
+							"magical_brewery:seal_expansion_1",
+							"magical_brewery:seal_expansion_2",
 							"magical_brewery:seal_longevity_1",
 							"magical_brewery:seal_longevity_2",
 							"magical_brewery:seal_potency_1",
