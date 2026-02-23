@@ -11,6 +11,7 @@
 							"name": "magical_brewery:stained_planks_construction"
 						},
 						"items": [
+							"magical_brewery:stained_planks_decay",
 							"magical_brewery:stained_planks_harming",
 							"magical_brewery:stained_planks_healing",
 							"magical_brewery:stained_planks_invisibility",
@@ -37,6 +38,7 @@
 							"name": "magical_brewery:stained_slabs_construction"
 						},
 						"items": [
+							"magical_brewery:stained_slab_decay",
 							"magical_brewery:stained_slab_harming",
 							"magical_brewery:stained_slab_healing",
 							"magical_brewery:stained_slab_invisibility",
@@ -68,6 +70,7 @@
 							"name": "magical_brewery:casks_items"
 						},
 						"items": [
+							"magical_brewery:cask_decay",
 							"magical_brewery:cask_harming",
 							"magical_brewery:cask_healing",
 							"magical_brewery:cask_invisibility",

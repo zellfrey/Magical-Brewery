@@ -172,6 +172,18 @@
 		"magical_brewery:cask_side_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_decay.png"
 		},
+		"magical_brewery:cask_side_decay_quality_4":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_4/cask_side_decay_q4.png"
+		},
+		"magical_brewery:cask_side_decay_quality_3":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_3/cask_side_decay_q3.png"
+		},
+		"magical_brewery:cask_side_decay_quality_2":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_2/cask_side_decay_q2.png"
+		},
+		"magical_brewery:cask_side_decay_quality_1":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_1/cask_side_decay_q1.png"
+		},
 		"magical_brewery:cask_side_harming":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_side_harming.png"
 		},
@@ -451,6 +463,18 @@
 		"magical_brewery:cask_end_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_decay.png"
 		},
+		"magical_brewery:cask_end_decay_quality_4":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_4/cask_end_decay_q4.png"
+		},
+		"magical_brewery:cask_end_decay_quality_3":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_3/cask_end_decay_q3.png"
+		},
+		"magical_brewery:cask_end_decay_quality_2":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_2/cask_end_decay_q2.png"
+		},
+		"magical_brewery:cask_end_decay_quality_1":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_1/cask_end_decay_q1.png"
+		},
 		"magical_brewery:cask_end_harming":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_end_harming.png"
 		},
@@ -729,6 +753,18 @@
 		},
 		"magical_brewery:cask_front_decay":{
 		 	"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_decay.png"
+		},
+		"magical_brewery:cask_front_decay_quality_4":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_4/cask_front_decay_q4.png"
+		},
+		"magical_brewery:cask_front_decay_quality_3":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_3/cask_front_decay_q3.png"
+		},
+		"magical_brewery:cask_front_decay_quality_2":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_2/cask_front_decay_q2.png"
+		},
+		"magical_brewery:cask_front_decay_quality_1":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/casks_quality_1/cask_front_decay_q1.png"
 		},
 		"magical_brewery:cask_front_harming":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/casks/cask_front_harming.png"

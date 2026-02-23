@@ -87,9 +87,9 @@
 	"magical_brewery:amethyst_seed":{
 		"sound" : "amethyst_block"
 	},
-	// "magical_brewery:stained_planks_decay":{
-	//   "sound" : "wood"
-	// },
+	"magical_brewery:stained_planks_decay":{
+	  "sound" : "wood"
+	},
 	"magical_brewery:stained_planks_harming":{
 		"sound" : "wood"
 	},
@@ -147,9 +147,9 @@
 	"magical_brewery:stained_planks_weaving":{
 		"sound" : "wood"
 	},
-	// "magical_brewery:stained_slab_decay":{
-	//   "sound" : "wood"
-	// },
+	"magical_brewery:stained_slab_decay":{
+	  "sound" : "wood"
+	},
 	"magical_brewery:stained_slab_harming":{
 		"sound" : "wood"
 	},
@@ -207,9 +207,21 @@
 	"magical_brewery:stained_slab_weaving":{
 		"sound" : "wood"
 	},
-	// "magical_brewery:cask_decay":{
-	//   "sound" : "chiseled_bookshelf"
-	// },
+	"magical_brewery:cask_decay":{
+	  "sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_decay_quality_1":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_decay_quality_2":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_decay_quality_3":{
+		"sound" : "chiseled_bookshelf"
+	},
+	"magical_brewery:cask_decay_quality_4":{
+		"sound" : "chiseled_bookshelf"
+	},
 	"magical_brewery:cask_harming":{
 		"sound" : "chiseled_bookshelf"
 	},

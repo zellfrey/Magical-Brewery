@@ -78,7 +78,7 @@ item.magical_brewery:seal_inspiration.name=Seal of Inspiration
 
 ##---------------------------------
 ##Stained Planks/Slabs---------------------------------
-##tile.magical_brewery:stained_planks_decay.name=Stained Planks of Decay
+tile.magical_brewery:stained_planks_decay.name=Stained Planks of Decay
 tile.magical_brewery:stained_planks_harming.name=Stained Planks of Harming
 tile.magical_brewery:stained_planks_healing.name=Stained Planks of Healing
 tile.magical_brewery:stained_planks_invisibility.name=Stained Planks of Invisibility
@@ -99,7 +99,7 @@ tile.magical_brewery:stained_planks_infested.name=Stained Planks of Infestation
 tile.magical_brewery:stained_planks_wind_charged.name=Stained Planks of Wind Charged
 tile.magical_brewery:stained_planks_weaving.name=Stained Planks of Weaving
 
-##tile.magical_brewery:stained_slab_decay.name=Stained Slab of Decay
+tile.magical_brewery:stained_slab_decay.name=Stained Slab of Decay
 tile.magical_brewery:stained_slab_harming.name=Stained Slab of Harming
 tile.magical_brewery:stained_slab_healing.name=Stained Slab of Healing
 tile.magical_brewery:stained_slab_invisibility.name=Stained Slab of Invisibility
@@ -123,7 +123,7 @@ tile.magical_brewery:stained_slab_weaving.name=Stained Slab of Weaving
 
 ##---------------------------------
 ##Casks---------------------------------
-##tile.magical_brewery:cask_decay.name=Cask of Decay
+tile.magical_brewery:cask_decay.name=Cask of Decay
 tile.magical_brewery:cask_harming.name=Cask of Harming
 tile.magical_brewery:cask_healing.name=Cask of Healing
 tile.magical_brewery:cask_invisibility.name=Cask of Invisibility
@@ -149,6 +149,11 @@ magical_brewery:cask_quality=Quality
 
 
 ##Cask Variants---------------------------------
+tile.magical_brewery:cask_decay_quality_4.name=Cask of Decay\n§7Quality: 4
+tile.magical_brewery:cask_decay_quality_3.name=Cask of Decay\n§7Quality: 3
+tile.magical_brewery:cask_decay_quality_2.name=Cask of Decay\n§7Quality: 2
+tile.magical_brewery:cask_decay_quality_1.name=Cask of Decay\n§7Quality: 1
+
 tile.magical_brewery:cask_harming_quality_4.name=Cask of Harming\n§7Quality: 4
 tile.magical_brewery:cask_harming_quality_3.name=Cask of Harming\n§7Quality: 3
 tile.magical_brewery:cask_harming_quality_2.name=Cask of Harming\n§7Quality: 2

@@ -7,11 +7,11 @@ export const ON_HIT_EFFECTS= ["minecraft:infested"];
 //Potions with long duration, 0th element represent base effect time, 1st is longevity
 //If a potion doesnt have a potency variant, it will fallback onto the base effect time in duration_long
 export const POTION_EFFECTS = {
-    // "Decay": {
-    //     effects: "Wither",
-    //     duration_long: ["0:40", "1:00", "2:00"], 
-    //     duration_potency: [],
-    // },
+    "Decay": {
+        effects: "Wither",
+        duration_long: ["0:40", "1:00", "2:00"], 
+        duration_potency: [],
+    },
     "Harming": {
         effects: "Instant Damage",
         duration_long: [],
