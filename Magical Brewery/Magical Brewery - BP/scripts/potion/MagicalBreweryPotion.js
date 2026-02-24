@@ -49,6 +49,9 @@ export class MagicalBreweryPotion {
 		let effectTime;
 
 		switch(potionDuration){
+			case "regular":
+				effectTime = effectObj.duration_long[0];
+			break;
 			case "long":
 				effectTime = effectObj.duration_long[1];
 			break;

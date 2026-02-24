@@ -9,8 +9,8 @@ export const ON_HIT_EFFECTS= ["minecraft:infested"];
 export const POTION_EFFECTS = {
     "Decay": {
         effects: "Wither",
-        duration_long: ["0:40", "1:00", "2:00"], 
-        duration_potency: [],
+        duration_long: ["1:20", "3:00", "8:00"], 
+        duration_potency: ["0:40", "0:40"],
     },
     "Harming": {
         effects: "Instant Damage",
