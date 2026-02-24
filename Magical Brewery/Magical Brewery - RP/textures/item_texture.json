@@ -262,6 +262,9 @@
 		},
 		"magical_brewery:pages_temp":{
 			"textures": "textures/beardedflea/magical_brewery/items/pages_temp.png"
+		},
+		"magical_brewery:crackling_oil":{
+			"textures": "textures/beardedflea/magical_brewery/items/crackling_oil.png"
 		}
 	}
 }

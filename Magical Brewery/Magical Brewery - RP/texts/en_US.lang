@@ -74,7 +74,8 @@ item.magical_brewery:seal_retainment.name=Seal of Retainment
 item.magical_brewery:seal_memories.name=Seal of Memories §c[W.I.P]
 item.magical_brewery:seal_inspiration.name=Seal of Inspiration
 ##---------------------------------
-
+##Ingredients---------------------------------
+item.magical_brewery:crackling_oil.name=Crackling Oil
 
 ##---------------------------------
 ##Stained Planks/Slabs---------------------------------

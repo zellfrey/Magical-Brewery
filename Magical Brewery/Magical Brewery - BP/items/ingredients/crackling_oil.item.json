@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:crackling_oil",
+			"menu_category": {
+				"category": "nature"
+			}
+		}, 
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:icon": "magical_brewery:crackling_oil",
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:crackling_oil.name"
+			}
+		}
+	}
+}
