@@ -1,0 +1,12 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_brewing_mix": {
+        "description": {
+            "identifier": "magical_brewery:potion_long_decay"
+        },
+        "tags": ["brewing_stand"],
+        "input": "magical_brewery:potion_decay",
+        "reagent": "minecraft:redstone",
+        "output": "magical_brewery:potion_long_decay"
+    }
+}
