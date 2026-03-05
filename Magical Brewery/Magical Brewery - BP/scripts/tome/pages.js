@@ -1,7 +1,7 @@
 import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {setMainHand} from '../utils/containerUtils.js';
-import {TOME_CHAPTERS, SEAL_CHAPTERS, CRYSTAL_CHAPTERS, BREWING_CHAPTERS, TEMP_CHAPTERS} from "tome/tomeChapters.js"
+import {TOME_CHAPTERS, SEAL_CHAPTERS, CRYSTAL_CHAPTERS, BREWING_CHAPTERS, TEMP_CHAPTERS, INSPIRATION_CHAPTERS} from "tome/tomeChapters.js"
 import {getTomePageButtonLayout} from "tome/tome.js"
 
 //Implement the use of pages to be opened but only have those chapters
@@ -83,6 +83,9 @@ export function getPagesChapters(pagesChapters){
 		break;
 		case "Memories":
 			pagesChapters = TEMP_CHAPTERS;
+		break;
+		case "Inspiration":
+			pagesChapters = INSPIRATION_CHAPTERS;
 		break;
 	}
 	return pagesChapters;

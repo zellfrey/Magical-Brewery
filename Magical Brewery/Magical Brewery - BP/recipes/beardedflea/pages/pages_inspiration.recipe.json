@@ -1,0 +1,26 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:pages_inspiration"
+		},
+		"tags": ["magical_brewery:brewers_desk"],
+		"pattern": ["PSP", "PTP", "PSP"],
+		"key": {
+			"P": "minecraft:paper",
+			"T": "magical_brewery:brewers_tome",
+			"S": "magical_brewery:seal_inspiration"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:pages_inspiration",
+				"count": 1
+			},
+			{
+				"item": "magical_brewery:seal_inspiration",
+				"count": 2
+			},
+			"magical_brewery:brewers_tome"
+		]
+	}
+}

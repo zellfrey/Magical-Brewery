@@ -197,6 +197,12 @@
 		"magical_brewery:pages_brewing":{
 			"textures": "textures/beardedflea/magical_brewery/items/pages_brewing.png"
 		},
+		"magical_brewery:pages_inspiration":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_inspiration.png"
+		},
+		"magical_brewery:pages_temp":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_temp.png"
+		},
 		"magical_brewery:glass_potion_harming":{
 			"textures": "textures/items/potion_bottle_harm"
 		},
@@ -230,6 +236,9 @@
 		"magical_brewery:glass_potion_swiftness":{
 			"textures": "textures/items/potion_bottle_moveSpeed"
 		},
+		"magical_brewery:glass_potion_splash_swiftness":{
+			"textures": "textures/items/potion_bottle_splash_moveSpeed"
+		},
 		"magical_brewery:glass_potion_vision_night":{
 			"textures": "textures/items/potion_bottle_nightVision"
 		},
@@ -259,9 +268,6 @@
 		},
 		"magical_brewery:brewers_desk_item":{
 			"textures": "textures/beardedflea/magical_brewery/items/brewers_desk_item.png"
-		},
-		"magical_brewery:pages_temp":{
-			"textures": "textures/beardedflea/magical_brewery/items/pages_temp.png"
 		},
 		"magical_brewery:crackling_oil":{
 			"textures": "textures/beardedflea/magical_brewery/items/crackling_oil.png"

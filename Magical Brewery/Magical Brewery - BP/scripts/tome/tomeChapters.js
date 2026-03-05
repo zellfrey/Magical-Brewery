@@ -21,9 +21,11 @@ export const BREWING_CHAPTERS =  {
 					"Enhanced Potions": ["Potency +", "Duration +"]
 				};
 export const TEMP_CHAPTERS =  {
-					"Seals" : ["Memories", "Inspiration"],
+					"Seals" : ["Memories"],
 				};
-
+export const INSPIRATION_CHAPTERS =  {
+					"Seals" : ["Inspiration"],
+				};
 export const TOME_CHAPTERS = {
 	"Main": {
         title: "magical_brewery:tome_chapter_main.title",
