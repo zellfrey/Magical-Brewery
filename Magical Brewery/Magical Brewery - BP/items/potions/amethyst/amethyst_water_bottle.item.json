@@ -4,8 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:amethyst_water_bottle",
 			"menu_category": {
-				"category": "none",
-				"is_hidden_in_commands": true
+				"category": "equipment"
 			}
 		},
 		"components": {
