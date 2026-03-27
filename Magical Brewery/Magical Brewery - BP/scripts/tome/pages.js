@@ -1,7 +1,7 @@
 import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {setMainHand} from '../utils/containerUtils.js';
-import {TOME_CHAPTERS, SEAL_CHAPTERS, CRYSTAL_CHAPTERS, BREWING_CHAPTERS, TEMP_CHAPTERS, INSPIRATION_CHAPTERS} from "tome/tomeChapters.js"
+import {TOME_CHAPTERS, PAGES_CHAPTERS} from "tome/tomeChapters.js"
 import {getTomePageButtonLayout} from "tome/tome.js"
 
 //Implement the use of pages to be opened but only have those chapters
@@ -70,25 +70,7 @@ function doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParamete
 }
 
 export function getPagesChapters(pagesChapters){
-
-	switch(pagesChapters){
-		case "Crystallography":
-			pagesChapters = CRYSTAL_CHAPTERS;
-		break;
-		case "Seals":
-			pagesChapters = SEAL_CHAPTERS;
-		break;
-		case "Brewing":
-			pagesChapters = BREWING_CHAPTERS;
-		break;
-		case "Memories":
-			pagesChapters = TEMP_CHAPTERS;
-		break;
-		case "Inspiration":
-			pagesChapters = INSPIRATION_CHAPTERS;
-		break;
-	}
-	return pagesChapters;
+	return PAGES_CHAPTERS[pagesChapters];
 }
 
 function createPagesFormData(tomeChapter, player, pagesChapters){

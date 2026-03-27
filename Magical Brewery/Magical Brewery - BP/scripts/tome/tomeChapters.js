@@ -1,31 +1,58 @@
-export const STARTER_CHAPTERS = {
-					"Main": ["Ageing", "About the Author"],
-					"Ageing": ["Casks"],
-					"Casks": ["Cask Degrading", "Theories: Cask Effects"]
-				};
+export const PAGES_CHAPTERS = {
+	"Starter":{
+		"Main": ["Ageing", "About the Author"],
+		"Ageing": ["Casks"],
+		"Casks": ["Cask Degrading", "Theories: Cask Effects"]
+	},
+	"Seals":{
+		"Ageing": ["Seals"],
+		"Seals": ["Base Seal", "Longevity", "Expansion", "Potency", "Retainment"],
+	},
+	"Crystallography":{
+		"Main": ["Crystallography"],
+		"Crystallography": ["Purifying", "Crystal Seeds", "Crystal Harvesting"],
+		"Purifying": ["Washing", "Heat Treating", "Lunar Charging"],
+		"Crystal Seeds": ["Theories: Glowstone"],
+	},
+	"Brewing":{
+		"Main": ["Brewing"],
+		"Brewing" : ["Brewing Research", "Recipes"],
+		"Recipes":["Ingredients", "Catalyzers"],
+		"Ingredients": ["stren_1", "stren_2", "heal_1", "heal_2"]
+	},
+	"Memories":{
+		"Seals" : ["Memories"],
+	},
+	"Inspiration":{
+		"Seals" : ["Inspiration"],
+	}
 
-export const SEAL_CHAPTERS = {
-					"Ageing": ["Seals"],
-					"Seals": ["Base Seal", "Longevity", "Expansion", "Potency", "Retainment"],
-				};
+};
+export const TOME_POTION_INGREDIENT_CHAPTERS= {
+	"Ingredients": [
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_stren_1.title",
+			id: "stren_1",
+			icon: "textures/items/blaze_powder"
+		},
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_stren_2.title",
+			id: "stren_2",
+			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_stren_2.png"
+		},
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_heal_1.title",
+			id: "heal_1",
+			icon: "textures/items/melon_speckled"
+		},
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_heal_2.title",
+			id: "heal_2",
+			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heal_2.png"
+		},
+	]
+};
 
-export const CRYSTAL_CHAPTERS = {
-					"Main": ["Crystallography"],
-					"Crystallography": ["Purifying", "Crystal Seeds", "Crystal Harvesting"],
-					"Purifying": ["Washing", "Heat Treating", "Lunar Charging"],
-					"Crystal Seeds": ["Theories: Glowstone"],
-				};
-export const BREWING_CHAPTERS =  {
-					"Main": ["Brewing"],
-					"Brewing" : ["Enhanced Potions"],
-					"Enhanced Potions": ["Potency +", "Duration +"]
-				};
-export const TEMP_CHAPTERS =  {
-					"Seals" : ["Memories"],
-				};
-export const INSPIRATION_CHAPTERS =  {
-					"Seals" : ["Inspiration"],
-				};
 export const TOME_CHAPTERS = {
 	"Main": {
         title: "magical_brewery:tome_chapter_main.title",
@@ -288,74 +315,56 @@ export const TOME_CHAPTERS = {
         body: "magical_brewery:tome_chapter_brewing.body",
         buttons: [
 			{
-				chapter: "magical_brewery:tome_chapter_enhanced_potions.title",
-				id: "Enhanced Potions",
-				icon: "textures/beardedflea/magical_brewery/tome/potion_potency_plus.png"
+				chapter: "magical_brewery:tome_chapter_recipes.title",
+				id: "Recipes",
+				icon: "textures/items/spider_eye_fermented"
 			},
-			// {
-			// 	chapter: "magical_brewery:tome_chapter_ingredients.title",
-			// 	id: "Ingredients",
-			// 	icon: "textures/items/spider_eye_fermented"
-			// },
 			// {
 			// 	chapter: "magical_brewery:tome_chapter_potion_materials.title",
 			// 	id: "Potion Materials",
 			// 	icon: "textures/beardedflea/magical_brewery/items/redstone_shard.png"
 			// }
+			{
+				chapter: "magical_brewery:tome_chapter_brewing_research.title",
+				id: "Brewing Research",
+				icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_brewing_research.png"
+			}
 		],
 		exitPage: "Main"
 	//Brewing SubChapters
     },
-	"Enhanced Potions": {
-        title: "magical_brewery:tome_chapter_enhanced_potions.title",
-        body: "magical_brewery:tome_chapter_enhanced_potions.body",
+	"Recipes": {
+        title: "magical_brewery:tome_chapter_recipes.title",
+        body: "magical_brewery:tome_chapter_recipes.body",
         buttons: [
 			{
-				chapter: "magical_brewery:tome_chapter_potency_plus.title",
-				id: "Potency +",
-				icon: "textures/beardedflea/magical_brewery/tome/potion_potency_plus.png"
+				chapter: "magical_brewery:tome_chapter_potion_ingredients.title",
+				id: "Ingredients",
+				icon: "textures/items/spider_eye_fermented"
 			},
 			{
-				chapter: "magical_brewery:tome_chapter_duration_plus.title",
-				id: "Duration +",
-				icon: "textures/beardedflea/magical_brewery/tome/potion_duration_plus.png"
-			},
-			// {
-			// 	chapter: "magical_brewery:tome_chapter_crystal_expansion_plus.title",
-			// 	id: "Expansion +",
-			// 	icon: "textures/beardedflea/magical_brewery/tome/potion_expansion_plus.png"
-			// }
+				chapter: "magical_brewery:tome_chapter_potion_catalyzers.title",
+				id: "Catalyzers",
+				icon: "textures/items/redstone_dust"
+			}
 		],
 		exitPage: "Brewing"
-	},
-	//Enhanced Potions SubChapters
-	"Potency +": {
-        title: "magical_brewery:tome_chapter_potency_plus.title",
-        body: "magical_brewery:tome_chapter_potency_plus.body",
-        buttons: [],
-		exitPage: "Enhanced Potions"
-	},
-	"Duration +": {
-        title: "magical_brewery:tome_chapter_duration_plus.title",
-        body: "magical_brewery:tome_chapter_duration_plus.body",
-        buttons: [],
-		exitPage: "Enhanced Potions"
-	},
-	"Expansion +": {
-        title: "magical_brewery:tome_chapter_expansion_plus.title",
-        body: "magical_brewery:tome_chapter_expansion_plus.body",
-        buttons: [],
-		exitPage: "Enhanced Potions"
 	},
 	"Ingredients": {
-        title: "magical_brewery:tome_chapter_ingredients.title",
-        body: "magical_brewery:tome_chapter_ingredients.body",
+        title: "magical_brewery:tome_chapter_potion_ingredients.title",
+        body: "magical_brewery:tome_chapter_potion_ingredients.body",
+        buttons:
+			//Right now, this sub-chapter will have a bunch of sub-chapters which tie into the brewing research mechanic
+			TOME_POTION_INGREDIENT_CHAPTERS["Ingredients"],
+		exitPage: "Recipes"
+	},
+	"Catalyzers": {
+        title: "magical_brewery:tome_chapter_potion_catalyzers.title",
+        body: "magical_brewery:tome_chapter_potion_catalyzers.body",
         buttons: [
-			//Probably just a load of sub chapters showing various new potions added my MB
-			//However as of right now(28/10/2025) I'm thinking of changing the tome player data structure
-			//A flat array was not a pro gamer move
+			//TODO: Create research that abides to research methods. idk what im talking about....shitttt pass the doob
 		],
-		exitPage: "Brewing"
+		exitPage: "Recipes"
 	},
 	"Potion Materials": {
         title: "magical_brewery:tome_chapter_potion_materials.title",
@@ -386,5 +395,39 @@ export const TOME_CHAPTERS = {
         body: "magical_brewery:tome_chapter_amethyst_bottle.body",
         buttons: [],
 		exitPage: "Enhanced Potions"
-	}
-}
+	},
+	"Brewing Research": {
+        title: "magical_brewery:tome_chapter_brewing_research.title",
+        body: "magical_brewery:tome_chapter_brewing_research.body",
+        buttons: [],
+		exitPage: "Brewing"
+    },
+	"stren_1": {
+        title: "magical_brewery:tome_chapter_ingredients_stren_2.title",
+        body: "magical_brewery:tome_chapter_ingredients_stren_2.body",
+        buttons: [],
+		exitPage: "Ingredients"
+    },
+	"stren_2": {
+        title: "magical_brewery:tome_chapter_ingredients_stren_2.title",
+        body: "magical_brewery:tome_chapter_ingredients_stren_2.body",
+        buttons: [],
+		exitPage: "Ingredients"
+    },
+	"heal_1": {
+        title: "magical_brewery:tome_chapter_ingredients_heal_2.title",
+        body: "magical_brewery:tome_chapter_ingredients_heal_2.body",
+        buttons: [],
+		exitPage: "Ingredients"
+    },
+	"heal_2": {
+        title: "magical_brewery:tome_chapter_ingredients_heal_2.title",
+        body: "magical_brewery:tome_chapter_ingredients_heal_2.body",
+        buttons: [],
+		exitPage: "Ingredients"
+    },
+};
+
+
+
+export const TOME_POTION_CATALYZER_CHAPTERS= {};

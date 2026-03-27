@@ -391,8 +391,17 @@ magical_brewery:tome_chapter_brewing.body=I have been at this "magical brewing" 
 magical_brewery:tome_chapter_enhanced_potions.title=Enhanced Potions
 magical_brewery:tome_chapter_enhanced_potions.body=Now that I have pure versions of dusts, I should be able to enhance base potions far more than the non-pure variants.\nIf the dust can be applied to aging then surely they should work for brewing.\nAfter a lot of tests, I have found that the majority of potions that accept non-pure dusts also accept the purified dusts and as a consequence to using purified dust, the potion liquid now has a lovely shimmer to it reflecting light creating a mild glinting effect.\nI need to make more notes on this so I don't forget what I have discovered.
 
-magical_brewery:tome_chapter_ingredients.title=Ingredients
-magical_brewery:tome_chapter_ingredients.body=ingredients
+magical_brewery:tome_chapter_brewing_research.title=Brewing Research
+magical_brewery:tome_chapter_brewing_research.body= its time we get the facts straight and say this. Your taste profile range is shockingly small. So from now on we will have to expand our flavour town.(because all you have now in your town is a pub and a stable). We gonna have to touch grass, no even more, we gotta eat the grass!
+
+magical_brewery:tome_chapter_recipes.title=Recipes
+magical_brewery:tome_chapter_recipes.body=Recipes
+
+magical_brewery:tome_chapter_potion_ingredients.title=Ingredients
+magical_brewery:tome_chapter_potion_ingredients.body=Ingredients
+
+magical_brewery:tome_chapter_potion_catalyzers.title=Catalyzers
+magical_brewery:tome_chapter_potion_catalyzers.body=Catalyzers
 
 magical_brewery:tome_chapter_potion_materials.title=Potion Materials
 magical_brewery:tome_chapter_potion_materials.body=Potion Materials
