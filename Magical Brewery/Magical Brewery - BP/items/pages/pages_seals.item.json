@@ -9,8 +9,8 @@
 		},
 		"components": {
 			"magical_brewery:ou_get_pages": {
-				"tome_parent_chapter": "Ageing",
-				"tome_chapter": "Seals"
+				"tome_parent_chapter": "ageing",
+				"tome_chapter": "seals"
 			},
 			"minecraft:icon": "magical_brewery:pages_seals",
 			"minecraft:display_name":{

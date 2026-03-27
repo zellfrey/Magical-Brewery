@@ -9,8 +9,8 @@
 		},
 		"components": {
 			"magical_brewery:ou_get_pages": {
-				"tome_parent_chapter": "Main",
-				"tome_chapter": "Brewing"
+				"tome_parent_chapter": "main",
+				"tome_chapter": "brewing"
 			},
 			"minecraft:icon": "magical_brewery:pages_brewing",
 			"minecraft:display_name":{
