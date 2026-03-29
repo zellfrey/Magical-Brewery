@@ -10,7 +10,7 @@
 		"components": {
 			"magical_brewery:ou_get_pages": {
 				"tome_parent_chapter": "seals",
-				"tome_chapter": "inspiration"
+				"tome_chapter": "seal_inspiration"
 			},
 			"minecraft:icon": "magical_brewery:pages_inspiration",
 			"minecraft:display_name":{

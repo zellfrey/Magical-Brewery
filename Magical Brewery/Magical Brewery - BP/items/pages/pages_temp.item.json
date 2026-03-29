@@ -10,7 +10,7 @@
 		"components": {
 			"magical_brewery:ou_get_pages": {
 				"tome_parent_chapter": "seals",
-				"tome_chapter": "memories"
+				"tome_chapter": "seal_memories"
 			},
 			"minecraft:icon": "magical_brewery:pages_temp",
 			"minecraft:display_name":{
