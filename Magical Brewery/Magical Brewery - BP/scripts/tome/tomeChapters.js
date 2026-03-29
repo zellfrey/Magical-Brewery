@@ -1,6 +1,6 @@
 export const PAGES_CHAPTERS = {
 	"starter":{
-		"main": ["ageing", "about_the_author"],
+		"main": ["ageing", "zzz_about_the_author"],
 		"ageing": ["casks"],
 		"casks": ["cask_degrading", "theories_cask_effects"]
 	},
@@ -79,8 +79,8 @@ export const TOME_CHAPTERS = {
 		icon: "",
 		exitPage: ""
 	},
-	"about_the_author": {
-		id: "about_the_author",
+	"zzz_about_the_author": {
+		id: "zzz_about_the_author",
 		icon: "textures/beardedflea/magical_brewery/items/chapter_of_wisdom_3.png",
 		exitPage: "main"
 	},
@@ -182,12 +182,12 @@ export const TOME_CHAPTERS = {
 	},
 	"seal_memories": {
 		id: "seal_memories",
-		icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories.png",
+		icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png",
 		exitPage: "seals"
 	},
 	"seal_inspiration": {
 		id: "seal_inspiration",
-		icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration.png",
+		icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png",
 		exitPage: "seals"
 	},
 	//Brewing Chapters

@@ -10,13 +10,13 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:ou_get_pages', {
         onUse(e,p) {
 			
-			let pagesChapters = getPagesChapters(p.params.tome_chapter)
+			let pagesData = getPagesChapters(p.params.tome_chapter)
 			
 			if(e.source.isSneaking){
-				addPagesChaptersToPlayer(e.source, p.params, pagesChapters)
+				addPagesChaptersToPlayer(e.source, p.params, pagesData)
 			} 
 			else{
-				createPagesFormData(p.params.tome_chapter, e.source, pagesChapters)
+				createPagesFormData(p.params.tome_chapter, e.source, pagesData)
 			}		
         }
     });
@@ -36,11 +36,10 @@ function addPagesChaptersToPlayer(player, pagesParameters, pagesChapters){
 	if(!doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParameters)) return;
 	
 	//We set players last page as the obtained chapter to show whats been added
-	
 	tomePlayerData = addChaptersToPlayerTomeData(tomePlayerData, pagesChapters)
 
 	tomePlayerData.page_last_opened = pagesParameters.tome_parent_chapter;
-
+	
 	player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData))
 
 	destroyItemChapterPages(player, pagesParameters.tome_chapter)
@@ -73,23 +72,23 @@ export function getPagesChapters(pagesChapters){
 	return PAGES_CHAPTERS[pagesChapters];
 }
 
-function createPagesFormData(tomeChapter, player, pagesChapters){
+function createPagesFormData(tomeChapter, player, pagesData){
 	
 	let form = new ActionFormData();
 
-	form.title({translate: TOME_CHAPTERS[tomeChapter].title});
-	form.body({translate: TOME_CHAPTERS[tomeChapter].body});
+	form.title({translate: `magical_brewery:tome_chapter_${tomeChapter}.title`});
+	form.body({translate: `magical_brewery:tome_chapter_${tomeChapter}.body`});
 	
-	let buttonLayout = getTomePageButtonLayout(TOME_CHAPTERS[tomeChapter], pagesChapters[tomeChapter]);
-		
-	buttonLayout.forEach(el => form.button(el.chapter, el.icon))
+	let buttonLayout = getTomePageButtonLayout(pagesData[tomeChapter]);
 	
-	displayPagesFormData(form, player, TOME_CHAPTERS[tomeChapter], pagesChapters)
+	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${TOME_CHAPTERS[el].id}.title`, TOME_CHAPTERS[el].icon))
+	
+	displayPagesFormData(form, player, pagesData[tomeChapter], pagesData)
 
 	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 }
 
-function displayPagesFormData(form, player, tomeChapter, pagesChapters){
+function displayPagesFormData(form, player, pagesChapters, pagesData){
 
 	form.show(player)
 	.then((response) => {
@@ -98,15 +97,9 @@ function displayPagesFormData(form, player, tomeChapter, pagesChapters){
 			player.dimension.playSound("item.book.put", player.location, {volume: 0.7, pitch: 0.7})
 			return;
 		}
-		
-		if(response.selection === tomeChapter.buttons.length){
-			
-			createPagesFormData(tomeChapter.exitPage, player, pagesChapters)
-		}
 		else{
-			createPagesFormData(tomeChapter.buttons[response.selection].id, player, pagesChapters);
+			createPagesFormData(pagesChapters[response.selection], player, pagesData);
 		}
-		
 	})
 	.catch((e) => {
 		console.error(e, e.stack);
@@ -114,6 +107,8 @@ function displayPagesFormData(form, player, tomeChapter, pagesChapters){
 }
 
 export function addChaptersToPlayerTomeData(tomePlayerData, pagesChapters){
+
+	let tomeMainPage = tomePlayerData.unlocked_chapters["main"];
 
 	for (const [key, values] of Object.entries(pagesChapters)) {
 		
@@ -125,6 +120,13 @@ export function addChaptersToPlayerTomeData(tomePlayerData, pagesChapters){
 			tomePlayerData.unlocked_chapters[key] = values;
 		}
 	}
+
+	//Sorting the main page so "About author" is at the bottom. Hence why, the iternal id is "zzz_about_the_author"
+	//I do this because i don't want the socials page to be in the middle of everything
+	if(tomeMainPage.length !== tomePlayerData.unlocked_chapters["main"]){
+		tomePlayerData.unlocked_chapters["main"].sort();
+	}
+
 	return tomePlayerData;
 }
 

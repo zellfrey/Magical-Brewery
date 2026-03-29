@@ -57,21 +57,22 @@ TOME_RESEARCH_ITEMS.set("minecraft:glistering_melon_slice", {
 // 	);
 TOME_RESEARCH_ITEMS.set("b", 2);
 TOME_RESEARCH_ITEMS.set("c", 3);
+
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_brewers_tome', {
         onUse(e) {
 
 			let tomePlayerData = e.source.getDynamicProperty('magical_brewery:tome_data_v2');
-			let playerLastOpenedPage = "Main";
+			let playerLastOpenedPage = "main";
 			
 			if(!tomePlayerData){
 				createTomeDataV2(e.source)
 				e.source.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.missing"});
-				tomePlayerData = JSON.parse(tomePlayerData)
+				tomePlayerData = JSON.parse(e.source.getDynamicProperty('magical_brewery:tome_data_v2'));
 			}
 
 			if(tomePlayerData && e.source.isSneaking){
-				playerLastOpenedPage = "Main";
+				playerLastOpenedPage = "main";
 			}
 
 			tomePlayerData = JSON.parse(tomePlayerData)
@@ -83,36 +84,34 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 
 function createTomeFormData(tomePage, player, tomePlayerData){
-	
+
 	let form = new ActionFormData();
 
-	form.title({translate: TOME_CHAPTERS[tomePage].title});
-	form.body({translate: TOME_CHAPTERS[tomePage].body});
+	form.title({translate: `magical_brewery:tome_chapter_${tomePage}.title`});
+	form.body({translate: `magical_brewery:tome_chapter_${tomePage}.body`});
 	
-	let buttonLayout = getTomePageButtonLayout(TOME_CHAPTERS[tomePage], tomePlayerData.unlocked_chapters[tomePage]);
+	let buttonLayout = getTomePageButtonLayout(tomePlayerData.unlocked_chapters[tomePage]);
 	
-	buttonLayout.forEach(el => form.button(el.chapter, el.icon))
+	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${TOME_CHAPTERS[el].id}.title`, TOME_CHAPTERS[el].icon))
 	
-	if(TOME_CHAPTERS[tomePage].exitPage) form.button("Go back", "")
-	
-	displayTomePageFormData(form, player, tomePlayerData, tomePage, TOME_CHAPTERS[tomePage].exitPage, buttonLayout)
-	
+	if(TOME_CHAPTERS[tomePage].exitPage) form.button("Go back", "");
+
+	displayTomePageFormData(form, player, tomePlayerData.unlocked_chapters[tomePage], tomePlayerData, tomePage)
+
 	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 }
 
-export function getTomePageButtonLayout(tomeChaptersPage, unlockedChapters){
+export function getTomePageButtonLayout(unlockedChapters){
 
 	let buttonPageLayout = [];
-	tomeChaptersPage.buttons.forEach(el => {
-			if(unlockedChapters.includes(el.id)){
-				buttonPageLayout.push(el)
-			}
-		})
-	
-	return buttonPageLayout;
+	if(!unlockedChapters){
+		return buttonPageLayout;
+	}else{
+		unlockedChapters.forEach(el => buttonPageLayout.push(el))
+		return buttonPageLayout;
+	}
 }
-
-function displayTomePageFormData(form, player, tomePlayerData, tomePage, exitPage, buttons){
+function displayTomePageFormData(form, player, tomePageChapters = [], tomePlayerData, tomePage){
 
 	form.show(player)
 	.then((response) => {
@@ -125,14 +124,12 @@ function displayTomePageFormData(form, player, tomePlayerData, tomePage, exitPag
 			
 			return;
 		}
-		if(response.selection === buttons.length){
-			
-			createTomeFormData(exitPage, player, tomePlayerData)
+		if(response.selection === (tomePageChapters.length)){
+			createTomeFormData(TOME_CHAPTERS[tomePage].exitPage, player, tomePlayerData)
 		}
 		else{
-			createTomeFormData(buttons[response.selection].id, player, tomePlayerData);
+			createTomeFormData(tomePageChapters[response.selection], player, tomePlayerData);
 		}
-		
 	})
 	.catch((e) => {
 		console.error(e, e.stack);
@@ -143,10 +140,10 @@ function createTomeDataV2(player){
 
 	const tomeChapterData = {
 		unlocked_chapters:{},
-		page_last_opened: "Main",
+		page_last_opened: "main",
 	};
 
-	for (const [key, value] of Object.entries(PAGES_CHAPTERS["Starter"])) {
+	for (const [key, value] of Object.entries(PAGES_CHAPTERS["starter"])) {
 		tomeChapterData.unlocked_chapters[key] = value;
 	}
 	
@@ -187,7 +184,7 @@ function canPlayerResearchItem(player, tomePlayerData){
 		return false;
 	}
 	
-	else if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("Brewing")){
+	else if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("brewing")){
 		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.insufficient_knowledge"})
 		return false;
 	}
@@ -252,13 +249,13 @@ function convertToTomeDataV2(player, tomeDataV1){
 
 		switch(chapter){
 			case "Crystallography":
-				pagesChapterObject = getPagesChapters("Crystallography");
+				pagesChapterObject = getPagesChapters("crystallography");
 			break;
 			case "Seals":
-				pagesChapterObject = getPagesChapters("Seals");
+				pagesChapterObject = getPagesChapters("seals");
 			break;
 			case "Brewing":
-				pagesChapterObject = getPagesChapters("Brewing");
+				pagesChapterObject = getPagesChapters("brewing");
 			break;
 		}
 
