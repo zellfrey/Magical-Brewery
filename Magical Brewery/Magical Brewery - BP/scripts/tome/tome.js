@@ -40,7 +40,7 @@ function createTomeFormData(tomePage, player, tomePlayerData){
 	
 	let buttonLayout = getTomePageButtonLayout(tomePlayerData.unlocked_chapters[tomePage]);
 	
-	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${TOME_CHAPTERS[el].id}.title`, TOME_CHAPTERS[el].icon))
+	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${el}.title`, TOME_CHAPTERS[el].icon))
 	
 	if(TOME_CHAPTERS[tomePage].exitPage) form.button("Go back", "");
 

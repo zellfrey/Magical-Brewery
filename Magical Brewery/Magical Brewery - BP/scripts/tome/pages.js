@@ -81,7 +81,7 @@ function createPagesFormData(tomeChapter, player, pagesData){
 	
 	let buttonLayout = getTomePageButtonLayout(pagesData[tomeChapter]);
 	
-	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${TOME_CHAPTERS[el].id}.title`, TOME_CHAPTERS[el].icon))
+	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${el}.title`, TOME_CHAPTERS[el].icon))
 	
 	displayPagesFormData(form, player, pagesData[tomeChapter], pagesData)
 

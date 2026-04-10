@@ -44,46 +44,6 @@ export const PAGES_CHAPTERS = {
 export const TOME_POTION_CATALYZER_CHAPTERS= {};
 export const TOME_POTION_INGREDIENT_CHAPTERS= {
 	"ingredients": [
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_strength_1.title",
-			id: "strength_1",
-			icon: "textures/items/blaze_powder"
-		},
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_strength_2.title",
-			id: "strength_2",
-			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_stren_2.png"
-		},
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_healing_1.title",
-			id: "healing_1",
-			icon: "textures/items/melon_speckled"
-		},
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_healing_2.title",
-			id: "healing_2",
-			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heal_2.png"
-		},
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_swiftness_1.title",
-			id: "swiftness_1",
-			icon: "textures/items/melon_speckled"
-		},
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_swiftness_2.title",
-			id: "swiftness_2",
-			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_swiftness_2.png"
-		},
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_leaping_1.title",
-			id: "leaping_1",
-			icon: "textures/items/rabbit_foot"
-		},
-		{
-			chapter: "magical_brewery:tome_chapter_ingredients_leaping_2.title",
-			id: "leaping_2",
-			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_leaping_2.png"
-		},
 	]
 };
 
@@ -108,220 +68,178 @@ export const TOME_POTION_INGREDIENT_CHAPTERS= {
 export const TOME_CHAPTERS = {
 	//Main Chapters
 	"main": {
-		id: "main",
 		icon: "",
 		exitPage: ""
 	},
 	"zzz_about_the_author": {
-		id: "zzz_about_the_author",
 		icon: "textures/beardedflea/magical_brewery/items/chapter_of_wisdom_3.png",
 		exitPage: "main"
 	},
 	//Ageing Chapters
 	"ageing": {
-		id: "ageing",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask.png",
 		exitPage: "main"
 	},
 	"casks": {
-		id: "casks",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask.png",
 		exitPage: "main"
 	},
 	//Casks Chapters
 	"cask_degrading": {
-		id: "cask_degrading",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask_degrading.png",
 		exitPage: "casks"
 	},
 	"theories_cask_effects": {
-		id: "theories_cask_effects",
 		icon: "textures/items/potion_bottle_turtleMaster",
 		exitPage: "main"
 	},
 	//Crystallography Chapters
 	"crystallography": {
-		id: "crystallography",
 		icon: "textures/beardedflea/magical_brewery/blocks/crystals/glowstone_cluster.png",
 		exitPage: "main"
 	},
 	"purifying": {
-		id: "purifying",
 		icon: "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png",
 		exitPage: "crystallography"
 	},
 	//Purifying Chapters
 	"washing": {
-		id: "washing",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_washing.png",
 		exitPage: "purifying"
 	},
 	"heat_treating": {
-		id: "heat_treating",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heat_treating.png",
 		exitPage: "purifying"
 	},
 	"lunar_charging": {
-		id: "lunar_charging",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_lunar_charging.png",
 		exitPage: "purifying"
 	},
 	"crystal_seeds": {
-		id: "crystal_seeds",
 		icon: "textures/beardedflea/magical_brewery/items/pure_quartz_seed.png",
 		exitPage: "crystallography"
 	},
 	//Crystal Seed Chapters
 	"theories_glowstone": {
-		id: "theories_glowstone",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_theories_glowstone.png",
 		exitPage: "crystal_seeds"
 	},
 	"crystal_harvesting": {
-		id: "purifying",
 		icon: "textures/beardedflea/magical_brewery/items/redstone_shard.png",
 		exitPage: "crystallography"
 	},
 	//Seal Chapters
 	"seals": {
-		id: "seals",
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_potency_1.png",
 		exitPage: "ageing"
 	},
 	"seal_base": {
-		id: "seal_base",
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_basic.png",
 		exitPage: "seals"
 	},
 	"seal_longevity": {
-		id: "seal_longevity",
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_longevity_1.png",
 		exitPage: "seals"
 	},
 	"seal_potency": {
-		id: "seal_potency",
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_potency_1.png",
 		exitPage: "seals"
 	},
 	"seal_expansion": {
-		id: "seal_expansion",
         icon: "textures/beardedflea/magical_brewery/items/seals/seal_expansion_1.png",
 		exitPage: "seals"
 	},
 	"seal_retainment": {
-		id: "seal_retainment",
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png",
 		exitPage: "seals"
 	},
 	"seal_memories": {
-		id: "seal_memories",
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png",
 		exitPage: "seals"
 	},
 	"seal_inspiration": {
-		id: "seal_inspiration",
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png",
 		exitPage: "seals"
 	},
 	//Brewing Chapters
 	"brewing": {
-		id: "brewing",
 		icon: "textures/items/brewing_stand",
 		exitPage: "main"
 	},
 	"recipes": {
-		id: "recipes",
 		icon: "textures/items/spider_eye_fermented",
 		exitPage: "brewing"
 	},
 	"potion_materials": {
-		id: "potion_materials",
 		icon: "textures/beardedflea/magical_brewery/items/redstone_shard.png",
 		exitPage: "brewing"
 	},
 	"brewing_research": {
-		id: "brewing_research",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_brewing_research.png",
 		exitPage: "brewing"
 	},
 	//Recipes Chapters
 	"ingredients": {
-		id: "ingredients",
 		icon: "textures/items/spider_eye_fermented",
 		exitPage: "recipes"
 	},
 	"catalyzers": {
-		id: "catalyzers",
 		icon: "textures/items/redstone_dust",
 		exitPage: "recipes"
 	},
 	"strength_1":{
-		id: "strength_1",
 		icon: "textures/items/blaze_powder",
 		exitPage: "ingredients"
 	},
 	"strength_2":{
-		id: "strength_2",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_stren_2.png",
 		exitPage: "ingredients"
 	},
 	"healing_1":{
-		id: "healing_1",
 		icon: "textures/items/melon_speckled",
 		exitPage: "ingredients"
 	},
 	"healing_2":{
-		id: "healing_2",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heal_2.png",
 		exitPage: "ingredients"
 	},
 	"swiftness_1":{
-		id: "swiftness_1",
 		icon: "textures/items/sugar",
 		exitPage: "ingredients"
 	},
 	"swiftness_2":{
-		id: "swiftness_2",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_swiftness_2.png",
 		exitPage: "ingredients"
 	},
 	"leaping_1":{
-		id: "leaping_1",
 		icon: "textures/items/rabbit_foot",
 		exitPage: "ingredients"
 	},
 	"leaping_2":{
-		id: "leaping_2",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_leaping_2.png",
 		exitPage: "ingredients"
 	},
 	"poison_1":{
-		id: "poison_1",
 		icon: "textures/items/spider_eye",
 		exitPage: "ingredients"
 	},
 	"poison_2":{
-		id: "poison_2",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_poison_2.png",
 		exitPage: "ingredients"
 	},
 	"nightvision_1":{
-		id: "nightvision_1",
 		icon: "textures/items/carrot_golden",
 		exitPage: "ingredients"
 	},
 	"nightvision_2":{
-		id: "nightvision_2",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_nightvision_2.png",
 		exitPage: "ingredients"
 	},
 	"regeneration_1":{
-		id: "regeneration_1",
 		icon: "textures/items/carrot_golden",
 		exitPage: "ingredients"
 	},
 	"regeneration_2":{
-		id: "regeneration_2",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_regeneration_2.png",
 		exitPage: "ingredients"
 	}
