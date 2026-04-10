@@ -1,62 +1,10 @@
 import {system, world} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {TOME_CHAPTERS, PAGES_CHAPTERS} from "tome/tomeChapters.js"
+import {TOME_RESEARCH_ITEMS} from "tome/tomeResearchData.js"
+import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {getPagesChapters, addChaptersToPlayerTomeData} from "tome/pages.js"
 
-let dummyTomePlayerData = {
-	// "Beardedflea5998":
-	// {
-	// 	unlocked_chapters:
-	// 			{
-	// 				"Main": ["Ageing", "Crystallography", "Brewing", "About the Author"],
-
-	// 				//Ageing Chapters & subChapters
-	// 				"Ageing": ["Casks", "Seals"],
-	// 				"Casks": ["Cask Degrading", "Theories: Cask Effects"],
-	// 				"Seals": ["Base Seal", "Longevity", "Potency", "Retainment"],
-					
-	// 				//Crystal Chapters and subChapters
-	// 				"Crystallography": ["Purifying", "Crystal Seeds", "Crystal Harvesting"],
-	// 				"Purifying": ["Washing", "Heat Treating", "Lunar Charging"],
-	// 				"Crystal Seeds": ["Theories: Glowstone"],
-
-	// 				//Brewing Chapters & subChapters
-	// 				"Brewing" : ["Enhanced Potions"],
-	// 				"Enhanced Potions": ["Potency +", "Duration +"]
-	// 			},
-	// 	page_last_opened: "Main",
-	// }
-}
-
-const TOME_RESEARCH_ITEMS = new Map();
-//tome_parent_chapter: "catalyzers", "ingredients",
-// "fuel"
-//Type: clue, complete
-//Each clue adds to the part. A complete part will not unviel until all clues are complete
-//TODO, MVP, ingredients only
-// TOME_RESEARCH_ITEMS.set("magical_brewery:potion_decay", {
-// 			"tome_parent_chapter": "catalyzers",
-// 		}
-// 	);
-TOME_RESEARCH_ITEMS.set("minecraft:blaze_powder", {
-			"tome_chapter": "ingredients",
-			"type": "clue",
-			"part": "stren_1"
-		}
-	);
-TOME_RESEARCH_ITEMS.set("minecraft:glistering_melon_slice", {
-			"tome_chapter": "ingredients",
-			"type": "clue",
-			"part": "heal_1"
-		}
-	);
-// TOME_RESEARCH_ITEMS.set("minecraft:potion_", {
-// 			"tome_parent_chapter": "ingredients",
-// 			"type": "complete"
-// 		}
-// 	);
-TOME_RESEARCH_ITEMS.set("b", 2);
-TOME_RESEARCH_ITEMS.set("c", 3);
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_brewers_tome', {
@@ -166,20 +114,21 @@ world.afterEvents.itemUse.subscribe((e) => {
 });
 
 function tomeResearchItem(source, itemStack){
-	
-	let tomePlayerData = JSON.parse(source.getDynamicProperty('magical_brewery:tome_data_v2'));
 
-	if(canPlayerResearchItem(source, tomePlayerData) && TOME_RESEARCH_ITEMS.has(itemStack.typeId)){
-		researchItemStack(source, itemStack, tomePlayerData)
-	}
-	else{
+	let tomePlayerData = JSON.parse(source.getDynamicProperty('magical_brewery:tome_data_v2'));
+	
+	if(!TOME_RESEARCH_ITEMS.has(itemStack.typeId)){
 		source.sendMessage("There doesn't seem to be much to learn from this item.")
 		return;
 	}
+	else if(canPlayerResearchItem(source, tomePlayerData)){
+		researchItemStack(source, itemStack, tomePlayerData)
+	}
 }
+
 function canPlayerResearchItem(player, tomePlayerData){
 	if(!tomePlayerData){
-		player.sendMessage("You donut. How can you study something when you don't even know what subject you are researching")
+		player.sendMessage("You doughnut. How can you study something when you don't even know what subject you are researching")
 		//The magicks in the tome yearn to be understood
 		return false;
 	}
@@ -195,13 +144,78 @@ function canPlayerResearchItem(player, tomePlayerData){
 
 function researchItemStack(player, itemStack, tomeData){
 	
-	// if(itemStack.hasComponent("minecraft:potion")){
+	const researchItem = TOME_RESEARCH_ITEMS.get(itemStack.typeId);
 
-	// }
+	if(itemStack.typeId === "minecraft:potion"){
+		addMCPotionResearchtoTomeData(player, itemStack, tomeData);		
+	}
+	else{
+		switch(researchItem.type){
+			case "clue":
+				addClueReseachtoTomeData(researchItem, player, tomeData);
+			case "multi-clue":
+				//addMultiClueResearchtoTomeData();
+		}
+	}	
+}
+function addMCPotionResearchtoTomeData( player, itemStack, tomeData){
 
-	console.log(itemStack.typeId)
+	let potion = {"effectID": "", "deliveryType": ""};
+	potion = MinecraftPotion.getPotionProperties(itemStack, potion)
+	
+	let potionEffect = potion["effectID"].split(":")[1]; 
+	
+	if(MinecraftPotion.isPotionEnhanced(potion["effectID"])){
+		potionEffect = potionEffect.split("_");
+		potionEffect.shift();
+		potionEffect = potionEffect.join("_");
+	}
+	if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_2")){
+		player.sendMessage("I already know how to make this potion")
+	}
+	else if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_1")){
+		
+		const researchPartIndex = tomeData.unlocked_chapters["ingredients"].findIndex(el => el === potionEffect + "_1");
+
+		tomeData.unlocked_chapters["ingredients"].splice(researchPartIndex, 1, potionEffect + "_2");
+
+		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
+
+		player.sendMessage("i now have a new potion recipe")
+
+	}else{
+		player.sendMessage("I don't know how to make this potion.")
+	}
 }
 
+function addClueReseachtoTomeData(researchItem, player, tomeData){
+	
+	const chapterPart = researchItem.part.slice(0, researchItem.part.length-2);
+	if(!tomeData.unlocked_chapters[researchItem.tome_chapter]){
+		tomeData.unlocked_chapters[researchItem.tome_chapter] = [];
+	}
+	
+	if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(researchItem.part)){
+		player.sendMessage("There is no further research that can be obtained from this item...")
+		return;
+	}
+	else if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(chapterPart + "_2")){
+		player.sendMessage("I have already found the potion associated with this ingredient")
+		return;
+	}
+	else{
+		tomeData.unlocked_chapters[researchItem.tome_chapter].push(researchItem.part);
+		console.log(tomeData.unlocked_chapters[researchItem.tome_chapter]);
+		//TODO: Add custom research part messages
+		player.sendMessage({ translate: `magical_brewery:message.tome.${researchItem.tome_chapter}.discovery.${researchItem.part}`});
+		
+		tomeData.page_last_opened = researchItem.tome_chapter;
+		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
+
+		return;
+	}
+	
+}
 //Tome V2 conversion functions ---------------
 world.afterEvents.playerSpawn.subscribe((e) => {
 

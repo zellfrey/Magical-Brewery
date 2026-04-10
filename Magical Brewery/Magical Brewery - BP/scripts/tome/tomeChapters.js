@@ -1,3 +1,16 @@
+/*------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+---------THIS FILE CONTAINS OBVIOUS SPOILERS TO THE TOME CHAPTERS. SPOILERS AHEAD. You have been warned.-------------------------------
+---------THIS FILE CONTAINS OBVIOUS SPOILERS TO THE TOME CHAPTERS. SPOILERS AHEAD. You have been warned.-------------------------------
+---------THIS FILE CONTAINS OBVIOUS SPOILERS TO THE TOME CHAPTERS. SPOILERS AHEAD. You have been warned.-------------------------------
+---------THIS FILE CONTAINS OBVIOUS SPOILERS TO THE TOME CHAPTERS. SPOILERS AHEAD. You have been warned.-------------------------------
+---------THIS FILE CONTAINS OBVIOUS SPOILERS TO THE TOME CHAPTERS. SPOILERS AHEAD. You have been warned.-------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
 export const PAGES_CHAPTERS = {
 	"starter":{
 		"main": ["ageing", "zzz_about_the_author"],
@@ -30,26 +43,46 @@ export const PAGES_CHAPTERS = {
 };
 export const TOME_POTION_CATALYZER_CHAPTERS= {};
 export const TOME_POTION_INGREDIENT_CHAPTERS= {
-	"Ingredients": [
+	"ingredients": [
 		{
-			chapter: "magical_brewery:tome_chapter_ingredients_stren_1.title",
-			id: "stren_1",
+			chapter: "magical_brewery:tome_chapter_ingredients_strength_1.title",
+			id: "strength_1",
 			icon: "textures/items/blaze_powder"
 		},
 		{
-			chapter: "magical_brewery:tome_chapter_ingredients_stren_2.title",
-			id: "stren_2",
+			chapter: "magical_brewery:tome_chapter_ingredients_strength_2.title",
+			id: "strength_2",
 			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_stren_2.png"
 		},
 		{
-			chapter: "magical_brewery:tome_chapter_ingredients_heal_1.title",
-			id: "heal_1",
+			chapter: "magical_brewery:tome_chapter_ingredients_healing_1.title",
+			id: "healing_1",
 			icon: "textures/items/melon_speckled"
 		},
 		{
-			chapter: "magical_brewery:tome_chapter_ingredients_heal_2.title",
-			id: "heal_2",
+			chapter: "magical_brewery:tome_chapter_ingredients_healing_2.title",
+			id: "healing_2",
 			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heal_2.png"
+		},
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_swiftness_1.title",
+			id: "swiftness_1",
+			icon: "textures/items/melon_speckled"
+		},
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_swiftness_2.title",
+			id: "swiftness_2",
+			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_swiftness_2.png"
+		},
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_leaping_1.title",
+			id: "leaping_1",
+			icon: "textures/items/rabbit_foot"
+		},
+		{
+			chapter: "magical_brewery:tome_chapter_ingredients_leaping_2.title",
+			id: "leaping_2",
+			icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_leaping_2.png"
 		},
 	]
 };
@@ -222,4 +255,101 @@ export const TOME_CHAPTERS = {
 		icon: "textures/items/redstone_dust",
 		exitPage: "recipes"
 	},
+	"strength_1":{
+		id: "strength_1",
+		icon: "textures/items/blaze_powder",
+		exitPage: "ingredients"
+	},
+	"strength_2":{
+		id: "strength_2",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_stren_2.png",
+		exitPage: "ingredients"
+	},
+	"healing_1":{
+		id: "healing_1",
+		icon: "textures/items/melon_speckled",
+		exitPage: "ingredients"
+	},
+	"healing_2":{
+		id: "healing_2",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heal_2.png",
+		exitPage: "ingredients"
+	},
+	"swiftness_1":{
+		id: "swiftness_1",
+		icon: "textures/items/sugar",
+		exitPage: "ingredients"
+	},
+	"swiftness_2":{
+		id: "swiftness_2",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_swiftness_2.png",
+		exitPage: "ingredients"
+	},
+	"leaping_1":{
+		id: "leaping_1",
+		icon: "textures/items/rabbit_foot",
+		exitPage: "ingredients"
+	},
+	"leaping_2":{
+		id: "leaping_2",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_leaping_2.png",
+		exitPage: "ingredients"
+	},
+	"poison_1":{
+		id: "poison_1",
+		icon: "textures/items/spider_eye",
+		exitPage: "ingredients"
+	},
+	"poison_2":{
+		id: "poison_2",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_poison_2.png",
+		exitPage: "ingredients"
+	},
+	"nightvision_1":{
+		id: "nightvision_1",
+		icon: "textures/items/carrot_golden",
+		exitPage: "ingredients"
+	},
+	"nightvision_2":{
+		id: "nightvision_2",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_nightvision_2.png",
+		exitPage: "ingredients"
+	},
+	"regeneration_1":{
+		id: "regeneration_1",
+		icon: "textures/items/carrot_golden",
+		exitPage: "ingredients"
+	},
+	"regeneration_2":{
+		id: "regeneration_2",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_regeneration_2.png",
+		exitPage: "ingredients"
+	}
 }
+
+
+
+//let dummyTomePlayerData = {
+	// "Beardedflea5998":
+	// {
+	// 	unlocked_chapters:
+	// 			{
+	// 				"Main": ["Ageing", "Crystallography", "Brewing", "About the Author"],
+
+	// 				//Ageing Chapters & subChapters
+	// 				"Ageing": ["Casks", "Seals"],
+	// 				"Casks": ["Cask Degrading", "Theories: Cask Effects"],
+	// 				"Seals": ["Base Seal", "Longevity", "Potency", "Retainment"],
+					
+	// 				//Crystal Chapters and subChapters
+	// 				"Crystallography": ["Purifying", "Crystal Seeds", "Crystal Harvesting"],
+	// 				"Purifying": ["Washing", "Heat Treating", "Lunar Charging"],
+	// 				"Crystal Seeds": ["Theories: Glowstone"],
+
+	// 				//Brewing Chapters & subChapters
+	// 				"Brewing" : ["Enhanced Potions"],
+	// 				"Enhanced Potions": ["Potency +", "Duration +"]
+	// 			},
+	// 	page_last_opened: "Main",
+	// }
+//}

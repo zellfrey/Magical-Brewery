@@ -50,6 +50,17 @@ export class MinecraftPotion {
     
 	}
 
+	static isPotionEnhanced(effectID){
+		const potionEnhancement = effectID.split(":")[1].split("_")[0]
+		
+		if(potionEnhancement === "long" || potionEnhancement === "strong"){
+			return true;
+		}
+		else{
+			return false
+		}
+	}
+
 	static getEffectString(effectID){
 		
 		let modifier = ""; 
