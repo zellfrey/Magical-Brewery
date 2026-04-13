@@ -15,7 +15,7 @@ export const PAGES_CHAPTERS = {
 	"starter":{
 		"main": ["ageing", "zzz_about_the_author"],
 		"ageing": ["casks"],
-		"casks": ["cask_degrading", "theories_cask_effects"]
+		"casks": ["cask_degrading", "cask_oddities", "theories_cask_effects"]
 	},
 	"seals":{
 		"ageing": ["seals"],
@@ -77,16 +77,20 @@ export const TOME_CHAPTERS = {
 	},
 	//Ageing Chapters
 	"ageing": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_cask.png",
 		exitPage: "main"
 	},
 	"casks": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_cask.png",
 		exitPage: "main"
 	},
 	//Casks Chapters
 	"cask_degrading": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_cask_degrading.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_cask_degrading.png",
+		exitPage: "casks"
+	},
+	"cask_oddities": {
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_cask_oddities.png",
 		exitPage: "casks"
 	},
 	"theories_cask_effects": {
@@ -104,15 +108,15 @@ export const TOME_CHAPTERS = {
 	},
 	//Purifying Chapters
 	"washing": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_washing.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_washing.png",
 		exitPage: "purifying"
 	},
 	"heat_treating": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heat_treating.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_heat_treating.png",
 		exitPage: "purifying"
 	},
 	"lunar_charging": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_lunar_charging.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_lunar_charging.png",
 		exitPage: "purifying"
 	},
 	"crystal_seeds": {
@@ -121,7 +125,7 @@ export const TOME_CHAPTERS = {
 	},
 	//Crystal Seed Chapters
 	"theories_glowstone": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_theories_glowstone.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_theories_glowstone.png",
 		exitPage: "crystal_seeds"
 	},
 	"crystal_harvesting": {
@@ -175,7 +179,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "brewing"
 	},
 	"brewing_research": {
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_brewing_research.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_brewing_research.png",
 		exitPage: "brewing"
 	},
 	//Recipes Chapters
@@ -193,7 +197,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"strength_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_stren_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_stren_2.png",
 		exitPage: "ingredients"
 	},
 	"healing_1":{
@@ -201,7 +205,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"healing_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_heal_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_heal_2.png",
 		exitPage: "ingredients"
 	},
 	"swiftness_1":{
@@ -209,7 +213,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"swiftness_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_swiftness_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_swiftness_2.png",
 		exitPage: "ingredients"
 	},
 	"leaping_1":{
@@ -217,7 +221,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"leaping_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_leaping_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_leaping_2.png",
 		exitPage: "ingredients"
 	},
 	"poison_1":{
@@ -225,7 +229,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"poison_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_poison_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_poison_2.png",
 		exitPage: "ingredients"
 	},
 	"nightvision_1":{
@@ -233,7 +237,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"nightvision_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_nightvision_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_nightvision_2.png",
 		exitPage: "ingredients"
 	},
 	"regeneration_1":{
@@ -241,7 +245,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"regeneration_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_regeneration_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_regeneration_2.png",
 		exitPage: "ingredients"
 	},
 	"water_breathing_1":{
@@ -249,7 +253,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"water_breathing_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_water_breathing_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_water_breathing_2.png",
 		exitPage: "ingredients"
 	},
 	"fire_resistance_1":{
@@ -257,7 +261,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"fire_resistance_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_fire_resistance_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_fire_resistance_2.png",
 		exitPage: "ingredients"
 	},
 	"turtle_master_1":{
@@ -265,7 +269,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"turtle_master_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_turtle_master_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_turtle_master_2.png",
 		exitPage: "ingredients"
 	},
 	"slow_falling_1":{
@@ -273,7 +277,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"slow_falling_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_slow_falling_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_slow_falling_2.png",
 		exitPage: "ingredients"
 	},
 	"wind_charged_1":{
@@ -281,7 +285,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"wind_charged_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_wind_charged_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_wind_charged_2.png",
 		exitPage: "ingredients"
 	},
 	"infested_1":{
@@ -289,7 +293,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"infested_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_infested_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_infested_2.png",
 		exitPage: "ingredients"
 	},
 	"weaving_1":{
@@ -297,7 +301,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"weaving_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_weaving_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_weaving_2.png",
 		exitPage: "ingredients"
 	},
 	"weakness_1":{
@@ -305,7 +309,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"weakness_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_weakness_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_weakness_2.png",
 		exitPage: "ingredients"
 	},
 	"oozing_1":{
@@ -313,7 +317,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"oozing_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_oozing_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_oozing_2.png",
 		exitPage: "ingredients"
 	},
 	//catalyzers chapters
@@ -322,7 +326,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalyzers"
 	},
 	"longevity_tier_1_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_longevity_tier_1_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_longevity_tier_1_2.png",
 		exitPage: "catalyzers"
 	},
 	"longevity_tier_2_1":{
@@ -334,7 +338,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalyzers"
 	},
 	"potency_tier_1_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_potency_tier_1_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_potency_tier_1_2.png",
 		exitPage: "catalyzers"
 	},
 	"potency_tier_2_1":{
@@ -343,6 +347,10 @@ export const TOME_CHAPTERS = {
 	},
 	"expansion_tier_1_1":{
 		icon: "textures/items/gunpowder",
+		exitPage: "catalyzers"
+	},
+	"expansion_tier_1_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_expansion_tier_1_2.png",
 		exitPage: "catalyzers"
 	},
 	"expansion_tier_2_1":{

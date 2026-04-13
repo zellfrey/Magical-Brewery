@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "magical_brewery:potion_splash_xstrong_swiftness",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/items/potion_bottle_splash_moveSpeed"
+			},
+			"geometry": {
+				"default": "geometry.item_sprite"
+			},
+			"render_controllers": [
+				"controller.render.item_sprite"
+			],
+			"animations": {
+				"face_camera": "animation.actor.billboard"
+			}
+			// "scripts": {
+			// 	"animate": [
+			// 		"face_camera"
+			// 	]
+			// }
+		}
+	}
+}
