@@ -187,6 +187,7 @@ export const TOME_CHAPTERS = {
 		icon: "textures/items/redstone_dust",
 		exitPage: "recipes"
 	},
+	//ingredients chapters
 	"strength_1":{
 		icon: "textures/items/blaze_powder",
 		exitPage: "ingredients"
@@ -236,13 +237,122 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"regeneration_1":{
-		icon: "textures/items/carrot_golden",
+		icon: "textures/items/ghast_tear",
 		exitPage: "ingredients"
 	},
 	"regeneration_2":{
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_regeneration_2.png",
 		exitPage: "ingredients"
-	}
+	},
+	"water_breathing_1":{
+		icon: "textures/items/fish_pufferfish_raw",
+		exitPage: "ingredients"
+	},
+	"water_breathing_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_water_breathing_2.png",
+		exitPage: "ingredients"
+	},
+	"fire_resistance_1":{
+		icon: "textures/items/magma_cream",
+		exitPage: "ingredients"
+	},
+	"fire_resistance_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_fire_resistance_2.png",
+		exitPage: "ingredients"
+	},
+	"turtle_master_1":{
+		icon: "textures/items/turtle_helmet",
+		exitPage: "ingredients"
+	},
+	"turtle_master_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_turtle_master_2.png",
+		exitPage: "ingredients"
+	},
+	"slow_falling_1":{
+		icon: "textures/items/phantom_membrane",
+		exitPage: "ingredients"
+	},
+	"slow_falling_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_slow_falling_2.png",
+		exitPage: "ingredients"
+	},
+	"wind_charged_1":{
+		icon: "textures/items/breeze_rod",
+		exitPage: "ingredients"
+	},
+	"wind_charged_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_wind_charged_2.png",
+		exitPage: "ingredients"
+	},
+	"infested_1":{
+		icon: "textures/items/stone_axe",
+		exitPage: "ingredients"
+	},
+	"infested_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_infested_2.png",
+		exitPage: "ingredients"
+	},
+	"weaving_1":{
+		icon: "textures/blocks/web",
+		exitPage: "ingredients"
+	},
+	"weaving_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_weaving_2.png",
+		exitPage: "ingredients"
+	},
+	"weakness_1":{
+		icon: "textures/items/spider_eye_fermented",
+		exitPage: "ingredients"
+	},
+	"weakness_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_weakness_2.png",
+		exitPage: "ingredients"
+	},
+	"oozing_1":{
+		icon: "textures/items/slimeball",
+		exitPage: "ingredients"
+	},
+	"oozing_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_oozing_2.png",
+		exitPage: "ingredients"
+	},
+	//catalyzers chapters
+	"longevity_tier_1_1":{
+		icon: "textures/items/redstone_dust",
+		exitPage: "catalyzers"
+	},
+	"longevity_tier_1_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_longevity_tier_1_2.png",
+		exitPage: "catalyzers"
+	},
+	"longevity_tier_2_1":{
+		icon: "textures/beardedflea/magical_brewery/items/pure_redstone_dust.png",
+		exitPage: "catalyzers"
+	},
+	"potency_tier_1_1":{
+		icon: "textures/items/glowstone_dust",
+		exitPage: "catalyzers"
+	},
+	"potency_tier_1_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_icon_potency_tier_1_2.png",
+		exitPage: "catalyzers"
+	},
+	"potency_tier_2_1":{
+		icon: "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png",
+		exitPage: "catalyzers"
+	},
+	"expansion_tier_1_1":{
+		icon: "textures/items/gunpowder",
+		exitPage: "catalyzers"
+	},
+	"expansion_tier_2_1":{
+		icon: "textures/beardedflea/magical_brewery/items/crackling_oil.png",
+		exitPage: "catalyzers"
+	},
+	"lingering_tier_1_1":{
+		icon: "textures/items/dragons_breath",
+		exitPage: "catalyzers"
+	},
 }
 
 

@@ -66,7 +66,7 @@ TOME_RESEARCH_ITEMS.set("minecraft:ghast_tear", {
 TOME_RESEARCH_ITEMS.set("minecraft:pufferfish", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
-			"part": "wabr_1"
+			"part": "water_breathing_1"
 		}
 	);
 TOME_RESEARCH_ITEMS.set("minecraft:magma_cream", {
@@ -108,10 +108,10 @@ TOME_RESEARCH_ITEMS.set("minecraft:web", {
 TOME_RESEARCH_ITEMS.set("minecraft:fermented_spider_eye", {
 			"tome_chapter": "ingredients",
 			"type": "multi-clue",
-			"part": "weakness_1"
+			"parts": ["invisibility_1", "slowness_1", "harming_1", "weakness_1"]
 		}
 	);
-TOME_RESEARCH_ITEMS.set("minecraft:slime", {
+TOME_RESEARCH_ITEMS.set("minecraft:slime_ball", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "oozing_1"
@@ -119,15 +119,76 @@ TOME_RESEARCH_ITEMS.set("minecraft:slime", {
 	);
 
 TOME_RESEARCH_ITEMS.set("minecraft:potion", {
-			"tome_parent_chapter": "ingredients",
+			"tome_chapter": "ingredients",
 			"type": "complete"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalyzers 
 		}
 	);
-
+//Catalyer research items
+TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
+			"tome_chapter": "catalyzers",
+			"type": "complete"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
+TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
+			"tome_chapter": "catalyzers",
+			"type": "clue",
+			"part": "longevity_tier_1_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
+TOME_RESEARCH_ITEMS.set("magical_brewery:pure_redstone_dust", {
+			"tome_chapter": "catalyzers",
+			"type": "clue",
+			"part": "longevity_tier_2_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
+TOME_RESEARCH_ITEMS.set("minecraft:glowstone_dust", {
+			"tome_chapter": "catalyzers",
+			"type": "clue",
+			"part": "potency_tier_1_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
+TOME_RESEARCH_ITEMS.set("magical_brewery:pure_glowstone_dust", {
+			"tome_chapter": "catalyzers",
+			"type": "clue",
+			"part": "potency_tier_2_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
+TOME_RESEARCH_ITEMS.set("minecraft:gunpowder", {
+			"tome_chapter": "catalyzers",
+			"type": "clue",
+			"part": "expansion_tier_1_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
+TOME_RESEARCH_ITEMS.set("magical_brewery:crackling_oil", {
+			"tome_chapter": "catalyzers",
+			"type": "clue",
+			"part": "expansion_tier_2_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
+TOME_RESEARCH_ITEMS.set("minecraft:dragon_breath", {
+			"tome_chapter": "catalyzers",
+			"type": "clue",
+			"part": "lingering_tier_1_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalyzers 
+		}
+	);
 //invisibility is made with fermented spider eye and potions of nightvsion
 //slowness is made with fermented spider eye and potions of swiftness or leaping
 //harming
-TOME_RESEARCH_ITEMS.set("b", 2);
-TOME_RESEARCH_ITEMS.set("c", 3);
