@@ -19,9 +19,11 @@ system.beforeEvents.startup.subscribe(eventData => {
 			let playerLastOpenedPage = "main";
 			
 			if(!tomePlayerData){
-				createTomeDataV2(e.source)
+				createTomeDataV2(e.source);
+				createTomeResearchData(e.source);
 				e.source.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.missing"});
 				tomePlayerData = JSON.parse(e.source.getDynamicProperty('magical_brewery:tome_data_v2'));
+				
 			}
 
 			if(tomePlayerData && e.source.isSneaking){
@@ -103,7 +105,10 @@ function createTomeDataV2(player){
 	player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeChapterData))
 
 }
-
+function createTomeResearchData(player){
+	const tomeResearchData = {};
+	player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(tomeResearchData))
+}
 function getTomePlayerLastPage(player){
 	let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
 	return tomePlayerData.page_last_opened;
@@ -140,7 +145,7 @@ function canPlayerResearchItem(player, tomePlayerData){
 	}
 	
 	else if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("brewing")){
-		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.insufficient_knowledge"})
+		player.sendMessage("I should create a brewing chapter, and then i can research items.")
 		return false;
 	}
 	else{
@@ -339,7 +344,7 @@ function convertToTomeDataV2(player, tomeDataV1){
 	//Setup tomeDataV2 structure and add Main Chapters
 	console.log(`Setting up tome data v2 structure for ${player.name}`);
 	createTomeDataV2(player);
-
+	createTomeResearchData(player);
 
 	console.log(`Iterating through v1 tome data ${player.name}`);
 	

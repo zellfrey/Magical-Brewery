@@ -348,6 +348,9 @@ magical_brewery:tome_chapter_casks.body=To begin ageing potions you need to crea
 magical_brewery:tome_chapter_cask_degrading.title=Cask Degrading
 magical_brewery:tome_chapter_cask_degrading.body=Every cask only has a certain number of uses. Each time a cask is used to age a potion, it will degrade in quality. This is due to the potion inside drawing out the stained effect of the cask into itself. Unless we use a cask seal, there is unfortunately nothing we can do to prevent this effect from occuring.\nHowever, once a cask has been fully depleted of it's stained effect we can re-apply it simply by putting a normal cask in a crafting table and adding 6 potions of the same type to it.
 
+magical_brewery:tome_chapter_cask_oddities.title=Cask Oddities
+magical_brewery:tome_chapter_cask_oddities.body=Cask Oddities
+
 magical_brewery:tome_chapter_theories_cask_effects.title=Theories: Cask Effects
 magical_brewery:tome_chapter_theories_cask_effects.body=As you have probably found out, there is no recipe for cask of the Turtle Master. Unfortunately I couldn't find a simple method to extract the effects of a turtle master potion properly. All attempts yielded no results.\n\nMy suspicion is that due to the potion containing mixed effects, the magic is diluted and lacks the ability to impart these effects to any potion in a cask\n\nI have an idea to split these effects, which may also help bring out magicks from other sources, but currently I have nothing to show. If I do make any progress, I will send a message your way.
 
