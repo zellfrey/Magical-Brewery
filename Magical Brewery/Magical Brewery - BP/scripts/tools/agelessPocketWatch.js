@@ -87,6 +87,7 @@ function forceAgeCask(block, source){
 
     cask.seal.checkAgedLifetime(cask.potion_effects.length, fillLevel, sealAffectAgeing)
     cask.addAgedPotionEffect(caskAgingParameters.cask.effect);
+    cask.changeAgedPotionEffect(caskAgingParameters.odd_result)
     Cask.updateCask(cask);
     cask.setCaskAge(block);
 	cask.setCaskQuality(block, caskAgingParameters.cask.id);

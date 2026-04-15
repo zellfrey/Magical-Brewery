@@ -251,6 +251,54 @@ export class Cask {
         this.potion_effects.push(effectName);
     }
 
+    changeAgedPotionEffect(oddResult){
+        if(oddResult === undefined || !this.doesCaskHaveOddPotion(oddResult.input[0])) return;
+
+        if(this.potion_effects[0].includes(oddResult.input[0].toLowerCase())){
+			console.log("potion changing: " + this.potion_effects[0])
+            this.transformBasePotion(oddResult)
+        }
+        else{
+            const oddPotionInputIndex = this.potion_effects.findIndex(el => el.includes(POTION_EFFECTS[oddResult.input[0]].effects));
+			const oddResultString = POTION_EFFECTS[oddResult.output[0]].effects + " (" + POTION_EFFECTS[oddResult.output[0]].duration_long[0] + ")";
+			
+	        this.potion_effects.splice(oddPotionInputIndex, 1, oddResultString);
+        }
+        //The last potion effect SHOULD always be the newly added cask effect that creates the odd result
+        this.potion_effects.pop();
+    }
+
+    doesCaskHaveOddPotion(oddPotion){
+		
+        for (const effect of this.potion_effects) {
+            if(effect.includes(oddPotion.toLowerCase()) 
+                || effect.includes(POTION_EFFECTS[oddPotion].effects)){
+                    return true;
+            }
+		}
+        return false;
+    }
+
+    transformBasePotion(oddResult){
+
+        let newBasePotion;
+
+        console.log(oddResult.output[0].toLowerCase())
+        switch (oddResult.output[0]){
+            case "Mundane":
+                newBasePotion = "minecraft:mundane";
+            break;
+            case "Decay":
+                newBasePotion = "magical_brewery:potion_decay";
+            break;
+            default:
+                newBasePotion = "minecraft:mundane";
+            break;
+        }
+        this.potion_effects[0] = newBasePotion;
+		//console.log("potion changed to: " + this.potion_effects[0])
+    }
+
     setCaskAge(block){
 
         block.setPermutation(block.permutation.withState("magical_brewery:aged", true));

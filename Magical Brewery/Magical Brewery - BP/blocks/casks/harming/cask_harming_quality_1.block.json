@@ -105,6 +105,10 @@
 						},
 						"seal":{
 							"no_effect": ["longevity"]
+						},
+						"odd_result":{
+							"input": ["Healing"],
+							"output": ["Decay"]
 						}
 					},
 					"magical_brewery:opd_cask": {},
