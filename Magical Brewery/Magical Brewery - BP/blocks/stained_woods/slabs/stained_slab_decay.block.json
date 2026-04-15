@@ -4,8 +4,7 @@
 		"description": {
 			"identifier": "magical_brewery:stained_slab_decay",
 			"menu_category": {
-				"category": "none",
-				"is_hidden_in_commands": true
+				"category": "construction"
 			},
 			"traits": {
 				"minecraft:placement_position": {
