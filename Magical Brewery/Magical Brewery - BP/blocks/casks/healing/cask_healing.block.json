@@ -104,6 +104,10 @@
 						},
 						"seal":{
 							"no_effect": ["longevity", "memories"]
+						},
+						"odd_result":{
+							"input": ["Harming"],
+							"output": ["Decay"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

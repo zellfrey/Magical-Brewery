@@ -115,5 +115,3 @@ export function getPotencyLevel(effect){
 
     return potency;
 }
-
-

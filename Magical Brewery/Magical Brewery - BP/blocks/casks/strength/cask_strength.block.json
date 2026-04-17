@@ -104,6 +104,10 @@
 						},
 						"seal":{
 							"no_effect": ["memories"]
+						},
+						"odd_result":{
+							"input": ["Weakness"],
+							"output": ["Mundane"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

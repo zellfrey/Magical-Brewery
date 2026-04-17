@@ -104,6 +104,10 @@
 						},
 						"seal":{
 							"no_effect": ["memories"]
+						},
+						"odd_result":{
+							"input": ["Swiftness"],
+							"output": ["Mundane"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

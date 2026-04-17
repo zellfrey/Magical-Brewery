@@ -255,14 +255,10 @@ export class Cask {
         if(oddResult === undefined || !this.doesCaskHaveOddPotion(oddResult.input[0])) return;
 
         if(this.potion_effects[0].includes(oddResult.input[0].toLowerCase())){
-			console.log("potion changing: " + this.potion_effects[0])
             this.transformBasePotion(oddResult)
         }
         else{
-            const oddPotionInputIndex = this.potion_effects.findIndex(el => el.includes(POTION_EFFECTS[oddResult.input[0]].effects));
-			const oddResultString = POTION_EFFECTS[oddResult.output[0]].effects + " (" + POTION_EFFECTS[oddResult.output[0]].duration_long[0] + ")";
-			
-	        this.potion_effects.splice(oddPotionInputIndex, 1, oddResultString);
+            this.transformNthPotion(oddResult)
         }
         //The last potion effect SHOULD always be the newly added cask effect that creates the odd result
         this.potion_effects.pop();
@@ -283,7 +279,6 @@ export class Cask {
 
         let newBasePotion;
 
-        console.log(oddResult.output[0].toLowerCase())
         switch (oddResult.output[0]){
             case "Mundane":
                 newBasePotion = "minecraft:mundane";
@@ -296,9 +291,23 @@ export class Cask {
             break;
         }
         this.potion_effects[0] = newBasePotion;
-		//console.log("potion changed to: " + this.potion_effects[0])
+		//console.log(`potion changed from ${oddResult.output[0].toLowerCase()} to: ${this.potion_effects[0]}`)
     }
+	
+    transformNthPotion(oddResult){
 
+        const oddPotionInputIndex = this.potion_effects.findIndex(el => el.includes(POTION_EFFECTS[oddResult.input[0]].effects));
+		
+		let oddResultString;
+		
+		if(oddResult.output[0] === "Mundane"){
+			oddResultString = "Mundane (no effect)";
+		}
+		else{
+			oddResultString = POTION_EFFECTS[oddResult.output[0]].effects + " (" + POTION_EFFECTS[oddResult.output[0]].duration_long[0] + ")";
+		}
+        this.potion_effects.splice(oddPotionInputIndex, 1, oddResultString);
+    }
     setCaskAge(block){
 
         block.setPermutation(block.permutation.withState("magical_brewery:aged", true));

@@ -105,6 +105,10 @@
 						},
 						"seal":{
 							"no_effect": ["potency"]
+						},
+						"odd_result":{
+							"input": ["Strength"],
+							"output": ["Mundane"]
 						}
 					},
 					"magical_brewery:opd_cask": {},

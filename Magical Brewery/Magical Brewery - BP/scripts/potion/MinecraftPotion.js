@@ -8,8 +8,16 @@ export class MinecraftPotion {
     
 		if(heldPotion.getLore().length == 0) return;
 		// const potion = e.itemStack.getComponent('minecraft:potion')
-		heldPotion.getLore().forEach(modifier => {
-			const words = modifier.split(' ');
+
+		const extraEffects = heldPotion.getLore();
+
+		for(let i = 0; i < extraEffects.length; i++){
+			
+			const words = extraEffects[i].split(' ');
+			
+			//As to why extraEffects === "Mundane (no effect)" doesnt work, idk so its this for now
+			if(words[0] === "Mundane") continue;
+			
 			let effect, potency;
 			let totalTicks = 1;
 			if(words[0] === "Instant"){
@@ -34,7 +42,7 @@ export class MinecraftPotion {
 				
 			}
 			entity.addEffect(effect, totalTicks, { amplifier: potency })
-		});
+		}
 	}
 
 	static getPotionProperties(selectedItem, potion){

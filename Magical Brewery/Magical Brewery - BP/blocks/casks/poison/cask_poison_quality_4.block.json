@@ -105,6 +105,10 @@
 						},
 						"seal":{
 							"no_effect": []
+						},
+						"odd_result":{
+							"input": ["Regeneration"],
+							"output": ["Mundane"]
 						}
 					},
 					"magical_brewery:opd_cask": {},
