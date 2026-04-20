@@ -30,7 +30,7 @@ export const PAGES_CHAPTERS = {
 	"brewing":{
 		"main": ["brewing"],
 		"brewing" : ["recipes", "brewing_research"],
-		"recipes":["ingredients", "catalyzers"],
+		"recipes":["ingredients", "catalysers"],
 		//"ingredients": ["stren_1", "stren_2", "heal_1", "heal_2"]
 	},
 	"seal_memories":{
@@ -187,7 +187,7 @@ export const TOME_CHAPTERS = {
 		icon: "textures/items/spider_eye_fermented",
 		exitPage: "recipes"
 	},
-	"catalyzers": {
+	"catalysers": {
 		icon: "textures/items/redstone_dust",
 		exitPage: "recipes"
 	},
@@ -320,46 +320,46 @@ export const TOME_CHAPTERS = {
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_oozing_2.png",
 		exitPage: "ingredients"
 	},
-	//catalyzers chapters
+	//catalysers chapters
 	"longevity_tier_1_1":{
 		icon: "textures/items/redstone_dust",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"longevity_tier_1_2":{
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_longevity_tier_1_2.png",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"longevity_tier_2_1":{
 		icon: "textures/beardedflea/magical_brewery/items/pure_redstone_dust.png",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"potency_tier_1_1":{
 		icon: "textures/items/glowstone_dust",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"potency_tier_1_2":{
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_potency_tier_1_2.png",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"potency_tier_2_1":{
 		icon: "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"expansion_tier_1_1":{
 		icon: "textures/items/gunpowder",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"expansion_tier_1_2":{
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_expansion_tier_1_2.png",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"expansion_tier_2_1":{
 		icon: "textures/beardedflea/magical_brewery/items/crackling_oil.png",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 	"lingering_tier_1_1":{
 		icon: "textures/items/dragons_breath",
-		exitPage: "catalyzers"
+		exitPage: "catalysers"
 	},
 }
 

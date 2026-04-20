@@ -12,13 +12,13 @@
 
 export const MULTI_CLUE_POTION_EFFECTS = ["invisibility", "harming", "weakness", "slowness"];
 export const TOME_RESEARCH_ITEMS = new Map();
-//tome_parent_chapter: "catalyzers", "ingredients",
+//tome_parent_chapter: "catalysers", "ingredients",
 // "fuel"
 //Type: clue, multi-clue, complete
 //Each clue adds to the part. A complete part will not unviel until all clues are complete
 //TODO, MVP, ingredients only
 // TOME_RESEARCH_ITEMS.set("magical_brewery:potion_decay", {
-// 			"tome_parent_chapter": "catalyzers",
+// 			"tome_parent_chapter": "catalysers",
 // 		}
 // 	);
 TOME_RESEARCH_ITEMS.set("minecraft:blaze_powder", {
@@ -122,71 +122,71 @@ TOME_RESEARCH_ITEMS.set("minecraft:potion", {
 			"tome_chapter": "ingredients",
 			"type": "complete"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 //Catalyer research items
 TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "complete"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "longevity_tier_1_1"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 TOME_RESEARCH_ITEMS.set("magical_brewery:pure_redstone_dust", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "longevity_tier_2_1"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 TOME_RESEARCH_ITEMS.set("minecraft:glowstone_dust", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "potency_tier_1_1"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 TOME_RESEARCH_ITEMS.set("magical_brewery:pure_glowstone_dust", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "potency_tier_2_1"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 TOME_RESEARCH_ITEMS.set("minecraft:gunpowder", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "expansion_tier_1_1"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 TOME_RESEARCH_ITEMS.set("magical_brewery:crackling_oil", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "expansion_tier_2_1"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 TOME_RESEARCH_ITEMS.set("minecraft:dragon_breath", {
-			"tome_chapter": "catalyzers",
+			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "lingering_tier_1_1"
 			//Part is determined by the potions effect id
-			//Obviously this will include catalyzers 
+			//Obviously this will include catalysers 
 		}
 	);
 //invisibility is made with fermented spider eye and potions of nightvsion

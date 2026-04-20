@@ -187,6 +187,7 @@ function addMCPotionResearchToTomeData( player, itemStack, tomeData){
 		potionEffect = potionEffect.join("_");
 	}
 	
+	const shouldPlayerlearnEnhancedEffect = true;
 	if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_2")){
 
 		player.sendMessage("I already know how to make this potion")
@@ -197,14 +198,19 @@ function addMCPotionResearchToTomeData( player, itemStack, tomeData){
 
 	}else{
 		player.sendMessage("I don't know how to make this potion.")
+		shouldPlayerlearnEnhancedEffect = false;
 	}
 	//TODO: include a connection from base potion to enhancement research.
 	// i.e "I don't know how to make this potion." AND/BUT/HOWEVER im learning from the enhancement
-	addMCPotionEnhancementToTomeData(potion, player, tomeData);
+	if(shouldPlayerlearnEnhancedEffect){
+		addMCPotionEnhancementToTomeData(potion, player, tomeData);
+	}
+
+	return;
 }
 function addMCPotionEnhancementToTomeData(potion, player, tomeData){
 	
-	if(!MinecraftPotion.isPotionEnhanced(potion["effectID"]) || !tomeData.unlocked_chapters["catalyzers"]) return;
+	if(!MinecraftPotion.isPotionEnhanced(potion["effectID"]) || !tomeData.unlocked_chapters["catalysers"]) return;
 
 	const potionEnhancement = potion["effectID"].split(":")[1].split("_")[0]
 
@@ -224,7 +230,7 @@ function addMCPotionEnhancementToTomeData(potion, player, tomeData){
 function addEnhancementProgressionToPlayerData(effectID, player, tomeData, enhancementType){
 
 	//get playerDynamicProperty research progression
-	const catalyerChapters = tomeData.unlocked_chapters["catalyzers"];
+	const catalyerChapters = tomeData.unlocked_chapters["catalysers"];
 	
 	if(!canPlayerLearnFromEnhancedPotion(catalyerChapters, player , enhancementType)) return;
 
@@ -244,21 +250,22 @@ function addEnhancementProgressionToPlayerData(effectID, player, tomeData, enhan
 
 		if(tome_research_progression[enhancementType].length === 3){
 
-			addCompleteChapterToTomeData(player, "catalyzers", tomeData, enhancementType);
+			addCompleteChapterToTomeData(player, "catalysers", tomeData, enhancementType);
 
 			tome_research_progression[enhancementType] = "done";
 		}
 		return;
 	}
 }
+//Are you smarter than 10 year old ?!?! 
+//canPlayerLearnFromEnhancedPotion, brewers hate this 1 trick
+function canPlayerLearnFromEnhancedPotion(catalyserChapters, player , enhancementType){
 
-function canPlayerLearnFromEnhancedPotion(catalyerChapters, player , enhancementType){
-
-	if(catalyerChapters.includes(`${enhancementType}_2`)){
+	if(catalyserChapters.includes(`${enhancementType}_2`)){
 		player.sendMessage("I know how to make these types of enhanced potions.");
 
 		return false;
-	}else if(!catalyerChapters.includes(`${enhancementType}_1`)){
+	}else if(!catalyserChapters.includes(`${enhancementType}_1`)){
 		player.sendMessage("I should research the catalyst that enhances this potion.");
 
 		return false;
