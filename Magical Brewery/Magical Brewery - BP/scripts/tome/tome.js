@@ -1,384 +1,140 @@
 import {system, world} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {TOME_CHAPTERS, PAGES_CHAPTERS} from "tome/tomeChapters.js"
-import {TOME_RESEARCH_ITEMS} from "tome/tomeResearchData.js"
-import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {getPagesChapters, addChaptersToPlayerTomeData} from "tome/pages.js"
 
-const tome_research_progression = {
-	//"long": [],
-	// "strong": [],
-	// "xlong": [],
-	// "splash": [],
-}
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_brewers_tome', {
-        onUse(e) {
+export class Tome {
 
-			let tomePlayerData = e.source.getDynamicProperty('magical_brewery:tome_data_v2');
-			let playerLastOpenedPage = "main";
-			
-			if(!tomePlayerData){
-				createTomeDataV2(e.source);
-				createTomeResearchData(e.source);
-				e.source.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.missing"});
-				tomePlayerData = JSON.parse(e.source.getDynamicProperty('magical_brewery:tome_data_v2'));
-				
-			}
+	constructor(){}
 
-			if(tomePlayerData && e.source.isSneaking){
-				playerLastOpenedPage = "main";
-			}
+	static createTomeDataV2(player){
 
-			tomePlayerData = JSON.parse(tomePlayerData)
-			playerLastOpenedPage = getTomePlayerLastPage(e.source);
+		const tomeChapterData = {
+			unlocked_chapters:{},
+			page_last_opened: "main",
+		};
 
-			createTomeFormData(playerLastOpenedPage, e.source, tomePlayerData)
-        }
-    });
-});
-
-function createTomeFormData(tomePage, player, tomePlayerData){
-
-	let form = new ActionFormData();
-
-	form.title({translate: `magical_brewery:tome_chapter_${tomePage}.title`});
-	form.body({translate: `magical_brewery:tome_chapter_${tomePage}.body`});
-	
-	let buttonLayout = getTomePageButtonLayout(tomePlayerData.unlocked_chapters[tomePage]);
-	
-	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${el}.title`, TOME_CHAPTERS[el].icon))
-	
-	if(TOME_CHAPTERS[tomePage].exitPage) form.button("Go back", "");
-
-	displayTomePageFormData(form, player, tomePlayerData.unlocked_chapters[tomePage], tomePlayerData, tomePage)
-
-	player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
-}
-
-export function getTomePageButtonLayout(unlockedChapters){
-
-	let buttonPageLayout = [];
-	if(!unlockedChapters){
-		return buttonPageLayout;
-	}else{
-		unlockedChapters.forEach(el => buttonPageLayout.push(el))
-		return buttonPageLayout;
-	}
-}
-function displayTomePageFormData(form, player, tomePageChapters = [], tomePlayerData, tomePage){
-
-	form.show(player)
-	.then((response) => {
+		for (const [key, value] of Object.entries(PAGES_CHAPTERS["starter"])) {
+			tomeChapterData.unlocked_chapters[key] = value;
+		}
 		
-		if (response.canceled){ 
-			
-			tomePlayerData.page_last_opened = tomePage;
-			player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData))
-			player.dimension.playSound("item.book.put", player.location, {volume: 0.7, pitch: 0.7})
-			
+		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeChapterData))
+	}
+
+	static getTomePlayerLastPage(player){
+		let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
+		return tomePlayerData.page_last_opened;
+	}
+
+	static checkPlayerTomeData(player){
+		const tomeDataV1 = player.getDynamicProperty('magical_brewery:tome_data');
+
+		if(!tomeDataV1){
+			console.log(`${player.name} does not have tome data V1, skipping...`);
 			return;
 		}
-		if(response.selection === (tomePageChapters.length)){
-			createTomeFormData(TOME_CHAPTERS[tomePage].exitPage, player, tomePlayerData)
+
+		const tomeDataV2 = player.getDynamicProperty('magical_brewery:tome_data_v2');
+
+		if(tomeDataV2){
+			console.log(`${player.name} already has tome data V2, skipping...`);
+			return;
 		}
 		else{
-			createTomeFormData(tomePageChapters[response.selection], player, tomePlayerData);
+			convertToTomeDataV2(player, tomeDataV1)
 		}
-	})
-	.catch((e) => {
-		console.error(e, e.stack);
-	});
-}
-
-function createTomeDataV2(player){
-
-	const tomeChapterData = {
-		unlocked_chapters:{},
-		page_last_opened: "main",
-	};
-
-	for (const [key, value] of Object.entries(PAGES_CHAPTERS["starter"])) {
-		tomeChapterData.unlocked_chapters[key] = value;
 	}
-	
-	player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeChapterData))
 
-}
-function createTomeResearchData(player){
-	const tomeResearchData = {};
-	player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(tomeResearchData))
-}
-function getTomePlayerLastPage(player){
-	let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
-	return tomePlayerData.page_last_opened;
-}
+	static createTomeFormData(tomePage, player, tomePlayerData){
 
-//Tome research functions----------------------
-world.afterEvents.itemUse.subscribe((e) => {
-	const equipment = e.source.getComponent('equippable');
-	const offHandItem = equipment.getEquipment('Offhand');
+		let form = new ActionFormData();
 
-	if(!e.itemStack || !offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome") return;
-	
-	tomeResearchItem(e.source, e.itemStack)
-});
+		form.title({translate: `magical_brewery:tome_chapter_${tomePage}.title`});
+		form.body({translate: `magical_brewery:tome_chapter_${tomePage}.body`});
 
-function tomeResearchItem(source, itemStack){
+		let buttonLayout = Tome.getTomePageButtonLayout(tomePlayerData.unlocked_chapters[tomePage]);
 
-	let tomePlayerData = JSON.parse(source.getDynamicProperty('magical_brewery:tome_data_v2'));
-	
-	if(!TOME_RESEARCH_ITEMS.has(itemStack.typeId)){
-		source.sendMessage("There doesn't seem to be much to learn from this item.")
-		return;
-	}
-	else if(canPlayerResearchItem(source, tomePlayerData)){
-		researchItemStack(source, itemStack, tomePlayerData)
-	}
-}
+		buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${el}.title`, TOME_CHAPTERS[el].icon))
 
-function canPlayerResearchItem(player, tomePlayerData){
-	if(!tomePlayerData){
-		player.sendMessage("You doughnut. How can you study something when you don't even know what subject you are researching")
-		//The magicks in the tome yearn to be understood
-		return false;
-	}
-	
-	else if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("brewing")){
-		player.sendMessage("I should create a brewing chapter, and then i can research items.")
-		return false;
-	}
-	else{
-		return true;
-	}
-}
+		if(TOME_CHAPTERS[tomePage].exitPage) form.button("Go back", "");
 
-function researchItemStack(player, itemStack, tomeData){
-	
-	const researchItem = TOME_RESEARCH_ITEMS.get(itemStack.typeId);
+		Tome.displayTomePageFormData(form, player, tomePlayerData.unlocked_chapters[tomePage], tomePlayerData, tomePage)
 
-	if(itemStack.typeId === "minecraft:potion"){
-		addMCPotionResearchToTomeData(player, itemStack, tomeData);		
-	}
-	else{
-		switch(researchItem.type){
-			case "clue":
-				addClueReseachtoTomeData(researchItem, player, tomeData);
-			break;
-
-			case "multi-clue":
-				addMultiClueResearchtoTomeData(researchItem, player, tomeData);
-			break;
-		}
+		player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 	}	
-}
-function addMCPotionResearchToTomeData( player, itemStack, tomeData){
 
-	let potion = {"effectID": "", "deliveryType": ""};
-	potion = MinecraftPotion.getPotionProperties(itemStack, potion)
-	console.log(potion["deliveryType"])
+	static getTomePageButtonLayout(unlockedChapters){
 
-	let potionEffect = potion["effectID"].split(":")[1]; 
+		let buttonPageLayout = [];
+		if(!unlockedChapters){
+			return buttonPageLayout;
+		}else{
+			unlockedChapters.forEach(el => buttonPageLayout.push(el))
+			return buttonPageLayout;
+		}
+	}
 
-	if(MinecraftPotion.isPotionEnhanced(potion["effectID"])){
+	static displayTomePageFormData(form, player, tomePageChapters = [], tomePlayerData, tomePage){
+
+		form.show(player)
+		.then((response) => {
+			
+			if (response.canceled){ 
+				
+				tomePlayerData.page_last_opened = tomePage;
+				player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData))
+				player.dimension.playSound("item.book.put", player.location, {volume: 0.7, pitch: 0.7})
+				
+				return;
+			}
+			if(response.selection === (tomePageChapters.length)){
+				Tome.createTomeFormData(TOME_CHAPTERS[tomePage].exitPage, player, tomePlayerData)
+			}
+			else{
+				Tome.createTomeFormData(tomePageChapters[response.selection], player, tomePlayerData);
+			}
+		})
+		.catch((e) => {
+			console.error(e, e.stack);
+		});
+	}
+
+	static convertToTomeDataV2(player, tomeDataV1){
+
+		//Setup tomeDataV2 structure and add Main Chapters
+		console.log(`Setting up tome data v2 structure for ${player.name}`);
+		createTomeDataV2(player);
+		createTomeResearchData(player);
+
+		console.log(`Iterating through v1 tome data ${player.name}`);
 		
-		potionEffect = potionEffect.split("_");
-		potionEffect.shift();
-		potionEffect = potionEffect.join("_");
-	}
-	
-	const shouldPlayerlearnEnhancedEffect = true;
-	if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_2")){
-
-		player.sendMessage("I already know how to make this potion")
-	}
-	else if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_1")){
-
-		addCompleteChapterToTomeData(player, "ingredients", tomeData, potionEffect);
-
-	}else{
-		player.sendMessage("I don't know how to make this potion.")
-		shouldPlayerlearnEnhancedEffect = false;
-	}
-	//TODO: include a connection from base potion to enhancement research.
-	// i.e "I don't know how to make this potion." AND/BUT/HOWEVER im learning from the enhancement
-	if(shouldPlayerlearnEnhancedEffect){
-		addMCPotionEnhancementToTomeData(potion, player, tomeData);
-	}
-
-	return;
-}
-function addMCPotionEnhancementToTomeData(potion, player, tomeData){
-	
-	if(!MinecraftPotion.isPotionEnhanced(potion["effectID"]) || !tomeData.unlocked_chapters["catalysers"]) return;
-
-	const potionEnhancement = potion["effectID"].split(":")[1].split("_")[0]
-
-	//get playerDynamicProperty research progression
-	const playerResearchProgressionData = tome_research_progression;
-	let enhancementChapter; 
-	switch(potionEnhancement){
-		case "long":
-			enhancementChapter = "longevity_tier_1";
-		break;
-		case"strong":
-			enhancementChapter = "potency_tier_1";
-		break;
-	}
-	addEnhancementProgressionToPlayerData(potion["effectID"], player, tomeData, enhancementChapter)
-}
-function addEnhancementProgressionToPlayerData(effectID, player, tomeData, enhancementType){
-
-	//get playerDynamicProperty research progression
-	const catalyerChapters = tomeData.unlocked_chapters["catalysers"];
-	
-	if(!canPlayerLearnFromEnhancedPotion(catalyerChapters, player , enhancementType)) return;
-
-	//get playerDynamicProperty research progression
-	//TODO: change message to be more dynamic
-	const playerResearchProgressionData = tome_research_progression;
-
-	if(tome_research_progression[enhancementType] === undefined){
-		tome_research_progression[enhancementType] = [];
-	}
-	else if(tome_research_progression[enhancementType].includes(effectID)){
-		player.sendMessage("I already know no how to enhance this potion effect. I should test another potion effect...");
-		return;
-	}
-	else{
-		tome_research_progression[enhancementType].push(effectID);
-
-		if(tome_research_progression[enhancementType].length === 3){
-
-			addCompleteChapterToTomeData(player, "catalysers", tomeData, enhancementType);
-
-			tome_research_progression[enhancementType] = "done";
-		}
-		return;
-	}
-}
-//Are you smarter than 10 year old ?!?! 
-//canPlayerLearnFromEnhancedPotion, brewers hate this 1 trick
-function canPlayerLearnFromEnhancedPotion(catalyserChapters, player , enhancementType){
-
-	if(catalyserChapters.includes(`${enhancementType}_2`)){
-		player.sendMessage("I know how to make these types of enhanced potions.");
-
-		return false;
-	}else if(!catalyserChapters.includes(`${enhancementType}_1`)){
-		player.sendMessage("I should research the catalyst that enhances this potion.");
-
-		return false;
-	}else{
-		return true;
-	}
-}
-
-function addCompleteChapterToTomeData(player, tomeParentChapter, tomeData, chapterPart){
-
-	const researchPartIndex = tomeData.unlocked_chapters[tomeParentChapter].findIndex(el => el === chapterPart + "_1");
-
-	tomeData.unlocked_chapters[tomeParentChapter].splice(researchPartIndex, 1, chapterPart + "_2");
-	tomeData.page_last_opened = tomeParentChapter;
-
-	player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
-	//TODO: change message to be more dynamic
-	player.sendMessage("i now have a new potion recipe")
-}
-
-function addClueReseachtoTomeData(researchItem, player, tomeData){
-	
-	const chapterPart = researchItem.part.slice(0, researchItem.part.length-2);
-	if(!tomeData.unlocked_chapters[researchItem.tome_chapter]){
-		tomeData.unlocked_chapters[researchItem.tome_chapter] = [];
-	}
-	
-	if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(researchItem.part)){
-		player.sendMessage("There is no further research that can be obtained from this item...")
-		return;
-	}
-	else if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(chapterPart + "_2")){
-		player.sendMessage("I have already found the potion associated with this ingredient")
-		return;
-	}
-	else{
-		tomeData.unlocked_chapters[researchItem.tome_chapter].push(researchItem.part);
-		console.log(tomeData.unlocked_chapters[researchItem.tome_chapter]);
-		//TODO: Add custom research part messages
-		player.sendMessage({ translate: `magical_brewery:message.tome.${researchItem.tome_chapter}.discovery.${researchItem.part}`});
+		const playerTomeDataV1 = JSON.parse(tomeDataV1)
+		let playerTomeDataV2 = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
 		
-		tomeData.page_last_opened = researchItem.tome_chapter;
-		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
+		playerTomeDataV1.unlocked_chapters.forEach(chapter =>{
 
-		return;
-	}
-	
-}
-function addMultiClueResearchtoTomeData(researchItem, player, tomeData){
+			let pagesChapterObject;
 
-}
-//Tome V2 conversion functions ---------------
-world.afterEvents.playerSpawn.subscribe((e) => {
+			switch(chapter){
+				case "Crystallography":
+					pagesChapterObject = getPagesChapters("crystallography");
+				break;
+				case "Seals":
+					pagesChapterObject = getPagesChapters("seals");
+				break;
+				case "Brewing":
+					pagesChapterObject = getPagesChapters("brewing");
+				break;
+			}
 
-	if(!e.initialSpawn) return;
-	
-	checkPlayerTomeData(e.player)
-
-});
-
-function checkPlayerTomeData(player){
-	const tomeDataV1 = player.getDynamicProperty('magical_brewery:tome_data');
-
-	if(!tomeDataV1){
-		console.log(`${player.name} does not have tome data V1, skipping...`);
-		return;
-	}
-
-	const tomeDataV2 = player.getDynamicProperty('magical_brewery:tome_data_v2');
-
-	if(tomeDataV2){
-		console.log(`${player.name} already has tome data V2, skipping...`);
-		return;
-	}
-	else{
-		convertToTomeDataV2(player, tomeDataV1)
-	}
-	
+			if(pagesChapterObject){
+				console.log(`Found tome chapter: ${chapter}. Adding to ${player.name}'s tome data v2...`)
+				console.log(JSON.stringify(pagesChapterObject))
+				playerTomeDataV2 = addChaptersToPlayerTomeData(playerTomeDataV2, pagesChapterObject);
+			}
+		});
+		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(playerTomeDataV2))
+	}		
 }
 
-function convertToTomeDataV2(player, tomeDataV1){
 
-	//Setup tomeDataV2 structure and add Main Chapters
-	console.log(`Setting up tome data v2 structure for ${player.name}`);
-	createTomeDataV2(player);
-	createTomeResearchData(player);
-
-	console.log(`Iterating through v1 tome data ${player.name}`);
-	
-	const playerTomeDataV1 = JSON.parse(tomeDataV1)
-	let playerTomeDataV2 = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
-	
-	playerTomeDataV1.unlocked_chapters.forEach(chapter =>{
-
-		let pagesChapterObject;
-
-		switch(chapter){
-			case "Crystallography":
-				pagesChapterObject = getPagesChapters("crystallography");
-			break;
-			case "Seals":
-				pagesChapterObject = getPagesChapters("seals");
-			break;
-			case "Brewing":
-				pagesChapterObject = getPagesChapters("brewing");
-			break;
-		}
-
-		if(pagesChapterObject){
-			console.log(`Found tome chapter: ${chapter}. Adding to ${player.name}'s tome data v2...`)
-			console.log(JSON.stringify(pagesChapterObject))
-			playerTomeDataV2 = addChaptersToPlayerTomeData(playerTomeDataV2, pagesChapterObject);
-		}
-	});
-	player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(playerTomeDataV2))
-}	

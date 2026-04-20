@@ -2,7 +2,7 @@ import {system} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {setMainHand} from '../utils/containerUtils.js';
 import {TOME_CHAPTERS, PAGES_CHAPTERS} from "tome/tomeChapters.js"
-import {getTomePageButtonLayout} from "tome/tome.js"
+import { Tome } from './Tome.js';
 
 //Implement the use of pages to be opened but only have those chapters
 //Create separate function for chapters only
@@ -79,7 +79,7 @@ function createPagesFormData(tomeChapter, player, pagesData){
 	form.title({translate: `magical_brewery:tome_chapter_${tomeChapter}.title`});
 	form.body({translate: `magical_brewery:tome_chapter_${tomeChapter}.body`});
 	
-	let buttonLayout = getTomePageButtonLayout(pagesData[tomeChapter]);
+	let buttonLayout = Tome.getTomePageButtonLayout(pagesData[tomeChapter]);
 	
 	buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${el}.title`, TOME_CHAPTERS[el].icon))
 	
