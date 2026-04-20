@@ -18,13 +18,15 @@ system.beforeEvents.startup.subscribe(eventData => {
 				
 			}
 
-			if(tomePlayerData && e.source.isSneaking){
+			if(e.source.isSneaking){
 				playerLastOpenedPage = "main";
+			}
+			else{
+				playerLastOpenedPage = Tome.getTomePlayerLastPage(e.source);
 			}
 
 			tomePlayerData = JSON.parse(tomePlayerData)
-			playerLastOpenedPage = getTomePlayerLastPage(e.source);
-
+			
 			Tome.createTomeFormData(playerLastOpenedPage, e.source, tomePlayerData)
 		}
 	});
