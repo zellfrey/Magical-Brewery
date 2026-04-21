@@ -48,13 +48,14 @@ export class Tome {
 	static createTomeFormData(tomePage, player, tomePlayerData){
 
 		let form = new ActionFormData();
-
-		form.title({translate: `magical_brewery:tome_chapter_${tomePage}.title`});
+		const formTitle = !TOME_CHAPTERS[tomePage].title ? `magical_brewery:tome_chapter_${tomePage}.title` : TOME_CHAPTERS[tomePage].title;
+		
+		form.title({translate: formTitle});
 		form.body({translate: `magical_brewery:tome_chapter_${tomePage}.body`});
 
 		let buttonLayout = Tome.getTomePageButtonLayout(tomePlayerData.unlocked_chapters[tomePage]);
-
-		buttonLayout.forEach(el => form.button(`magical_brewery:tome_chapter_${el}.title`, TOME_CHAPTERS[el].icon))
+		
+		Tome.getformButtomProperties(form, buttonLayout)
 
 		if(TOME_CHAPTERS[tomePage].exitPage) form.button("Go back", "");
 
@@ -72,6 +73,16 @@ export class Tome {
 			unlockedChapters.forEach(el => buttonPageLayout.push(el))
 			return buttonPageLayout;
 		}
+	}
+
+	static getformButtomProperties(form, buttons){
+		buttons.forEach(el => {
+			let buttonTitle = `magical_brewery:tome_chapter_${el}.title`;
+
+			if(TOME_CHAPTERS[el].title) buttonTitle = TOME_CHAPTERS[el].title;
+
+			form.button(buttonTitle, TOME_CHAPTERS[el].icon)
+		})
 	}
 
 	static displayTomePageFormData(form, player, tomePageChapters = [], tomePlayerData, tomePage){

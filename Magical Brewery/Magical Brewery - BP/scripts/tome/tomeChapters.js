@@ -193,135 +193,168 @@ export const TOME_CHAPTERS = {
 	},
 	//ingredients chapters
 	"strength_1":{
+		title: "item.blaze_powder.name",
 		icon: "textures/items/blaze_powder",
 		exitPage: "ingredients"
 	},
 	"strength_2":{
+		title: "potion.damageBoost.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_stren_2.png",
 		exitPage: "ingredients"
 	},
 	"healing_1":{
+		title: "item.speckled_melon.name",
 		icon: "textures/items/melon_speckled",
 		exitPage: "ingredients"
 	},
 	"healing_2":{
+		title: "potion.heal.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_heal_2.png",
 		exitPage: "ingredients"
 	},
 	"swiftness_1":{
+		title: "item.sugar.name",
 		icon: "textures/items/sugar",
 		exitPage: "ingredients"
 	},
 	"swiftness_2":{
+		title: "potion.moveSpeed.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_swiftness_2.png",
 		exitPage: "ingredients"
 	},
 	"leaping_1":{
+		title: "item.rabbit_foot.name",
 		icon: "textures/items/rabbit_foot",
 		exitPage: "ingredients"
 	},
 	"leaping_2":{
+		title: "potion.jump.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_leaping_2.png",
 		exitPage: "ingredients"
 	},
 	"poison_1":{
+		title: "item.spider_eye.name",
 		icon: "textures/items/spider_eye",
 		exitPage: "ingredients"
 	},
 	"poison_2":{
+		title: "potion.poison.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_poison_2.png",
 		exitPage: "ingredients"
 	},
 	"nightvision_1":{
+		title: "item.golden_carrot.name",
 		icon: "textures/items/carrot_golden",
 		exitPage: "ingredients"
 	},
 	"nightvision_2":{
+		title: "potion.nightVision.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_nightvision_2.png",
 		exitPage: "ingredients"
 	},
 	"regeneration_1":{
+		title: "item.ghast_tear.name",
 		icon: "textures/items/ghast_tear",
 		exitPage: "ingredients"
 	},
 	"regeneration_2":{
+		title: "potion.regeneration.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_regeneration_2.png",
 		exitPage: "ingredients"
 	},
 	"water_breathing_1":{
+		title: "item.pufferfish.name",
 		icon: "textures/items/fish_pufferfish_raw",
 		exitPage: "ingredients"
 	},
 	"water_breathing_2":{
+		title: "potion.waterBreathing.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_water_breathing_2.png",
 		exitPage: "ingredients"
 	},
 	"fire_resistance_1":{
+		title: "item.magma_cream.name",
 		icon: "textures/items/magma_cream",
 		exitPage: "ingredients"
 	},
 	"fire_resistance_2":{
+		title: "potion.fireResistance.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_fire_resistance_2.png",
 		exitPage: "ingredients"
 	},
 	"turtle_master_1":{
+		title: "item.turtle_helmet.name",
 		icon: "textures/items/turtle_helmet",
 		exitPage: "ingredients"
 	},
 	"turtle_master_2":{
+		title: "potion.turtleMaster.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_turtle_master_2.png",
 		exitPage: "ingredients"
 	},
 	"slow_falling_1":{
+		title: "item.phantom_membrane.name",
 		icon: "textures/items/phantom_membrane",
 		exitPage: "ingredients"
 	},
 	"slow_falling_2":{
+		title: "potion.slowFalling.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_slow_falling_2.png",
 		exitPage: "ingredients"
 	},
 	"wind_charged_1":{
+		title: "item.breeze_rod.name",
 		icon: "textures/items/breeze_rod",
 		exitPage: "ingredients"
 	},
 	"wind_charged_2":{
+		title: "potion.windCharged.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_wind_charged_2.png",
 		exitPage: "ingredients"
 	},
 	"infested_1":{
+		title: "tile.stone.stone.name",
 		icon: "textures/items/stone_axe",
 		exitPage: "ingredients"
 	},
 	"infested_2":{
+		title: "potion.infested.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_infested_2.png",
 		exitPage: "ingredients"
 	},
 	"weaving_1":{
+		title: "tile.web.name",
 		icon: "textures/blocks/web",
 		exitPage: "ingredients"
 	},
 	"weaving_2":{
+		title: "potion.weaving.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_weaving_2.png",
 		exitPage: "ingredients"
 	},
 	"weakness_1":{
+		title: "potion.moveSpeed.name",
 		icon: "textures/items/spider_eye_fermented",
 		exitPage: "ingredients"
 	},
 	"weakness_2":{
+		title: "potion.weakness.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_weakness_2.png",
 		exitPage: "ingredients"
 	},
 	"oozing_1":{
+		title: "item.slime_ball.name",
 		icon: "textures/items/slimeball",
 		exitPage: "ingredients"
 	},
 	"oozing_2":{
+		title: "potion.oozing.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_oozing_2.png",
 		exitPage: "ingredients"
 	},
 	//catalysers chapters
 	"longevity_tier_1_1":{
+		title: "tile.redstone_wire.name",
 		icon: "textures/items/redstone_dust",
 		exitPage: "catalysers"
 	},
@@ -330,10 +363,16 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"longevity_tier_2_1":{
+		title: "item.magical_brewery:pure_redstone_dust.name",
+		icon: "textures/beardedflea/magical_brewery/items/pure_redstone_dust.png",
+		exitPage: "catalysers"
+	},
+	"longevity_tier_2_2":{
 		icon: "textures/beardedflea/magical_brewery/items/pure_redstone_dust.png",
 		exitPage: "catalysers"
 	},
 	"potency_tier_1_1":{
+		title: "item.glowstone_dust.name",
 		icon: "textures/items/glowstone_dust",
 		exitPage: "catalysers"
 	},
@@ -342,10 +381,16 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"potency_tier_2_1":{
+		title: "item.magical_brewery:pure_glowstone_dust.name",
+		icon: "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png",
+		exitPage: "catalysers"
+	},
+	"potency_tier_2_2":{
 		icon: "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png",
 		exitPage: "catalysers"
 	},
 	"expansion_tier_1_1":{
+		title: "item.gunpowder.name",
 		icon: "textures/items/gunpowder",
 		exitPage: "catalysers"
 	},
@@ -354,10 +399,16 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"expansion_tier_2_1":{
+		title: "crackling oil",
 		icon: "textures/beardedflea/magical_brewery/items/crackling_oil.png",
 		exitPage: "catalysers"
 	},
 	"lingering_tier_1_1":{
+		title: "item.dragon_breath.name",
+		icon: "textures/items/dragons_breath",
+		exitPage: "catalysers"
+	},
+	"lingering_tier_1_2":{
 		icon: "textures/items/dragons_breath",
 		exitPage: "catalysers"
 	},
