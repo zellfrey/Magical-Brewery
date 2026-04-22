@@ -89,13 +89,18 @@ system.beforeEvents.startup.subscribe(eventData => {
                         }
                     }
                     else{
-                        for(let i = 1; i !== cask.potion_effects.length-1; i++){
-                            caskPotions = cask.potion_effects[i] + "\n"
+                        if(cask.potion_effects.length === 1){
+							player.sendMessage(caskPotions)
+                            player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.merged_effects"});
+                        }else{
+                            for(let i = 1; i < cask.potion_effects.length-1; i++){
+                                caskPotions = cask.potion_effects[i] + "\n"
+                            }
+                            player.sendMessage(caskPotions)
+                            player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.new_effect", 
+                                                with: [cask.potion_effects[cask.potion_effects.length -1]] });
+                            player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.aged"});
                         }
-                        player.sendMessage(caskPotions)
-                        player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.new_effect", 
-                                            with: [cask.potion_effects[cask.potion_effects.length -1]] });
-                        player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.aged"});
                     }
                    
                 }
