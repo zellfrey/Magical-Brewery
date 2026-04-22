@@ -1,5 +1,6 @@
-import {system, world} from '@minecraft/server';
+import {system, world, RawMessage} from '@minecraft/server';
 import {TOME_RESEARCH_ITEMS} from "tome/tomeResearchData.js"
+import {TOME_CHAPTERS} from "tome/tomeChapters.js"
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import { Tome } from './Tome.js';
 
@@ -14,23 +15,23 @@ export class TomeResearch {
 		let tomePlayerData = JSON.parse(source.getDynamicProperty('magical_brewery:tome_data_v2'));
 		
 		if(!TOME_RESEARCH_ITEMS.has(itemStack.typeId)){
-			source.sendMessage("There doesn't seem to be much to learn from this item.")
+			source.sendMessage({ translate: "magical_brewery:message.tome_research_item.invalid"});
 			return;
 		}
 		else if(TomeResearch.canPlayerResearchItem(source, tomePlayerData)){
-			TomeResearch.researchItemStack(source, itemStack, tomePlayerData)
+			TomeResearch.researchItemStack(source, itemStack, tomePlayerData);
 		}
 	}
 
 	static canPlayerResearchItem(player, tomePlayerData){
 		if(!tomePlayerData){
-			player.sendMessage("You doughnut. How can you study something when you don't even know what subject you are researching")
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.no_tome"});
 			//The magicks in the tome yearn to be understood
 			return false;
 		}
 		
 		else if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("brewing")){
-			player.sendMessage("I should create a brewing chapter, and then i can research items.")
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.no_brewing_chapter"});
 			return false;
 		}
 		else{
@@ -41,23 +42,28 @@ export class TomeResearch {
 	static researchItemStack(player, itemStack, tomeData){
 		const researchItem = TOME_RESEARCH_ITEMS.get(itemStack.typeId);
 
-		if(itemStack.typeId === "minecraft:potion"){
-			TomeResearch.addMCPotionResearchToTomeData(player, itemStack, tomeData);		
-		}
-		else{
-			switch(researchItem.type){
-				case "clue":
-					TomeResearch.addClueReseachtoTomeData(researchItem, player, tomeData);
-				break;
+		switch(researchItem.type){
+			case "clue":
+				TomeResearch.addClueReseachtoTomeData(researchItem, player, tomeData);
+			break;
 
-				case "multi-clue":
-					TomeResearch.addMultiClueResearchtoTomeData(researchItem, player, tomeData);
-				break;
-			}
-		}	
+			case "multi-clue":
+				TomeResearch.addMultiClueResearchtoTomeData(researchItem, player, tomeData);
+			break;
+
+			case "complete":
+				TomeResearch.checkCompleteResearchItem(player, itemStack, tomeData);
+			break;
+		}
 	}
 
-	static addMCPotionResearchToTomeData( player, itemStack, tomeData){
+	static checkCompleteResearchItem(player, itemStack, tomeData){
+		if(itemStack.typeId === "minecraft:potion"){
+			TomeResearch.mcPotionResearch(player, itemStack, tomeData);		
+		}
+	}
+
+	static mcPotionResearch( player, itemStack, tomeData){
 
 		let potion = {"effectID": "", "deliveryType": ""};
 		potion = MinecraftPotion.getPotionProperties(itemStack, potion)
@@ -72,36 +78,37 @@ export class TomeResearch {
 			potionEffect = potionEffect.join("_");
 		}
 		
-		let shouldPlayerlearnEnhancedEffect = true;
+		let shouldPlayerlearnEnhancedEffect = TomeResearch.canPlayerLearnBaseMCPotionEffect(tomeData, player, potionEffect);
+		//TODO: include a connection from base potion to enhancement research.
+		// i.e "I don't know how to make this potion." AND/BUT/HOWEVER im learning from the enhancement
+		if(shouldPlayerlearnEnhancedEffect){
+			TomeResearch.mcPotionEnhancementResearch(potion, potionEffect, player, tomeData);
+		}
+		return;
+	}
+	static canPlayerLearnBaseMCPotionEffect(tomeData, player, potionEffect){
 
 		if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_2")){
 
-			player.sendMessage("I already know how to make this potion")
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_discovered"});
+			return true;
 		}
 		else if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_1")){
 
 			TomeResearch.addCompleteChapterToTomeData(player, "ingredients", tomeData, potionEffect);
+			return true;
 
 		}else{
-			player.sendMessage("I don't know how to make this potion.")
-			shouldPlayerlearnEnhancedEffect = false;
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_item_not_discovered"});
+			return false;
 		}
-		//TODO: include a connection from base potion to enhancement research.
-		// i.e "I don't know how to make this potion." AND/BUT/HOWEVER im learning from the enhancement
-		if(shouldPlayerlearnEnhancedEffect){
-			TomeResearch.addMCPotionEnhancementToTomeData(potion, player, tomeData);
-		}
-		return;
 	}
 
-	static addMCPotionEnhancementToTomeData(potion, player, tomeData){
-	
+	static mcPotionEnhancementResearch(potion, potionEffect, player, tomeData){
 		if(!MinecraftPotion.isPotionEnhanced(potion["effectID"]) || !tomeData.unlocked_chapters["catalysers"]) return;
 
 		const potionEnhancement = potion["effectID"].split(":")[1].split("_")[0]
-
-		//get playerDynamicProperty research progression
-		const playerResearchProgressionData = tome_research_progression;
+		
 		let enhancementChapter; 
 
 		switch(potionEnhancement){
@@ -112,36 +119,48 @@ export class TomeResearch {
 				enhancementChapter = "potency_tier_1";
 			break;
 		}
-		TomeResearch.addEnhancementProgressionToPlayerData(potion["effectID"], player, tomeData, enhancementChapter)
+		TomeResearch.addEnhancementProgressionToPlayerData(potion["effectID"], potionEffect, player, tomeData, enhancementChapter)
 	}
 
-	static addEnhancementProgressionToPlayerData(effectID, player, tomeData, enhancementType){
-
-		//get playerDynamicProperty research progression
+	static addEnhancementProgressionToPlayerData(effectID, effectString, player, tomeData, enhancementType){
+		
 		const catalyerChapters = tomeData.unlocked_chapters["catalysers"];
 		
 		if(!TomeResearch.canPlayerLearnFromEnhancedPotion(catalyerChapters, player , enhancementType)) return;
 
-		//get playerDynamicProperty research progression
-		//TODO: change message to be more dynamic
-		const playerResearchProgressionData = tome_research_progression;
+		const playerResearchProgressionData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_research_data'));
+		
+		if(playerResearchProgressionData[enhancementType] === undefined) playerResearchProgressionData[enhancementType] = [];
 
-		if(tome_research_progression[enhancementType] === undefined){
-			tome_research_progression[enhancementType] = [];
-		}
-		else if(tome_research_progression[enhancementType].includes(effectID)){
-			player.sendMessage("I already know no how to enhance this potion effect. I should test another potion effect...");
+		if(playerResearchProgressionData[enhancementType].includes(effectID)){
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_enhanced_discovered"});
 			return;
 		}
 		else{
-			tome_research_progression[enhancementType].push(effectID);
+			console.log(playerResearchProgressionData[enhancementType].length)
+			playerResearchProgressionData[enhancementType].push(effectID);
 
-			if(tome_research_progression[enhancementType].length === 3){
+			if(playerResearchProgressionData[enhancementType].length === 3){
 
 				TomeResearch.addCompleteChapterToTomeData(player, "catalysers", tomeData, enhancementType);
 
-				tome_research_progression[enhancementType] = "done";
+				playerResearchProgressionData[enhancementType] = "done";
 			}
+			else{
+				const noOfPotionsToResearch = 3-playerResearchProgressionData[enhancementType].length;
+				//idk how to name this variable, im adding an "s" to a word. Give me a break
+				//Oh fuck i just had a though about different languages. I should simmer down as a lingual brit, but cmon why you gotta make it difficult world
+				//Actually i got it, its dum but im going to just change the whole string
+				const potionAmountString= noOfPotionsToResearch === 1 ? "singular" : "plural" ;
+
+				TomeResearch.sendPlayerCatalyserProgressionMessage(effectString + "_2", enhancementType + "_1", player)
+				
+				player.sendMessage({ translate: `magical_brewery:message.tome_research_item.enhanced_progression_${potionAmountString}`, 
+										with: [noOfPotionsToResearch.toString()] });
+			}
+
+			player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(playerResearchProgressionData));
+
 			return;
 		}
 	}
@@ -150,14 +169,14 @@ export class TomeResearch {
 	static canPlayerLearnFromEnhancedPotion(catalyserChapters, player , enhancementType){
 
 		if(catalyserChapters.includes(`${enhancementType}_2`)){
-			player.sendMessage("I know how to make these types of enhanced potions.");
-
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_enhanced_type_discovered"});
 			return false;
-		}else if(!catalyserChapters.includes(`${enhancementType}_1`)){
-			player.sendMessage("I should research the catalyst that enhances this potion.");
-
+		}
+		else if(!catalyserChapters.includes(`${enhancementType}_1`)){
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_catalyst_not_discovered"});
 			return false;
-		}else{
+		}
+		else{
 			return true;
 		}
 	}
@@ -170,8 +189,17 @@ export class TomeResearch {
 		tomeData.page_last_opened = tomeParentChapter;
 
 		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
-		//TODO: change message to be more dynamic
-		player.sendMessage("i now have a new potion recipe")
+		
+		if(tomeParentChapter === "ingredients"){
+			const discoveryMessage = "magical_brewery:message.tome_research_item.potion_base_discovery";
+			TomeResearch.sendPlayerDiscoveryMessage(discoveryMessage, chapterPart + "_2", tomeParentChapter, player);
+		}
+		else{
+			//custom message for catalysyers
+			player.sendMessage("i now have a new potion recipe")
+		}
+		
+		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
 	}
 
 	static addClueReseachtoTomeData(researchItem, player, tomeData){
@@ -181,25 +209,51 @@ export class TomeResearch {
 			tomeData.unlocked_chapters[researchItem.tome_chapter] = [];
 		}
 		
-		if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(researchItem.part)){
-			player.sendMessage("There is no further research that can be obtained from this item...")
+		if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(chapterPart + "_2")){
+			player.sendMessage({ translate: `magical_brewery:message.tome_research_item.potion_discovered`})
 			return;
 		}
-		else if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(chapterPart + "_2")){
-			player.sendMessage("I have already found the potion associated with this ingredient")
+		else if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(researchItem.part)){
+			player.sendMessage({ translate: `magical_brewery:message.tome_research_item.discovered`})
 			return;
 		}
 		else{
 			tomeData.unlocked_chapters[researchItem.tome_chapter].push(researchItem.part);
-			console.log(tomeData.unlocked_chapters[researchItem.tome_chapter]);
-			//TODO: Add custom research part messages
-			player.sendMessage({ translate: `magical_brewery:message.tome.${researchItem.tome_chapter}.discovery.${researchItem.part}`});
-			
 			tomeData.page_last_opened = researchItem.tome_chapter;
+
+			const discoveryMessage = "magical_brewery:message.tome_research_item.clue_discovery";
+			TomeResearch.sendPlayerDiscoveryMessage(discoveryMessage, researchItem.part, researchItem.tome_chapter, player)
+			
 			player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
+			player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
 
 			return;
 		}
+	}
+	static sendPlayerDiscoveryMessage(discoveryMessage, tomeChapterID, tomeParentChapter, player){
+
+		const clueDiscoveryMessage = {
+				translate: discoveryMessage,
+				with: { rawtext: [
+					{ translate: TOME_CHAPTERS[tomeChapterID].title}, 
+					{ translate: `magical_brewery:tome_chapter_${tomeParentChapter}.title` }
+				] },
+			};
+
+		player.sendMessage(clueDiscoveryMessage);
+	}
+
+	static sendPlayerCatalyserProgressionMessage(tomePotionChapter, tomeCatalyserChapter, player){
+
+		const catalyserProgressionMessage = {
+				translate: "magical_brewery:message.tome_research_item.potion_enhanced_progression",
+				with: { rawtext: [
+					{ translate: TOME_CHAPTERS[tomePotionChapter].title},
+					{ translate: TOME_CHAPTERS[tomeCatalyserChapter].title},
+				] },
+			};
+
+		player.sendMessage(catalyserProgressionMessage);
 	}
 
 	static addMultiClueResearchtoTomeData(researchItem, player, tomeData){

@@ -189,6 +189,14 @@ TOME_RESEARCH_ITEMS.set("minecraft:dragon_breath", {
 			//Obviously this will include catalysers 
 		}
 	);
+//Complete research
+TOME_RESEARCH_ITEMS.set("minecraft:potion", {
+		"tome_chapter": "ingredients",
+		"type": "complete"
+		//Part is determined by the potions effect id
+		//Obviously this will include catalysers 
+	}
+);
 //invisibility is made with fermented spider eye and potions of nightvsion
 //slowness is made with fermented spider eye and potions of swiftness or leaping
 //harming
