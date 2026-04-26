@@ -124,40 +124,8 @@ system.beforeEvents.startup.subscribe(eventData => {
                     dimension.playSound("hit.chiseled_bookshelf", block.location, {volume: 0.8, pitch: 0.6});
                     return;
                 }
-                
-                let item;
-                
-                const potionCreationType = cask.potion_effects[0].split(":")[0]
+                cask.emptyCask(selectedItem, block, dimension, player, fillLevel);
 
-                if(potionCreationType === "minecraft"){
-
-                    item = MinecraftPotion.setItemStack(cask.potion_effects[0], cask.potion_liquid)
-                }
-                else{
-                    item = MagicalBreweryPotion.setItemStack(cask.potion_effects[0])
-                }
-
-                
-                if(cask.potion_effects.length > 1){
-                    const extraEffects = cask.potion_effects.slice(1)
-                    const lore = selectedItem.getLore();
-                    extraEffects.forEach(effect => lore.push(effect))
-                    
-                    item.setLore(lore);
-                }
-                setMainHand(player, equipment, selectedItem, undefined);
-                player.getComponent("inventory").container.addItem(item)
-
-                const pitch = fillLevel * 0.2 + 0.3
-                dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: pitch});
-                block.setPermutation(block.permutation.withState("magical_brewery:fill_level", fillLevel-1));
-
-                if(block.permutation.getState("magical_brewery:fill_level") === 0){
-                    
-                    block.setPermutation(block.permutation.withState("magical_brewery:aged", false));
-                    cask.resetCaskPotion();
-                    Cask.updateCask(cask)
-                }
                 return;
             }
         }

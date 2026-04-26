@@ -5,6 +5,7 @@ import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {Seal} from "../cask/Seal.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {setMainHand} from '../utils/containerUtils.js';
+import {TomeResearch} from "../tome/TomeResearch.js";
 
 export class Cask {
 
@@ -148,17 +149,59 @@ export class Cask {
         if(fillLevel === 3 || aged || potion["effectID"] === "None") return;
 
         if(fillLevel === 0 && potion["effectID"]){
-            this.setCaskPotion(potion, selectedItem.getLore())
+            this.setCaskPotion(potion, selectedItem.getLore());
         }
 
         if(!this.matchesCaskPotion(potion, selectedItem.getLore())) return;
                         
+        //TomeResearch.caskOddProgressionFill(player, block, potion["effectID"]);
                     
-        this.updateCaskBlock(block, fillLevel, dimension)
+        this.updateCaskBlock(block, fillLevel, dimension);
 
         const equipment = player.getComponent('equippable');
         const emptyBottle = new ItemStack("glass_bottle", 1);
         setMainHand(player, equipment, selectedItem, emptyBottle);
+
+        return;
+    }
+
+    emptyCask(selectedItem, block, dimension, player, fillLevel){
+        let item;
+                
+        const potionCreationType = this.potion_effects[0].split(":")[0]
+
+        if(potionCreationType === "minecraft"){
+
+            item = MinecraftPotion.setItemStack(this.potion_effects[0], this.potion_liquid)
+        }
+        else{
+            item = MagicalBreweryPotion.setItemStack(this.potion_effects[0])
+        }
+        
+        if(this.potion_effects.length > 1){
+            const extraEffects = this.potion_effects.slice(1)
+            const lore = selectedItem.getLore();
+            extraEffects.forEach(effect => lore.push(effect))
+            
+            item.setLore(lore);
+        }
+
+        const equipment = player.getComponent('equippable');
+
+        setMainHand(player, equipment, selectedItem, undefined);
+
+        player.getComponent("inventory").container.addItem(item)
+
+        const pitch = fillLevel * 0.2 + 0.3
+        dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: pitch});
+        block.setPermutation(block.permutation.withState("magical_brewery:fill_level", fillLevel-1));
+
+        if(block.permutation.getState("magical_brewery:fill_level") === 0){
+            
+            block.setPermutation(block.permutation.withState("magical_brewery:aged", false));
+            this.resetCaskPotion();
+            Cask.updateCask(this);
+        }
 
         return;
     }
@@ -218,7 +261,7 @@ export class Cask {
         const potionEffect = POTION_EFFECTS[caskPotionType]
         let effectName = potionEffect.effects
         let sealStrength = this.seal.strength;
-        //TODO: add expansion & inspiration seal choices
+        //TODO: add expansion & inspiration & memories seal choices
         if(this.seal.type === "potency"){
 
             let potionPotency;
@@ -406,6 +449,14 @@ export class Cask {
     static findIndexCask(blockDimensionID, blockLocation){
         const index = Cask.casks.findIndex(el => MathUtils.equalsVector3(el.location, blockLocation) && el.dimensionID === blockDimensionID);
         return index;                                            
+    }
+
+    static getCaskType(blockTypeID){
+        let cask = blockTypeID.split(":")[1].split("_");
+
+		if(cask[cask.length-2] === "quality") cask.length = 2;
+
+		return cask.join("_");
     }
 
 }
