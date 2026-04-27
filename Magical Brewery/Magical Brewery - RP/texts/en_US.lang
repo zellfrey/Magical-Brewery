@@ -437,17 +437,21 @@ magical_brewery:message.tome_research_item.invalid=There doesn't seem to be much
 magical_brewery:message.tome_research_item.no_tome=The magicks in the tome yearn to be understood.
 magical_brewery:message.tome_research_item.no_brewing_chapter=I should create a brewing chapter, and then I can research items.
 magical_brewery:message.tome_research_item.discovered=There is no further research that can be obtained from this item...
-magical_brewery:message.tome_research_item.potion_item_discovered=I have already found the potion associated with this ingredient.
-magical_brewery:message.tome_research_item.potion_discovered=I already know how to make this potion.
-magical_brewery:message.tome_research_item.potion_item_not_discovered=I do not know the ingredient that can create such a potion.
 magical_brewery:message.tome_research_item.clue_discovery=This %s could be useful.\nI have added it to my %s chapter.
-magical_brewery:message.tome_research_item.potion_base_discovery=I now know how to make a %s.\nI have added it to my %s chapter.
-magical_brewery:message.tome_research_item.potion_enhanced_type_discovered=I know how to make these types of enhanced potions.
-magical_brewery:message.tome_research_item.potion_catalyst_not_discovered=I should research the catalyst that enhances this potion.
-magical_brewery:message.tome_research_item.potion_enhanced_discovered=I already know how to enhance this potion effect. I should test another potion effect...
-magical_brewery:message.tome_research_item.potion_enhanced_progression=This %s has been enhanced with %s.
+
+magical_brewery:message.tome_research_potion.item_discovered=I have already found the potion associated with this ingredient.
+magical_brewery:message.tome_research_potion.discovered=I already know how to make this potion.
+magical_brewery:message.tome_research_potion.item_not_discovered=I do not know the ingredient that can create such a potion.
+magical_brewery:message.tome_research_potion.discovery=I now know how to make a %s.\nI have added it to my %s chapter.
+magical_brewery:message.tome_research_potion.enhanced_type_discovered=I know how to make these types of enhanced potions.
+magical_brewery:message.tome_research_potion.catalyst_not_discovered=I should research the catalyst that enhances this potion.
+magical_brewery:message.tome_research_potion.enhanced_discovered=I already know how to enhance this potion effect. I should test another potion effect...
+magical_brewery:message.tome_research_potion.enhanced_progression=This %s has been enhanced with %s.
+
 magical_brewery:message.tome_research_item.enhanced_progression_plural=I should only need to try %s other potions with a similar enhancement to confirm the effects.
 magical_brewery:message.tome_research_item.enhanced_progression_singular=I should only need to try %s other potion with a similar enhancement to confirm the effects.
+
+magical_brewery:message.tome_research_cask_odd.discovery=Me find potion and cask make strange liquid.
 ##---------------------------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------------------------

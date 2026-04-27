@@ -1,8 +1,9 @@
 import {system, world, RawMessage} from '@minecraft/server';
-import {TOME_RESEARCH_ITEMS} from "tome/tomeResearchData.js"
+import {TOME_RESEARCH_ITEMS, TOME_RESEARCH_ODD_CASKS} from "tome/tomeResearchData.js"
 import {TOME_CHAPTERS} from "tome/tomeChapters.js"
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import { Tome } from './Tome.js';
+import {Cask} from "../cask/Cask.js";
 
 export class TomeResearch {
 
@@ -90,7 +91,7 @@ export class TomeResearch {
 
 		if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_2")){
 
-			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_discovered"});
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.discovered"});
 			return true;
 		}
 		else if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_1")){
@@ -99,7 +100,7 @@ export class TomeResearch {
 			return true;
 
 		}else{
-			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_item_not_discovered"});
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.item_not_discovered"});
 			return false;
 		}
 	}
@@ -133,7 +134,7 @@ export class TomeResearch {
 		if(playerResearchProgressionData[enhancementType] === undefined) playerResearchProgressionData[enhancementType] = [];
 
 		if(playerResearchProgressionData[enhancementType].includes(effectID)){
-			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_enhanced_discovered"});
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.enhanced_discovered"});
 			return;
 		}
 		else{
@@ -169,11 +170,11 @@ export class TomeResearch {
 	static canPlayerLearnFromEnhancedPotion(catalyserChapters, player , enhancementType){
 
 		if(catalyserChapters.includes(`${enhancementType}_2`)){
-			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_enhanced_type_discovered"});
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.enhanced_type_discovered"});
 			return false;
 		}
 		else if(!catalyserChapters.includes(`${enhancementType}_1`)){
-			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.potion_catalyst_not_discovered"});
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.catalyst_not_discovered"});
 			return false;
 		}
 		else{
@@ -191,7 +192,7 @@ export class TomeResearch {
 		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
 		
 		if(tomeParentChapter === "ingredients"){
-			const discoveryMessage = "magical_brewery:message.tome_research_item.potion_base_discovery";
+			const discoveryMessage = "magical_brewery:message.tome_research_potion.discovery";
 			TomeResearch.sendPlayerDiscoveryMessage(discoveryMessage, chapterPart + "_2", tomeParentChapter, player);
 		}
 		else{
@@ -205,12 +206,9 @@ export class TomeResearch {
 	static addClueReseachtoTomeData(researchItem, player, tomeData){
 	
 		const chapterPart = researchItem.part.slice(0, researchItem.part.length-2);
-		if(!tomeData.unlocked_chapters[researchItem.tome_chapter]){
-			tomeData.unlocked_chapters[researchItem.tome_chapter] = [];
-		}
 		
 		if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(chapterPart + "_2")){
-			player.sendMessage({ translate: `magical_brewery:message.tome_research_item.potion_discovered`})
+			player.sendMessage({ translate: `magical_brewery:message.tome_research_potion.discovered`})
 			return;
 		}
 		else if(tomeData.unlocked_chapters[researchItem.tome_chapter].includes(researchItem.part)){
@@ -246,7 +244,7 @@ export class TomeResearch {
 	static sendPlayerCatalyserProgressionMessage(tomePotionChapter, tomeCatalyserChapter, player){
 
 		const catalyserProgressionMessage = {
-				translate: "magical_brewery:message.tome_research_item.potion_enhanced_progression",
+				translate: "magical_brewery:message.tome_research_potion.enhanced_progression",
 				with: { rawtext: [
 					{ translate: TOME_CHAPTERS[tomePotionChapter].title},
 					{ translate: TOME_CHAPTERS[tomeCatalyserChapter].title},
@@ -258,6 +256,113 @@ export class TomeResearch {
 
 	static addMultiClueResearchtoTomeData(researchItem, player, tomeData){
 
+	}
+
+
+	static caskOddProgression(player, block, potion, interaction){
+
+		const tomePlayerData = player.getDynamicProperty('magical_brewery:tome_data_v2');
+		const cask = Cask.getCaskType(block.typeId);
+
+		if(!tomePlayerData || !TOME_RESEARCH_ODD_CASKS.has(cask)) return;
+		
+		TomeResearch.playerLearnOddResearch(player, potion, cask, interaction);
+	}
+
+	static playerLearnOddResearch(player, potion, cask, interaction){
+
+		const caskResearch = TOME_RESEARCH_ODD_CASKS.get(cask);
+		let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
+		let playerTomeResearch = JSON.parse(player.getDynamicProperty('magical_brewery:tome_research_data'));
+		
+		if(tomePlayerData.unlocked_chapters["cask_oddities"].includes(caskResearch.odd_chapter)) return;
+
+
+		if(!playerTomeResearch[caskResearch.research]) playerTomeResearch[caskResearch.research] = [];
+		//TODO: expand to cater for potions like water breathing, slow falling etc
+		let canPlayerLearnResearch = false;
+		
+		if(interaction === "fill"){
+			const effect = potion.split(":")[1].split("_");
+
+			canPlayerLearnResearch = TomeResearch.canPlayerLearnOddFillResearch(caskResearch, effect[effect.length-1], playerTomeResearch);
+		}else{
+			
+			canPlayerLearnResearch = TomeResearch.canPlayerLearnOddEmptyResearch(caskResearch, minecraftPotion.potionEffectType.id, playerTomeResearch);
+		}
+		
+		if(canPlayerLearnResearch){
+			TomeResearch.updatePlayerTomeResearch(caskResearch, player, tomePlayerData, playerTomeResearch, interaction);
+		}
+		
+		return;
+	}
+
+	static canPlayerLearnOddFillResearch(caskResearch, potionEffect, playerTomeResearch){
+		
+		if(playerTomeResearch[caskResearch.research][0] === "fill"){
+			return false;
+		}
+		if(potionEffect !== caskResearch.potion_fill){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+
+	static canPlayerLearnOddEmptyResearch(caskResearch, potionEffect, playerTomeResearch){
+		let potion_empty = caskResearch.potion_empty;
+
+		if(!potion_empty) potion_empty = "minecraft:mundane";
+		console.log(potion_empty)
+		if(potionEffect !== potion_empty || playerTomeResearch[caskResearch.research][0] === undefined){
+			return false;
+		}
+		else{
+		 	return true;
+		}
+	}
+	
+	static updatePlayerTomeResearch(caskResearch, player, tomePlayerData, playerTomeResearch, interaction){
+		
+		playerTomeResearch[caskResearch.research].push(interaction);
+		
+		if(playerTomeResearch[caskResearch.research].length === 2){
+			
+			TomeResearch.addCaskOdditiesChaptertoTome(caskResearch, player, tomePlayerData, playerTomeResearch);
+			
+			player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
+		}
+		else{
+			player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(playerTomeResearch));
+		}
+	}
+	
+	static addCaskOdditiesChaptertoTome(caskResearch, player, tomePlayerData, playerTomeResearch){
+		
+		
+		
+		tomePlayerData.unlocked_chapters["cask_oddities"].push(caskResearch.odd_chapter);
+		tomePlayerData.page_last_opened = "cask_oddities";
+		
+		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData));
+		
+		playerTomeResearch[caskResearch.research] = "done";
+		
+		playerTomeResearch = TomeResearch.setOppositeOddResearch(playerTomeResearch, caskResearch.research);
+		console.log(tomePlayerData.unlocked_chapters["cask_oddities"])
+		player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(playerTomeResearch));
+		
+	}
+	
+	static setOppositeOddResearch(playerTomeResearch, caskResearch){
+		const researchArr = caskResearch.split("_");
+		const oppositeResearchString = `${researchArr[1]}_${researchArr[0]}_${researchArr[2]}`;
+		
+		playerTomeResearch[oppositeResearchString] = "done";
+		
+		return playerTomeResearch;
 	}
 }
 

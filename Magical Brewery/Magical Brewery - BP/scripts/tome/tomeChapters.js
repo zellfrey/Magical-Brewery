@@ -15,7 +15,8 @@ export const PAGES_CHAPTERS = {
 	"starter":{
 		"main": ["ageing", "zzz_about_the_author"],
 		"ageing": ["casks"],
-		"casks": ["cask_degrading", "cask_oddities", "theories_cask_effects"]
+		"casks": ["cask_degrading", "cask_oddities", "theories_cask_effects"],
+		"cask_oddities": [],
 	},
 	"seals":{
 		"ageing": ["seals"],
@@ -31,7 +32,8 @@ export const PAGES_CHAPTERS = {
 		"main": ["brewing"],
 		"brewing" : ["recipes", "brewing_research"],
 		"recipes":["ingredients", "catalysers"],
-		//"ingredients": ["stren_1", "stren_2", "heal_1", "heal_2"]
+		"ingredients": [],
+		"catalysers": [],
 	},
 	"seal_memories":{
 		"seals" : ["seal_memories"],
@@ -399,7 +401,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"expansion_tier_2_1":{
-		title: "crackling oil",
+		title: "item.magical_brewery:crackling_oil.name",
 		icon: "textures/beardedflea/magical_brewery/items/crackling_oil.png",
 		exitPage: "catalysers"
 	},
@@ -411,6 +413,32 @@ export const TOME_CHAPTERS = {
 	"lingering_tier_1_2":{
 		icon: "textures/items/dragons_breath",
 		exitPage: "catalysers"
+	},
+	"echo_tier_1_1":{
+		title: "item.magical_brewery:echo_dust.name",
+		icon: "textures/beardedflea/magical_brewery/items/echo_dust.png",
+		exitPage: "catalysers"
+	},
+	"echo_tier_1_2":{
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_expansion_tier_1_2.png",
+		exitPage: "catalysers"
+	},
+	//cask oddities chapters
+	"harm_heal_to_decay":{
+		icon: "textures/items/dobb",
+		exitPage: "cask_oddities"
+	},
+	"pois_regn_to_mund":{
+		icon: "textures/items/dobb",
+		exitPage: "cask_oddities"
+	},
+	"slow_sped_to_mund":{
+		icon: "textures/items/dobb",
+		exitPage: "cask_oddities"
+	},
+	"weak_stre_to_mund":{
+		icon: "textures/items/dobb",
+		exitPage: "cask_oddities"
 	},
 }
 

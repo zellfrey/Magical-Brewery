@@ -22,181 +22,207 @@ export const TOME_RESEARCH_ITEMS = new Map();
 // 		}
 // 	);
 TOME_RESEARCH_ITEMS.set("minecraft:blaze_powder", {
-			"tome_chapter": "ingredients",
-			"type": "clue",
-			"part": "strength_1"
-		}
-	);
+		"tome_chapter": "ingredients",
+		"type": "clue",
+		"part": "strength_1"
+	});
 TOME_RESEARCH_ITEMS.set("minecraft:glistering_melon_slice", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "healing_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:sugar", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "swiftness_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:rabbit_foot", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "leaping_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:spider_eye", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "poison_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:golden_carrot", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "nightvision_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:ghast_tear", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "regeneration_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:pufferfish", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "water_breathing_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:magma_cream", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "fire_resistance_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:turtle_helmet", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "turtle_master_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:phantom_membrane", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "slow_falling_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:breeze_rod", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "wind_charged_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:stone", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "infested_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:web", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "weaving_1"
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:fermented_spider_eye", {
 			"tome_chapter": "ingredients",
 			"type": "multi-clue",
 			"parts": ["invisibility_1", "slowness_1", "harming_1", "weakness_1"]
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:slime_ball", {
 			"tome_chapter": "ingredients",
 			"type": "clue",
 			"part": "oozing_1"
-		}
-	);
-
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:potion", {
 			"tome_chapter": "ingredients",
 			"type": "complete"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 //Catalyer research items
 TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
 			"tome_chapter": "catalysers",
 			"type": "complete"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
 			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "longevity_tier_1_1"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("magical_brewery:pure_redstone_dust", {
 			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "longevity_tier_2_1"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:glowstone_dust", {
 			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "potency_tier_1_1"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("magical_brewery:pure_glowstone_dust", {
 			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "potency_tier_2_1"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:gunpowder", {
 			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "expansion_tier_1_1"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("magical_brewery:crackling_oil", {
 			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "expansion_tier_2_1"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
 TOME_RESEARCH_ITEMS.set("minecraft:dragon_breath", {
 			"tome_chapter": "catalysers",
 			"type": "clue",
 			"part": "lingering_tier_1_1"
 			//Part is determined by the potions effect id
 			//Obviously this will include catalysers 
-		}
-	);
+		});
+TOME_RESEARCH_ITEMS.set("magical_brewery:echo_dust", {
+			"tome_chapter": "catalysers",
+			"type": "clue",
+			"part": "echo_tier_1_1"
+			//Part is determined by the potions effect id
+			//Obviously this will include catalysers 
+		});
 //Complete research
 TOME_RESEARCH_ITEMS.set("minecraft:potion", {
 		"tome_chapter": "ingredients",
 		"type": "complete"
 		//Part is determined by the potions effect id
 		//Obviously this will include catalysers 
-	}
-);
+	});
 //invisibility is made with fermented spider eye and potions of nightvsion
 //slowness is made with fermented spider eye and potions of swiftness or leaping
 //harming
+
+
+
+export const TOME_RESEARCH_ODD_CASKS = new Map();
+TOME_RESEARCH_ODD_CASKS.set("cask_harming", {
+	"odd_chapter": "harm_heal_to_decay",
+	"potion_fill": "healing",
+	"potion_empty": "decay",
+	"research": "harm_heal_decay"
+});
+TOME_RESEARCH_ODD_CASKS.set("cask_healing", {
+	"odd_chapter": "harm_heal_to_decay",
+	"potion_fill": "harming",
+	"potion_empty": "decay",
+	"research": "heal_harm_decay"
+});
+TOME_RESEARCH_ODD_CASKS.set("cask_poison", {
+	"odd_chapter": "pois_regn_to_mund",
+	"potion_fill": "regeneration",
+	"research": "pois_regn_mund"
+});
+TOME_RESEARCH_ODD_CASKS.set("cask_regeneration", {
+	"odd_chapter": "pois_regn_to_mund",
+	"potion_fill": "poison",
+	"research": "regn_pois_mund"
+});
+TOME_RESEARCH_ODD_CASKS.set("cask_slowness", {
+	"odd_chapter": "slow_sped_to_mund",
+	"potion_fill": "swiftness",
+	"research": "slow_sped_mund"
+});
+TOME_RESEARCH_ODD_CASKS.set("cask_swiftness", {
+	"odd_chapter": "slow_sped_to_mund",
+	"potion_fill": "slowness",
+	"research": "sped_slow_mund"
+});
+TOME_RESEARCH_ODD_CASKS.set("cask_weakness", {
+	"odd_chapter": "weak_stre_to_mund",
+	"potion_fill": "strength",
+	"research": "weak_stre_mund"
+});
+TOME_RESEARCH_ODD_CASKS.set("cask_strength", {
+	"odd_chapter": "weak_stre_to_mund",
+	"potion_fill": "weakness",
+	"research": "stre_weak_mund"
+});

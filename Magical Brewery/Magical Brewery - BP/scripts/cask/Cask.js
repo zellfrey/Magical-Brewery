@@ -154,7 +154,7 @@ export class Cask {
 
         if(!this.matchesCaskPotion(potion, selectedItem.getLore())) return;
                         
-        //TomeResearch.caskOddProgressionFill(player, block, potion["effectID"]);
+        TomeResearch.caskOddProgression(player, block, potion["effectID"], "fill");
                     
         this.updateCaskBlock(block, fillLevel, dimension);
 
@@ -186,6 +186,8 @@ export class Cask {
             item.setLore(lore);
         }
 
+        TomeResearch.caskOddProgression(player, block, item, "empty");
+        
         const equipment = player.getComponent('equippable');
 
         setMainHand(player, equipment, selectedItem, undefined);
