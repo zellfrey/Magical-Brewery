@@ -180,7 +180,7 @@
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png"
 		},
 		"magical_brewery:seal_memories":{
-			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png"
+			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_memories.png"
 		},
 		"magical_brewery:seal_inspiration_dormant":{
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_dormant.png"
@@ -200,8 +200,8 @@
 		"magical_brewery:pages_inspiration":{
 			"textures": "textures/beardedflea/magical_brewery/items/pages_inspiration.png"
 		},
-		"magical_brewery:pages_temp":{
-			"textures": "textures/beardedflea/magical_brewery/items/pages_temp.png"
+		"magical_brewery:pages_memories":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_memories.png"
 		},
 		"magical_brewery:glass_potion_harming":{
 			"textures": "textures/items/potion_bottle_harm"

@@ -37,7 +37,7 @@ world.afterEvents.itemUse.subscribe((e) => {
 	const equipment = e.source.getComponent('equippable');
 	const offHandItem = equipment.getEquipment('Offhand');
 
-	if(!e.itemStack || !offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome") return;
+	if(!e.itemStack || e.itemStack.hasTag("magical_brewery:tome_pages") || !offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome" ) return;
 	
 	TomeResearch.tomeResearchItem(e.source, e.itemStack)
 });

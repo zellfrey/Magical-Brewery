@@ -2,7 +2,7 @@
 	"format_version": "1.21.90",
 	"minecraft:item": {
 		"description": {
-			"identifier": "magical_brewery:pages_temp",
+			"identifier": "magical_brewery:pages_memories",
 			"menu_category": {
 				"category": "items"
 			}
@@ -12,9 +12,9 @@
 				"tome_parent_chapter": "seals",
 				"tome_chapter": "seal_memories"
 			},
-			"minecraft:icon": "magical_brewery:pages_temp",
+			"minecraft:icon": "magical_brewery:pages_memories",
 			"minecraft:display_name":{
-				"value": "temporary pages chapter"
+				"value": "item.magical_brewery:pages_memories.name"
 			},
 			"minecraft:max_stack_size": {
 				"value": 1

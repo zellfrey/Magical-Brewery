@@ -57,6 +57,9 @@ item.magical_brewery:brewers_tome.name=§dBrewers' Tome
 item.magical_brewery:pages_crystallography.name=§eCrystallography Pages
 item.magical_brewery:pages_seals.name=§eSeals Pages
 item.magical_brewery:pages_brewing.name=§eBrewing Pages
+item.magical_brewery:pages_inspiration.name=§eInspiration Pages
+item.magical_brewery:pages_memories.name=§eMemories Pages
+item.magical_brewery:pages_echo.name=§eEcho Shard Pages
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
@@ -71,7 +74,7 @@ item.magical_brewery:seal_potency_2.name=§eSeal of Potency II
 item.magical_brewery:seal_expansion_1.name=Seal of Expansion I
 item.magical_brewery:seal_expansion_2.name=§eSeal of Expansion II
 item.magical_brewery:seal_retainment.name=Seal of Retainment
-item.magical_brewery:seal_memories.name=Seal of Memories §c[W.I.P]
+item.magical_brewery:seal_memories.name=Seal of Memories
 item.magical_brewery:seal_inspiration.name=Seal of Inspiration
 ##---------------------------------
 ##Ingredients---------------------------------
@@ -372,16 +375,16 @@ magical_brewery:tome_chapter_seal_potency.title=Seals of Potency
 magical_brewery:tome_chapter_seal_potency.body=Similar to brewing, seals of potency increase the power of a cask's potion effect. Each level increases the power by one tier. \nSeals of potency can be crafted with variants of glowstone. 
 
 
-magical_brewery:tome_chapter_seal_expansion.title=Seals of Expansion §c[W.I.P]
+magical_brewery:tome_chapter_seal_expansion.title=Seals of Expansion
 magical_brewery:tome_chapter_seal_expansion.body=This seal can be applied to casks containing potions of lingering and potions of splash. It will increase the potions splash radius. Each level increases splash radius by one block.
 
 magical_brewery:tome_chapter_seal_retainment.title=Seal of Retainment
 magical_brewery:tome_chapter_seal_retainment.body=Unlike other seals, the seal of retainment does not affect the cask effect being applied to the liquid contents. Instead it can be used to prevent casks from degrading in quality. As with most seals, it will burn away once used.\nSeals of retainment are crafted using amethyst shards.
 
-magical_brewery:tome_chapter_seal_memories.title=Seal of Memories §c[W.I.P]
+magical_brewery:tome_chapter_seal_memories.title=Seal of Memories
 magical_brewery:tome_chapter_seal_memories.body=A strange seal, one that seems to remember the previous state of a cask. If applied to a cask that has degraded in quality, once the aging process is complete, it will actually "repair" the cask bringing back some of the stained effect back into the cask.\nSeals of memories can be crafted with echo shards.
 
-magical_brewery:tome_chapter_seal_inspiration.title=Seal of Inspiration §c[W.I.P]
+magical_brewery:tome_chapter_seal_inspiration.title=Seal of Inspiration
 magical_brewery:tome_chapter_seal_inspiration.body=Sometimes a lending hand in work is always appreciated. I've heard whispers from the eyes of enders that I have collected over the weeks. And I thought it may be possible to apply their alien thoughts to a productive activity. By using them in seals they show boundless creativity but it's unruly. However the treasures gained are greater than any mountain of gold.\nSeals of Inspiration can be crafted with eyes of ender.
 
 magical_brewery:tome_chapter_zzz_about_the_author.title=About the Author

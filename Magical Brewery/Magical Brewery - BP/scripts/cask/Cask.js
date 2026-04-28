@@ -335,23 +335,15 @@ export class Cask {
         
         let newBlockTypeId;
 
-        if(this.seal.type === "memories" && this.seal.affectCaskAgeing){
-
-            caskQuality++;
-            newBlockTypeId = `magical_brewery:cask_${caskBlockEffectId}`;
-            newBlockTypeId += caskQuality === 5 ? "" : `_quality_${caskQuality}`;
+        if(caskQuality == 1){
+            newBlockTypeId = "magical_brewery:cask_no_effect";
+            this.og_cask_type = Cask.getCaskType(block.typeId);
         }
         else{
-            if(caskQuality == 1){
-                newBlockTypeId = "magical_brewery:cask_no_effect";
-                this.og_cask_type = Cask.getCaskType(block.typeId);
-            }
-            else{
-                caskQuality--;
-                newBlockTypeId = `magical_brewery:cask_${caskBlockEffectId}_quality_${caskQuality}`;
-            }
-            
+            caskQuality--;
+            newBlockTypeId = `magical_brewery:cask_${caskBlockEffectId}_quality_${caskQuality}`;
         }
+        
         block.setType(newBlockTypeId)
 			
         const caskStates = { "magical_brewery:fill_level": fillLevel, "magical_brewery:aged": true, "minecraft:cardinal_direction": caskDirection }

@@ -7,7 +7,7 @@
 		"tags": ["magical_brewery:brewers_desk"],
 		"pattern": ["EQE", "QSQ", "EQE"],
 		"key": {
-			"Q": "magical_brewery:pure_quartz_shard",
+			"Q": "minecraft:quartz",
 			"S": "magical_brewery:seal_basic",
 			"E": "minecraft:echo_shard"
 		},

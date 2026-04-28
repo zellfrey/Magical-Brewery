@@ -103,7 +103,7 @@
 							"id": "leaping"
 						},
 						"seal":{
-							"no_effect": ["memories"]
+							"no_effect": []
 						}
 					},
 					"magical_brewery:opd_cask": {},

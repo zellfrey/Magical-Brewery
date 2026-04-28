@@ -160,7 +160,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "seals"
 	},
 	"seal_memories": {
-		icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories_temp.png",
+		icon: "textures/beardedflea/magical_brewery/items/seals/seal_memories.png",
 		exitPage: "seals"
 	},
 	"seal_inspiration": {
@@ -420,7 +420,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"echo_tier_1_2":{
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_expansion_tier_1_2.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_echo_tier_1_2.png",
 		exitPage: "catalysers"
 	},
 	//cask oddities chapters

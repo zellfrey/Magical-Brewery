@@ -103,7 +103,7 @@
 							"id": "regeneration"
 						},
 						"seal":{
-							"no_effect": ["memories"]
+							"no_effect": []
 						},
 						"odd_result":{
 							"input": ["Poison"],
