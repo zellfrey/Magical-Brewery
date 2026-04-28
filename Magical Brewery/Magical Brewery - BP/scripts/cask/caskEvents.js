@@ -212,11 +212,12 @@ world.afterEvents.worldLoad.subscribe((e) => {
         //     return;
         // }
         let cask = new Cask(caskEl.dimensionID, caskEl.location)
-        cask.potion_effects = caskEl.potion_effects
-        cask.potion_liquid = caskEl.potion_liquid
+        cask.potion_effects = caskEl.potion_effects;
+        cask.potion_liquid = caskEl.potion_liquid;
         //not used but again keeping
-        cask.potion_modifier = caskEl.potion_modifier
-        cask.age_start_tick = caskEl.age_start_tick
+        cask.potion_modifier = caskEl.potion_modifier;
+        cask.age_start_tick = caskEl.age_start_tick;
+        cask.og_cask_type = caskEl.og_cask_type;
         
         if(caskEl.seal.location !== undefined){
 

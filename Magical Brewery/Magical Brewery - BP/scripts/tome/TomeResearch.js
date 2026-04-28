@@ -259,19 +259,19 @@ export class TomeResearch {
 	}
 
 
-	static caskOddProgression(player, block, potion, interaction){
+	static caskOddProgression(player, block, cask, interaction){
 
 		const tomePlayerData = player.getDynamicProperty('magical_brewery:tome_data_v2');
-		const cask = Cask.getCaskType(block.typeId);
-
-		if(!tomePlayerData || !TOME_RESEARCH_ODD_CASKS.has(cask)) return;
+		const caskType = !cask.og_cask_type ? Cask.getCaskType(block.typeId) : cask.og_cask_type;
 		
-		TomeResearch.playerLearnOddResearch(player, potion, cask, interaction);
+		if(!tomePlayerData || !TOME_RESEARCH_ODD_CASKS.has(caskType)) return;
+		
+		TomeResearch.playerLearnOddResearch(player, caskType, cask, interaction);
 	}
 
-	static playerLearnOddResearch(player, potion, cask, interaction){
+	static playerLearnOddResearch(player, caskType, cask, interaction){
 
-		const caskResearch = TOME_RESEARCH_ODD_CASKS.get(cask);
+		const caskResearch = TOME_RESEARCH_ODD_CASKS.get(caskType);
 		let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
 		let playerTomeResearch = JSON.parse(player.getDynamicProperty('magical_brewery:tome_research_data'));
 		
@@ -279,16 +279,18 @@ export class TomeResearch {
 
 
 		if(!playerTomeResearch[caskResearch.research]) playerTomeResearch[caskResearch.research] = [];
-		//TODO: expand to cater for potions like water breathing, slow falling etc
-		let canPlayerLearnResearch = false;
 		
+		const rootPotionID = cask.getFirstPotionEffectID();
+		const extraEffects = cask.potion_effects.slice(1);
+		let canPlayerLearnResearch = false;
+	
 		if(interaction === "fill"){
-			const effect = potion.split(":")[1].split("_");
 
-			canPlayerLearnResearch = TomeResearch.canPlayerLearnOddFillResearch(caskResearch, effect[effect.length-1], playerTomeResearch);
-		}else{
+			canPlayerLearnResearch = TomeResearch.canPlayerLearnOddFillResearch(caskResearch, rootPotionID, extraEffects, playerTomeResearch);
+		}
+		else{
 			
-			canPlayerLearnResearch = TomeResearch.canPlayerLearnOddEmptyResearch(caskResearch, minecraftPotion.potionEffectType.id, playerTomeResearch);
+			canPlayerLearnResearch = TomeResearch.canPlayerLearnOddEmptyResearch(caskResearch, rootPotionID, extraEffects, playerTomeResearch);
 		}
 		
 		if(canPlayerLearnResearch){
@@ -298,29 +300,38 @@ export class TomeResearch {
 		return;
 	}
 
-	static canPlayerLearnOddFillResearch(caskResearch, potionEffect, playerTomeResearch){
+	static canPlayerLearnOddFillResearch(caskResearch, rootPotionID, extraEffects, playerTomeResearch){
 		
+		let hasOddExtraEffect = false;
+
+		for (const effect of extraEffects) {
+			if(effect.includes(caskResearch.potion_nth_fill)) hasOddExtraEffect = true;
+		}
+
 		if(playerTomeResearch[caskResearch.research][0] === "fill"){
 			return false;
 		}
-		if(potionEffect !== caskResearch.potion_fill){
-			return false;
-		}
-		else{
+		else if(hasOddExtraEffect || rootPotionID == caskResearch.potion_1st_fill){
 			return true;
 		}
 	}
 
-	static canPlayerLearnOddEmptyResearch(caskResearch, potionEffect, playerTomeResearch){
-		let potion_empty = caskResearch.potion_empty;
+	static canPlayerLearnOddEmptyResearch(caskResearch, rootPotionID, extraEffects, playerTomeResearch){
 
-		if(!potion_empty) potion_empty = "minecraft:mundane";
-		console.log(potion_empty)
-		if(potionEffect !== potion_empty || playerTomeResearch[caskResearch.research][0] === undefined){
+		const potion1stEmpty = !caskResearch.potion_1st_empty ? "mundane" : caskResearch.potion_1st_empty;
+		const potionNthEmpty = !caskResearch.potion_nth_empty ? "Mundane (no effect)" : caskResearch.potion_nth_empty;
+		
+		let hasOddExtraEffect = false;
+		
+		for (const effect of extraEffects) {
+			if(effect.includes(potionNthEmpty)) hasOddExtraEffect = true;
+		}
+		
+		if(playerTomeResearch[caskResearch.research][0] === "undefined"){
 			return false;
 		}
-		else{
-		 	return true;
+		else if(hasOddExtraEffect || rootPotionID === potion1stEmpty ){
+			return true;
 		}
 	}
 	
@@ -331,8 +342,6 @@ export class TomeResearch {
 		if(playerTomeResearch[caskResearch.research].length === 2){
 			
 			TomeResearch.addCaskOdditiesChaptertoTome(caskResearch, player, tomePlayerData, playerTomeResearch);
-			
-			player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
 		}
 		else{
 			player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(playerTomeResearch));
@@ -351,9 +360,10 @@ export class TomeResearch {
 		playerTomeResearch[caskResearch.research] = "done";
 		
 		playerTomeResearch = TomeResearch.setOppositeOddResearch(playerTomeResearch, caskResearch.research);
-		console.log(tomePlayerData.unlocked_chapters["cask_oddities"])
+
 		player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(playerTomeResearch));
-		
+		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
+		player.sendMessage({ translate: "magical_brewery:message.tome_research_cask_odd.discovery"});
 	}
 	
 	static setOppositeOddResearch(playerTomeResearch, caskResearch){

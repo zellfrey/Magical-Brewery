@@ -182,47 +182,57 @@ TOME_RESEARCH_ITEMS.set("minecraft:potion", {
 //harming
 
 
-
+//Thank you mojang for having your potion effects having internal names different to the display name. Love it
 export const TOME_RESEARCH_ODD_CASKS = new Map();
 TOME_RESEARCH_ODD_CASKS.set("cask_harming", {
 	"odd_chapter": "harm_heal_to_decay",
-	"potion_fill": "healing",
-	"potion_empty": "decay",
+	"potion_1st_fill": "healing",
+	"potion_nth_fill": "Instant Health",
+	"potion_1st_empty": "decay",
+	"potion_nth_empty": "Wither",
 	"research": "harm_heal_decay"
 });
 TOME_RESEARCH_ODD_CASKS.set("cask_healing", {
 	"odd_chapter": "harm_heal_to_decay",
-	"potion_fill": "harming",
-	"potion_empty": "decay",
+	"potion_1st_fill": "harming",
+	"potion_nth_fill": "Instant Health",
+	"potion_1st_empty": "decay",
+	"potion_nth_empty": "Wither",
 	"research": "heal_harm_decay"
 });
 TOME_RESEARCH_ODD_CASKS.set("cask_poison", {
 	"odd_chapter": "pois_regn_to_mund",
-	"potion_fill": "regeneration",
+	"potion_1st_fill": "regeneration",
+	"potion_nth_fill": "Regeneration",
 	"research": "pois_regn_mund"
 });
 TOME_RESEARCH_ODD_CASKS.set("cask_regeneration", {
 	"odd_chapter": "pois_regn_to_mund",
-	"potion_fill": "poison",
+	"potion_1st_fill": "poison",
+	"potion_nth_fill": "Poison",
 	"research": "regn_pois_mund"
 });
 TOME_RESEARCH_ODD_CASKS.set("cask_slowness", {
 	"odd_chapter": "slow_sped_to_mund",
-	"potion_fill": "swiftness",
+	"potion_1st_fill": "swiftness",
+	"potion_nth_fill": "Speed",
 	"research": "slow_sped_mund"
 });
 TOME_RESEARCH_ODD_CASKS.set("cask_swiftness", {
 	"odd_chapter": "slow_sped_to_mund",
-	"potion_fill": "slowness",
+	"potion_1st_fill": "slowness",
+	"potion_nth_fill": "Slowness",
 	"research": "sped_slow_mund"
 });
 TOME_RESEARCH_ODD_CASKS.set("cask_weakness", {
 	"odd_chapter": "weak_stre_to_mund",
-	"potion_fill": "strength",
+	"potion_1st_fill": "strength",
+	"potion_nth_fill": "Strength",
 	"research": "weak_stre_mund"
 });
 TOME_RESEARCH_ODD_CASKS.set("cask_strength", {
 	"odd_chapter": "weak_stre_to_mund",
-	"potion_fill": "weakness",
+	"potion_1st_fill": "weakness",
+	"potion_nth_fill": "Weakness",
 	"research": "stre_weak_mund"
 });

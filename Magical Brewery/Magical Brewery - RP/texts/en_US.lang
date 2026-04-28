@@ -430,7 +430,20 @@ magical_brewery:tome_chapter_amethyst_bottle.body=amethyst body
 magical_brewery:message.magical_brewery_general.wip=§cCurrently unavailable. Functionality will be added at a later date.
 ##---------------------------------
 
+##---------------------------------
+##Tome Chapters-----Cask Oddities-------------------
+magical_brewery:tome_chapter_harm_heal_to_decay.title=Harming & Healing
+magical_brewery:tome_chapter_harm_heal_to_decay.body=Decay
 
+magical_brewery:tome_chapter_pois_regn_to_mund.title=Regeneration & Poison
+magical_brewery:tome_chapter_pois_regn_to_mund.body=Mundane
+
+magical_brewery:tome_chapter_slow_sped_to_mund.title=Slowness & Swiftness
+magical_brewery:tome_chapter_slow_sped_to_mund.body=Mundane
+
+magical_brewery:tome_chapter_weak_stre_to_mund.title=Strength & Weakness
+magical_brewery:tome_chapter_weak_stre_to_mund.body=Mundane
+##---------------------------------
 ##---------------------------------------------------------------------------------------------------
 ##Magical Brewery Tome Research Messages;
 magical_brewery:message.tome_research_item.invalid=There doesn't seem to be much to learn from this item.
@@ -451,7 +464,7 @@ magical_brewery:message.tome_research_potion.enhanced_progression=This %s has be
 magical_brewery:message.tome_research_item.enhanced_progression_plural=I should only need to try %s other potions with a similar enhancement to confirm the effects.
 magical_brewery:message.tome_research_item.enhanced_progression_singular=I should only need to try %s other potion with a similar enhancement to confirm the effects.
 
-magical_brewery:message.tome_research_cask_odd.discovery=Me find potion and cask make strange liquid.
+magical_brewery:message.tome_research_cask_odd.discovery=Interesting...\nInstead of aging, this cask has changed the effect of this potion. I should take some notes.
 ##---------------------------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------------------------

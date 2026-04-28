@@ -17,7 +17,6 @@ system.beforeEvents.startup.subscribe(({ customCommandRegistry }) => {
 			
 			const targetPlayer = world.getAllPlayers()[0];
 			//const targetPlayer = world.getAllPlayers().filter(el => el.id === player["0"].id)
-			console.log(targetPlayer.level)
 			//if(!(targetPlayer instanceof Player)) console.log("false")
 			if(!confirmation){
 				return {

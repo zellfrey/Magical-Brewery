@@ -21,6 +21,7 @@ export class Cask {
         //Not used, as modifier is now used in the effectType id, but keeping as it may break some old worlds
         this.potion_modifier = "";
         this.age_start_tick = -1;
+        this.og_cask_type= "";
         this.seal = {};
         Cask.casks.push(this)
     }
@@ -154,7 +155,7 @@ export class Cask {
 
         if(!this.matchesCaskPotion(potion, selectedItem.getLore())) return;
                         
-        TomeResearch.caskOddProgression(player, block, potion["effectID"], "fill");
+        TomeResearch.caskOddProgression(player, block, this, "fill");
                     
         this.updateCaskBlock(block, fillLevel, dimension);
 
@@ -186,8 +187,8 @@ export class Cask {
             item.setLore(lore);
         }
 
-        TomeResearch.caskOddProgression(player, block, item, "empty");
-        
+        TomeResearch.caskOddProgression(player, block, this, "empty");
+
         const equipment = player.getComponent('equippable');
 
         setMainHand(player, equipment, selectedItem, undefined);
@@ -383,7 +384,8 @@ export class Cask {
         }
         else{
             if(caskQuality == 1){
-            newBlockTypeId = "magical_brewery:cask_no_effect";
+                newBlockTypeId = "magical_brewery:cask_no_effect";
+                this.og_cask_type = Cask.getCaskType(block.typeId);
             }
             else{
                 caskQuality--;
