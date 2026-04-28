@@ -1,49 +1,7 @@
 import {Potions} from "@minecraft/server";
-import {getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
+import {POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
 
 export class MinecraftPotion {
-
-
-	static giveExtraEffectsToEntity(entity, heldPotion){
-    
-		if(heldPotion.getLore().length == 0) return;
-		// const potion = e.itemStack.getComponent('minecraft:potion')
-
-		const extraEffects = heldPotion.getLore();
-
-		for(let i = 0; i < extraEffects.length; i++){
-			
-			const words = extraEffects[i].split(' ');
-			
-			//As to why extraEffects === "Mundane (no effect)" doesnt work, idk so its this for now
-			if(words[0] === "Mundane") continue;
-			
-			let effect, potency;
-			let totalTicks = 1;
-			if(words[0] === "Instant"){
-				potency = getPotencyLevel(words)
-				if(potency !== 0) words.pop();
-				effect = words.join("_").toLowerCase()
-			}
-			else{
-				
-				const effectTime = words[words.length-1].substring(1, 5)
-				const [minutes, seconds] = effectTime.split(':');
-				totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-				words.pop();
-
-				potency = getPotencyLevel(words)
-				
-				if(potency !== 0) words.pop();
-
-				effect = words.join("_").toLowerCase()
-				// if(Potions.getPotionEffectType(effect) ! == undefined){
-				// }
-				
-			}
-			entity.addEffect(effect, totalTicks, { amplifier: potency })
-		}
-	}
 
 	static getPotionProperties(selectedItem, potion){
 

@@ -2,6 +2,7 @@ import {world, system, ItemStack, MolangVariableMap, BlockPermutation} from "@mi
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potion/potionEffects.js";
 import {MagicalBreweryPotion} from "../potion/MagicalBreweryPotion.js";
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
+import { PotionManager } from "../potion/PotionManager.js";
 import {Seal} from "../cask/Seal.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {setMainHand} from '../utils/containerUtils.js';
@@ -69,33 +70,17 @@ export class Cask {
     }
 
     getFirstPotionString(){
-        
         const potionRootID = this.potion_effects[0].split(":")[0]
         const effectID = this.potion_effects[0].split(":")[1].split("_")
 
-        let caskPotionIdString;
-
-        if(potionRootID === "minecraft"){
-           caskPotionIdString = MinecraftPotion.getEffectString(effectID)
-        }
-        else{
-            caskPotionIdString = MagicalBreweryPotion.getEffectString(effectID)
-        }
-        
-        return caskPotionIdString;
+        return PotionManager.getEffectString(potionRootID, effectID);
     }
 	
 	getFirstPotionEffectID(){
-
 		const potionRootID = this.potion_effects[0].split(":")[0]
 		const effectID = this.potion_effects[0].split(":")[1].split("_")
 
-		if(potionRootID === "minecraft"){
-			return MinecraftPotion.getEffectID(effectID);
-        }
-        else{
-            return MagicalBreweryPotion.getEffectID(effectID);
-        }
+		return PotionManager.getEffectID(potionRootID, effectID)
 	}
 	
     canCaskAge(caskPotionType){
@@ -135,18 +120,9 @@ export class Cask {
     
         const fillLevel = block.permutation.getState("magical_brewery:fill_level");
         const aged = block.permutation.getState("magical_brewery:aged");
-        let potion = {"effectID": "", "deliveryType": ""};
         
-        if(selectedItem.hasTag("magical_brewery:potion")){
-		
-		    potion = MagicalBreweryPotion.getPotionProperties(selectedItem, potion)
-		
-        }else{
-
-            potion = MinecraftPotion.getPotionProperties(selectedItem, potion)
-
-        }
-
+        let potion = PotionManager.getPotionProperties(selectedItem);
+        
         if(fillLevel === 3 || aged || potion["effectID"] === "None") return;
 
         if(fillLevel === 0 && potion["effectID"]){
@@ -167,25 +143,8 @@ export class Cask {
     }
 
     emptyCask(selectedItem, block, dimension, player, fillLevel){
-        let item;
-                
-        const potionCreationType = this.potion_effects[0].split(":")[0]
 
-        if(potionCreationType === "minecraft"){
-
-            item = MinecraftPotion.setItemStack(this.potion_effects[0], this.potion_liquid)
-        }
-        else{
-            item = MagicalBreweryPotion.setItemStack(this.potion_effects[0])
-        }
-        
-        if(this.potion_effects.length > 1){
-            const extraEffects = this.potion_effects.slice(1)
-            const lore = selectedItem.getLore();
-            extraEffects.forEach(effect => lore.push(effect))
-            
-            item.setLore(lore);
-        }
+        let item = PotionManager.setItemStackFromCask(selectedItem, this.potion_effects, this.potion_liquid)
 
         TomeResearch.caskOddProgression(player, block, this, "empty");
 

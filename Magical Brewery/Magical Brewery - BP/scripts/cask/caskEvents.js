@@ -1,7 +1,5 @@
 import {world, system} from "@minecraft/server";
 import {setMainHand} from '../utils/containerUtils.js';
-import {MagicalBreweryPotion} from "../potion/MagicalBreweryPotion.js";
-import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {Seal} from "../cask/Seal.js";
 import {Cask} from "../cask/Cask.js";
 //'utils/containerUtils.js';

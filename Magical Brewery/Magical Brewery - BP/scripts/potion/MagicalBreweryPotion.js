@@ -1,6 +1,6 @@
 import {ItemStack} from "@minecraft/server";
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
-import {MinecraftPotion} from "../potion/MinecraftPotion.js";
+import {PotionManager} from "../potion/PotionManager.js";
 
 export class MagicalBreweryPotion {
 
@@ -28,7 +28,7 @@ export class MagicalBreweryPotion {
 
 			entity.addEffect(effectID, totalTicks, { amplifier: potionParams.potion.potency })
 		}
-		MinecraftPotion.giveExtraEffectsToEntity(entity, potionItem)
+		PotionManager.giveExtraEffectsToEntity(entity, potionItem)
 	}
 	
 	static applyTurtleMasterEffect(entity, potionParams){

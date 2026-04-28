@@ -1,6 +1,6 @@
 import {world, system} from '@minecraft/server';
 import {MagicalBreweryPotion} from "./MagicalBreweryPotion.js";
-import {MinecraftPotion} from "../potion/MinecraftPotion.js";
+import {PotionManager} from "../potion/PotionManager.js";
 import {ON_DEATH_EFFECTS, ON_HIT_EFFECTS} from "../potion/potionEffects.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {getAirBlockBox} from "../utils/blockPlacementUtils.js";
@@ -20,7 +20,7 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
 
     if(e.itemStack.typeId !== "minecraft:potion") return; 
 
-    MinecraftPotion.giveExtraEffectsToEntity(e.source, e.itemStack)
+    PotionManager.giveExtraEffectsToEntity(e.source, e.itemStack)
 });
 
 
