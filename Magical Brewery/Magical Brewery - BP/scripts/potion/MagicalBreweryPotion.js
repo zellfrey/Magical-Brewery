@@ -135,10 +135,10 @@ export class MagicalBreweryPotion {
 			effectID.shift();
 		}
 		
-		
-		if(effectID[0] === "vision" || effectID[0] === "resistance"){
-			effectID = [effectID[1], effectID[0]]
-		}
+		//Changed item ids to match vanilla potions, despite the inconsistency. Namely, "nightvision", which could be like "slow_falling" "night_vision"
+		// if(effectID[0] === "vision" || effectID[0] === "resistance"){
+		// 	effectID = [effectID[1], effectID[0]]
+		// }
 		return effectID.join("_");
 	}
 
