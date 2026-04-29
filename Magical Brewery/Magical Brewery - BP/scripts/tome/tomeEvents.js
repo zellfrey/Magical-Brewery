@@ -13,9 +13,9 @@ system.beforeEvents.startup.subscribe(eventData => {
 			if(!tomePlayerData){
 				Tome.createTomeDataV2(e.source)
 				TomeResearch.createTomeResearchData(e.source)
+				//let player know that there are pages missing. Opening the book may cause the message to disappear
 				e.source.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.missing"});
-				tomePlayerData = JSON.parse(e.source.getDynamicProperty('magical_brewery:tome_data_v2'));
-				
+				return;
 			}
 
 			if(e.source.isSneaking){
