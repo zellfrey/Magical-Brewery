@@ -7,6 +7,6 @@
         "tags": ["brewing_stand"],
         "input": "minecraft:potion_type:nightvision",
         "reagent": "magical_brewery:pure_redstone_dust",
-        "output": "magical_brewery:potion_xlong_vision_night"
+        "output": "magical_brewery:potion_xlong_nightvision"
     }
 }

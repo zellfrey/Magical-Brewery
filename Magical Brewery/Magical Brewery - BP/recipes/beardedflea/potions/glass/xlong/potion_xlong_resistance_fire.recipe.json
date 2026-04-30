@@ -7,6 +7,6 @@
         "tags": ["brewing_stand"],
         "input": "minecraft:potion_type:fire_resistance",
         "reagent": "magical_brewery:pure_redstone_dust",
-        "output": "magical_brewery:potion_xlong_resistance_fire"
+        "output": "magical_brewery:potion_xlong_fire_resistance"
     }
 }

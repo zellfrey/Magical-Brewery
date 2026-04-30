@@ -221,7 +221,7 @@
 		"magical_brewery:glass_potion_regeneration":{
 			"textures": "textures/items/potion_bottle_regeneration"
 		},
-		"magical_brewery:glass_potion_fire_resistance":{
+		"magical_brewery:glass_potion_resistance_fire":{
 			"textures": "textures/items/potion_bottle_fireResistance"
 		},
 		"magical_brewery:glass_potion_slow_falling":{
@@ -239,7 +239,7 @@
 		"magical_brewery:glass_potion_splash_swiftness":{
 			"textures": "textures/items/potion_bottle_splash_moveSpeed"
 		},
-		"magical_brewery:glass_potion_nightvision":{
+		"magical_brewery:glass_potion_vision_night":{
 			"textures": "textures/items/potion_bottle_nightVision"
 		},
 		"magical_brewery:glass_potion_water_breathing":{
