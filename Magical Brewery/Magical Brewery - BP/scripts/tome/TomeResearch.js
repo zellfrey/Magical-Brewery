@@ -2,6 +2,7 @@ import {system, world, RawMessage} from '@minecraft/server';
 import {TOME_RESEARCH_ITEMS, TOME_RESEARCH_ODD_CASKS} from "tome/tomeResearchData.js"
 import {TOME_CHAPTERS} from "tome/tomeChapters.js"
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
+import {PotionManager} from "../potion/PotionManager.js";
 import { Tome } from './Tome.js';
 import {Cask} from "../cask/Cask.js";
 
@@ -15,11 +16,17 @@ export class TomeResearch {
 	static tomeResearchItem(source, itemStack){
 		let tomePlayerData = JSON.parse(source.getDynamicProperty('magical_brewery:tome_data_v2'));
 		
-		if(!TOME_RESEARCH_ITEMS.has(itemStack.typeId)){
+		const canPlayerLearn = TomeResearch.canPlayerResearchItem(source, tomePlayerData);
+
+		//I would rather not have a dataset of hundreds of potions, so im treating "magical_brewery:potions" as 1 item similar to "minecraft:potion"
+		if(itemStack.hasTag("magical_brewery:potion") && canPlayerLearn){
+			TomeResearch.potionResearch(source, itemStack, tomePlayerData);
+		}
+		else if(!TOME_RESEARCH_ITEMS.has(itemStack.typeId)){
 			source.sendMessage({ translate: "magical_brewery:message.tome_research_item.invalid"});
 			return;
 		}
-		else if(TomeResearch.canPlayerResearchItem(source, tomePlayerData)){
+		else if(canPlayerLearn){
 			TomeResearch.researchItemStack(source, itemStack, tomePlayerData);
 		}
 	}
@@ -27,10 +34,8 @@ export class TomeResearch {
 	static canPlayerResearchItem(player, tomePlayerData){
 		if(!tomePlayerData){
 			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.no_tome"});
-			//The magicks in the tome yearn to be understood
 			return false;
 		}
-		
 		else if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("brewing")){
 			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.no_brewing_chapter"});
 			return false;
@@ -53,41 +58,25 @@ export class TomeResearch {
 			break;
 
 			case "complete":
-				TomeResearch.checkCompleteResearchItem(player, itemStack, tomeData);
+				TomeResearch.potionResearch(player, itemStack, tomeData);
 			break;
 		}
 	}
 
-	static checkCompleteResearchItem(player, itemStack, tomeData){
-		if(itemStack.typeId === "minecraft:potion"){
-			TomeResearch.mcPotionResearch(player, itemStack, tomeData);		
-		}
-	}
+	static potionResearch( player, itemStack, tomeData){
+		const potion = PotionManager.getPotionProperties(itemStack);
+		const potionEffect = PotionManager.getEffectID(potion["effectID"]);
+		const isEnhanced = PotionManager.isPotionEnhanced(potion["effectID"]);
 
-	static mcPotionResearch( player, itemStack, tomeData){
-
-		let potion = {"effectID": "", "deliveryType": ""};
-		potion = MinecraftPotion.getPotionProperties(itemStack, potion)
-		console.log(potion["deliveryType"])
-
-		let potionEffect = potion["effectID"].split(":")[1]; 
-
-		if(MinecraftPotion.isPotionEnhanced(potion["effectID"])){
-			
-			potionEffect = potionEffect.split("_");
-			potionEffect.shift();
-			potionEffect = potionEffect.join("_");
-		}
+		//console.log(potion["deliveryType"])
+		let shouldPlayerlearnEnhancedEffect = TomeResearch.canPlayerLearnBasePotionEffect(tomeData, player, potionEffect);
 		
-		let shouldPlayerlearnEnhancedEffect = TomeResearch.canPlayerLearnBaseMCPotionEffect(tomeData, player, potionEffect);
-		//TODO: include a connection from base potion to enhancement research.
-		// i.e "I don't know how to make this potion." AND/BUT/HOWEVER im learning from the enhancement
-		if(shouldPlayerlearnEnhancedEffect){
-			TomeResearch.mcPotionEnhancementResearch(potion, potionEffect, player, tomeData);
+		if(shouldPlayerlearnEnhancedEffect && isEnhanced){
+			TomeResearch.potionEnhancementResearch(potion["effectID"], potionEffect, player, tomeData);
 		}
 		return;
 	}
-	static canPlayerLearnBaseMCPotionEffect(tomeData, player, potionEffect){
+	static canPlayerLearnBasePotionEffect(tomeData, player, potionEffect){
 
 		if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_2")){
 
@@ -97,7 +86,8 @@ export class TomeResearch {
 		else if(tomeData.unlocked_chapters["ingredients"].includes(potionEffect + "_1")){
 
 			TomeResearch.addCompleteChapterToTomeData(player, "ingredients", tomeData, potionEffect);
-			return true;
+			//keep it simple stupid
+			return false;
 
 		}else{
 			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.item_not_discovered"});
@@ -105,10 +95,10 @@ export class TomeResearch {
 		}
 	}
 
-	static mcPotionEnhancementResearch(potion, potionEffect, player, tomeData){
-		if(!MinecraftPotion.isPotionEnhanced(potion["effectID"]) || !tomeData.unlocked_chapters["catalysers"]) return;
+	static potionEnhancementResearch(effectID, potionEffect, player, tomeData){
+		if(!tomeData.unlocked_chapters["catalysers"]) return;
 
-		const potionEnhancement = potion["effectID"].split(":")[1].split("_")[0]
+		const potionEnhancement = PotionManager.getPotionEnhancement(effectID);
 		
 		let enhancementChapter; 
 
@@ -119,12 +109,17 @@ export class TomeResearch {
 			case"strong":
 				enhancementChapter = "potency_tier_1";
 			break;
+			case"xlong":
+				enhancementChapter = "longevity_tier_2";
+			break;
+			case"xstrong":
+				enhancementChapter = "potency_tier_2";
+			break;
 		}
-		TomeResearch.addEnhancementProgressionToPlayerData(potion["effectID"], potionEffect, player, tomeData, enhancementChapter)
+		TomeResearch.addEnhancementProgressionToPlayerData(effectID, potionEffect, player, tomeData, enhancementChapter)
 	}
 
 	static addEnhancementProgressionToPlayerData(effectID, effectString, player, tomeData, enhancementType){
-		
 		const catalyerChapters = tomeData.unlocked_chapters["catalysers"];
 		
 		if(!TomeResearch.canPlayerLearnFromEnhancedPotion(catalyerChapters, player , enhancementType)) return;
@@ -133,6 +128,7 @@ export class TomeResearch {
 		
 		if(playerResearchProgressionData[enhancementType] === undefined) playerResearchProgressionData[enhancementType] = [];
 
+		
 		if(playerResearchProgressionData[enhancementType].includes(effectID)){
 			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.enhanced_discovered"});
 			return;
@@ -140,18 +136,16 @@ export class TomeResearch {
 		else{
 			console.log(playerResearchProgressionData[enhancementType].length)
 			playerResearchProgressionData[enhancementType].push(effectID);
+			console.log(playerResearchProgressionData[enhancementType])
 
 			if(playerResearchProgressionData[enhancementType].length === 3){
 
 				TomeResearch.addCompleteChapterToTomeData(player, "catalysers", tomeData, enhancementType);
 
-				playerResearchProgressionData[enhancementType] = "done";
+				playerResearchProgressionData[enhancementType] = [];
 			}
 			else{
 				const noOfPotionsToResearch = 3-playerResearchProgressionData[enhancementType].length;
-				//idk how to name this variable, im adding an "s" to a word. Give me a break
-				//Oh fuck i just had a though about different languages. I should simmer down as a lingual brit, but cmon why you gotta make it difficult world
-				//Actually i got it, its dum but im going to just change the whole string
 				const potionAmountString= noOfPotionsToResearch === 1 ? "singular" : "plural" ;
 
 				TomeResearch.sendPlayerCatalyserProgressionMessage(effectString + "_2", enhancementType + "_1", player)

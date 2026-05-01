@@ -70,17 +70,11 @@ export class Cask {
     }
 
     getFirstPotionString(){
-        const potionRootID = this.potion_effects[0].split(":")[0]
-        const effectID = this.potion_effects[0].split(":")[1].split("_")
-
-        return PotionManager.getEffectString(potionRootID, effectID);
+        return PotionManager.getEffectString(this.potion_effects[0]);
     }
 	
 	getFirstPotionEffectID(){
-		const potionRootID = this.potion_effects[0].split(":")[0]
-		const effectID = this.potion_effects[0].split(":")[1].split("_")
-
-		return PotionManager.getEffectID(potionRootID, effectID)
+		return PotionManager.getEffectID(this.potion_effects[0])
 	}
 	
     canCaskAge(caskPotionType){

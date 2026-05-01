@@ -370,7 +370,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"longevity_tier_2_2":{
-		icon: "textures/beardedflea/magical_brewery/items/pure_redstone_dust.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_longevity_tier_2_2.png",
 		exitPage: "catalysers"
 	},
 	"potency_tier_1_1":{
@@ -388,7 +388,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"potency_tier_2_2":{
-		icon: "textures/beardedflea/magical_brewery/items/pure_glowstone_dust.png",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_potency_tier_2_2.png",
 		exitPage: "catalysers"
 	},
 	"expansion_tier_1_1":{

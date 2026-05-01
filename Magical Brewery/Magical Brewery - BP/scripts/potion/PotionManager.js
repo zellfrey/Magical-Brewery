@@ -46,7 +46,28 @@ export class PotionManager {
 		}
 	}
 	
-	static getEffectString(potionRootID, effectID){
+	static isPotionEnhanced(potion){
+		const effectID = potion.split(":")[1].split("_");
+		let isEnhanced = false;
+		for(const part of effectID){
+			if(POTION_DURATION_LEVELS.includes(part)) isEnhanced = true;
+		}
+		return isEnhanced;
+	}
+
+	static getPotionEnhancement(potion){
+		const effectID = potion.split(":")[1].split("_");
+		let enhancedType;
+		for(const part of effectID){
+			if(POTION_DURATION_LEVELS.includes(part)) enhancedType = part;
+		}
+		return enhancedType;
+	}
+
+	static getEffectString(potion){
+		
+		const potionRootID = potion.split(":")[0];
+        const effectID = potion.split(":")[1].split("_");
 
 		if(potionRootID === "minecraft"){
 			return MinecraftPotion.getEffectString(effectID)
@@ -56,7 +77,10 @@ export class PotionManager {
         }
 	}
 
-	static getEffectID(potionRootID, effectID){
+	static getEffectID(potion){
+
+		const potionRootID = potion.split(":")[0];
+        const effectID = potion.split(":")[1].split("_");
 
 		if(potionRootID === "minecraft"){
 			return MinecraftPotion.getEffectID(effectID);
