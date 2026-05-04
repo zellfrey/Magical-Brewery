@@ -64,14 +64,21 @@ export class TomeResearch {
 	}
 
 	static potionResearch( player, itemStack, tomeData){
-		const potion = PotionManager.getPotionProperties(itemStack);
+
+		const potion = PotionManager.getProperties(itemStack);
 		const potionEffect = PotionManager.getEffectID(potion["effectID"]);
-		const isEnhanced = PotionManager.isPotionEnhanced(potion["effectID"]);
+		const isEnhanced = PotionManager.isEnhanced(potion["effectID"]);
+		//const hasTertiaryEffect = PotionManager.hasTertiaryEffect(potion["effectID"]);
+
 
 		//console.log(potion["deliveryType"])
-		let shouldPlayerlearnEnhancedEffect = TomeResearch.canPlayerLearnBasePotionEffect(tomeData, player, potionEffect);
+		let playerLearntBasePotion = TomeResearch.canPlayerLearnBasePotionEffect(tomeData, player, potionEffect);
 		
-		if(shouldPlayerlearnEnhancedEffect && isEnhanced){
+		// if(playerLearntBasePotion && hasTertiaryEffect){
+		// 	TomeResearch.canPlayerLearnBasePotionEffect(tomeData, player, potionEffect);
+		// }
+	 
+		if(playerLearntBasePotion && isEnhanced){
 			TomeResearch.potionEnhancementResearch(potion["effectID"], potionEffect, player, tomeData);
 		}
 		return;

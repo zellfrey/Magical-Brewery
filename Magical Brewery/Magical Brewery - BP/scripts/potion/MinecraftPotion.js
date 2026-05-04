@@ -3,7 +3,7 @@ import {POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
 
 export class MinecraftPotion {
 
-	static getPotionProperties(selectedItem, potion){
+	static getProperties(selectedItem, potion){
 
 		const minecraftPotion = selectedItem.getComponent("minecraft:potion");
 		

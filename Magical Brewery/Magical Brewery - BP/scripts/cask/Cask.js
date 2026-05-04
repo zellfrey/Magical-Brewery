@@ -115,7 +115,7 @@ export class Cask {
         const fillLevel = block.permutation.getState("magical_brewery:fill_level");
         const aged = block.permutation.getState("magical_brewery:aged");
         
-        let potion = PotionManager.getPotionProperties(selectedItem);
+        let potion = PotionManager.getProperties(selectedItem);
         
         if(fillLevel === 3 || aged || potion["effectID"] === "None") return;
 

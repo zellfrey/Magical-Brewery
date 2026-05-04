@@ -46,7 +46,7 @@ export class PotionManager {
 		}
 	}
 	
-	static isPotionEnhanced(potion){
+	static isEnhanced(potion){
 		const effectID = potion.split(":")[1].split("_");
 		let isEnhanced = false;
 		for(const part of effectID){
@@ -90,14 +90,14 @@ export class PotionManager {
         }
 	}
 
-	static getPotionProperties(selectedItem){
+	static getProperties(selectedItem){
 		let potion = {"effectID": "", "deliveryType": ""};
 
 		if(selectedItem.hasTag("magical_brewery:potion")){
-		    potion = MagicalBreweryPotion.getPotionProperties(selectedItem, potion);
+		    potion = MagicalBreweryPotion.getProperties(selectedItem, potion);
         }
 		else{
-            potion = MinecraftPotion.getPotionProperties(selectedItem, potion);
+            potion = MinecraftPotion.getProperties(selectedItem, potion);
         }
 		return potion;
 	}

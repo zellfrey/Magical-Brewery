@@ -68,7 +68,7 @@ export class MagicalBreweryPotion {
 		return effectTime;
 	}
 
-	static getPotionProperties(selectedItem, potion){
+	static getProperties(selectedItem, potion){
     
 		potion["effectID"] = selectedItem.typeId;
 		potion["deliveryType"] = "Consume";
