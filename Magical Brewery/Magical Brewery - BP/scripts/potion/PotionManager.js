@@ -55,6 +55,10 @@ export class PotionManager {
 		return isEnhanced;
 	}
 
+	static hasTertiaryEffect(deliveryType){
+		return deliveryType !== "Consume" ? true : false;
+	}
+
 	static getPotionEnhancement(potion){
 		const effectID = potion.split(":")[1].split("_");
 		let enhancedType;

@@ -71,6 +71,7 @@ export class MagicalBreweryPotion {
 	static getProperties(selectedItem, potion){
     
 		potion["effectID"] = selectedItem.typeId;
+		//TODO: Use custom parameters to get delivery type
 		potion["deliveryType"] = "Consume";
     
     	return potion;
