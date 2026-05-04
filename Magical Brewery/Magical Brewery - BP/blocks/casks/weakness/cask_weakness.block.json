@@ -103,7 +103,7 @@
 							"id": "weakness"
 						},
 						"seal":{
-							"no_effect": ["potency", "memories"]
+							"no_effect": ["potency" ]
 						},
 						"odd_result":{
 							"input": ["Strength"],

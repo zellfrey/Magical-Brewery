@@ -103,7 +103,7 @@
 							"id": "harming"
 						},
 						"seal":{
-							"no_effect": ["longevity", "memories"]
+							"no_effect": ["longevity"]
 						},
 						"odd_result":{
 							"input": ["Healing"],
