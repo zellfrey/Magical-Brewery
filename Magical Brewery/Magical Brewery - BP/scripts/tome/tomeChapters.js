@@ -316,7 +316,7 @@ export const TOME_CHAPTERS = {
 	},
 	"infested_1":{
 		title: "tile.stone.stone.name",
-		icon: "textures/items/stone_axe",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_infested_1.png",
 		exitPage: "ingredients"
 	},
 	"infested_2":{
@@ -425,19 +425,19 @@ export const TOME_CHAPTERS = {
 	},
 	//cask oddities chapters
 	"harm_heal_to_decay":{
-		icon: "textures/items/dobb",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_harm_heal_to_decay.png",
 		exitPage: "cask_oddities"
 	},
 	"pois_regn_to_mund":{
-		icon: "textures/items/dobb",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_pois_regn_to_mund.png",
 		exitPage: "cask_oddities"
 	},
 	"slow_sped_to_mund":{
-		icon: "textures/items/dobb",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_slow_sped_to_mund.png",
 		exitPage: "cask_oddities"
 	},
 	"weak_stre_to_mund":{
-		icon: "textures/items/dobb",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_weak_stre_to_mund.png",
 		exitPage: "cask_oddities"
 	},
 }
