@@ -79,7 +79,9 @@ item.magical_brewery:seal_inspiration.name=§eSeal of Inspiration
 ##---------------------------------
 ##Ingredients---------------------------------
 item.magical_brewery:crackling_oil.name=Crackling Oil
-
+##---------------------------------
+##Misc Items---------------------------------
+item.magical_brewery:brewers_desk.name=Brewer's Desk
 ##---------------------------------
 ##Stained Planks/Slabs---------------------------------
 tile.magical_brewery:stained_planks_decay.name=Stained Planks of Decay

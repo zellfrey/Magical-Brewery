@@ -266,8 +266,8 @@
 		"magical_brewery:glass_potion_decay":{
 			"textures": "textures/items/potion_bottle_wither"
 		},
-		"magical_brewery:brewers_desk_item":{
-			"textures": "textures/beardedflea/magical_brewery/items/brewers_desk_item.png"
+		"magical_brewery:brewers_desk":{
+			"textures": "textures/beardedflea/magical_brewery/items/brewers_desk.png"
 		},
 		"magical_brewery:crackling_oil":{
 			"textures": "textures/beardedflea/magical_brewery/items/crackling_oil.png"
