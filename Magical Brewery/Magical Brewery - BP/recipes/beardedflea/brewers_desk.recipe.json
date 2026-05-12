@@ -1,0 +1,25 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:brewers_desk"
+		},
+		"tags": ["crafting_table"],
+		"pattern": ["ITF", "SWS", "P P"],
+		"key": {
+			"I": "minecraft:ink_sac",
+			"T": "magical_brewery:brewers_tome",
+			"F": "minecraft:feather",
+			"W":{ "tag": "minecraft:wool" },
+			"S": { "tag": "minecraft:wooden_slabs" },
+			"P": { "tag": "minecraft:planks" }
+		},
+		"result": [
+			{
+				"item": "magical_brewery:brewers_desk",
+				"count": 1
+			},
+			"magical_brewery:brewers_tome"
+		]
+	}
+}
