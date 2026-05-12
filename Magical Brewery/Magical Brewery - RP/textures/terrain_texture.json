@@ -1072,11 +1072,11 @@
 		"magical_brewery:seal_inspiration_dormant":{
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_inspiration_awake.png"
 		},
-		"magical_brewery:brewers_desk_left_test":{
-			"textures": "textures/beardedflea/magical_brewery/blocks/brewers_desk_left_test.png"
+		"magical_brewery:brewers_desk_left":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/brewers_desk_left.png"
 		},
-		"magical_brewery:brewers_desk_right_test":{
-			"textures": "textures/beardedflea/magical_brewery/blocks/brewers_desk_right_test.png"
+		"magical_brewery:brewers_desk_right":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/brewers_desk_right.png"
 		}
 	}
 } 

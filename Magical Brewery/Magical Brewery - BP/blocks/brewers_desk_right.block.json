@@ -42,7 +42,7 @@
             "minecraft:map_color": "#a31817",
             "minecraft:material_instances": {
 			"*": {
-					"texture": "magical_brewery:brewers_desk_right_test",
+					"texture": "magical_brewery:brewers_desk_right",
 					"render_method": "alpha_test_to_opaque",
 					"face_dimming": true,
 					"ambient_occlusion": true
