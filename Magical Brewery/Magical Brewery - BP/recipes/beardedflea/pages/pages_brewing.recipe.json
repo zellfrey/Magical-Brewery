@@ -5,12 +5,12 @@
 			"identifier": "magical_brewery:pages_brewing"
 		},
 		"tags": ["magical_brewery:brewers_desk"],
-		"pattern": ["PSP", "PTP", "PDP"],
+		"pattern": ["SBT", "PPP"],
 		"key": {
 			"P": "minecraft:paper",
 			"T": "magical_brewery:brewers_tome",
 			"S": "minecraft:brewing_stand",
-			"D": { "tag": "magical_brewery:pure_dust" }
+			"B": "minecraft:glass_bottle"
 		},
 		"result": [
 			{
