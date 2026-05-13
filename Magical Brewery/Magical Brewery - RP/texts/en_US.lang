@@ -360,22 +360,17 @@ magical_brewery:tome_chapter_cask_oddities.body=Some casks can create odd outcom
 magical_brewery:tome_chapter_theories_cask_effects.title=Theories: Cask Effects
 magical_brewery:tome_chapter_theories_cask_effects.body=As you have probably found out, there is no recipe for cask of the Turtle Master. Unfortunately I couldn't find a simple method to extract the effects of a turtle master potion properly. All attempts yielded no results.\n\nMy suspicion is that due to the potion containing mixed effects, the magic is diluted and lacks the ability to impart these effects to any potion in a cask\n\nI have an idea to split these effects, which may also help bring out magicks from other sources, but currently I have nothing to show. If I do make any progress, I will send a message your way.
 
-
 magical_brewery:tome_chapter_seals.title=Seals
 magical_brewery:tome_chapter_seals.body=Ageing potions in casks is fun and all. But the excitement of the activity wears off pretty quickly.\nYou can spice ageing up by using seals. Disks of wax that can impart the same properties that we attain from adding dusts to brewing potions.\nThere are multiple seals, each with their own unique properties. You can find more information in the sub chapters listed below. 
-
 
 magical_brewery:tome_chapter_seal_base.title=Base Seal
 magical_brewery:tome_chapter_seal_base.body=To start using seals you need to craft base seals. Using a crafting table, you will need a grey candle, a sign, & a torch.\nEach seal requires 3 ingredients. The base seal, quartz, and dust. The type of dust determines the seal's effects.\n\nLevel 1 seals can be crafted with non-pure varieties of dust and quartz.\nLevel 2 seals require pure versions of dust and quartz.\n\nTo use a seal, place it on the side of a cask. When the cask is ageing, the seal will affect the ageing process creating a different outcome.\nOnce a potion has aged, if the seal has been attached to the cask long enough during the ageing lifetime it will set ablaze disappearing in the flames.
 
-
 magical_brewery:tome_chapter_seal_longevity.title=Seals of Longevity
 magical_brewery:tome_chapter_seal_longevity.body=As with brewing, seals of longevity increase the duration of the cask's potion effect. Each level further increases the duration\nSeals of longevity can be crafted with variants of redstone. 
 
-
 magical_brewery:tome_chapter_seal_potency.title=Seals of Potency
 magical_brewery:tome_chapter_seal_potency.body=Similar to brewing, seals of potency increase the power of a cask's potion effect. Each level increases the power by one tier. \nSeals of potency can be crafted with variants of glowstone. 
-
 
 magical_brewery:tome_chapter_seal_expansion.title=Seals of Expansion
 magical_brewery:tome_chapter_seal_expansion.body=This seal can be applied to casks containing potions of lingering and potions of splash. It will increase the potions splash radius. Each level increases splash radius by one block.
@@ -397,8 +392,8 @@ magical_brewery:tome_chapter_zzz_about_the_author.body=Once again, welcome to Ma
 magical_brewery:tome_chapter_brewing.title=Brewing
 magical_brewery:tome_chapter_brewing.body=I have been at this "magical brewing" for quite some time now, and I haven't come across any brewing chapter. So from now on I think I will have to do my own research and continue where Margrith left off from.\nThis will be the brewing chapter and it will be my own work and so I will have to be concise and thorough as to not trip over myself in the future.
 
-magical_brewery:tome_chapter_enhanced_potions.title=Enhanced Potions
-magical_brewery:tome_chapter_enhanced_potions.body=Now that I have pure versions of dusts, I should be able to enhance base potions far more than the non-pure variants.\nIf the dust can be applied to aging then surely they should work for brewing.\nAfter a lot of tests, I have found that the majority of potions that accept non-pure dusts also accept the purified dusts and as a consequence to using purified dust, the potion liquid now has a lovely shimmer to it reflecting light creating a mild glinting effect.\nI need to make more notes on this so I don't forget what I have discovered.
+##magical_brewery:tome_chapter_enhanced_potions.title=Enhanced Potions
+##magical_brewery:tome_chapter_enhanced_potions.body=Now that I have pure versions of dusts, I should be able to enhance base potions far more than the non-pure variants.\nIf the dust can be applied to aging then surely they should work for brewing.\nAfter a lot of tests, I have found that the majority of potions that accept non-pure dusts also accept the purified dusts and as a consequence to using purified dust, the potion liquid now has a lovely shimmer to it reflecting light creating a mild glinting effect.\nI need to make more notes on this so I don't forget what I have discovered.
 
 magical_brewery:tome_chapter_brewing_research.title=Brewing Research
 magical_brewery:tome_chapter_brewing_research.body=Since there are so many possible potions out there I think it's best that I start writing down materials that I find in the world that could make potions.\nAn “ingredients” category should do. \n\nAnd maybe a “catalysers” category to list materials that enhance a potion effect. It's probably best that I test multiple potions to be sure what each catalyser can do.\nFinally, is it possible that some ingredients in brewing can affect the outcome of other potions. I should keep this in mind.\nAs I'm exploring the world I should bring my tome and keep it in my other hand and study the material in my working hand.
@@ -408,47 +403,86 @@ magical_brewery:tome_chapter_recipes.title=Recipes
 magical_brewery:tome_chapter_recipes.body=Recipes
 
 magical_brewery:tome_chapter_ingredients.title=Ingredients
-magical_brewery:tome_chapter_ingredients.body=ingredients
+magical_brewery:tome_chapter_ingredients.body=I should get out of my comfort zone and explore the world to find exotic materials that can create different potions. I should "taste" the ingredients I find and see if they have potential.\nOnce I'm confident about them, I'll try and make a potion with said ingredient.\n\nNow whether the effects are bad or good I should still drink the potion to confirm it's effects. Not the best approach but I don't see an alternative.
 
 magical_brewery:tome_chapter_catalysers.title=Catalysers
-magical_brewery:tome_chapter_catalysers.body=Catalysers
+magical_brewery:tome_chapter_catalysers.body=As with ingredients, I will have to find materials out in the world that could enhance potions. I still need to "taste" the catalysts. I suspect some may not be the best to "taste", but what can you do.\n\nIn any case, once I have found a suitable catalyser I should try and brew and drink 3 potions with different effects to confirm what the catalyst can enhance.
 
 magical_brewery:tome_chapter_potion_materials.title=Potion Materials
 magical_brewery:tome_chapter_potion_materials.body=Potion Materials
 
-magical_brewery:tome_chapter_potency_plus.title=Potency +
-magical_brewery:tome_chapter_potency_plus.body=Purified Glowstone dust can be brewed with a base potion to make potions far more potent.\nA few examples include:\n\nInstant Health -> Instant Health III\nSwiftness -> Swiftness III (1:30)\nRegeneration -> Regeneration III (0:22)\n\nSo far, I haven't come across any side effects. 
+##---------------------------------
+##Tome Chapters-----Ingredients-------------------
 
-magical_brewery:tome_chapter_duration_plus.title=Duration +
-magical_brewery:tome_chapter_duration_plus.body=Purified Redstone dust can be brewed with a base potion to make potions last far longer than non-purified potions.\nA few examples include:\n\nFire Resistance -> Fire Resistance (15:00)\nSwiftness -> Swiftness (15:00)\nRegeneration -> Regeneration (3:30)\n\nSo far, I haven't come across any side effects.
+##---------------------------------
+##Tome Chapters-----Catalysers-------------------
 
-magical_brewery:tome_chapter_crystal_expansion_plus.title=Expansion +
-magical_brewery:tome_chapter_crystal_expansion_plus.body=Expansion + body
+magical_brewery:tome_chapter_longevity_tier_1_1.body=Redstone dust may have the potential to increase the duration of potions...
 
+magical_brewery:tome_chapter_longevity_tier_1_2.title=Duration Potions
+magical_brewery:tome_chapter_longevity_tier_1_2.body=Redstone dust can be brewed with a base potion to make potions last longer.\nA few examples include:\n\nFire Resistance -> Fire Resistance (8:00)\nSwiftness -> Swiftness (8:00)\nRegeneration -> Regeneration (2:00)\n\nSo far, I haven't come across any side effects.
+
+magical_brewery:tome_chapter_longevity_tier_2_1.body=If redstone dust can be used to make potion effects last longer then surely purified redstone can do the same, and possibly better...
+
+magical_brewery:tome_chapter_longevity_tier_2_2.title=Duration + Potions
+magical_brewery:tome_chapter_longevity_tier_2_2.body=Purified Redstone dust can be brewed with a base potion to make potions last far longer than non-purified redstone variants.\nA few examples include:\n\nFire Resistance -> Fire Resistance (15:00)\nSwiftness -> Swiftness (15:00)\nRegeneration -> Regeneration (3:30)\n\nSo far, I haven't come across any side effects.
+
+magical_brewery:tome_chapter_potency_tier_1_1.body=Glowstone dust may have the potential to increase the strength of the effect of potions...
+
+magical_brewery:tome_chapter_potency_tier_1_2.title=Potency Potions
+magical_brewery:tome_chapter_potency_tier_1_2.body=Glowstone dust can be brewed with a base potion to make potions more potent.\nA few examples include:\n\nInstant Health -> Instant Health II\nSwiftness -> Swiftness II (1:30)\nRegeneration -> Regeneration II (0:22)\n\nSo far, I haven't come across any side effects. 
+
+magical_brewery:tome_chapter_potency_tier_2_1.body=If glowstone dust can be used to make potion effects last longer then surely purified glowstone can do the same, and possibly better...
+
+magical_brewery:tome_chapter_potency_tier_2_2.title=Potency + Potions
+magical_brewery:tome_chapter_potency_tier_2_2.body=Purified Glowstone dust can be brewed with a base potion to make potions far more potent than non-purified glowstone variants.\nA few examples include:\n\nInstant Health -> Instant Health III\nSwiftness -> Swiftness III (1:30)\nRegeneration -> Regeneration III (0:22)\n\nSo far, I haven't come across any side effects. 
+
+magical_brewery:tome_chapter_expansion_tier_1_1.body=I don't know why but I have this feeling that gunpowder maybe useful in brewing potions. It's a long shot but maybe gunpowder's explosive traits could weaponise potions....\n\nSaying that I think it's wise that I don't drink the potions.
+
+magical_brewery:tome_chapter_expansion_tier_1_2.title=Splash Potions
+magical_brewery:tome_chapter_expansion_tier_1_2.body=Gunpowder can be brewed with a base potion or an enhanced potion to create splash potions. These potions can be thrown and affect targets caught in the splash zone.\n\nSo far I have noticed that there is no loss to the potions' duration or potency when gunpowder is added to it.\nGunpowder can be applied to any base potion.
+
+magical_brewery:tome_chapter_expansion_tier_2_1.body=An unsettling item. Crackling oil seems to be incredibly unstable, so unstable that even just mining the rock it resides in can lead to injury. Also, transporting the oil is a dangerous affair in it's own right.\nHowever it does have potential. It may share similar properties to gunpowder.\n\nThe only issue is that I suspect it is too powerful. I don't think glass potions could contain such a explosive substance...
+
+magical_brewery:tome_chapter_expansion_tier_2_2.title=Splash + Potions
+magical_brewery:tome_chapter_expansion_tier_2_2.body=Crackling Oil can be brewed with a base potion or an enhanced potion to create far more volatile splash potions making them have a greater area of effect than normal splash potions.n\Crackling Oil can be applied to any base potion.\n\nSo far I have noticed that there is no loss to the potions' duration or potency when crackling oil is added to it.\nHowever potions made with crackling oil can only be made with amethyst bottles!
+
+magical_brewery:tome_chapter_lingering_tier_1_1.body=What a journey! That dragon put up quite a fight, but I won in the end.\nI did notice that when the dragon was spewing it's breath, the breath stayed on the ground for a bit.\nI've decided to take a sample and see if it can be used with potions.
+
+magical_brewery:tome_chapter_lingering_tier_1_2.title=Lingering Potions
+magical_brewery:tome_chapter_lingering_tier_1_2.body=Using a splash potion as a base I can apply a bottle of dragon's breath creating a potion that stays on the ground for a period of time.\nWhen someone steps into the potion cloud the cloud will shrink.\n\nSo far I have noticed that there is no loss to the potions' duration or potency when dragon's breath is added to it.
+
+magical_brewery:tome_chapter_echo_tier_1_1.body=Most crystals I have come across seem to all be able to enhance a potion. So maybe echo dust can do the same...
+
+magical_brewery:tome_chapter_echo_tier_1_2.title=Echo Potions
+magical_brewery:tome_chapter_echo_tier_1_2.body=Incredible! Echo dust has the ability to bring back potion effects that have worn off. Given a bit of time after the potion effect has faded away, the effect will come back. Not as long as before but still just as powerful.\n\nEcho dust can be applied to any potion effect whether enhanced or not.
+##The dust can also be used in splash potions
+
+##---------------------------------
+
+##Tome Chapters-----Potion Materials-------------------
 magical_brewery:tome_chapter_glass_bottle.title=Glass
 magical_brewery:tome_chapter_glass_bottle.body=Glass
 
 magical_brewery:tome_chapter_amethyst_bottle.title=Amethyst 
 magical_brewery:tome_chapter_amethyst_bottle.body=amethyst body
-##---------------------------------
-##Magical Brewery general messages 
-magical_brewery:message.magical_brewery_general.wip=§cCurrently unavailable. Functionality will be added at a later date.
-##---------------------------------
+
 
 ##---------------------------------
 ##Tome Chapters-----Cask Oddities-------------------
 magical_brewery:tome_chapter_harm_heal_to_decay.title=Harming & Healing
-magical_brewery:tome_chapter_harm_heal_to_decay.body=Decay
+magical_brewery:tome_chapter_harm_heal_to_decay.body=This is possibly my first "positive" result to come from messing around with casks.\nUsing a potion of Healing on a cask of Harming ends up creating a potion of Decay.\nThis can be done vice versa.
 
 magical_brewery:tome_chapter_pois_regn_to_mund.title=Regeneration & Poison
-magical_brewery:tome_chapter_pois_regn_to_mund.body=Mundane
+magical_brewery:tome_chapter_pois_regn_to_mund.body=Unfortunately using a potion of Poison on a cask of Regeneration creates a Mundane potion. But it's good to note for the future and maybe for others.\nThis can be done vice versa.
 
 magical_brewery:tome_chapter_slow_sped_to_mund.title=Slowness & Swiftness
-magical_brewery:tome_chapter_slow_sped_to_mund.body=Mundane
+magical_brewery:tome_chapter_slow_sped_to_mund.body=Unfortunately using a potion of Swiftness on a cask of Slowness creates a Mundane potion. But it's good to note for the future and maybe for others.\nThis can be done vice versa.
 
 magical_brewery:tome_chapter_weak_stre_to_mund.title=Strength & Weakness
-magical_brewery:tome_chapter_weak_stre_to_mund.body=Mundane
+magical_brewery:tome_chapter_weak_stre_to_mund.body=Unfortunately using a potion of Strength on a cask of Weakness creates a Mundane potion. But it's good to note for the future and maybe for others.\nThis can be done vice versa.
 ##---------------------------------
+
 ##---------------------------------------------------------------------------------------------------
 ##Magical Brewery Tome Research Messages;
 magical_brewery:message.tome_research_item.invalid=There doesn't seem to be much to learn from this item.
@@ -458,13 +492,16 @@ magical_brewery:message.tome_research_item.discovered=There is no further resear
 magical_brewery:message.tome_research_item.clue_discovery=This %s could be useful.\nI have added it to my %s chapter.
 
 magical_brewery:message.tome_research_potion.item_discovered=I have already found the potion associated with this ingredient.
-magical_brewery:message.tome_research_potion.discovered=I already know how to make this potion.
+##magical_brewery:message.tome_research_potion.discovered=I already know how to make this potion.
 magical_brewery:message.tome_research_potion.item_not_discovered=I do not know the ingredient that can create such a potion.
 magical_brewery:message.tome_research_potion.discovery=I now know how to make a %s.\nI have added it to my %s chapter.
-magical_brewery:message.tome_research_potion.enhanced_type_discovered=I know how to make these types of enhanced potions.
+##magical_brewery:message.tome_research_potion.enhanced_type_discovered=I know how to make these types of enhanced potions.
 magical_brewery:message.tome_research_potion.catalyst_not_discovered=I should research the catalyst that enhances this potion.
-magical_brewery:message.tome_research_potion.enhanced_discovered=I already know how to enhance this potion effect. I should test another potion effect...
+##magical_brewery:message.tome_research_potion.enhanced_discovered=I already know how to enhance this potion effect. I should test another potion effect...
 magical_brewery:message.tome_research_potion.enhanced_progression=This %s has been enhanced with %s.
+magical_brewery:message.tome_research_potion.enhanced_discovery=I am now confident that %s can create %s.
+
+magical_brewery:message.tome_research_potion.lingering_progression=This potion has been enhanced with a catalyst that I don't know. I should find out what that catalyst is first.
 
 magical_brewery:message.tome_research_item.enhanced_progression_plural=I should only need to try %s other potions with a similar enhancement to confirm the effects.
 magical_brewery:message.tome_research_item.enhanced_progression_singular=I should only need to try %s other potion with a similar enhancement to confirm the effects.
@@ -475,3 +512,8 @@ magical_brewery:message.tome_research_cask_odd.discovery=Interesting...\nInstead
 ##---------------------------------------------------------------------------------------------------
 ##Magical Brewery Tome Research item discovery messages;
 magical_brewery:message.cask.tasting_spoon.new_effect=It also has a taste of %s.
+
+##---------------------------------
+##Magical Brewery general messages 
+magical_brewery:message.magical_brewery_general.wip=§cCurrently unavailable. Functionality will be added at a later date.
+##---------------------------------
