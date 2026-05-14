@@ -247,6 +247,9 @@ export class Cask {
                 effectName += effectTime;
             }
         }
+        
+        if(this.seal.type === "memories") effectName += " [Echoing]";
+
         this.potion_effects.push(effectName);
     }
 
