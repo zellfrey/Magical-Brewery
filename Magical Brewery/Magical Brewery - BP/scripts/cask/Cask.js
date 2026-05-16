@@ -216,41 +216,14 @@ export class Cask {
         
         const potionEffect = POTION_EFFECTS[caskPotionType]
         let effectName = potionEffect.effects
-        let sealStrength = this.seal.strength;
-        //TODO: add expansion & inspiration & memories seal choices
-        if(this.seal.type === "potency"){
-
-            let potionPotency;
-
-            if(effectName.includes("Instant")){
-                potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength];
-
-            }
-            else if(effectName === "Slowness"){
-                potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength+1] + 
-                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
-
-            }
-            else if(potionEffect.duration_potency.length === 0){
-                potionPotency =" (" + potionEffect.duration_long[0] +  ")";
-
-            }else{
-                potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength] + 
-                " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
-            }
-            effectName += potionPotency;
-        }
+        effectName = this.seal.addEffect(potionEffect, effectName);
         
-        else{
-            if(potionEffect.duration_long.length !== 0){
-                const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
-                effectName += effectTime;
-            }
-        }
-        
-        if(this.seal.type === "memories") effectName += " [Echoing]";
-
         this.potion_effects.push(effectName);
+
+        if(this.seal.type === "inspiration") {
+            this.potion_effects.push(this.seal.addInspirationEffect());
+            //this.seal.addInspirationEffect();
+        }
     }
 
     changeAgedPotionEffect(oddResult){

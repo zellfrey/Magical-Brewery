@@ -1,5 +1,6 @@
 import {world, system, Direction, Dimension} from "@minecraft/server";
 import {neighbouringCross, getBlockFromFace} from "../utils/blockPlacementUtils.js";
+import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potion/potionEffects.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {Cask} from "../cask/Cask.js";
 
@@ -58,11 +59,11 @@ export class Seal {
                 sealType = "magical_brewery:potency";
                 particleId = "magical_brewery:seal_retainment_shield";
                 particleSpawnVector3 = caskCenterLocation;
-				particleSpawnVector3.y += MathUtils.getRndFloat(-4, 5)
+				particleSpawnVector3.y += MathUtils.getRndFloat(-4, 5);
             }
             else{
                 particleSpawnVector3 = MathUtils.addVectorFromBlockFace(face, seal.center());
-                particleSpawnVector3.y += MathUtils.getRndFloat(-2.5, 3)
+                particleSpawnVector3.y += MathUtils.getRndFloat(-2.5, 3);
                 particleSpawnVector3 = MathUtils.addRandomVectorBlockFace(face, particleSpawnVector3)
 
                 particleId = `magical_brewery:dust_${sealType.slice(16)}_flame`
@@ -104,6 +105,73 @@ export class Seal {
         dim.setBlockType(this.location, "minecraft:air");
     }
 	
+    addEffect(potionEffect, effectName){
+        
+        let effectString = effectName;
+
+        if(potionEffect.duration_long.length !== 0){
+            const effectTime =" (" + potionEffect.duration_long[this.strength] +  ")";
+            effectString += effectTime;
+        }
+
+        switch(this.type){
+            case "potency":
+                effectString = this.addPotencyEffect(potionEffect, effectName, this.strength);
+            break;
+            case "memories":
+                effectString += "[Echoing]";
+            break;
+            case "expansion":
+                effectString += "[Splash]";
+            break;
+        }     
+
+        return effectString;
+    }
+    
+    addPotencyEffect(potionEffect, effectName, sealStrength){
+        let potionPotency;
+
+        if(effectName.includes("Instant")){
+            potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength];
+
+        }
+        else if(effectName === "Slowness"){
+            potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength+1] + 
+            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+
+        }
+        else if(potionEffect.duration_potency.length === 0){
+            potionPotency =" (" + potionEffect.duration_long[0] +  ")";
+
+        }else{
+            potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength] + 
+            " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
+        }
+        effectName += potionPotency;
+
+        return effectName;
+    }
+
+    addInspirationEffect(){
+        //TODO... if effect is already present in potion reroll
+        //TODO: fix bug to allow potency rolls
+        const potionKeys = Object.keys(POTION_EFFECTS);
+        const key = potionKeys[MathUtils.getRandomInt(Object.keys(POTION_EFFECTS).length-1)];
+        const potionEffect = POTION_EFFECTS[key];
+        let effectName = potionEffect.effects;
+        let sealStrength = MathUtils.getRandomInt(2);
+
+        if(potionEffect.duration_long.length !== 0){
+            const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
+            effectName += effectTime;
+        }
+        else{
+           effectName =  this.addPotencyEffect(effectName, sealStrength)
+        }
+        return effectName;
+    }
+    
     static setSeal(seal, cask){
         if(!seal){
             cask.seal = new Seal();

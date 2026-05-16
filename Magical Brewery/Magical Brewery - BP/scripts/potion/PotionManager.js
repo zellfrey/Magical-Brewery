@@ -15,10 +15,15 @@ export class PotionManager {
 		for(let i = 0; i < extraEffects.length; i++){
 			
 			const words = extraEffects[i].split(' ');
-			
+			let isEchoEffect;
+
 			//As to why extraEffects === "Mundane (no effect)" doesnt work, idk so its this for now
 			if(words[0] === "Mundane") continue;
 			
+			if(words[words.length-1] === "[Echoing]"){
+				isEchoEffect = true;
+				words.pop();
+			}
 			let effect, potency;
 			let totalTicks = 1;
 			if(words[0] === "Instant"){
@@ -43,6 +48,8 @@ export class PotionManager {
 				
 			}
 			entity.addEffect(effect, totalTicks, { amplifier: potency })
+
+			if(isEchoEffect) MagicalBreweryPotion.applyEchoEffect(entity, effect, totalTicks, potency)
 		}
 	}
 	

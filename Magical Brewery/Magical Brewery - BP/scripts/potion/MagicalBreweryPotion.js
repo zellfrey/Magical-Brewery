@@ -146,4 +146,8 @@ export class MagicalBreweryPotion {
 	static setItemStack(caskFirstPotionEffect){
 		return new ItemStack(caskFirstPotionEffect, 1);
 	}
+
+	static applyEchoEffect(entity, effect, totalTicks, potency){
+		console.log("applying echo effect")
+	}
 }
