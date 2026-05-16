@@ -48,8 +48,8 @@
             },
             "minecraft:collision_box": false,
             "minecraft:selection_box": {
-                "origin": [-6.5, 1.5, -8],
-                "size": [13, 13, 1.0]
+                "origin": [-7.5, 0, -8],
+                "size": [15, 15, 1.0]
             },
             "minecraft:placement_filter": {
                 "conditions": [
@@ -86,7 +86,8 @@
 							}
 						]
 					},
-                    "minecraft:transformation": { 
+                    "minecraft:transformation": {
+                        "translation": [0, 0.05, 0], 
                         "rotation": [0, 180, 0],
                         "scale": [0.6, 0.6, 1]
                     }
@@ -107,7 +108,8 @@
 							}
 						]
 					},
-                    "minecraft:transformation": { 
+                    "minecraft:transformation": {
+                        "translation": [0, 0.05, 0], 
                         "rotation": [0, 0, 0],
                         "scale": [0.6, 0.6, 1]
                     }
@@ -128,7 +130,8 @@
 							}
 						]
 					},
-                    "minecraft:transformation": { 
+                    "minecraft:transformation": {
+                        "translation": [0, 0.05, 0], 
                         "rotation": [0, -90, 0],
                         "scale": [0.6, 0.6, 1]
                     }
@@ -149,7 +152,8 @@
 							}
 						]
 					},
-                    "minecraft:transformation": { 
+                    "minecraft:transformation": {
+                        "translation": [0, 0.05, 0], 
                         "rotation": [0, 90, 0],
                         "scale": [0.6, 0.6, 1]
                     }
