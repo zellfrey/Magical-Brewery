@@ -9,11 +9,7 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"potion":{
-					"effect": "Decay",
-					"duration": "xstrong",
-					"potency": 2
-				}
+				"effect_properties": ["wither", 800, 2]
 			},
 			"minecraft:tags": {
 				"tags": ["magical_brewery:potion", "glass"]

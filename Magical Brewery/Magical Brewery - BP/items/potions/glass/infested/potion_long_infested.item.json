@@ -10,11 +10,7 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"potion":{
-					"effect": "Infested",
-					"duration": "long",
-					"potency": 0
-				}
+				"effect_properties": ["infested", 9600, 0]
 			},
 			"minecraft:tags": {
 				"tags": ["magical_brewery:potion", "glass"]

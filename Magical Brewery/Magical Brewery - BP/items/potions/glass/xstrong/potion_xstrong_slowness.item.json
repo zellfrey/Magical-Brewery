@@ -9,11 +9,7 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"potion":{
-					"effect": "Slowness",
-					"duration": "xstrong",
-					"potency": 4
-				}
+				"effect_properties": ["slowness", 400, 4]
 			},
 			"minecraft:tags": {
 				"tags": ["magical_brewery:potion", "glass"]

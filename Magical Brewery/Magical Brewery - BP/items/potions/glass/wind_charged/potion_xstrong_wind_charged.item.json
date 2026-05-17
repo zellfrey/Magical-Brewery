@@ -9,11 +9,7 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"potion":{
-					"effect": "Wind_Charged",
-					"duration": "xstrong",
-					"potency": 2
-				}
+				"effect_properties": ["wind_charged", 1800, 2]
 			},
 			"minecraft:tags": {
 				"tags": ["magical_brewery:potion", "glass"]

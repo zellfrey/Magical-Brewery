@@ -9,11 +9,7 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"potion":{
-					"effect": "Fire_Resistance",
-					"duration": "xlong",
-					"potency": 0
-				}
+				"effect_properties": ["fire_resistance", 18000, 0]
 			},
 			"minecraft:tags": {
 				"tags": ["magical_brewery:potion", "glass"]

@@ -6,42 +6,22 @@ export class MagicalBreweryPotion {
 
 	static onConsume(entity, potionItem, potionParams){
 
-		if(potionParams.potion.effect === "Turtle_Master"){
-			MagicalBreweryPotion.applyTurtleMasterEffect(entity, potionParams)
-		}
-		else{
-			const potionEffectObj = POTION_EFFECTS[potionParams.potion.effect]
-			const effectID = potionEffectObj.effects.replace(" ", "_").toLowerCase()
-
-			let totalTicks;
-
-			if(potionParams.potion.duration === "instant"){
-				totalTicks = 1;
-			}
-			else{
-				const durationTime  = MagicalBreweryPotion.getEffectDuration(potionEffectObj, potionParams.potion.duration) 
-				const [minutes, seconds] = durationTime.split(':');
-			
-				totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-			}
-			
-
-			entity.addEffect(effectID, totalTicks, { amplifier: potionParams.potion.potency })
-		}
+		entity.addEffect(
+			potionParams.effect_properties[0], 
+			potionParams.effect_properties[1], 
+			{ amplifier: potionParams.effect_properties[2]}
+		);
+	
 		PotionManager.giveExtraEffectsToEntity(entity, potionItem)
 	}
-	
-	static applyTurtleMasterEffect(entity, potionParams){
-		const potionEffectObj = POTION_EFFECTS[potionParams.potion.effect]
 
-		const durationTime  = MagicalBreweryPotion.getEffectDuration(potionEffectObj, potionParams.potion.duration) 
-		const [minutes, seconds] = durationTime.split(':');
+	static onConsumeMultipleEffects(entity, potionItem, potionParams){
 
-		let totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-
-		entity.addEffect("slowness", totalTicks, { amplifier: potionParams.potion.potency[0] })
-		entity.addEffect("resistance", totalTicks, { amplifier: potionParams.potion.potency[1] })
-
+		potionParams.effect_properties.forEach(elEffect => { 
+			entity.addEffect(elEffect[0], elEffect[1], { amplifier: elEffect[2]});
+		});
+		
+		PotionManager.giveExtraEffectsToEntity(entity, potionItem);
 	}
 
 	static getEffectDuration(effectObj, potionDuration){

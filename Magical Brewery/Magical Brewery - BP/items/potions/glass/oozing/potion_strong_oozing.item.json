@@ -10,11 +10,7 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"potion":{
-					"effect": "Oozing",
-					"duration": "strong",
-					"potency": 1
-				}
+				"effect_properties": ["oozing", 1800, 1]
 			},
 			"minecraft:tags": {
 				"tags": ["magical_brewery:potion", "glass"]

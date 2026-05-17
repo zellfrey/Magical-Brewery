@@ -8,12 +8,8 @@
 			}
 		},
 		"components": {
-			"magical_brewery:oc_potion": {
-				"potion":{
-					"effect": "Turtle_Master",
-					"duration": "xlong",
-					"potency": [3,3]
-				}
+			"magical_brewery:oc_potion_multiple": {
+				"effect_properties": [["slowness", 1400, 3],["resistance", 1400, 3]]
 			},
 			"minecraft:tags": {
 				"tags": ["magical_brewery:potion", "glass"]

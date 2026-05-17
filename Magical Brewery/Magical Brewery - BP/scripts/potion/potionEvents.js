@@ -5,12 +5,19 @@ import {ON_DEATH_EFFECTS, ON_HIT_EFFECTS} from "../potion/potionEffects.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {getAirBlockBox} from "../utils/blockPlacementUtils.js";
 
-//12 mins duration in ticks i.e 12*60 *20
-//const xLongDuration = 14400;
+
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:oc_potion', {
         onConsume(e,p) {
             MagicalBreweryPotion.onConsume(e.source, e.itemStack, p.params)
+        }
+    });
+});
+
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:oc_potion_multiple', {
+        onConsume(e,p) {
+            MagicalBreweryPotion.onConsumeMultipleEffects(e.source, e.itemStack, p.params)
         }
     });
 });
