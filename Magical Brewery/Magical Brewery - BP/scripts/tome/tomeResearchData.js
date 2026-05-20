@@ -103,19 +103,7 @@ TOME_RESEARCH_ITEMS.set("minecraft:slime_ball", {
 			"type": "clue",
 			"part": "oozing_1"
 		});
-TOME_RESEARCH_ITEMS.set("minecraft:potion", {
-			"tome_chapter": "ingredients",
-			"type": "complete"
-			//Part is determined by the potions effect id
-			//Obviously this will include catalysers 
-		});
 //Catalyer research items
-TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
-			"tome_chapter": "catalysers",
-			"type": "complete"
-			//Part is determined by the potions effect id
-			//Obviously this will include catalysers 
-		});
 TOME_RESEARCH_ITEMS.set("minecraft:redstone", {
 			"tome_chapter": "catalysers",
 			"type": "clue",

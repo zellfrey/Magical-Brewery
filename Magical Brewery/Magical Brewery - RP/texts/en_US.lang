@@ -414,6 +414,16 @@ magical_brewery:tome_chapter_potion_materials.body=Potion Materials
 ##---------------------------------
 ##Tome Chapters-----Ingredients-------------------
 
+
+##Multi-clue potions------------
+magical_brewery:tome_chapter_invisibility_1.title=Night Vision Potion & Fermented Spider Eye
+
+magical_brewery:tome_chapter_slowness_1.title=Swiftness or Leaping Potion, & Fermented Spider Eye
+
+magical_brewery:tome_chapter_harming_1.title=Healing or Poison Potion, & Fermented Spider Eye
+
+magical_brewery:tome_chapter_weakness_1.title=Strength Potion & Fermented Spider Eye
+
 ##---------------------------------
 ##Tome Chapters-----Catalysers-------------------
 

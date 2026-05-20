@@ -351,7 +351,6 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"weakness_1":{
-		title: "potion.moveSpeed.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_weakness_1.png",
 		exitPage: "ingredients"
 	},
@@ -361,7 +360,6 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"invisibility_1":{
-		title: "potion.moveSpeed.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_invisibility_1.png",
 		exitPage: "ingredients"
 	},
@@ -371,7 +369,6 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"slowness_1":{
-		title: "potion.moveSpeed.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_slowness_1.png",
 		exitPage: "ingredients"
 	},
