@@ -21,6 +21,17 @@ export class Tome {
 		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeChapterData))
 	}
 
+	static addTomeResearchChapter(player, tomePlayerData, researchParentChapter, researchChapter){
+		
+		tomePlayerData.unlocked_chapters[researchParentChapter].push(researchChapter);
+		tomePlayerData.page_last_opened = researchParentChapter;
+		
+		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData));
+		
+		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
+
+		return;
+	}
 	static getTomePlayerLastPage(player){
 		let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
 		return tomePlayerData.page_last_opened;

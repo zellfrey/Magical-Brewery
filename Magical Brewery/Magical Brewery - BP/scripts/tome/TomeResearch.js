@@ -14,8 +14,12 @@ export class TomeResearch {
 	}
 
 	static tomeResearchItem(source, itemStack){
-		//TODO: Fix this shit
-		let tomePlayerData = JSON.parse(source.getDynamicProperty('magical_brewery:tome_data_v2'));
+		
+		let tomePlayerData = source.getDynamicProperty('magical_brewery:tome_data_v2');
+		
+		if(tomePlayerData === undefined) return;
+
+		tomePlayerData = JSON.parse(tomePlayerData);
 		
 		const canPlayerLearn = TomeResearch.canPlayerResearchItem(source, tomePlayerData);
 
@@ -247,15 +251,12 @@ export class TomeResearch {
 			return;
 		}
 		else{
-			tomeData.unlocked_chapters[researchItem.tome_chapter].push(researchItem.part);
-			tomeData.page_last_opened = researchItem.tome_chapter;
+			Tome.addTomeResearchChapter(player, tomeData, researchItem.tome_chapter, researchItem.part);
 
 			const discoveryMessage = "magical_brewery:message.tome_research_item.clue_discovery";
-			TomeResearch.sendPlayerDiscoveryMessage(discoveryMessage, researchItem.part, researchItem.tome_chapter, player)
 			
-			player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
-			player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
-
+			TomeResearch.sendPlayerDiscoveryMessage(discoveryMessage, researchItem.part, researchItem.tome_chapter, player)
+		
 			return;
 		}
 	}
@@ -319,24 +320,24 @@ export class TomeResearch {
 				}
 			}
 		}
-		tomeData.unlocked_chapters[researchItem.tome_chapter].push(researchItem.part);
-		tomeData.page_last_opened = researchItem.tome_chapter;
-	
-		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
-		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
+		Tome.addTomeResearchChapter(player, tomeData, researchItem.tome_chapter, researchItem.part);
 
-		const discoveryMessage = "magical_brewery:message.tome_research_item.multi_clue_discovery";
+		const multiClueDiscoveryMessage = {
+				translate: "magical_brewery:message.tome_research_item.multi_clue_discovery",
+				with: { rawtext: [{ translate: TOME_CHAPTERS[researchItem.part].title}, ] },
+			};
 
-		player.sendMessage(
-			{ translate: "magical_brewery:message.tome_research_item.multi_clue_discovery", 
-			with: [TOME_CHAPTERS[researchItem.part].title] });
+		player.sendMessage(multiClueDiscoveryMessage);
 
 		if(recipesDiscovered > 0){
-			const recipesDiscoveredAmountString= recipesDiscovered === 1 ? "singular" : "plural" ;
 
-			player.sendMessage(
-				{ translate: `magical_brewery:message.tome_research_item.multi_clue_progression_${recipesDiscoveredAmountString}`, 
-				with: [recipesDiscovered.toString(), researchItem.part] });
+			//const recipesDiscoveredAmountString= recipesDiscovered === 1 ? "singular" : "plural" ;
+			//recipesDiscovered.toString();
+			const multiCluePotionProgressionMessage = {
+				translate: "magical_brewery:message.tome_research_item.multi_clue_progression",
+				with: { rawtext: [{ translate: TOME_CHAPTERS[researchItem.part].title}, ] },
+			};
+			player.sendMessage(multiCluePotionProgressionMessage);
 		}
 
 		TomeResearch.removeMultiClueIngredient(researchItem, player, tomeData);
@@ -376,13 +377,10 @@ export class TomeResearch {
 		playerTomeResearch["ferm_spider_eye"].push(multiCluePotionEffect);
 		
 		if(tomeData.unlocked_chapters["ingredients"].includes("ferm_spider_eye")){
-				
-			tomeData.unlocked_chapters["ingredients"].push(multiCluePotionEffect + "_1");
-			tomeData.page_last_opened = "ingredients";
+			
+			Tome.addTomeResearchChapter(player, tomeData, "ingredients", multiCluePotionEffect + "_1");
 
-			player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
-			player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
-			player.sendMessage("\nI also have an ingredient that I know of that can use this potion to make another potion...")
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion.multi_clue_discovery"})
 			
 		}
 		
@@ -525,17 +523,14 @@ export class TomeResearch {
 	
 	static addCaskOdditiesChaptertoTome(caskResearch, player, tomePlayerData, playerTomeResearch){
 		
-		tomePlayerData.unlocked_chapters["cask_oddities"].push(caskResearch.odd_chapter);
-		tomePlayerData.page_last_opened = "cask_oddities";
-		
-		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData));
+
+		Tome.addTomeResearchChapter(player, tomePlayerData, "cask_oddities", caskResearch.odd_chapter);
 		
 		playerTomeResearch[caskResearch.research] = "done";
 		
 		playerTomeResearch = TomeResearch.setOppositeOddResearch(playerTomeResearch, caskResearch.research);
 
 		player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(playerTomeResearch));
-		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
 		player.sendMessage({ translate: "magical_brewery:message.tome_research_cask_odd.discovery"});
 	}
 	
