@@ -334,16 +334,6 @@ export const TOME_CHAPTERS = {
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_weaving_2.png",
 		exitPage: "ingredients"
 	},
-	"weakness_1":{
-		title: "potion.moveSpeed.name",
-		icon: "textures/items/spider_eye_fermented",
-		exitPage: "ingredients"
-	},
-	"weakness_2":{
-		title: "potion.weakness.name",
-		icon: "textures/beardedflea/magical_brewery/tome/chapter_weakness_2.png",
-		exitPage: "ingredients"
-	},
 	"oozing_1":{
 		title: "item.slime_ball.name",
 		icon: "textures/items/slimeball",
@@ -352,6 +342,52 @@ export const TOME_CHAPTERS = {
 	"oozing_2":{
 		title: "potion.oozing.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_oozing_2.png",
+		exitPage: "ingredients"
+	},
+	//Multi-clue recipe chapters
+	"ferm_spider_eye":{
+		title: "item.fermented_spider_eye.name",
+		icon: "textures/items/spider_eye_fermented",
+		exitPage: "ingredients"
+	},
+	"weakness_1":{
+		title: "potion.moveSpeed.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_weakness_1.png",
+		exitPage: "ingredients"
+	},
+	"weakness_2":{
+		title: "potion.weakness.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_weakness_2.png",
+		exitPage: "ingredients"
+	},
+	"invisibility_1":{
+		title: "potion.moveSpeed.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_invisibility_1.png",
+		exitPage: "ingredients"
+	},
+	"invisibility_2":{
+		title: "potion.invisibility.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_invisibility_2.png",
+		exitPage: "ingredients"
+	},
+	"slowness_1":{
+		title: "potion.moveSpeed.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_slowness_1.png",
+		exitPage: "ingredients"
+	},
+	"slowness_2":{
+		title: "potion.moveSlowdown.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_slowness_2.png",
+		exitPage: "ingredients"
+	},
+	"harming_1":{
+		title: "potion.moveSpeed.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_harming_1.png",
+		exitPage: "ingredients"
+	},
+	"harming_2":{
+		title: "potion.harm.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_harming_2.png",
 		exitPage: "ingredients"
 	},
 	//catalysers chapters

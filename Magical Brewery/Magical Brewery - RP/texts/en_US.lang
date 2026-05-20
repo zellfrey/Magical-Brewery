@@ -506,6 +506,10 @@ magical_brewery:message.tome_research_potion.lingering_progression=This potion h
 magical_brewery:message.tome_research_item.enhanced_progression_plural=I should only need to try %s other potions with a similar enhancement to confirm the effects.
 magical_brewery:message.tome_research_item.enhanced_progression_singular=I should only need to try %s other potion with a similar enhancement to confirm the effects.
 
+magical_brewery:message.tome_research_item.multi_clue_discovery=This %s may have the potential to create a variety of potions...
+magical_brewery:message.tome_research_item.multi_clue_progression_plural=I already know of %s potion that could be useful with %s.
+magical_brewery:message.tome_research_item.multi_clue_progression_singular=I already know of %s potions that could be useful with %s.
+
 magical_brewery:message.tome_research_cask_odd.discovery=Interesting...\nInstead of aging, this cask has changed the effect of this potion. I should take some notes.
 ##---------------------------------------------------------------------------------------------------
 

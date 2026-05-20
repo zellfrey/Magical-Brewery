@@ -10,7 +10,9 @@
 --------------------------------------------------------------------------------------------------------------------------------------
 */
 
-export const MULTI_CLUE_POTION_EFFECTS = ["invisibility", "harming", "weakness", "slowness"];
+export const MULTI_CLUE_POTION_EFFECTS = ["nightvision", "swiftness", "leaping", "poison", "healing", "strength"];
+export const MULTI_COMPLETE_POTION_EFFECTS = ["invisibility", "slowness", "harming", "weakness"];
+
 export const TOME_RESEARCH_ITEMS = new Map();
 //tome_parent_chapter: "catalysers", "ingredients",
 // "fuel"
@@ -94,7 +96,7 @@ TOME_RESEARCH_ITEMS.set("minecraft:web", {
 TOME_RESEARCH_ITEMS.set("minecraft:fermented_spider_eye", {
 			"tome_chapter": "ingredients",
 			"type": "multi-clue",
-			"parts": ["invisibility_1", "slowness_1", "harming_1", "weakness_1"]
+			"part": "ferm_spider_eye"
 		});
 TOME_RESEARCH_ITEMS.set("minecraft:slime_ball", {
 			"tome_chapter": "ingredients",
