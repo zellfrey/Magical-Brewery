@@ -378,7 +378,6 @@ export const TOME_CHAPTERS = {
 		exitPage: "ingredients"
 	},
 	"harming_1":{
-		title: "potion.moveSpeed.name",
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_harming_1.png",
 		exitPage: "ingredients"
 	},

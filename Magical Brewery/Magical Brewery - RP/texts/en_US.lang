@@ -413,17 +413,71 @@ magical_brewery:tome_chapter_potion_materials.body=Potion Materials
 
 ##---------------------------------
 ##Tome Chapters-----Ingredients-------------------
+##Singular-clue potions & ingredients------------
 
+magical_brewery:tome_chapter_strength_1.body=Hot to the touch, like sand that has sat in the sun all day. After tasting it I feel a sudden surge of strength throughout my body.\nBlaze powder definitely has potential.
+magical_brewery:tome_chapter_strength_2.body=Using a Brewing Station I have created a potion that uses Blaze Powder. My sword feels lighter, and I can swing it with the greatest of ease.\nThis should be able to increase my combat power against the creatures of the night.
 
-##Multi-clue potions------------
+magical_brewery:tome_chapter_healing_1.body=A refreshing snack, watermelon is never a bad choice. And with gold it seems to have instantly healed the cut on my hand.\nGlistering Melon Slice has potential.
+magical_brewery:tome_chapter_healing_2.body=Using a Brewing Station I have created a potion that uses Glistering Melon Slice. I broke my shoulder earlier, and the pain has gone away immediately. And i think it's in better condition than before I broke it.\nThis potion will help heal any accidents that I end up making during my adventures.
+
+magical_brewery:tome_chapter_swiftness_1.body=Sweet sugar rush! I feel a buzz coarsing through my body. My reactions are tighter and my movements are faster. I best not be eating too much sugar. I can already feel my teeth rotting.\nHowever Sugar should do as a potion ingredient.
+magical_brewery:tome_chapter_swiftness_2.body=Using a Brewing Station I have created a potion that uses Sugar. What took me about two minutes to get to my mine now only takes me 30 seconds. Not only that the potion isn't as sweet, which is an added benefit.\nAt the pace I can go now, I doubt anything can keep up.
+
+magical_brewery:tome_chapter_leaping_1.body=Hmmmm....I don't know about a raw Rabbit's Foot, I can still see it's tiny bone stick out. I really shouldn't, but I'm not going to get anywhere If I stay in my comfort zone.\nThat was not pleasent, but I do feel lighter on my feet. A cooked rabbit's foot would be much better.
+magical_brewery:tome_chapter_leaping_2.body=Using a Brewing Station I have created a potion that uses Rabbit's Foot, but that was much better tasting than it being raw. Better yet, I now can jump much higher than normal.\nI can traverse wider gaps than before helping me with exploration.
+
+magical_brewery:tome_chapter_poison_1.body=I do not know what possessed me to to do this, and I discourage anyone from doing it. I feel nauseous, I'm going to lie on my bed for a bit.\nI'll deal with this Spider Eye thing tomorrow.
+magical_brewery:tome_chapter_poison_2.body=Using a Brewing Station I have created a potion that uses Spider Eye as an ingredient. I feel terrible. I've managed to make the effects of a Spider eye worse than before & last longer.\nWhilst this won't be useful to me as of right now, perhaps I can find catalyzers that can weaponise this potion.
+
+magical_brewery:tome_chapter_nightvision_1.body=The gold on this carrot doesn't really add much to the flavour, however I have noticed that I can see things more clearly in the night. \nEasy enough to understand, I'm sure this can be better when brewed in a brewing station. 
+magical_brewery:tome_chapter_nightvision_2.body=Using a Brewing Station I have created a potion that uses a Golden Carrot. What an incredible feeling! I'm able to see even the most darkest of caves with relative ease.\nAlso I'm able to see further into bodies of water.
+
+magical_brewery:tome_chapter_regeneration_1.body=Usually I'm fine with dealing with creatures of the night, but killing a ghast just didn't sit right with me, I'm going to hear that cry for days. This ghast tear could be beneficial to a potion, eating the ghast tear didn't show any immediate results, howeverI could see the bruise on my hand slowly fade away.\nPerhaps there is a way of creating a potion with this effect...
+magical_brewery:tome_chapter_regeneration_2.body=Using a Brewing Station I have created a potion that uses Ghast Tears as an ingredient. Just as I thought, using a ghast tear as a potion ingredient has greatly increased it's regenerative effects.\nThis will certainly be useful in combat.
+
+magical_brewery:tome_chapter_water_breathing_1.body=Oh no no no no, I definitely should not have eaten that! Where is some milk when you need it?!?\nUggghhhh...I do not recommend someone eating a pufferfish raw. However, adding this to a brewing station maybe a good experiment...
+magical_brewery:tome_chapter_water_breathing_2.body=Well the taste has certainly improved and at first I thought nothing of this potion and considered it a failure. But then what started out as a harmless brew quickly turned into a short painful experience. Once the pain was over I checked for any damages and then I noticed that I had gills on my neck.\nObviously this means one thing; I should now be able to breathe underwater. Certainly not what I was expecting from such a foul tasting fish, but I guess this makes up for it.
+
+magical_brewery:tome_chapter_fire_resistance_1.body=
+magical_brewery:tome_chapter_fire_resistance_2.body=
+
+magical_brewery:tome_chapter_turtle_master_1.body=
+magical_brewery:tome_chapter_turtle_master_2.body=
+
+magical_brewery:tome_chapter_slow_falling_1.body=
+magical_brewery:tome_chapter_slow_falling_2.body=
+
+magical_brewery:tome_chapter_wind_charged_1.body=
+magical_brewery:tome_chapter_wind_charged_2.body=
+
+magical_brewery:tome_chapter_infested_1.body=
+magical_brewery:tome_chapter_infested_2.body=
+
+magical_brewery:tome_chapter_weaving_1.body=
+magical_brewery:tome_chapter_weaving_2.body=
+
+magical_brewery:tome_chapter_oozing_1.body=
+magical_brewery:tome_chapter_oozing_2.body=
+
+##Multi-clue potions & ingredients------------
+magical_brewery:tome_chapter_ferm_spider_eye.body=
+
 magical_brewery:tome_chapter_invisibility_1.title=Night Vision Potion & Fermented Spider Eye
+magical_brewery:tome_chapter_invisibility_1.body=
+magical_brewery:tome_chapter_invisibility_2.body=
 
 magical_brewery:tome_chapter_slowness_1.title=Swiftness or Leaping Potion, & Fermented Spider Eye
+magical_brewery:tome_chapter_slowness_1.body=
+magical_brewery:tome_chapter_slowness_2.body=
 
 magical_brewery:tome_chapter_harming_1.title=Healing or Poison Potion, & Fermented Spider Eye
+magical_brewery:tome_chapter_harming_1.body=
+magical_brewery:tome_chapter_harming_2.body=
 
 magical_brewery:tome_chapter_weakness_1.title=Strength Potion & Fermented Spider Eye
-
+magical_brewery:tome_chapter_weakness_1.body=
+magical_brewery:tome_chapter_weakness_2.body=
 ##---------------------------------
 ##Tome Chapters-----Catalysers-------------------
 

@@ -15,7 +15,7 @@ export const ITEM_USE_ARRAY = [
 								"minecraft:magma_cream", "minecraft:turtle_helmet", "minecraft:phantom_membrane","minecraft:breeze_rod", "minecraft:stone",
 								"minecraft:web", "minecraft:slime_ball", "minecraft:redstone", "magical_brewery:pure_redstone_dust", "minecraft:glowstone_dust",
 								"magical_brewery:pure_glowstone_dust", "minecraft:gunpowder", "magical_brewery:crackling_oil", "minecraft:dragon_breath", 
-								"magical_brewery:echo_dust", "minecraft:splash_potion", "minecraft:lingering_potion"
+								"magical_brewery:echo_dust", "minecraft:splash_potion", "minecraft:lingering_potion", "minecraft:fermented_spider_eye"
 							];
 export const MULTI_CLUE_POTION_EFFECTS = ["nightvision", "swiftness", "leaping", "poison", "healing", "strength"];
 export const MULTI_COMPLETE_POTION_EFFECTS = ["invisibility", "slowness", "harming", "weakness"];
