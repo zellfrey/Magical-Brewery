@@ -3,6 +3,7 @@ import {TOME_RESEARCH_ITEMS, TOME_RESEARCH_ODD_CASKS, MULTI_CLUE_POTION_EFFECTS,
 import {TOME_CHAPTERS} from "tome/tomeChapters.js"
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {PotionManager} from "../potion/PotionManager.js";
+import {setMainHand} from '../utils/containerUtils.js';
 import { Tome } from './Tome.js';
 import {Cask} from "../cask/Cask.js";
 
@@ -97,6 +98,7 @@ export class TomeResearch {
 
 			TomeResearch.addCompleteChapterToTomeData(player, "ingredients", tomeData, potionEffect);
 			TomeResearch.addEffectToMultiClue(player, tomeData, potionEffect);
+			TomeResearch.removeResearchItem(player);
 			return false;
 
 		}else{
@@ -186,7 +188,7 @@ export class TomeResearch {
 			}
 
 			player.setDynamicProperty('magical_brewery:tome_research_data', JSON.stringify(playerResearchProgressionData));
-
+			TomeResearch.removeResearchItem(player);
 			return;
 		}
 	}
@@ -231,7 +233,8 @@ export class TomeResearch {
 			TomeResearch.sendPlayerDiscoveryMessage(discoveryMessage, chapterPart + "_2", tomeParentChapter, player);
 		}
 		else{
-			TomeResearch.sendPlayerCatalyserDiscoveryMessage(chapterPart + "_1", chapterPart + "_2", player)
+			const catalyserDiscoveryMessage = "magical_brewery:message.tome_research_potion.enhanced_discovery";
+			TomeResearch.sendPlayerDiscoveryMessage(catalyserDiscoveryMessage, chapterPart + "_1", chapterPart + "_2", player)
 		}
 		
 		player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
@@ -256,7 +259,8 @@ export class TomeResearch {
 			const discoveryMessage = "magical_brewery:message.tome_research_item.clue_discovery";
 			
 			TomeResearch.sendPlayerDiscoveryMessage(discoveryMessage, researchItem.part, researchItem.tome_chapter, player)
-		
+			TomeResearch.removeResearchItem(player);
+
 			return;
 		}
 	}
@@ -286,17 +290,7 @@ export class TomeResearch {
 		player.sendMessage(catalyserProgressionMessage);
 	}
 
-	static sendPlayerCatalyserDiscoveryMessage(catalyserChapterPart1, catalyserChapterPart2, player){
-		const catalyserDiscoveryMessage = {
-				translate: "magical_brewery:message.tome_research_potion.enhanced_discovery",
-				with: { rawtext: [
-					{ translate: TOME_CHAPTERS[catalyserChapterPart1].title},
-					{ translate: `magical_brewery:tome_chapter_${catalyserChapterPart2}.title`},
-				] },
-			};
-
-		player.sendMessage(catalyserDiscoveryMessage);
-	}
+	
 
 	static addMultiClueResearchtoTomeData(researchItem, player, tomeData){
 
@@ -341,6 +335,7 @@ export class TomeResearch {
 		}
 
 		TomeResearch.removeMultiClueIngredient(researchItem, player, tomeData);
+		TomeResearch.removeResearchItem(player);
 	}
 
 	static canPlayerLearnMultiClueItem(researchItem, player, tomeResearchChapter){
@@ -433,6 +428,16 @@ export class TomeResearch {
 			player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomeData));
 		}
 		return;
+	}
+
+	static removeResearchItem(player){
+		const equipment = player.getComponent('equippable');
+        const selectedItem = equipment.getEquipment('Mainhand');
+
+		if(selectedItem === undefined || equipment === undefined) return;
+
+        setMainHand(player, equipment, selectedItem, undefined);
+
 	}
 	static caskOddProgression(player, block, cask, interaction){
 

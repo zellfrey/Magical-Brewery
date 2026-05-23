@@ -32,6 +32,7 @@ export class Tome {
 
 		return;
 	}
+	
 	static getTomePlayerLastPage(player){
 		let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
 		return tomePlayerData.page_last_opened;

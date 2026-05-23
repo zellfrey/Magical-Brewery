@@ -1,6 +1,7 @@
 import {system, world} from '@minecraft/server';
 import { Tome } from './Tome.js';
 import { TomeResearch } from './TomeResearch.js';
+import {ITEM_USE_ARRAY} from "tome/tomeResearchData.js"
 
 //Tome item usage
 system.beforeEvents.startup.subscribe(eventData => {
@@ -33,11 +34,23 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 
 
+world.afterEvents.itemCompleteUse.subscribe((e) => {
+	const equipment = e.source.getComponent('equippable');
+	const offHandItem = equipment.getEquipment('Offhand');
+	
+	//If there is no item in the mainhand, something is seriously wrong
+	if(!e.itemStack || !offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome" ) return;
+	
+	TomeResearch.tomeResearchItem(e.source, e.itemStack)
+});
+
 world.afterEvents.itemUse.subscribe((e) => {
 	const equipment = e.source.getComponent('equippable');
 	const offHandItem = equipment.getEquipment('Offhand');
-
-	if(!e.itemStack || e.itemStack.hasTag("magical_brewery:tome_pages") || !offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome" ) return;
+	
+	//If there is no item in the mainhand, something is seriously wrong
+	if(!e.itemStack || e.itemStack.hasTag("magical_brewery:tome_pages") || !ITEM_USE_ARRAY.includes(e.itemStack.typeId) ||
+	!offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome" ) return;
 	
 	TomeResearch.tomeResearchItem(e.source, e.itemStack)
 });
