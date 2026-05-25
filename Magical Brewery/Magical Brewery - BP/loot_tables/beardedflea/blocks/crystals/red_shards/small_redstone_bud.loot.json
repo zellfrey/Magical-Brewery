@@ -22,6 +22,25 @@
 					"name": "magical_brewery:small_redstone_bud"
 				}
 			]
+		},
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "match_tool",
+					"item": "magical_brewery:glassmith_hammer",  
+					"count": 1,  
+					"durability": {  
+						"range_min": 1  
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "magical_brewery:small_redstone_bud"
+				}
+			]
 		}
 	]
 }

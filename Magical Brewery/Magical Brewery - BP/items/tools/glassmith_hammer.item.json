@@ -8,7 +8,7 @@
 			}
 		},
 		"components": {
-			"minecraft:custom_components": ["magical_brewery:on_use_on_hammer"],
+			"minecraft:custom_components": ["magical_brewery:on_use_on_hammer", "magical_brewery:on_mine_block_hammer"],
 			"minecraft:damage": 2,
 			"minecraft:durability": {
 				"max_durability": 90
@@ -23,6 +23,49 @@
 			"minecraft:icon": "magical_brewery:glassmith_hammer",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:glassmith_hammer.name"
+			},
+			"minecraft:tags": {
+				"tags": ["magical_brewery:glassmith_hammer"]
+			},
+			"minecraft:digger": {
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "q.any_tag( 'magical_brewery:glowstone_bud', 'magical_brewery:echo_bud', 'magical_brewery:pure_quartz_bud', 'magical_brewery:redstone_bud')"
+						},
+						"speed": 5
+					},
+					{
+						"block": {
+							"tags": "q.any_tag('magical_brewery:crystal_cluster', 'magical_brewery:crystal_block', 'magical_brewery:crystal_seed')"
+						},
+						"speed": 5
+					},
+					{
+						"block": "minecraft:amethyst_block",
+						"speed": 5
+					},
+					{
+						"block": "minecraft:amethyst_cluster",
+						"speed": 5
+					},
+					{
+						"block": "minecraft:budding_amethyst",
+						"speed": 5
+					},
+					{
+						"block": "minecraft:large_amethyst_bud",
+						"speed": 5
+					},
+					{
+						"block": "minecraft:medium_amethyst_bud",
+						"speed": 5
+					},
+					{
+						"block": "minecraft:small_amethyst_bud",
+						"speed": 5
+					}
+				]
 			}
 		}
 	}
