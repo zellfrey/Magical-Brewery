@@ -58,19 +58,28 @@ function crystalGrowth(buddingBlock, crystalBudParams){
     let unloadTimeCompensation = 1;
     let blockUnloadedTime = system.currentTick - buddingCrystal.previousTick
     
-    if(blockUnloadedTime >= 8000) unloadTimeCompensation += Math.trunc(blockUnloadedTime/8000);
+    if(blockUnloadedTime >= 8000){
 
-    for(let i = 0; i < unloadTimeCompensation; i++){
+        unloadTimeCompensation += Math.trunc(blockUnloadedTime/8000);
+        
+        for(let i = 0; i < unloadTimeCompensation; i++){
+
+                const budToGrow = getValidGrowthSpace(buddingBlock, crystalBudParams);
+
+                if(!budToGrow || Math.floor(Math.random() * 100) > 20) continue;
             
+                growCrystalBud(budToGrow, crystalBudParams.type, crystalBudParams.lastCharNum)
+            }
+    } 
+    else{
         const budToGrow = getValidGrowthSpace(buddingBlock, crystalBudParams);
 
-        if(!budToGrow || Math.floor(Math.random() * 100) > 20) continue;
+        if(!budToGrow || Math.floor(Math.random() * 100) > 20) return;
             
         growCrystalBud(budToGrow, crystalBudParams.type, crystalBudParams.lastCharNum)
     }
     
     buddingCrystal.setPreviousTick(system.currentTick)
-    console.log(system.currentTick)
 }
 
 function getValidGrowthSpace(buddingBlock, crystalBudParams){
