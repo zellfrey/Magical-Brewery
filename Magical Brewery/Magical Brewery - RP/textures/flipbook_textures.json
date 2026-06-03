@@ -1,0 +1,22 @@
+[
+    {
+        "atlas_tile": "magical_brewery:crackling_ore_side_unstable",
+        "flipbook_texture": "textures/beardedflea/magical_brewery/blocks/crackling_ore_side_unstable.png",
+        "ticks_per_frame": 6
+    },
+    {
+        "atlas_tile": "magical_brewery:crackling_ore_side_stabilising",
+        "flipbook_texture": "textures/beardedflea/magical_brewery/blocks/crackling_ore_side_stabilising.png",
+        "ticks_per_frame": 6
+    },
+    {
+        "atlas_tile": "magical_brewery:crackling_ore_pole_unstable",
+        "flipbook_texture": "textures/beardedflea/magical_brewery/blocks/crackling_ore_pole_unstable.png",
+        "ticks_per_frame": 6
+    },
+    {
+        "atlas_tile": "magical_brewery:crackling_ore_pole_stabilising",
+        "flipbook_texture": "textures/beardedflea/magical_brewery/blocks/crackling_ore_pole_stabilising.png",
+        "ticks_per_frame": 6
+    }
+]

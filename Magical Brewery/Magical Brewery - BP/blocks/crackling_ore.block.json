@@ -1,0 +1,91 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "magical_brewery:crackling_ore",
+            "menu_category": {
+                "category": "nature"
+            },
+            "states": {
+				"magical_brewery:ore_stability":["stable", "unstable", "stabilising"]
+			}
+        },
+        "components": {
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+            "magical_brewery:on_entity_fall_on_crackling_ore": {},
+            "magical_brewery:ort_crackling_ore": {},
+            "minecraft:entity_fall_on": {
+                "min_fall_distance": 5
+            },
+            "minecraft:loot": "loot_tables/beardedflea/blocks/crackling_ore.loot.json",
+            "minecraft:light_dampening": 4,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 5
+            },
+            "minecraft:flammable": { 
+                "catch_chance_modifier": 5,
+                "destroy_chance_modifier": 20
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1.5
+            },
+            "minecraft:redstone_conductivity": {
+                "redstone_conductor": true,
+                "allows_wire_to_step_down": true
+            },
+            "minecraft:map_color": "#4d4139",
+            "minecraft:material_instances": {
+                "*": {
+					"texture": "magical_brewery:crackling_ore_side"
+				},
+				"end": {
+					"texture": "magical_brewery:crackling_ore_pole"
+				},
+				"up": "end",
+				"down": "end"
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:tick": {
+				"interval_range": [1,5],
+                "looping": true
+			}
+        },
+        "permutations": [
+			{
+				"condition": "q.block_state('magical_brewery:ore_stability') == 'stabilising'",
+				"components": {
+					"minecraft:material_instances": {
+                        "*": {
+                            "texture": "magical_brewery:crackling_ore_side_stabilising"
+                        },
+                        "end": {
+                            "texture": "magical_brewery:crackling_ore_pole_stabilising"
+                        },
+                        "up": "end",
+                        "down": "end"
+                    }
+				}
+			},
+			{
+				"condition": "q.block_state('magical_brewery:ore_stability') == 'unstable'",
+				"components": {
+                    "magical_brewery:on_entity_fall_on_crackling_ore_unstable": {},
+                    "minecraft:entity_fall_on": {
+                        "min_fall_distance": 5
+                    },
+					"minecraft:material_instances": {
+                        "*": {
+                            "texture": "magical_brewery:crackling_ore_side_unstable"
+                        },
+                        "end": {
+                            "texture": "magical_brewery:crackling_ore_pole_unstable"
+                        },
+                        "up": "end",
+                        "down": "end"
+                    }
+				}
+			}
+        ]
+    }
+}

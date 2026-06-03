@@ -256,6 +256,9 @@ tile.magical_brewery:cask_weaving_quality_1.name=Cask of Weaving\n§7Quality: 1
 ##Crops---------------------------------
 
 ##---------------------------------
+##Misc Blocks---------------------------------
+tile.magical_brewery:crackling_ore.name=Crackling Ore
+##---------------------------------
 ##Misc---------------------------------
 magical_brewery.potion.potency.6=VII
 

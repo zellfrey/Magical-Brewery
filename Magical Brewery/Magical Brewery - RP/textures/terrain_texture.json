@@ -1077,6 +1077,24 @@
 		},
 		"magical_brewery:brewers_desk_right":{
 			"textures": "textures/beardedflea/magical_brewery/blocks/brewers_desk_right.png"
+		},
+		"magical_brewery:crackling_ore_pole":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crackling_ore_pole.png"
+		},
+		"magical_brewery:crackling_ore_side":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crackling_ore_side.png"
+		},
+		"magical_brewery:crackling_ore_pole_unstable":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crackling_ore_pole_unstable.png"
+		},
+		"magical_brewery:crackling_ore_side_unstable":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crackling_ore_side_unstable.png"
+		},
+		"magical_brewery:crackling_ore_pole_stabilising":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crackling_ore_pole_stabilising.png"
+		},
+		"magical_brewery:crackling_ore_side_stabilising":{
+			"textures": "textures/beardedflea/magical_brewery/blocks/crackling_ore_side_stabilising.png"
 		}
 	}
 } 
