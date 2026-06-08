@@ -1,0 +1,33 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"conditions": [
+				{
+					"condition": "match_tool",
+					"minecraft:match_tool_filter_all": [
+						"minecraft:is_pickaxe",
+						"minecraft:wooden_tier"
+					],
+					"count": 1,  
+					"durability": {  
+						"range_min": 1  
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "magical_brewery:crackling_oil",
+					"weight": 1,
+					"functions": [
+					{
+						"function": "set_count",
+						"count": {"min": 1, "max": 2}
+					}
+					]
+				}
+			]
+		}
+	]
+}
