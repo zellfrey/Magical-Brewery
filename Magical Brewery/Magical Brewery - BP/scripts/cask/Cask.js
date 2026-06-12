@@ -1,5 +1,5 @@
 import {world, system, ItemStack, MolangVariableMap, BlockPermutation} from "@minecraft/server";
-import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel} from "../potion/potionEffects.js";
+import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, getUniquePotionEffect} from "../potion/potionEffects.js";
 import {MagicalBreweryPotion} from "../potion/MagicalBreweryPotion.js";
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import { PotionManager } from "../potion/PotionManager.js";
@@ -219,11 +219,15 @@ export class Cask {
         effectName = this.seal.addEffect(potionEffect, effectName);
         
         this.potion_effects.push(effectName);
+    }
 
-        if(this.seal.type === "inspiration") {
-            this.potion_effects.push(this.seal.addInspirationEffect());
-            //this.seal.addInspirationEffect();
-        }
+    addInspirationEffect(oddResult){
+        if(this.seal.type !== "inspiration") return;
+
+        const newUniqueEffect = getUniquePotionEffect(this.getFirstPotionEffectID(),  this.potion_effects, oddResult);
+
+        this.potion_effects.push(this.seal.addInspirationEffect(newUniqueEffect));
+        
     }
 
     changeAgedPotionEffect(oddResult){

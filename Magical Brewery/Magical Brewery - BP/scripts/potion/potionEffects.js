@@ -1,3 +1,5 @@
+import {MathUtils} from "../utils/MathUtils.js";
+
 export const POTION_POTENCY_LEVELS = ["I", "II", "III", "IV", "V", "VI"]
 export const POTION_DURATION_LEVELS = ["long", "strong", "xlong", "xstrong"]
 export const ON_DEATH_EFFECTS= ["minecraft:oozing", "minecraft:weaving", "minecraft:wind_charged"];
@@ -107,6 +109,47 @@ export const POTION_EFFECTS = {
         duration_long: ["3:00", "8:00", "15:00"],
         duration_potency: ["1:30", "1:30"],
     },
+    //Currently unobtainable, using for seal of inspiration
+    "Absorption": {
+        effects: "Absorption",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
+    "Darkness": {
+        effects: "Darkness",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: [],
+    },
+    "Fatal_Poison": {
+        effects: "Fatal Poison",
+        duration_long: ["1:30", "4:00", "7:00"],
+        duration_potency: ["0:20", "0:20"],
+    },
+    "Haste": {
+        effects: "Haste",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
+    "Health_Boost": {
+        effects: "Health Boost",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
+    "Mining_Fatigue": {
+        effects: "Mining Fatigue",
+        duration_long: ["3:00", "8:00", "15:00"],
+        duration_potency: ["1:30", "1:30"],
+    },
+    "Nausea": {
+        effects: "Nausea",
+        duration_long: ["1:30", "4:00", "7:00"],
+        duration_potency: [],
+    },
+    "Resistance": {
+        effects: "Resistance",
+        duration_long: ["1:20", "3:00", "8:00"], 
+        duration_potency: ["0:40", "0:40"],
+    },
   };
 
 export function getPotencyLevel(effect){
@@ -114,4 +157,50 @@ export function getPotencyLevel(effect){
     potency = potency !== -1 ? potency : 0
 
     return potency;
+}
+
+export function getUniquePotionEffect(rootEffectID, caskPotionEffects, oddResult){
+	
+    let extraEffects = caskPotionEffects.map(effect => effect.split(" ").join("_"));
+    //remove root potion
+    extraEffects.shift();
+    extraEffects = getExtraEffectIDs(extraEffects);
+	
+    let potionKeys = Object.keys(POTION_EFFECTS);
+	
+    potionKeys = potionKeys.filter(el => rootEffectID !== el.toLowerCase() && el !== oddResult?.input[0]);
+	potionKeys = potionKeys.filter(el => !extraEffects.includes(POTION_EFFECTS[el].effects));
+	
+    let key = potionKeys[MathUtils.getRandomInt(potionKeys.length)];
+	
+    return POTION_EFFECTS[key];
+}
+
+function getExtraEffectIDs(extraEffects){
+    let effectIDs = [];
+    //convenient bit of code
+    for(const effect of extraEffects){
+        const words = effect.split('_');
+		
+        if(words[words.length-1] === "[Echoing]"){
+            words.pop();
+        }
+        let effectID, potency;
+        if(words[0] === "Instant"){
+            potency = getPotencyLevel(words)
+            if(potency !== 0) words.pop();
+            effectID = words.join(" ");
+        }
+        else{
+            words.pop();
+
+            potency = getPotencyLevel(words)
+            
+            if(potency !== 0) words.pop();
+
+            effectID = words.join(" ");
+        }
+        effectIDs.push(effectID);
+    }
+    return effectIDs;
 }

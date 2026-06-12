@@ -119,10 +119,10 @@ export class Seal {
                 effectString = this.addPotencyEffect(potionEffect, effectName, this.strength);
             break;
             case "memories":
-                effectString += "[Echoing]";
+                effectString += " [Echoing]";
             break;
             case "expansion":
-                effectString += "[Splash]";
+                effectString += " [Splash]";
             break;
         }     
 
@@ -140,10 +140,6 @@ export class Seal {
             potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength+1] + 
             " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
 
-        }
-        else if(potionEffect.duration_potency.length === 0){
-            potionPotency =" (" + potionEffect.duration_long[0] +  ")";
-
         }else{
             potionPotency = " " + POTION_POTENCY_LEVELS[sealStrength] + 
             " (" + potionEffect.duration_potency[sealStrength-1] +  ")";
@@ -153,23 +149,37 @@ export class Seal {
         return effectName;
     }
 
-    addInspirationEffect(){
-        //TODO... if effect is already present in potion reroll
-        //TODO: fix bug to allow potency rolls
-        const potionKeys = Object.keys(POTION_EFFECTS);
-        const key = potionKeys[MathUtils.getRandomInt(Object.keys(POTION_EFFECTS).length-1)];
-        const potionEffect = POTION_EFFECTS[key];
-        let effectName = potionEffect.effects;
-        let sealStrength = MathUtils.getRandomInt(2);
+    addInspirationEffect(uniqueEffect){
 
-        if(potionEffect.duration_long.length !== 0){
-            const effectTime =" (" + potionEffect.duration_long[sealStrength] +  ")";
-            effectName += effectTime;
+        const inspirationStrength = MathUtils.getRandomInt(3);
+        let effectString = uniqueEffect.effects;
+        
+        if(uniqueEffect.duration_potency.length === 0 && uniqueEffect.duration_long.length !== 0 ){
+
+            const effectTime =" (" + uniqueEffect.duration_long[inspirationStrength] +  ")";
+            effectString += effectTime;
+            
+            return effectString;
         }
         else{
-           effectName =  this.addPotencyEffect(effectName, sealStrength)
+            const isLongevity = !Math.round(Math.random());
+
+            if(!isLongevity && inspirationStrength !== 0){
+                return this.addPotencyEffect(uniqueEffect, effectString, inspirationStrength);
+            }
+            else{
+                
+				if(!effectString.includes("Instant")){
+                    const effectTime =" (" + uniqueEffect.duration_long[inspirationStrength] +  ")";
+                    effectString += effectTime;
+            
+                    return effectString;
+
+                }else{
+                    return effectString;
+                }
+            }
         }
-        return effectName;
     }
     
     static setSeal(seal, cask){
