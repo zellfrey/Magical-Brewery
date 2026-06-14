@@ -1,8 +1,13 @@
-import {ItemStack} from "@minecraft/server";
+import {ItemStack, system} from "@minecraft/server";
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
 import {PotionManager} from "../potion/PotionManager.js";
+import {MathUtils} from "../utils/MathUtils.js";
 
 export class MagicalBreweryPotion {
+
+	static echoPotionQueue = {
+		"beardedflea" : []
+	};
 
 	static onConsume(entity, potionItem, potionParams){
 
@@ -128,6 +133,17 @@ export class MagicalBreweryPotion {
 	}
 
 	static applyEchoEffect(entity, effect, totalTicks, potency){
-		console.log("applying echo effect")
+
+		if(totalTicks <= 1) return;
+
+		const echoDuration = totalTicks * 0.75;
+		const echoTriggerTime = (totalTicks * 1.2) + MathUtils.getRandomInt(300, 1800);
+		
+		system.runTimeout(() => 
+			{
+				entity.addEffect(effect, echoDuration, { amplifier: potency });
+				console.log("applying echo effect");
+			},		
+		echoTriggerTime);
 	}
 }

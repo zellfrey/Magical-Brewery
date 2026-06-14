@@ -60,6 +60,8 @@ item.magical_brewery:pages_brewing.name=§eBrewing Pages
 item.magical_brewery:pages_inspiration.name=§eInspiration Pages
 item.magical_brewery:pages_memories.name=§eMemories Pages
 item.magical_brewery:pages_echo.name=§eEcho Shard Pages
+item.magical_brewery:pages_amethyst_vessels.name=§eAmethyst Vessels Pages
+
 ##Potions---------------------------------
 item.ps.generic_potion.name=Potion of
 ##Effects---------------------------------
@@ -411,8 +413,8 @@ magical_brewery:tome_chapter_ingredients.body=I should get out of my comfort zon
 magical_brewery:tome_chapter_catalysers.title=Catalysers
 magical_brewery:tome_chapter_catalysers.body=As with ingredients, I will have to find materials out in the world that could enhance potions. I still need to "taste" the catalysts. I suspect some may not be the best to "taste", but what can you do.\n\nIn any case, once I have found a suitable catalyser I should try and brew and drink 3 potions with different effects to confirm what the catalyst can enhance.
 
-magical_brewery:tome_chapter_potion_materials.title=Potion Materials
-magical_brewery:tome_chapter_potion_materials.body=Potion Materials
+magical_brewery:tome_chapter_potion_vessels.title=Potion Vessels
+magical_brewery:tome_chapter_potion_vessels.body=Potion Vessels
 
 ##---------------------------------
 ##Tome Chapters-----Ingredients-------------------
@@ -527,13 +529,18 @@ magical_brewery:tome_chapter_echo_tier_1_2.body=Incredible! Echo dust has the ab
 
 ##---------------------------------
 
-##Tome Chapters-----Potion Materials-------------------
-magical_brewery:tome_chapter_glass_bottle.title=Glass
-magical_brewery:tome_chapter_glass_bottle.body=Glass
+##Tome Chapters-----Potion Vessels-------------------
+magical_brewery:tome_chapter_glass_vessels_1.title=Glass Vessels
+magical_brewery:tome_chapter_glass_vessels_1.body=Glass Vessels
 
-magical_brewery:tome_chapter_amethyst_bottle.title=Amethyst 
-magical_brewery:tome_chapter_amethyst_bottle.body=amethyst body
+magical_brewery:tome_chapter_glass_vessels_2.title=Glass Vessels
+magical_brewery:tome_chapter_glass_vessels_2.body=Glass Vessels
 
+magical_brewery:tome_chapter_amethyst_vessels_1.title=Amethyst Vessels
+magical_brewery:tome_chapter_amethyst_vessels_1.body=amethyst Vessels
+
+magical_brewery:tome_chapter_amethyst_vessels_2.title=Amethyst Vessels
+magical_brewery:tome_chapter_amethyst_vessels_2.body=amethyst Vessels
 
 ##---------------------------------
 ##Tome Chapters-----Cask Oddities-------------------

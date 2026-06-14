@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:pages_amethyst_vessels",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"magical_brewery:ou_get_pages": {
+				"tome_parent_chapter": "potion_vessels",
+				"tome_chapter": "amethyst_vessels_1"
+			},
+			"minecraft:icon": "magical_brewery:pages_amethyst_vessels",
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:pages_amethyst_vessels.name"
+			},
+			"minecraft:max_stack_size": {
+				"value": 1
+			},
+			"minecraft:tags": {
+				"tags": [
+					"magical_brewery:tome_pages"
+				]
+			}
+		}
+	}
+}

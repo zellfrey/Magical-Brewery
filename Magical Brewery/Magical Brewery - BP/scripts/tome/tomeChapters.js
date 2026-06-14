@@ -30,8 +30,9 @@ export const PAGES_CHAPTERS = {
 	},
 	"brewing":{
 		"main": ["brewing"],
-		"brewing" : ["recipes", "brewing_research"],
+		"brewing" : ["recipes", "potion_vessels", "brewing_research"],
 		"recipes":["ingredients", "catalysers"],
+		"potion_vessels": ["glass_vessels_1"],
 		"ingredients": [],
 		"catalysers": [],
 	},
@@ -40,6 +41,9 @@ export const PAGES_CHAPTERS = {
 	},
 	"seal_inspiration":{
 		"seals" : ["seal_inspiration"],
+	},
+	"amethyst_vessels_1":{
+		"potion_vessels" : ["amethyst_vessels_1"],
 	}
 
 };
@@ -49,23 +53,6 @@ export const TOME_POTION_INGREDIENT_CHAPTERS= {
 	]
 };
 
-// 	"Potion Materials": {
-//         title: "magical_brewery:tome_chapter_potion_materials.title",
-//         body: "magical_brewery:tome_chapter_potion_materials.body",
-//         buttons: [
-// 			{
-// 				chapter: "magical_brewery:tome_chapter_glass_bottle.title",
-// 				id: "Glass",
-// 				icon: "textures/items/potion_bottle_empty"
-// 			},
-// 			{
-// 				chapter: "magical_brewery:tome_chapter_amethyst_bottle.title",
-// 				id: "Amethyst",
-// 				icon: "textures/beardedflea/magical_brewery/items/amethyst/amethyst_bottle.png"
-// 			},
-// 		],
-// 		exitPage: "Brewing"
-// 	},
 
 export const TOME_CHAPTERS = {
 	//Main Chapters
@@ -176,13 +163,30 @@ export const TOME_CHAPTERS = {
 		icon: "textures/items/spider_eye_fermented",
 		exitPage: "brewing"
 	},
-	"potion_materials": {
-		icon: "textures/beardedflea/magical_brewery/items/redstone_shard.png",
+	"potion_vessels": {
+		icon: "textures/items/potion_bottle_empty",
 		exitPage: "brewing"
 	},
 	"brewing_research": {
 		icon: "textures/beardedflea/magical_brewery/tome/chapter_brewing_research.png",
 		exitPage: "brewing"
+	},
+	//Potion Vessel Chapters
+	"glass_vessels_1":{
+		icon: "textures/items/potion_bottle_empty",
+		exitPage: "potion_vessels"
+	},
+	"glass_vessels_2":{
+		icon: "textures/items/potion_bottle_empty",
+		exitPage: "potion_vessels"
+	},
+	"amethyst_vessels_1":{
+		icon: "textures/beardedflea/magical_brewery/items/amethyst/amethyst_bottle.png",
+		exitPage: "potion_vessels"
+	},
+	"amethyst_vessels_2":{
+		icon: "textures/beardedflea/magical_brewery/items/amethyst/amethyst_bottle.png",
+		exitPage: "potion_vessels"
 	},
 	//Recipes Chapters
 	"ingredients": {
