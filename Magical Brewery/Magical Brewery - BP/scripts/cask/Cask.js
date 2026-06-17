@@ -138,6 +138,11 @@ export class Cask {
 
     emptyCask(selectedItem, block, dimension, player, fillLevel){
 
+        const inventory = player.getComponent("inventory").container;
+		
+		//Currently a temporary solution. Will improve between 0.5 & 0.6
+        if(inventory.emptySlotsCount === 0 && selectedItem.amount > 1) return;
+
         let item = PotionManager.setItemStackFromCask(selectedItem, this.potion_effects, this.potion_liquid)
 
         TomeResearch.caskOddProgression(player, block, this, "empty");
