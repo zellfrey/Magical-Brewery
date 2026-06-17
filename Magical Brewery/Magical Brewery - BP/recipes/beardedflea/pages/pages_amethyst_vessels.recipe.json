@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:pages_amethyst_vessels"
+		},
+		"tags": ["magical_brewery:brewers_desk"],
+		"pattern": ["PAP", "PTP", "PAP"],
+		"key": {
+			"P": "minecraft:paper",
+			"T": "magical_brewery:brewers_tome",
+			"A": "magical_brewery:amethyst_bottle"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:pages_amethyst_vessels",
+				"count": 1
+			},
+			"magical_brewery:brewers_tome"
+		]
+	}
+}
