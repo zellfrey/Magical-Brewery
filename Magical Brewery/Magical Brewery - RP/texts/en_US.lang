@@ -531,16 +531,16 @@ magical_brewery:tome_chapter_echo_tier_1_2.body=Incredible! Echo dust has the ab
 
 ##Tome Chapters-----Potion Vessels-------------------
 magical_brewery:tome_chapter_glass_vessels_1.title=Glass Vessels
-magical_brewery:tome_chapter_glass_vessels_1.body=Glass Vessels
+magical_brewery:tome_chapter_glass_vessels_1.body=The very basic of potion vessels, and a good starter point for brewing potions. Although glass is a fragile material, it should be capable of containing simple potion effects and enhancements.\nAs for how glass bottles handle aging, I will have to find out.
 
 magical_brewery:tome_chapter_glass_vessels_2.title=Glass Vessels
-magical_brewery:tome_chapter_glass_vessels_2.body=Glass Vessels
+magical_brewery:tome_chapter_glass_vessels_2.body=Whilst still an appropriate vessel, as stated before it is very fragile. I have now learnt that a glass bottle can only contain a maximum of 2 effects. Perhaps there is a stronger material that not only can hold more than 2 effects but can also be used to create more exotic potions.
 
 magical_brewery:tome_chapter_amethyst_vessels_1.title=Amethyst Vessels
-magical_brewery:tome_chapter_amethyst_vessels_1.body=amethyst Vessels
+magical_brewery:tome_chapter_amethyst_vessels_1.body=After some thought and tinkering, I believe that amethyst can be a better alternative to glass. It’s far stronger but not as common. That shouldn’t be an issue. Importantly it should hold more effects when used for aging and maybe able to hold more powerful potions.
 
 magical_brewery:tome_chapter_amethyst_vessels_2.title=Amethyst Vessels
-magical_brewery:tome_chapter_amethyst_vessels_2.body=amethyst Vessels
+magical_brewery:tome_chapter_amethyst_vessels_2.body=amethyst Vessels_2
 
 ##---------------------------------
 ##Tome Chapters-----Cask Oddities-------------------
@@ -587,6 +587,9 @@ magical_brewery:message.tome_research_item.multi_clue_progression=I already know
 magical_brewery:message.tome_research_potion.multi_clue_discovery=\nI also have an ingredient that I know of that can use this potion to make another potion...
 
 magical_brewery:message.tome_research_cask_odd.discovery=Interesting...\nInstead of aging, this cask has changed the effect of this potion. I should take some notes.
+
+magical_brewery:message.tome_research_potion_vessel.broken=Ow! This bottle can't contain the amount of effects that are present in the cask.
+magical_brewery:message.tome_research_potion_vessel.discovery=\nIt appears that %s bottles can only contain a maximum of %s effects. I should take some notes.
 ##---------------------------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------------------------
@@ -596,4 +599,5 @@ magical_brewery:message.cask.tasting_spoon.new_effect=It also has a taste of %s.
 ##---------------------------------
 ##Magical Brewery general messages 
 magical_brewery:message.magical_brewery_general.wip=§cCurrently unavailable. Functionality will be added at a later date.
+magical_brewery:message.magical_brewery_illegal_potion.dhmis=Woah there friend I think you need to slow down.
 ##---------------------------------
