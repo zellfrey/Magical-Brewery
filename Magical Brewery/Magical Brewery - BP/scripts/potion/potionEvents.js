@@ -24,14 +24,49 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 
 world.afterEvents.itemCompleteUse.subscribe((e) => {
-
     if(e.itemStack.typeId !== "minecraft:potion") return; 
 
     PotionManager.giveExtraEffectsToEntity(e.source, e.itemStack)
 });
 
+//Check illegal potion items
+world.afterEvents.itemStartUse.subscribe((e) => {
+
+    if(e.itemStack.typeId === "minecraft:potion" || e.itemStack.hasTag("magical_brewery:potion")){
+        PotionManager.legalPotionCheck(e.source, e.itemStack);
+	}
+});
+
+//Check illegal entity potion items
+
+world.afterEvents.entitySpawn.subscribe((e) => {
+    const {entity} = e;
+    try{
+        if(entity.typeId !== "minecraft:item") return;
+
+        const item = entity.getComponent("item").itemStack;
+
+        if(item.typeId === "minecraft:potion" || item.hasTag("magical_brewery:potion")){
 
 
+			const potionValidEffects = PotionManager.getValidEffects(item.getLore());
+
+	        if(!PotionManager.shouldPotionBreak(PotionManager.getPotionVesselType(item), potionValidEffects.length + 1)) return;
+
+            system.runTimeout(() => 
+                {	
+                    if(!entity.isValid) return;
+                    
+                    entity.dimension.playSound("random.glass", entity.location, {volume: 0.8, pitch: 1.2})
+                    entity.remove();
+                },
+            20);
+		}
+	
+    }catch(error){
+        console.warn(error)
+    }
+});
 // system.beforeEvents.startup.subscribe(eventData => {
 //     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_amethyst_bottle', {
 //         onUseOn(e) {

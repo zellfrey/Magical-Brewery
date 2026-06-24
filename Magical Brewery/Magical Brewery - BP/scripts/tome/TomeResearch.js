@@ -38,11 +38,8 @@ export class TomeResearch {
 	}
 
 	static canPlayerResearchItem(player, tomePlayerData){
-		if(!tomePlayerData){
-			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.no_tome"});
-			return false;
-		}
-		else if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("brewing")){
+		
+		if(!tomePlayerData["unlocked_chapters"].hasOwnProperty("brewing")){
 			player.sendMessage({ translate: "magical_brewery:message.tome_research_item.no_brewing_chapter"});
 			return false;
 		}
@@ -546,5 +543,45 @@ export class TomeResearch {
 		playerTomeResearch[oppositeResearchString] = "done";
 		
 		return playerTomeResearch;
+	}
+	
+	static potionVesselResearch(player, potionVesselType, noOfEffects){
+		
+		let tomePlayerData = player.getDynamicProperty('magical_brewery:tome_data_v2');
+		
+		if(tomePlayerData === undefined) return;
+		
+		tomePlayerData = JSON.parse(tomePlayerData);
+		
+		if(TomeResearch.canPlayerResearchItem(player, tomePlayerData) &&
+		!tomePlayerData.unlocked_chapters["potion_vessels"].includes(`${potionVesselType}_vessels_2`)){
+			
+			const researchPartIndex = tomePlayerData.unlocked_chapters["potion_vessels"].findIndex(el => el === `${potionVesselType}_vessels_1`);
+			
+			tomePlayerData.unlocked_chapters["potion_vessels"].splice(researchPartIndex, 1, `${potionVesselType}_vessels_2`)
+
+			player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData));
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion_vessel.broken"});
+			player.dimension.playSound("ui.cartography_table.take_result", player.location, {volume: 0.6, pitch: 1});
+
+			TomeResearch.sendPlayerPotionVesselDiscoveryMessage(player, potionVesselType, noOfEffects.toString());
+			
+		}
+		else{
+			player.sendMessage({ translate: "magical_brewery:message.tome_research_potion_vessel.broken"});
+		}
+	}
+
+	static sendPlayerPotionVesselDiscoveryMessage(player, potionVesselType, noOfEffects){
+
+		const PotionVesselDiscoveryMessage = {
+				translate: "magical_brewery:message.tome_research_potion_vessel.discovery",
+				with: { rawtext: [
+					{ translate: potionVesselType}, 
+					{ translate: noOfEffects }
+				] },
+			};
+
+		player.sendMessage(PotionVesselDiscoveryMessage);
 	}
 }

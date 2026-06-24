@@ -111,6 +111,12 @@ export class Cask {
     }
 
     fillCask(selectedItem, block, dimension, player){
+		
+		const equipment = player.getComponent('equippable');
+		
+        PotionManager.legalPotionCheck(player, selectedItem);
+		
+        if(equipment.getEquipment('Mainhand') === undefined) return;
     
         const fillLevel = block.permutation.getState("magical_brewery:fill_level");
         const aged = block.permutation.getState("magical_brewery:aged");
@@ -129,7 +135,6 @@ export class Cask {
                     
         this.updateCaskBlock(block, fillLevel, dimension);
 
-        const equipment = player.getComponent('equippable');
         const emptyBottle = new ItemStack("glass_bottle", 1);
         setMainHand(player, equipment, selectedItem, emptyBottle);
 
@@ -143,15 +148,7 @@ export class Cask {
 		//Currently a temporary solution. Will improve between 0.5 & 0.6
         if(inventory.emptySlotsCount === 0 && selectedItem.amount > 1) return;
 
-        let item = PotionManager.setItemStackFromCask(selectedItem, this.potion_effects, this.potion_liquid)
-
-        TomeResearch.caskOddProgression(player, block, this, "empty");
-
-        const equipment = player.getComponent('equippable');
-
-        setMainHand(player, equipment, selectedItem, undefined);
-
-        player.getComponent("inventory").container.addItem(item)
+        PotionManager.givePotionFromCask(selectedItem, player, block, this);
 
         const pitch = fillLevel * 0.2 + 0.3
         dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: pitch});

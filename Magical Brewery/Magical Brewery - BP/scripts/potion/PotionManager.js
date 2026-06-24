@@ -2,6 +2,8 @@ import {world, system, ItemStack} from '@minecraft/server';
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
 import {MinecraftPotion} from "../potion/MinecraftPotion.js";
 import {MagicalBreweryPotion} from "../potion/MagicalBreweryPotion.js";
+import {TomeResearch} from "../tome/TomeResearch.js";
+import {setMainHand} from '../utils/containerUtils.js';
 
 export class PotionManager {
 
@@ -133,5 +135,87 @@ export class PotionManager {
 			newPotion.setLore(lore);
 		}
 		return newPotion;
+	}
+	
+	static legalPotionCheck(player, item){
+
+		const potionValidEffects = PotionManager.getValidEffects(item.getLore());
+		const equipment = player.getComponent('equippable');
+
+		if(!PotionManager.shouldPotionBreak(PotionManager.getPotionVesselType(item), potionValidEffects.length + 1)) return;
+
+		setMainHand(player, equipment, item, undefined);
+
+		player.playSound("random.glass", {volume: 0.8, pitch: 1.2});
+		player.applyDamage(2);
+		player.sendMessage({ translate: "magical_brewery:message.magical_brewery_illegal_potion.dhmis"});
+
+	}
+
+	static givePotionFromCask(selectedItem, player, block, cask){
+
+		const item = PotionManager.setItemStackFromCask(selectedItem, cask.potion_effects, cask.potion_liquid);
+		const bottleVesselType = selectedItem.typeId.split(":")[1].split("_")[0];	
+		const potionValidEffects = PotionManager.getValidEffects(cask.potion_effects);
+		const equipment = player.getComponent('equippable');
+
+		if(PotionManager.shouldPotionBreak(bottleVesselType, potionValidEffects.length)){
+
+			PotionManager.potionBreak(player, selectedItem, item, bottleVesselType, equipment, potionValidEffects.length-1)
+		}
+		else{
+			TomeResearch.caskOddProgression(player, block, cask, "empty");
+
+			setMainHand(player, equipment, selectedItem, undefined);
+
+        	player.getComponent("inventory").container.addItem(item);
+		}
+	}
+
+	static getPotionVesselType(potion){
+		if(potion.hasTag("magical_brewery:potion")){
+		    return potion.getTags().find(el => el !== "magical_brewery:potion");
+        }
+		else{
+           return "glass";
+        }
+	}
+
+	static shouldPotionBreak(potionVesselType, noOfEffects){
+		switch(potionVesselType){
+			case "glass":
+				return noOfEffects > 2;
+			break;
+			case "amethyst":
+				return noOfEffects > 5;
+			break;
+		}
+	}
+
+	static potionBreak(player, selectedItem, item, potionVesselType, equipment, noOfEffects){
+
+		const inventory = player.getComponent("inventory").container;
+		setMainHand(player, equipment, selectedItem, undefined);
+
+		const emptySlotIndex = inventory.firstEmptySlot();
+		inventory.setItem(emptySlotIndex, item);
+
+		system.runTimeout(() => 
+			{	
+				const currentItem  = inventory.getItem(emptySlotIndex);
+				//Just doing a basic check. Further checks on an illegal potion item will be 
+				//done when a player is either consuming, throwing or dropping said illegal potion,
+				if(!player.isValid || currentItem === undefined || !currentItem.matches(item.typeId)) return;
+				
+				inventory.setItem(emptySlotIndex, undefined);
+				player.playSound("random.glass", {volume: 0.8, pitch: 1.2})
+				player.applyDamage(2);
+				TomeResearch.potionVesselResearch(player, potionVesselType, noOfEffects);
+			},
+		20);
+	}
+	
+	static getValidEffects(potionEffects){
+		return potionEffects.filter(el => el !== "Mundane (no effect)" && el !== "minecraft:mundane");
 	}
 }
