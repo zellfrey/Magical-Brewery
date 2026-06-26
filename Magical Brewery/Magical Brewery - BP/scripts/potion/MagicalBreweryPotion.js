@@ -2,6 +2,7 @@ import {ItemStack, system} from "@minecraft/server";
 import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
 import {PotionManager} from "../potion/PotionManager.js";
 import {MathUtils} from "../utils/MathUtils.js";
+import {setMainHand} from '../utils/containerUtils.js';
 
 export class MagicalBreweryPotion {
 
@@ -29,29 +30,29 @@ export class MagicalBreweryPotion {
 		PotionManager.giveExtraEffectsToEntity(entity, potionItem);
 	}
 
-	static getEffectDuration(effectObj, potionDuration){
+	// static getEffectDuration(effectObj, potionDuration){
 
-		let effectTime;
+	// 	let effectTime;
 
-		switch(potionDuration){
-			case "regular":
-				effectTime = effectObj.duration_long[0];
-			break;
-			case "long":
-				effectTime = effectObj.duration_long[1];
-			break;
-			case "xlong":
-				effectTime = effectObj.duration_long[2];
-			break;
-			case "strong":
-				effectTime = effectObj.duration_potency[0];
-			break;
-			case "xstrong":
-				effectTime = effectObj.duration_potency[1];
-			break;
-		}
-		return effectTime;
-	}
+	// 	switch(potionDuration){
+	// 		case "regular":
+	// 			effectTime = effectObj.duration_long[0];
+	// 		break;
+	// 		case "long":
+	// 			effectTime = effectObj.duration_long[1];
+	// 		break;
+	// 		case "xlong":
+	// 			effectTime = effectObj.duration_long[2];
+	// 		break;
+	// 		case "strong":
+	// 			effectTime = effectObj.duration_potency[0];
+	// 		break;
+	// 		case "xstrong":
+	// 			effectTime = effectObj.duration_potency[1];
+	// 		break;
+	// 	}
+	// 	return effectTime;
+	// }
 
 	static getProperties(selectedItem, potion){
     
