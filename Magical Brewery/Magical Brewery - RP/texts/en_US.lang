@@ -53,6 +53,7 @@ item.magical_brewery:tasting_spoon.name=Tasting Spoon
 item.magical_brewery:amethyst_bottle.name=Amethyst Bottle
 item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle
 item.magical_brewery:amethyst_potion_awkward.name=Awkward Amethyst Potion
+item.magical_brewery:amethyst_potion_mundane.name=Mundane Amethyst Potion
 magical_brewery.amethyst_potion.name=Amethyst
 ##Tome&Scrolls------------------------------------
 item.magical_brewery:brewers_tome.name=§dBrewers' Tome
