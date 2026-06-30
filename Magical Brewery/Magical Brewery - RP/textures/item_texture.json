@@ -107,53 +107,263 @@
 		"magical_brewery:amethyst_water_bottle":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_water_bottle.png"
 		},
-		"magical_brewery:stained_planks_decay":{
+		"magical_brewery:amethyst_potion_decay":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_decay.png"
 		},
-		"magical_brewery:stained_planks_harming":{
+		"magical_brewery:amethyst_potion_long_decay":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_decay.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_decay":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_decay.png"
+		},
+		"magical_brewery:amethyst_potion_strong_decay":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_decay.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_decay":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_decay.png"
+		},
+		"magical_brewery:amethyst_potion_harming":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_harming.png"
 		},
-		"magical_brewery:stained_planks_healing":{
+		"magical_brewery:amethyst_potion_strong_harming":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_harming.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_harming":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_harming.png"
+		},
+		"magical_brewery:amethyst_potion_healing":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_healing.png"
 		},
-		"magical_brewery:stained_planks_invisibility":{
+		"magical_brewery:amethyst_potion_strong_healing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_healing.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_healing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_healing.png"
+		},
+		"magical_brewery:amethyst_potion_invisibility":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_invisibility.png"
+		},
+		"magical_brewery:amethyst_potion_long_invisibility":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_invisibility.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_invisibility":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_invisibility.png"
 		},
 		"magical_brewery:amethyst_potion_leaping":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_leaping.png"
 		},
+		"magical_brewery:amethyst_potion_long_leaping":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_leaping.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_leaping":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_leaping.png"
+		},
+		"magical_brewery:amethyst_potion_strong_leaping":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_leaping.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_leaping":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_leaping.png"
+		},
 		"magical_brewery:amethyst_potion_poison":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_poison.png"
+		},
+		"magical_brewery:amethyst_potion_long_poison":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_poison.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_poison":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_poison.png"
+		},
+		"magical_brewery:amethyst_potion_strong_poison":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_poison.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_poison":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_poison.png"
 		},
 		"magical_brewery:amethyst_potion_regeneration":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_regeneration.png"
 		},
+		"magical_brewery:amethyst_potion_long_regeneration":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_regeneration.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_regeneration":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_regeneration.png"
+		},
+		"magical_brewery:amethyst_potion_strong_regeneration":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_regeneration.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_regeneration":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_regeneration.png"
+		},
 		"magical_brewery:amethyst_potion_resistance_fire":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_resistance_fire.png"
+		},
+		"magical_brewery:amethyst_potion_long_resistance_fire":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_resistance_fire.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_resistance_fire":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_resistance_fire.png"
 		},
 		"magical_brewery:amethyst_potion_slow_falling":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_slow_falling.png"
 		},
+		"magical_brewery:amethyst_potion_long_slow_falling":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_slow_falling.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_slow_falling":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_slow_falling.png"
+		},
 		"magical_brewery:amethyst_potion_slowness":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_slowness.png"
+		},
+		"magical_brewery:amethyst_potion_long_slowness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_slowness.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_slowness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_slowness.png"
+		},
+		"magical_brewery:amethyst_potion_strong_slowness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_slowness.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_slowness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_slowness.png"
 		},
 		"magical_brewery:amethyst_potion_strength":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strength.png"
 		},
+		"magical_brewery:amethyst_potion_long_strength":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_strength.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_strength":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_strength.png"
+		},
+		"magical_brewery:amethyst_potion_strong_strength":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_strength.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_strength":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_strength.png"
+		},
 		"magical_brewery:amethyst_potion_swiftness":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_swiftness.png"
+		},
+		"magical_brewery:amethyst_potion_long_swiftness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_swiftness.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_swiftness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_swiftness.png"
+		},
+		"magical_brewery:amethyst_potion_strong_swiftness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_swiftness.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_swiftness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_swiftness.png"
 		},
 		"magical_brewery:amethyst_potion_turtle_master":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_turtle_master.png"
 		},
+		"magical_brewery:amethyst_potion_long_turtle_master":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_turtle_master.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_turtle_master":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_turtle_master.png"
+		},
+		"magical_brewery:amethyst_potion_strong_turtle_master":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_turtle_master.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_turtle_master":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_turtle_master.png"
+		},
 		"magical_brewery:amethyst_potion_vision_night":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_vision_night.png"
+		},
+		"magical_brewery:amethyst_potion_long_vision_night":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_vision_night.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_vision_night":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_vision_night.png"
 		},
 		"magical_brewery:amethyst_potion_water_breathing":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_water_breathing.png"
 		},
+		"magical_brewery:amethyst_potion_long_water_breathing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_water_breathing.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_water_breathing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_water_breathing.png"
+		},
 		"magical_brewery:amethyst_potion_weakness":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_weakness.png"
+		},
+		"magical_brewery:amethyst_potion_long_weakness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_weakness.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_weakness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_weakness.png"
+		},
+		"magical_brewery:amethyst_potion_strong_weakness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_weakness.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_weakness":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_weakness.png"
+		},
+		"magical_brewery:amethyst_potion_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_oozing.png"
+		},
+		"magical_brewery:amethyst_potion_long_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_oozing.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_oozing.png"
+		},
+		"magical_brewery:amethyst_potion_strong_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_oozing.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_oozing":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_oozing.png"
+		},
+		"magical_brewery:amethyst_potion_infested":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_infested.png"
+		},
+		"magical_brewery:amethyst_potion_long_infested":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_infested.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_infested":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_infested.png"
+		},
+		"magical_brewery:amethyst_potion_strong_infested":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_infested.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_infested":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_infested.png"
+		},
+		"magical_brewery:amethyst_potion_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_weaving.png"
+		},
+		"magical_brewery:amethyst_potion_long_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_weaving.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_weaving.png"
+		},
+		"magical_brewery:amethyst_potion_strong_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_weaving.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_weaving":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_weaving.png"
+		},
+		"magical_brewery:amethyst_potion_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_wind_charged.png"
+		},
+		"magical_brewery:amethyst_potion_long_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_long_wind_charged.png"
+		},
+		"magical_brewery:amethyst_potion_xlong_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xlong_wind_charged.png"
+		},
+		"magical_brewery:amethyst_potion_strong_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_strong_wind_charged.png"
+		},
+		"magical_brewery:amethyst_potion_xstrong_wind_charged":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_wind_charged.png"
 		},
 		"magical_brewery:seal_basic":{
 			"textures": "textures/beardedflea/magical_brewery/items/seals/seal_basic.png"

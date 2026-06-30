@@ -50,8 +50,10 @@ item.magical_brewery:glassmith_hammer.name=Glassmith's Hammer
 ##item.magical_brewery:glassmith_chisel.name=Glassmith's Chisel
 item.magical_brewery:ageless_pocket_watch.name=Ageless Pocket Watch
 item.magical_brewery:tasting_spoon.name=Tasting Spoon
-item.magical_brewery:amethyst_bottle.name=Amethyst Bottle §c[W.I.P]
-item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle §c[W.I.P]
+item.magical_brewery:amethyst_bottle.name=Amethyst Bottle
+item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle
+item.magical_brewery:amethyst_potion_awkward.name=Awkward Amethyst Potion
+magical_brewery.amethyst_potion.name=Amethyst
 ##Tome&Scrolls------------------------------------
 item.magical_brewery:brewers_tome.name=§dBrewers' Tome
 item.magical_brewery:pages_crystallography.name=§eCrystallography Pages
@@ -277,6 +279,7 @@ magical_brewery:pure_quartz_crystals_nature=Pure Quartz Crystals
 magical_brewery:seals_items=Cask Seals
 magical_brewery:glass_potion_xlong_equipment=Glass Potions Duration +
 magical_brewery:glass_potion_xstrong_equipment=Glass Potions Potency +
+magical_brewery:amethyst_potions_equipment=Amethyst Potions
 ##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means
 
 

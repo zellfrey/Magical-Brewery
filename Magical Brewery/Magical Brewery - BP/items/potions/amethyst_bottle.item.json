@@ -9,7 +9,6 @@
 		},
 		"components": {
 			"magical_brewery:on_use_amethyst_bottle": {},
-			"magical_brewery:on_use_on_cauldron_amethyst_bottle": {},
 			"minecraft:hand_equipped": false,
 			"minecraft:icon": "magical_brewery:amethyst_bottle",
 			"minecraft:display_name":{

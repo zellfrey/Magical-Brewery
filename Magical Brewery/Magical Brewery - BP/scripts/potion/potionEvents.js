@@ -5,7 +5,7 @@ import {ON_DEATH_EFFECTS, ON_HIT_EFFECTS} from "../potion/potionEffects.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {getAirBlockBox} from "../utils/blockPlacementUtils.js";
 
-
+//Potion consume events
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:oc_potion', {
         onConsume(e,p) {
@@ -22,22 +22,19 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
-
 world.afterEvents.itemCompleteUse.subscribe((e) => {
     if(e.itemStack.typeId !== "minecraft:potion") return; 
 
     PotionManager.giveExtraEffectsToEntity(e.source, e.itemStack)
 });
 
-//Check illegal potion items
+//Check illegal potion items events
 world.afterEvents.itemStartUse.subscribe((e) => {
 
     if(e.itemStack.typeId === "minecraft:potion" || e.itemStack.hasTag("magical_brewery:potion")){
         PotionManager.legalPotionCheck(e.source, e.itemStack);
 	}
 });
-
-//Check illegal entity potion items
 
 world.afterEvents.entitySpawn.subscribe((e) => {
     const {entity} = e;
@@ -66,53 +63,6 @@ world.afterEvents.entitySpawn.subscribe((e) => {
     }catch(error){
         console.warn(error)
     }
-});
-// system.beforeEvents.startup.subscribe(eventData => {
-//     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_amethyst_bottle', {
-//         onUseOn(e) {
-//             const {source, itemStack, block} = e
-//             console.log(block.typeId)
-//             if(block.typeId !== "minecraft:water") return;
-            
-//             const equipment = source.getComponent('equippable');
-//             const selectedItem = equipment.getEquipment('Mainhand');
-//             const amethystWaterBottle = new ItemStack("magical_brewery:amethyst_water_bottle", 1)
-            
-
-//             // if (block.typeId === "minecraft:cauldron"){
-
-//             //     const fillLevel =  block.getComponent("minecraft:fluid_container").fillLevel;
-//             //     const fluid = block.getComponent("minecraft:fluid_container").getFluidType();
-
-//             //     if(fillLevel < 1 || fluid !== "Water") return;
-
-//             //     block.setPermutation(block.permutation.withState("fill_level", fillLevel-2));
-//             // }
-
-//             block.dimension.playSound("bottle.fill", block.location, {volume: 0.8, pitch: 1.0});
-
-//             setMainHand(source, equipment, selectedItem, undefined);
-//             source.getComponent("inventory").container.addItem(amethystWaterBottle)
-//         }
-//     });
-// });
-
-system.beforeEvents.startup.subscribe(eventData => {
-    eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_amethyst_bottle', {
-        onUse(e) {
-
-            const {source, itemStack } = e
-            // console.log(usedOnBlockPermutation.type.id)
-            const blockRayCastOptions = {includeLiquidBlocks: true, maxDistance: 6};
-            const blockRaycastHit = source.getBlockFromViewDirection(blockRayCastOptions);
-			if(blockRaycastHit === undefined) return;
-            console.log(blockRaycastHit.block.typeId)
-            //Another for loop to iterate through each horizontal cardinal direction adding to the y value
-            // if(block.typeId === "minecraft:water" || block.isWaterlogged){
-            //     console.log("filling from water")
-            // }
-        }
-    });
 });
 
 
