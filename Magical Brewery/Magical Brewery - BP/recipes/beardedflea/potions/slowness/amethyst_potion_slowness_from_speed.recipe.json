@@ -1,0 +1,12 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_brewing_mix": {
+        "description": {
+            "identifier": "amethyst_potion_slowness_from_speed"
+        },
+        "tags": ["brewing_stand"],
+        "input": "magical_brewery:amethyst_potion_swiftness",
+        "reagent": "minecraft:fermented_spider_eye",
+        "output": "magical_brewery:amethyst_potion_slowness"
+    }
+}

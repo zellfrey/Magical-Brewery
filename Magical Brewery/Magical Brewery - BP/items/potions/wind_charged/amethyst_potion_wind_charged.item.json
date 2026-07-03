@@ -15,7 +15,7 @@
 				"tags": ["magical_brewery:potion", "amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.windCharged.name\n§c%potion.windCharged(3:00)"
+				"value": "Amethyst %potion.windCharged.name\n§c%potion.windCharged (3:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_wind_charged",
 			"minecraft:max_stack_size": {

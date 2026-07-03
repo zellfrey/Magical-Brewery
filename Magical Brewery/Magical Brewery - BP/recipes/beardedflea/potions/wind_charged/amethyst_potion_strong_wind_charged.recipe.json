@@ -1,0 +1,12 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_brewing_mix": {
+        "description": {
+            "identifier": "magical_brewery:amethyst_potion_strong_wind_charged"
+        },
+        "tags": ["brewing_stand"],
+        "input": "magical_brewery:amethyst_potion_wind_charged",
+        "reagent": "minecraft:glowstone_dust",
+        "output": "magical_brewery:amethyst_potion_strong_wind_charged"
+    }
+}
