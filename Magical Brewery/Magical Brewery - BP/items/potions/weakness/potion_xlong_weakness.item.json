@@ -4,7 +4,8 @@
 		"description": {
 			"identifier": "magical_brewery:potion_xlong_weakness",
 			"menu_category": {
-				"category": "equipment"
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.potion"
 			}
 		},
 		"components": {
