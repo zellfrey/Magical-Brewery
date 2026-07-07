@@ -15,7 +15,7 @@
 				"tags": ["magical_brewery:potion", "amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "%Amethyst potion.weaving.name\n§c%potion.weaving %potion.potency.1 (1:30)"
+				"value": "Amethyst %potion.weaving.name\n§c%potion.weaving %potion.potency.1 (1:30)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_strong_weaving",
 			"minecraft:max_stack_size": {

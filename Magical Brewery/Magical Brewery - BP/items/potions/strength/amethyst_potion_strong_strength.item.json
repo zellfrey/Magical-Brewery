@@ -15,7 +15,7 @@
 				"tags": ["magical_brewery:potion", "amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "%Amethyst potion.damageBoost.name\n§7%potion.damageBoost %potion.potency.1 (1:30)\n\n§5%potion.effects.whenDrank\n§9+2.99 %attribute.name.generic.attackDamage"
+				"value": "Amethyst %potion.damageBoost.name\n§7%potion.damageBoost %potion.potency.1 (1:30)\n\n§5%potion.effects.whenDrank\n§9+2.99 %attribute.name.generic.attackDamage"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_strong_strength",
 			"minecraft:glint": false,

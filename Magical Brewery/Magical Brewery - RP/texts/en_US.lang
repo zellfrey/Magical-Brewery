@@ -54,6 +54,8 @@ item.magical_brewery:amethyst_bottle.name=Amethyst Bottle
 item.magical_brewery:amethyst_water_bottle.name=Amethyst Water Bottle
 item.magical_brewery:amethyst_potion_awkward.name=Awkward Amethyst Potion
 item.magical_brewery:amethyst_potion_mundane.name=Mundane Amethyst Potion
+item.magical_brewery:amethyst_echo_potion_mundane.name=Mundane Amethyst Echo Potion
+item.magical_brewery:amethyst_splash_potion_mundane.name=Mundane Amethyst Splash Potion
 magical_brewery.amethyst_potion.name=Amethyst
 ##Tome&Scrolls------------------------------------
 item.magical_brewery:brewers_tome.name=§dBrewers' Tome
@@ -281,6 +283,8 @@ magical_brewery:seals_items=Cask Seals
 magical_brewery:glass_potion_xlong_equipment=Glass Potions Duration +
 magical_brewery:glass_potion_xstrong_equipment=Glass Potions Potency +
 magical_brewery:amethyst_potions_equipment=Amethyst Potions
+magical_brewery:amethyst_echo_potions_equipment=Amethyst Echo Potions
+magical_brewery:amethyst_splash_potions_equipment=Amethyst Splash Potions
 ##Author Comments: If a block isnt in the language file then it shouldnt be obtained in any non-survival means
 
 
