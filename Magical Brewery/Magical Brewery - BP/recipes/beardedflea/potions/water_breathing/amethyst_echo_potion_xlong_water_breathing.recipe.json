@@ -1,0 +1,12 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_brewing_mix": {
+        "description": {
+            "identifier": "magical_brewery:amethyst_echo_potion_xlong_water_breathing"
+        },
+        "tags": ["brewing_stand"],
+        "input": "magical_brewery:amethyst_potion_xlong_water_breathing",
+        "reagent": "magical_brewery:echo_dust",
+        "output": "magical_brewery:amethyst_echo_potion_xlong_water_breathing"
+    }
+}
