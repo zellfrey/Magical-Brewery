@@ -198,6 +198,16 @@ export const TOME_CHAPTERS = {
 		exitPage: "recipes"
 	},
 	//ingredients chapters
+	"awkward_1":{
+		title: "item.nether_wart.name",
+		icon: "textures/items/nether_wart",
+		exitPage: "ingredients"
+	},
+	"awkward_2":{
+		title: "potion.awkward.name",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_stren_2.png",
+		exitPage: "ingredients"
+	},
 	"strength_1":{
 		title: "item.blaze_powder.name",
 		icon: "textures/items/blaze_powder",

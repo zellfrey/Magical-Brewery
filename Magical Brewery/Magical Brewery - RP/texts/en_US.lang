@@ -428,6 +428,9 @@ magical_brewery:tome_chapter_potion_vessels.body=Potion Vessels
 ##Tome Chapters-----Ingredients-------------------
 ##Singular-clue potions & ingredients------------
 
+magical_brewery:tome_chapter_awkward_1.body=
+magical_brewery:tome_chapter_awkward_2.body=
+
 magical_brewery:tome_chapter_strength_1.body=Hot to the touch, like sand that has sat in the sun all day. After tasting it I feel a sudden surge of strength throughout my body.\nBlaze powder definitely has potential.
 magical_brewery:tome_chapter_strength_2.body=Using a Brewing Station I have created a potion that uses Blaze Powder. My sword feels lighter, and I can swing it with the greatest of ease.\nThis should be able to increase my combat power against the creatures of the night.
 

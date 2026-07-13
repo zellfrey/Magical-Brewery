@@ -83,7 +83,8 @@ export class Tome {
 		
 		if(isNaN(pageLastPart)){
 			return {translate: `magical_brewery:tome_chapter_${tomePage}.body`};
-		}else{
+		}
+		else{
 			
 			const tomePageParts = [];
 			
