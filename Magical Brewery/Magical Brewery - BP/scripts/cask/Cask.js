@@ -44,7 +44,7 @@ export class Cask {
     }
 
     matchesCaskPotion(potion, extraEffects){
-        const matchesEffect = this.potion_effects[0] === potion["effectID"];
+        const matchesEffect = this.potion_effects[0].split(":")[1] === potion["effectID"].split(":")[1];
         const matchesLiquid = this.potion_liquid === potion["deliveryType"];
 		
 		if(!matchesEffect || !matchesLiquid) return false;
@@ -70,7 +70,7 @@ export class Cask {
     }
 
     getFirstPotionString(){
-        return PotionManager.getEffectString(this.potion_effects[0]);
+        return PotionManager.getEffectString(this.potion_effects[0], this.potion_liquid);
     }
 	
 	getFirstPotionEffectID(){
@@ -146,7 +146,14 @@ export class Cask {
         const inventory = player.getComponent("inventory").container;
 		
 		//Currently a temporary solution. Will improve between 0.5 & 0.6
+		//TODO: Have potion drop from player
         if(inventory.emptySlotsCount === 0 && selectedItem.amount > 1) return;
+		
+		if(selectedItem.typeId === "minecraft:glass_bottle" && this.potion_liquid === "ConsumeEcho"){
+			
+			player.sendMessage("This cask contains a potion that is too powerful to be held in a glass bottle.");
+			return;
+		}
 
         PotionManager.givePotionFromCask(selectedItem, player, block, this);
 

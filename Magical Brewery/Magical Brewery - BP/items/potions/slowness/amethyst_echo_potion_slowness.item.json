@@ -9,10 +9,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["slowness", 1800, 0]
+				"effect_properties": ["slowness", 1800, 0],
+				"delivery_type": "ConsumeEcho"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst Echo %potion.moveSlowdown.name\n§c%potion.moveSlowdown (1:30)\n\n§5%potion.effects.whenDrank\n§c-15%% %potion.moveSpeed"

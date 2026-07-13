@@ -10,10 +10,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["strength", 1800, 2]
+				"effect_properties": ["strength", 1800, 2],
+				"delivery_type": "Consume"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "glass"]
+				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.damageBoost.name\n§7%potion.damageBoost %potion.potency.2 (1:30)\n\n§5%potion.effects.whenDrank\n§9+5.2 %attribute.name.generic.attackDamage"

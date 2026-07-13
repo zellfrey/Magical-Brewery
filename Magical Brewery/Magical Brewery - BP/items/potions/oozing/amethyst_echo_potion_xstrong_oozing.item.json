@@ -9,10 +9,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["oozing", 1800, 2]
+				"effect_properties": ["oozing", 1800, 2],
+				"delivery_type": "ConsumeEcho"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst Echo %potion.oozing.name\n§c%potion.oozing %potion.potency.2 (1:30)"

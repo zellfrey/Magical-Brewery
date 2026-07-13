@@ -12,7 +12,7 @@
 				"effect_properties": ["wind_charged", 9600, 0]
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst %potion.windCharged.name\n§c%potion.windCharged (8:00)"

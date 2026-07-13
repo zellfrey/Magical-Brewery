@@ -10,10 +10,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["infested", 1800, 2]
+				"effect_properties": ["infested", 1800, 2],
+				"delivery_type": "Consume"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "glass"]
+				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.infested.name\n§c%potion.infested %potion.potency.2 (1:30)"

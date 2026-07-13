@@ -9,10 +9,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["instant_damage", 1, 1]
+				"effect_properties": ["instant_damage", 1, 1],
+				"delivery_type": "ConsumeEcho"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst Echo %potion.harm.name\n§c%potion.harm %potion.potency.1"

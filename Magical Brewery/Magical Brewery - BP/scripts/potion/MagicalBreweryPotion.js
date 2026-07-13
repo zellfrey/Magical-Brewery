@@ -55,19 +55,35 @@ export class MagicalBreweryPotion {
 	// }
 
 	static getProperties(selectedItem, potion){
-    
-		potion["effectID"] = selectedItem.typeId;
-		//TODO: Use custom parameters to get delivery type
-		potion["deliveryType"] = "Consume";
-    
+		
+		let potionEffect = selectedItem.typeId.split(":")[1].split("_");
+		
+		if(selectedItem.hasTag("magical_brewery:amethyst")){
+			//Remove Amethyst word do bring amethyst potions to "default" level
+			potionEffect.shift("");
+		}
+		
+		potion["deliveryType"] = MagicalBreweryPotion.getDeliveryType(selectedItem);
+		
+		//Remove deliveryType string from typeId(I wish there was a better item system)
+		if(potionEffect[0] !== "potion") potionEffect.shift("");
+		
+		//Remove "potion"
+		potionEffect.shift("");
+		
+		potion["effectID"] = "magical_brewery:" + potionEffect.join("_");
+		
     	return potion;
 	}
+	
+	static getDeliveryType(potionItem){
+		return potionItem.getComponent("magical_brewery:oc_potion").customComponentParameters.params.delivery_type;
+	}
+	
+	static getEffectString(effectID, potionDeliveryType){
 
-	static getEffectString(effectID){
-		//Currently being lazy and just implementing an easy method of getting ID String, rather than
-		//breaking down the effectID array and analysing each part 
 		//remove potion element(1st)
-		effectID.shift();
+		//effectID.shift();
 
 		let modifier = ""; 
 
@@ -107,15 +123,27 @@ export class MagicalBreweryPotion {
 			effectID[i] = effectID[i][0].toUpperCase() + effectID[i].substring(1);
 		}
 
-		const effectString = effectID.join(" ") + modifier;
+		const effectString = effectID.join(" ") + modifier + MagicalBreweryPotion.getDeliveryTypeString(potionDeliveryType);
 
 		return effectString;
 	}
-
+	
+	static getDeliveryTypeString(potionDeliveryType){
+		
+		switch(potionDeliveryType){
+			case "ConsumeEcho":
+				return " (Echoing)";
+			break;
+			default:
+				return "";
+			break;
+		}
+	}
+	
 	static getEffectID(effectID){
 		
 		//remove potion element(1st)
-		effectID.shift();
+		//effectID.shift();
 		
 		if(POTION_DURATION_LEVELS.includes(effectID[0])){
 
@@ -126,11 +154,33 @@ export class MagicalBreweryPotion {
 		// if(effectID[0] === "vision" || effectID[0] === "resistance"){
 		// 	effectID = [effectID[1], effectID[0]]
 		// }
+		
 		return effectID.join("_");
 	}
+	
+	static buildPotionType(rootPotionID, caskPotionLiquid, isAmethystBottle){
+		
+		let MagicalBreweryPotionType = MagicalBreweryPotion.getPotionDeliveryTypeId(caskPotionLiquid) + "potion_" + rootPotionID;
+		
+		if(isAmethystBottle) MagicalBreweryPotionType = "amethyst_" + MagicalBreweryPotionType;
+		
+		return "magical_brewery:" + MagicalBreweryPotionType;
+		
+	}
+	
+	static getPotionDeliveryTypeId(caskPotionLiquid){
+		switch(caskPotionLiquid){
+			case "ConsumeEcho":
+				return "echo_";
+			break;
+			default:
+				return "";
+			break;
+		}
+	}
 
-	static setItemStack(caskFirstPotionEffect){
-		return new ItemStack(caskFirstPotionEffect, 1);
+	static setItemStack(MagicalBreweryPotion){
+		return new ItemStack(MagicalBreweryPotion, 1);;
 	}
 
 	static applyEchoEffect(entity, effect, totalTicks, potency){

@@ -9,10 +9,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["weaving", 9600, 0]
+				"effect_properties": ["weaving", 9600, 0],
+				"delivery_type": "ConsumeEcho"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst Echo %potion.weaving.name\n§c%potion.weaving (8:00)"

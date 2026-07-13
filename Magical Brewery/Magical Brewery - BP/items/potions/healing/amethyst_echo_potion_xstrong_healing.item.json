@@ -9,10 +9,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["instant_health", 1, 2]
+				"effect_properties": ["instant_health", 1, 2],
+				"delivery_type": "ConsumeEcho"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst Echo %potion.heal.name\n§7%potion.heal %potion.potency.2"

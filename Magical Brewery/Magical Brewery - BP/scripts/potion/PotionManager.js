@@ -77,16 +77,16 @@ export class PotionManager {
 		return enhancedType;
 	}
 
-	static getEffectString(potion){
+	static getEffectString(potion, potionDeliveryType){
 		
 		const potionRootID = potion.split(":")[0];
         const effectID = potion.split(":")[1].split("_");
 
 		if(potionRootID === "minecraft"){
-			return MinecraftPotion.getEffectString(effectID)
+			return MinecraftPotion.getEffectString(effectID, potionDeliveryType)
 		}
 		else{
-            return MagicalBreweryPotion.getEffectString(effectID)
+            return MagicalBreweryPotion.getEffectString(effectID, potionDeliveryType)
         }
 	}
 
@@ -116,16 +116,28 @@ export class PotionManager {
 	}
 
 	static setItemStackFromCask(selectedItem, caskPotionEffects, caskPotionLiquid){
-
-		const potionCreationType = caskPotionEffects[0].split(":")[0];
+		
+		const rootPotionID = caskPotionEffects[0].split(":")[1];
+		const isAmethystBottle = selectedItem.typeId === "magical_brewery:amethyst_bottle";
+			
 		let newPotion;
-
-		if(potionCreationType === "minecraft"){
-			newPotion = MinecraftPotion.setItemStack(caskPotionEffects[0], caskPotionLiquid)
+		
+		if(!isAmethystBottle){
+			
+			try{
+				newPotion = MinecraftPotion.setItemStack("minecraft:" + rootPotionID, caskPotionLiquid);
+			}
+			catch{
+				const magicalBreweryPotion = MagicalBreweryPotion.buildPotionType(rootPotionID, caskPotionLiquid, isAmethystBottle);
+				
+				newPotion = MagicalBreweryPotion.setItemStack(magicalBreweryPotion);
+			}
 		}
 		else{
-			newPotion = MagicalBreweryPotion.setItemStack(caskPotionEffects[0])
+			const magicalBreweryPotion = MagicalBreweryPotion.buildPotionType(rootPotionID, caskPotionLiquid, isAmethystBottle);
+			newPotion = MagicalBreweryPotion.setItemStack(magicalBreweryPotion);
 		}
+		
 	
 		if(caskPotionEffects.length > 1){
 			const extraEffects = caskPotionEffects.slice(1)
@@ -143,7 +155,7 @@ export class PotionManager {
 		const equipment = player.getComponent('equippable');
 
 		if(!PotionManager.shouldPotionBreak(PotionManager.getPotionVesselType(item), potionValidEffects.length + 1)) return;
-
+		
 		setMainHand(player, equipment, item, undefined);
 
 		player.playSound("random.glass", {volume: 0.8, pitch: 1.2});
@@ -158,6 +170,8 @@ export class PotionManager {
 		const bottleVesselType = selectedItem.typeId.split(":")[1].split("_")[0];	
 		const potionValidEffects = PotionManager.getValidEffects(cask.potion_effects);
 		const equipment = player.getComponent('equippable');
+		
+		
 
 		if(PotionManager.shouldPotionBreak(bottleVesselType, potionValidEffects.length)){
 
@@ -174,7 +188,9 @@ export class PotionManager {
 
 	static getPotionVesselType(potion){
 		if(potion.hasTag("magical_brewery:potion")){
-		    return potion.getTags().find(el => el !== "magical_brewery:potion");
+		    const potionVesselType = potion.getTags().find(el => el !== "magical_brewery:potion");
+			
+			return potionVesselType.split(":")[1];
         }
 		else{
            return "glass";

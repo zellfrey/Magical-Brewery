@@ -10,10 +10,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["oozing", 1800, 1]
+				"effect_properties": ["oozing", 1800, 1],
+				"delivery_type": "Consume"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "glass"]
+				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.oozing.name\n§c%potion.oozing %potion.potency.1 (1:30)"

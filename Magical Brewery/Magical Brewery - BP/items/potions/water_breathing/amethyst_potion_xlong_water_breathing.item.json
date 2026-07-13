@@ -9,10 +9,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["water_breathing", 18000, 0]
+				"effect_properties": ["water_breathing", 18000, 0],
+				"delivery_type": "Consume"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst %potion.waterBreathing.name\n§7%potion.waterBreathing (15:00)"

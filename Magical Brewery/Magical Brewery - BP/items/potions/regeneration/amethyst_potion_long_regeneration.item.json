@@ -12,7 +12,7 @@
 				"effect_properties": ["regeneration", 2400, 0]
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst %potion.regeneration.name\n§7%potion.regeneration (2:00)"

@@ -61,7 +61,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                     dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
 
                     let caskPotions = cask.getFirstPotionString() + "\n";
-
+					//console.log(cask.potion_effects[0])
                     player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.initial_taste"})
 
                     if(!aged){
@@ -116,7 +116,7 @@ system.beforeEvents.startup.subscribe(eventData => {
                 return;
             }
 
-            if(selectedItem.typeId === "minecraft:glass_bottle"){
+            if(selectedItem.typeId === "minecraft:glass_bottle" || selectedItem.typeId === "magical_brewery:amethyst_bottle"){
 
                 if(fillLevel === 0){
                     dimension.playSound("hit.chiseled_bookshelf", block.location, {volume: 0.8, pitch: 0.6});

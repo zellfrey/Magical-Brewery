@@ -9,7 +9,7 @@
 		},
 		"components": {
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "glass"]
+				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.moveSpeed.splash.name\n§7%potion.moveSpeed %potion.potency.2 (1:30)\n\n§5%potion.effects.whenDrank\n§9+60%% %potion.moveSpeed"

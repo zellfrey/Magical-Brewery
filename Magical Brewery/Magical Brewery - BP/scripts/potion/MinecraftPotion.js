@@ -27,7 +27,7 @@ export class MinecraftPotion {
 		}
 	}
 
-	static getEffectString(effectID){
+	static getEffectString(effectID, potionDeliveryType){
 		
 		let modifier = ""; 
 		if(POTION_DURATION_LEVELS.includes(effectID[0])){
@@ -52,11 +52,23 @@ export class MinecraftPotion {
 			effectID[i] = effectID[i][0].toUpperCase() + effectID[i].substring(1);
 		}
 
-		const effectString = effectID.join(" ") + modifier;
+		const effectString = effectID.join(" ") + modifier + MinecraftPotion.getDeliveryTypeString(potionDeliveryType);
 
 		return effectString;
 	}
-
+	
+	static getDeliveryTypeString(potionDeliveryType){
+		
+		switch(potionDeliveryType){
+			// case "ConsumeEcho":
+			// 	return " (Echoing)";
+			// break;
+			default:
+				return "";
+			break;
+		}
+	}
+	
 	static getEffectID(effectID){
 
 		if(POTION_DURATION_LEVELS.includes(effectID[0])){

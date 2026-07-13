@@ -9,10 +9,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["weakness", 4800, 0]
+				"effect_properties": ["weakness", 4800, 0],
+				"delivery_type": "ConsumeEcho"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst Echo %potion.weakness.name\n§c%potion.weakness (4:00)\n\n§5%potion.effects.whenDrank\n§9-0.7 %attribute.name.generic.attackDamage"

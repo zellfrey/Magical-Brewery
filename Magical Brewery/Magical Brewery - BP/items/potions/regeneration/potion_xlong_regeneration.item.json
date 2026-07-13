@@ -10,10 +10,11 @@
 		},
 		"components": {
 			"magical_brewery:oc_potion": {
-				"effect_properties": ["regeneration", 4200, 0]
+				"effect_properties": ["regeneration", 4200, 0],
+				"delivery_type": "Consume"
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "glass"]
+				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
 				"value": "%potion.regeneration.name\n§7%potion.regeneration (3:30)"

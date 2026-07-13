@@ -12,7 +12,7 @@
 				"effect_properties": ["oozing", 3600, 0]
 			},
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "amethyst"]
+				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "Amethyst Echo %potion.oozing.name\n§c%potion.oozing (3:00)"
