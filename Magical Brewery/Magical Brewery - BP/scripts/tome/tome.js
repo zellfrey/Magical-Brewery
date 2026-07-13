@@ -1,4 +1,4 @@
-import {system, world} from '@minecraft/server';
+import {system, world, RawMessage} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {TOME_CHAPTERS, PAGES_CHAPTERS} from "tome/tomeChapters.js"
 import {getPagesChapters, addChaptersToPlayerTomeData} from "tome/pages.js"
@@ -63,8 +63,9 @@ export class Tome {
 		const formTitle = !TOME_CHAPTERS[tomePage].title ? `magical_brewery:tome_chapter_${tomePage}.title` : TOME_CHAPTERS[tomePage].title;
 		
 		form.title({translate: formTitle});
-		form.body({translate: `magical_brewery:tome_chapter_${tomePage}.body`});
+		form.body(Tome.buildFormBody(tomePage));
 
+		;
 		let buttonLayout = Tome.getTomePageButtonLayout(tomePlayerData.unlocked_chapters[tomePage]);
 		
 		Tome.getformButtomProperties(form, buttonLayout)
@@ -76,6 +77,27 @@ export class Tome {
 		player.dimension.playSound("item.book.page_turn", player.location, {volume: 0.7, pitch: 1})
 	}	
 
+	static buildFormBody(tomePage){
+		
+		const pageLastPart = parseInt(tomePage.charAt(tomePage.length -1));
+		
+		if(isNaN(pageLastPart)){
+			return {translate: `magical_brewery:tome_chapter_${tomePage}.body`};
+		}else{
+			
+			const tomePageParts = [];
+			
+			for(let i = 1; i <= pageLastPart; i++){
+				
+				const tomePagePart = tomePage.substring(0, tomePage.length-1) + i;
+				
+				tomePageParts.push({translate: `magical_brewery:tome_chapter_${tomePagePart}.body`});
+				tomePageParts.push({text: "\n\n"});
+			}
+			return {rawtext:tomePageParts};
+		}
+	}
+	
 	static getTomePageButtonLayout(unlockedChapters){
 
 		let buttonPageLayout = [];

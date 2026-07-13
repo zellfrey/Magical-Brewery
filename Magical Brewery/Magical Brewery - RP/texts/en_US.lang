@@ -532,8 +532,8 @@ magical_brewery:tome_chapter_lingering_tier_1_2.body=Using a splash potion as a 
 magical_brewery:tome_chapter_echo_tier_1_1.body=Most crystals I have come across seem to all be able to enhance a potion. So maybe echo dust can do the same...
 
 magical_brewery:tome_chapter_echo_tier_1_2.title=Echo Potions
-magical_brewery:tome_chapter_echo_tier_1_2.body=Incredible! Echo dust has the ability to bring back potion effects that have worn off. Given a bit of time after the potion effect has faded away, the effect will come back. Not as long as before but still just as powerful.\n\nEcho dust can be applied to any potion effect whether enhanced or not.
-##The dust can also be used in splash potions
+magical_brewery:tome_chapter_echo_tier_1_2.body=Incredible! Echo dust has the ability to bring back potion effects that have worn off. Given a bit of time after the potion effect has faded away, the effect will come back. Not as long as before but still just as powerful.\n\nEcho dust can be applied to any potion effect whether enhanced or not. But due to the power of echo dust only amethyst bottles can hold any potion that has an "echoing" enhancement.
+##The dust can also be used in splash potions  - 0.6
 
 ##---------------------------------
 
@@ -548,7 +548,7 @@ magical_brewery:tome_chapter_amethyst_vessels_1.title=Amethyst Vessels
 magical_brewery:tome_chapter_amethyst_vessels_1.body=After some thought and tinkering, I believe that amethyst can be a better alternative to glass. It’s far stronger but not as common. That shouldn’t be an issue. Importantly it should hold more effects when used for aging and maybe able to hold more powerful potions.
 
 magical_brewery:tome_chapter_amethyst_vessels_2.title=Amethyst Vessels
-magical_brewery:tome_chapter_amethyst_vessels_2.body=amethyst Vessels_2
+magical_brewery:tome_chapter_amethyst_vessels_2.body=Amethyst bottles have shown to be a great alternative to glass bottles. I am able to make more diverse and powerful potions. However when containing other effects amethyst bottles still have their limits, but this should do for the time being.
 
 ##---------------------------------
 ##Tome Chapters-----Cask Oddities-------------------
