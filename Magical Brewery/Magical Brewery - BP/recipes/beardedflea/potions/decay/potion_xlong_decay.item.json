@@ -2,11 +2,11 @@
     "format_version": "1.17.41",
     "minecraft:recipe_brewing_mix": {
         "description": {
-            "identifier": "magical_brewery:potion_xlong_decay"
+            "identifier": "magical_brewery:potion_xlong_wither"
         },
         "tags": ["brewing_stand"],
-        "input": "magical_brewery:potion_decay",
+        "input": "magical_brewery:potion_wither",
         "reagent": "magical_brewery:pure_redstone_dust",
-        "output": "magical_brewery:potion_xlong_decay"
+        "output": "magical_brewery:potion_xlong_wither"
     }
 }

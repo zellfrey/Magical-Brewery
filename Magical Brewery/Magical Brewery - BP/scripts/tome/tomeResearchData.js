@@ -203,7 +203,7 @@ TOME_RESEARCH_ODD_CASKS.set("cask_harming", {
 	"odd_chapter": "harm_heal_to_decay",
 	"potion_1st_fill": "healing",
 	"potion_nth_fill": "Instant Health",
-	"potion_1st_empty": "decay",
+	"potion_1st_empty": "wither",
 	"potion_nth_empty": "Wither",
 	"research": "harm_heal_decay"
 });
@@ -211,7 +211,7 @@ TOME_RESEARCH_ODD_CASKS.set("cask_healing", {
 	"odd_chapter": "harm_heal_to_decay",
 	"potion_1st_fill": "harming",
 	"potion_nth_fill": "Instant Health",
-	"potion_1st_empty": "decay",
+	"potion_1st_empty": "wither",
 	"potion_nth_empty": "Wither",
 	"research": "heal_harm_decay"
 });

@@ -7,7 +7,7 @@
 		"tags": ["crafting_table"],
 		"pattern": ["#P"],
 		"key": {
-			"#": "magical_brewery:potion_decay",
+			"#": "magical_brewery:potion_wither",
 			"P": { "tag": "minecraft:planks" }
 		},
 		"result": [

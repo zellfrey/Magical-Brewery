@@ -122,8 +122,12 @@ export class PotionManager {
 			
 		let newPotion;
 		
-		if(!isAmethystBottle){
+		if(rootPotionID === "wither" || rootPotionID === "strong_wither"){
 			
+			newPotion = PotionManager.setDecayPotionFromCask(rootPotionID, caskPotionLiquid, isAmethystBottle);
+		}
+		else if(!isAmethystBottle){
+			console.log("shouldnt be here")
 			try{
 				newPotion = MinecraftPotion.setItemStack("minecraft:" + rootPotionID, caskPotionLiquid);
 			}
@@ -149,6 +153,20 @@ export class PotionManager {
 		return newPotion;
 	}
 	
+	static setDecayPotionFromCask(rootPotionID, caskPotionLiquid, isAmethystBottle){
+		
+		if(isAmethystBottle){
+			const magicalBreweryPotion = MagicalBreweryPotion.buildPotionType(rootPotionID, caskPotionLiquid, isAmethystBottle);
+			return MagicalBreweryPotion.setItemStack(magicalBreweryPotion);
+		}else{
+			if(rootPotionID === "strong_wither"){
+				return MinecraftPotion.setItemStack("minecraft:wither", caskPotionLiquid);
+			}else{
+				const magicalBreweryPotion = MagicalBreweryPotion.buildPotionType(rootPotionID, caskPotionLiquid, isAmethystBottle);
+				return MagicalBreweryPotion.setItemStack(magicalBreweryPotion);
+			}
+		}
+	}
 	static legalPotionCheck(player, item){
 
 		const potionValidEffects = PotionManager.getValidEffects(item.getLore());

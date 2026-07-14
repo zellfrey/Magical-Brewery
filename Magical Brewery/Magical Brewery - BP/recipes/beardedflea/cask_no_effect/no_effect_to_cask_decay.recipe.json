@@ -7,7 +7,7 @@
 		"tags": ["crafting_table"],
 		"pattern": ["PPP", " C ", "PPP"],
 		"key": {
-			"P": "magical_brewery:potion_decay",
+			"P": "magical_brewery:potion_wither",
 			"C": "magical_brewery:cask_no_effect"
 		},
 		"result": [

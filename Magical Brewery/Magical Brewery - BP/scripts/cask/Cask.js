@@ -272,7 +272,7 @@ export class Cask {
                 newBasePotion = "minecraft:mundane";
             break;
             case "Decay":
-                newBasePotion = "magical_brewery:potion_decay";
+                newBasePotion = "magical_brewery:wither";
             break;
             default:
                 newBasePotion = "minecraft:mundane";

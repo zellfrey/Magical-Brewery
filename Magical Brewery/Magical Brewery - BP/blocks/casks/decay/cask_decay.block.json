@@ -23,7 +23,7 @@
 			"tag:wood": {},
 			"magical_brewery:pi_cask_fill": {
 				"cask":{
-					"effect": "Decay",
+					"effect": "Wither",
 					"translate_key": "wither"
 				}
 			},
@@ -93,13 +93,13 @@
 				"components": {
 					"magical_brewery:pi_cask_fill": {
 						"cask":{
-							"effect": "Decay",
+							"effect": "Wither",
 							"translate_key": "wither"
 						}
 					},
 					"magical_brewery:ot_cask_aging": {
 						"cask":{
-							"effect": "Decay",
+							"effect": "Wither",
 							"id": "decay"
 						},
 						"seal":{

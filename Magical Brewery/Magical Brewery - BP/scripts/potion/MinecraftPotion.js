@@ -9,7 +9,13 @@ export class MinecraftPotion {
 		
 		if(!minecraftPotion.isValid) return potion;
 		
-		potion["effectID"] = minecraftPotion.potionEffectType.id;
+		//Aligning wither potion with every other potion to remain consistent
+		if(minecraftPotion.potionEffectType.id === "minecraft:wither"){
+			potion["effectID"] = "minecraft:strong_wither";
+		}else{
+			potion["effectID"] = minecraftPotion.potionEffectType.id;
+		}
+		
 		potion["deliveryType"] = minecraftPotion.potionDeliveryType.id;
 		
 		return potion;
