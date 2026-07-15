@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:splash_potion_xlong_infested",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.splashPotion"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
+			},
+			"minecraft:display_name": {
+				"value": "%potion.infested.splash.name\n§c%potion.infested (15:00)"
+			},
+			"minecraft:icon": "magical_brewery:glass_splash_potion_infested",
+			"minecraft:glint": true,
+			"minecraft:max_stack_size": {
+				"value": 1
+			},
+			"minecraft:hand_equipped": false,
+			"minecraft:throwable": {
+                "do_swing_animation": true
+            },
+            "minecraft:projectile": {
+                "projectile_entity": "magical_brewery:splash_potion_xlong_infested_entity"
+            }
+		}
+	}
+}

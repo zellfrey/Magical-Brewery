@@ -140,8 +140,14 @@ export class MagicalBreweryPotion {
 	static getDeliveryTypeString(potionDeliveryType){
 		
 		switch(potionDeliveryType){
+			case "ThrownSplash":
+				return " [Splash]";
+			break;
+			case "ThrownLingering":
+				return " [Lingering]";
+			break;
 			case "ConsumeEcho":
-				return " (Echoing)";
+				return " [Echoing]";
 			break;
 			default:
 				return "";
@@ -179,6 +185,12 @@ export class MagicalBreweryPotion {
 	
 	static getPotionDeliveryTypeId(caskPotionLiquid){
 		switch(caskPotionLiquid){
+			case "ThrownSplash":
+				return "splash_";
+			break;
+			case "ThrownLingering":
+				return "lingering_";
+			break;
 			case "ConsumeEcho":
 				return "echo_";
 			break;

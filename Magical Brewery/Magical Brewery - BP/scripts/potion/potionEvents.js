@@ -280,3 +280,6 @@ function* launchEntity(deadEntityLocation, totalEntities, maxDistance, potency){
 //     // console.warn(projectile.getComponents()[0].typeId)
 
 // });
+
+// world.afterEvents.projectileHitBlock.subscribe(handleProjectileHit);
+// world.afterEvents.projectileHitEntity.subscribe(handleProjectileHit);

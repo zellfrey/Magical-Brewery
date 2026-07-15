@@ -710,9 +710,6 @@
 		"magical_brewery:glass_potion_swiftness":{
 			"textures": "textures/items/potion_bottle_moveSpeed"
 		},
-		"magical_brewery:glass_potion_splash_swiftness":{
-			"textures": "textures/items/potion_bottle_splash_moveSpeed"
-		},
 		"magical_brewery:glass_potion_vision_night":{
 			"textures": "textures/items/potion_bottle_nightVision"
 		},
@@ -739,6 +736,66 @@
 		},
 		"magical_brewery:glass_potion_decay":{
 			"textures": "textures/items/potion_bottle_wither"
+		},
+		"magical_brewery:glass_splash_potion_harming":{
+			"textures": "textures/items/potion_bottle_splash_harm"
+		},
+		"magical_brewery:glass_splash_potion_healing":{
+			"textures": "textures/items/potion_bottle_splash_heal"
+		},
+		"magical_brewery:glass_splash_potion_invisibility":{
+			"textures": "textures/items/potion_bottle_splash_invisibility"
+		},
+		"magical_brewery:glass_splash_potion_leaping":{
+			"textures": "textures/items/potion_bottle_splash_jump"
+		},
+		"magical_brewery:glass_splash_potion_poison":{
+			"textures": "textures/items/potion_bottle_splash_poison"
+		},
+		"magical_brewery:glass_splash_potion_regeneration":{
+			"textures": "textures/items/potion_bottle_splash_regeneration"
+		},
+		"magical_brewery:glass_splash_potion_resistance_fire":{
+			"textures": "textures/items/potion_bottle_splash_fireResistance"
+		},
+		"magical_brewery:glass_splash_potion_slow_falling":{
+			"textures": "textures/items/potion_bottle_splash_slowFall"
+		},
+		"magical_brewery:glass_splash_potion_slowness":{
+			"textures": "textures/items/potion_bottle_splash_moveSlowdown"
+		},
+		"magical_brewery:glass_splash_potion_strength":{
+			"textures": "textures/items/potion_bottle_splash_damageBoost"
+		},
+		"magical_brewery:glass_splash_potion_swiftness":{
+			"textures": "textures/items/potion_bottle_splash_moveSpeed"
+		},
+		"magical_brewery:glass_splash_potion_vision_night":{
+			"textures": "textures/items/potion_bottle_splash_nightVision"
+		},
+		"magical_brewery:glass_splash_potion_water_breathing":{
+			"textures": "textures/items/potion_bottle_splash_waterBreathing"
+		},
+		"magical_brewery:glass_splash_potion_weakness":{
+			"textures": "textures/items/potion_bottle_splash_weakness"
+		},
+		"magical_brewery:glass_splash_potion_turtle_master":{
+			"textures": "textures/items/potion_bottle_splash_turtleMaster"
+		},
+		"magical_brewery:glass_splash_potion_oozing":{
+			"textures": "textures/items/potion_bottle_splash_oozing"
+		},
+		"magical_brewery:glass_splash_potion_infested":{
+			"textures": "textures/items/potion_bottle_splash_infested"
+		},
+		"magical_brewery:glass_splash_potion_weaving":{
+			"textures": "textures/items/potion_bottle_splash_weaving"
+		},
+		"magical_brewery:glass_splash_potion_wind_charged":{
+			"textures": "textures/items/potion_bottle_splash_windCharged"
+		},
+		"magical_brewery:glass_splash_potion_decay":{
+			"textures": "textures/items/potion_bottle_splash_wither"
 		},
 		"magical_brewery:brewers_desk":{
 			"textures": "textures/beardedflea/magical_brewery/items/brewers_desk.png"

@@ -1,0 +1,52 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "magical_brewery:splash_potion_xlong_invisibility_entity",
+			"runtime_identifier": "minecraft:snowball",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"components": {
+            "minecraft:collision_box": {
+                "width": 0.25,
+                "height": 0.25
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "remove_on_hit": {},
+                    "spawn_aoe_cloud": {
+						"radius": 0,
+						"duration": 0,
+						"potion": 7
+					}
+                },
+                "power": 0.5,
+                "gravity": 0.05,
+                "angle_offset": -20.0,
+                "hit_sound": "glass"
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                "max_optimized_distance": 80.0,
+                "max_dropped_ticks": 5,
+                "use_motion_prediction_hints": true
+                }
+            }
+        },
+        "events": {
+            "magical_brewery:apply_splash_effect": {
+                "queue_command": {
+					"target": "self", 
+                    "command": "say hey hey people"
+                }
+            } 
+        } 
+	}
+}
