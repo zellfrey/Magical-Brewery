@@ -127,7 +127,7 @@ export class PotionManager {
 			newPotion = PotionManager.setDecayPotionFromCask(rootPotionID, caskPotionLiquid, isAmethystBottle);
 		}
 		else if(!isAmethystBottle){
-			console.log("shouldnt be here")
+			
 			try{
 				newPotion = MinecraftPotion.setItemStack("minecraft:" + rootPotionID, caskPotionLiquid);
 			}

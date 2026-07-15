@@ -77,7 +77,16 @@ export class MagicalBreweryPotion {
 	}
 	
 	static getDeliveryType(potionItem){
-		return potionItem.getComponent("magical_brewery:oc_potion").customComponentParameters.params.delivery_type;
+
+		if(potionItem.hasTag("magical_brewery:splash_potion")){
+			return "ThrownSplash";
+		}
+		else if(potionItem.hasTag("magical_brewery:lingering_potion")){
+			return "ThrownLingering";
+		}
+		else{
+			return potionItem.getComponent("magical_brewery:oc_potion").customComponentParameters.params.delivery_type;
+		}
 	}
 	
 	static getEffectString(effectID, potionDeliveryType){

@@ -66,9 +66,12 @@ export class MinecraftPotion {
 	static getDeliveryTypeString(potionDeliveryType){
 		
 		switch(potionDeliveryType){
-			// case "ConsumeEcho":
-			// 	return " (Echoing)";
-			// break;
+			case "ThrownSplash":
+				return " [Splash]";
+			break;
+			case "ThrownLingering":
+				return " [Lingering]";
+			break;
 			default:
 				return "";
 			break;

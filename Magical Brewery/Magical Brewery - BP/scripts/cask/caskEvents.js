@@ -4,6 +4,8 @@ import {Seal} from "../cask/Seal.js";
 import {Cask} from "../cask/Cask.js";
 //'utils/containerUtils.js';
 
+const MC_POTIONS = ["minecraft:potion", "minecraft:splash_potion", "minecraft:lingering_potion"]
+
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:op_cask', {
         onPlace(e) {
@@ -61,7 +63,8 @@ system.beforeEvents.startup.subscribe(eventData => {
                     dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
 
                     let caskPotions = cask.getFirstPotionString() + "\n";
-					//console.log(cask.potion_effects[0])
+					console.log(cask.potion_effects[0])
+                    console.log(cask.potion_liquid)
                     player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.initial_taste"})
 
                     if(!aged){
@@ -105,11 +108,8 @@ system.beforeEvents.startup.subscribe(eventData => {
 
                 return;
             }
-            //Will implement splash and lingering potions at a later date
-            if(selectedItem.typeId === "minecraft:lingering_potion" || selectedItem.typeId === "minecraft:splash_potion"){
-                player.sendMessage({ translate: "magical_brewery:message.magical_brewery_general.wip"});
-            }
-            if(selectedItem.typeId === "minecraft:potion" || selectedItem.hasTag("magical_brewery:potion")){
+
+            if(MC_POTIONS.includes(selectedItem.typeId) || selectedItem.hasTag("magical_brewery:potion")){
                 
                 cask.fillCask(selectedItem, block, dimension, player);
 				
