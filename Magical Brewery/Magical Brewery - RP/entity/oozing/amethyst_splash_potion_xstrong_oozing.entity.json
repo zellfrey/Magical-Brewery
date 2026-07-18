@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "magical_brewery:amethyst_splash_potion_xstrong_oozing_entity",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_splash_potion_oozing.png"
+			},
+			"geometry": {
+        		"default": "geometry.item_sprite"
+			},
+			"render_controllers": [
+				"controller.render.item_sprite"
+			],
+			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]	
+			}
+		}
+	}
+}

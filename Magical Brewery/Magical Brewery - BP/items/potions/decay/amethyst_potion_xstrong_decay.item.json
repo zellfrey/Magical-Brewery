@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.wither.name\n§c%potion.wither (0:40)"
+				"value": "Amethyst %potion.wither.name\n§c%potion.wither %potion.potency.2 (0:40)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_xstrong_decay",
 			"minecraft:glint": false,

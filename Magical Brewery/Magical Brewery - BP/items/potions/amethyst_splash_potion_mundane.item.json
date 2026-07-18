@@ -1,0 +1,31 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:amethyst_splash_potion_mundane",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:tags": {
+				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
+			},
+			"minecraft:display_name": {
+				"value": "item.magical_brewery:amethyst_splash_potion_mundane.name"
+			},
+			"minecraft:icon": "magical_brewery:amethyst_splash_potion_mundane",
+			"minecraft:glint": false,
+			"minecraft:max_stack_size": {
+				"value": 1
+			},
+			"minecraft:hand_equipped": false,
+			"minecraft:throwable": {
+                "do_swing_animation": true
+            },
+            "minecraft:projectile": {
+                "projectile_entity": "magical_brewery:amethyst_splash_potion_mundane_entity"
+            }
+		}
+	}
+}

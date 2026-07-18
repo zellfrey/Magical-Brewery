@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.poison.name\n§c%potion.poison (0:22)"
+				"value": "Amethyst %potion.poison.name\n§c%potion.poison %potion.potency.1 (0:22)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_strong_poison",
 			"minecraft:glint": false,

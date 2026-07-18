@@ -39,14 +39,6 @@
                 "use_motion_prediction_hints": true
                 }
             }
-        },
-        "events": {
-            "magical_brewery:apply_splash_effect": {
-                "queue_command": {
-					"target": "self", 
-                    "command": "say hey hey people"
-                }
-            } 
-        } 
+        }
 	}
 }

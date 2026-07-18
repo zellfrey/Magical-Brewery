@@ -227,6 +227,9 @@
 		"magical_brewery:amethyst_echo_potion_long_invisibility":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_echo_potion_long_invisibility.png"
 		},
+		"magical_brewery:amethyst_echo_potion_xlong_invisibility":{
+			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_echo_potion_xlong_invisibility.png"
+		},
 		"magical_brewery:amethyst_splash_potion_invisibility":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_splash_potion_invisibility.png"
 		},
@@ -854,6 +857,7 @@
 		"magical_brewery:amethyst_potion_xstrong_wind_charged":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_potion_xstrong_wind_charged.png"
 		},
+		
 		"magical_brewery:amethyst_echo_potion_wind_charged":{
 			"textures": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_echo_potion_wind_charged.png"
 		},
