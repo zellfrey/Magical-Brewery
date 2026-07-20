@@ -84,6 +84,10 @@ export class MagicalBreweryPotion {
 		else if(potionItem.hasTag("magical_brewery:lingering_potion")){
 			return "ThrownLingering";
 		}
+		else if(potionItem.hasComponent("magical_brewery:oc_potion_multiple")){
+			//Thank you turtle master
+			return potionItem.getComponent("magical_brewery:oc_potion_multiple").customComponentParameters.params.delivery_type;;
+		}
 		else{
 			return potionItem.getComponent("magical_brewery:oc_potion").customComponentParameters.params.delivery_type;
 		}
