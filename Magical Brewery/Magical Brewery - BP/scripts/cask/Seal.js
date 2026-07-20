@@ -68,6 +68,7 @@ export class Seal {
             let particleSpawnVector3;
             let particleId;
             //TODO Make seal of retainment particles
+            //TODO Make seal single particle have random coords in particle json file
             if(sealType === "magical_brewery:retainment"){
                 sealType = "magical_brewery:potency";
                 particleId = "magical_brewery:seal_retainment_shield";
