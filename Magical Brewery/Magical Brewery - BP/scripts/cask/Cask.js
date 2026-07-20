@@ -200,23 +200,22 @@ export class Cask {
     }
 
     checkSeal(block, timeToAge, caskNoEffectSeals){
-        let seal = Seal.findSeal(block)
+        let seal = Seal.findSeal(block);
 
         //If there is no seal the lifetime will remain the same, reducing the ability of affecting the age
         if(Seal.isSameType(seal, this)){
-            
-            if(MathUtils.equalsVector3(seal.location, this.seal.location) && !caskNoEffectSeals.includes(this.seal.type)){
-                this.seal.addLifetime(timeToAge, this)
+            if(MathUtils.equalsVector3(seal.location, this.seal.location) && !caskNoEffectSeals.includes(this.seal.type) 
+                && this.seal.canSealEffectLiquid(this.potion_liquid)){
+				    this.seal.addLifetime(timeToAge, this);
             }
             else{
                 const previousSealLifeTime = this.seal.lifetime;
-                Seal.setSeal(seal, this)
+                Seal.setSeal(seal, this);
                 this.seal.lifetime = previousSealLifeTime;
             }
-        
         }
         else if(seal){
-            Seal.setSeal(seal, this)
+            Seal.setSeal(seal, this);
         }
     }
 

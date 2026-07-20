@@ -18,6 +18,19 @@ export class Seal {
         this.lifetime = 0;
     }
     
+    canSealEffectLiquid(potionLiquid){
+        switch(this.type){
+            case "memories":
+                return potionLiquid === "Consume" || potionLiquid === "ConsumeEcho";;
+            break;
+            case "expansion":
+                return potionLiquid === "ThrownSplash" || potionLiquid === "ThrownLingering";
+            break;
+            default:
+                return true;
+            break;
+        }
+    }
 
     addLifetime(timeToAge, cask){
 
@@ -122,7 +135,7 @@ export class Seal {
                 effectString += " [Echoing]";
             break;
             case "expansion":
-                effectString += " [Splash]";
+                effectString += this.addExpansionEffect(this.strength);
             break;
         }     
 
@@ -149,6 +162,16 @@ export class Seal {
         return effectName;
     }
 
+    addExpansionEffect(sealStrength){
+        switch(sealStrength){
+            case 1:
+                return " [Splash]";
+            break;
+            case 2:
+                return " [Splash II]";
+            break;
+        }
+    }
     addInspirationEffect(uniqueEffect){
 
         const inspirationStrength = MathUtils.getRandomInt(3);
