@@ -457,7 +457,7 @@ export const TOME_CHAPTERS = {
 		exitPage: "catalysers"
 	},
 	"lingering_tier_1_2":{
-		icon: "textures/items/dragons_breath",
+		icon: "textures/beardedflea/magical_brewery/tome/chapter_lingering_tier_1_2.png",
 		exitPage: "catalysers"
 	},
 	"echo_tier_1_1":{
