@@ -7,6 +7,8 @@ import {setMainHand} from '../utils/containerUtils.js';
 
 export class PotionManager {
 
+	static tertiaryEffects = ["[Echoing]", "[Splash]", "[Splash II]"];
+
 	static giveExtraEffectsToEntity(entity, heldPotion){
     
 		if(heldPotion.getLore().length == 0) return;

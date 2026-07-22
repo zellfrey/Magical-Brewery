@@ -87,6 +87,9 @@ export class Cask {
         else{
             for(let i = 1; i < this.potion_effects.length; i++){
                 const effect = this.potion_effects[i].split(' ');
+
+                if(PotionManager.tertiaryEffects.includes(effect[effect.length-1])) effect.pop();
+
                 if(effect[0] === "Instant"){
 
                     if(getPotencyLevel(effect) !== 0) effect.pop()
