@@ -58,7 +58,6 @@ function doesPlayerMeetChapterRequirements(player, tomePlayerData, pagesParamete
 		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.insufficient_knowledge"})
 		return false;
 	}
-	//TODO: Check playerDB for value in parentChapter Key - DONE
 	else if(tomePlayerData.unlocked_chapters[pagesParameters.tome_parent_chapter].includes(pagesParameters.tome_chapter)){
 
 		player.sendMessage({ translate: "magical_brewery:message.tome.chapter_pages.owned"})

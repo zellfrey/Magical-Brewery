@@ -18,13 +18,13 @@ export class Seal {
         this.lifetime = 0;
     }
     
-    canSealEffectLiquid(potionLiquid){
+    canSealEffectLiquid(caskPotionLiquid){
         switch(this.type){
             case "memories":
-                return potionLiquid === "Consume" || potionLiquid === "ConsumeEcho";;
+                return caskPotionLiquid === "Consume" || caskPotionLiquid === "ConsumeEcho";;
             break;
             case "expansion":
-                return potionLiquid === "ThrownSplash" || potionLiquid === "ThrownLingering";
+                return caskPotionLiquid === "ThrownSplash" || caskPotionLiquid === "ThrownLingering";
             break;
             default:
                 return true;
@@ -173,7 +173,8 @@ export class Seal {
             break;
         }
     }
-    addInspirationEffect(uniqueEffect){
+
+    addInspirationEffect(uniqueEffect, caskPotionLiquid){
 
         const inspirationStrength = MathUtils.getRandomInt(3);
         let effectString = uniqueEffect.effects;
@@ -182,30 +183,37 @@ export class Seal {
 
             const effectTime =" (" + uniqueEffect.duration_long[inspirationStrength] +  ")";
             effectString += effectTime;
-            
-            return effectString;
         }
         else{
             const isLongevity = !Math.round(Math.random());
 
             if(!isLongevity && inspirationStrength !== 0){
-                return this.addPotencyEffect(uniqueEffect, effectString, inspirationStrength);
+                effectString = this.addPotencyEffect(uniqueEffect, effectString, inspirationStrength);
             }
             else{
                 
 				if(!effectString.includes("Instant")){
                     const effectTime =" (" + uniqueEffect.duration_long[inspirationStrength] +  ")";
                     effectString += effectTime;
-            
-                    return effectString;
-
-                }else{
-                    return effectString;
                 }
             }
         }
+        if(Math.floor(Math.random() * 100) > 15) effectString += this.getInspirationTertiaryEffect(caskPotionLiquid);
+		
+        return effectString;
     }
     
+    getInspirationTertiaryEffect(caskPotionLiquid){
+        if(caskPotionLiquid === "Consume" || caskPotionLiquid === "ConsumeEcho"){
+            return " [Echoing]";
+        }
+        else if(caskPotionLiquid === "ThrownSplash" || caskPotionLiquid === "ThrownLingering"){
+			return this.addExpansionEffect(1);
+        }else{
+            return "";
+        }
+    }
+
     static setSeal(seal, cask){
         if(!seal){
             cask.seal = new Seal();

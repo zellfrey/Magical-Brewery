@@ -234,7 +234,7 @@ export class Cask {
 
         const newUniqueEffect = getUniquePotionEffect(this.getFirstPotionEffectID(),  this.potion_effects, oddResult);
 
-        this.potion_effects.push(this.seal.addInspirationEffect(newUniqueEffect));
+        this.potion_effects.push(this.seal.addInspirationEffect(newUniqueEffect, this.potion_liquid));
         
     }
 
