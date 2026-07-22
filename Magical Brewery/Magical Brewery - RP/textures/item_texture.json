@@ -939,6 +939,9 @@
 		"magical_brewery:pages_amethyst_vessels":{
 			"textures": "textures/beardedflea/magical_brewery/items/pages_amethyst_vessels.png"
 		},
+		"magical_brewery:pages_echo_shards":{
+			"textures": "textures/beardedflea/magical_brewery/items/pages_echo_shards.png"
+		},
 		"magical_brewery:glass_potion_harming":{
 			"textures": "textures/items/potion_bottle_harm"
 		},

@@ -44,6 +44,9 @@ export const PAGES_CHAPTERS = {
 	},
 	"amethyst_vessels_1":{
 		"potion_vessels" : ["amethyst_vessels_1"],
+	},
+	"echo_shards":{
+		"crystallography" : ["echo_shards"],
 	}
 
 };
@@ -119,6 +122,10 @@ export const TOME_CHAPTERS = {
 	},
 	"crystal_harvesting": {
 		icon: "textures/beardedflea/magical_brewery/items/redstone_shard.png",
+		exitPage: "crystallography"
+	},
+	"echo_shards": {
+		icon: "textures/items/echo_shard",
 		exitPage: "crystallography"
 	},
 	//Seal Chapters

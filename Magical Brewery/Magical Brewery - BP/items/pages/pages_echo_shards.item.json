@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:pages_echo_shards",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"magical_brewery:ou_get_pages": {
+				"tome_parent_chapter": "crystallography",
+				"tome_chapter": "echo_shards"
+			},
+			"minecraft:icon": "magical_brewery:pages_echo_shards",
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:pages_echo_shards.name"
+			},
+			"minecraft:max_stack_size": {
+				"value": 1
+			},
+			"minecraft:tags": {
+				"tags": [
+					"magical_brewery:tome_pages"
+				]
+			}
+		}
+	}
+}

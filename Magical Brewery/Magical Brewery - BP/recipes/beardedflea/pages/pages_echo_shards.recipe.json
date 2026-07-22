@@ -1,0 +1,24 @@
+{
+	"format_version": "1.17.41",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "magical_brewery:pages_echo_shards"
+		},
+		"tags": ["magical_brewery:brewers_desk"],
+		"pattern": ["pCp", "STS", "psp"],
+		"key": {
+			"p": "minecraft:paper",
+			"C": "magical_brewery:echo_cluster",
+			"S": "minecraft:echo_shard",
+			"T": "magical_brewery:brewers_tome",
+			"s": "magical_brewery:echo_seed"
+		},
+		"result": [
+			{
+				"item": "magical_brewery:pages_echo_shards",
+				"count": 1
+			},
+			"magical_brewery:brewers_tome"
+		]
+	}
+}
