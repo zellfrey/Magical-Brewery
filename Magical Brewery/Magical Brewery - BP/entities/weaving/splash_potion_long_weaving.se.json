@@ -2,7 +2,7 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "magical_brewery:splash_potion_long_weaving_entity",
+			"identifier": "magical_brewery:splash_potion_long_weaving",
 			"runtime_identifier": "minecraft:snowball",
 			"is_spawnable": false,
 			"is_summonable": true

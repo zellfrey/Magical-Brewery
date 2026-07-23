@@ -24,7 +24,7 @@
                 "do_swing_animation": true
             },
             "minecraft:projectile": {
-                "projectile_entity": "magical_brewery:amethyst_splash_potion_long_regeneration_entity"
+                "projectile_entity": "magical_brewery:amethyst_splash_potion_long_regeneration"
             }
 		}
 	}

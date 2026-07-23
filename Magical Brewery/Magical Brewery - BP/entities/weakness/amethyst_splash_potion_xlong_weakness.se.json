@@ -2,7 +2,7 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "magical_brewery:amethyst_splash_potion_xlong_weakness_entity",
+			"identifier": "magical_brewery:amethyst_splash_potion_xlong_weakness",
 			"runtime_identifier": "minecraft:snowball",
 			"is_spawnable": false,
 			"is_summonable": true

@@ -2,7 +2,7 @@
 	"format_version": "1.21.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "magical_brewery:amethyst_splash_potion_xstrong_leaping_entity",
+			"identifier": "magical_brewery:amethyst_splash_potion_xstrong_leaping",
 			"materials": {
 				"default": "entity_alphatest"
 			},

@@ -2,7 +2,7 @@
 	"format_version": "1.21.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "magical_brewery:splash_potion_long_wind_charged_entity",
+			"identifier": "magical_brewery:splash_potion_long_wind_charged",
 			"materials": {
 				"default": "entity_alphatest"
 			},

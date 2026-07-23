@@ -2,7 +2,7 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "magical_brewery:amethyst_splash_potion_strong_wind_charged_entity",
+			"identifier": "magical_brewery:amethyst_splash_potion_wither",
 			"runtime_identifier": "minecraft:snowball",
 			"is_spawnable": false,
 			"is_summonable": true
@@ -18,7 +18,7 @@
                     "spawn_aoe_cloud": {
 						"radius": 0,
 						"duration": 0,
-						"potion": 43
+						"potion": 36
 					}
                 },
                 "power": 0.5,

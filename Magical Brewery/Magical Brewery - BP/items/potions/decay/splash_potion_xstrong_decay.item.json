@@ -25,7 +25,7 @@
                 "do_swing_animation": true
             },
             "minecraft:projectile": {
-                "projectile_entity": "magical_brewery:splash_potion_xstrong_wither_entity"
+                "projectile_entity": "magical_brewery:splash_potion_xstrong_wither"
             }
 		}
 	}

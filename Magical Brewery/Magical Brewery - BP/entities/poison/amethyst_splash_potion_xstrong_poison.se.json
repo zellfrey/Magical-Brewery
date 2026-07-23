@@ -2,7 +2,7 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "magical_brewery:amethyst_splash_potion_xstrong_poison_entity",
+			"identifier": "magical_brewery:amethyst_splash_potion_xstrong_poison",
 			"runtime_identifier": "minecraft:snowball",
 			"is_spawnable": false,
 			"is_summonable": true
