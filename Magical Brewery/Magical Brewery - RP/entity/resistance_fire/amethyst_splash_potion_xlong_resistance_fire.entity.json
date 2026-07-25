@@ -7,7 +7,7 @@
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_splash_potion_leaping.png"
+				"default": "textures/beardedflea/magical_brewery/items/amethyst/amethyst_splash_potion_resistance_fire.png"
 			},
 			"geometry": {
         		"default": "geometry.item_sprite"
