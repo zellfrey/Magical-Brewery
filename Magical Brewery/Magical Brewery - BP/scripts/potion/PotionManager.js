@@ -12,6 +12,56 @@ export class PotionManager {
 	static thrownPotionItems = [];
 	
 	static PotionEntitiesExtraEffects = [];
+	
+	static handlePotionProjectile(eventData){
+		const addonID = eventData.projectile.typeId.split(":")[0];
+		
+		if(addonID === "magical_brewery"){
+			MagicalBreweryPotion.handleSplashPotion(eventData.projectile.typeId, eventData.location, eventData.dimension)
+		}
+		
+		const potionEntityData = PotionManager.getPotionEntityExtraEffects(eventData.projectile.id, eventData.source?.id);
+		
+		if(!potionEntityData) return;
+		
+		PotionManager.destroyPotionEntityExtraEffectsData(eventData.projectile.id, eventData.source?.id);
+		
+		const splashPotionExtraEffects = potionEntityData.extraEffects;
+		
+		PotionManager.handleSplashPotionExtraEffects(eventData, potionEntityData.extraEffects)
+	}
+
+	static handleSplashPotionExtraEffects(eventData, splashPotionExtraEffects){
+		if(!splashPotionExtraEffects) return;
+
+		for(let i = 0; i < splashPotionExtraEffects.length; i++){
+					
+			const words = splashPotionExtraEffects[i].split(' ');
+			let distance = 2.5;
+			console.log(words)
+			//As to why extraEffects === "Mundane (no effect)" doesnt work, idk so its this for now
+			if(words[0] === "Mundane") continue;
+			
+			if(words[words.length-1] === "[Splash]" || words[words.length-1] === "[Splash II]"){
+				
+				switch(words[words.length-1]){
+					case "[Splash]":
+						distance = 4.5;
+					break;
+					case "[Splash II]":
+						distance = 6.5;
+					break;
+				}
+			    words.pop();
+			}
+			
+			const baseTraits = PotionManager.getEffectBaseTraits(words);
+			
+			const splashPotionExtraEffectTraits = { effect: baseTraits.effectId, duration: baseTraits.totalTicks, amplifier: baseTraits.potency, radius: distance}
+			
+			PotionManager.applyAreaSplashEffect(eventData.location, eventData.dimension, splashPotionExtraEffectTraits);
+		}
+	}
 
 	static giveExtraEffectsToEntity(entity, heldPotion){
     
@@ -32,33 +82,50 @@ export class PotionManager {
 				isEchoEffect = true;
 				words.pop();
 			}
-			let effect, potency;
-			let totalTicks = 1;
-			if(words[0] === "Instant"){
-				potency = getPotencyLevel(words)
-				if(potency !== 0) words.pop();
-				effect = words.join("_").toLowerCase()
-			}
-			else{
-				
-				const effectTime = words[words.length-1].substring(1, 5)
-				const [minutes, seconds] = effectTime.split(':');
-				totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-				words.pop();
 
-				potency = getPotencyLevel(words)
-				
-				if(potency !== 0) words.pop();
+			const baseTraits = PotionManager.getEffectBaseTraits(words);
 
-				effect = words.join("_").toLowerCase()
-				// if(Potions.getPotionEffectType(effect) ! == undefined){
-				// }
-				
-			}
-			entity.addEffect(effect, totalTicks, { amplifier: potency })
+			entity.addEffect(baseTraits.effectId, baseTraits.totalTicks, { amplifier: baseTraits.potency })
 
-			if(isEchoEffect) MagicalBreweryPotion.applyEchoEffect(entity, effect, totalTicks, potency)
+			if(isEchoEffect) MagicalBreweryPotion.applyEchoEffect(entity, baseTraits.effectId, baseTraits.totalTicks, baseTraits.potency)
 		}
+	}
+
+	static getEffectBaseTraits(effectStringArray){
+		let effect, potency;
+		let totalTicks = 1;
+		
+		if(effectStringArray[0] === "Instant"){
+			potency = getPotencyLevel(effectStringArray)
+			if(potency !== 0) effectStringArray.pop();
+			effect = effectStringArray.join("_").toLowerCase()
+		}
+		else{
+			
+			const effectTime = effectStringArray[effectStringArray.length-1].substring(1, 5)
+			const [minutes, seconds] = effectTime.split(':');
+			totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
+			effectStringArray.pop();
+
+			potency = getPotencyLevel(effectStringArray)
+			
+			if(potency !== 0) effectStringArray.pop();
+
+			effect = effectStringArray.join("_").toLowerCase();
+		}
+		return {effectId: effect, totalTicks: totalTicks, potency: potency };
+	}
+
+	static applyAreaSplashEffect(locationCentre, dimension, splashPotionTraits){
+		console.log(splashPotionTraits.radius)
+		try{
+			dimension.getEntities({ location: locationCentre, maxDistance: splashPotionTraits.radius }).forEach((entity) => {
+					try {
+						entity.addEffect(splashPotionTraits.effect, splashPotionTraits.duration, { amplifier: splashPotionTraits.amplifier })
+					} catch (error){}
+				});
+			} 
+		catch (error){}
 	}
 	
 	static isEnhanced(potion){
@@ -257,5 +324,74 @@ export class PotionManager {
 	
 	static getValidEffects(potionEffects){
 		return potionEffects.filter(el => el !== "Mundane (no effect)" && el !== "minecraft:mundane");
+	}
+
+	static handlePotionSpawned(eventData){
+		const addonID = eventData.entity.typeId.split(":")[0];
+	
+		if(addonID === "magical_brewery" || eventData.entity.typeId === "minecraft:splash_potion"){
+			const thrownPotionData = PotionManager.getThrownPotionData(eventData.entity.typeId, system.currentTick);
+			
+			if(!thrownPotionData) return;
+			
+			PotionManager.destroyThrownPotionData(eventData.entity.typeId, system.currentTick);
+			
+			const potionEntityExtraEffects = {entityUUID: eventData.entity.id, playerId: thrownPotionData.playerId, extraEffects: thrownPotionData.extraEffects};
+			PotionManager.PotionEntitiesExtraEffects.push(potionEntityExtraEffects)
+		}
+	}
+	
+	static setThrownPotionData(player, heldItemStack, currentTick){
+		
+		if(heldItemStack.hasTag("magical_brewery:splash_potion") || heldItemStack.typeId === "minecraft:splash_potion"){
+			
+			const potionExtraEffects = heldItemStack.getLore();
+			
+			if(potionExtraEffects.length === 0) return;
+			
+			const thrownPotionData = {
+										tickThrown: currentTick, 
+										potionID: heldItemStack.typeId, 
+										playerId: player.id, 
+										extraEffects: potionExtraEffects
+									};					
+			PotionManager.thrownPotionItems.push(thrownPotionData);
+		}
+	}
+
+	static getThrownPotionData(entityTypeId, currentTick){
+	
+		return PotionManager.thrownPotionItems.find(thrownPotion => {
+				return thrownPotion.potionID === entityTypeId && thrownPotion.tickThrown === currentTick
+			});
+	}
+	
+	static destroyThrownPotionData(entityTypeId, currentTick){
+
+		const thrownPotionIndex = PotionManager.thrownPotionItems.findIndex(thrownPotion => {
+				return thrownPotion.potionID === entityTypeId && thrownPotion.tickThrown === currentTick
+			});
+		
+		if(thrownPotionIndex === -1) return;
+			
+		PotionManager.thrownPotionItems.splice(thrownPotionIndex, 1)
+	}
+	
+	static getPotionEntityExtraEffects(projectileID, sourceID){
+		
+		return PotionManager.PotionEntitiesExtraEffects.find(potionEntity => {
+					return potionEntity.entityUUID === projectileID && potionEntity.playerId === sourceID
+				});
+	}
+	
+	static destroyPotionEntityExtraEffectsData(projectileID, sourceID){
+	
+		const potionEntityDataIndex = PotionManager.PotionEntitiesExtraEffects.findIndex(potionEntity => {
+				return potionEntity.entityUUID === projectileID && potionEntity.playerId === sourceID
+			});
+		
+		if(potionEntityDataIndex === -1) return;
+			
+		PotionManager.PotionEntitiesExtraEffects.splice(potionEntityDataIndex, 1);
 	}
 }

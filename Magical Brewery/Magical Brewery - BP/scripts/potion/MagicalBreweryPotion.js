@@ -30,6 +30,16 @@ export class MagicalBreweryPotion {
 		PotionManager.giveExtraEffectsToEntity(entity, potionItem);
 	}
 
+	static handleSplashPotion(projectileTypeId, location, dimension){
+
+		const mbSplashPotionId = projectileTypeId.split(":")[1];
+        const splashPotionTraits = SPLASH_POTION_EFFECTS[mbSplashPotionId];
+
+        if(!splashPotionTraits) return;
+
+        PotionManager.applyAreaSplashEffect(location, dimension, splashPotionTraits);
+	}
+
 	// static getEffectDuration(effectObj, potionDuration){
 
 	// 	let effectTime;

@@ -261,172 +261,20 @@ function* launchEntity(deadEntityLocation, totalEntities, maxDistance, potency){
     }
 }
 
-
+//Splash Potion Events
 world.beforeEvents.itemUse.subscribe((e) => {
-	
-	//if(e.swingSource !== "ThrowItem" && e.heldItemStack === undefined) return;
-	
-	setThrownPotionData(e.source, e.itemStack, system.currentTick)
-
+	PotionManager.setThrownPotionData(e.source, e.itemStack, system.currentTick);
 });
 
-function setThrownPotionData(player, heldItemStack, currentTick){
-	
-
-	if(heldItemStack.hasTag("magical_brewery:splash_potion") || heldItemStack.typeId === "minecraft:splash_potion"){
-		
-		const potionExtraEffects = heldItemStack.getLore();
-		
-		if(potionExtraEffects.length === 0) return;
-		
-		const thrownPotionData = {
-									tickThrown: currentTick, 
-									potionID: heldItemStack.typeId, 
-									playerId: player.id, 
-									extraEffects: potionExtraEffects
-								};
-								
-		PotionManager.thrownPotionItems.push(thrownPotionData)
-		//PotionManager.thrownPotionItems.length = 0;
-		
-	}
-}
-
-world.afterEvents.entitySpawn.subscribe((e) => {
-	const addonID = e.entity.typeId.split(":")[0];
-	
-	if(addonID === "magical_brewery" || e.entity.typeId === "minecraft:splash_potion"){
-		//console.log(PotionManager.thrownPotionItems.length)
-		const thrownPotionData = getThrownPotionData(e.entity.typeId, system.currentTick);
-		
-		if(!thrownPotionData) return;
-		
-		destroyThrownPotionData(e.entity.typeId, system.currentTick);
-		
-		const potionEntityExtraEffects = {entityUUID: e.entity.id, playerId: thrownPotionData.playerId, extraEffects: thrownPotionData.extraEffects};
-		PotionManager.PotionEntitiesExtraEffects.push(potionEntityExtraEffects)
-	}
+world.afterEvents.entitySpawn.subscribe((eventData) => {
+	PotionManager.handlePotionSpawned(eventData);
 	
 });
-
-function getThrownPotionData(entityTypeId, currentTick){
 	
-	return PotionManager.thrownPotionItems.find(thrownPotion => thrownPotion.potionID === entityTypeId && thrownPotion.tickThrown === currentTick);
-}
-
-function destroyThrownPotionData(entityTypeId, currentTick){
-
-    const thrownPotionIndex = PotionManager.thrownPotionItems.findIndex(thrownPotion => thrownPotion.potionID === entityTypeId && thrownPotion.tickThrown === currentTick);
-	
-	if(thrownPotionIndex === -1) return;
-        
-    PotionManager.thrownPotionItems.splice(thrownPotionIndex, 1)
-}
-	
-world.afterEvents.projectileHitBlock.subscribe((e) => {
-    const mbSplashPotionId = e.projectile.typeId.split(":")[1];
-    const splashPotionTraits = SPLASH_POTION_EFFECTS[mbSplashPotionId];
-    
-    if(!splashPotionTraits) return;
-	
-    try {
-    e.dimension.getEntities({ location: e.location, maxDistance: 4 }).forEach((entity) => {
-        try {
-            entity.addEffect(splashPotionTraits.effect, splashPotionTraits.duration, { amplifier: splashPotionTraits.amplifier })
-        } catch (e) {}
-    });
-    } catch (e) {}
-	
-	const potionEntityData = getPotionEntityExtraEffects(e.projectile.id, e.source?.id);
-	
-	if(!potionEntityData) return;
-	
-	console.log(potionEntityData);
-	destroyPotionEntityExtraEffectsData(e.projectile.id, e.source?.id);
-	console.log(PotionManager.PotionEntitiesExtraEffects.length)
-	
-	const splashPotionExtraEffects = potionEntityData.extraEffects;
-	
-	if(!splashPotionExtraEffects) return;
-
-    for(let i = 0; i < splashPotionExtraEffects.length; i++){
-                
-        const words = splashPotionExtraEffects[i].split(' ');
-
-        //As to why extraEffects === "Mundane (no effect)" doesnt work, idk so its this for now
-        if(words[0] === "Mundane") continue;
-        
-        // if(words[words.length-1] === "[Echoing]"){
-        //     isEchoEffect = true;
-        //     words.pop();
-        // }
-
-        let effect, potency;
-        let totalTicks = 1;
-        if(words[0] === "Instant"){
-            potency = getPotencyLevel(words)
-            if(potency !== 0) words.pop();
-            effect = words.join("_").toLowerCase()
-        }
-        else{
-            
-            const effectTime = words[words.length-1].substring(1, 5)
-            const [minutes, seconds] = effectTime.split(':');
-            totalTicks = ((+minutes) * 60 + (+seconds)) * 20;
-            words.pop();
-
-            potency = getPotencyLevel(words)
-            
-            if(potency !== 0) words.pop();
-
-            effect = words.join("_").toLowerCase()
-            // if(Potions.getPotionEffectType(effect) ! == undefined){
-            // }
-            
-        }
-		//console.log(e.location.x)
-        //entity.addEffect(effect, totalTicks, { amplifier: potency })
-
-        try {
-            e.dimension.getEntities({ location: e.location, maxDistance: 4 }).forEach((entity) => {
-                try {
-                    entity.addEffect(effect, totalTicks, { amplifier: potency })
-                } catch (e) {}
-            });
-        } catch (e) {}
-    }
+world.afterEvents.projectileHitBlock.subscribe((eventData) => {
+    PotionManager.handlePotionProjectile(eventData);
 });
 
-function getPotionEntityExtraEffects(projectileID, sourceID){
-	
-	return PotionManager.PotionEntitiesExtraEffects.find(potionEntity => potionEntity.entityUUID === projectileID && potionEntity.playerId === sourceID);
-}
-
-function destroyPotionEntityExtraEffectsData(projectileID, sourceID){
-
-    const potionEntityDataIndex = PotionManager.PotionEntitiesExtraEffects.findIndex(potionEntity => potionEntity.entityUUID === projectileID && potionEntity.playerId === sourceID);
-	
-	if(potionEntityDataIndex === -1) return;
-        
-    PotionManager.PotionEntitiesExtraEffects.splice(potionEntityDataIndex, 1)
-}
-
-world.afterEvents.projectileHitEntity.subscribe((e) => {
-	console.log("projectileHitBlock")
-    console.log(e.projectile.typeId);
-    const addonID = e.projectile.typeId.split(":")[0]
-    const mbSplashPotionId = e.projectile.typeId.split(":")[1].split("_");
-    mbSplashPotionId.pop();
-	const mbSplashPotionString = mbSplashPotionId.join("_");
-	console.log(mbSplashPotionString)
-    const splashPotionTraits = SPLASH_POTION_EFFECTS[mbSplashPotionString];
-    
-    if(!splashPotionTraits) return;
-    try {
-    e.dimension.getEntities({ location: e.location, maxDistance: 4 }).forEach((entity) => {
-        try {
-            entity.addEffect(splashPotionTraits.effect, splashPotionTraits.duration, { amplifier: splashPotionTraits.amplifier })
-        } catch (e) {}
-    });
-    } catch (e) {}
+world.afterEvents.projectileHitEntity.subscribe((eventData) => {
+    PotionManager.handlePotionProjectile(eventData);
 });
