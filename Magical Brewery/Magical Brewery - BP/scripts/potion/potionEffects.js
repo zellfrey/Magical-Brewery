@@ -10,64 +10,40 @@ export const ON_HIT_EFFECTS= ["minecraft:infested"];
 //If a potion doesnt have a potency variant, it will fallback onto the base effect time in duration_long
 export const POTION_EFFECTS = {
     "Wither": {
-        effects: "Wither",
-        duration_long: ["1:20", "3:00", "8:00"], 
-        duration_potency: ["0:40", "0:40"],
+        effects: "Wither", duration_long: ["1:20", "3:00", "8:00"], duration_potency: ["0:40", "0:40"],
     },
     "Harming": {
-        effects: "Instant Damage",
-        duration_long: [],
-        duration_potency: [],
+        effects: "Instant Damage", duration_long: [], duration_potency: [],
     },
     "Healing": {
-        effects: "Instant Health",
-        duration_long: [],
-        duration_potency: [],
+        effects: "Instant Health", duration_long: [], duration_potency: [],
     },
     "Invisibility": {
-        effects: "Invisibility",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: [],
+        effects: "Invisibility", duration_long: ["3:00", "8:00", "15:00"], duration_potency: [],
     },
     "Leaping": {
-        effects: "Jump Boost",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Jump Boost", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Poison": {
-        effects: "Poison",
-        duration_long: ["0:45", "2:00", "3:30"],
-        duration_potency: ["0:22", "0:22"],
+        effects: "Poison", duration_long: ["0:45", "2:00", "3:30"], duration_potency: ["0:22", "0:22"],
     },
     "Regeneration": {
-        effects: "Regeneration",
-        duration_long: ["0:45", "2:00", "3:30"],
-        duration_potency: ["0:22","0:22"],
+        effects: "Regeneration", duration_long: ["0:45", "2:00", "3:30"], duration_potency: ["0:22","0:22"],
     },
     "Fire_Resistance": {
-        effects: "Fire Resistance",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: [],
+        effects: "Fire Resistance", duration_long: ["3:00", "8:00", "15:00"], duration_potency: [],
     },
     "Slow_Falling": {
-        effects: "Slow Falling",
-        duration_long: ["1:30", "4:00", "7:00"],
-        duration_potency: [],
+        effects: "Slow Falling", duration_long: ["1:30", "4:00", "7:00"], duration_potency: [],
     },
     "Slowness": {
-        effects: "Slowness",
-        duration_long: ["1:30", "4:00", "7:00"],
-        duration_potency: ["0:20", "0:20"],
+        effects: "Slowness", duration_long: ["1:30", "4:00", "7:00"], duration_potency: ["0:20", "0:20"],
     },
     "Strength": {
-        effects: "Strength",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Strength", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Swiftness": {
-        effects: "Speed",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Speed", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     // "Turtle_Master": {
     //     effects: ["Slowness", "Resistance"],
@@ -75,80 +51,50 @@ export const POTION_EFFECTS = {
     //     duration_potency: ["0:20", "0:20"], 
     // },
     "Night_Vision": {
-        effects: "Night Vision",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: [],
+        effects: "Night Vision", duration_long: ["3:00", "8:00", "15:00"], duration_potency: [],
     },
     "Water_Breathing": {
-        effects: "Water Breathing",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: [],
+        effects: "Water Breathing", duration_long: ["3:00", "8:00", "15:00"], duration_potency: [],
     },
     "Weakness": {
-        effects: "Weakness",
-        duration_long: ["1:30", "4:00", "7:00"],
-        duration_potency: [],
+        effects: "Weakness", duration_long: ["1:30", "4:00", "7:00"], duration_potency: [],
     },
     "Oozing": {
-        effects: "Oozing",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Oozing", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Infested": {
-        effects: "Infested",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Infested", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Weaving": {
-        effects: "Weaving",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Weaving", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Wind_Charged": {
-        effects: "Wind Charged",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Wind Charged", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     //Currently unobtainable, using for seal of inspiration
     "Absorption": {
-        effects: "Absorption",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Absorption", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Darkness": {
-        effects: "Darkness",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: [],
+        effects: "Darkness", duration_long: ["3:00", "8:00", "15:00"], duration_potency: [],
     },
     "Fatal_Poison": {
-        effects: "Fatal Poison",
-        duration_long: ["1:30", "4:00", "7:00"],
-        duration_potency: ["0:20", "0:20"],
+        effects: "Fatal Poison", duration_long: ["1:30", "4:00", "7:00"], duration_potency: ["0:20", "0:20"],
     },
     "Haste": {
-        effects: "Haste",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Haste", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Health_Boost": {
-        effects: "Health Boost",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Health Boost", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Mining_Fatigue": {
-        effects: "Mining Fatigue",
-        duration_long: ["3:00", "8:00", "15:00"],
-        duration_potency: ["1:30", "1:30"],
+        effects: "Mining Fatigue", duration_long: ["3:00", "8:00", "15:00"], duration_potency: ["1:30", "1:30"],
     },
     "Nausea": {
-        effects: "Nausea",
-        duration_long: ["1:30", "4:00", "7:00"],
-        duration_potency: [],
+        effects: "Nausea", duration_long: ["1:30", "4:00", "7:00"], duration_potency: [],
     },
     "Resistance": {
-        effects: "Resistance",
-        duration_long: ["1:20", "3:00", "8:00"], 
-        duration_potency: ["0:40", "0:40"],
+        effects: "Resistance", duration_long: ["1:20", "3:00", "8:00"], duration_potency: ["0:40", "0:40"],
     },
   };
 
@@ -261,13 +207,13 @@ export const SPLASH_POTION_EFFECTS = {
     "splash_potion_long_swiftness": { effect: "speed", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_swiftness": { effect: "speed", duration: 18000, amplifier: 0, radius: 4.5},
 
-    // "amethyst_splash_potion_turtle_master",
-    // "amethyst_splash_potion_strong_turtle_master",
-    // "amethyst_splash_potion_xstrong_turtle_master",
-    // "amethyst_splash_potion_long_turtle_master",
-    // "amethyst_splash_potion_xlong_turtle_master",
-    // "splash_potion_xstrong_turtle_master",
-    // "splash_potion_xlong_turtle_master",
+    "amethyst_splash_potion_turtle_master":{ effect: "turtle_master"},
+    "amethyst_splash_potion_strong_turtle_master":{ effect: "turtle_master"},
+    "amethyst_splash_potion_xstrong_turtle_master":{ effect: "turtle_master"},
+    "amethyst_splash_potion_long_turtle_master":{ effect: "turtle_master"},
+    "amethyst_splash_potion_xlong_turtle_master":{ effect: "turtle_master"},
+    "splash_potion_xstrong_turtle_master":{ effect: "turtle_master"},
+    "splash_potion_xlong_turtle_master":{ effect: "turtle_master"},
 
     "amethyst_splash_potion_nightvision": { effect: "night_vision", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_long_nightvision": { effect: "night_vision", duration: 9600, amplifier: 0, radius: 4.5},
@@ -303,6 +249,37 @@ export const SPLASH_POTION_EFFECTS = {
     "splash_potion_xstrong_wind_charged": { effect: "wind_charged", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_wind_charged": { effect: "wind_charged", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_wind_charged": { effect: "wind_charged", duration: 18000, amplifier: 0, radius: 4.5},
+}
+
+export const TURTLE_MASTER_EFFECTS = {
+    "amethyst_splash_potion_turtle_master": [
+        { effect: "slowness", duration: 400, amplifier: 3, radius: 4.5}, 
+        { effect: "resistance", duration: 400, amplifier: 2, radius: 4.5}
+    ],
+    "amethyst_splash_potion_strong_turtle_master": [
+        { effect: "slowness", duration: 400, amplifier: 5, radius: 4.5}, 
+        { effect: "resistance", duration: 400, amplifier: 3, radius: 4.5}
+    ],
+    "amethyst_splash_potion_xstrong_turtle_master": [
+        { effect: "slowness", duration: 400, amplifier: 6, radius: 4.5}, 
+        { effect: "resistance", duration: 400, amplifier: 4, radius: 4.5}
+    ],
+    "amethyst_splash_potion_long_turtle_master": [
+        { effect: "slowness", duration: 800, amplifier: 3, radius: 4.5}, 
+        { effect: "resistance", duration: 800, amplifier: 2, radius: 4.5}
+    ],
+    "amethyst_splash_potion_xlong_turtle_master": [
+        { effect: "slowness", duration: 1400, amplifier: 3, radius: 4.5}, 
+        { effect: "resistance", duration: 1400, amplifier: 2, radius: 4.5}
+    ],
+    "splash_potion_xstrong_turtle_master": [
+        { effect: "slowness", duration: 400, amplifier: 6, radius: 4.5}, 
+        { effect: "resistance", duration: 400, amplifier: 4, radius: 4.5}
+    ],
+    "splash_potion_xlong_turtle_master": [
+        { effect: "slowness", duration: 1400, amplifier: 3, radius: 4.5}, 
+        { effect: "resistance", duration: 1400, amplifier: 2, radius: 4.5}
+    ]
 }
 
 export function getPotencyLevel(effect){

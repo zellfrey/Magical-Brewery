@@ -1,5 +1,5 @@
 import {ItemStack, system} from "@minecraft/server";
-import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, POTION_DURATION_LEVELS} from "../potion/potionEffects.js";
+import {POTION_POTENCY_LEVELS, POTION_EFFECTS, getPotencyLevel, POTION_DURATION_LEVELS, TURTLE_MASTER_EFFECTS, SPLASH_POTION_EFFECTS} from "../potion/potionEffects.js";
 import {PotionManager} from "../potion/PotionManager.js";
 import {MathUtils} from "../utils/MathUtils.js";
 import {setMainHand} from '../utils/containerUtils.js';
@@ -37,7 +37,15 @@ export class MagicalBreweryPotion {
 
         if(!splashPotionTraits) return;
 
-        PotionManager.applyAreaSplashEffect(location, dimension, splashPotionTraits);
+		if(splashPotionTraits.effect === "turtle_master"){
+			const turtleMasterSplashEffects = TURTLE_MASTER_EFFECTS[mbSplashPotionId];
+			
+			PotionManager.applyAreaSplashEffect(location, dimension, turtleMasterSplashEffects[0]);
+			PotionManager.applyAreaSplashEffect(location, dimension, turtleMasterSplashEffects[1]);
+		}
+		else{
+			PotionManager.applyAreaSplashEffect(location, dimension, splashPotionTraits);
+		}
 	}
 
 	// static getEffectDuration(effectObj, potionDuration){
