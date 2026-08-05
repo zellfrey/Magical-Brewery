@@ -1,4 +1,4 @@
-import {system, world, RawMessage} from '@minecraft/server';
+import {system, world} from '@minecraft/server';
 import {ActionFormData} from "@minecraft/server-ui";
 import {TOME_CHAPTERS, PAGES_CHAPTERS} from "tome/tomeChapters.js"
 import {getPagesChapters, addChaptersToPlayerTomeData} from "tome/pages.js"
