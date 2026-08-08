@@ -4,7 +4,7 @@ import {Seal} from "../cask/Seal.js";
 import {Cask} from "../cask/Cask.js";
 //'utils/containerUtils.js';
 
-const MC_POTIONS = ["minecraft:potion", "minecraft:splash_potion", "minecraft:lingering_potion"]
+const MC_POTIONS = ["minecraft:potion", "minecraft:splash_potion"]
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:op_cask', {
@@ -107,6 +107,9 @@ system.beforeEvents.startup.subscribe(eventData => {
                 }
 
                 return;
+            }
+            if(selectedItem.typeId === "minecraft:lingering_potion"){
+                player.sendMessage({ translate: "magical_brewery:message.magical_brewery_general.wip"});
             }
 
             if(MC_POTIONS.includes(selectedItem.typeId) || selectedItem.hasTag("magical_brewery:potion")){
