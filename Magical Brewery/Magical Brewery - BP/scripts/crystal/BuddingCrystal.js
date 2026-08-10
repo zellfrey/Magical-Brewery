@@ -52,7 +52,7 @@ export class BuddingCrystal {
     }
 }
 
-function crystalGrowth(buddingBlock, crystalBudParams){
+function crystalGrowth(buddingBlock, crystalBudParams, chanceToGrow = 20){
 	
     let buddingCrystal = BuddingCrystal.buddingCrystals[BuddingCrystal.findIndexCrystal(buddingBlock.location, buddingBlock.dimension.id)]
     let unloadTimeCompensation = 1;
@@ -66,7 +66,7 @@ function crystalGrowth(buddingBlock, crystalBudParams){
 
                 const budToGrow = getValidGrowthSpace(buddingBlock, crystalBudParams);
 
-                if(!budToGrow || Math.floor(Math.random() * 100) > 20) continue;
+                if(!budToGrow || Math.floor(Math.random() * 100) > chanceToGrow) continue;
             
                 growCrystalBud(budToGrow, crystalBudParams.type, crystalBudParams.lastCharNum)
             }
@@ -74,7 +74,7 @@ function crystalGrowth(buddingBlock, crystalBudParams){
     else{
         const budToGrow = getValidGrowthSpace(buddingBlock, crystalBudParams);
 
-        if(!budToGrow || Math.floor(Math.random() * 100) > 20) return;
+        if(!budToGrow || Math.floor(Math.random() * 100) > chanceToGrow) return;
             
         growCrystalBud(budToGrow, crystalBudParams.type, crystalBudParams.lastCharNum)
     }
@@ -163,6 +163,15 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
+system.beforeEvents.startup.subscribe(eventData => {
+    eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:ort_budding_echo_crystal_growth', {
+        onRandomTick(e, p) {
+            if(e.block.dimension.id !== "minecraft:nether") return;
+            const chanceToGrow = 10;
+            crystalGrowth(e.block, p.params.crystal_bud, chanceToGrow)
+        }
+    });
+});
 world.afterEvents.worldLoad.subscribe((e) => {
     // console.log("loading budding crystal data")
     let buddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')

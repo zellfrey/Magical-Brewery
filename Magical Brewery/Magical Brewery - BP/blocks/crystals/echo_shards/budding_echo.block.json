@@ -11,7 +11,7 @@
 			"tag:minecraft:is_pickaxe_item_destructible": {},
 			"tag:stone": {},
 			"tag:magical_brewery:crystal_block": {},
-			"magical_brewery:ort_budding_crystal_growth": {
+			"magical_brewery:ort_budding_echo_crystal_growth": {
 				"crystal_bud":{
 							"type": "echo",
 							"lastCharNum": -9
