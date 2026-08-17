@@ -390,7 +390,7 @@ magical_brewery:tome_chapter_seal_potency.title=Seals of Potency
 magical_brewery:tome_chapter_seal_potency.body=Similar to brewing, seals of potency increase the power of a cask's potion effect. Each level increases the power by one tier. \nSeals of potency can be crafted with variants of glowstone. 
 
 magical_brewery:tome_chapter_seal_expansion.title=Seals of Expansion
-magical_brewery:tome_chapter_seal_expansion.body=This seal can be applied to casks containing potions of lingering and potions of splash. It will increase the potions splash radius. Each level increases splash radius by one block./n/nSeals of Expansion can be crafted with gunpowder and quartz.
+magical_brewery:tome_chapter_seal_expansion.body=As you know when a potion ages, it will gain the same effect of the cask. This also applies to splash potions. However, when the splash potion gains the cask effect, the new effect will not have the same range as the base splash potion, and only have a range of around 2-3 blocks.\nIf we want to increase the splash radius, we will need to use Seals of Expansion. Each level increases the potion's splash radius by one block. Of course, this seal can only work with splash potions.\n\nSeals of Expansion I can be crafted with gunpowder and quartz.
 
 magical_brewery:tome_chapter_seal_retainment.title=Seal of Retainment
 magical_brewery:tome_chapter_seal_retainment.body=Unlike other seals, the seal of retainment does not affect the cask effect being applied to the liquid contents. Instead it can be used to prevent casks from degrading in quality. As with most seals, it will burn away once used.\n\nSeals of Retainment are crafted using amethyst shards.
@@ -417,7 +417,7 @@ magical_brewery:tome_chapter_brewing_research.body=Since there are so many possi
 ##magical_brewery:tome_chapter_brewing_research.body= its time we get the facts straight and say this. Your taste profile range is shockingly small. So from now on we will have to expand our flavour town.(because all you have now in your town is a pub and a stable). We gonna have to touch grass, no even more, we gotta eat the grass!
 
 magical_brewery:tome_chapter_recipes.title=Recipes
-magical_brewery:tome_chapter_recipes.body=Recipes
+magical_brewery:tome_chapter_recipes.body=
 
 magical_brewery:tome_chapter_ingredients.title=Ingredients
 magical_brewery:tome_chapter_ingredients.body=I should get out of my comfort zone and explore the world to find exotic materials that can create different potions. I should "taste" the ingredients I find and see if they have potential.\nOnce I'm confident about them, I'll try and make a potion with said ingredient.\n\nNow whether the effects are bad or good I should still drink the potion to confirm it's effects. Not the best approach but I don't see an alternative.
@@ -426,7 +426,7 @@ magical_brewery:tome_chapter_catalysers.title=Catalysers
 magical_brewery:tome_chapter_catalysers.body=As with ingredients, I will have to find materials out in the world that could enhance potions. I still need to "taste" the catalysts. I suspect some may not be the best to "taste", but what can you do.\n\nIn any case, once I have found a suitable catalyser I should try and brew and drink 3 potions with different effects to confirm what the catalyst can enhance.
 
 magical_brewery:tome_chapter_potion_vessels.title=Potion Vessels
-magical_brewery:tome_chapter_potion_vessels.body=Potion Vessels
+magical_brewery:tome_chapter_potion_vessels.body=
 
 ##---------------------------------
 ##Tome Chapters-----Ingredients-------------------
