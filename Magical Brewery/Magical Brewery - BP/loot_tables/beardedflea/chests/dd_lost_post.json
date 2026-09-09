@@ -1,0 +1,100 @@
+{
+    "pools": [
+      	{
+		"rolls": {
+				"min": 1,
+				"max": 2
+			},
+		"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:echo_shard",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 3
+							}
+						}
+					],
+					"weight": 60
+				},
+				{
+					"type": "item",
+					"name": "minecraft:quartz",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 2,
+								"max": 4
+							}
+						}
+					],
+					"weight": 10
+				},
+				{
+					"type": "item",
+					"name": "minecraft:bowl",
+					"weight": 10
+				},
+				{
+					"type": "item",
+					"name": "minecraft:torch",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 12,
+								"max": 20
+							}
+						}
+					],
+					"weight": 40
+				}
+			]
+		},
+		{
+		"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "magical_brewery:pages_echo_shards"
+				}
+			]	
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:written_book",
+					"functions": [
+						{
+							"function": "set_book_contents",
+							"author": "Alanah",
+							"title": "Echo shard research",
+							"pages": [
+								"Go to the cave by the village he said. A simple collection he said. Nothing bad should happen. Nothing bad should happen?!? What is he talking about. When i get back I'm going to...\n\nSorry, My name is Alanah and I'm here with Pup and Tarn, and I work with",
+								"gems and crystals.\nI was asked for the “simple” task of finding some new crystals that Grigor was told about by some stranger he met in the local village. Well more begged me to do this task, he's not the adventurous type. What he didn't tell me is the",
+								"amount of trouble this little trip has got me into.\nThis cave is cursed, every rock that I pass is covered in a blackish blue material that feels like seaweed. The worst part? The slightest sound makes the whole cave scream in agony.\nMy dog got the hint to",
+								"be quiet, but Tarn in it's golem wisdom kept on booping & beeping, like a toddler really. I powered down Tarn for the time being.\n\nAfter setting up a small outpost just at the border of this unnatural area I got to work. I was eventually able to recover",
+								"some echo shards and I've been testing them for the past errrmmm 3 hours.... I think it's hard to keep track of time down here.\nNothing unique so far, Myself and Pup should get some rest.\n\nWoke up to another scream from the cave, I don't know how many",
+								"hours of sleep I got this time round. I suspect it's the bats in the cave. I'm going to try and get some sleep again.\n\nRunning low on food, I will have to start eating cave lichen. Fortunately I think I've found something unique about echo shards.",
+								"They seem to react well near to experience orbs.\nStill trying to find a way to grow the crystals. No luck so far. Im going to take a break and explore more of the cave with Pup. Tarn should be able to ward off any intruders who want to stay at my post.",
+								"3 hours of sleep again.... this getting tough. I may have to give up on this venture, but I can't leave empty handed as I need to find what can make this shard grow.\n\nI just had a thought, a terribly dangerous thought. I'm going to have to go ",
+								"into the belly of the beast and interact with those loud-mouthed pests.Approaching the blocks was the easy part. Getting the echo seeds in the block was terrifying. Every strike with my hammer would cause the entire cave to erupt in roars. The final strike",
+								"was scariest as the roaring was lower in tone. Now I'm starting to think that the screams are a threat but luckily the commotion died down once I stepped away and hid in a corner. I was in the corner for what felt like years staring at the seed. Once I",
+								"noticed it grow a bit that was all i needed to see.\n\nI'm tired and hungry now. Cave lichen is not doing it for me anymore, and I've got no food for Pup. Sleep is the only thing I can do for now, I'll go back to the seed \"tomorrow\", I don't know if it's",
+								"noon or midnight.\nNot again... damn bats just making noises. Wait a second, something is wrong. It's that same low pitch roar from earlier. It just happened again.. and now there's stomping, I can hear heavy breathing.",
+								"Pleaaaassseee don't be outside the outpost....WHAT IN THE NETHER IS THAT THING.\n\nRight, it's me, pup & Tarn. Grigor can get the notes, and see first hand what this place is.\n\nI'm making a run for it..."
+							]
+						}
+					]
+				}
+			]	
+		}
+	]
+}
+    
