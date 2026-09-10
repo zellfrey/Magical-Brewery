@@ -14,22 +14,22 @@
             }
         },
         "distribution": {
-            "iterations": 3,
+            "iterations": 2,
             "x": {
-                "extent": [0, 24],
+                "extent": [0, 16],
                 "distribution": "uniform"
             },
             "y": {
-                "extent": [-55,40],
+                "extent": [-40,20],
                 "distribution": "uniform"
             },
             "z": {
-                "extent": [0, 24],
+                "extent": [0, 16],
                 "distribution": "uniform"
             },
             "scatter_chance": {
                 "numerator": 1,
-                "denominator": 35
+                "denominator": 15
             }
         }
     }

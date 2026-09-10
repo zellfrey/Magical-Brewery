@@ -5,12 +5,12 @@
 			"identifier": "magical_brewery:dd_lost_post_feature"
 		},
 		"structure_name": "magical_brewery:dd_lost_post",
-		"adjustment_radius": 5,
+		"adjustment_radius": 8,
 		"facing_direction": "random",
 		"rotate_around_center": true,
 		"constraints": {
 			"grounded": {},
-			//"unburied": {},
+			//"unburied": {}
 			"block_intersection": {
 				"block_allowlist": [
 					"minecraft:air",
