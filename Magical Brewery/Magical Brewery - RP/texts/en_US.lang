@@ -432,8 +432,8 @@ magical_brewery:tome_chapter_potion_vessels.body=
 ##Tome Chapters-----Ingredients-------------------
 ##Singular-clue potions & ingredients------------
 
-magical_brewery:tome_chapter_awkward_1.body=
-magical_brewery:tome_chapter_awkward_2.body=
+magical_brewery:tome_chapter_awkward_1.body=I was wandering the Nether and I found this peculiar fungus in one of those fortresses. I have decided to take some home as I'm certain this could be the main ingredient for brewing potions. 
+magical_brewery:tome_chapter_awkward_2.body=Interesting.... Using nether wart and a water bottle in a brewing station at first seems to create nothing. However upon further examination I found that the liquid in the potion, despite being transparent does not appear to have a reflection. It's as if the nether wart has taken away a basic property of water allowing something else to be added later.\nI should be able to use this "awkward" potion as a base to make other types of potions.
 
 magical_brewery:tome_chapter_strength_1.body=Hot to the touch, like sand that has sat in the sun all day. After tasting it I feel a sudden surge of strength throughout my body.\nBlaze powder definitely has potential.
 magical_brewery:tome_chapter_strength_2.body=Using a Brewing Station I have created a potion that uses Blaze Powder. My sword feels lighter, and I can swing it with the greatest of ease.\nThis should be able to increase my combat power against the creatures of the night.
@@ -459,14 +459,14 @@ magical_brewery:tome_chapter_regeneration_2.body=Using a Brewing Station I have 
 magical_brewery:tome_chapter_water_breathing_1.body=Oh no no no no, I definitely should not have eaten that! Where is some milk when you need it?!?\nUggghhhh...I do not recommend someone eating a pufferfish raw. However, adding this to a brewing station maybe a good experiment...
 magical_brewery:tome_chapter_water_breathing_2.body=Well the taste has certainly improved and at first I thought nothing of this potion and considered it a failure. But then what started out as a harmless brew quickly turned into a short painful experience. Once the pain was over I checked for any damages and then I noticed that I had gills on my neck.\nObviously this means one thing; I should now be able to breathe underwater. Certainly not what I was expecting from such a foul tasting fish, but I guess this makes up for it.
 
-magical_brewery:tome_chapter_fire_resistance_1.body=
-magical_brewery:tome_chapter_fire_resistance_2.body=
+magical_brewery:tome_chapter_fire_resistance_1.body=What an odd flavour combination. It's creamy and spicy, yet it's also cooling and refreshing. Such a confusing mix and yet some how it works. I can't quite put my finger on it, but I do know that this ingredient should definitely work as a potion ingredient.
+magical_brewery:tome_chapter_fire_resistance_2.body=After drinking a potion made with magma cream, I didn't really notice anything in particular, and so I decided to make some lunch. Everything was normal, until I started adding more coal into my smoker. I had some white ashes leftover from earlier and I didn't feel the heat radiating off of the pile. So I thought to myself to do the stupid thing and drew my hand closer to the hot ash. But as i brought my hand towards the coals, I couldnt feel any heat. They were neither cool to the touch nor hot as if I was immune to the idea of heat. Of course it then occured to me that the potion I just drunk was giving this ability to resist heat.\n\nIn conclusion a magma cream can be used to brew a "Potion of Fire Resistance"...Yeah that's a better name than "potion of heat numbing".
 
-magical_brewery:tome_chapter_turtle_master_1.body=
-magical_brewery:tome_chapter_turtle_master_2.body=
+magical_brewery:tome_chapter_turtle_master_1.body=I've come to realise that potion ingredients can come from any place large or small. So there is no reason as to why a turtle helmet cannot be used as a potion ingredient. I'm going on a guess here as I'm not going to be chewing on some turtle shells, but I believe a potion that contains a turtle helmet may have the essence of a turtle, and so it make the user slow but possibly very resilient to damage.
+magical_brewery:tome_chapter_turtle_master_2.body=After drinking the potion the effects followed instantly. I could see my skin shift and bend and within seconds scutes were rising to the surface creating a protective layer around my entire body. However, this new armour has made me incredibly heavy and has slowed me down considerably.\nThis potion could be very useful but only in very specific scenarios.
 
-magical_brewery:tome_chapter_slow_falling_1.body=
-magical_brewery:tome_chapter_slow_falling_2.body=
+magical_brewery:tome_chapter_slow_falling_1.body=Those winged beasts that patrol the night sky have been a headache. Fortunately a bow and arrow does the job in curbing their threats. Curiously their wings are made up of a weird membrane that you can almost see through. Maybe this could be useful for brewing...
+magical_brewery:tome_chapter_slow_falling_2.body=Once again, another potion that I couldn't immediately tell what properties it had. But after a short time doing some errands I was walking to my farm and accidentally tripped. However my descent to the eventual gravel was slow enough that it gave me time to think about life. I should have been thinking about this potion, but I was in such a peaceful state of mind that all of life's issues seemed trival, until I felt the sharp edges of flint pressing into my skin.\n\nI will have to think of a situation where this could be useful, but it could be promising.
 
 magical_brewery:tome_chapter_wind_charged_1.body=
 magical_brewery:tome_chapter_wind_charged_2.body=
