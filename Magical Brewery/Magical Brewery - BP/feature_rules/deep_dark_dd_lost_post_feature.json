@@ -6,7 +6,7 @@
             "places_feature": "magical_brewery:dd_lost_post_feature"
         },
         "conditions": {
-            "placement_pass": "after_underground_pass",
+            "placement_pass": "first_pass",
             "minecraft:biome_filter": {
                 "test": "has_biome_tag",
                 "operator": "==",

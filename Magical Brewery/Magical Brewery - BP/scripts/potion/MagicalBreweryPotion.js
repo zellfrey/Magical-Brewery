@@ -18,7 +18,17 @@ export class MagicalBreweryPotion {
 			{ amplifier: potionParams.effect_properties[2]}
 		);
 	
-		PotionManager.giveExtraEffectsToEntity(entity, potionItem)
+		PotionManager.giveExtraEffectsToEntity(entity, potionItem);
+
+		if(potionParams.delivery_type === "ConsumeEcho"){
+			
+			MagicalBreweryPotion.applyEchoEffect(
+				entity, 
+				potionParams.effect_properties[0], 
+				potionParams.effect_properties[1], 
+				potionParams.effect_properties[2]
+			);
+		}
 	}
 
 	static onConsumeMultipleEffects(entity, potionItem, potionParams){
@@ -28,6 +38,13 @@ export class MagicalBreweryPotion {
 		});
 		
 		PotionManager.giveExtraEffectsToEntity(entity, potionItem);
+
+		if(potionParams.delivery_type === "ConsumeEcho"){
+
+			potionParams.effect_properties.forEach(elEffect => { 
+				MagicalBreweryPotion.applyEchoEffect(entity, elEffect[0], elEffect[1], elEffect[2]);
+			});
+		}
 	}
 
 	static handleSplashPotion(projectileTypeId, location, dimension){
@@ -227,7 +244,8 @@ export class MagicalBreweryPotion {
 	}
 
 	static applyEchoEffect(entity, effect, totalTicks, potency){
-
+		
+		//TODO: Add echo effect for harming & healing
 		if(totalTicks <= 1) return;
 
 		const echoDuration = totalTicks * 0.75;
@@ -236,7 +254,9 @@ export class MagicalBreweryPotion {
 		system.runTimeout(() => 
 			{
 				entity.addEffect(effect, echoDuration, { amplifier: potency });
-				console.log("applying echo effect");
+				//console.log("applying echo effect");
+				//TODO: Change sound
+				entity.dimension.playSound("bloom.sculk_catalyst", entity.location, {volume: 2.0, pitch: 1.5});
 			},		
 		echoTriggerTime);
 	}
