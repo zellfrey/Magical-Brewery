@@ -1,3 +1,61 @@
+v0.5 - FULL CHANGELOG(SPOILERS)
+Added:
+    - Brewer's Desk. item, block, crafting bench A new research station fitting for a magical brewer
+        - Seals are now crafted using the Brewer's Desk
+        - Tome pages can now be crafted in the Brewers Desk
+    - Brewing Research
+        - Singular Ingredient & Potion Research, e.g Healing, Strength, Swiftness
+        - Catalyzer research(this includes; glowstone, redstone, gunpowder e.t.c)
+        - Cask Oddity research(You can figure this one out for yourself)
+        - "Multi Clue" Ingredient & Potion Research, e.g Harming
+    - Potion Vessel Chapters
+        - Amethyst Vessels
+        - Glass Vessels
+    - 3 new Cask Seals; item, block, recipe, tome pages & chapters
+        - Seal of Inspiration
+        - Seal of Memories
+        - Seal of Expansion
+    - A new Cask variant(this includes the planks and slabs)
+        - Cask of Decay, Stained Planks of Decay, Stained Slabs of Decay, Decay potion variants
+    - A new budding crystal, buds, cluster, seed & dust
+        - Echo growing crystal
+        - Echo seed
+        - Echo Buds/Cluster
+        - Echo Dust
+    - Amethyst bottles
+    - Amethyst Potions of ALL minecraft Effects(except lingering... I'll get to it eventually)
+        - redstone variant
+        - glowstone variant
+        - pure redstone variant
+        - pure glowstone variant
+        - echo variant
+        - gunpowder variant
+    - Amethyst Potion cask aging compatibility
+    - Splash Potion cask aging FINALLY
+    - xlong & xstrong Splash potion variants
+    - A new structure can be found in the caves below, along with a new short story
+Updated:
+    - Fixed growing crystal amethyst texture
+    - Optimised budding crystal growth
+    - Planks of Weakness block has correct sound(stone -> wood)
+    - Cask tasting will show an additional message depending on certain interactions
+    - Budding Crystal loottables changed to just check for a pickaxe tag, i.e other addon pickaxes are now compatible
+    - Art pass to ALL Seals
+    - Glassmith hammer can now be used to mine out budding crystals & is an alternative to Silk touch. 
+    - Refactored potion consuming mechanic
+    - Glass potions now have a limited number of effects that it can hold
+    - Moved xlong & xstrong glass potions to vanilla glass potions category
+    - Some seals can now be effected by the type of potionliquid/deliveryType(e.g splash potion or lingering potion)
+    - Brewing pages recipe changed
+Author comment:
+I think I have covered everything. If I missed anything then I apologies. This update has been a long journey and it's
+about time that I get something out of the door before this addon starts growing mould. I really hope you enjoy this
+new update. Not only does this update cover basically every aspect of the addon/mod, but it is also 2x the size of
+0.4.
+----------------------
+I will be releasing minor updates over the coming weeks/months to address and polish up some weaknesses of 0.5. 
+I am aware that the generation for the new structure is quite "skewed". I'm working on fixing that ASAP.
+-----------------------------------------------
 v0.4.2
 Updated:
     - Reverted Cask break back to onPlayerBreak
