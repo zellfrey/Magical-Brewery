@@ -54,7 +54,7 @@ new update. Not only does this update cover basically every aspect of the addon/
 0.4.
 ----------------------
 I will be releasing minor updates over the coming weeks/months to address and polish up some weaknesses of 0.5. 
-I am aware that the generation for the new structure is quite "skewed". I'm working on fixing that ASAP.
+I am aware that the generation for the new structure is quite "bogged". I'm working on improving it ASAP.
 -----------------------------------------------
 v0.4.2
 Updated:
