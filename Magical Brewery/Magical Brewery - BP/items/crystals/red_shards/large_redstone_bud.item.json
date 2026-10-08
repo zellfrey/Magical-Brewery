@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.26.40",
 	"minecraft:item": {
 		"description": {
 			"identifier": "magical_brewery:large_redstone_bud",
@@ -14,7 +14,8 @@
 				"value": "item.magical_brewery:large_redstone_bud.name"
 			},
 			"minecraft:block_placer": {
-				"block": "magical_brewery:large_redstone_bud"
+				"block": "magical_brewery:large_redstone_bud",
+				"replace_block_item": true
 			}
 		}
 	}

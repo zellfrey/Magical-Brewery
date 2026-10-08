@@ -1,26 +1,5 @@
 { 
 	"format_version": "1.21.20",
-	"magical_brewery:budding_pure_quartz":{
-		"sound" : "amethyst_block"
-	},
-	"magical_brewery:pure_quartz_cluster":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:pure_quartz_shard_block":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:small_pure_quartz_bud":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:medium_pure_quartz_bud":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:large_pure_quartz_bud":{
-		"sound" : "amethyst_cluster"
-	},
-	"magical_brewery:pure_quartz_seed":{
-		"sound" : "amethyst_block"
-	},
 	"magical_brewery:budding_echo":{
 		"sound" : "amethyst_block"
 	},

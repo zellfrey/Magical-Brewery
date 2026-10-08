@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.26.40",
 	"minecraft:item": {
 		"description": {
 			"identifier": "magical_brewery:pure_quartz_cluster",
@@ -14,7 +14,8 @@
 				"value": "item.magical_brewery:pure_quartz_cluster.name"
 			},
 			"minecraft:block_placer": {
-				"block": "magical_brewery:pure_quartz_cluster"
+				"block": "magical_brewery:pure_quartz_cluster",
+				"replace_block_item": true
 			}
 		}
 	}

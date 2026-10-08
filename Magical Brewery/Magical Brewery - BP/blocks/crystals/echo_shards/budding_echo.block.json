@@ -1,24 +1,25 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.26.40",
 	"minecraft:block": {
 		"description": {
 			"identifier": "magical_brewery:budding_echo",
 			"menu_category": {
-				"category": "nature"
+					"category": "nature"
 			}
 		},
 		"components": {
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:stone": {},
-			"tag:magical_brewery:crystal_block": {},
-			"magical_brewery:ort_budding_echo_crystal_growth": {
+			"minecraft:tags": ["minecraft:is_pickaxe_item_destructible", "magical_brewery:crystal_block"],
+			"magical_brewery:opd_budding_crystal_destroy": {},
+			"magical_brewery:opd_budding_crystal_place": {},
+			"magical_brewery:ort_budding_crystal_growth": {
 				"crystal_bud":{
 							"type": "echo",
 							"lastCharNum": -9
 						}
 			},
-			"magical_brewery:opd_budding_crystal_destroy": {},
-			"magical_brewery:opd_budding_crystal_place": {},
+			"minecraft:tick": {
+				"interval_range": [20,20]
+			},
 			"minecraft:light_emission": 2,
 			"minecraft:friction": 0.4,
 			"minecraft:loot": "loot_tables/empty.json",
@@ -29,24 +30,22 @@
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 1.5
 			},
-			"minecraft:redstone_conductivity": {
-                "redstone_conductor": false,
-                "allows_wire_to_step_down": true
-            },
-			"minecraft:tick": {
-				"interval_range": [20,20]
-			},
+			"minecraft:geometry": "minecraft:geometry.full_block",
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "magical_brewery:budding_echo",
-					"render_method": "alpha_test",
-					"face_dimming": false,
-					"ambient_occlusion": false
+					"render_method": "blend"
 				}
 			},
-			"minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:redstone_conductivity": {
+                "redstone_conductor": true,
+                "allows_wire_to_step_down": true
+            },
 			"minecraft:movable": {
             	"movement_type": "popped"
+			},
+			"minecraft:sound": {
+				"sound": "amethyst_block"
 			}
 		}
 	}

@@ -1,11 +1,10 @@
 {
-	"format_version": "1.21.130",
+	"format_version": "1.26.40",
 	"minecraft:block": {
 	  "description": {
 		"identifier": "magical_brewery:small_pure_quartz_bud",
 		"menu_category": {
-			"category": "none",
-			"is_hidden_in_commands": true
+			"category": "nature"
 		},
 		"traits": {
 			"minecraft:placement_position": {
@@ -14,9 +13,7 @@
 		}
 	},
 	"components": {
-		"tag:minecraft:is_pickaxe_item_destructible": {},
-		"tag:magical_brewery:pure_quartz_bud": {},
-		"tag:stone": {},
+		"minecraft:tags": ["minecraft:is_pickaxe_item_destructible", "magical_brewery:pure_quartz_bud"],
 		"minecraft:friction": 0.4,
 		"minecraft:geometry": "minecraft:geometry.cross",
 		"minecraft:loot": "loot_tables/beardedflea/blocks/crystals/pure_quartz/small_pure_quartz_bud.loot.json",
@@ -31,7 +28,7 @@
 			"detection_rules": [
 				{
 					"liquid_type": "water",
-					"can_contain_liquid": true
+					"on_liquid_touches": "no_reaction"
 				}
 			]
 		},
@@ -40,7 +37,7 @@
 				"texture": "magical_brewery:small_pure_quartz_bud",
 				"render_method": "alpha_test_single_sided",
 				"face_dimming": false,
-				"ambient_occlusion": false
+				"ambient_occlusion": 0
 			}
 		},
 		"minecraft:collision_box": {
@@ -56,6 +53,12 @@
 		},
 		"minecraft:precipitation_interactions": {
 			"precipitation_behavior": "none"
+		},
+		"minecraft:connection_rule": {
+			"accepts_connections_from": "none"
+		},
+		"minecraft:sound": {
+			"sound": "amethyst_cluster"
 		}
 	},
 	"permutations": [
