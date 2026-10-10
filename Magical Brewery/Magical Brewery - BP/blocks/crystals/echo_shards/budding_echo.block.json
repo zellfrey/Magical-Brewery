@@ -20,7 +20,6 @@
 			"minecraft:tick": {
 				"interval_range": [20,20]
 			},
-			
 			"minecraft:light_emission": 2,
 			"minecraft:friction": 0.4,
 			"minecraft:loot": "loot_tables/empty.json",

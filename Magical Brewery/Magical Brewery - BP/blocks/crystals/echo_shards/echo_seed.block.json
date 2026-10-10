@@ -1,11 +1,10 @@
 {
-	"format_version": "1.21.130",
+	"format_version": "1.26.40",
 	"minecraft:block": {
 		"description": {
 			"identifier": "magical_brewery:echo_seed",
 			"menu_category": {
-				"category": "none",
-				"is_hidden_in_commands": true
+				"category": "nature"
 			},
 			"traits": {
 				"minecraft:placement_position": {
@@ -15,11 +14,9 @@
 			"states": {
 				"magical_brewery:seed_depth": [1,2,3,4]
 			}
-	  	},
+		},
 		"components": {
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:stone": {},
-			"tag:magical_brewery:crystal_seed": {},
+			"minecraft:tags": ["minecraft:is_pickaxe_item_destructible", "magical_brewery:crystal_seed"],
 			"minecraft:loot": "loot_tables/beardedflea/blocks/crystals/echo_shards/echo_seed.loot.json",
 			"minecraft:map_color": "#4C7F99",
 			"minecraft:light_emission": 1,
@@ -33,7 +30,7 @@
 				"detection_rules": [
 					{
 						"liquid_type": "water",
-						"can_contain_liquid": true
+						"on_liquid_touches": "no_reaction"
 					}
 				]
 			},
@@ -50,7 +47,7 @@
 					"texture": "magical_brewery:echo_seed",
 					"render_method": "alpha_test",
 					"face_dimming": false,
-					"ambient_occlusion": false
+					"ambient_occlusion": 0
 				}
 			},
 			"minecraft:collision_box": false,
@@ -71,10 +68,16 @@
 				"movement_type": "popped"
 			},
 			"minecraft:precipitation_interactions": {
-				"precipitation_behavior": "none"
+				"precipitation_behavior": "snowlogging"
+			},
+			"minecraft:connection_rule": {
+				"accepts_connections_from": "none"
+			},
+			"minecraft:sound": {
+				"sound": "amethyst_cluster"
 			}
 		},
-	  	"permutations": [
+		"permutations": [
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'north'",
 				"components": {
@@ -128,5 +131,4 @@
 			}
 		]
 	}
-  }
-	
+}
