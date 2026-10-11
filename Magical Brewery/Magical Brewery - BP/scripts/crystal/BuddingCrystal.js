@@ -140,7 +140,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 });
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.blockComponentRegistry.registerCustomComponent('magical_brewery:opd_budding_crystal_destroy', {
-        onBreak(e) {
+        onPlayerBreak(e) {
             BuddingCrystal.destroyCrystal(e.block.location, e.dimension.id)
         }
     });
@@ -173,7 +173,7 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 world.afterEvents.worldLoad.subscribe((e) => {
-    // console.log("loading budding crystal data")
+    //console.log("loading budding crystal data")
     let buddingCrystalData = world.getDynamicProperty('magical_brewery:budding_crystal_data')
     if(!buddingCrystalData || buddingCrystalData.length === 0) return;
 

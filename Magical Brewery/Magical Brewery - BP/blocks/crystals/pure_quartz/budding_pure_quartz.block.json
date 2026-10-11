@@ -33,7 +33,7 @@
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "magical_brewery:budding_pure_quartz",
-					"render_method": "blend"
+					"render_method": "blend_to_opaque"
 				}
 			},
 			"minecraft:redstone_conductivity": {

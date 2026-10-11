@@ -1,12 +1,11 @@
 {
-    "format_version": "1.21.130",
+    "format_version": "1.26.40",
     "minecraft:block": {
         "description": {
             "identifier": "magical_brewery:redstone_seed",
             "menu_category": {
-                "category": "none",
-                "is_hidden_in_commands": true
-            },
+				"category": "nature"
+			},
             "traits": {
                 "minecraft:placement_position": {
                     "enabled_states": ["minecraft:block_face"]
@@ -17,9 +16,7 @@
             }
         },
         "components": {
-            "tag:minecraft:is_pickaxe_item_destructible": {},
-            "tag:magical_brewery:crystal_seed": {},
-            "tag:stone": {},
+            "minecraft:tags": ["minecraft:is_pickaxe_item_destructible", "magical_brewery:crystal_seed"],
             "minecraft:loot": "loot_tables/beardedflea/blocks/crystals/red_shards/redstone_seed.loot.json",
             "minecraft:map_color": "#FF0000",
             "minecraft:light_emission": 1,
@@ -33,25 +30,25 @@
                 "detection_rules": [
                     {
                         "liquid_type": "water",
-                        "can_contain_liquid": true
+                        "on_liquid_touches": "no_reaction"
                     }
                 ]
             },
-            "minecraft:placement_filter": {
-                "conditions": [
-                    {
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
                         "block_filter": ["minecraft:redstone_ore","minecraft:deepslate_redstone_ore","minecraft:lit_redstone_ore",
                         "minecraft:lit_deepslate_redstone_ore", "magical_brewery:budding_redstone"]
                     }
-                ]
-            },
+				]
+			},
             "minecraft:friction": 0.4,
             "minecraft:material_instances": {
                 "*": {
                     "texture": "magical_brewery:redstone_seed",
                     "render_method": "alpha_test",
                     "face_dimming": false,
-                    "ambient_occlusion": false
+                    "ambient_occlusion": 0
                 }
             },
             "minecraft:collision_box": false,
@@ -72,7 +69,13 @@
 				"movement_type": "popped"
 			},
 			"minecraft:precipitation_interactions": {
-				"precipitation_behavior": "none"
+				"precipitation_behavior": "snowlogging"
+			},
+			"minecraft:connection_rule": {
+				"accepts_connections_from": "none"
+			},
+			"minecraft:sound": {
+				"sound": "amethyst_cluster"
 			}
         },
         "permutations": [
@@ -129,4 +132,5 @@
             }
         ]
     }
-  }
+}
+    

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.26.40",
 	"minecraft:block": {
 		"description": {
 			"identifier": "magical_brewery:glowstone_shard_block",
@@ -8,9 +8,8 @@
 			}
 		},
 		"components": {
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:stone": {},
-			"tag:magical_brewery:crystal_block": {},
+			"minecraft:tags": ["minecraft:is_pickaxe_item_destructible", "magical_brewery:crystal_block"],
+			"minecraft:geometry": "minecraft:geometry.full_block",
 			"minecraft:light_emission": 10,
 			"minecraft:friction": 0.4,
 			"minecraft:map_color": "#F7E9A3",
@@ -20,19 +19,19 @@
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 1.5
 			},
-			"minecraft:redstone_conductivity": {
-                "redstone_conductor": false,
-                "allows_wire_to_step_down": true
-            },
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "magical_brewery:glowstone_shard_block",
-					"render_method": "alpha_test",
-					"face_dimming": false,
-					"ambient_occlusion": false
+					"render_method": "opaque"
 				}
 			},
-			"minecraft:geometry": "minecraft:geometry.full_block"
+			"minecraft:redstone_conductivity": {
+                "redstone_conductor": true,
+                "allows_wire_to_step_down": true
+            },
+			"minecraft:sound": {
+				"sound": "amethyst_block"
+			}
 		}
 	}
 }
