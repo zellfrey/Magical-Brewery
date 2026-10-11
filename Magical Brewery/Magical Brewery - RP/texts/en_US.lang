@@ -10,7 +10,7 @@ item.magical_brewery:large_echo_bud.name=Large Echo Bud
 item.magical_brewery:echo_cluster.name=Echo Cluster
 item.magical_brewery:echo_dust.name=Echo Dust
 item.magical_brewery:echo_seed.name=Echo Seed
-tile.magical_brewery:budding_echo.name=Budding Echo §c[W.I.P]
+tile.magical_brewery:budding_echo.name=Budding Echo
 tile.magical_brewery:echo_shard_block.name=Echo Shard Block
 ##Glow shards---------------------------------
 item.magical_brewery:glowstone_shard.name=Glowstone Shard
