@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.40",
+	"format_version": "1.26.40",
 	"minecraft:item": {
 		"description": {
 			"identifier": "magical_brewery:glassmith_hammer",
@@ -8,7 +8,13 @@
 			}
 		},
 		"components": {
-			"minecraft:custom_components": ["magical_brewery:on_use_on_hammer", "magical_brewery:on_mine_block_hammer"],
+			"magical_brewery:on_use_on_hammer": {},
+			"magical_brewery:on_mine_block_hammer": {},
+			"minecraft:use_modifiers": {
+				"movement_modifier": 0.9,
+				"use_duration": 0.5,
+				"emit_vibrations": true
+			},
 			"minecraft:damage": 2,
 			"minecraft:durability": {
 				"max_durability": 90
@@ -66,7 +72,8 @@
 						"speed": 5
 					}
 				]
-			}
+			},
+		"minecraft:max_stack_size": 1
 		}
 	}
 }
