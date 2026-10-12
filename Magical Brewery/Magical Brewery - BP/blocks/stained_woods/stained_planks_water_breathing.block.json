@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.60",
+    "format_version": "1.26.40",
     "minecraft:block": {
         "description": {
             "identifier": "magical_brewery:stained_planks_water_breathing",
@@ -8,9 +8,8 @@
             }
         },
         "components": {
-            "tag:minecraft:is_axe_item_destructible": {},
-            "tag:wood": {},
-            "minecraft:light_dampening": 4,
+            "minecraft:tags": ["minecraft:is_axe_item_destructible", "wood"],
+            "minecraft:light_dampening": 15,
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 2.0
             },
@@ -31,7 +30,10 @@
                     "texture": "magical_brewery:stained_planks_water_breathing"
                 }
             },
-            "minecraft:geometry": "minecraft:geometry.full_block"
+            "minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:sound": {
+				"sound": "wood"
+			}
         }
     }
 }
