@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.26.40",
 	"minecraft:block": {
 		"description": {
 			"identifier": "magical_brewery:cask_slowness_quality_2",
@@ -19,9 +19,7 @@
 			} 
 		},
 		"components": {
-			"tag:minecraft:is_axe_item_destructible": {},
-			"tag:magical_brewery:cask": {},
-			"tag:wood": {},
+			"minecraft:tags": ["minecraft:is_axe_item_destructible", "magical_brewery:cask", "wood"],
 			"magical_brewery:pi_cask_fill": {
 				"cask":{
 					"effect": "Slowness",
@@ -30,7 +28,7 @@
 			},
 			"magical_brewery:opd_cask": {},
 			"magical_brewery:op_cask": {},
-			"minecraft:light_dampening": 4,
+			"minecraft:light_dampening": 15,
 			"minecraft:map_color": "#5c7394",
 			"minecraft:redstone_conductivity": {
 				"redstone_conductor": true,
@@ -62,6 +60,9 @@
 			"minecraft:geometry": "geometry.cask",
 			"minecraft:movable": {
             	"movement_type": "immovable"
+			},
+			"minecraft:sound": {
+				"sound": "chiseled_bookshelf"
 			}
 		},
 		"permutations": [
