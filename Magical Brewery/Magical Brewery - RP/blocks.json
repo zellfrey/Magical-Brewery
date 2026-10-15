@@ -59,28 +59,6 @@
 	},
 	"magical_brewery:stained_slab_weaving":{
 		"sound" : "wood"
-	},
-	
-	"magical_brewery:seal_basic":{
-		"sound" : "candle"
-	},
-	"magical_brewery:seal_longevity":{
-		"sound" : "candle"
-	},
-	"magical_brewery:seal_potency":{
-		"sound" : "candle"
-	},
-	"magical_brewery:seal_expansion":{
-		"sound" : "candle"
-	},
-	"magical_brewery:seal_retainment":{
-		"sound" : "candle"
-	},
-	"magical_brewery:seal_memories":{
-		"sound" : "candle"
-	},
-	"magical_brewery:seal_inspiration":{
-		"sound" : "candle"
 	}
 }
 

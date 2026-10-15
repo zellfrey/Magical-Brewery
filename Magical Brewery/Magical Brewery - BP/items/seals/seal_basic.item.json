@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.26.40",
 	"minecraft:item": {
 		"description": {
 			"identifier": "magical_brewery:seal_basic",
@@ -9,15 +9,14 @@
 		}, 
 		"components": {
 			"minecraft:hand_equipped": false,
-			"minecraft:max_stack_size": {
-				"value": 16
-			},
+			"minecraft:max_stack_size": 16,
 			"minecraft:icon": "magical_brewery:seal_basic",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:seal_basic.name"
 			},
 			"minecraft:block_placer": {
-				"block": "magical_brewery:seal_basic"
+				"block": "magical_brewery:seal_basic",
+				"replace_block_item": true
 			}
 		}
 	}
