@@ -1,0 +1,24 @@
+{
+	"format_version": "1.26.40",
+	"minecraft:item": {
+		"description": {
+			"identifier": "magical_brewery:stained_slab_leaping",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"magical_brewery:stained_slab_combine": {},
+			"minecraft:display_name":{
+				"value": "item.magical_brewery:stained_slab_leaping.name"
+			},
+			"minecraft:block_placer": {
+				"block": "magical_brewery:stained_slab_leaping",
+				"replace_block_item": true
+			},
+			"minecraft:fuel": {
+				"duration": 7.5
+			}
+		}
+	}
+}

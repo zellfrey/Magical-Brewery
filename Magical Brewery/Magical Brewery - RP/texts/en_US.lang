@@ -91,7 +91,7 @@ item.magical_brewery:crackling_oil.name=Crackling Oil
 ##Misc Items---------------------------------
 item.magical_brewery:brewers_desk.name=Brewer's Desk
 ##---------------------------------
-##Stained Planks/Slabs---------------------------------
+##Stained Planks/Slabs BLOCKS---------------------------------
 tile.magical_brewery:stained_planks_decay.name=Stained Planks of Decay
 tile.magical_brewery:stained_planks_harming.name=Stained Planks of Harming
 tile.magical_brewery:stained_planks_healing.name=Stained Planks of Healing
@@ -135,6 +135,28 @@ tile.magical_brewery:stained_slab_wind_charged.name=Stained Slab of Wind Charged
 tile.magical_brewery:stained_slab_weaving.name=Stained Slab of Weaving
 ##---------------------------------
 
+##Stained Planks/Slabs ITEMS---------------------------------
+item.magical_brewery:stained_slab_decay.name=Stained Slab of Decay
+item.magical_brewery:stained_slab_harming.name=Stained Slab of Harming
+item.magical_brewery:stained_slab_healing.name=Stained Slab of Healing
+item.magical_brewery:stained_slab_invisibility.name=Stained Slab of Invisibility
+item.magical_brewery:stained_slab_leaping.name=Stained Slab of Leaping
+item.magical_brewery:stained_slab_poison.name=Stained Slab of Poison
+item.magical_brewery:stained_slab_regeneration.name=Stained Slab of Regeneration
+item.magical_brewery:stained_slab_resistance_fire.name=Stained Slab of Fire Resistance
+item.magical_brewery:stained_slab_slow_falling.name=Stained Slab of Slow Falling
+item.magical_brewery:stained_slab_slowness.name=Stained Slab of Slowness
+item.magical_brewery:stained_slab_strength.name=Stained Slab of Strength
+item.magical_brewery:stained_slab_swiftness.name=Stained Slab of Swiftness
+##item.magical_brewery:stained_slab_turtle_master.name=Stained Slab of the Turtle Master
+item.magical_brewery:stained_slab_vision_night.name=Stained Slab of Night Vision
+item.magical_brewery:stained_slab_water_breathing.name=Stained Slab of Water Breathing
+item.magical_brewery:stained_slab_weakness.name=Stained Slab of Weakness
+item.magical_brewery:stained_slab_oozing.name=Stained Slab of Oozing
+item.magical_brewery:stained_slab_infested.name=Stained Slab of Infestation
+item.magical_brewery:stained_slab_wind_charged.name=Stained Slab of Wind Charged
+item.magical_brewery:stained_slab_weaving.name=Stained Slab of Weaving
+##---------------------------------
 ##---------------------------------
 ##Casks---------------------------------
 tile.magical_brewery:cask_decay.name=Cask of Decay
