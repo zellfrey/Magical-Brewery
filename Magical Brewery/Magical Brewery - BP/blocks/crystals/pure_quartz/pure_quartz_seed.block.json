@@ -19,6 +19,7 @@
             "minecraft:tags": ["minecraft:is_pickaxe_item_destructible", "magical_brewery:crystal_seed"],
             "minecraft:loot": "loot_tables/beardedflea/blocks/crystals/pure_quartz/pure_quartz_seed.loot.json",
             "minecraft:map_color": "#FFFCF5",
+            "minecraft:light_emission": 1,
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 1.5
             },

@@ -10,6 +10,7 @@
 		"components": {
 			"minecraft:tags": ["minecraft:is_pickaxe_item_destructible", "magical_brewery:crystal_block"],
 			"minecraft:geometry": "minecraft:geometry.full_block",
+			"minecraft:light_emission": 2,
 			"minecraft:friction": 0.4,
 			"minecraft:map_color": "#FFFCF5",
 			"minecraft:destructible_by_mining": {
