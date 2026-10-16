@@ -13,7 +13,11 @@
 			}
 		},
 		"components": {
-			"minecraft:tags": ["magical_brewery:seal", "magical_brewery:memories"],
+			"minecraft:tags": ["magical_brewery:seal"],
+			"magical_brewery:seal_traits": {
+				"type": "memories",
+				"strength": 0
+			},
 			"minecraft:friction": 0.4,
 			"minecraft:geometry": "geometry.seal",
 			"minecraft:destructible_by_mining": {

@@ -13,12 +13,13 @@
 			}
 		},
 		"components": {
-            "minecraft:tags": ["magical_brewery:seal", "magical_brewery:potency"],
+            "minecraft:tags": ["magical_brewery:seal"],
+			"magical_brewery:seal_traits": {
+				"type": "potency",
+				"strength": 2
+			},
 			"minecraft:friction": 0.4,
 			"minecraft:geometry": "geometry.seal",
-			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 0.3
-			},
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 1.5
 			},
