@@ -1,7 +1,22 @@
 import {system, ItemStack, world} from "@minecraft/server";
 import {setMainHand} from 'utils/containerUtils.js';
 
-const amethystBuds = ["minecraft:small_amethyst_bud", "minecraft:medium_amethyst_bud", "minecraft:large_amethyst_bud"];
+const HAMMER_SILK_TOUCHABLE_BLOCK_IDS = [
+    //Amethyst Buds
+    "minecraft:small_amethyst_bud", "minecraft:medium_amethyst_bud", "minecraft:large_amethyst_bud",
+    //Glass
+    "minecraft:glass", "minecraft:glass_pane",
+    //Stained Glass
+    "minecraft:white_stained_glass", "minecraft:white_stained_glass", "minecraft:magenta_stained_glass", "minecraft:light_blue_stained_glass", 
+    "minecraft:yellow_stained_glass", "minecraft:lime_stained_glass", "minecraft:pink_stained_glass", "minecraft:gray_stained_glass", 
+    "minecraft:light_gray_stained_glass", "minecraft:cyan_stained_glass", "minecraft:purple_stained_glass", "minecraft:blue_stained_glass", 
+    "minecraft:brown_stained_glass", "minecraft:green_stained_glass", "minecraft:red_stained_glass", "minecraft:black_stained_glass",
+    //Stained Panes
+    "minecraft:white_stained_glass_pane", "minecraft:white_stained_glass_pane", "minecraft:magenta_stained_glass_pane", "minecraft:light_blue_stained_glass_pane", 
+    "minecraft:yellow_stained_glass_pane", "minecraft:lime_stained_glass_pane", "minecraft:pink_stained_glass_pane", "minecraft:gray_stained_glass_pane", 
+    "minecraft:light_gray_stained_glass_pane", "minecraft:cyan_stained_glass_pane", "minecraft:purple_stained_glass_pane", "minecraft:blue_stained_glass_pane", 
+    "minecraft:brown_stained_glass_pane", "minecraft:green_stained_glass_pane", "minecraft:red_stained_glass_pane", "minecraft:black_stained_glass_pane",  
+]
 
 system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_use_on_hammer', {
@@ -19,7 +34,13 @@ system.beforeEvents.startup.subscribe(eventData => {
     eventData.itemComponentRegistry.registerCustomComponent('magical_brewery:on_mine_block_hammer', {
         onMineBlock(e) {
             const {block, minedBlockPermutation, itemStack, source} = e;
-            getAmethystBlockItem(block, minedBlockPermutation, itemStack, source);
+
+            const blockItemStack = getHammerSilkTouchAbleBlockItem(block, minedBlockPermutation);
+
+            if(blockItemStack !== undefined){
+                block.dimension.spawnItem(blockItemStack, block.center());
+            }
+            setItemDurability(itemStack, source);
         }
     });
 });
@@ -33,11 +54,12 @@ world.beforeEvents.playerBreakBlock.subscribe((e) => {
 
     if(!player || player.getGameMode() === "Creative" || !selectedItem) return;
 
-    if(block.typeId === "minecraft:amethyst_cluster" && selectedItem === "magical_brewery:glassmith_hammer"){
+    if(block.typeId === "minecraft:amethyst_cluster" && selectedItem.typeId === "magical_brewery:glassmith_hammer"){
         
         e.cancel = true;
 
-        removeAmethystCluster(player, block, selectedItem);
+        system.run(() => {removeAmethystCluster(player, block, selectedItem);});
+        
     } 
 });
 
@@ -75,30 +97,20 @@ function setItemDurability(itemStack, player){
     }
 }
 
-function getAmethystBlockItem(block, minedBlockPermutation, itemStack, source){
+function getHammerSilkTouchAbleBlockItem(block, minedBlockPermutation){
     
-    if(!amethystBuds.includes(minedBlockPermutation.type.id)) return;
+    if(!HAMMER_SILK_TOUCHABLE_BLOCK_IDS.includes(minedBlockPermutation.type.id)) return;
 
-    const amethystBudItem = new ItemStack(minedBlockPermutation.type.id, 1);
-
-    block.dimension.spawnItem(amethystBudItem, block.center());
-
-    setItemDurability(itemStack, source);
+    return new ItemStack(minedBlockPermutation.type.id, 1);
 }
 
+
 function removeAmethystCluster(player, block, selectedItem){
-    if (player.lastTick == undefined) { player.lastTick = 0 }
+    const amethystClusterItem = new ItemStack("minecraft:amethyst_cluster", 1);
 
-    if (system.currentTick - player.lastTick > 5) {
-        system.run(() => {
-            const amethystClusterItem = new ItemStack("minecraft:amethyst_cluster", 1);
+    block.dimension.playSound("break.amethyst_cluster", block.location);
+    block.setType("minecraft:air");
+    block.dimension.spawnItem(amethystClusterItem, block.center());
 
-            block.dimension.playSound("break.amethyst_cluster", block.location);
-            block.setType("minecraft:air");
-            block.dimension.spawnItem(amethystClusterItem, block.center());
-
-            setItemDurability(selectedItem, player);
-        });
-        player.lastTick = system.currentTick;
-    }
+    setItemDurability(selectedItem, player);
 }

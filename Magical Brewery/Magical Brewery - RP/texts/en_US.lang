@@ -366,7 +366,7 @@ magical_brewery:tome_chapter_theories_glowstone.title=Theories: Glowstone
 magical_brewery:tome_chapter_theories_glowstone.body=Throughout my travels I've always had one question floating around my head. If you are familiar with the nether then there is 1 undeniable fact, it is a wasteland filled with horrors and fear.\n\nBut why does glowstone exist? Such a tranquil and fragile object seems contradictory to the nature of the nether. One theory of mine is that glowstone represents a more malicious intent of survival. In that the harsh landscape of the nether created glowstone as a bi-product of it's ecology.\n\nIs this crystal feeding off of the hope and glimmer of souls that are trapped in the nether?\nPerhaps glowstone is the solidified remnants of hope. And maybe this is the reason why you can only grow glowstone crystals in the nether.
 
 magical_brewery:tome_chapter_crystal_harvesting.title=Crystal Harvesting
-magical_brewery:tome_chapter_crystal_harvesting.body=Now that the seeds have grown into a budding crystal, you will see that the budding crystals act exactly like budding amethyst.\nJust like amethyst clusters, shards can only be obtained once the crystals have grown to their final stage.\n\nSome shards can be broken down into pure dust, namely redstone & glowstone.\n\nYou can also use the glassmith hammer as an alternative to tools with a silk touch enchantment to get the crystal buds or crystal clusters.
+magical_brewery:tome_chapter_crystal_harvesting.body=Now that the seeds have grown into a budding crystal, you will see that the budding crystals act exactly like budding amethyst.\nJust like amethyst clusters, shards can only be obtained once the crystals have grown to their final stage.\n\nSome shards can be broken down into pure dust, namely redstone & glowstone.\n\nYou can also use the glassmith hammer as an alternative to tools with a silk touch enchantment to get crystal buds, crystal clusters, or glass blocks.
 
 magical_brewery:tome_chapter_echo_shards.title=Echo Shards
 magical_brewery:tome_chapter_echo_shards.body=If you find yourself in an ancient city, then well firstly I say to you, good luck. Secondly, there is a benefit to being in such a haunted location. Whomever used to live in these "cities" managed to make use of crystals called "echo shards". I recommend you take them with you as they are important to continue this procedure.\n\nIn the caves below you can find certain places affected by the infectious sculk spread. Within these pockets it is possible to find sculk catalysts.\nAfter countless trials and errors, sculk catalyst seems to be the only block capable of growing budding echo.\nFortunately these shards are already pure enough, so we don't need to go through that mess. But as always, you will need a seed to start the crystal growing process.\n\nThey will take longer to grow, however you can speed up the growth with experience.If you’ve done these steps correctly you should have echo clusters.
@@ -439,7 +439,7 @@ magical_brewery:tome_chapter_brewing_research.body=Since there are so many possi
 ##magical_brewery:tome_chapter_brewing_research.body= its time we get the facts straight and say this. Your taste profile range is shockingly small. So from now on we will have to expand our flavour town.(because all you have now in your town is a pub and a stable). We gonna have to touch grass, no even more, we gotta eat the grass!
 
 magical_brewery:tome_chapter_recipes.title=Recipes
-magical_brewery:tome_chapter_recipes.body=
+magical_brewery:tome_chapter_recipes.body=\n
 
 magical_brewery:tome_chapter_ingredients.title=Ingredients
 magical_brewery:tome_chapter_ingredients.body=I should get out of my comfort zone and explore the world to find exotic materials that can create different potions. I should "taste" the ingredients I find and see if they have potential.\nOnce I'm confident about them, I'll try and make a potion with said ingredient.\n\nNow whether the effects are bad or good I should still drink the potion to confirm it's effects. Not the best approach but I don't see an alternative.
@@ -448,7 +448,7 @@ magical_brewery:tome_chapter_catalysers.title=Catalysers
 magical_brewery:tome_chapter_catalysers.body=As with ingredients, I will have to find materials out in the world that could enhance potions. I still need to "taste" the catalysts. I suspect some may not be the best to "taste", but what can you do.\n\nIn any case, once I have found a suitable catalyser I should try and brew and drink 3 potions with different effects to confirm what the catalyst can enhance.
 
 magical_brewery:tome_chapter_potion_vessels.title=Potion Vessels
-magical_brewery:tome_chapter_potion_vessels.body=
+magical_brewery:tome_chapter_potion_vessels.body=\n
 
 ##---------------------------------
 ##Tome Chapters-----Ingredients-------------------
