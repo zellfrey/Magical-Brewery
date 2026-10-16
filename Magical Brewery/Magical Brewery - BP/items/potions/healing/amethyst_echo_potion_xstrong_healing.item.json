@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst Echo %potion.heal.name\n§7%potion.heal %potion.potency.2"
+				"value": "Amethyst Echo %potion.heal.name\n§9%potion.heal %potion.potency.2"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_echo_potion_xstrong_healing",
 			"minecraft:glint": true,

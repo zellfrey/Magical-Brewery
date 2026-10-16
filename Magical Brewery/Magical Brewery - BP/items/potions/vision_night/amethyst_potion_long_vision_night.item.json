@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.nightVision.name\n§7%potion.nightVision (8:00)"
+				"value": "Amethyst %potion.nightVision.name\n§9%potion.nightVision (8:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_long_vision_night",
 			"minecraft:glint": false,

@@ -12,7 +12,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.regeneration.splash.name\n§7%potion.regeneration (0:45)"
+				"value": "Amethyst %potion.regeneration.splash.name\n§9%potion.regeneration (0:45)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_splash_potion_regeneration",
 			"minecraft:glint": false,

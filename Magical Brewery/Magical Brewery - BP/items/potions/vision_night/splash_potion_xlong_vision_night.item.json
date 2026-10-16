@@ -13,7 +13,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.nightVision.splash.name\n§7%potion.nightVision (15:00)"
+				"value": "%potion.nightVision.splash.name\n§9%potion.nightVision (15:00)"
 			},
 			"minecraft:icon": "magical_brewery:glass_splash_potion_vision_night",
 			"minecraft:glint": true,

@@ -17,7 +17,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.fireResistance.name\n§7%potion.fireResistance (15:00)"
+				"value": "%potion.fireResistance.name\n§9%potion.fireResistance (15:00)"
 			},
 			"minecraft:icon": "magical_brewery:glass_potion_resistance_fire",
 			"minecraft:glint": true,

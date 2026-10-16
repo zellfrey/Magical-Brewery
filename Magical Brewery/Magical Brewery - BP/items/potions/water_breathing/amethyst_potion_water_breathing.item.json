@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.waterBreathing.name\n§7%potion.waterBreathing (3:00)"
+				"value": "Amethyst %potion.waterBreathing.name\n§9%potion.waterBreathing (3:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_water_breathing",
 			"minecraft:glint": false,

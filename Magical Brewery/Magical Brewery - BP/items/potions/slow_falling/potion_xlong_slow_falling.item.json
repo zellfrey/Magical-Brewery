@@ -17,7 +17,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.slowFalling.name\n§7%potion.slowFalling (7:00)"
+				"value": "%potion.slowFalling.name\n§9%potion.slowFalling (7:00)"
 			},
 			"minecraft:icon": "magical_brewery:glass_potion_slow_falling",
 			"minecraft:glint": true,

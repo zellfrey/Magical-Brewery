@@ -13,7 +13,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.heal.splash.name\n§7%potion.heal %potion.potency.2"
+				"value": "%potion.heal.splash.name\n§9%potion.heal %potion.potency.2"
 			},
 			"minecraft:icon": "magical_brewery:glass_splash_potion_healing",
 			"minecraft:glint": true,

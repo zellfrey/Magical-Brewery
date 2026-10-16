@@ -12,7 +12,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.moveSlowdown.splash.name\n§c%potion.moveSlowdown %potion.potency.4 (0:20)\n\n§5%potion.effects.whenDrank\n§c-75%% %potion.moveSpeed"
+				"value": "Amethyst %potion.moveSlowdown.splash.name\n§c%potion.moveSlowdown %potion.potency.4 (0:20)\n§c-75%% %potion.moveSpeed"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_splash_potion_xstrong_slowness",
 			"minecraft:glint": true,

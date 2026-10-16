@@ -12,7 +12,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.damageBoost.splash.name\n§7%potion.damageBoost %potion.potency.1 (1:30)\n\n§5%potion.effects.whenDrank\n§9+2.99 %attribute.name.generic.attackDamage"
+				"value": "Amethyst %potion.damageBoost.splash.name\n§9%potion.damageBoost %potion.potency.1 (1:30)\n§9+2.99 %attribute.name.generic.attackDamage"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_splash_potion_strong_strength",
 			"minecraft:glint": false,

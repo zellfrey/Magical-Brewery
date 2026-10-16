@@ -13,7 +13,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.waterBreathing.splash.name\n§7%potion.waterBreathing (15:00)"
+				"value": "%potion.waterBreathing.splash.name\n§9%potion.waterBreathing (15:00)"
 			},
 			"minecraft:icon": "magical_brewery:glass_splash_potion_water_breathing",
 			"minecraft:glint": true,

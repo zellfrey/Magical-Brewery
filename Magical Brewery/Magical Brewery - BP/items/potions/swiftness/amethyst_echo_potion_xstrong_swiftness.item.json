@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst Echo %potion.moveSpeed.name\n§7%potion.moveSpeed %potion.potency.2 (1:30)\n\n§5%potion.effects.whenDrank\n§9+60%% %potion.moveSpeed"
+				"value": "Amethyst Echo %potion.moveSpeed.name\n§9%potion.moveSpeed %potion.potency.2 (1:30)\n§9+60%% %potion.moveSpeed"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_echo_potion_xstrong_swiftness",
 			"minecraft:glint": true,

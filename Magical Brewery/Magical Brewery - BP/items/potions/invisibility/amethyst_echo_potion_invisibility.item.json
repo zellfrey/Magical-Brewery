@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst Echo %potion.invisibility.name\n§7%potion.invisibility (3:00)"
+				"value": "Amethyst Echo %potion.invisibility.name\n§9%potion.invisibility (3:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_echo_potion_invisibility",
 			"minecraft:glint": false,

@@ -15,7 +15,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.regeneration.name\n§7%potion.regeneration (2:00)"
+				"value": "Amethyst %potion.regeneration.name\n§9%potion.regeneration (2:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_long_regeneration",
 			"minecraft:glint": false,

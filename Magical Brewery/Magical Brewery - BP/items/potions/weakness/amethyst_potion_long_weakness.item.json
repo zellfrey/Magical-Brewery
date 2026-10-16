@@ -15,7 +15,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.weakness.name\n§c%potion.weakness (4:00)\n\n§5%potion.effects.whenDrank\n§9-0.7 %attribute.name.generic.attackDamage"
+				"value": "Amethyst %potion.weakness.name\n§c%potion.weakness (4:00)\n§9-0.7 %attribute.name.generic.attackDamage"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_potion_long_weakness",
 			"minecraft:glint": false,

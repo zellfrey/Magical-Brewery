@@ -12,7 +12,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.invisibility.splash.name\n§7%potion.invisibility (3:00)"
+				"value": "Amethyst %potion.invisibility.splash.name\n§9%potion.invisibility (3:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_splash_potion_invisibility",
 			"minecraft:glint": false,

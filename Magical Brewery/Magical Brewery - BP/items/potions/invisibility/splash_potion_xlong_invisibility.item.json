@@ -13,7 +13,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.invisibility.splash.name\n§7%potion.invisibility (15:00)"
+				"value": "%potion.invisibility.splash.name\n§9%potion.invisibility (15:00)"
 			},
 			"minecraft:icon": "magical_brewery:glass_splash_potion_invisibility",
 			"minecraft:glint": true,

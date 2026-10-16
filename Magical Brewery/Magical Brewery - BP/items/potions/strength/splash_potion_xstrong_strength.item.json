@@ -13,7 +13,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.damageBoost.splash.name\n§7%potion.damageBoost %potion.potency.2 (1:30)\n\n§5%potion.effects.whenDrank\n§9+5.2 %attribute.name.generic.attackDamage"
+				"value": "%potion.damageBoost.splash.name\n§9%potion.damageBoost %potion.potency.2 (1:30)\n§9+5.2 %attribute.name.generic.attackDamage"
 			},
 			"minecraft:icon": "magical_brewery:glass_splash_potion_strength",
 			"minecraft:glint": true,

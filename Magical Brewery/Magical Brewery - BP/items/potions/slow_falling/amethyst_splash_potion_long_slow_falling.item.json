@@ -12,7 +12,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst %potion.slowFalling.splash.name\n§7%potion.slowFalling (4:00)"
+				"value": "Amethyst %potion.slowFalling.splash.name\n§9%potion.slowFalling (4:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_splash_potion_long_slow_falling",
 			"minecraft:glint": false,

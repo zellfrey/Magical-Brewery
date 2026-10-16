@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst Echo %potion.jump.name\n§7%potion.jump %potion.potency.1 (1:30)"
+				"value": "Amethyst Echo %potion.jump.name\n§9%potion.jump %potion.potency.1 (1:30)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_echo_potion_strong_leaping",
 			"minecraft:max_stack_size": {

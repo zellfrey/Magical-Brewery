@@ -16,7 +16,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "Amethyst Echo %potion.turtleMaster.name\n§c%potion.turtleMaster %potion.potency.3 (0:40)\n§r§7%potion.turtleMaster2 %potion.potency.2 (0:40)\n\n§5%potion.effects.whenDrank\n§c-60%% %potion.moveSpeed"
+				"value": "Amethyst Echo %potion.turtleMaster.name\n§c%potion.turtleMaster %potion.potency.3 (0:40)\n§r§9%potion.turtleMaster2 %potion.potency.2 (0:40)\n§c-60%% %potion.moveSpeed"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_echo_potion_long_turtle_master",
 			"minecraft:glint": false,

@@ -17,7 +17,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:glass"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.moveSpeed.name\n§7%potion.moveSpeed %potion.potency.2 (1:30)\n\n§5%potion.effects.whenDrank\n§9+60%% %potion.moveSpeed"
+				"value": "%potion.moveSpeed.name\n§9%potion.moveSpeed %potion.potency.2 (1:30)\n§9+60%% %potion.moveSpeed"
 			},
 			"minecraft:icon": "magical_brewery:glass_potion_swiftness",
 			"minecraft:glint": true,
