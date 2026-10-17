@@ -49,15 +49,18 @@ system.beforeEvents.startup.subscribe(eventData => {
             const aged = block.permutation.getState("magical_brewery:aged");
             //Failsafe
             
-
             if(selectedItem.typeId === "magical_brewery:tasting_spoon"){
 
                 const caskPotionType = p.params.cask.effect;
                 const caskTranslateKey = p.params.cask.translate_key;
 
                 if(fillLevel === 0){
+
+                    sendEmptyCaskMessage(block, player);
+
                     dimension.playSound("hit.chiseled_bookshelf", block.location, {volume: 0.8, pitch: 0.6});
-                    player.sendMessage({ translate: "magical_brewery:message.cask.tasting_spoon.empty"});
+
+                    return;
                 }
                 else{
                     dimension.playSound("bottle.empty", block.location, {volume: 0.8, pitch: 2.2});
@@ -141,6 +144,29 @@ system.beforeEvents.startup.subscribe(eventData => {
     });
 });
 
+function sendEmptyCaskMessage(block, player){
+    
+    let caskQuality = parseInt(block.typeId.charAt(block.typeId.length-1))
+    
+    let caskType;
+
+    if(isNaN(caskQuality)){
+        caskType = block.typeId.split(":")[1];
+    }
+	else{
+		caskType = block.typeId.split(":")[1].split("_");
+		//Remove "quality" & "Int"
+		caskType.length = caskType.length - 2;
+		caskType = caskType.join("_");
+	}
+    
+    const emptyCaskMessage = {
+        translate: "magical_brewery:message.cask.tasting_spoon.empty",
+        with: { rawtext: [{ translate: `tile.magical_brewery:${caskType}.name` }] },
+    };
+
+    player.sendMessage(emptyCaskMessage);
+}
 
 function sendAgingTasteMessage(player, caskTranslateKey, ageCompletionPercentage){
 
@@ -165,7 +191,7 @@ function sendAgingTasteMessage(player, caskTranslateKey, ageCompletionPercentage
     const agingStageMessage = {
         translate: `magical_brewery:message.cask.tasting_spoon.aging.${agingStage}`,
         with: { rawtext: [{ translate: `potion.${caskTranslateKey}` }] },
-        };
+    };
 
     player.sendMessage(agingStageMessage);
 
