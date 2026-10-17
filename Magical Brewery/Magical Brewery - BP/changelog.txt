@@ -1,3 +1,28 @@
+-----------------------------------------------
+v0.5.1
+Added:
+    - Amethyst Potions can be used to make stained planks & casks
+    - Glassmith Hammer can now silk touch any glass block
+    - Pure quartz crystal variants emit a small amount of light
+    - Slab combine functionality
+Updated:
+    - Items and blocks bumped to format version 1.26.40. (except potions)
+    - Fixed GShammer issue in where it wouldn't silk touch amethyst clusters
+    - GShammer's max stack size reduced to 1. As all tools should be
+    - Potion display names to match minecraft potion display name format
+    - Improved message when interacting with an empty cask
+    - Fixed creative mode select block to now give item rather than a non-obtainable block
+      (growing crysal is the only exception, ill get to that at a later date)
+    - Budding Echo display name changed to not have "[W.I.P]"
+    - Seals use custom parameters instead of tags
+Removed:
+    - Seal loottables   
+Author comment:
+Before you add this update to your world there will be a chance that some seal blocks will disappear.
+So destroy them and then you can update the world and it should be fine.
+
+More minor updates to come. Just catching up on what I've missed over the months
+-----------------------------------------------
 v0.5 - FULL CHANGELOG(SPOILERS)
 Added:
     - Brewer's Desk. item, block, crafting bench A new research station fitting for a magical brewer
