@@ -146,19 +146,7 @@ system.beforeEvents.startup.subscribe(eventData => {
 
 function sendEmptyCaskMessage(block, player){
     
-    let caskQuality = parseInt(block.typeId.charAt(block.typeId.length-1))
-    
-    let caskType;
-
-    if(isNaN(caskQuality)){
-        caskType = block.typeId.split(":")[1];
-    }
-	else{
-		caskType = block.typeId.split(":")[1].split("_");
-		//Remove "quality" & "Int"
-		caskType.length = caskType.length - 2;
-		caskType = caskType.join("_");
-	}
+    const caskType = Cask.getCaskType(block.typeId);
     
     const emptyCaskMessage = {
         translate: "magical_brewery:message.cask.tasting_spoon.empty",
