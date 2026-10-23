@@ -13,9 +13,6 @@
 			"minecraft:icon": "magical_brewery:crackling_oil",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:crackling_oil.name"
-			},
-			"minecraft:storage_weight_limit": {
-				"max_weight_limit": 64
 			}
 		}
 	}

@@ -9,7 +9,7 @@
 		},
 		"components": {
 			"minecraft:tags": {
-				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:glass"]
+				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
 				"value": "item.magical_brewery:amethyst_splash_potion_mundane.name"
