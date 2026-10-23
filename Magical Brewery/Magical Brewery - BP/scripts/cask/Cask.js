@@ -152,7 +152,7 @@ export class Cask {
 		//TODO: Have potion drop from player
         if(inventory.emptySlotsCount === 0 && selectedItem.amount > 1) return;
 		
-		if(selectedItem.typeId === "minecraft:glass_bottle" && this.potion_liquid === "ConsumeEcho"){
+		if(selectedItem.typeId === "minecraft:glass_bottle" && (this.potion_liquid === "ConsumeEcho" || this.potion_liquid === "ThrownXSplash")){
 			
 			player.sendMessage("This cask contains a potion that is too powerful to be held in a glass bottle.");
 			return;

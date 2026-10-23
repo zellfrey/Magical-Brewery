@@ -116,6 +116,9 @@ export class MagicalBreweryPotion {
 		if(potionItem.hasTag("magical_brewery:splash_potion")){
 			return "ThrownSplash";
 		}
+		else if(potionItem.hasTag("magical_brewery:xsplash_potion")){
+			return "ThrownXSplash";
+		}
 		else if(potionItem.hasTag("magical_brewery:lingering_potion")){
 			return "ThrownLingering";
 		}
@@ -226,16 +229,14 @@ export class MagicalBreweryPotion {
 		switch(caskPotionLiquid){
 			case "ThrownSplash":
 				return "splash_";
-			break;
+			case "ThrownXSplash":
+				return "xsplash_";
 			case "ThrownLingering":
 				return "lingering_";
-			break;
 			case "ConsumeEcho":
 				return "echo_";
-			break;
 			default:
 				return "";
-			break;
 		}
 	}
 

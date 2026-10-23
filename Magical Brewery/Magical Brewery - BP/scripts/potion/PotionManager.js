@@ -38,17 +38,17 @@ export class PotionManager {
 					
 			const words = splashPotionExtraEffects[i].split(' ');
 			let distance = 2.5;
-			console.log(words)
 			//As to why extraEffects === "Mundane (no effect)" doesnt work, idk so its this for now
 			if(words[0] === "Mundane") continue;
 			
-			if(words[words.length-1] === "[Splash]" || words[words.length-1] === "[Splash II]"){
+			words.forEach(el => console.log(el))
+			if(words[words.length-1] === "[Splash]" || words[words.length-1] === "II]"){
 				
 				switch(words[words.length-1]){
 					case "[Splash]":
 						distance = 4.5;
 					break;
-					case "[Splash II]":
+					case "II]":
 						distance = 6.5;
 					break;
 				}
@@ -291,11 +291,10 @@ export class PotionManager {
 	static shouldPotionBreak(potionVesselType, noOfEffects){
 		switch(potionVesselType){
 			case "glass":
-				return noOfEffects > 2;
-			break;
+			return noOfEffects > 2;
+			
 			case "amethyst":
-				return noOfEffects > 5;
-			break;
+			return noOfEffects > 5;
 		}
 	}
 
