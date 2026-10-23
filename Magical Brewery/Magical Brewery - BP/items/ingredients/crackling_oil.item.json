@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.10",
+	"format_version": "1.26.40",
 	"minecraft:item": {
 		"description": {
 			"identifier": "magical_brewery:crackling_oil",
@@ -8,10 +8,14 @@
 			}
 		}, 
 		"components": {
+			"minecraft:max_stack_size": 64,
 			"minecraft:hand_equipped": false,
 			"minecraft:icon": "magical_brewery:crackling_oil",
 			"minecraft:display_name":{
 				"value": "item.magical_brewery:crackling_oil.name"
+			},
+			"minecraft:storage_weight_limit": {
+				"max_weight_limit": 64
 			}
 		}
 	}
