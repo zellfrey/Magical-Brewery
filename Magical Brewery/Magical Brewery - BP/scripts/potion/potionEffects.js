@@ -99,152 +99,278 @@ export const POTION_EFFECTS = {
   };
 
 export const SPLASH_POTION_EFFECTS = {
+//Wither--------------------------------------
     "amethyst_splash_potion_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_wither": { effect: "wither", duration: 1600, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_wither": { effect: "wither", duration: 1600, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_wither": { effect: "wither", duration: 1600, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_wither": { effect: "wither", duration: 1600, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 6.5},
+
     "splash_potion_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 4.5},
     "splash_potion_xstrong_wither": { effect: "wither", duration: 1600, amplifier: 2, radius: 4.5},
     "splash_potion_long_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_wither": { effect: "wither", duration: 1600, amplifier: 0, radius: 4.5},
-
+//Harming--------------------------------------
     "amethyst_splash_potion_harming": { effect: "instant_damage", duration: 1, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_harming": { effect: "instant_damage", duration: 1, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_harming": { effect: "instant_damage", duration: 1, amplifier: 2, radius: 4.5},
-    "splash_potion_xstrong_harming": { effect: "instant_damage", duration: 1, amplifier: 2, radius: 4.5},
 
+    "amethyst_xsplash_potion_harming": { effect: "instant_damage", duration: 1, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_harming": { effect: "instant_damage", duration: 1, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_harming": { effect: "instant_damage", duration: 1, amplifier: 2, radius: 6.5},
+
+    "splash_potion_xstrong_harming": { effect: "instant_damage", duration: 1, amplifier: 2, radius: 4.5},
+//Healing--------------------------------------
     "amethyst_splash_potion_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xstrong_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 4.5},
-    "splash_potion_xstrong_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 4.5},
 
+    "amethyst_xsplash_potion_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 6.5},
+    
+    "splash_potion_xstrong_healing": { effect: "instant_health", duration: 1, amplifier: 0, radius: 4.5},
+//Infested--------------------------------------
     "amethyst_splash_potion_infested": { effect: "infested", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_infested": { effect: "infested", duration: 1800, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_infested": { effect: "infested", duration: 1800, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_infested": { effect: "infested", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_infested": { effect: "infested", duration: 18000, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_infested": { effect: "infested", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_infested": { effect: "infested", duration: 1800, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_infested": { effect: "infested", duration: 1800, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_infested": { effect: "infested", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_infested": { effect: "infested", duration: 18000, amplifier: 0, radius: 6.5},
+
     "splash_potion_strong_infested": { effect: "infested", duration: 1800, amplifier: 1, radius: 4.5},
     "splash_potion_xstrong_infested": { effect: "infested", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_infested": { effect: "infested", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_infested": { effect: "infested", duration: 18000, amplifier: 0, radius: 4.5},
-
+//Invisibility--------------------------------------
     "amethyst_splash_potion_invisibility": { effect: "invisibility", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_long_invisibility": { effect: "invisibility", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_invisibility": { effect: "invisibility", duration: 18000, amplifier: 0, radius: 4.5},
-    "splash_potion_xlong_invisibility": { effect: "invisibility", duration: 18000, amplifier: 0, radius: 4.5},
 
+    "amethyst_xsplash_potion_invisibility": { effect: "invisibility", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_long_invisibility": { effect: "invisibility", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_invisibility": { effect: "invisibility", duration: 18000, amplifier: 0, radius: 6.5},
+
+    "splash_potion_xlong_invisibility": { effect: "invisibility", duration: 18000, amplifier: 0, radius: 4.5},
+//Leaping--------------------------------------
+    "amethyst_splash_potion_leaping": { effect: "jump_boost", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_leaping": { effect: "jump_boost", duration: 1800, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_leaping": { effect: "jump_boost", duration: 1800, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_leaping": { effect: "jump_boost", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_leaping": { effect: "jump_boost", duration: 18000, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_leaping": { effect: "jump_boost", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_leaping": { effect: "jump_boost", duration: 1800, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_leaping": { effect: "jump_boost", duration: 1800, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_leaping": { effect: "jump_boost", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_leaping": { effect: "jump_boost", duration: 18000, amplifier: 0, radius: 6.5},
+
     "splash_potion_strong_leaping": { effect: "jump_boost", duration: 1800, amplifier: 1, radius: 4.5},
     "splash_potion_xstrong_leaping": { effect: "jump_boost", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_leaping": { effect: "jump_boost", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_leaping": { effect: "jump_boost", duration: 18000, amplifier: 0, radius: 4.5},
-    
+//Oozing--------------------------------------
     "amethyst_splash_potion_oozing": { effect: "oozing", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_oozing": { effect: "oozing", duration: 1800, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_oozing": { effect: "oozing", duration: 1800, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_oozing": { effect: "oozing", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_oozing": { effect: "oozing", duration: 18000, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_oozing": { effect: "oozing", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_oozing": { effect: "oozing", duration: 1800, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_oozing": { effect: "oozing", duration: 1800, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_oozing": { effect: "oozing", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_oozing": { effect: "oozing", duration: 18000, amplifier: 0, radius: 6.5},
+
     "splash_potion_strong_oozing": { effect: "oozing", duration: 1800, amplifier: 1, radius: 4.5},
     "splash_potion_xstrong_oozing": { effect: "oozing", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_oozing": { effect: "oozing", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_oozing": { effect: "oozing", duration: 18000, amplifier: 0, radius: 4.5},
-
+//Poison--------------------------------------
     "amethyst_splash_potion_poison": { effect: "poison", duration: 900, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_poison": { effect: "poison", duration: 440, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_poison": { effect: "poison", duration: 440, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_poison": { effect: "poison", duration: 2400, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_poison": { effect: "poison", duration: 4200, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_poison": { effect: "poison", duration: 900, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_poison": { effect: "poison", duration: 440, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_poison": { effect: "poison", duration: 440, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_poison": { effect: "poison", duration: 2400, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_poison": { effect: "poison", duration: 4200, amplifier: 0, radius: 6.5},
+
     "splash_potion_xstrong_poison": { effect: "poison", duration: 440, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_poison": { effect: "poison", duration: 4200, amplifier: 0, radius: 4.5},
-
+//Regeneration--------------------------------------
     "amethyst_splash_potion_regeneration": { effect: "regeneration", duration: 900, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_regeneration": { effect: "regeneration", duration: 440, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_regeneration": { effect: "regeneration", duration: 440, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_regeneration": { effect: "regeneration", duration: 2400, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_regeneration": { effect: "regeneration", duration: 4200, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_regeneration": { effect: "regeneration", duration: 900, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_regeneration": { effect: "regeneration", duration: 440, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_regeneration": { effect: "regeneration", duration: 440, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_regeneration": { effect: "regeneration", duration: 2400, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_regeneration": { effect: "regeneration", duration: 4200, amplifier: 0, radius: 6.5},
+
     "splash_potion_xstrong_regeneration": { effect: "regeneration", duration: 440, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_regeneration": { effect: "regeneration", duration: 4200, amplifier: 0, radius: 4.5},
-
+//Fire Resistance--------------------------------------
     "amethyst_splash_potion_fire_resistance": { effect: "fire_resistance", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_long_fire_resistance": { effect: "fire_resistance", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_fire_resistance": { effect: "fire_resistance", duration: 18000, amplifier: 0, radius: 4.5},
-    "splash_potion_xlong_fire_resistance": { effect: "fire_resistance", duration: 18000, amplifier: 0, radius: 4.5},
 
+    "amethyst_xsplash_potion_fire_resistance": { effect: "fire_resistance", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_long_fire_resistance": { effect: "fire_resistance", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_fire_resistance": { effect: "fire_resistance", duration: 18000, amplifier: 0, radius: 6.5},
+
+    "splash_potion_xlong_fire_resistance": { effect: "fire_resistance", duration: 18000, amplifier: 0, radius: 4.5},
+//Slow Falling--------------------------------------
     "amethyst_splash_potion_slow_falling": { effect: "slow_falling", duration: 1800, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_long_slow_falling": { effect: "slow_falling", duration: 4800, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_slow_falling": { effect: "slow_falling", duration: 8400, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_slow_falling": { effect: "slow_falling", duration: 1800, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_long_slow_falling": { effect: "slow_falling", duration: 4800, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_slow_falling": { effect: "slow_falling", duration: 8400, amplifier: 0, radius: 6.5},
+
     "splash_potion_xlong_slow_falling": { effect: "slow_falling", duration: 8400, amplifier: 0, radius: 4.5},
-    
+//Slowness--------------------------------------    
     "amethyst_splash_potion_slowness": { effect: "slowness", duration: 1800, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_slowness": { effect: "slowness", duration: 400, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_slowness": { effect: "slowness", duration: 400, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_slowness": { effect: "slowness", duration: 4800, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_slowness": { effect: "slowness", duration: 8400, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_slowness": { effect: "slowness", duration: 1800, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_slowness": { effect: "slowness", duration: 400, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_slowness": { effect: "slowness", duration: 400, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_slowness": { effect: "slowness", duration: 4800, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_slowness": { effect: "slowness", duration: 8400, amplifier: 0, radius: 6.5},
+
     "splash_potion_xstrong_slowness": { effect: "slowness", duration: 400, amplifier: 2, radius: 4.5},
     "splash_potion_xlong_slowness": { effect: "slowness", duration: 8400, amplifier: 0, radius: 4.5},
-
+//Strength--------------------------------------   
     "amethyst_splash_potion_strength": { effect: "strength", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_strength": { effect: "strength", duration: 1800, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_strength": { effect: "strength", duration: 1800, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_strength": { effect: "strength", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_strength": { effect: "strength", duration: 18000, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_strength": { effect: "strength", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_strength": { effect: "strength", duration: 1800, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_strength": { effect: "strength", duration: 1800, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_strength": { effect: "strength", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_strength": { effect: "strength", duration: 18000, amplifier: 0, radius: 6.5},
+
     "splash_potion_strong_strength": { effect: "strength", duration: 1800, amplifier: 1, radius: 4.5},
     "splash_potion_xstrong_strength": { effect: "strength", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_strength": { effect: "strength", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_strength": { effect: "strength", duration: 18000, amplifier: 0, radius: 4.5},
-
+//Swiftness--------------------------------------
     "amethyst_splash_potion_swiftness": { effect: "speed", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_swiftness": { effect: "speed", duration: 1800, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_swiftness": { effect: "speed", duration: 1800, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_swiftness": { effect: "speed", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_swiftness": { effect: "speed", duration: 18000, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_swiftness": { effect: "speed", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_swiftness": { effect: "speed", duration: 1800, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_swiftness": { effect: "speed", duration: 1800, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_swiftness": { effect: "speed", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_swiftness": { effect: "speed", duration: 18000, amplifier: 0, radius: 6.5},
+
     "splash_potion_strong_swiftness": { effect: "speed", duration: 1800, amplifier: 1, radius: 4.5},
     "splash_potion_xstrong_swiftness": { effect: "speed", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_swiftness": { effect: "speed", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_swiftness": { effect: "speed", duration: 18000, amplifier: 0, radius: 4.5},
-
+//Turtle Master--------------------------------------
     "amethyst_splash_potion_turtle_master":{ effect: "turtle_master"},
     "amethyst_splash_potion_strong_turtle_master":{ effect: "turtle_master"},
     "amethyst_splash_potion_xstrong_turtle_master":{ effect: "turtle_master"},
     "amethyst_splash_potion_long_turtle_master":{ effect: "turtle_master"},
     "amethyst_splash_potion_xlong_turtle_master":{ effect: "turtle_master"},
+
+    "amethyst_xsplash_potion_turtle_master":{ effect: "turtle_master"},
+    "amethyst_xsplash_potion_strong_turtle_master":{ effect: "turtle_master"},
+    "amethyst_xsplash_potion_xstrong_turtle_master":{ effect: "turtle_master"},
+    "amethyst_xsplash_potion_long_turtle_master":{ effect: "turtle_master"},
+    "amethyst_xsplash_potion_xlong_turtle_master":{ effect: "turtle_master"},
+
     "splash_potion_xstrong_turtle_master":{ effect: "turtle_master"},
     "splash_potion_xlong_turtle_master":{ effect: "turtle_master"},
-
+//Night Vision--------------------------------------
     "amethyst_splash_potion_nightvision": { effect: "night_vision", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_long_nightvision": { effect: "night_vision", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_nightvision": { effect: "night_vision", duration: 18000, amplifier: 0, radius: 4.5},
-    "splash_potion_xlong_nightvision": { effect: "night_vision", duration: 18000, amplifier: 0, radius: 4.5},
 
+    "amethyst_xsplash_potion_nightvision": { effect: "night_vision", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_long_nightvision": { effect: "night_vision", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_nightvision": { effect: "night_vision", duration: 18000, amplifier: 0, radius: 6.5},
+
+    "splash_potion_xlong_nightvision": { effect: "night_vision", duration: 18000, amplifier: 0, radius: 4.5},
+//Water Breathing--------------------------------------
     "amethyst_splash_potion_water_breathing": { effect: "water_breathing", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_long_water_breathing": { effect: "water_breathing", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_water_breathing": { effect: "water_breathing", duration: 18000, amplifier: 0, radius: 4.5},
-    "splash_potion_xlong_water_breathing": { effect: "water_breathing", duration: 18000, amplifier: 0, radius: 4.5},
 
+    "amethyst_xsplash_potion_water_breathing": { effect: "water_breathing", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_long_water_breathing": { effect: "water_breathing", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_water_breathing": { effect: "water_breathing", duration: 18000, amplifier: 0, radius: 6.5},
+
+    "splash_potion_xlong_water_breathing": { effect: "water_breathing", duration: 18000, amplifier: 0, radius: 4.5},
+//Weakness--------------------------------------
     "amethyst_splash_potion_weakness": { effect: "weakness", duration: 1800, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_long_weakness": { effect: "weakness", duration: 4800, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_weakness": { effect: "weakness", duration: 8400, amplifier: 0, radius: 4.5},
-    "splash_potion_xlong_weakness": { effect: "weakness", duration: 8400, amplifier: 0, radius: 4.5},
 
+    "amethyst_splash_potion_weakness": { effect: "weakness", duration: 1800, amplifier: 0, radius: 6.5},
+    "amethyst_splash_potion_long_weakness": { effect: "weakness", duration: 4800, amplifier: 0, radius: 6.5},
+    "amethyst_splash_potion_xlong_weakness": { effect: "weakness", duration: 8400, amplifier: 0, radius: 6.5},
+
+    "splash_potion_xlong_weakness": { effect: "weakness", duration: 8400, amplifier: 0, radius: 4.5},
+//Weaving--------------------------------------
     "amethyst_splash_potion_weaving": { effect: "weaving", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_weaving": { effect: "weaving", duration: 1800, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_weaving": { effect: "weaving", duration: 1800, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_weaving": { effect: "weaving", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_weaving": { effect: "weaving", duration: 18000, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_weaving": { effect: "weaving", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_weaving": { effect: "weaving", duration: 1800, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_weaving": { effect: "weaving", duration: 1800, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_weaving": { effect: "weaving", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_weaving": { effect: "weaving", duration: 18000, amplifier: 0, radius: 6.5},
+
     "splash_potion_strong_weaving": { effect: "weaving", duration: 1800, amplifier: 1, radius: 4.5},
     "splash_potion_xstrong_weaving": { effect: "weaving", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_weaving": { effect: "weaving", duration: 9600, amplifier: 0, radius: 4.5},
     "splash_potion_xlong_weaving": { effect: "weaving", duration: 18000, amplifier: 0, radius: 4.5},
-
+//Wind Charged--------------------------------------
     "amethyst_splash_potion_wind_charged": { effect: "wind_charged", duration: 3600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_strong_wind_charged": { effect: "wind_charged", duration: 1800, amplifier: 1, radius: 4.5},
     "amethyst_splash_potion_xstrong_wind_charged": { effect: "wind_charged", duration: 1800, amplifier: 2, radius: 4.5},
     "amethyst_splash_potion_long_wind_charged": { effect: "wind_charged", duration: 9600, amplifier: 0, radius: 4.5},
     "amethyst_splash_potion_xlong_wind_charged": { effect: "wind_charged", duration: 18000, amplifier: 0, radius: 4.5},
+
+    "amethyst_xsplash_potion_wind_charged": { effect: "wind_charged", duration: 3600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_strong_wind_charged": { effect: "wind_charged", duration: 1800, amplifier: 1, radius: 6.5},
+    "amethyst_xsplash_potion_xstrong_wind_charged": { effect: "wind_charged", duration: 1800, amplifier: 2, radius: 6.5},
+    "amethyst_xsplash_potion_long_wind_charged": { effect: "wind_charged", duration: 9600, amplifier: 0, radius: 6.5},
+    "amethyst_xsplash_potion_xlong_wind_charged": { effect: "wind_charged", duration: 18000, amplifier: 0, radius: 6.5},
+
     "splash_potion_strong_wind_charged": { effect: "wind_charged", duration: 1800, amplifier: 1, radius: 4.5},
     "splash_potion_xstrong_wind_charged": { effect: "wind_charged", duration: 1800, amplifier: 2, radius: 4.5},
     "splash_potion_long_wind_charged": { effect: "wind_charged", duration: 9600, amplifier: 0, radius: 4.5},
@@ -272,6 +398,28 @@ export const TURTLE_MASTER_EFFECTS = {
         { effect: "slowness", duration: 1400, amplifier: 3, radius: 4.5}, 
         { effect: "resistance", duration: 1400, amplifier: 2, radius: 4.5}
     ],
+//XSplash-----------------------------
+    "amethyst_xsplash_potion_turtle_master": [
+        { effect: "slowness", duration: 400, amplifier: 3, radius: 6.5}, 
+        { effect: "resistance", duration: 400, amplifier: 2, radius: 6.5}
+    ],
+    "amethyst_xsplash_potion_strong_turtle_master": [
+        { effect: "slowness", duration: 400, amplifier: 5, radius: 6.5}, 
+        { effect: "resistance", duration: 400, amplifier: 3, radius: 6.5}
+    ],
+    "amethyst_xsplash_potion_xstrong_turtle_master": [
+        { effect: "slowness", duration: 400, amplifier: 6, radius: 6.5}, 
+        { effect: "resistance", duration: 400, amplifier: 4, radius: 6.5}
+    ],
+    "amethyst_xsplash_potion_long_turtle_master": [
+        { effect: "slowness", duration: 800, amplifier: 3, radius: 6.5}, 
+        { effect: "resistance", duration: 800, amplifier: 2, radius: 6.5}
+    ],
+    "amethyst_xsplash_potion_xlong_turtle_master": [
+        { effect: "slowness", duration: 1400, amplifier: 3, radius: 6.5}, 
+        { effect: "resistance", duration: 1400, amplifier: 2, radius: 6.5}
+    ],
+//Splash-----------------------------
     "splash_potion_xstrong_turtle_master": [
         { effect: "slowness", duration: 400, amplifier: 6, radius: 4.5}, 
         { effect: "resistance", duration: 400, amplifier: 4, radius: 4.5}
