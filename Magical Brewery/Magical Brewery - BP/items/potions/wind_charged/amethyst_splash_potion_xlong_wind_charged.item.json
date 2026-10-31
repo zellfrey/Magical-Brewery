@@ -12,7 +12,7 @@
 				"tags": ["magical_brewery:potion", "magical_brewery:splash_potion", "magical_brewery:amethyst"]
 			},
 			"minecraft:display_name": {
-				"value": "%potion.windCharged.splash.name\n§c%potion.windCharged (15:00)"
+				"value": "Amethyst %potion.windCharged.splash.name\n§c%potion.windCharged (15:00)"
 			},
 			"minecraft:icon": "magical_brewery:amethyst_splash_potion_xlong_wind_charged",
 			"minecraft:glint": true,
