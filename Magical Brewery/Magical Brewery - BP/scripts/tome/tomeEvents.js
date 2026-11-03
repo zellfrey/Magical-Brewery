@@ -1,7 +1,7 @@
 import {system, world} from '@minecraft/server';
 import { Tome } from './Tome.js';
 import { TomeResearch } from './TomeResearch.js';
-import {ITEM_USE_ARRAY} from "tome/tomeResearchData.js"
+import {TOME_RESEARCH_ITEMS} from "tome/tomeResearchData.js"
 
 //Tome item usage
 system.beforeEvents.startup.subscribe(eventData => {
@@ -47,13 +47,25 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
 world.afterEvents.itemUse.subscribe((e) => {
 	const equipment = e.source.getComponent('equippable');
 	const offHandItem = equipment.getEquipment('Offhand');
+
+	if(isItemConsumable(e.itemStack) || e.itemStack.hasTag("magical_brewery:tome_pages") 
+		|| !offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome" )return;
 	
-	//If there is no item in the mainhand, something is seriously wrong
-	if(!e.itemStack || e.itemStack.hasTag("magical_brewery:tome_pages") || !ITEM_USE_ARRAY.includes(e.itemStack.typeId) ||
-	!offHandItem || offHandItem.typeId !== "magical_brewery:brewers_tome" ) return;
-	
-	TomeResearch.tomeResearchItem(e.source, e.itemStack)
+	if(isMBSplashPotion(e.itemStack) || TOME_RESEARCH_ITEMS.has(e.itemStack.typeId)){
+		TomeResearch.tomeResearchItem(e.source, e.itemStack);
+	}
+	else if(!TOME_RESEARCH_ITEMS.has(e.itemStack.typeId)){
+		e.source.sendMessage({ translate: "magical_brewery:message.tome_research_item.invalid"});
+	}
 });
+
+function isItemConsumable(itemStack){
+	return itemStack.hasTag("minecraft:is_food") || itemStack.typeId === "minecraft:potion"
+}
+
+function isMBSplashPotion(itemStack){
+	return itemStack.hasTag("magical_brewery:splash_potion") || itemStack.hasTag("magical_brewery:xsplash_potion")
+}
 
 world.afterEvents.playerSpawn.subscribe((e) => {
 
