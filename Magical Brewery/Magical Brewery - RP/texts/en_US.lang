@@ -56,7 +56,9 @@ item.magical_brewery:amethyst_potion_awkward.name=Awkward Amethyst Potion
 item.magical_brewery:amethyst_potion_mundane.name=Mundane Amethyst Potion
 item.magical_brewery:amethyst_echo_potion_mundane.name=Mundane Amethyst Echo Potion
 item.magical_brewery:amethyst_splash_potion_mundane.name=Mundane Amethyst Splash Potion
+item.magical_brewery:amethyst_xsplash_potion_mundane.name=Mundane Amethyst Splash II Potion 
 magical_brewery.amethyst_potion.name=Amethyst
+magical_brewery.xsplash.name=Splash II
 ##Tome&Scrolls------------------------------------
 item.magical_brewery:brewers_tome.name=§dBrewers' Tome
 item.magical_brewery:pages_crystallography.name=§eCrystallography Pages
@@ -414,6 +416,9 @@ magical_brewery:tome_chapter_seal_potency.body=Similar to brewing, seals of pote
 magical_brewery:tome_chapter_seal_expansion.title=Seals of Expansion
 magical_brewery:tome_chapter_seal_expansion.body=As you know when a potion ages, it will gain the same effect of the cask. This also applies to splash potions. However, when the splash potion gains the cask effect, the new effect will not have the same range as the base splash potion, and only have a range of around 2-3 blocks.\nIf we want to increase the splash radius, we will need to use Seals of Expansion. Each level increases the potion's splash radius by one block. Of course, this seal can only work with splash potions.\n\nSeals of Expansion I can be crafted with gunpowder and quartz.
 
+magical_brewery:tome_chapter_seal_expansion_two.title=Seals of Expansion
+magical_brewery:tome_chapter_seal_expansion_two.body=As you know when a potion ages, it will gain the same effect of the cask. This also applies to splash potions. However, when the splash potion gains the cask effect, the new effect will not have the same range as the base splash potion, and only have a range of around 2-3 blocks.\nIf we want to increase the splash radius, we will need to use Seals of Expansion. Each level increases the potion's splash radius by one block. Of course, this seal can only work with splash potions.\n\nSeals of Expansion I can be crafted with gunpowder and quartz.
+
 magical_brewery:tome_chapter_seal_retainment.title=Seal of Retainment
 magical_brewery:tome_chapter_seal_retainment.body=Unlike other seals, the seal of retainment does not affect the cask effect being applied to the liquid contents. Instead it can be used to prevent casks from degrading in quality. As with most seals, it will burn away once used.\n\nSeals of Retainment are crafted using amethyst shards.
 
@@ -550,8 +555,8 @@ magical_brewery:tome_chapter_expansion_tier_1_2.body=Gunpowder can be brewed wit
 
 magical_brewery:tome_chapter_expansion_tier_2_1.body=An unsettling item. Crackling oil seems to be incredibly unstable, so unstable that even just mining the rock it resides in can lead to injury. Also, transporting the oil is a dangerous affair in it's own right.\nHowever it does have potential. It may share similar properties to gunpowder.\n\nThe only issue is that I suspect it is too powerful. I don't think glass potions could contain such a explosive substance...
 
-magical_brewery:tome_chapter_expansion_tier_2_2.title=Splash + Potions
-magical_brewery:tome_chapter_expansion_tier_2_2.body=Crackling Oil can be brewed with a base potion or an enhanced potion to create far more volatile splash potions making them have a greater area of effect than normal splash potions.n\Crackling Oil can be applied to any base potion.\n\nSo far I have noticed that there is no loss to the potions' duration or potency when crackling oil is added to it.\nHowever potions made with crackling oil can only be made with amethyst bottles!
+magical_brewery:tome_chapter_expansion_tier_2_2.title=Splash II Potions
+magical_brewery:tome_chapter_expansion_tier_2_2.body=Crackling Oil can be brewed with any base potion or an enhanced potion to create far more volatile splash potions, than potions made with gunpowder. These potions also have the ability of applying effects at far greater distance.\n\nSo far I have noticed that there is no loss to the potions' duration or potency when crackling oil is added to it.\nHowever potions made with crackling oil can only be made with amethyst bottles!
 
 magical_brewery:tome_chapter_lingering_tier_1_1.body=What a journey! That dragon put up quite a fight, but I won in the end.\nI did notice that when the dragon was spewing it's breath, the breath stayed on the ground for a bit.\nI've decided to take a sample and see if it can be used with potions.
 
@@ -603,14 +608,15 @@ magical_brewery:message.tome_research_item.discovered=There is no further resear
 magical_brewery:message.tome_research_item.clue_discovery=This %s could be useful.\nI have added it to my %s chapter.
 
 magical_brewery:message.tome_research_potion.item_discovered=I have already found the potion associated with this ingredient.
-##magical_brewery:message.tome_research_potion.discovered=I already know how to make this potion.
+magical_brewery:message.tome_research_potion.discovered=I already know how to make this potion.
 magical_brewery:message.tome_research_potion.item_not_discovered=I do not know the ingredient that can create such a potion.
 magical_brewery:message.tome_research_potion.discovery=I now know how to make a %s.\nI have added it to my %s chapter.
-##magical_brewery:message.tome_research_potion.enhanced_type_discovered=I know how to make these types of enhanced potions.
+magical_brewery:message.tome_research_potion.enhanced_type_discovered=I know how to make these types of enhanced potions.
 magical_brewery:message.tome_research_potion.catalyst_not_discovered=I should research the catalyst that enhances this potion.
-##magical_brewery:message.tome_research_potion.enhanced_discovered=I already know how to enhance this potion effect. I should test another potion effect...
+magical_brewery:message.tome_research_potion.enhanced_discovered=I already know how to enhance this potion effect. I should test another potion effect...
 magical_brewery:message.tome_research_potion.enhanced_progression=This %s has been enhanced with %s.
 magical_brewery:message.tome_research_potion.enhanced_discovery=I am now confident that %s can create %s.
+magical_brewery:message.tome_research_extra_chapter=I also have some other research that could benefit from this new discovery.
 
 magical_brewery:message.tome_research_potion.lingering_progression=This potion has been enhanced with a catalyst that I don't know. I should find out what that catalyst is first.
 

@@ -9,15 +9,6 @@
 --------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------
 */
-//yeh this method aint pretty, but what you gonna do?
-export const ITEM_USE_ARRAY = [
-								"minecraft:blaze_powder", "minecraft:glistering_melon_slice", "minecraft:sugar", "minecraft:rabbit_foot", "minecraft:ghast_tear",
-								"minecraft:magma_cream", "minecraft:turtle_helmet", "minecraft:phantom_membrane","minecraft:breeze_rod", "minecraft:stone",
-								"minecraft:web", "minecraft:slime_ball", "minecraft:redstone", "magical_brewery:pure_redstone_dust", "minecraft:glowstone_dust",
-								"magical_brewery:pure_glowstone_dust", "minecraft:gunpowder", "magical_brewery:crackling_oil", "minecraft:dragon_breath", 
-								"minecraft:nether_wart",
-								"magical_brewery:echo_dust", "minecraft:splash_potion", "minecraft:lingering_potion", "minecraft:fermented_spider_eye",
-							];
 export const MULTI_CLUE_POTION_EFFECTS = ["nightvision", "swiftness", "leaping", "poison", "healing", "strength"];
 export const MULTI_COMPLETE_POTION_EFFECTS = ["invisibility", "slowness", "harming", "weakness"];
 
@@ -250,4 +241,13 @@ TOME_RESEARCH_ODD_CASKS.set("cask_strength", {
 	"potion_1st_fill": "weakness",
 	"potion_nth_fill": "Weakness",
 	"research": "stre_weak_mund"
+});
+
+export const TOME_RESEARCH_EXTRA_CHAPTERS = new Map();
+
+TOME_RESEARCH_EXTRA_CHAPTERS.set("expansion_tier_2", {
+	"parent_chapter": "seals",
+	//will change this with update 0.6. Im not ripping out the carpet again
+	"chapter": "seal_expansion_two",
+	"replace": "seal_expansion",
 });

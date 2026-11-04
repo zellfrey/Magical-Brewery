@@ -149,6 +149,10 @@ export const TOME_CHAPTERS = {
         icon: "textures/beardedflea/magical_brewery/items/seals/seal_expansion_1.png",
 		exitPage: "seals"
 	},
+	"seal_expansion_two": {
+        icon: "textures/beardedflea/magical_brewery/items/seals/seal_expansion_2.png",
+		exitPage: "seals"
+	},
 	"seal_retainment": {
 		icon: "textures/beardedflea/magical_brewery/items/seals/seal_retainment.png",
 		exitPage: "seals"
@@ -455,6 +459,10 @@ export const TOME_CHAPTERS = {
 	},
 	"expansion_tier_2_1":{
 		title: "item.magical_brewery:crackling_oil.name",
+		icon: "textures/beardedflea/magical_brewery/items/crackling_oil.png",
+		exitPage: "catalysers"
+	},
+	"expansion_tier_2_2":{
 		icon: "textures/beardedflea/magical_brewery/items/crackling_oil.png",
 		exitPage: "catalysers"
 	},

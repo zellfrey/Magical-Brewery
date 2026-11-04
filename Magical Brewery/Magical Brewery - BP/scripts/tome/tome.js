@@ -33,6 +33,24 @@ export class Tome {
 		return;
 	}
 	
+	static addTomeToUnlockChapter(player, tomePlayerData, extraChapter){
+		
+		if(tomePlayerData.to_unlock_chapters === undefined) tomePlayerData.to_unlock_chapters = [];
+		
+		if(tomePlayerData.to_unlock_chapters.includes(extraChapter)) return;
+		
+		tomePlayerData.to_unlock_chapters.push(extraChapter);
+		
+		player.setDynamicProperty('magical_brewery:tome_data_v2', JSON.stringify(tomePlayerData));
+	}
+	
+	static replaceChapter(tomeData, tomeParentChapter, replaceChapter, toReplaceChapter){
+		
+		const researchPartIndex = tomeData.unlocked_chapters[tomeParentChapter].findIndex(el => el === replaceChapter);
+
+		tomeData.unlocked_chapters[tomeParentChapter].splice(researchPartIndex, 1, toReplaceChapter);
+	}
+
 	static getTomePlayerLastPage(player){
 		let tomePlayerData = JSON.parse(player.getDynamicProperty('magical_brewery:tome_data_v2'));
 		return tomePlayerData.page_last_opened;
