@@ -76,7 +76,10 @@
 			},
 			"minecraft:sound": {
 				"sound": "amethyst_cluster"
-			}
+			},
+            "minecraft:chest_obstruction": {
+                "obstruction_rule": "never"
+            }
         },
         "permutations": [
             {
@@ -106,7 +109,10 @@
 			{
 				"condition": "query.block_state('minecraft:block_face') == 'up'",
 				"components": {
-					"minecraft:transformation": { "rotation": [0, 0, 0] }
+					"minecraft:transformation": { "rotation": [0, 0, 0] },
+					"minecraft:chest_obstruction": {
+						"obstruction_rule": "always"
+					}
 				}
 			},
 			{
